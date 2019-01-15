@@ -25,3 +25,13 @@ let client = await Scalingo.clientFromToken("tk-us-...")
 let user = await client.Users.self()
 console.log(user)
 ```
+
+## Development
+
+### Release a new version
+
+```bash
+# If it's a patch (see https://docs.npmjs.com/cli/version.html)
+npm version patch
+git push --tags
+```
