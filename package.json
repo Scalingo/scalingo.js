@@ -1,0 +1,34 @@
+{
+  "name": "scalingo-javascript-api",
+  "version": "0.0.1",
+  "description": "Wrapper for the Scalingo API",
+  "main": "dist/scalingo.js",
+  "module": "src/index.js",
+  "repository": "github.com/Scalingo/scalingo-javascript-api",
+  "author": "Jonathan Hurter <john@scalingo.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "docs": "esdoc"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/preset-env": "^7.2.3",
+    "esdoc": "^1.1.0",
+    "esdoc-ecmascript-proposal-plugin": "^1.0.0",
+    "esdoc-standard-plugin": "^1.0.0",
+    "rollup": "^1.1.0",
+    "rollup-plugin-babel": "^4.3.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
