@@ -1,0 +1,12 @@
+before_deploy:
+  - yarn build
+install: yarn
+cache: yarn
+deploy:
+  provider: npm
+  email: hello@scalingo.com
+  api_key:
+    secure: MzUgpYIRMO2q2ZpHmnzaCvNmAflKRiMKZVq89/fLXZH0qxcaXmUUflSh9mACocm57KGUYYHHa/utsSnj/MRtZ3+Oipcc86vDgKSxaMmZ2f6EHUPRb2TweCRWH9GHUso0byyhE++xndxtuK7j5Z5CE5jn3Nat9v9EsnR/eekA4Z5XiQunLuZdJETfutI7dlJ9aptZx0iQMgA5nmh63D+SAzH9rt6gmiFNi581I4a1vgz4PD2w2vBCg9iXc0mLSkc/A3RxHDchf2TbaMPW/lDvou7TFvZs5Pa8DFmfsB2l3/wbxC0z1wQujn/f2PHhXFBRyRQf+HezjGVFcb0TII6N6W1ERZOFuFSDiEKFPgjKmPsx6gl+QoNcWonE2LtADBYucRBSfL0xqxSaXmmBN9Sq/ej/ARAQolKgAetydQgI19ahMaqNwq5j+2bgswz0pg2I97SvbHvNMJXY6eKKPJLxCPkJhkvEA80qyXy3qzLL26jzWQxddf3nhJTFYMolVcQ5pc3ciCscu24wr+fuiK3/CsyElaZLnzjmTOXT7WCgy9DPSpe9UTkBH0T7VI14sUm1opIbX0GFAYc/21kcxk1M8xpvi+mhOoC5kM0EoHs/I77YIPiKJ3jHrBv9iiigRcWZIk1/uSvOlQTyOD/bWMYcpCwk4y4ATk4qR45Br58CBKQ=
+  skip_cleanup: true
+  on:
+    tags: true

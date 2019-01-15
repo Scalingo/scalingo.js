@@ -1,5 +1,5 @@
 {
-  "name": "scalingo-javascript-api",
+  "name": "scalingo",
   "version": "0.0.1",
   "description": "Wrapper for the Scalingo API",
   "main": "dist/scalingo.js",
