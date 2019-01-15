@@ -1,8 +1,6 @@
 import {unpackData} from '../utils.js'
 
 export default class Apps{
-  _client = null
-
   /**
    * Create a new Client for the App API
    * @param {Client} client - Scalingo API Client

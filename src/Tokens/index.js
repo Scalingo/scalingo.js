@@ -2,8 +2,6 @@ import axios from 'axios'
 import {unpackData} from '../utils.js'
 
 export default class Tokens {
-  _client = null
-
   /**
    * Create a new Client for the Token API
    * @param {Client} client - Scalingo API Client

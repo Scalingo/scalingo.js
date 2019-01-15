@@ -9,7 +9,8 @@
   "license": "MIT",
   "scripts": {
     "build": "rollup -c",
-    "docs": "esdoc"
+    "docs": "esdoc",
+    "test": "true"
   },
   "dependencies": {
     "axios": "^0.18.0",

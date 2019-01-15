@@ -1,8 +1,6 @@
 import {unpackData} from '../utils.js'
 
 export default class Containers {
-  _client = null
-
   /**
    * Create a new Client for the Containers API
    * @param {Client} client - Scalingo API Client
