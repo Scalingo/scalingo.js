@@ -13,16 +13,16 @@ export default class Apps{
    * Fetch a specific app
    * @see http://developers.scalingo.com/apps#get-a-precise-application
    * @param {String} id - ID of the application
-   * @return {Promise<App,Error>} Promise that when resolved return an App. See: http://developers.scalingo.com/apps#application-attributes
+   * @return {Promise<App,APIError>} Promise that when resolved return an App. See: http://developers.scalingo.com/apps#application-attributes
    */
   find(id) {
-    return new App(this._client, id)
+    return unpackData(this._client.apiClient().get(`/apps/${id}`), "app")
   }
 
   /**
    * Get all your applications and the one your are collaborator for
    * @see http://developers.scalingo.com/apps#list-your-applications
-   * @return {Promise<App[], Error>} Promise that when resolved return an App array. See: http://developers.scalingo.com/apps#application-attributes
+   * @return {Promise<App[], APIError>} Promise that when resolved return an App array. See: http://developers.scalingo.com/apps#application-attributes
    */
   all() {
     return unpackData(this._client.apiClient().get('/apps'), "apps")

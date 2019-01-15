@@ -12,7 +12,7 @@ export default class Users {
 
   /**
    * Fetch the current user account informations
-   * @return {Promise<User | Error>} Promise that when resolve return the user account informations
+   * @return {Promise<User | APIError>} Promise that when resolve return the user account informations
    */
   self() {
     return unpackData(this._client.authApiClient().get('/users/self'), "user")

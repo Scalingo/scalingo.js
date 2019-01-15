@@ -13,7 +13,7 @@ export default class Containers {
    * Get container formation for an app
    * @see http://developers.scalingo.com/apps#get-containers-list<Paste>
    * @param {String} appId ID of the app to get the formation from
-   * @return {Promise< Container[] | Error>}
+   * @return {Promise< Container[] | APIError>}
    */
   for(appId) {
     return unpackData(this._client.apiClient().get(`/apps/${appId}/containers`), "containers")
@@ -24,7 +24,7 @@ export default class Containers {
    * @see http://developers.scalingo.com/apps#scale-an-application
    * @param {String} appId ID of the app to scale
    * @param {Container[]} formation Formation to apply
-   * @return {Promise<Container[] | Error>} final formation
+   * @return {Promise<Container[] | APIError>} final formation
    */
   scale(appId, formation) {
     return unpackData(this._client.apiClient().post(`/apps/${appId}/scale`, {containers: formation}), "containers")

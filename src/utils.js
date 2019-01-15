@@ -1,3 +1,4 @@
+import {APIError} from './errors'
 /**
  * @ignore
  */
@@ -10,8 +11,8 @@ export function unpackData(axiosRequest, prefix) {
         resolve(response.data[prefix])
       }
     }).catch((error) => {
-      if(error.response && error.response.data) {
-        reject(new Error(error.response.data))
+      if(error.response) {
+        reject(new APIError(error.response.status, error.response.data))
         return
       }
       reject(error)

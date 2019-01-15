@@ -13,7 +13,7 @@ export default class Tokens {
   /**
    * Exchange a Token for a JWT
    * @param {!String} token A valid token
-   * @return {Promise<String| Error>} A valid Bearer Token that can be used against our infrastructure.
+   * @return {Promise<String| APIError>} A valid Bearer Token that can be used against our infrastructure.
    */
   exchange(token) {
     let request = axios.post(`${this._client._authApiUrl}/v1/tokens/exchange`, {}, {
