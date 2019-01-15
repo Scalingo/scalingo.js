@@ -2,6 +2,7 @@ before_deploy:
   - yarn build
 install: yarn
 cache: yarn
+language: node_js
 deploy:
   provider: npm
   email: hello@scalingo.com
