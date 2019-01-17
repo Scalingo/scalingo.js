@@ -17,10 +17,9 @@ export default class Tokens {
    */
   exchange(token) {
     let request = axios.post(`${this._client._authApiUrl}/v1/tokens/exchange`, {}, {
-      "auth": {
-        "user": "",
-        "password": token,
-      }
+      auth: {
+        password: token,
+      },
     })
     return unpackData(request, "token")
   }

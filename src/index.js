@@ -17,8 +17,8 @@ class Client {
     let {apiUrl, authApiUrl} = opts;
 
     this._token = token;
-    this._apiUrl = apiUrl || "https://api.scalingo.com/";
-    this._authApiUrl = authApiUrl || "https://auth.scalingo.com/";
+    this._apiUrl = apiUrl || "https://api.scalingo.com";
+    this._authApiUrl = authApiUrl || "https://auth.scalingo.com";
 
     /**
      * Apps API

@@ -1,6 +1,8 @@
 {
   "presets": [
-    ["@babel/env", {"modules": false}]
+    ["@babel/env", {
+      "targets": "> 1%, not dead, maintained node versions"
+    }]
   ],
   "plugins": [
     "@babel/plugin-proposal-class-properties"

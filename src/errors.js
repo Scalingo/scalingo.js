@@ -9,7 +9,7 @@ export class APIError extends Error{
    */
   constructor(status, data) {
     let message = `An error occured (status=${status})`
-    if(data.error) {
+    if(data && data.error) {
       message = data.error
     }
     super(message)
