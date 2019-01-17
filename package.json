@@ -4,13 +4,14 @@
   "description": "Wrapper for the Scalingo API",
   "main": "dist/scalingo.js",
   "module": "src/index.js",
-  "repository": "github.com/Scalingo/scalingo-javascript-api",
+  "repository": "Scalingo/scalingo.js",
   "author": "Jonathan Hurter <john@scalingo.com>",
   "license": "MIT",
   "scripts": {
     "build": "rollup -c",
     "docs": "esdoc",
-    "test": "mocha --require @babel/register --recursive"
+    "test": "mocha --require @babel/register --recursive",
+    "upload-doc": "esdoc-uploader"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -27,6 +28,7 @@
     "esdoc": "^1.1.0",
     "esdoc-ecmascript-proposal-plugin": "^1.0.0",
     "esdoc-standard-plugin": "^1.0.0",
+    "esdoc-uploader": "^1.0.1",
     "mocha": "^5.2.0",
     "rollup": "^1.1.0",
     "rollup-plugin-babel": "^4.3.0",
