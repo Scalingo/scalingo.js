@@ -8,7 +8,7 @@ export class APIError extends Error{
    * @param {Object} data Body of the HTTP response (parsed as JSON)
    */
   constructor(status, data) {
-    let message = `An error occured (status=${status})`
+    let message = `An error occurred (status=${status})`
     if(data && data.error) {
       message = data.error
     }

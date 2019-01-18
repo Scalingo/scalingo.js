@@ -1,9 +1,9 @@
 before_deploy:
-  - yarn build
+- yarn build
 install: yarn
 cache: yarn
 node_js:
-  - 11.6
+- 11.6
 language: node_js
 deploy:
   provider: npm
@@ -13,6 +13,11 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
-
 after_deploy:
-  - yarn exec upload-doc
+- yarn exec upload-doc
+notifications:
+  slack:
+    rooms:
+      secure: I2AW+PAZdAhjW9xDAsYtGaZom0ZwwCQqWM+6Nn7vD4luViWNmriWKFlDHAvlvm9ekNYxImXFnk82mRSNqSuvRYJUHUIBH7okxP1khYdkSyJiBPLUPV3ApaEXOhTTLlN4hyJrD/xYd8xLXkzxFNFZXiLliOM/7/bTNgXgDLhPK8lw0jo+cTkdLtM1P8ozi/s25xfbk0w/OCXunF0MbwqIN1i5Ms0MkJGHULnH7rCYx4j9JTMZT/h87XxkxJ/N0IrAiNdW6DaOtnfSo9Xq/zbTMvsqutNaT9eIj28Uv2OyPAMMLLuMibzGDblemdIiZ8752sa1EaIBKJwMG8u1BfUrpJZOT2ggWX7LLrXMyt1VxqJg5DqlRkqmUY2ATYBKkQrkYfSH7CJgv9AbrWVD1VrHE/LPBexcAB1O8xFt4RitEVlF5O5QN+mknV9EPCJHwngWXfzVsMJe/ca7xSPdftMAeWGE5Szg2t8/Wc/wggmpJGwzG5UjmU2WMu8/q6cDIDwPXVH9vyBzCSNJ9KDwHByq9pp0KUv+XvQiy4DHUKn36c5SAuGjJ5xf+COic3nPCAlxweGKJduYR6JLM5p+XzDZI8dj+APeq+LfSQ95FA/jxqA9M3OlQEoUFdGxw3gLa/dwFRU9FOU6bRpfwDHgePPIj1dxeOF2gqDryoNJfVxqSYw=
+    on_success: always
+    on_failure: always
