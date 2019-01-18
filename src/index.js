@@ -48,7 +48,6 @@ class Client {
      * @type {Metrics}
      */
     this.Metrics = new Metrics(this)
-
   }
 
   /**
