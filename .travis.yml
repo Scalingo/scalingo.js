@@ -14,7 +14,7 @@ deploy:
   on:
     tags: true
 after_deploy:
-- yarn exec upload-doc
+- yarn upload-doc
 notifications:
   slack:
     rooms:
