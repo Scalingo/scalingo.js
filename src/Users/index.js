@@ -5,7 +5,6 @@ export default class Users {
    * Create a new Client for the Users API
    * @param {Client} client - Scalingo API Client
    */
-
   constructor(client) {
     this._client = client;
   }

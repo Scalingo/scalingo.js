@@ -1,5 +1,8 @@
 import {unpackData} from '../utils.js'
 
+/**
+ * Containers API Client
+ */
 export default class Containers {
   /**
    * Create a new Client for the Containers API

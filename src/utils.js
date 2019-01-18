@@ -5,7 +5,7 @@ import {APIError} from './errors'
 export function unpackData(axiosRequest, prefix) {
   return new Promise((resolve, reject) => {
     axiosRequest.then((response) => {
-      if(prefix === null) {
+      if(prefix === undefined) {
         resolve(response.data)
       } else {
         resolve(response.data[prefix])

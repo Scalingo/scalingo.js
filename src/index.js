@@ -1,8 +1,10 @@
 import 'babel-polyfill';
 import Apps from './Apps'
 import Containers from './Containers'
-import Users from './Users'
+import Metrics from './Metrics'
 import Tokens from './Tokens'
+import Users from './Users'
+
 import axios from 'axios'
 
 class Client {
@@ -40,6 +42,12 @@ class Client {
      * @type {Tokens}
      */
     this.Tokens = new Tokens(this)
+
+    /**
+     * Metrics API
+     * @type {Metrics}
+     */
+    this.Metrics = new Metrics(this)
 
   }
 

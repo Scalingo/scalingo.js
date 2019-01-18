@@ -1,5 +1,8 @@
 import {unpackData} from '../utils.js'
 
+/**
+ * Apps API Client
+ */
 export default class Apps{
   /**
    * Create a new Client for the App API

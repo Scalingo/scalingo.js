@@ -1,6 +1,9 @@
 import axios from 'axios'
 import {unpackData} from '../utils.js'
 
+/**
+ * Tokens API Client
+ */
 export default class Tokens {
   /**
    * Create a new Client for the Token API
