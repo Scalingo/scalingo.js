@@ -14,13 +14,13 @@
     "upload-doc": "esdoc-uploader"
   },
   "dependencies": {
-    "axios": "^0.18.0",
-    "babel-polyfill": "^6.26.0"
+    "axios": "^0.18.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/polyfill": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
     "@babel/register": "^7.0.0",
     "axios-mock-adapter": "^1.16.0",
@@ -33,6 +33,7 @@
     "rollup": "^1.1.0",
     "rollup-plugin-babel": "^4.3.0",
     "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-multi-entry": "^2.1.0",
     "rollup-plugin-node-resolve": "^4.0.0"
   },
   "publishConfig": {

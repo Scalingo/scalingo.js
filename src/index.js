@@ -1,4 +1,3 @@
-import 'babel-polyfill';
 import Apps from './Apps'
 import Containers from './Containers'
 import Metrics from './Metrics'
