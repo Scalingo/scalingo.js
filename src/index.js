@@ -4,6 +4,7 @@ import Containers from './Containers'
 import Metrics from './Metrics'
 import Tokens from './Tokens'
 import Users from './Users'
+import Domains from "./Domains"
 
 import axios from 'axios'
 
@@ -48,6 +49,12 @@ class Client {
      * @type {Metrics}
      */
     this.Metrics = new Metrics(this)
+
+    /**
+     * Domains API
+     * @type {Domains}
+     */
+    this.Domains = new Domains(this)
   }
 
   /**
