@@ -1,4 +1,4 @@
-import 'babel-polyfill';
+import '@babel/polyfill'
 import {expect} from 'chai'
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
