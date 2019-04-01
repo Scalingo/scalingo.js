@@ -16,7 +16,7 @@ export default class Domains {
      * List all the domains of an application
      * @see http://developers.scalingo.com/domains#list-all-the-domains-of-an-application
      * @param {String} appId ID of the app to get domains list
-     * @return {Promise< Domain[] | APIError>}
+     * @return {Promise<Domain[] | APIError>}
      */
     for(appId) {
         return unpackData(this._client.apiClient().get(`/apps/${appId}/domains`), "domains")
