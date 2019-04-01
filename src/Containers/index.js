@@ -14,9 +14,9 @@ export default class Containers {
 
   /**
    * Get container formation for an app
-   * @see http://developers.scalingo.com/apps#get-containers-list<Paste>
+   * @see http://developers.scalingo.com/apps#get-containers-list
    * @param {String} appId ID of the app to get the formation from
-   * @return {Promise< Container[] | APIError>}
+   * @return {Promise<Container[] | APIError>}
    */
   for(appId) {
     return unpackData(this._client.apiClient().get(`/apps/${appId}/containers`), "containers")
