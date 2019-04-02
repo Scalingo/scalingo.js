@@ -1,7 +1,7 @@
 import {unpackData} from "../utils";
 
 /**
- * Containers API Client
+ * Domains API Client
  */
 export default class Domains {
     /**
@@ -21,10 +21,22 @@ export default class Domains {
     for(appId) {
         return unpackData(this._client.apiClient().get(`/apps/${appId}/domains`), "domains")
     }
+
+    /**
+     * Link a domain name to a specific application
+     * @see http://developers.scalingo.com/domains#link-a-domain-name-to-an-application
+     * @param {String} appId ID of the app to post to the specified application
+     * @param {Domain[]} domain An object of the domain to link
+     * @return {Promise<Domain[] | APIError>}
+     */
+    link(appId, domain) {
+        return unpackData(this._client.apiClient().post(`/apps/${appId}/domains`, {domains: domain}), "domains")
+    }
 }
 
 /**
  * @typedef {Object} Domain
+ * @see http://developers.scalingo.com/domains
  * @property {String} id Unique ID of the domain
  * @property {String} name Hostname your want to associate with the app
  * @property {String} tlscert Subject of the submitted certificate
