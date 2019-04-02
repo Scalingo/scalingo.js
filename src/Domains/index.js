@@ -1,7 +1,7 @@
 import {unpackData} from "../utils";
 
 /**
- * Domains API Client
+ * Containers API Client
  */
 export default class Domains {
     /**
@@ -27,7 +27,7 @@ export default class Domains {
      * @see http://developers.scalingo.com/domains#link-a-domain-name-to-an-application
      * @param {String} appId ID of the app to post to the specified application
      * @param {DomainParams} domain An object of the domain to link
-     * @return {Promise<Domain[] | APIError>}
+     * @return {Promise<Domain | APIError>}
      */
     create(appId, domain) {
         return unpackData(this._client.apiClient().post(`/apps/${appId}/domains`, {domain: domain}), "domains")
@@ -40,9 +40,9 @@ export default class Domains {
  * @property {String} name Hostname your want to associate with the app
  * @property {String} tlscert Subject of the submitted certificate
  * @property {String} tlskey Private key type and length
- * @property {Boolean} ssl Flag if SSL with a custom certificate is enabled
+ * @property {String} ssl Flag if SSL with a custom certificate is enabled
  * @property {Date} validity Once a certificate has been submitted, display the validity of it
- * @property {Boolean} canonical The domain is the canonical domain of this application
+ * @property {String} canonical The domain is the canonical domain of this application
  */
 
 /**
