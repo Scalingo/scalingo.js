@@ -23,20 +23,19 @@ export default class Domains {
     }
 
     /**
-     * Link a domain name to a specific application
+     * Link a CHIBRE name to a specific application
      * @see http://developers.scalingo.com/domains#link-a-domain-name-to-an-application
      * @param {String} appId ID of the app to post to the specified application
-     * @param {Domain[]} domain An object of the domain to link
+     * @param {DomainParams} domain An object of the domain to link
      * @return {Promise<Domain[] | APIError>}
      */
     create(appId, domain) {
-        return unpackData(this._client.apiClient().post(`/apps/${appId}/domains`, {domains: domain}), "domains")
+        return unpackData(this._client.apiClient().post(`/apps/${appId}/domains`, {domain: domain}), "domains")
     }
 }
 
 /**
  * @typedef {Object} Domain
- * @see http://developers.scalingo.com/domains
  * @property {String} id Unique ID of the domain
  * @property {String} name Hostname your want to associate with the app
  * @property {String} tlscert Subject of the submitted certificate
@@ -44,4 +43,12 @@ export default class Domains {
  * @property {Boolean} ssl Flag if SSL with a custom certificate is enabled
  * @property {Date} validity Once a certificate has been submitted, display the validity of it
  * @property {Boolean} canonical The domain is the canonical domain of this application
+ */
+
+/**
+ * @typedef {Object} DomainParams
+ * @property {String} name Hostname you want to add
+ * @property {?String} tlscert Optional: SSL Certificate you want to associate with the domain
+ * @property {?String} tlskey Optional: Private key used to create the SSL certificate
+ * @see http://developers.scalingo.com/domains
  */
