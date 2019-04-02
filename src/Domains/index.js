@@ -23,7 +23,7 @@ export default class Domains {
     }
 
     /**
-     * Link a CHIBRE name to a specific application
+     * Link a domain name to a specific application
      * @see http://developers.scalingo.com/domains#link-a-domain-name-to-an-application
      * @param {String} appId ID of the app to post to the specified application
      * @param {DomainParams} domain An object of the domain to link
