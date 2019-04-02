@@ -7,8 +7,8 @@ describe("Domains#for", () => {
     })
 });
 
-describe("Domains#link", () => {
+describe("Domains#create", () => {
     testPost("https://api.scalingo.com/v1/apps/tata/domains", { domains: { name: 'nice.one.dude', tlscert: false,  tlskey: false } }, 'domains',(client) => {
-        return new Domains(client).link("tata", { name: 'nice.one.dude', tlscert: false,  tlskey: false })
+        return new Domains(client).create("tata", { name: 'nice.one.dude', tlscert: false,  tlskey: false })
     })
 });

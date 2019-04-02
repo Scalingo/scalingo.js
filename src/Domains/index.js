@@ -29,7 +29,7 @@ export default class Domains {
      * @param {Domain[]} domain An object of the domain to link
      * @return {Promise<Domain[] | APIError>}
      */
-    link(appId, domain) {
+    create(appId, domain) {
         return unpackData(this._client.apiClient().post(`/apps/${appId}/domains`, {domains: domain}), "domains")
     }
 }
