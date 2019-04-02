@@ -1,11 +1,11 @@
 import {unpackData} from "../utils";
 
 /**
- * Containers API Client
+ * Domains API Client
  */
 export default class Domains {
     /**
-     * Create a new Client for the Containers API
+     * Create a new Client for the Domains API
      * @param {Client} client - Scalingo API Client
      */
     constructor(client) {
