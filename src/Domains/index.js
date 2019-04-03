@@ -42,7 +42,7 @@ export default class Domains {
  * @property {String} tlskey Private key type and length
  * @property {Boolean} ssl Flag if SSL with a custom certificate is enabled
  * @property {Date} validity Once a certificate has been submitted, display the validity of it
- * @property {String} canonical The domain is the canonical domain of this application
+ * @property {Boolean} canonical The domain is the canonical domain of this application
  */
 
 /**
