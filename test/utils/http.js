@@ -66,3 +66,32 @@ export function testPost(url, body, prefix, build) {
   })
 }
 
+export function testDelete(url, prefix, build) {
+  it('calls the API and return the data when there is no errors', async () => {
+      let client = new Client("test-token");
+      let mock = new MockAdapter(axios);
+      mock.onDelete(url).reply(200, {
+        [prefix]: {data: "value"}
+      });
+      let result = await build(client);
+      expect(result).to.deep.eq({data: "value"});
+      expect(mock.history.delete[0].headers.Authorization).to.eq("Bearer test-token")
+  });
+
+  it('returns an error when the API fails', async () => {
+    let client = new Client("test-token");
+    let mock = new MockAdapter(axios);
+    mock.onDelete(url).reply(404, {
+      error: "not found"
+    })
+    try {
+      await build(client)
+    }catch(error) {
+      expect(error).to.be.an.instanceOf(APIError);
+      expect(error.status).to.eq(404);
+      return;
+    }
+    expect.fail("The method did not throw");
+  })
+}
+
