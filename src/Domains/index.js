@@ -40,7 +40,7 @@ export default class Domains {
  * @property {String} name Hostname your want to associate with the app
  * @property {String} tlscert Subject of the submitted certificate
  * @property {String} tlskey Private key type and length
- * @property {LetsEncryptStatus} letsecrypt_status Show the current state of the Let's Encrypt certificate
+ * @property {LetsEncryptStatus} letsencrypt_status Show the current state of the Let's Encrypt certificate
  * @property {Boolean} ssl Flag if SSL with a custom certificate is enabled
  * @property {Date} validity Once a certificate has been submitted, display the validity of it
  * @property {Boolean} canonical The domain is the canonical domain of this application
