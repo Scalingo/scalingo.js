@@ -56,9 +56,11 @@ export default class Domains {
 
 /**
  * @typedef {String} LetsEncryptStatus
- * @property {String} pending_dns We're waiting for DNS propagation (or the DNS value is not correct)
- * @property {String} new The certificate request has been sent to LE
- * @property {String} created The certificate has been created and is in use
- * @property {String} dns_required (wildcards) manual DNS action is required
- * @property {String} error There was an error while creating the certificate
+ * @desc
+ * Can take the following values:
+ * - **pending_dns**: We're waiting for DNS propagation (or the DNS value is not correct)
+ * - **new**: The certificate request has been sent to LE
+ * - **created**: The certificate has been created and is in use
+ * - **dns_required**: (for wildcards only) manual DNS action is required
+ * - **error**: There was an error while creating the certificate
  */
