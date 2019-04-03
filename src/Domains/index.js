@@ -40,6 +40,7 @@ export default class Domains {
  * @property {String} name Hostname your want to associate with the app
  * @property {String} tlscert Subject of the submitted certificate
  * @property {String} tlskey Private key type and length
+ * @property {LetsEncryptStatus} letsencrypt_status Show the current state of the Let's Encrypt certificate
  * @property {Boolean} ssl Flag if SSL with a custom certificate is enabled
  * @property {Date} validity Once a certificate has been submitted, display the validity of it
  * @property {Boolean} canonical The domain is the canonical domain of this application
@@ -51,4 +52,15 @@ export default class Domains {
  * @property {?String} tlscert Optional: SSL Certificate you want to associate with the domain
  * @property {?String} tlskey Optional: Private key used to create the SSL certificate
  * @see http://developers.scalingo.com/domains
+ */
+
+/**
+ * @typedef {String} LetsEncryptStatus
+ * @desc
+ * Can take the following values:
+ * - **pending_dns**: We're waiting for DNS propagation (or the DNS value is not correct)
+ * - **new**: The certificate request has been sent to LE
+ * - **created**: The certificate has been created and is in use
+ * - **dns_required**: (for wildcards only) manual DNS action is required
+ * - **error**: There was an error while creating the certificate
  */
