@@ -54,6 +54,18 @@ export default class Domains {
     show(appId, domainId) {
         return unpackData(this._client.apiClient().get(`/apps/${appId}/domains/${domainId}`), "domain")
     }
+
+    /**
+     * Update a domain from a specific application
+     * @see http://developers.scalingo.com/domains#update-a-domain-name
+     * @param {String} appId ID of the app to post to the specified application
+     * @param {String} domainId ID of the domain to update
+     * @param {DomainUpdateParams} domain An object of the domain to update
+     * @return {Promise<Domain | APIError>}
+     */
+    update(appId, domainId, domain) {
+        return unpackData(this._client.apiClient().patch(`/apps/${appId}/domains/${domainId}`, {domain: domain}), "domains")
+    }
 }
 
 /**
@@ -66,6 +78,7 @@ export default class Domains {
  * @property {Boolean} ssl Flag if SSL with a custom certificate is enabled
  * @property {Date} validity Once a certificate has been submitted, display the validity of it
  * @property {Boolean} canonical The domain is the canonical domain of this application
+ * @see http://developers.scalingo.com/domains
  */
 
 /**
@@ -73,6 +86,14 @@ export default class Domains {
  * @property {String} name Hostname you want to add
  * @property {?String} tlscert Optional: SSL Certificate you want to associate with the domain
  * @property {?String} tlskey Optional: Private key used to create the SSL certificate
+ * @see http://developers.scalingo.com/domains
+ */
+
+/**
+ * @typedef {Object} DomainUpdateParams
+ * @property {?String} tlscert Optional: SSL Certificate you want to associate with the domain
+ * @property {?String} tlskey Optional: Private key used to create the SSL certificate
+ * @property {?Boolean} canonical Optional: Set this domain as the canonical domain for this application
  * @see http://developers.scalingo.com/domains
  */
 
