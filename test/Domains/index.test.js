@@ -21,7 +21,7 @@ describe("Domains#destroy", () => {
 });
 
 describe("Domains#show", () => {
-    testGetter("https://api.scalingo.com/v1/apps/tata/domains/541067ec736f7504a5110000", "domains", (client) => {
+    testGetter("https://api.scalingo.com/v1/apps/tata/domains/541067ec736f7504a5110000", "domain", (client) => {
         return new Domains(client).show("tata", "541067ec736f7504a5110000")
     })
 });

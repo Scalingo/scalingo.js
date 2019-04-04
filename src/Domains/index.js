@@ -52,7 +52,7 @@ export default class Domains {
      * @return {Promise<Domain | APIError>}
      */
     show(appId, domainId) {
-        return unpackData(this._client.apiClient().get(`/apps/${appId}/domains/${domainId}`), "domains")
+        return unpackData(this._client.apiClient().get(`/apps/${appId}/domains/${domainId}`), "domain")
     }
 }
 
