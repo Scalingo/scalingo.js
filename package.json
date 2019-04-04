@@ -14,7 +14,9 @@
     "upload-doc": "esdoc-uploader"
   },
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-polyfill": "^2.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
