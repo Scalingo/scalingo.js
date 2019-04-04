@@ -43,6 +43,17 @@ export default class Domains {
     destroy(appId, domainId) {
         return unpackData(this._client.apiClient().delete(`/apps/${appId}/domains/${domainId}`))
     }
+
+    /**
+     * Show a specific domain from an application
+     * @see http://developers.scalingo.com/domains#show-a-specific-domain-of-an-application
+     * @param {String} appId ID of the app to post to the specified application
+     * @param {String} domainId ID of the domain name
+     * @return {Promise<Domain | APIError>}
+     */
+    show(appId, domainId) {
+        return unpackData(this._client.apiClient().get(`/apps/${appId}/domains/${domainId}`), "domain")
+    }
 }
 
 /**
