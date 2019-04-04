@@ -64,7 +64,7 @@ export default class Domains {
      * @return {Promise<Domain | APIError>}
      */
     update(appId, domainId, domain) {
-        return unpackData(this._client.apiClient().patch(`/apps/${appId}/domains/${domainId}`, {domain: domain}), "domains")
+        return unpackData(this._client.apiClient().patch(`/apps/${appId}/domains/${domainId}`, {domain: domain}), "domain")
     }
 }
 
@@ -86,7 +86,7 @@ export default class Domains {
  * @property {String} name Hostname you want to add
  * @property {?String} tlscert Optional: SSL Certificate you want to associate with the domain
  * @property {?String} tlskey Optional: Private key used to create the SSL certificate
- * @see http://developers.scalingo.com/domains
+ * @see http://developers.scalingo.com/domains#link-a-domain-name-to-an-application
  */
 
 /**
@@ -94,7 +94,7 @@ export default class Domains {
  * @property {?String} tlscert Optional: SSL Certificate you want to associate with the domain
  * @property {?String} tlskey Optional: Private key used to create the SSL certificate
  * @property {?Boolean} canonical Optional: Set this domain as the canonical domain for this application
- * @see http://developers.scalingo.com/domains
+ * @see http://developers.scalingo.com/domains#update-a-domain-name
  */
 
 /**

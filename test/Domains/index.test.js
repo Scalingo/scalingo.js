@@ -27,7 +27,7 @@ describe("Domains#show", () => {
 });
 
 describe("Domains#update", () => {
-    testUpdate("https://api.scalingo.com/v1/apps/tata/domains/541067ec736f7504a5110000", { domain: { tlscert: null,  tlskey: null, canonical: false } }, "domains", (client) => {
+    testUpdate("https://api.scalingo.com/v1/apps/tata/domains/541067ec736f7504a5110000", { domain: { tlscert: null,  tlskey: null, canonical: false } }, "domain", (client) => {
         return new Domains(client).update("tata", "541067ec736f7504a5110000" ,{ tlscert: null,  tlskey: null, canonical: false })
     })
 });
