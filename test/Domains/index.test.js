@@ -15,7 +15,7 @@ describe("Domains#create", () => {
 });
 
 describe("Domains#destroy", () => {
-    testDelete("https://api.scalingo.com/v1/apps/tata/domains/541067ec736f7504a5110000", "domains", (client) => {
+    testDelete("https://api.scalingo.com/v1/apps/tata/domains/541067ec736f7504a5110000", (client) => {
         return new Domains(client).destroy("tata", "541067ec736f7504a5110000")
     })
-})
+});

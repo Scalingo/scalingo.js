@@ -41,12 +41,8 @@ export default class Domains {
      * @return {Promise<?APIError>}
      */
     destroy(appId, domainId) {
-        return unpackData(this._client.apiClient().delete(`/apps/${appId}/domains/${domainId}`), "domains")
+        return unpackData(this._client.apiClient().delete(`/apps/${appId}/domains/${domainId}`))
     }
-
-
-
-
 }
 
 /**
