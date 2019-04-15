@@ -30,7 +30,7 @@ export default class Domains {
      * @return {Promise<Domain | APIError>}
      */
     create(appId, domain) {
-        return unpackData(this._client.apiClient().post(`/apps/${appId}/domains`, {domain: domain}), "domains")
+        return unpackData(this._client.apiClient().post(`/apps/${appId}/domains`, {domain: domain}), "domain")
     }
 
     /**
