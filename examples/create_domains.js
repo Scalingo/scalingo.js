@@ -9,4 +9,4 @@ scalingo.clientFromToken(process.env.SCALINGO_TOKEN).then((client)=>{
         });
 }).then((domains) => {
     console.log(domains)
-});
+})

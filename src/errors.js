@@ -17,7 +17,11 @@ export class APIError extends Error{
     this._data = data
 
     // Remove ourself from the stack trace
-    Error.captureStackTrace(this, APIError)
+    if ('captureStackTrace' in Error) {
+      Error.captureStackTrace(this, APIError)
+    } else {
+      this.stack = new Error(this._status + this._data).stack
+    }
   }
 
   /**
