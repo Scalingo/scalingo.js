@@ -21,7 +21,7 @@ export default class Domains {
   for(appId) {
     return unpackData(this._client.apiClient().get(`/apps/${appId}/domains`), "domains")
   }
-  
+
   /**
    * Link a domain name to a specific application
    * @see http://developers.scalingo.com/domains#link-a-domain-name-to-an-application
@@ -30,7 +30,7 @@ export default class Domains {
    * @return {Promise<Domain | APIError>}
    */
   create(appId, domain) {
-    return unpackData(this._client.apiClient().post(`/apps/${appId}/domains`, {domain: domain}), "domains")
+    return unpackData(this._client.apiClient().post(`/apps/${appId}/domains`, {domain: domain}), "domain")
   }
 
   /**
