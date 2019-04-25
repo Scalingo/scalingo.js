@@ -1,4 +1,4 @@
-import {testGetter, testPost} from '../utils/http.js'
+import {testGetter, testPost, testUpdate} from '../utils/http.js'
 import Domains from '../../src/Domains'
 import {testDelete} from "../utils/http";
 
@@ -23,5 +23,11 @@ describe("Domains#destroy", () => {
 describe("Domains#show", () => {
     testGetter("https://api.scalingo.com/v1/apps/tata/domains/541067ec736f7504a5110000", "domain", (client) => {
         return new Domains(client).show("tata", "541067ec736f7504a5110000")
+    })
+});
+
+describe("Domains#update", () => {
+    testUpdate("https://api.scalingo.com/v1/apps/tata/domains/541067ec736f7504a5110000", { domain: { tlscert: null,  tlskey: null, canonical: false } }, "domain", (client) => {
+        return new Domains(client).update("tata", "541067ec736f7504a5110000" ,{ tlscert: null,  tlskey: null, canonical: false })
     })
 });
