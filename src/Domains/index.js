@@ -4,68 +4,68 @@ import {unpackData} from "../utils";
  * Domains API Client
  */
 export default class Domains {
-    /**
-     * Create a new Client for the Domains API
-     * @param {Client} client - Scalingo API Client
-     */
-    constructor(client) {
-        this._client = client;
-    }
+  /**
+   * Create a new Client for the Domains API
+   * @param {Client} client - Scalingo API Client
+   */
+  constructor(client) {
+    this._client = client;
+  }
 
-    /**
-     * List all the domains of an application
-     * @see http://developers.scalingo.com/domains#list-all-the-domains-of-an-application
-     * @param {String} appId ID of the app to get domains list
-     * @return {Promise<Domain[] | APIError>}
-     */
-    for(appId) {
-        return unpackData(this._client.apiClient().get(`/apps/${appId}/domains`), "domains")
-    }
+  /**
+   * List all the domains of an application
+   * @see http://developers.scalingo.com/domains#list-all-the-domains-of-an-application
+   * @param {String} appId ID of the app to get domains list
+   * @return {Promise<Domain[] | APIError>}
+   */
+  for(appId) {
+    return unpackData(this._client.apiClient().get(`/apps/${appId}/domains`), "domains")
+  }
+  
+  /**
+   * Link a domain name to a specific application
+   * @see http://developers.scalingo.com/domains#link-a-domain-name-to-an-application
+   * @param {String} appId ID of the app to post to the specified application
+   * @param {DomainParams} domain An object of the domain to link
+   * @return {Promise<Domain | APIError>}
+   */
+  create(appId, domain) {
+    return unpackData(this._client.apiClient().post(`/apps/${appId}/domains`, {domain: domain}), "domains")
+  }
 
-    /**
-     * Link a domain name to a specific application
-     * @see http://developers.scalingo.com/domains#link-a-domain-name-to-an-application
-     * @param {String} appId ID of the app to post to the specified application
-     * @param {DomainParams} domain An object of the domain to link
-     * @return {Promise<Domain | APIError>}
-     */
-    create(appId, domain) {
-        return unpackData(this._client.apiClient().post(`/apps/${appId}/domains`, {domain: domain}), "domain")
-    }
+  /**
+   * Delete a domain from a specific application
+   * @see http://developers.scalingo.com/domains#unlink-a-domain-name-from-an-application
+   * @param {String} appId ID of the app to post to the specified application
+   * @param {String} domainId ID of the specified domain
+   * @return {Promise<?APIError>}
+   */
+  destroy(appId, domainId) {
+    return unpackData(this._client.apiClient().delete(`/apps/${appId}/domains/${domainId}`))
+  }
 
-    /**
-     * Delete a domain from a specific application
-     * @see http://developers.scalingo.com/domains#unlink-a-domain-name-from-an-application
-     * @param {String} appId ID of the app to post to the specified application
-     * @param {String} domainId ID of the specified domain
-     * @return {Promise<?APIError>}
-     */
-    destroy(appId, domainId) {
-        return unpackData(this._client.apiClient().delete(`/apps/${appId}/domains/${domainId}`))
-    }
+  /**
+   * Show a specific domain from an application
+   * @see http://developers.scalingo.com/domains#show-a-specific-domain-of-an-application
+   * @param {String} appId ID of the app to post to the specified application
+   * @param {String} domainId ID of the domain name
+   * @return {Promise<Domain | APIError>}
+   */
+  show(appId, domainId) {
+    return unpackData(this._client.apiClient().get(`/apps/${appId}/domains/${domainId}`), "domain")
+  }
 
-    /**
-     * Show a specific domain from an application
-     * @see http://developers.scalingo.com/domains#show-a-specific-domain-of-an-application
-     * @param {String} appId ID of the app to post to the specified application
-     * @param {String} domainId ID of the domain name
-     * @return {Promise<Domain | APIError>}
-     */
-    show(appId, domainId) {
-        return unpackData(this._client.apiClient().get(`/apps/${appId}/domains/${domainId}`), "domain")
-    }
-
-    /**
-     * Update a domain from a specific application
-     * @see http://developers.scalingo.com/domains#update-a-domain-name
-     * @param {String} appId ID of the app to post to the specified application
-     * @param {String} domainId ID of the domain to update
-     * @param {DomainUpdateParams} domain An object of the domain to update
-     * @return {Promise<Domain | APIError>}
-     */
-    update(appId, domainId, domain) {
-        return unpackData(this._client.apiClient().patch(`/apps/${appId}/domains/${domainId}`, {domain: domain}), "domain")
-    }
+  /**
+   * Update a domain from a specific application
+   * @see http://developers.scalingo.com/domains#update-a-domain-name
+   * @param {String} appId ID of the app to post to the specified application
+   * @param {String} domainId ID of the domain to update
+   * @param {DomainUpdateParams} domain An object of the domain to update
+   * @return {Promise<Domain | APIError>}
+   */
+  update(appId, domainId, domain) {
+    return unpackData(this._client.apiClient().patch(`/apps/${appId}/domains/${domainId}`, {domain: domain}), "domain")
+  }
 }
 
 /**
