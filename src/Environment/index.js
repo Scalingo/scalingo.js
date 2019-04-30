@@ -60,12 +60,22 @@ export default class Environment {
    * Delete environment variable
    * @see http://developers.scalingo.com/environment#delete-an-environment-variable
    * @param {String} appId ID of the app to get domains list
-   * @param {String} variableId ID of the variable to update
-   * @param {String} variable An string of the value of the environment variable to update
+   * @param {String} variableId ID of the variable to delete
    * @return {Promise<Variables[] | APIError>}
    */
   destroy(appId, variableId) {
     return unpackData(this._client.apiClient().delete(`/apps/${appId}/variables/${variableId}`))
+  }
+  
+  /**
+   * Delete multiple environment variables
+   * @see http://developers.scalingo.com/environment#bulk-delete-environment-variables-of-an-app
+   * @param {String} appId ID of the app to get domains list
+   * @param {Array} variablesArray An array of variables id
+   * @return {Promise<Variables[] | APIError>}
+   */
+  bulkDestroy(appId, variablesArray) {
+    return unpackData(this._client.apiClient().delete(`/apps/${appId}/variables`, {data: {variable_ids: variablesArray}}))
   }
 }
 

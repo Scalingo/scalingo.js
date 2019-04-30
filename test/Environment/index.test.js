@@ -30,3 +30,9 @@ describe("Environment#destroy", () => {
     return new Environment(client).destroy("tata", "54101384736f7563d5040000")
   })
 })
+
+describe("Environment#bulkDestroy", () => {
+  testDelete("https://api.scalingo.com/v1/apps/tata/variables", (client) => {
+    return new Environment(client).bulkDestroy("tata", ["54101384736f7563d5040000", "54101384736f7563d5040001"])
+  })
+})
