@@ -35,7 +35,7 @@ export default class Environment {
   
   /**
    * Create or update multiple variables for an application
-   * @see http://developers.scalingo.com/environment#add-environment-variables-to-an-app
+   * @see http://developers.scalingo.com/environment#bulk-update-of-the-environment-of-an-app
    * @param {String} appId ID of the app to get domains list
    * @param {VariableParams[]} variablesArray An array of Object that contain the information about the environment variables to update
    * @return {Promise<Variables[] | APIError>}
@@ -46,7 +46,7 @@ export default class Environment {
   
   /**
    * Update environment variable
-   * @see http://developers.scalingo.com/environment#add-environment-variables-to-an-app
+   * @see http://developers.scalingo.com/environment#update-an-environment-variable
    * @param {String} appId ID of the app to get domains list
    * @param {String} variableId ID of the variable to update
    * @param {String} variable An string of the value of the environment variable to update
@@ -54,6 +54,18 @@ export default class Environment {
    */
   update(appId, variableId, variable) {
     return unpackData(this._client.apiClient().patch(`/apps/${appId}/variables/${variableId}`, {variable: {value: variable}}), "variable")
+  }
+  
+  /**
+   * Delete environment variable
+   * @see http://developers.scalingo.com/environment#delete-an-environment-variable
+   * @param {String} appId ID of the app to get domains list
+   * @param {String} variableId ID of the variable to update
+   * @param {String} variable An string of the value of the environment variable to update
+   * @return {Promise<Variables[] | APIError>}
+   */
+  destroy(appId, variableId) {
+    return unpackData(this._client.apiClient().delete(`/apps/${appId}/variables/${variableId}`))
   }
 }
 

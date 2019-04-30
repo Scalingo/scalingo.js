@@ -24,3 +24,9 @@ describe("Environment#update", () => {
     return new Environment(client).update("tata", "54101384736f7563d5040000", "$toto")
   })
 })
+
+describe("Environment#destroy", () => {
+  testDelete("https://api.scalingo.com/v1/apps/tata/variables/54101384736f7563d5040000", (client) => {
+    return new Environment(client).destroy("tata", "54101384736f7563d5040000")
+  })
+})
