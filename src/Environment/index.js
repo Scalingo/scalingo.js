@@ -21,6 +21,17 @@ export default class Environment {
   for(appId) {
     return unpackData(this._client.apiClient().get(`/apps/${appId}/variables`), "variables")
   }
+  
+  /**
+   * Create an environment variables for an application
+   * @see http://developers.scalingo.com/environment#add-environment-variables-to-an-app
+   * @param {String} appId ID of the app to get domains list
+   * @param {VariableParams} variable An Object that contain the information about the environment variable
+   * @return {Promise<Variables | APIError>}
+   */
+  create(appId, variable) {
+    return unpackData(this._client.apiClient().post(`/apps/${appId}/variables`, {variable: variable}), "variable")
+  }
 }
 
 /**
@@ -30,4 +41,11 @@ export default class Environment {
  * @property {String} name Name of the environment variable
  * @property {String} value The value of the environment variable
  * @see http://developers.scalingo.com/environment
+ */
+
+/**
+ * @typedef {Object} VariableParams
+ * @property {String} name The name of the environment variable
+ * @property {String} value The value of the environment variable
+ * @see http://developers.scalingo.com/environment#add-environment-variables-to-an-app
  */
