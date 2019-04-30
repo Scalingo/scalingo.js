@@ -23,7 +23,7 @@ export default class Environment {
   }
   
   /**
-   * Create an environment variables for an application
+   * Create an environment variable for an application
    * @see http://developers.scalingo.com/environment#add-environment-variables-to-an-app
    * @param {String} appId ID of the app to get domains list
    * @param {VariableParams} variable An Object that contain the information about the environment variable
@@ -31,6 +31,17 @@ export default class Environment {
    */
   create(appId, variable) {
     return unpackData(this._client.apiClient().post(`/apps/${appId}/variables`, {variable: variable}), "variable")
+  }
+  
+  /**
+   * Create or update multiple variables for an application
+   * @see http://developers.scalingo.com/environment#add-environment-variables-to-an-app
+   * @param {String} appId ID of the app to get domains list
+   * @param {VariableParams[]} variablesArray An array of Object that contain the information about the environment variables to update
+   * @return {Promise<Variables[] | APIError>}
+   */
+  bulkUpdate(appId, variablesArray) {
+    return unpackData(this._client.apiClient().put(`/apps/${appId}/variables`, {variables: variablesArray}), "variables")
   }
 }
 
