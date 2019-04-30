@@ -6,3 +6,9 @@ describe("Environment#for", () =>  {
     return new Environment(client).for("tata")
   })
 })
+
+describe("Environment#create", () =>  {
+  testPost("https://api.scalingo.com/v1/apps/tata/variables",{variable: {name: "tata", value: "$toto"}}, "variable", (client) => {
+    return new Environment(client).create("tata", {name: "tata", value: "$toto"})
+  })
+})
