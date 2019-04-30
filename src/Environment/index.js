@@ -48,11 +48,12 @@ export default class Environment {
    * Update environment variable
    * @see http://developers.scalingo.com/environment#add-environment-variables-to-an-app
    * @param {String} appId ID of the app to get domains list
-   * @param {UpdateVariable} updateVariables An Object that contain the value of the environment variable to update
+   * @param {String} variableId ID of the variable to update
+   * @param {String} variable An string of the value of the environment variable to update
    * @return {Promise<Variables[] | APIError>}
    */
-  update(appId, updateVariables) {
-    return unpackData(this._client.apiClient().patch(`/apps/${appId}/variables`, {variable: updateVariables}), "variable")
+  update(appId, variableId, variable) {
+    return unpackData(this._client.apiClient().patch(`/apps/${appId}/variables/${variableId}`, {variable: {value: variable}}), "variable")
   }
 }
 
@@ -70,10 +71,4 @@ export default class Environment {
  * @property {String} name The name of the environment variable
  * @property {String} value The value of the environment variable
  * @see http://developers.scalingo.com/environment#add-environment-variables-to-an-app
- */
-
-/**
- * @typedef {Object} UpdateVariable
- * @property {String} value The name of the environment variable
- * @see http://developers.scalingo.com/environment#update-an-environment-variable
  */

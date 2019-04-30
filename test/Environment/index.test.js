@@ -18,3 +18,9 @@ describe("Environment#bulkUpdate", () => {
     return new Environment(client).bulkUpdate("tata", [{name: "tata", value: "$toto"}, {name: "tutu", value: "$tete"}])
   })
 })
+
+describe("Environment#update", () => {
+  testUpdate("https://api.scalingo.com/v1/apps/tata/variables/54101384736f7563d5040000", {variable: {value: "$toto"}}, "variable", (client) => {
+    return new Environment(client).update("tata", "54101384736f7563d5040000", "$toto")
+  })
+})
