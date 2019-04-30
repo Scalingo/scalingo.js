@@ -1,4 +1,4 @@
-let Scalingo = require('../dist/scalingo.js')
+let scalingo = require('../../dist/scalingo.js');
 
 client = new Scalingo.Client()
 

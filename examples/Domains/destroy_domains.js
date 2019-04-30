@@ -1,9 +1,9 @@
-let scalingo = require('../dist/scalingo.js');
+let scalingo = require('../../dist/scalingo.js');
 
 scalingo.clientFromToken(process.env.SCALINGO_TOKEN).then((client)=>{
-    return client.Domains.show("scalingo-js-tests", "5cb0467bb18a470010a6e0b1")
+    return client.Domains.destroy("scalingo-js-tests", "5cb0535400de8f000f5959ae")
 }).then((domains) => {
-    console.log(domains);
+    console.log(domains)
 }).catch(e => {
     console.log("Status code =>", e._status);
     console.log("Response =>", e._data);
