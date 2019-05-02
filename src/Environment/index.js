@@ -16,7 +16,7 @@ export default class Environment {
    * List all the environment variables of an application
    * @see http://developers.scalingo.com/environment#list-environment-variables-of-an-app
    * @param {String} appId ID of the app to get domains list
-   * @return {Promise<Variables[] | APIError>}
+   * @return {Promise<Variable[] | APIError>}
    */
   for(appId) {
     return unpackData(this._client.apiClient().get(`/apps/${appId}/variables`), "variables")
@@ -27,41 +27,41 @@ export default class Environment {
    * @see http://developers.scalingo.com/environment#add-environment-variables-to-an-app
    * @param {String} appId ID of the app to get domains list
    * @param {VariableParams} variable An Object that contain the information about the environment variable
-   * @return {Promise<Variables | APIError>}
+   * @return {Promise<Variable | APIError>}
    */
   create(appId, variable) {
     return unpackData(this._client.apiClient().post(`/apps/${appId}/variables`, {variable: variable}), "variable")
   }
   
   /**
-   * Create or update multiple variables for an application
+   * Create or update multiple environment variables for an application
    * @see http://developers.scalingo.com/environment#bulk-update-of-the-environment-of-an-app
    * @param {String} appId ID of the app to get domains list
    * @param {VariableParams[]} variablesArray An array of Object that contain the information about the environment variables to update
-   * @return {Promise<Variables[] | APIError>}
+   * @return {Promise<Variable[] | APIError>}
    */
   bulkUpdate(appId, variablesArray) {
     return unpackData(this._client.apiClient().put(`/apps/${appId}/variables`, {variables: variablesArray}), "variables")
   }
   
   /**
-   * Update environment variable
+   * Update an environment variable
    * @see http://developers.scalingo.com/environment#update-an-environment-variable
    * @param {String} appId ID of the app to get domains list
-   * @param {String} variableId ID of the variable to update
+   * @param {String} id ID of the variable to update
    * @param {String} variable An string of the value of the environment variable to update
-   * @return {Promise<Variables[] | APIError>}
+   * @return {Promise<Variable[] | APIError>}
    */
-  update(appId, variableId, variable) {
-    return unpackData(this._client.apiClient().patch(`/apps/${appId}/variables/${variableId}`, {variable: {value: variable}}), "variable")
+  update(appId, id, variable) {
+    return unpackData(this._client.apiClient().patch(`/apps/${appId}/variables/${id}`, {variable: {value: variable}}), "variable")
   }
   
   /**
-   * Delete environment variable
+   * Delete an environment variable
    * @see http://developers.scalingo.com/environment#delete-an-environment-variable
    * @param {String} appId ID of the app to get domains list
    * @param {String} variableId ID of the variable to delete
-   * @return {Promise<Variables[] | APIError>}
+   * @return {Promise<Variable[] | APIError>}
    */
   destroy(appId, variableId) {
     return unpackData(this._client.apiClient().delete(`/apps/${appId}/variables/${variableId}`))
@@ -72,7 +72,7 @@ export default class Environment {
    * @see http://developers.scalingo.com/environment#bulk-delete-environment-variables-of-an-app
    * @param {String} appId ID of the app to get domains list
    * @param {Array} variablesArray An array of variables id
-   * @return {Promise<Variables[] | APIError>}
+   * @return {Promise<Variable[] | APIError>}
    */
   bulkDestroy(appId, variablesArray) {
     return unpackData(this._client.apiClient().delete(`/apps/${appId}/variables`, {data: {variable_ids: variablesArray}}))
@@ -80,8 +80,8 @@ export default class Environment {
 }
 
 /**
- * @typedef {Object} Variables
- * @property {String} variableId Unique ID of the environment variable
+ * @typedef {Object} Variable
+ * @property {String} id Unique ID of the environment variable
  * @property {String} appId Unique ID of the application
  * @property {String} name Name of the environment variable
  * @property {String} value The value of the environment variable
