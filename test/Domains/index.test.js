@@ -1,6 +1,5 @@
-import {testGetter, testPost, testUpdate} from '../utils/http.js'
+import {testGetter, testPost, testUpdate, testDelete} from '../utils/http.js'
 import Domains from '../../src/Domains'
-import {testDelete} from "../utils/http";
 
 describe("Domains#for", () => {
     testGetter("https://api.scalingo.com/v1/apps/tata/domains", "domains", (client) => {
