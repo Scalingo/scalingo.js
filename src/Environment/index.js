@@ -70,8 +70,8 @@ export default class Environment {
   /**
    * Delete multiple environment variables
    * @see http://developers.scalingo.com/environment#bulk-delete-environment-variables-of-an-app
-   * @param {String} appId ID of the app to get domains list
-   * @param {Array} variablesArray An array of variables id
+   * @param {String} appId ID of the app
+   * @param {String[]} variablesArray An array of variables id
    * @return {Promise<Variable[] | APIError>}
    */
   bulkDestroy(appId, variablesArray) {
@@ -82,7 +82,6 @@ export default class Environment {
 /**
  * @typedef {Object} Variable
  * @property {String} id Unique ID of the environment variable
- * @property {String} appId Unique ID of the application
  * @property {String} name Name of the environment variable
  * @property {String} value The value of the environment variable
  * @see http://developers.scalingo.com/environment
