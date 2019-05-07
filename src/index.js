@@ -4,6 +4,7 @@ import Metrics from './Metrics'
 import Tokens from './Tokens'
 import Users from './Users'
 import Domains from "./Domains"
+import Deployments from "./Deployments"
 import Environment from "./Environment";
 
 import axios from 'axios'
@@ -55,12 +56,19 @@ class Client {
      * @type {Domains}
      */
     this.Domains = new Domains(this)
-  
+
     /**
      * Environment API
      * @type {Environment}
      */
     this.Environment = new Environment(this)
+
+    /**
+     * Deployments API
+     * @type {Environment}
+     */
+    this.Deployments = new Deployments(this)
+
   }
 
   /**

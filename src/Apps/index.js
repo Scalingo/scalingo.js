@@ -1,4 +1,5 @@
 import {unpackData} from '../utils.js'
+import Listener from '../Deployments/listener.js'
 
 /**
  * Apps API Client
@@ -30,6 +31,11 @@ export default class Apps{
   all() {
     return unpackData(this._client.apiClient().get('/apps'), "apps")
   }
+
+  async deploymentListener(id) {
+    let app = await this.find(id)
+    return new Listener(this._client, app.links.deployments_stream)
+  }
 }
 
 
@@ -43,7 +49,7 @@ export default class Apps{
  * @property {String} git_url URL to the GIT remote to access your application
  * @property {Object} owner information about the owner of the application
  * @property {String} url platform allocated URL to access to your app
- * @property {Object} links object of related link like deployments_stream
+ * @property {AppLinks} links object of related link like deployments_stream
  * @property {Boolean} force_https activation of force HTTPS
  * @property {Boolean} sticky_session activation of sticky session
  * @property {Boolean} router_logs activation of the router logs in your app logs
@@ -51,3 +57,9 @@ export default class Apps{
  * @property {String} last_deployed_by user who attempted the last deployment
  * @property {String} last_deployment_id id of the last successful deployment
  */
+
+/**
+ * @typedef {Object} AppLinks
+ * @property {String} deployments_stream Websocket used to listen for deployment events on this app.
+ */
+
