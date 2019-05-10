@@ -35,8 +35,8 @@ export default class Apps{
    * Create a new application
    * @see https://developers.scalingo.com/apps#create-an-application
    * @param {String} name - Name of the application
-   * @param {AppCreateOpts} opts - Optionnal additionnal information
-   * @return {Promise<App, APIError>} Promise that when resolved return an the App created. See:
+   * @param {AppCreateOpts} opts - Optional additional information
+   * @return {Promise<App, APIError>} Promise that when resolved returns the App created.
    */
 
   create(name, opts) {
@@ -81,7 +81,7 @@ export default class Apps{
 /**
  * @typedef {Object} AppCreateOpts
  * @see https://developers.scalingo.com/apps#create-an-application
- * @property {String} parent_id ID of the parent app (used to create child apps)
- * @property {String} stack_id ID of the stack the application should use
- * @property {Boolean} dry_run If set to true, the API will run the validations but wont create the app
+ * @property {?String} parent_id ID of the parent app (used to create child apps)
+ * @property {?String} stack_id ID of the stack the application should use
+ * @property {?Boolean} dry_run If set to true, the API will run the validations but wont create the app
  */
