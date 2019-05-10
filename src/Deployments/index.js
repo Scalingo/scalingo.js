@@ -52,7 +52,7 @@ export default class Deployments {
  * @property {String} id unique ID
  * @property {String} app_id unique ID referencing the app this deployment belongs to
  * @property {Date} created_at date of creation
- * @property {String} status status of the deployment (building, success, aborted, *-error)
+ * @property {DeploymentStatus} status status of the deployment (building, success, aborted, *-error)
  * @property {String} git_ref git SHA
  * @property {DeploymentPusher} pusher embedded user who pushed the GIT reference
  * @property {DeploymentLinks} links hypermedia links about the deployment
@@ -81,4 +81,18 @@ export default class Deployments {
 /**
  * @typedef {Object} DeploymentsMeta
  * @property {PaginationMeta} pagination Pagination metadata
+ */
+
+/**
+ * @typedef {String} DeploymentStatus
+ * @desc
+ * Can take the following values:
+ * - **building**: when the buildpack is chosen and executed
+ * - **pushing**: the generated Docker image is pushed to our registry
+ * - **starting**: the order to start your app has been transmitted to our scheduler
+ * - **success**: the application has correctly started, end of deployment
+ * - **crashed**-error: the application failed to boot, have a look to the logs
+ * - **timeout-error**: the application has not started in 60 seconds
+ * - **build-error**: something went wrong during the buildpack execution, have a look at deployments logs
+ * - **aborted**: if the connection is broken between the pusher and our infrastructure, the deployment is considered as canceled.
  */

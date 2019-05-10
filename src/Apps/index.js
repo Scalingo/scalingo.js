@@ -32,12 +32,17 @@ export default class Apps{
     return unpackData(this._client.apiClient().get('/apps'), "apps")
   }
 
+  /**
+   * Open a listener on this app deployment events
+   * @see http://developers.scalingo.com/deployments#get-real-time-output-of-a-live-deployment
+   * @param {String} id ID of the application
+   * @return {Promise<Listener, APIError>} Promise that when resolved return a Listener for this application.
+   */
   async deploymentListener(id) {
     let app = await this.find(id)
     return new Listener(this._client, app.links.deployments_stream)
   }
 }
-
 
 /**
  * @typedef {Object} App
