@@ -91,7 +91,7 @@ export default class Deployments {
  * - **pushing**: the generated Docker image is pushed to our registry
  * - **starting**: the order to start your app has been transmitted to our scheduler
  * - **success**: the application has correctly started, end of deployment
- * - **crashed**-error: the application failed to boot, have a look to the logs
+ * - **crashed-error**: the application failed to boot, have a look to the logs
  * - **timeout-error**: the application has not started in 60 seconds
  * - **build-error**: something went wrong during the buildpack execution, have a look at deployments logs
  * - **aborted**: if the connection is broken between the pusher and our infrastructure, the deployment is considered as canceled.

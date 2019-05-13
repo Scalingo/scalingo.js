@@ -66,7 +66,7 @@ export default class Listener {
 
   /**
    * Setup a callback that will be called when the connection is closed.
-   * @param {function()} callback Callback to call when the connction is closed
+   * @param {function()} callback Callback to call when the connection is closed
    */
 
   onClose(callback) {
