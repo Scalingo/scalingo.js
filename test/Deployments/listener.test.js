@@ -86,7 +86,7 @@ describe("Listener", () => {
       })
     })
 
-    it("shoult call the correct callback when we get a 'status' message", () => {
+    it("should call the correct callback when we get a 'status' message", () => {
       let stub = sinon.stub()
       listener.onStatus(stub)
       listener._onMessage({
