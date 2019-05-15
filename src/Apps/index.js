@@ -1,4 +1,5 @@
 import {unpackData} from '../utils.js'
+import Listener from '../Deployments/listener.js'
 
 /**
  * Apps API Client
@@ -56,8 +57,18 @@ export default class Apps{
     }
     return unpackData(this._client.apiClient().post('/apps', {app: body}, {headers}), "app")
   }
-}
 
+  /**
+   * Open a listener on this app deployment events
+   * @see http://developers.scalingo.com/deployments#get-real-time-output-of-a-live-deployment
+   * @param {String} id ID of the application
+   * @return {Promise<Listener, APIError>} Promise that when resolved return a Listener for this application.
+   */
+  async deploymentListener(id) {
+    let app = await this.find(id)
+    return new Listener(this._client, app.links.deployments_stream)
+  }
+}
 
 /**
  * @typedef {Object} App
@@ -69,13 +80,18 @@ export default class Apps{
  * @property {String} git_url URL to the GIT remote to access your application
  * @property {Object} owner information about the owner of the application
  * @property {String} url platform allocated URL to access to your app
- * @property {Object} links object of related link like deployments_stream
+ * @property {AppLinks} links object of related link like deployments_stream
  * @property {Boolean} force_https activation of force HTTPS
  * @property {Boolean} sticky_session activation of sticky session
  * @property {Boolean} router_logs activation of the router logs in your app logs
  * @property {Date} last_deployed_at date of the last deployment attempt
  * @property {String} last_deployed_by user who attempted the last deployment
  * @property {String} last_deployment_id id of the last successful deployment
+ */
+
+/**
+ * @typedef {Object} AppLinks
+ * @property {String} deployments_stream Websocket used to listen for deployment events on this app.
  */
 
 /**
