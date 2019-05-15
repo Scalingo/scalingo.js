@@ -33,6 +33,32 @@ export default class Apps{
   }
 
   /**
+   * Create a new application
+   * @see https://developers.scalingo.com/apps#create-an-application
+   * @param {String} name - Name of the application
+   * @param {AppCreateOpts} opts - Optional additional information
+   * @return {Promise<App, APIError>} Promise that when resolved returns the App created.
+   */
+
+  create(name, opts) {
+    let body = {
+      name: name,
+    }
+
+    let headers = {}
+
+    if(opts) {
+      body['git_source'] = opts['git_source']
+      body['parent_id'] = opts['parent_id']
+      body['stack_id'] = opts['stack_id']
+      if(opts['dry_run']) {
+        headers['X-Dry-Run'] = "true"
+      }
+    }
+    return unpackData(this._client.apiClient().post('/apps', {app: body}, {headers}), "app")
+  }
+
+  /**
    * Open a listener on this app deployment events
    * @see http://developers.scalingo.com/deployments#get-real-time-output-of-a-live-deployment
    * @param {String} id ID of the application
@@ -68,3 +94,10 @@ export default class Apps{
  * @property {String} deployments_stream Websocket used to listen for deployment events on this app.
  */
 
+/**
+ * @typedef {Object} AppCreateOpts
+ * @see https://developers.scalingo.com/apps#create-an-application
+ * @property {?String} parent_id ID of the parent app (used to create child apps)
+ * @property {?String} stack_id ID of the stack the application should use
+ * @property {?Boolean} dry_run If set to true, the API will run the validations but wont create the app
+ */
