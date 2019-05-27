@@ -30,7 +30,6 @@ export default class LogsListener {
   close() {
     if(this._ws) {
       this._ws.close()
-      this._ws = null
     }
   }
 
