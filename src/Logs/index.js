@@ -15,7 +15,7 @@ export default class Logs {
    * @see http://developers.scalingo.com/logs
    * @param {String} id - ID of the application
    * @param {AppLogsOpts} opts - Optional additional information
-   * @return {Promise<String, APIError>} Promise that when resolved return the application logs
+   * @return {Promise<String, APIError>} Promise that when resolved returns the application logs
    */
   async for(id, opts) {
     let url = await this._client.Apps.logsURL(id)
@@ -31,7 +31,7 @@ export default class Logs {
    * Open a listener on this app logs
    * @see http://developers.scalingo.com/logs
    * @param {String} id ID of the application
-   * @return {Promise<LogsListener, APIError>} Promise that when resolved return a log listener for this application.
+   * @return {Promise<LogsListener, APIError>} Promise that when resolved returns a logs listener for this application.
    */
   async listenerFor(id) {
     let url = await this._client.Apps.logsURL(id)
@@ -44,7 +44,7 @@ export default class Logs {
    * Get logs archives for an app
    * @see http://developers.scalingo.com/apps#access-to-the-application-logs-archives
    * @param {String} id ID of the application
-   * @return {Promise<Archive[], APIError>} Promise that when resolved return a list of log archive for this application
+   * @return {Promise<Archive[], APIError>} Promise that when resolved returns a list of logs archives for this application
    */
   archives(id) {
     // Pagination is not supported in the lib. We're waiting correct pagination metadata.
@@ -61,8 +61,8 @@ export default class Logs {
 /**
  * @typedef {Object} Archive
  * @see http://developers.scalingo.com/apps#access-to-the-application-logs-archives
- * @property {String} url Pre-signed URL to download log archives
- * @property {Number} size Size of the lgo archive
+ * @property {String} url Pre-signed URL to download logs archives
+ * @property {Number} size Size of the logs archive
  * @property {Date} from Date of the first log line present in the archive
  * @property {Date} to Date of the last log line present in the archive
  */

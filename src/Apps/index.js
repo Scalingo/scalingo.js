@@ -70,10 +70,10 @@ export default class Apps{
   }
 
   /**
-   * Get an authenticated URL for the application log
+   * Get an authenticated URL for the application logs
    * @see http://developers.scalingo.com/apps#access-to-the-application-logs
    * @param {String} id ID of the application
-   * @return {Promise<String, APIError>} Promise that when resolved return a pre-signed URL to access application logs.
+   * @return {Promise<String, APIError>} Promise that when resolved returns a pre-signed URL to access application logs.
    */
   logsURL(id) {
     return unpackData(this._client.apiClient().get(`/apps/${id}/logs`), "logs_url")
