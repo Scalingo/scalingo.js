@@ -13,3 +13,8 @@ describe('Containers#scale', () => {
   })
 })
 
+describe('Container#availableSizes', () => {
+  testGetter("https://api.scalingo.com/v1/features/container_sizes", "container_sizes", (client) => {
+    return new Containers(client).availableSizes()
+  })
+})

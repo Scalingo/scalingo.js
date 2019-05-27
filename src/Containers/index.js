@@ -32,6 +32,16 @@ export default class Containers {
   scale(appId, formation) {
     return unpackData(this._client.apiClient().post(`/apps/${appId}/scale`, {containers: formation}), "containers")
   }
+  
+  /**
+   * List the every sizes of the containers
+   * @see http://developers.scalingo.com/container-sizes#list-the-container-sizes-available
+   * @return {Promise<ContainerSize[] | APIError>} attributes of each container
+   */
+  availableSizes() {
+    return unpackData(this._client.apiClient().get('/features/container_sizes'), "container_sizes")
+  }
+  
 }
 
 /**
@@ -41,3 +51,14 @@ export default class Containers {
  * @property {String} size Size of the containers of this type (S/M/XL/..)
  */
 
+/**
+ * @typedef {Object} ContainerSize
+ * @property {String} id Unique universal identifier
+ * @property {String} name Name of the size
+ * @property {String} human_name Display name of the type
+ * @property {Number} ordinal Sorting index to display a list of sizes
+ * @property {Number} hourly_price Price per hour of this container size in cents
+ * @property {Number} thirtydays_price Price for 30 days in cents
+ * @property {Number} memory RAM allocated to the containers in bytes
+ * @property {String} human_cpu Human representation of the CPU priority
+ */
