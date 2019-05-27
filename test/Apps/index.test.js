@@ -66,3 +66,9 @@ describe('App#create', () => {
     expect(mock.history.post[0].headers["X-Dry-Run"]).to.eq("true")
   })
 })
+
+describe('App#logsURL', () => {
+  testGetter("https://api.scalingo.com/v1/apps/testApp/logs", "logs_url", (client) => {
+    return new Apps(client).logsURL("testApp")
+  })
+})
