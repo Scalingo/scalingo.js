@@ -6,6 +6,7 @@ import Users from './Users'
 import Domains from "./Domains"
 import Deployments from "./Deployments"
 import Environment from "./Environment";
+import Logs from "./Logs"
 
 import axios from 'axios'
 
@@ -68,6 +69,8 @@ class Client {
      * @type {Environment}
      */
     this.Deployments = new Deployments(this)
+
+    this.Logs = new Logs(this)
 
   }
 
