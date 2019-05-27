@@ -13,7 +13,7 @@ describe("_onMessage", () => {
   })
 
   it("should call the log callback if it exists", () => {
-    let listener = new LogsListener()
+    let listener = new LogsListener(null, "wss://test.fr")
     let spy = sinon.stub()
     listener.onLog(spy)
 
@@ -25,9 +25,32 @@ describe("_onMessage", () => {
   })
 
   it("should not crash if the log callback is not defined", () => {
-    let listener = new LogsListener()
+    let listener = new LogsListener(null, "wss://test.fr")
     listener._onMessage({
       data: `{"event": "log", "log": "test log"}`
     })
+  })
+
+  describe("ws URL initialization", () => {
+    let protocols = [{
+      input: "ws",
+      output: "ws"
+    }, {
+      input: "wss",
+      output: "wss"
+    }, {
+      input: "http",
+      output: "ws"
+    }, {
+      input: "https",
+      output: "wss"
+    }]
+
+    for(let protocol of protocols) {
+      it(`should work for ${protocol.input}`, () => {
+        let listener = new LogsListener(null, `${protocol.input}://test.fr`)
+        expect(listener._url).to.eq(`${protocol.output}://test.fr/`)
+      })
+    }
   })
 })

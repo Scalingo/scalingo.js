@@ -77,6 +77,6 @@ describe("listenerFor", () => {
     let client = new Client("test-token")
     let result = await client.Logs.listenerFor("testApp")
 
-    expect(result._url).to.eq("https://logs.scalingo.com/apps?token=1234&stream=true")
+    expect(result._url).to.eq("wss://logs.scalingo.com/apps?token=1234&stream=true")
   })
 })
