@@ -8,8 +8,14 @@ export default class LogsListener {
    */
 
   constructor(client, url) {
+    let wsURL = new URL(url)
+    if(wsURL.protocol == "http:" || wsURL.protocol == "ws:") {
+      wsURL.protocol = "ws"
+    } else {
+      wsURL.protocol = "wss"
+    }
     this._client = client
-    this._url = url
+    this._url = wsURL.toString()
     this._onLog = null
     this._start()
   }
