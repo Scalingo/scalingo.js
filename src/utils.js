@@ -1,5 +1,4 @@
 import {APIError} from './errors'
-let scalingo  = require('../dist/scalingo')
 
 /**
  * @ignore
