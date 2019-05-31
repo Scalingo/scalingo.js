@@ -50,7 +50,7 @@ export default class Containers {
 /**
  * @typedef {Object} ContainersOperation
  * @property {Object} formation Response of the API call
- * @property {Object} operation Operation information
+ * @property {Operation} operation Operation information
  */
 
 /**
