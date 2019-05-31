@@ -18,3 +18,9 @@ describe('Container#availableSizes', () => {
     return new Containers(client).availableSizes()
   })
 })
+
+describe('Container#restart', () => {
+  testPost("https://api.scalingo.com/v1/features/container_sizes", "container_sizes", (client) => {
+    return new Containers(client).availableSizes()
+  })
+})
