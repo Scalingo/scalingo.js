@@ -24,7 +24,7 @@ export default class Logs {
       url = `${url}&n=${opts["count"]}`
     }
 
-    return unpackData(this._client.apiClient().get(url))
+    return unpackData(this._client.unauthenticatedClient().get(url))
   }
 
   /**
