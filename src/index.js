@@ -101,6 +101,18 @@ class Client {
       }
     })
   }
+
+  /**
+   * Create a vanilla axios instance
+   * @return {Object} Axios instance
+   */
+  unauthenticatedClient() {
+    return axios.create({
+      headers: {
+        'User-Agent': 'Scalingo Javascript Client',
+      }
+    })
+  }
 }
 
 export default Client
