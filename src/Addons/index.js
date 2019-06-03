@@ -60,7 +60,7 @@ export default class Addons {
  * @typedef {Object} Addon
  * @property {String} id Unique ID identifying the addon
  * @property {Date} provisioned_at When the addon has been created
- * @property {date} deprovisioned_at When the addon has been deleted/upgraded
+ * @property {Date} deprovisioned_at When the addon has been deleted/upgraded
  * @property {String} resource_id Resource reference
  * @property {Plan} plan Embedded reference to Plan resource
  * @property {AddonProvider} addon_provider Embedded reference to AddonProvider resource
