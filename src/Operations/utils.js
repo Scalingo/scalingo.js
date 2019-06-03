@@ -1,6 +1,16 @@
 import {APIError} from "../errors";
 
+/**
+ * @example
+ * let operation = new Operation(Client, locationUrl)
+ */
 export class Operation {
+  
+  /**
+   * @param {Client} client Client instance
+   * @param {String} url Location url
+   * @see http://developers.scalingo.com/operations
+   */
   constructor(client, url) {
     this._client = client
     this._id = null
@@ -36,7 +46,11 @@ export class Operation {
     return this._type
   }
   
-  fillProperties(values) {
+  /**
+   * Set properties of the Operation object
+   * @param values Operation object
+   */
+  setProperties(values) {
     this._id = values.id
     this._created_at = values.created_at
     this._finished_at = values.finished_at
@@ -45,11 +59,15 @@ export class Operation {
     this._error = values.error
   }
   
+  /**
+   * Get the response of the API call to get the operation's infos
+   * @returns {Promise<Operation | APIError>}
+   */
   async refresh() {
     return new Promise((resolve, reject) => {
       this._client.apiClient().get(this._url)
         .then(response => {
-          this.fillProperties(response.data.operation)
+          this.setProperties(response.data.operation)
           resolve(response.data.operation)
         }).catch(error => {
         if (error.response) {
@@ -61,6 +79,10 @@ export class Operation {
     })
   }
   
+  /**
+   * It will call the refresh method until operation's status isn't 'done'
+   * @returns {Promise<any | APIError>}
+   */
   wait() {
     let vm = this
     return new Promise((resolve, reject) => {
