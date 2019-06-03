@@ -21,6 +21,39 @@ export default class Addons {
   for(appId) {
     return unpackData(this._client.apiClient().get(`/apps/${appId}/addons`), "addons")
   }
+  
+  //TODO add return from create method
+  /**
+   * Add an addon to an application
+   * @see http://developers.scalingo.com/addons#provision-an-addon
+   * @param {String} appId ID of the app
+   * @param {String} plan_id ID of the plan
+   * @param {String} addon_provider_id ID of the addon provider
+   * @return {Promise<Addons | APIError>}
+   */
+  create(appId, plan_id, addon_provider_id) {
+    return unpackData(this._client.apiClient().post(`/apps/${appId}/addons`,
+      {addon: {plan_id: plan_id, addon_provider_id: addon_provider_id}}), "addon")
+  }
+  
+  /**
+   * List addon categories
+   * @see http://developers.scalingo.com/addon_providers#list-addon-categories
+   * @return {Promise<Category[] | APIError>}
+   */
+  listCategories() {
+    return unpackData(this._client.apiClient().get('/addon_categories'), "addon_categories")
+  }
+  
+  /**
+   * List addon providers
+   * @see http://developers.scalingo.com/addon_providers#list-addon-providers
+   * @param {String} category_id ID of the addon category
+   * @return {Promise<AddonProvider[] | APIError>}
+   */
+  listProviders(category_id) {
+    return unpackData(this._client.apiClient().get('/addon_providers', {category_id: category_id}), "addon_providers")
+  }
 }
 
 /**
