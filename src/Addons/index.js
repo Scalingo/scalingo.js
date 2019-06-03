@@ -16,7 +16,7 @@ export default class Addons {
    * Get list of addons of an application
    * @see http://developers.scalingo.com/addons#list-application-addons
    * @param {String} appId ID of the app to get the formation from
-   * @return {Promise<Addons[] | APIError>}
+   * @return {Promise<Addon[] | APIError>}
    */
   for(appId) {
     return unpackData(this._client.apiClient().get(`/apps/${appId}/addons`), "addons")
