@@ -24,7 +24,7 @@ export default class Addons {
 }
 
 /**
- * @typedef {Object} Addons
+ * @typedef {Object} Addon
  * @property {String} id Unique ID identifying the addon
  * @property {date} provisioned_at When the addon has been created
  * @property {date} deprovisioned_at When the addon has been deleted/upgraded
