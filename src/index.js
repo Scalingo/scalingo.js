@@ -5,8 +5,9 @@ import Tokens from './Tokens'
 import Users from './Users'
 import Domains from "./Domains"
 import Deployments from "./Deployments"
-import Environment from "./Environment"
+import Environment from "./Environment";
 import Logs from "./Logs"
+import Addons from "./Addons"
 import Operations from "./Operations"
 
 import axios from 'axios'
@@ -72,7 +73,7 @@ class Client {
 
     /**
      * Deployments API
-     * @type {Deployment}
+     * @type {Environment}
      */
     this.Deployments = new Deployments(this)
 
@@ -81,6 +82,12 @@ class Client {
      * @type {Logs}
      */
     this.Logs = new Logs(this)
+  
+    /**
+     * Addons API
+     * @type {Addons}
+     */
+    this.Addons = new Addons(this)
   
     /**
      * Operations API
