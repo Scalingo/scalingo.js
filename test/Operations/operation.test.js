@@ -51,4 +51,25 @@ describe("Operations#OperationClass", () => {
       expect(error.data).to.deep.eq({error: "not found"})
     }
   })
+  
+  it('Should call the wait method and returns with no error', async () => {
+    let client = new Client("test-token")
+    let mock = new MockAdapter(axios)
+    let locationUri = "https://api.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000"
+  
+    let operationResponse = {
+      operation: {
+        id: "54100930736f7563d5030000",
+        created_at: new Date(),
+        finished_at: new Date(),
+        status: "pending",
+        type: "scale",
+        error: null
+      }
+    }
+    mock.onGet(locationUri).reply(200, operationResponse)
+    var operation = new Operation(client, locationUri);
+    var spy = sinon.spy(operation, "wait")
+    // Not finished
+  })
 })

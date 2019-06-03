@@ -37,29 +37,6 @@ export function testGetter(url, prefix, build) {
   })
 }
 
-export function testPostOperation(url, body, prefix, build) {
-  it('calls the API and return the data when there is no errors', async () => {
-    let client = new Client("test-token")
-    let operation = new Operation(client, "https://api.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000")
-    let mock = new MockAdapter(axios)
-    let locationUrl = "https://api.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000"
-    
-    mock.onPost(url).reply(200, {
-      [prefix]: {data: "value"}
-    }, {location: locationUrl})
-    mock.onGet(locationUrl).reply(200, {
-      operation: {
-        data: "value"
-      }
-    })
-    let result = await build(client)
-    expect(result.formation).to.deep.eq({data: "value"})
-    expect(result.operation).to.be.an.instanceOf(Operation)
-    expect(mock.history.post[0].headers.Authorization).to.eq("Bearer test-token")
-    expect(JSON.parse(mock.history.post[0].data)).to.deep.eq(body)
-  })
-}
-
 export function testPost(url, body, prefix, build) {
   it('calls the API and return the data when there is no errors', async () => {
     let client = new Client("test-token")

@@ -1,4 +1,4 @@
-import {testGetter, testPostOperation} from '../utils/http.js'
+import {testGetter, testPost} from '../utils/http.js'
 import Containers from '../../src/Containers'
 
 describe('Containers#for', () => {
@@ -8,7 +8,7 @@ describe('Containers#for', () => {
 })
 
 describe('Containers#scale', () => {
-  testPostOperation("https://api.scalingo.com/v1/apps/toto/scale", {containers: [{name: "web", amount: 2, size: "M"}]}, "containers", (client) => {
+  testPost("https://api.scalingo.com/v1/apps/toto/scale", {containers: [{name: "web", amount: 2, size: "M"}]}, "containers", (client) => {
     return new Containers(client).scale("toto", [{name: "web", amount: 2, size: "M"}])
   })
 })
