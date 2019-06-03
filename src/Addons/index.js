@@ -29,7 +29,7 @@ export default class Addons {
    * @param {String} appId ID of the app
    * @param {String} plan_id ID of the plan
    * @param {String} addon_provider_id ID of the addon provider
-   * @return {Promise<Addons | APIError>}
+   * @return {Promise<Addon | APIError>}
    */
   create(appId, plan_id, addon_provider_id) {
     return unpackData(this._client.apiClient().post(`/apps/${appId}/addons`,
