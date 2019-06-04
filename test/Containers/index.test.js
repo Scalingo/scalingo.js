@@ -8,8 +8,12 @@ describe('Containers#for', () => {
 })
 
 describe('Containers#scale', () => {
-  testPost("https://api.scalingo.com/v1/apps/toto/scale", { containers: {name: "web", amount: 2}}, "containers", (client) => {
-    return new Containers(client).scale("toto", {name: "web", amount: 2})
+  let opts = {
+    operation: true,
+    location: "https://api.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000"
+  }
+  testPost("https://api.scalingo.com/v1/apps/toto/scale", opts, {containers: [{name: "web", amount: 2, size: "M"}]}, "containers", (client) => {
+    return new Containers(client).scale("toto", [{name: "web", amount: 2, size: "M"}])
   })
 })
 

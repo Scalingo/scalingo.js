@@ -42,13 +42,13 @@ describe('App#deploymentListener', () => {
 
 describe('App#create', () => {
   describe('With a simple request', () => {
-    testPost('https://api.scalingo.com/v1/apps', {app: {name: "testApp"}}, "app", (client) => {
+    testPost('https://api.scalingo.com/v1/apps', null,{app: {name: "testApp"}}, "app", (client) => {
       return new Apps(client).create("testApp")
     })
   })
 
   describe('Using custom params', () => {
-    testPost('https://api.scalingo.com/v1/apps', {app: {name: "testApp", git_source: "https://github.com/test/test", stack_id: "abcdef", parent_id: "abcdef1234"}}, "app", (client) => {
+    testPost('https://api.scalingo.com/v1/apps', null,{app: {name: "testApp", git_source: "https://github.com/test/test", stack_id: "abcdef", parent_id: "abcdef1234"}}, "app", (client) => {
       return new Apps(client).create("testApp", {git_source: "https://github.com/test/test", stack_id: "abcdef", parent_id: "abcdef1234"})
     })
   })
