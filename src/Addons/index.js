@@ -22,7 +22,6 @@ export default class Addons {
     return unpackData(this._client.apiClient().get(`/apps/${appId}/addons`), "addons")
   }
   
-  //TODO add return from create method
   /**
    * Add an addon to an application
    * @see http://developers.scalingo.com/addons#provision-an-addon
