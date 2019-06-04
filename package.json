@@ -39,6 +39,7 @@
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-multi-entry": "^2.1.0",
     "rollup-plugin-node-resolve": "^4.0.0",
+    "rosie": "^2.0.1",
     "sinon": "^7.3.2"
   },
   "publishConfig": {

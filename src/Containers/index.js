@@ -1,4 +1,5 @@
 import {unpackData} from '../utils.js'
+import {Operation} from "../Operations/utils";
 
 /**
  * Containers API Client
@@ -27,10 +28,13 @@ export default class Containers {
    * @see http://developers.scalingo.com/apps#scale-an-application
    * @param {String} appId ID of the app to scale
    * @param {Container[]} formation Formation to apply
-   * @return {Promise<Container[] | APIError>} final formation
+   * @return {Promise<ContainersOperation | APIError>} final formation
    */
-  scale(appId, formation) {
-    return unpackData(this._client.apiClient().post(`/apps/${appId}/scale`, {containers: formation}), "containers")
+  async scale(appId, formation) {
+    let result = await unpackData(this._client.apiClient().post(`/apps/${appId}/scale`, {containers: formation}), "containers", {hasOperation: true})
+    let operation = new Operation(this._client, result.operation)
+    await operation.refresh()
+    return {formation: result.data, operation: operation}
   }
   
   /**
@@ -47,13 +51,21 @@ export default class Containers {
    * @see http://developers.scalingo.com/apps#restart-an-application
    * @param {String} appId ID of the app to scale
    * @param {?String[]} scope Array of containers name to restart
-   * @return {Promise<?APIError>}
+   * @return {Promise<Operation | APIError>} final formation
    */
-  restart(appId, scope) {
-    return unpackData(this._client.apiClient().post(`/apps/${appId}/restart`, {scope: scope}))
+  async restart(appId, scope) {
+    let result = await unpackData(this._client.apiClient().post(`/apps/${appId}/restart`, {scope: scope}), undefined, {hasOperation: true})
+    let operation = new Operation(this._client, result.operation)
+    await operation.refresh()
+    return operation
   }
-  
 }
+
+/**
+ * @typedef {Object} ContainersOperation
+ * @property {Container[]} formation Response of the API call
+ * @property {Operation} operation Operation information
+ */
 
 /**
  * @typedef {Object} Container

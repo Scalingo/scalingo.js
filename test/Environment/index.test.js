@@ -8,7 +8,7 @@ describe("Environment#for", () =>  {
 })
 
 describe("Environment#create", () =>  {
-  testPost("https://api.scalingo.com/v1/apps/tata/variables",{variable: {name: "tata", value: "$toto"}}, "variable", (client) => {
+  testPost("https://api.scalingo.com/v1/apps/tata/variables",null,{variable: {name: "tata", value: "$toto"}}, "variable", (client) => {
     return new Environment(client).create("tata", {name: "tata", value: "$toto"})
   })
 })
