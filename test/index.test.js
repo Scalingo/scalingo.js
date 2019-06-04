@@ -34,3 +34,21 @@ describe("new Client", () => {
     expect(client._authApiUrl).to.eq("https://auth.test.com")
   })
 })
+
+describe("apiClient", () => {
+  it("should set the user agent and the breater token", () => {
+    let client = new Client("totothetoken").apiClient()
+    expect(client.defaults.headers).to.contains({
+      'Authorization': 'Bearer totothetoken',
+      'User-Agent': 'Scalingo Javascript Client',
+    })
+  })
+
+  it("should just set the breater token if opts.noUserAgent", () => {
+    let client = new Client("totothetoken", {noUserAgent: true}).apiClient()
+    expect(client.defaults.headers).to.contains({
+      'Authorization': 'Bearer totothetoken',
+    })
+  })
+
+})
