@@ -8,7 +8,6 @@ export function unpackData(axiosRequest, prefix, opts) {
     axiosRequest.then((response) => {
       let hasOperation = false;
       let data = response.data;
-
       if(prefix !== undefined) {
         data = response.data[prefix]
       }
