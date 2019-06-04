@@ -89,7 +89,7 @@ export class Operation {
       let waitInterval = setInterval(function () {
         vm.refresh().then(response => {
           if (vm.status === "done") {
-            resolve(response.data)
+            resolve(response)
             clearInterval(waitInterval)
           }
         }).catch(error => {
