@@ -26,13 +26,13 @@ export default class Addons {
    * Add an addon to an application
    * @see http://developers.scalingo.com/addons#provision-an-addon
    * @param {String} appId ID of the app
-   * @param {String} plan_id ID of the plan
-   * @param {String} addon_provider_id ID of the addon provider
+   * @param {String} planId ID of the plan
+   * @param {String} addonProviderId ID of the addon provider
    * @return {Promise<Addon | APIError>}
    */
-  create(appId, plan_id, addon_provider_id) {
+  create(appId, planId, addonProviderId) {
     return unpackData(this._client.apiClient().post(`/apps/${appId}/addons`,
-      {addon: {plan_id: plan_id, addon_provider_id: addon_provider_id}}), "addon")
+      {addon: {plan_id: planId, addon_provider_id: addonProviderId}}), "addon")
   }
   
   /**
@@ -47,11 +47,11 @@ export default class Addons {
   /**
    * List addon providers
    * @see http://developers.scalingo.com/addon_providers#list-addon-providers
-   * @param {String} category_id ID of the addon category
+   * @param {String} categoryId ID of the addon category
    * @return {Promise<AddonProvider[] | APIError>}
    */
-  listProviders(category_id) {
-    return unpackData(this._client.apiClient().get('/addon_providers', {category_id: category_id}), "addon_providers")
+  listProviders(categoryId) {
+    return unpackData(this._client.apiClient().get('/addon_providers', {category_id: categoryId}), "addon_providers")
   }
   
   /**

@@ -9,8 +9,8 @@ describe("Addons#for", () => {
 
 describe("Addons#create", () => {
   testPost("https://api.scalingo.com/v1/apps/toto/addons",
-    null, {addon: {plan_id: "test", addon_provider_id: "test"}}, "addon", (client) => {
-    return new Addons(client).create("toto", "test", "test")
+    null, {addon: {plan_id: "test-plan", addon_provider_id: "test-provider"}}, "addon", (client) => {
+    return new Addons(client).create("toto", "test-plan", "test-provider")
   })
 })
 
