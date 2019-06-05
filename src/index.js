@@ -101,6 +101,7 @@ class Client {
    * @return {Object} Axios client for the Scalingo API
    */
   apiClient() {
+    console.log(this._apiUrl)
     return axios.create({
       baseURL: `${this._apiUrl}/v1/`,
       headers: Object.assign({}, this._headers, {
