@@ -53,6 +53,30 @@ export default class Addons {
   listProviders(category_id) {
     return unpackData(this._client.apiClient().get('/addon_providers', {category_id: category_id}), "addon_providers")
   }
+  
+  /**
+   * Upgrade an addon
+   * @see http://developers.scalingo.com/addons#upgrade-an-addon
+   * @param {String} appId ID of the current application
+   * @param {Object} addon Contain the ID of the plan of your choice
+   * @param {String} addonId ID of the current addon
+   * @return {Promise<AddonUpgrade | APIError>}
+   */
+  update(appId, addonId, addon) {
+    return unpackData(this._client.apiClient().patch(`/apps/${appId}/addons/${addonId}`, {addon: addon}), "addon")
+  }
+  
+  /**
+   * Remove an addon
+   * @see http://developers.scalingo.com/addons#remove-an-addon
+   * @param {String} appId ID of the current application
+   * @param {String} addonId ID of the addon
+   * @return {Promise<? | APIError>}
+   */
+  destroy(appId, addonId) {
+    return unpackData(this._client.apiClient().delete(`/apps/${appId}/addons/${addonId}`))
+  }
+  
 }
 
 /**
@@ -92,4 +116,10 @@ export default class Addons {
  * @property {String} id ID of the category
  * @property {String} description Description of the category
  * @property {String} name Name of the category
+ */
+
+/**
+ * @typedef {Object} AddonUpgrade
+ * @property {String[]} vars Array of variables
+ * @property {String} message Custom message from the addon provider
  */
