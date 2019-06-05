@@ -45,6 +45,20 @@ export default class Containers {
   availableSizes() {
     return unpackData(this._client.apiClient().get('/features/container_sizes'), "container_sizes")
   }
+  
+  /**
+   * Restart containers
+   * @see http://developers.scalingo.com/apps#restart-an-application
+   * @param {String} appId ID of the app to scale
+   * @param {?String[]} scope Array of containers name to restart
+   * @return {Promise<Operation | APIError>} final formation
+   */
+  async restart(appId, scope) {
+    let result = await unpackData(this._client.apiClient().post(`/apps/${appId}/restart`, {scope: scope}), undefined, {hasOperation: true})
+    let operation = new Operation(this._client, result.operation)
+    await operation.refresh()
+    return operation
+  }
 }
 
 /**
