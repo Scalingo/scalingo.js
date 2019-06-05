@@ -1,4 +1,4 @@
-import {testGetter, testPost} from "../utils/http"
+import {testDelete, testGetter, testPost, testUpdate} from "../utils/http"
 import Addons from "../../src/Addons"
 
 describe("Addons#for", () => {
@@ -25,3 +25,15 @@ describe('Addons#listProviders', () => {
     return new Addons(client).listProviders("1234")
   })
 });
+
+describe('Addons#update', () => {
+  testUpdate("https://api.scalingo.com/v1/apps/toto/addons/54100930736f7563d5030000", {addon: {plan_id: "54100930736f7563d5030000"}}, "addon", (client) => {
+    return new Addons(client).update("toto", "54100930736f7563d5030000", {plan_id: "54100930736f7563d5030000"})
+  })
+})
+
+describe('Addons#destroy', () => {
+  testDelete("https://api.scalingo.com/v1/apps/toto/addons/54100930736f7563d5030000", (client) => {
+    return new Addons(client).destroy('toto', '54100930736f7563d5030000')
+  })
+})

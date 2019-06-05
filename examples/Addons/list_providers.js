@@ -6,5 +6,9 @@ scalingo.clientFromToken(process.env.SCALINGO_TOKEN).then((client)=>{
 }).then((providers) => {
   providers.forEach(function (elem) {
     console.log(elem.id)
+    let planIds = elem.plans.map((ids) => {
+      return ids.id
+    })
+    console.log(planIds)
   })
 });
