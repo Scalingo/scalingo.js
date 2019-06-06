@@ -4,6 +4,8 @@ import sinon from "sinon";
 import MockAdapter from "axios-mock-adapter";
 import axios from "axios"
 import {Client} from '../../src'
+import {expect} from "chai"
+import {APIError} from "../../src/errors";
 
 describe("Addons#for", () => {
   testGetter("https://api.scalingo.com/v1/apps/toto/addons", "addons", (client) => {
@@ -25,21 +27,37 @@ describe('Addons#listCategories', () => {
 });
 
 describe('Addons#listProviders', () => {
-  it('Should return the category', async () => {
+  let listProvidersMock
   
-    let client = new Client('test-token')
-    let mock = new MockAdapter(axios)
-    
-    mock.onGet('https://api.scalingo.com/v1/addon_providers?category_id=1234').reply(200, {data: "value"})
-    
-    console.log("merde =>", mock.handlers.get)
-    let result = await client.Addons.listProviders("1234")
-    console.log(result)
+  beforeEach(() => {
+    listProvidersMock = sinon.stub(Addons.prototype, "listProviders")
   })
   
-  /*testGetter("https://api.scalingo.com/v1/addon_providers?category_id=1234", "addon_providers", (client) => {
-    return new Addons(client).listProviders("1234")
-  })*/
+  afterEach(() => {
+    listProvidersMock.restore()
+  })
+  
+  it('Should return the category', async () => {
+    listProvidersMock.withArgs("1234").resolves({data: "value"})
+  
+    let client = new Client("test-token")
+  
+    let result = await client.Addons.listProviders("1234")
+    expect(result).to.deep.eq({data: "value"})
+  })
+  
+  it('Should return an error', async () => {
+    listProvidersMock.withArgs("1234").rejects(new APIError(404, "not found"))
+  
+    let client = new Client("test-token")
+    
+    try {
+      await client.Addons.listProviders("1234")
+    } catch (e) {
+      expect(e.status).to.eq(404)
+      expect(e.data).to.eq('not found')
+    }
+  })
 });
 
 describe('Addons#update', () => {
