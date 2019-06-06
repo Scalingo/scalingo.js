@@ -128,7 +128,7 @@ class Client {
    */
   unauthenticatedClient() {
     return axios.create({
-      headers: this._headers,
+      headers: this._headers
     })
   }
 }

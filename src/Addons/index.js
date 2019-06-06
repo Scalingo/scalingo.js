@@ -51,7 +51,7 @@ export default class Addons {
    * @return {Promise<AddonProvider[] | APIError>}
    */
   listProviders(categoryId) {
-    return unpackData(this._client.unauthenticatedClient().get(`/addon_providers?category_id=${categoryId}`), "addon_providers")
+    return unpackData(this._client.unauthenticatedClient().get(`https://api.scalingo.com/v1/addon_providers?category_id=${categoryId}`), "addon_providers")
   }
   
   /**

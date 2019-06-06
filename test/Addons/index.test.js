@@ -27,35 +27,27 @@ describe('Addons#listCategories', () => {
 });
 
 describe('Addons#listProviders', () => {
-  let listProvidersMock
-  
-  beforeEach(() => {
-    listProvidersMock = sinon.stub(Addons.prototype, "listProviders")
-  })
-  
-  afterEach(() => {
-    listProvidersMock.restore()
-  })
-  
   it('Should return the category', async () => {
-    listProvidersMock.withArgs("1234").resolves({data: "value"})
-  
+    let mock = new MockAdapter(axios)
     let client = new Client("test-token")
-  
+    
+    mock.onGet("https://api.scalingo.com/v1/addon_providers?category_id=1234", )
+      .reply(200, {addon_providers: {data: "value"}})
     let result = await client.Addons.listProviders("1234")
     expect(result).to.deep.eq({data: "value"})
   })
   
   it('Should return an error', async () => {
-    listProvidersMock.withArgs("1234").rejects(new APIError(404, "not found"))
-  
+    let mock = new MockAdapter(axios)
     let client = new Client("test-token")
-    
+  
+    mock.onGet("https://api.scalingo.com/v1/addon_providers?category_id=1234", )
+      .reply(404, {error: "not found"})
     try {
       await client.Addons.listProviders("1234")
     } catch (e) {
       expect(e.status).to.eq(404)
-      expect(e.data).to.eq('not found')
+      expect(e.data.error).to.eq("not found")
     }
   })
 });
