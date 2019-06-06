@@ -2,7 +2,7 @@ import {testGetter, testPost, testUpdate, testDelete} from '../utils/http.js'
 import Domains from '../../src/Domains'
 
 describe("Domains#for", () => {
-    testGetter("https://api.scalingo.com/v1/apps/tata/domains", "domains", (client) => {
+    testGetter("https://api.scalingo.com/v1/apps/tata/domains", null, "domains", (client) => {
         return new Domains(client).for("tata")
     })
 });
@@ -20,7 +20,7 @@ describe("Domains#destroy", () => {
 });
 
 describe("Domains#show", () => {
-    testGetter("https://api.scalingo.com/v1/apps/tata/domains/541067ec736f7504a5110000", "domain", (client) => {
+    testGetter("https://api.scalingo.com/v1/apps/tata/domains/541067ec736f7504a5110000", null,  "domain", (client) => {
         return new Domains(client).show("tata", "541067ec736f7504a5110000")
     })
 });

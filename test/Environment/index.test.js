@@ -2,7 +2,7 @@ import {testGetter, testPost, testUpdate, testDelete, testPut} from '../utils/ht
 import Environment from '../../src/Environment'
 
 describe("Environment#for", () =>  {
-  testGetter("https://api.scalingo.com/v1/apps/tata/variables", "variables", (client) => {
+  testGetter("https://api.scalingo.com/v1/apps/tata/variables", null, "variables", (client) => {
     return new Environment(client).for("tata")
   })
 })

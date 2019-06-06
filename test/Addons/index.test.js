@@ -8,7 +8,7 @@ import {expect} from "chai"
 import {APIError} from "../../src/errors";
 
 describe("Addons#for", () => {
-  testGetter("https://api.scalingo.com/v1/apps/toto/addons", "addons", (client) => {
+  testGetter("https://api.scalingo.com/v1/apps/toto/addons", null, "addons", (client) => {
     return new Addons(client).for("toto")
   })
 })
@@ -21,34 +21,14 @@ describe("Addons#create", () => {
 })
 
 describe('Addons#listCategories', () => {
-  testGetter("https://api.scalingo.com/v1/addon_categories", "addon_categories", (client) => {
+  testGetter("https://api.scalingo.com/v1/addon_categories", {noAuth: true}, "addon_categories", (client) => {
     return new Addons(client).listCategories()
   })
 });
 
 describe('Addons#listProviders', () => {
-  it('Should return the category', async () => {
-    let mock = new MockAdapter(axios)
-    let client = new Client("test-token")
-    
-    mock.onGet("https://api.scalingo.com/v1/addon_providers?category_id=1234", )
-      .reply(200, {addon_providers: {data: "value"}})
-    let result = await client.Addons.listProviders("1234")
-    expect(result).to.deep.eq({data: "value"})
-  })
-  
-  it('Should return an error', async () => {
-    let mock = new MockAdapter(axios)
-    let client = new Client("test-token")
-  
-    mock.onGet("https://api.scalingo.com/v1/addon_providers?category_id=1234", )
-      .reply(404, {error: "not found"})
-    try {
-      await client.Addons.listProviders("1234")
-    } catch (e) {
-      expect(e.status).to.eq(404)
-      expect(e.data.error).to.eq("not found")
-    }
+  testGetter("https://api.scalingo.com/v1/addon_providers?category_id=1234", {noAuth: true}, "addon_providers", (client) => {
+    return new Addons(client).listProviders("1234")
   })
 });
 

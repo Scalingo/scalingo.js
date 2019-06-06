@@ -82,13 +82,13 @@ class Client {
      * @type {Logs}
      */
     this.Logs = new Logs(this)
-  
+
     /**
      * Addons API
      * @type {Addons}
      */
     this.Addons = new Addons(this)
-  
+
     /**
      * Operations API
      * @type {Operation}
@@ -128,6 +128,7 @@ class Client {
    */
   unauthenticatedClient() {
     return axios.create({
+      baseURL: `${this._apiUrl}/v1/`,
       headers: this._headers
     })
   }

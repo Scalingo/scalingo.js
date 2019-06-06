@@ -11,7 +11,7 @@ export default class Addons {
   constructor(client) {
     this._client = client;
   }
-  
+
   /**
    * Get list of addons of an application
    * @see http://developers.scalingo.com/addons#list-application-addons
@@ -21,7 +21,7 @@ export default class Addons {
   for(appId) {
     return unpackData(this._client.apiClient().get(`/apps/${appId}/addons`), "addons")
   }
-  
+
   /**
    * Add an addon to an application
    * @see http://developers.scalingo.com/addons#provision-an-addon
@@ -34,16 +34,16 @@ export default class Addons {
     return unpackData(this._client.apiClient().post(`/apps/${appId}/addons`,
       {addon: {plan_id: planId, addon_provider_id: addonProviderId}}), "addon")
   }
-  
+
   /**
    * List addon categories
    * @see http://developers.scalingo.com/addon_providers#list-addon-categories
    * @return {Promise<Category[] | APIError>}
    */
   listCategories() {
-    return unpackData(this._client.apiClient().get('/addon_categories'), "addon_categories")
+    return unpackData(this._client.unauthenticatedClient().get('/addon_categories'), "addon_categories")
   }
-  
+
   /**
    * List addon providers
    * @see http://developers.scalingo.com/addon_providers#list-addon-providers
@@ -51,9 +51,9 @@ export default class Addons {
    * @return {Promise<AddonProvider[] | APIError>}
    */
   listProviders(categoryId) {
-    return unpackData(this._client.unauthenticatedClient().get(`https://api.scalingo.com/v1/addon_providers?category_id=${categoryId}`), "addon_providers")
+    return unpackData(this._client.unauthenticatedClient().get(`/addon_providers?category_id=${categoryId}`), "addon_providers")
   }
-  
+
   /**
    * Upgrade an addon
    * @see http://developers.scalingo.com/addons#upgrade-an-addon
@@ -65,7 +65,7 @@ export default class Addons {
   update(appId, addonId, addon) {
     return unpackData(this._client.apiClient().patch(`/apps/${appId}/addons/${addonId}`, {addon: addon}), "addon")
   }
-  
+
   /**
    * Remove an addon
    * @see http://developers.scalingo.com/addons#remove-an-addon
@@ -76,7 +76,7 @@ export default class Addons {
   destroy(appId, addonId) {
     return unpackData(this._client.apiClient().delete(`/apps/${appId}/addons/${addonId}`))
   }
-  
+
 }
 
 /**
