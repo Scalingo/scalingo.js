@@ -1,5 +1,9 @@
 import {testDelete, testGetter, testPost, testUpdate} from "../utils/http"
 import Addons from "../../src/Addons"
+import sinon from "sinon";
+import MockAdapter from "axios-mock-adapter";
+import axios from "axios"
+import {Client} from '../../src'
 
 describe("Addons#for", () => {
   testGetter("https://api.scalingo.com/v1/apps/toto/addons", "addons", (client) => {
@@ -21,9 +25,21 @@ describe('Addons#listCategories', () => {
 });
 
 describe('Addons#listProviders', () => {
-  testGetter("https://api.scalingo.com/v1/addon_providers", "addon_providers", (client) => {
-    return new Addons(client).listProviders("1234")
+  it('Should return the category', async () => {
+  
+    let client = new Client('test-token')
+    let mock = new MockAdapter(axios)
+    
+    mock.onGet('https://api.scalingo.com/v1/addon_providers?category_id=1234').reply(200, {data: "value"})
+    
+    console.log("merde =>", mock.handlers.get)
+    let result = await client.Addons.listProviders("1234")
+    console.log(result)
   })
+  
+  /*testGetter("https://api.scalingo.com/v1/addon_providers?category_id=1234", "addon_providers", (client) => {
+    return new Addons(client).listProviders("1234")
+  })*/
 });
 
 describe('Addons#update', () => {

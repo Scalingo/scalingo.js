@@ -51,7 +51,6 @@ export default class Addons {
    * @return {Promise<AddonProvider[] | APIError>}
    */
   listProviders(categoryId) {
-    console.log(categoryId)
     return unpackData(this._client.unauthenticatedClient().get(`/addon_providers?category_id=${categoryId}`), "addon_providers")
   }
   
