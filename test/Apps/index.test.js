@@ -8,13 +8,13 @@ import {expect} from 'chai'
 import sinon from 'sinon'
 
 describe('App#all', () => {
-  testGetter("https://api.scalingo.com/v1/apps", "apps", (client) => {
+  testGetter("https://api.scalingo.com/v1/apps", null, "apps", (client) => {
     return new Apps(client).all()
   })
 })
 
 describe('App#find', () => {
-  testGetter("https://api.scalingo.com/v1/apps/toto", "app", (client) => {
+  testGetter("https://api.scalingo.com/v1/apps/toto", null, "app", (client) => {
     return new Apps(client).find('toto')
   })
 })
@@ -68,7 +68,7 @@ describe('App#create', () => {
 })
 
 describe('App#logsURL', () => {
-  testGetter("https://api.scalingo.com/v1/apps/testApp/logs", "logs_url", (client) => {
+  testGetter("https://api.scalingo.com/v1/apps/testApp/logs", null, "logs_url", (client) => {
     return new Apps(client).logsURL("testApp")
   })
 })

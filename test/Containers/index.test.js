@@ -5,7 +5,7 @@ import {expect} from 'chai'
 import '../factories'
 
 describe('Containers#for', () => {
-  testGetter("https://api.scalingo.com/v1/apps/toto/containers", "containers", (client) => {
+  testGetter("https://api.scalingo.com/v1/apps/toto/containers", null, "containers", (client) => {
     return new Containers(client).for("toto")
   })
 })
@@ -31,7 +31,7 @@ describe('Containers#scale', () => {
 })
 
 describe('Container#availableSizes', () => {
-  testGetter("https://api.scalingo.com/v1/features/container_sizes", "container_sizes", (client) => {
+  testGetter("https://api.scalingo.com/v1/features/container_sizes", null, "container_sizes", (client) => {
     return new Containers(client).availableSizes()
   })
 })
