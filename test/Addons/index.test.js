@@ -43,3 +43,9 @@ describe('Addons#destroy', () => {
     return new Addons(client).destroy('toto', '54100930736f7563d5030000')
   })
 })
+
+describe('Addons#sso', () => {
+  testGetter("https://api.scalingo.com/v1/apps/toto/addons/titi/sso", null, "addon", (client) => {
+    return new Addons(client).sso('toto', 'titi')
+  })
+})

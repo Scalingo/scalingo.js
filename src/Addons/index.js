@@ -76,8 +76,30 @@ export default class Addons {
   destroy(appId, addonId) {
     return unpackData(this._client.apiClient().delete(`/apps/${appId}/addons/${addonId}`))
   }
-
+  
+  /**
+   * Get the sso of an addon
+   * @param {String} appId The ID of the current application
+   * @param {String} addonId The ID of the addon
+   * @return {Promise<AddonSso | APIError>}
+   */
+  sso(appId, addonId) {
+    return unpackData(this._client.apiClient().get(`/apps/${appId}/addons/${addonId}/sso`), "addon")
+  }
 }
+
+/**
+ * @typedef {Object} AddonSso
+ * @property {String} id The id of the addon
+ * @property {String} appId The id of the current App
+ * @property {String} resourceId The id of the resource
+ * @property {Plan} plan Embedded reference to Plan resource
+ * @property {AddonProvider} addon_provider Embedded reference to AddonProvider resource
+ * @property {Date} provisioned_at When the addon has been created
+ * @property {Date} deprovisioned_at When the addon has been deleted/upgraded
+ * @property {String} status The current status of the addon
+ * @property {String} ssoUrl The sso url of the addon
+ */
 
 /**
  * @typedef {Object} Addon
