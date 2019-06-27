@@ -1,5 +1,6 @@
 import axios from "axios"
 import {unpackData} from '../utils.js'
+import { APIError } from "../errors.js";
 
 /**
  * Events API Client
@@ -17,13 +18,21 @@ export default class Tokens {
    * Return all events of an application
    * @param {?Number} from The N last hours - min: 1 max: 72
    * @param {String} appId Id of the current application
-   * @return {Event}
+   * @return {Promise<Event | APIError>}
    */
   for(appId, from) {
     if (from)
       return unpackData(this._client.apiClient().get(`/apps/${appId}/events?from=${from}`))
     else
       return unpackData(this._client.apiClient().get(`/apps/${appId}/events`))
+  }
+
+  /**
+   * Return all events for a specific user
+   * @return {Promise<Event | APIError>}
+   */
+  forUser() {
+    return unpackData(this._client.apiClient().get('events'))
   }
 }
 

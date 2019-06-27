@@ -9,3 +9,9 @@ describe("Events#for", () =>  {
     return new Events(client).for("tata")
   })
 })
+
+describe("Events#forUser", () => {
+  testGetter("https://api.scalingo.com/v1/events", null, null, (client) => {
+    return new Events(client).forUser()
+  })
+})
