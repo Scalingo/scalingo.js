@@ -9,6 +9,7 @@ import Environment from "./Environment";
 import Logs from "./Logs"
 import Addons from "./Addons"
 import Operations from "./Operations"
+import Events from "./Events"
 
 import axios from 'axios'
 
@@ -94,6 +95,13 @@ class Client {
      * @type {Operation}
      */
     this.Operations = new Operations(this)
+    
+    /**
+     * Events API
+     * @type {Events}
+     */
+    this.Events = new Events(this)
+  
   }
 
   /**
