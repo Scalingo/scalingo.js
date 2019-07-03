@@ -15,3 +15,15 @@ describe("Events#forUser", () => {
     return new Events(client).forUser()
   })
 })
+
+describe("Events#listEventTypes", () => {
+  testGetter("https://api.scalingo.com/v1/event_types", {noAuth: true},  "event_types", (client) => {
+    return new Events(client).listEventTypes()
+  })
+})
+
+describe("Events#listEventCategories", () => {
+  testGetter("https://api.scalingo.com/v1/event_categories", {noAuth: true}, "event_categories", (client) => {
+    return new Events(client).listEventCategories()
+  })
+})
