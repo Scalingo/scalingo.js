@@ -19,19 +19,22 @@ export default class Tokens {
    * @see http://developers.scalingo.com/events#list-the-events-of-an-app
    * @param {String} appId Id of the current application
    * @param {?Number} from The N last hours - min: 1 max: 72
-   * @param {?Pagination} pagination Object that contain the index of the page and the number of element per page
+   * @param {?Pagination} opts Object that contain the index of the page and the number of element per page
    * @return {Promise<Event | APIError>}
    */
-  for(appId, opts) {
-    let from
+  for(appId, from, opts) {
     let page
     let perPage
 
-    if (opts) {
-      from = opts['from'] || 72
+    if (from && !opts) {
+      return unpackData(this._client.apiClient().get(`/apps/${appId}/events?from${from}`))
+    } else if (opts) {
       page = opts['page'] || 1
       perPage = opts['per_page'] || 20
-      return unpackData(this._client.apiClient().get(`/apps/${appId}/events?from=${from}&page=${page}&per_page=${perPage}`))
+      if (from) 
+        return unpackData(this._client.apiClient().get(`/apps/${appId}/events?from=${from}&page=${page}&per_page=${perPage}`))
+      else 
+        return unpackData(this._client.apiClient().get(`/apps/${appId}/events?page=${page}&per_page=${perPage}`))
     } else {
       return unpackData(this._client.apiClient().get(`/apps/${appId}/events`))
     }
