@@ -17,15 +17,24 @@ export default class Tokens {
   /**
    * Return all events of an application
    * @see http://developers.scalingo.com/events#list-the-events-of-an-app
-   * @param {?Number} from The N last hours - min: 1 max: 72
    * @param {String} appId Id of the current application
+   * @param {?Number} from The N last hours - min: 1 max: 72
+   * @param {?Pagination} pagination Object that contain the index of the page and the number of element per page
    * @return {Promise<Event | APIError>}
    */
-  for(appId, from) {
-    if (from)
-      return unpackData(this._client.apiClient().get(`/apps/${appId}/events?from=${from}`))
-    else
+  for(appId, opts) {
+    let from
+    let page
+    let perPage
+
+    if (opts) {
+      from = opts['from'] || 72
+      page = opts['page'] || 1
+      perPage = opts['per_page'] || 20
+      return unpackData(this._client.apiClient().get(`/apps/${appId}/events?from=${from}&page=${page}&per_page=${perPage}`))
+    } else {
       return unpackData(this._client.apiClient().get(`/apps/${appId}/events`))
+    }
   }
 
   /**
@@ -57,6 +66,12 @@ export default class Tokens {
 }
 
 /**
+ * @typedef Pagination Object of pagination
+ * @property {Number} page Index of the page
+ * @property {Number} per_page Number of element per page
+ */
+
+/**
  * @typedef EventCategory Object of event category
  * @property {String} id Unique id of event type
  * @property {String} name Camel case name of the type
@@ -76,16 +91,11 @@ export default class Tokens {
 /**
  * @typedef Event Object of the events and meta data
  * @property {Events[]} events List of events
- * @property {Meta} meta Meta informations
+ * @property {PaginationMeta} meta Meta information
  */
 
 /**
- * @typedef Meta Meta informations
- * @property {Pagination} pagination Pagination informations
- */
-
-/**
- * @typedef Pagination Pagination informations
+ * @typedef Pagination Pagination information
  * @property {String} current_page Index of the current page
  * @property {String} next_page Index of the next page
  * @property {?String} prev_page Index of the previous page
@@ -101,7 +111,7 @@ export default class Tokens {
  * @property {String} app_id Id of the application
  * @property {String} app_name Name of the application
  * @property {String} type Type of the event
- * @property {TypeData} type_data Informations about the type 
+ * @property {TypeData} type_data Information about the type 
  */
 
  /**

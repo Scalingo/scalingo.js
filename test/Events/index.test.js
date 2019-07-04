@@ -2,8 +2,11 @@ import {testGetter} from '../utils/http.js'
 import Events from '../../src/Events'
 
 describe("Events#for", () =>  {
-  testGetter("https://api.scalingo.com/v1/apps/tata/events?from=2", null, null, (client) => {
-    return new Events(client).for("tata", 2)
+  testGetter("https://api.scalingo.com/v1/apps/tata/events?from=2&page=1&per_page=10", null, null, (client) => {
+    return new Events(client).for("tata", {from: 2, page: 1, per_page: 10})
+  })
+  testGetter("https://api.scalingo.com/v1/apps/tata/events?from=72&page=4&per_page=20", null, null, (client) => {
+    return new Events(client).for("tata", {page: 4})
   })
   testGetter("https://api.scalingo.com/v1/apps/tata/events", null, null, (client) => {
     return new Events(client).for("tata")
