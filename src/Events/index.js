@@ -19,34 +19,11 @@ export default class Tokens {
    * @see http://developers.scalingo.com/events#list-the-events-of-an-app
    * @param {String} appId Id of the current application
    * @param {?Number} from The N last hours - min: 1 max: 72
-   * @param {?Pagination} opts Object that contain the index of the page and the number of element per page
-   * @return {Promise<Event | APIError>}
+   * @param {?PaginationOpts} opts Object that contain the index of the page and the number of element per page
+   * @return {Promise<Events | APIError>}
    */
-  for(appId, from, opts) {
-    let page
-    let perPage
-
-    if (from && !opts) {
-      return unpackData(this._client.apiClient().get(`/apps/${appId}/events?from${from}`))
-    } else if (opts) {
-      page = opts['page'] || 1
-      perPage = opts['per_page'] || 20
-      if (from) 
-        return unpackData(this._client.apiClient().get(`/apps/${appId}/events?from=${from}&page=${page}&per_page=${perPage}`))
-      else 
-        return unpackData(this._client.apiClient().get(`/apps/${appId}/events?page=${page}&per_page=${perPage}`))
-    } else {
-      return unpackData(this._client.apiClient().get(`/apps/${appId}/events`))
-    }
-  }
-
-  /**
-   * Return all events for a specific user
-   * @see http://developers.scalingo.com/events#list-current-user-events
-   * @return {Promise<Event | APIError>}
-   */
-  forUser() {
-    return unpackData(this._client.apiClient().get('events'))
+  for(appId, opts) {
+    return unpackData(this._client.apiClient().get(`/apps/${appId}/events`, {data: opts}))
   }
 
   /**
@@ -69,12 +46,6 @@ export default class Tokens {
 }
 
 /**
- * @typedef Pagination Object of pagination
- * @property {Number} page Index of the page
- * @property {Number} per_page Number of element per page
- */
-
-/**
  * @typedef EventCategory Object of event category
  * @property {String} id Unique id of event type
  * @property {String} name Camel case name of the type
@@ -92,8 +63,8 @@ export default class Tokens {
  */
 
 /**
- * @typedef Event Object of the events and meta data
- * @property {Events[]} events List of events
+ * @typedef Events Object of the events and meta data
+ * @property {Event[]} events List of events
  * @property {PaginationMeta} meta Meta information
  */
 
@@ -107,7 +78,7 @@ export default class Tokens {
  */
 
 /**
- * @typedef Events Evet information
+ * @typedef Event Event information
  * @property {String} id Id of the event
  * @property {Date} created_at Date of the event's creation
  * @property {User} user Informations of the user 
