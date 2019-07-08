@@ -1,4 +1,5 @@
-import {testGetter, testEventsGetter} from '../utils/http.js'
+import {testGetter} from '../utils/http.js'
+import {testEventsGetter} from "../../src/Events/utils";
 import Events from '../../src/Events'
 
 describe("Events#for", () =>  {
@@ -6,12 +7,8 @@ describe("Events#for", () =>  {
     return new Events(client).for("tata", {page: 1, from: 2})
   })
 
-  testEventsGetter("https://api.scalingo.com/v1/apps/tata/events", {page: 1, per_page: 2},(client) =>  {
-    return new Events(client).for("tata", {page: 1, per_page: 2})
-  })
-
-  testEventsGetter("https://api.scalingo.com/v1/apps/tata/events", {from: 1},(client) =>  {
-    return new Events(client).for("tata", {from: 1})
+  testEventsGetter("https://api.scalingo.com/v1/apps/tata/events", {page: 1, per_page: 2, from: 1},(client) =>  {
+    return new Events(client).for("tata", {page: 1, per_page: 2, from: 1})
   })
 })
 
