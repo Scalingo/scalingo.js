@@ -1,4 +1,3 @@
-import axios from "axios"
 import {unpackData} from '../utils.js'
 import { APIError } from "../errors.js";
 
@@ -66,15 +65,6 @@ export default class Tokens {
  * @typedef Events Object of the events and meta data
  * @property {Event[]} events List of events
  * @property {PaginationMeta} meta Meta information
- */
-
-/**
- * @typedef Pagination Pagination information
- * @property {String} current_page Index of the current page
- * @property {String} next_page Index of the next page
- * @property {?String} prev_page Index of the previous page
- * @property {String} total_pages Total number of pages
- * @property {String} total_count Total number of items on every pages
  */
 
 /**

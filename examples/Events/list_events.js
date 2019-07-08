@@ -1,7 +1,7 @@
 let scalingo = require('../../dist/scalingo.js');
 
 scalingo.clientFromToken(process.env.SCALINGO_TOKEN).then((client)=>{
-  return client.Events.for("test-dashboard-ichkour", {page: 1, per_page: 2})
+  return client.Events.for("test-dashboard-ichkour", {from: 4, per_page:11})
 }).then((events) => {
   console.log(events)
 }).catch(e => {
