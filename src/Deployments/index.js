@@ -20,7 +20,7 @@ export default class Deployments {
    * @return {Promise<DeploymentsResult[] | APIError>} List of deployments for this app
    */
   for(appId, opts) {
-    return unpackData(this._client.apiClient().get(`/apps/${appId}/deployments`, {data: opts}))
+    return unpackData(this._client.apiClient().get(`/apps/${appId}/deployments`, {params: opts}))
   }
 
   /**
