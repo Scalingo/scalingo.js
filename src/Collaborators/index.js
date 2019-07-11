@@ -16,14 +16,17 @@ export default class Collaborators {
    * List all collaborators of an application
    * @see http://developers.scalingo.com/collaborators#list-collaborators-of-an-app
    * @params {String} appId ID of the app to get collaborators list
-   * @return {Promise<Collaborators[] | APIError>}
+   * @return {Promise<Collaborator[] | APIError>}
    */
-  for(collaborators) {
-  
+  for(appId) {
+    return unpackData(this._client.apiClient().get(`/apps/${appId}/collaborators`), "collaborators")
   }
 }
 
 /**
- * @typedef {Array} Collaborators
+ * @typedef {Object} Collaborator
+ * @property {String} id Id of the collaborator
  * @property {String} email Email of the collaborator to invite
+ * @property {String} username Username of the person to invite
+ * @property {String} status Status of the invitation
  */
