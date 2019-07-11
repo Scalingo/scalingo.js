@@ -21,6 +21,17 @@ export default class Collaborators {
   for(appId) {
     return unpackData(this._client.apiClient().get(`/apps/${appId}/collaborators`), "collaborators")
   }
+  
+  /**
+   * Remove a collaborator
+   * @see http://developers.scalingo.com/collaborators#delete-a-collaborator
+   * @params {String} appId ID of the application
+   * @params {String} collaboratorId ID of the collaborator to remove
+   * @return {Promise<? | APIError>}
+   */
+  destroy(appId, collaboratorId) {
+    return unpackData(this._client.apiClient().delete(`/apps/${appId}/collaborators/${collaboratorId}`))
+  }
 }
 
 /**
