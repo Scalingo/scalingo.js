@@ -13,7 +13,9 @@ export default {
     name: 'scalingo'
   },
   external: [
-    'axios'
+    'axios',
+    'ws',
+    'isomorphic-ws'
   ],
   plugins: [
     polyfill('src/index.js', ['@babel/polyfill']),

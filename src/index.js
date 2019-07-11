@@ -4,6 +4,12 @@ import Metrics from './Metrics'
 import Tokens from './Tokens'
 import Users from './Users'
 import Domains from "./Domains"
+import Deployments from "./Deployments"
+import Environment from "./Environment";
+import Logs from "./Logs"
+import Addons from "./Addons"
+import Operations from "./Operations"
+import Events from "./Events"
 
 import axios from 'axios'
 
@@ -14,6 +20,7 @@ class Client {
    * @param {Object} opts - Optional configuration
    * @param {String} [opts.apiUrl=https://api.scalingo.com] - URL to the Scalingo API.
    * @param {String} [opts.authApiUrl=https://auth.scalingo.com] - URL to the Scalingo Authentication API.
+   * @param {String} [opts.noUserAgent=false] - Do not set the user agent
    */
   constructor(token, opts = {}) {
     let {apiUrl, authApiUrl} = opts;
@@ -21,6 +28,10 @@ class Client {
     this._token = token;
     this._apiUrl = apiUrl || "https://api.scalingo.com";
     this._authApiUrl = authApiUrl || "https://auth.scalingo.com";
+    this._headers = {}
+    if(opts && !opts.noUserAgent){
+      this._headers["User-Agent"] = "Scalingo Javascript Client"
+    }
 
     /**
      * Apps API
@@ -54,6 +65,43 @@ class Client {
      * @type {Domains}
      */
     this.Domains = new Domains(this)
+
+    /**
+     * Environment API
+     * @type {Environment}
+     */
+    this.Environment = new Environment(this)
+
+    /**
+     * Deployments API
+     * @type {Environment}
+     */
+    this.Deployments = new Deployments(this)
+
+    /**
+     * Logs API
+     * @type {Logs}
+     */
+    this.Logs = new Logs(this)
+
+    /**
+     * Addons API
+     * @type {Addons}
+     */
+    this.Addons = new Addons(this)
+
+    /**
+     * Operations API
+     * @type {Operation}
+     */
+    this.Operations = new Operations(this)
+    
+    /**
+     * Events API
+     * @type {Events}
+     */
+    this.Events = new Events(this)
+  
   }
 
   /**
@@ -63,10 +111,9 @@ class Client {
   apiClient() {
     return axios.create({
       baseURL: `${this._apiUrl}/v1/`,
-      headers: {
-        'User-Agent': 'Scalingo Javascript Client',
+      headers: Object.assign({}, this._headers, {
         'Authorization': `Bearer ${this._token}`
-      }
+      }),
     })
   }
 
@@ -77,10 +124,20 @@ class Client {
   authApiClient() {
     return axios.create({
       baseURL: `${this._authApiUrl}/v1/`,
-      headers: {
-        'User-Agent': 'Scalingo Javascript Client',
+      headers: Object.assign({}, this._headers, {
         'Authorization': `Bearer ${this._token}`
-      }
+      }),
+    })
+  }
+
+  /**
+   * Create a vanilla axios instance
+   * @return {Object} Axios instance
+   */
+  unauthenticatedClient() {
+    return axios.create({
+      baseURL: `${this._apiUrl}/v1/`,
+      headers: this._headers
     })
   }
 }
