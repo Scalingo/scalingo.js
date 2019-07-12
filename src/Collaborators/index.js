@@ -32,7 +32,27 @@ export default class Collaborators {
   destroy(appId, collaboratorId) {
     return unpackData(this._client.apiClient().delete(`/apps/${appId}/collaborators/${collaboratorId}`))
   }
+
+  /**
+   * Invite collaborators to an application
+   * @see http://developers.scalingo.com/collaborators#invite-collaborator-to-work-on-an-app
+   * @params {String} appId Id of the application
+   * @params {String} email Email of the collaborator to invite
+   * @return {Promise<CollaboratorInvitation[] | APIError>}
+   */
+  invite(appId, email) {
+    return unpackData(this._client.apiClient().post(`/apps/${appId}/collaborators`, {collaborator: {email: email}}), "collaborators")
+  }
 }
+
+/**
+ * @typedef {Object} CollaboratorInvitation
+ * @property {String} id Id of the collaborator
+ * @property {String} email Email of the collaborator to invite
+ * @property {String} username Username of the person to invite
+ * @property {String} status Status of the invitation
+ * @property {String} invitation_link Link of for the invitation
+ */
 
 /**
  * @typedef {Object} Collaborator
