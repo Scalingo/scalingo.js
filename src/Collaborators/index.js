@@ -43,6 +43,16 @@ export default class Collaborators {
   invite(appId, email) {
     return unpackData(this._client.apiClient().post(`/apps/${appId}/collaborators`, {collaborator: {email: email}}), "collaborators")
   }
+
+  /**
+   * Accept invitation to an application
+   * @see http://developers.scalingo.com/collaborators#accept-an-invitation-to-collaborate
+   * @params {String} token Token of the invitation returned when adding a collaborator
+   * @return {App | APIError}
+   */
+  inviteAccept(token) {
+    return unpackData(this._client.apiClient().get('/apps/collaboration', {params: {token: token}}))
+  }
 }
 
 /**

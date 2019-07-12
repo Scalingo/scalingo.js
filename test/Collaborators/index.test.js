@@ -1,4 +1,4 @@
-import {testGetter, testDelete, testPost} from '../utils/http.js'
+import {testGetter, testDelete, testPost, testParamsGetter} from '../utils/http.js'
 import Collaborators from '../../src/Collaborators'
 import '../factories'
 
@@ -17,5 +17,11 @@ describe('Collaborators#destroy', () => {
 describe('Collaborators#invite', () => {
   testPost('https://api.scalingo.com/v1/apps/toto/collaborators', null, {collaborator: {email: 'toto@titi.tata'}}, "collaborators",(client) => {
     return new Collaborators(client).invite('toto', 'toto@titi.tata')
+  })
+})
+
+describe('Collaborators#inviteAccept', () => {
+  testParamsGetter('https://api.scalingo.com/v1/apps/collaboration', {token: "toto-accept-token"}, (client) => {
+    return new Collaborators(client).inviteAccept('toto-accept-token')
   })
 })
