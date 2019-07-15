@@ -15,7 +15,7 @@ describe('Collaborators#destroy', () => {
 })
 
 describe('Collaborators#invite', () => {
-  testPost('https://api.scalingo.com/v1/apps/toto/collaborators', null, {collaborator: {email: 'toto@titi.tata'}}, "collaborators",(client) => {
+  testPost('https://api.scalingo.com/v1/apps/toto/collaborators', null, {collaborator: {email: 'toto@titi.tata'}}, null, (client) => {
     return new Collaborators(client).invite('toto', 'toto@titi.tata')
   })
 })
