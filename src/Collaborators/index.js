@@ -21,7 +21,7 @@ export default class Collaborators {
   for(appId) {
     return unpackData(this._client.apiClient().get(`/apps/${appId}/collaborators`), "collaborators")
   }
-  
+
   /**
    * Remove a collaborator
    * @see http://developers.scalingo.com/collaborators#delete-a-collaborator
@@ -41,7 +41,7 @@ export default class Collaborators {
    * @return {Promise<CollaboratorInvitation | APIError>}
    */
   invite(appId, email) {
-    return unpackData(this._client.apiClient().post(`/apps/${appId}/collaborators`, {collaborator: {email: email}}))
+    return unpackData(this._client.apiClient().post(`/apps/${appId}/collaborators`, {collaborator: {email: email}}), "collaborator")
   }
 
   /**
