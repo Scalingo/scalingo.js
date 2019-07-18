@@ -10,6 +10,7 @@ import Logs from "./Logs"
 import Addons from "./Addons"
 import Operations from "./Operations"
 import Events from "./Events"
+import Collaborators from "./Collaborators"
 
 import axios from 'axios'
 
@@ -101,6 +102,12 @@ class Client {
      * @type {Events}
      */
     this.Events = new Events(this)
+  
+    /**
+     * Collaborators API
+     * @type {Collaborators}
+     */
+    this.Collaborators = new Collaborators(this)
   
   }
 
