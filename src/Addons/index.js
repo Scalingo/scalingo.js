@@ -89,6 +89,16 @@ export default class Addons {
   sso(appId, addonId) {
     return unpackData(this._client.apiClient().get(`/apps/${appId}/addons/${addonId}/sso`), "addon")
   }
+  
+  /**
+   * Get a specific addon
+   * @param {String} appId The ID of the current application
+   * @param {String} addonId The ID of the addon to get
+   * @return {Promise<Addon | APIError>}
+   */
+  getAddon(appId, addonId) {
+    return unpackData(this._client.apiClient().get(`/apps/${appId}/addons/${addonId}`), "addon")
+  }
 }
 
 /**
