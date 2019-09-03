@@ -5,7 +5,6 @@ import MockAdapter from 'axios-mock-adapter';
 import {Client} from '../../src'
 import {APIError} from '../../src/errors'
 import {Operation} from "../../src/Operations/utils";
-import sinon from "sinon";
 
 export function testGetter(url, opts, prefix, build) {
   it('calls the API and return the data when there is no errors', async () => {
