@@ -5,6 +5,8 @@ import {Client} from '../../src'
 import Apps from '../../src/Apps'
 import LogsListener from '../../src/Logs/listener'
 import sinon from 'sinon'
+import {testGetter} from '../utils/http.js'
+import Logs from '../../src/Logs'
 
 describe("Logs#for", () => {
   var logsURLMock;
@@ -56,7 +58,7 @@ describe("Logs#for", () => {
   })
 })
 
-describe("listenerFor", () => {
+describe("Logs#listenerFor", () => {
   var logsURLMock;
   var listenerStartStub;
 
@@ -78,5 +80,11 @@ describe("listenerFor", () => {
     let result = await client.Logs.listenerFor("testApp")
 
     expect(result._url).to.eq("wss://logs.scalingo.com/apps?token=1234&stream=true")
+  })
+})
+
+describe("Logs#archive", () => {
+  testGetter("https://api.scalingo.com/v1/apps/biniou/logs_archives", null, "archives", (client) => {
+    return new Logs(client).archives("biniou")
   })
 })
