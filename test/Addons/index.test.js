@@ -49,3 +49,9 @@ describe('Addons#sso', () => {
     return new Addons(client).sso('toto', 'titi')
   })
 })
+
+describe('Addons#getAddon', () => {
+  testGetter("https://api.scalingo.com/v1/apps/toto/addons/tata", null, "addon", (client) => {
+    return new Addons(client).getAddon('toto', 'tata')
+  })
+})
