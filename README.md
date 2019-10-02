@@ -36,5 +36,5 @@ console.log(user)
 # If it's a patch (see https://docs.npmjs.com/cli/version.html)
 npm version patch
 git push --tags
-git push origin/master
+git push origin master
 ```
