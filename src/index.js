@@ -11,6 +11,7 @@ import Addons from './Addons'
 import Operations from './Operations'
 import Events from './Events'
 import Collaborators from './Collaborators'
+import Notifiers from './Notifiers'
 
 import axios from 'axios'
 
@@ -108,6 +109,12 @@ class Client {
      * @type {Collaborators}
      */
     this.Collaborators = new Collaborators(this)
+
+    /**
+     * Notifiers API
+     * @type {Notifiers}
+     */
+    this.Notifiers = new Notifiers(this)
   }
 
   /**
