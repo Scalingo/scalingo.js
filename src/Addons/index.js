@@ -1,4 +1,4 @@
-import { unpackData } from '../utils.js'
+import { unpackData } from "../utils.js";
 
 /**
  * Addons API Client
@@ -9,20 +9,20 @@ export default class Addons {
    * @param {Client} client - Scalingo API Client
    */
   constructor(client) {
-    this._client = client
+    this._client = client;
   }
 
   /**
    * Get list of addons of an application
    * @see https://developers.scalingo.com/addons#list-application-addons
-   * @param {String} appId ID of the app to get the formation from
+   * @param {String} appId ID of the app to get the addons from
    * @return {Promise<Addon[] | APIError>}
    */
   for(appId) {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/addons`),
-      'addons',
-    )
+      "addons"
+    );
   }
 
   /**
@@ -36,10 +36,10 @@ export default class Addons {
   create(appId, planId, addonProviderId) {
     return unpackData(
       this._client.apiClient().post(`/apps/${appId}/addons`, {
-        addon: { plan_id: planId, addon_provider_id: addonProviderId },
+        addon: { plan_id: planId, addon_provider_id: addonProviderId }
       }),
-      'addon',
-    )
+      "addon"
+    );
   }
 
   /**
@@ -49,9 +49,9 @@ export default class Addons {
    */
   listCategories() {
     return unpackData(
-      this._client.unauthenticatedClient().get('/addon_categories'),
-      'addon_categories',
-    )
+      this._client.unauthenticatedClient().get("/addon_categories"),
+      "addon_categories"
+    );
   }
 
   /**
@@ -66,13 +66,13 @@ export default class Addons {
         this._client
           .unauthenticatedClient()
           .get(`/addon_providers?category_id=${categoryId}`),
-        'addon_providers',
-      )
+        "addon_providers"
+      );
     else
       return unpackData(
         this._client.unauthenticatedClient().get(`/addon_providers`),
-        'addon_providers',
-      )
+        "addon_providers"
+      );
   }
 
   /**
@@ -88,8 +88,8 @@ export default class Addons {
       this._client
         .apiClient()
         .patch(`/apps/${appId}/addons/${addonId}`, { addon: addon }),
-      'addon',
-    )
+      "addon"
+    );
   }
 
   /**
@@ -101,8 +101,8 @@ export default class Addons {
    */
   destroy(appId, addonId) {
     return unpackData(
-      this._client.apiClient().delete(`/apps/${appId}/addons/${addonId}`),
-    )
+      this._client.apiClient().delete(`/apps/${appId}/addons/${addonId}`)
+    );
   }
 
   /**
@@ -114,8 +114,8 @@ export default class Addons {
   sso(appId, addonId) {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/addons/${addonId}/sso`),
-      'addon',
-    )
+      "addon"
+    );
   }
 
   /**
@@ -127,8 +127,8 @@ export default class Addons {
   getAddon(appId, addonId) {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/addons/${addonId}`),
-      'addon',
-    )
+      "addon"
+    );
   }
 }
 
