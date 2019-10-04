@@ -8,7 +8,7 @@ online](https://doc.esdoc.org/github.com/Scalingo/scalingo.js/)
 
 ## Usage
 
-The package needs to be configured with your a token which are available in your Scalingo [Dashboard](https://my.scalingo.com/profile).
+The package needs to be configured with your a token which are available in your Scalingo [dashboard](https://my.scalingo.com/profile).
 
 ```js
 const scalingo = require('scalingo')
@@ -28,6 +28,20 @@ import Scalingo from 'scalingo'
 let client = await Scalingo.clientFromToken("tk-us-...")
 let user = await client.Users.self()
 console.log(user)
+```
+
+## Examples
+
+A bunch of examples are available in the `examples` folder to show how to use
+scalingo.js library. In order to execute them, you need to define the
+environment variable `SCALINGO_TOKEN`. The token can be created in Scalingo
+[dashboard](https://my.scalingo.com/profile). Then modify the example so that
+the application name and the possible IDs match one of your application.
+Eventually execute the example with:
+
+```bash
+export SCALINGO_TOKEN="tk-us-...."
+node examples/Addons/add_addon.js
 ```
 
 ## Development
