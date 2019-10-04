@@ -10,7 +10,7 @@
   "scripts": {
     "build": "rollup -c",
     "docs": "esdoc",
-    "lint": "eslint --ext .js ./src",
+    "lint": "eslint --ext .js ./src ./test",
     "test": "mocha --require @babel/register --recursive",
     "upload-doc": "esdoc-uploader"
   },

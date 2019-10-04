@@ -1,4 +1,4 @@
-import { unpackData } from "../utils.js";
+import { unpackData } from '../utils.js'
 
 /**
  * Notifiers API Client
@@ -9,7 +9,7 @@ export default class Notifiers {
    * @param {Client} client - Scalingo API Client
    */
   constructor(client) {
-    this._client = client;
+    this._client = client
   }
 
   /**
@@ -21,8 +21,8 @@ export default class Notifiers {
   for(appId) {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/notifiers`),
-      "notifiers"
-    );
+      'notifiers',
+    )
   }
 
   /**
@@ -35,10 +35,10 @@ export default class Notifiers {
   create(appId, notifier) {
     return unpackData(
       this._client.apiClient().post(`/apps/${appId}/notifiers`, {
-        notifier: notifier
+        notifier: notifier,
       }),
-      "notifier"
-    );
+      'notifier',
+    )
   }
 
   /**
@@ -52,10 +52,10 @@ export default class Notifiers {
   update(appId, notifierId, notifier) {
     return unpackData(
       this._client.apiClient().patch(`/apps/${appId}/notifiers/${notifierId}`, {
-        notifier: notifier
+        notifier: notifier,
       }),
-      "notifier"
-    );
+      'notifier',
+    )
   }
 
   /**
@@ -67,8 +67,8 @@ export default class Notifiers {
    */
   destroy(appId, notifierId) {
     return unpackData(
-      this._client.apiClient().delete(`/apps/${appId}/notifiers/${notifierId}`)
-    );
+      this._client.apiClient().delete(`/apps/${appId}/notifiers/${notifierId}`),
+    )
   }
 
   /**
@@ -81,8 +81,8 @@ export default class Notifiers {
     return unpackData(
       this._client
         .apiClient()
-        .get(`/apps/${appId}/notifiers/${notifierId}/test`)
-    );
+        .get(`/apps/${appId}/notifiers/${notifierId}/test`),
+    )
   }
 
   /**
@@ -94,8 +94,8 @@ export default class Notifiers {
   get(appId, notifierId) {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/notifiers/${notifierId}`),
-      "notifier"
-    );
+      'notifier',
+    )
   }
 }
 

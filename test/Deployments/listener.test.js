@@ -1,42 +1,38 @@
 import Listener from '../../src/Deployments/listener.js'
 import sinon from 'sinon'
-import {expect} from 'chai'
+import { expect } from 'chai'
 
-function getListener() {
-  let api = {
-    _token: "testToken"
-  }
-}
-
-describe("Listener", () => {
+describe('Listener', () => {
   var stub
   var listener
   beforeEach(() => {
     let api = { _token: 'testToken' }
     // Prevent the listener to really open the connection
-    stub = sinon.stub(Listener.prototype, "_start")
-    listener = new Listener(api, "wss://test.fr")
+    stub = sinon.stub(Listener.prototype, '_start')
+    listener = new Listener(api, 'wss://test.fr')
   })
 
   afterEach(() => {
     stub.restore()
   })
 
-  describe("Listener#_auth", () => {
-    it("should send the token", () => {
+  describe('Listener#_auth', () => {
+    it('should send the token', () => {
       let ws = {
-        send: sinon.stub()
+        send: sinon.stub(),
       }
       listener._ws = ws
 
       listener._auth()
       expect(ws.send.called).to.be.true
-      expect(ws.send.getCall(0).args[0]).to.eq(`{"type":"auth","data":{"token":"testToken"}}`)
+      expect(ws.send.getCall(0).args[0]).to.eq(
+        `{"type":"auth","data":{"token":"testToken"}}`,
+      )
     })
   })
 
-  describe("Listener#close", () => {
-    it("should close the connection", () => {
+  describe('Listener#close', () => {
+    it('should close the connection', () => {
       let stub = sinon.stub()
       listener._ws = {
         close: stub,
@@ -47,22 +43,22 @@ describe("Listener", () => {
     })
   })
 
-  describe("Listener#onMessage", () => {
+  describe('Listener#onMessage', () => {
     it("shoult call the correct callback when we get a 'new' message", () => {
       let stub = sinon.stub()
       listener.onNew(stub)
       listener._onMessage({
         data: JSON.stringify({
-          type: "new",
+          type: 'new',
           data: {
-            deployment: "123e4567-e89b-12d3-a456-426655440000"
-          }
-        })
+            deployment: '123e4567-e89b-12d3-a456-426655440000',
+          },
+        }),
       })
 
       expect(stub.called).to.be.true
       expect(stub.getCall(0).args[0]).to.deep.eq({
-        deployment: "123e4567-e89b-12d3-a456-426655440000"
+        deployment: '123e4567-e89b-12d3-a456-426655440000',
       })
     })
 
@@ -71,18 +67,18 @@ describe("Listener", () => {
       listener.onLog(stub)
       listener._onMessage({
         data: JSON.stringify({
-          type: "log",
-          id: "test-id",
+          type: 'log',
+          id: 'test-id',
           data: {
-            content: "Hey !"
-          }
-        })
+            content: 'Hey !',
+          },
+        }),
       })
 
       expect(stub.called).to.be.true
       expect(stub.getCall(0).args[0]).to.deep.eq({
-        id: "test-id",
-        content: "Hey !",
+        id: 'test-id',
+        content: 'Hey !',
       })
     })
 
@@ -91,21 +87,19 @@ describe("Listener", () => {
       listener.onStatus(stub)
       listener._onMessage({
         data: JSON.stringify({
-          type: "status",
-          id: "test-id",
+          type: 'status',
+          id: 'test-id',
           data: {
-            status: "build-error"
-          }
-        })
+            status: 'build-error',
+          },
+        }),
       })
 
       expect(stub.called).to.be.true
       expect(stub.getCall(0).args[0]).to.deep.eq({
-        id: "test-id",
-        status: "build-error",
+        id: 'test-id',
+        status: 'build-error',
       })
     })
-
-
   })
 })
