@@ -74,7 +74,9 @@ export function testPost(url, opts, body, prefix, build) {
     expect(mock.history.post[0].headers.Authorization).to.eq(
       'Bearer test-token',
     )
-    expect(JSON.parse(mock.history.post[0].data)).to.deep.eq(body)
+    if (body) {
+      expect(JSON.parse(mock.history.post[0].data)).to.deep.eq(body)
+    }
   })
 
   it('returns an error when the API fails', async () => {

@@ -73,6 +73,7 @@ export default class Notifiers {
 
   /**
    * Send a test notification to the notifier
+   * @see https://developers.scalingo.com/notifiers#test-a-notifier
    * @param {String} appId The ID of the current application
    * @param {String} notifierId The ID of the notifier
    * @return {Promise<? | APIError>}
@@ -81,7 +82,7 @@ export default class Notifiers {
     return unpackData(
       this._client
         .apiClient()
-        .get(`/apps/${appId}/notifiers/${notifierId}/test`),
+        .post(`/apps/${appId}/notifiers/${notifierId}/test`),
     )
   }
 

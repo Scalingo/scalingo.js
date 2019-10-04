@@ -55,8 +55,9 @@ describe('Notifiers#destroy', () => {
 })
 
 describe('Notifiers#test', () => {
-  testGetter(
+  testPost(
     'https://api.scalingo.com/v1/apps/toto/notifiers/titi/test',
+    null,
     null,
     null,
     (client) => {
