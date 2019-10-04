@@ -10,6 +10,7 @@
   "scripts": {
     "build": "rollup -c",
     "docs": "esdoc",
+    "lint": "eslint --ext .js ./src",
     "test": "mocha --require @babel/register --recursive",
     "upload-doc": "esdoc-uploader"
   },
@@ -33,7 +34,12 @@
     "esdoc-ecmascript-proposal-plugin": "^1.0.0",
     "esdoc-standard-plugin": "^1.0.0",
     "esdoc-uploader": "^1.0.1",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
     "mocha": "^5.2.0",
+    "prettier": "1.18.2",
     "rollup": "^1.1.0",
     "rollup-plugin-babel": "^4.3.0",
     "rollup-plugin-commonjs": "^9.2.0",
