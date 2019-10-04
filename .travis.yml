@@ -5,6 +5,9 @@ cache: yarn
 node_js:
 - 10.16
 language: node_js
+script:
+  - yarn lint
+  - yarn test
 deploy:
   provider: npm
   email: hello@scalingo.com
