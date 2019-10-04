@@ -1,5 +1,4 @@
-import axios from 'axios'
-import {unpackData} from '../utils'
+import { unpackData } from '../utils'
 
 /**
  * Metrics API Client
@@ -15,9 +14,11 @@ export default class Metrics {
    * @return {Promise<MetricType[] | APIError>} Promise that when resolved return a list of all metrics available on the platform.
    */
   types() {
-    return unpackData(this._client.apiClient().get('/features/metrics'), "metrics")
+    return unpackData(
+      this._client.apiClient().get('/features/metrics'),
+      'metrics',
+    )
   }
-
 
   /**
    * Fetch metrics for an app
@@ -33,30 +34,37 @@ export default class Metrics {
    * @return {Promise<Point[] | APIError>} Promise that when resolve return an array of points for the requested metrics
    */
   get(appId, metric, opts = {}) {
-    let {since, statusCode, statisticsType, containerIndex, containerType, last} = opts
+    let {
+      since,
+      statusCode,
+      statisticsType,
+      containerIndex,
+      containerType,
+      last,
+    } = opts
     let params = {}
     let url = `/apps/${appId}/stats/${metric}`
-    if(since !== undefined) {
-      params["since"] = since
+    if (since !== undefined) {
+      params['since'] = since
     }
-    if(statusCode !== undefined) {
-      params["status_code"] = statusCode
+    if (statusCode !== undefined) {
+      params['status_code'] = statusCode
     }
-    if(statisticsType !== undefined) {
-      params["statistics_type"] = statisticsType
+    if (statisticsType !== undefined) {
+      params['statistics_type'] = statisticsType
     }
-    if(last !== undefined) {
-      params["last"] = last
+    if (last !== undefined) {
+      params['last'] = last
     }
 
-    if(containerType !== undefined) {
+    if (containerType !== undefined) {
       url = `${url}/${containerType}`
-      if(containerIndex !== undefined) {
+      if (containerIndex !== undefined) {
         url = `${url}/${containerIndex}`
       }
     }
 
-    return unpackData(this._client.apiClient().get(url, {params: params}))
+    return unpackData(this._client.apiClient().get(url, { params: params }))
   }
 }
 

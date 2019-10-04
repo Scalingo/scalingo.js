@@ -1,5 +1,5 @@
 import LogsListener from '../Logs/listener'
-import {unpackData} from '../utils.js'
+import { unpackData } from '../utils.js'
 
 export default class Logs {
   /**
@@ -7,7 +7,7 @@ export default class Logs {
    * @param {Client} client - Scalingo API client
    */
   constructor(client) {
-    this._client = client;
+    this._client = client
   }
 
   /**
@@ -20,8 +20,8 @@ export default class Logs {
   async for(id, opts) {
     let url = await this._client.Apps.logsURL(id)
     url = `${url}&stream=false`
-    if(opts && opts["count"]) {
-      url = `${url}&n=${opts["count"]}`
+    if (opts && opts['count']) {
+      url = `${url}&n=${opts['count']}`
     }
 
     return unpackData(this._client.unauthenticatedClient().get(url))
@@ -49,7 +49,10 @@ export default class Logs {
   archives(id) {
     // Pagination is not supported in the lib. We're waiting correct pagination metadata.
     // See: https://github.com/Scalingo/api/issues/1438
-    return unpackData(this._client.apiClient().get(`/apps/${id}/logs_archives`), "archives")
+    return unpackData(
+      this._client.apiClient().get(`/apps/${id}/logs_archives`),
+      'archives',
+    )
   }
 }
 

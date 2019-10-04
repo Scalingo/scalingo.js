@@ -1,4 +1,4 @@
-import {unpackData} from "../utils";
+import { unpackData } from '../utils'
 
 /**
  * Collaborators API Client
@@ -11,7 +11,7 @@ export default class Collaborators {
   constructor(client) {
     this._client = client
   }
-  
+
   /**
    * List all collaborators of an application
    * @see https://developers.scalingo.com/collaborators#list-collaborators-of-an-app
@@ -19,7 +19,10 @@ export default class Collaborators {
    * @return {Promise<Collaborator[] | APIError>}
    */
   for(appId) {
-    return unpackData(this._client.apiClient().get(`/apps/${appId}/collaborators`), "collaborators")
+    return unpackData(
+      this._client.apiClient().get(`/apps/${appId}/collaborators`),
+      'collaborators',
+    )
   }
 
   /**
@@ -30,7 +33,11 @@ export default class Collaborators {
    * @return {Promise<?APIError>}
    */
   destroy(appId, collaboratorId) {
-    return unpackData(this._client.apiClient().delete(`/apps/${appId}/collaborators/${collaboratorId}`))
+    return unpackData(
+      this._client
+        .apiClient()
+        .delete(`/apps/${appId}/collaborators/${collaboratorId}`),
+    )
   }
 
   /**
@@ -41,7 +48,12 @@ export default class Collaborators {
    * @return {Promise<CollaboratorInvitation | APIError>}
    */
   invite(appId, email) {
-    return unpackData(this._client.apiClient().post(`/apps/${appId}/collaborators`, {collaborator: {email: email}}), "collaborator")
+    return unpackData(
+      this._client.apiClient().post(`/apps/${appId}/collaborators`, {
+        collaborator: { email: email },
+      }),
+      'collaborator',
+    )
   }
 
   /**
@@ -51,7 +63,11 @@ export default class Collaborators {
    * @return {App | APIError}
    */
   inviteAccept(token) {
-    return unpackData(this._client.apiClient().get('/apps/collaboration', {params: {token: token}}))
+    return unpackData(
+      this._client
+        .apiClient()
+        .get('/apps/collaboration', { params: { token: token } }),
+    )
   }
 }
 

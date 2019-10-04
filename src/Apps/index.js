@@ -1,16 +1,16 @@
-import {unpackData} from '../utils.js'
+import { unpackData } from '../utils.js'
 import Listener from '../Deployments/listener.js'
 
 /**
  * Apps API Client
  */
-export default class Apps{
+export default class Apps {
   /**
    * Create a new Client for the App API
    * @param {Client} client - Scalingo API Client
    */
   constructor(client) {
-    this._client = client;
+    this._client = client
   }
 
   /**
@@ -20,7 +20,7 @@ export default class Apps{
    * @return {Promise<App,APIError>} Promise that when resolved return an App. See: https://developers.scalingo.com/apps#application-attributes
    */
   find(id) {
-    return unpackData(this._client.apiClient().get(`/apps/${id}`), "app")
+    return unpackData(this._client.apiClient().get(`/apps/${id}`), 'app')
   }
 
   /**
@@ -29,7 +29,7 @@ export default class Apps{
    * @return {Promise<App[], APIError>} Promise that when resolved return an App array. See: https://developers.scalingo.com/apps#application-attributes
    */
   all() {
-    return unpackData(this._client.apiClient().get('/apps'), "apps")
+    return unpackData(this._client.apiClient().get('/apps'), 'apps')
   }
 
   /**
@@ -47,15 +47,18 @@ export default class Apps{
 
     let headers = {}
 
-    if(opts) {
+    if (opts) {
       body['git_source'] = opts['git_source']
       body['parent_id'] = opts['parent_id']
       body['stack_id'] = opts['stack_id']
-      if(opts['dry_run']) {
-        headers['X-Dry-Run'] = "true"
+      if (opts['dry_run']) {
+        headers['X-Dry-Run'] = 'true'
       }
     }
-    return unpackData(this._client.apiClient().post('/apps', {app: body}, {headers}), "app")
+    return unpackData(
+      this._client.apiClient().post('/apps', { app: body }, { headers }),
+      'app',
+    )
   }
 
   /**
@@ -76,7 +79,10 @@ export default class Apps{
    * @return {Promise<String, APIError>} Promise that when resolved returns a pre-signed URL to access application logs.
    */
   logsURL(id) {
-    return unpackData(this._client.apiClient().get(`/apps/${id}/logs`), "logs_url")
+    return unpackData(
+      this._client.apiClient().get(`/apps/${id}/logs`),
+      'logs_url',
+    )
   }
 }
 

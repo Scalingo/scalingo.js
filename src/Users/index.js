@@ -1,4 +1,4 @@
-import {unpackData} from '../utils.js'
+import { unpackData } from '../utils.js'
 
 export default class Users {
   /**
@@ -6,7 +6,7 @@ export default class Users {
    * @param {Client} client - Scalingo API Client
    */
   constructor(client) {
-    this._client = client;
+    this._client = client
   }
 
   /**
@@ -14,7 +14,7 @@ export default class Users {
    * @return {Promise<User | APIError>} Promise that when resolve return the user account informations
    */
   self() {
-    return unpackData(this._client.authApiClient().get('/users/self'), "user")
+    return unpackData(this._client.authApiClient().get('/users/self'), 'user')
   }
 }
 

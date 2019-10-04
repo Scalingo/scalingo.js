@@ -9,10 +9,10 @@ export default class LogsListener {
 
   constructor(client, url) {
     let wsURL = new URL(url)
-    if(wsURL.protocol == "http:" || wsURL.protocol == "ws:") {
-      wsURL.protocol = "ws"
+    if (wsURL.protocol == 'http:' || wsURL.protocol == 'ws:') {
+      wsURL.protocol = 'ws'
     } else {
-      wsURL.protocol = "wss"
+      wsURL.protocol = 'wss'
     }
     this._client = client
     this._url = wsURL.toString()
@@ -34,7 +34,7 @@ export default class LogsListener {
    * Close the listener connection
    */
   close() {
-    if(this._ws) {
+    if (this._ws) {
       this._ws.close()
     }
   }
@@ -51,12 +51,12 @@ export default class LogsListener {
     let data = JSON.parse(message.data)
     let event = data['event']
 
-    switch(event) {
+    switch (event) {
       case 'log':
-        if(this._onLog) {
+        if (this._onLog) {
           this._onLog(data['log'])
         }
-        break;
+        break
     }
   }
 }

@@ -1,5 +1,4 @@
-import {unpackData} from '../utils.js'
-import { APIError } from "../errors.js";
+import { unpackData } from '../utils.js'
 
 /**
  * Events API Client
@@ -10,7 +9,7 @@ export default class Events {
    * @param {Client} client - Scalingo API Client
    */
   constructor(client) {
-    this._client = client;
+    this._client = client
   }
 
   /**
@@ -21,7 +20,9 @@ export default class Events {
    * @return {Promise<AppEvents | APIError>}
    */
   for(appId, opts) {
-    return unpackData(this._client.apiClient().get(`/apps/${appId}/events`, {params: opts}))
+    return unpackData(
+      this._client.apiClient().get(`/apps/${appId}/events`, { params: opts }),
+    )
   }
 
   /**
@@ -30,7 +31,10 @@ export default class Events {
    * @return {Promise<EventType[] | APIError>}
    */
   listEventTypes() {
-    return unpackData(this._client.unauthenticatedClient().get('event_types'), "event_types")
+    return unpackData(
+      this._client.unauthenticatedClient().get('event_types'),
+      'event_types',
+    )
   }
 
   /**
@@ -39,7 +43,10 @@ export default class Events {
    * @return {Promise<EventCategory[] | APIError>}
    */
   listEventCategories() {
-    return unpackData(this._client.unauthenticatedClient().get('event_categories'), "event_categories")
+    return unpackData(
+      this._client.unauthenticatedClient().get('event_categories'),
+      'event_categories',
+    )
   }
 }
 

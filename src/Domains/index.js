@@ -1,4 +1,4 @@
-import {unpackData} from "../utils";
+import { unpackData } from '../utils'
 
 /**
  * Domains API Client
@@ -9,7 +9,7 @@ export default class Domains {
    * @param {Client} client - Scalingo API Client
    */
   constructor(client) {
-    this._client = client;
+    this._client = client
   }
 
   /**
@@ -19,7 +19,10 @@ export default class Domains {
    * @return {Promise<Domain[] | APIError>}
    */
   for(appId) {
-    return unpackData(this._client.apiClient().get(`/apps/${appId}/domains`), "domains")
+    return unpackData(
+      this._client.apiClient().get(`/apps/${appId}/domains`),
+      'domains',
+    )
   }
 
   /**
@@ -30,7 +33,12 @@ export default class Domains {
    * @return {Promise<Domain | APIError>}
    */
   create(appId, domain) {
-    return unpackData(this._client.apiClient().post(`/apps/${appId}/domains`, {domain: domain}), "domain")
+    return unpackData(
+      this._client
+        .apiClient()
+        .post(`/apps/${appId}/domains`, { domain: domain }),
+      'domain',
+    )
   }
 
   /**
@@ -41,7 +49,9 @@ export default class Domains {
    * @return {Promise<?APIError>}
    */
   destroy(appId, domainId) {
-    return unpackData(this._client.apiClient().delete(`/apps/${appId}/domains/${domainId}`))
+    return unpackData(
+      this._client.apiClient().delete(`/apps/${appId}/domains/${domainId}`),
+    )
   }
 
   /**
@@ -52,7 +62,10 @@ export default class Domains {
    * @return {Promise<Domain | APIError>}
    */
   show(appId, domainId) {
-    return unpackData(this._client.apiClient().get(`/apps/${appId}/domains/${domainId}`), "domain")
+    return unpackData(
+      this._client.apiClient().get(`/apps/${appId}/domains/${domainId}`),
+      'domain',
+    )
   }
 
   /**
@@ -64,7 +77,12 @@ export default class Domains {
    * @return {Promise<Domain | APIError>}
    */
   update(appId, domainId, domain) {
-    return unpackData(this._client.apiClient().patch(`/apps/${appId}/domains/${domainId}`, {domain: domain}), "domain")
+    return unpackData(
+      this._client
+        .apiClient()
+        .patch(`/apps/${appId}/domains/${domainId}`, { domain: domain }),
+      'domain',
+    )
   }
 }
 

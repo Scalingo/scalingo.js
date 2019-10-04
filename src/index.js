@@ -3,14 +3,14 @@ import Containers from './Containers'
 import Metrics from './Metrics'
 import Tokens from './Tokens'
 import Users from './Users'
-import Domains from "./Domains"
-import Deployments from "./Deployments"
-import Environment from "./Environment";
-import Logs from "./Logs"
-import Addons from "./Addons"
-import Operations from "./Operations"
-import Events from "./Events"
-import Collaborators from "./Collaborators"
+import Domains from './Domains'
+import Deployments from './Deployments'
+import Environment from './Environment'
+import Logs from './Logs'
+import Addons from './Addons'
+import Operations from './Operations'
+import Events from './Events'
+import Collaborators from './Collaborators'
 
 import axios from 'axios'
 
@@ -24,14 +24,14 @@ class Client {
    * @param {String} [opts.noUserAgent=false] - Do not set the user agent
    */
   constructor(token, opts = {}) {
-    let {apiUrl, authApiUrl} = opts;
+    let { apiUrl, authApiUrl } = opts
 
-    this._token = token;
-    this._apiUrl = apiUrl || "https://api.scalingo.com";
-    this._authApiUrl = authApiUrl || "https://auth.scalingo.com";
+    this._token = token
+    this._apiUrl = apiUrl || 'https://api.scalingo.com'
+    this._authApiUrl = authApiUrl || 'https://auth.scalingo.com'
     this._headers = {}
-    if(opts && !opts.noUserAgent){
-      this._headers["User-Agent"] = "Scalingo Javascript Client"
+    if (opts && !opts.noUserAgent) {
+      this._headers['User-Agent'] = 'Scalingo Javascript Client'
     }
 
     /**
@@ -44,7 +44,7 @@ class Client {
      * @type {Containers}
      */
     this.Containers = new Containers(this)
-     /**
+    /**
      * Users API
      * @type {Users}
      */
@@ -96,19 +96,18 @@ class Client {
      * @type {Operation}
      */
     this.Operations = new Operations(this)
-    
+
     /**
      * Events API
      * @type {Events}
      */
     this.Events = new Events(this)
-  
+
     /**
      * Collaborators API
      * @type {Collaborators}
      */
     this.Collaborators = new Collaborators(this)
-  
   }
 
   /**
@@ -119,7 +118,7 @@ class Client {
     return axios.create({
       baseURL: `${this._apiUrl}/v1/`,
       headers: Object.assign({}, this._headers, {
-        'Authorization': `Bearer ${this._token}`
+        Authorization: `Bearer ${this._token}`,
       }),
     })
   }
@@ -132,7 +131,7 @@ class Client {
     return axios.create({
       baseURL: `${this._authApiUrl}/v1/`,
       headers: Object.assign({}, this._headers, {
-        'Authorization': `Bearer ${this._token}`
+        Authorization: `Bearer ${this._token}`,
       }),
     })
   }
@@ -144,13 +143,13 @@ class Client {
   unauthenticatedClient() {
     return axios.create({
       baseURL: `${this._apiUrl}/v1/`,
-      headers: this._headers
+      headers: this._headers,
     })
   }
 }
 
 export default Client
-export {Client}
+export { Client }
 
 /**
  * Return a client from a user token.
@@ -162,7 +161,7 @@ export {Client}
  * @return {Promise<Client | Error>} a valid Client
  */
 export async function clientFromToken(token, opts) {
-  let client = new Client("", opts)
+  let client = new Client('', opts)
   let bearerToken = await client.Tokens.exchange(token)
   client._token = bearerToken
   return client

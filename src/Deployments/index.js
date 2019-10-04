@@ -1,4 +1,4 @@
-import {unpackData} from '../utils'
+import { unpackData } from '../utils'
 /**
  * Deployment API Client
  */
@@ -9,7 +9,7 @@ export default class Deployments {
    * @param {Client} client Scalingo API Client
    */
   constructor(client) {
-    this._client = client;
+    this._client = client
   }
 
   /**
@@ -20,7 +20,11 @@ export default class Deployments {
    * @return {Promise<DeploymentsResult[] | APIError>} List of deployments for this app
    */
   for(appId, opts) {
-    return unpackData(this._client.apiClient().get(`/apps/${appId}/deployments`, {params: opts}))
+    return unpackData(
+      this._client
+        .apiClient()
+        .get(`/apps/${appId}/deployments`, { params: opts }),
+    )
   }
 
   /**
@@ -31,7 +35,12 @@ export default class Deployments {
    * @return {Promise<Deployment | APIError>} Details of the deployment
    */
   find(appId, deploymentId) {
-    return unpackData(this._client.apiClient().get(`/apps/${appId}/deployments/${deploymentId}`), "deployment")
+    return unpackData(
+      this._client
+        .apiClient()
+        .get(`/apps/${appId}/deployments/${deploymentId}`),
+      'deployment',
+    )
   }
 
   /**
@@ -42,7 +51,11 @@ export default class Deployments {
    * @return {Promise<String | APIError>} Logs of the deployment
    */
   logs(appId, deploymentId) {
-    return unpackData(this._client.apiClient().get(`/apps/${appId}/deployments/${deploymentId}/output`))
+    return unpackData(
+      this._client
+        .apiClient()
+        .get(`/apps/${appId}/deployments/${deploymentId}/output`),
+    )
   }
 }
 

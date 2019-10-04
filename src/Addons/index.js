@@ -1,4 +1,4 @@
-import {unpackData} from '../utils.js'
+import { unpackData } from '../utils.js'
 
 /**
  * Addons API Client
@@ -9,7 +9,7 @@ export default class Addons {
    * @param {Client} client - Scalingo API Client
    */
   constructor(client) {
-    this._client = client;
+    this._client = client
   }
 
   /**
@@ -19,7 +19,10 @@ export default class Addons {
    * @return {Promise<Addon[] | APIError>}
    */
   for(appId) {
-    return unpackData(this._client.apiClient().get(`/apps/${appId}/addons`), "addons")
+    return unpackData(
+      this._client.apiClient().get(`/apps/${appId}/addons`),
+      'addons',
+    )
   }
 
   /**
@@ -31,8 +34,12 @@ export default class Addons {
    * @return {Promise<Addon | APIError>}
    */
   create(appId, planId, addonProviderId) {
-    return unpackData(this._client.apiClient().post(`/apps/${appId}/addons`,
-      {addon: {plan_id: planId, addon_provider_id: addonProviderId}}), "addon")
+    return unpackData(
+      this._client.apiClient().post(`/apps/${appId}/addons`, {
+        addon: { plan_id: planId, addon_provider_id: addonProviderId },
+      }),
+      'addon',
+    )
   }
 
   /**
@@ -41,7 +48,10 @@ export default class Addons {
    * @return {Promise<Category[] | APIError>}
    */
   listCategories() {
-    return unpackData(this._client.unauthenticatedClient().get('/addon_categories'), "addon_categories")
+    return unpackData(
+      this._client.unauthenticatedClient().get('/addon_categories'),
+      'addon_categories',
+    )
   }
 
   /**
@@ -52,9 +62,17 @@ export default class Addons {
    */
   listProviders(categoryId) {
     if (categoryId)
-      return unpackData(this._client.unauthenticatedClient().get(`/addon_providers?category_id=${categoryId}`), "addon_providers")
+      return unpackData(
+        this._client
+          .unauthenticatedClient()
+          .get(`/addon_providers?category_id=${categoryId}`),
+        'addon_providers',
+      )
     else
-      return unpackData(this._client.unauthenticatedClient().get(`/addon_providers`), "addon_providers")
+      return unpackData(
+        this._client.unauthenticatedClient().get(`/addon_providers`),
+        'addon_providers',
+      )
   }
 
   /**
@@ -66,7 +84,12 @@ export default class Addons {
    * @return {Promise<AddonUpgrade | APIError>}
    */
   update(appId, addonId, addon) {
-    return unpackData(this._client.apiClient().patch(`/apps/${appId}/addons/${addonId}`, {addon: addon}), "addon")
+    return unpackData(
+      this._client
+        .apiClient()
+        .patch(`/apps/${appId}/addons/${addonId}`, { addon: addon }),
+      'addon',
+    )
   }
 
   /**
@@ -77,7 +100,9 @@ export default class Addons {
    * @return {Promise<? | APIError>}
    */
   destroy(appId, addonId) {
-    return unpackData(this._client.apiClient().delete(`/apps/${appId}/addons/${addonId}`))
+    return unpackData(
+      this._client.apiClient().delete(`/apps/${appId}/addons/${addonId}`),
+    )
   }
 
   /**
@@ -87,7 +112,10 @@ export default class Addons {
    * @return {Promise<AddonSso | APIError>}
    */
   sso(appId, addonId) {
-    return unpackData(this._client.apiClient().get(`/apps/${appId}/addons/${addonId}/sso`), "addon")
+    return unpackData(
+      this._client.apiClient().get(`/apps/${appId}/addons/${addonId}/sso`),
+      'addon',
+    )
   }
 
   /**
@@ -97,7 +125,10 @@ export default class Addons {
    * @return {Promise<Addon | APIError>}
    */
   getAddon(appId, addonId) {
-    return unpackData(this._client.apiClient().get(`/apps/${appId}/addons/${addonId}`), "addon")
+    return unpackData(
+      this._client.apiClient().get(`/apps/${appId}/addons/${addonId}`),
+      'addon',
+    )
   }
 }
 

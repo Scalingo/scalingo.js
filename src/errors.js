@@ -1,7 +1,7 @@
 /**
  * Error returned when the Scalingo API return something else than 200
  */
-export class APIError extends Error{
+export class APIError extends Error {
   /**
    * Create a new instance of APIError
    * @param {Number} status HTTP status code of the request
@@ -9,7 +9,7 @@ export class APIError extends Error{
    */
   constructor(status, data) {
     let message = `An error occurred (status=${status})`
-    if(data && data.error) {
+    if (data && data.error) {
       message = data.error
     }
     super(message)
@@ -39,5 +39,4 @@ export class APIError extends Error{
   get data() {
     return this._data
   }
-
 }
