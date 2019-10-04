@@ -29,7 +29,7 @@ export default class Notifiers {
    * Add a notifier to an application
    * @see https://developers.scalingo.com/notifiers#add-a-notifier
    * @param {String} appId ID of the app
-   * @param {Notifier} notifier New notifier configuration
+   * @param {NotifierCreateParams} notifier New notifier configuration
    * @return {Promise<Notifier | APIError>}
    */
   create(appId, notifier) {
@@ -46,7 +46,7 @@ export default class Notifiers {
    * @see https://developers.scalingo.com/notifiers#update-a-notifier
    * @param {String} appId ID of the current application
    * @param {String} notifierId ID of the current notifier
-   * @param {Notifier} notifier Updated notifier configuration
+   * @param {NotifierUpdateParams} notifier Updated notifier configuration
    * @return {Promise<Notifier | APIError>}
    */
   update(appId, notifierId, notifier) {
@@ -110,7 +110,29 @@ export default class Notifiers {
  * @property {boolean} active Is the notifier active or not
  * @property {String} type Notifier type
  * @property {String} platform_id Notification platform used by this notifer
- * @property {boolean} send_all_alerts Should the notifier accept all alerts
+ * @property {boolean} send_all_alerts Should the notifier accepts all alerts
+ * @property {boolean} send_all_events Should the notifier accepts all events
  * @property {[]String} selected_event_ids List of events accepted by this notifier
  * @property {Object} type_data Notitication platform dependant additional data
+ */
+
+/**
+ * @typedef {Object} NotifierCreateParams
+ * @property {String} platform_id Notification platform used by this notifer
+ * @property {String} name Name of the notifier
+ * @property {?boolean} active Optional: Is the notifier active or not
+ * @property {?boolean} send_all_alerts Optional: Should the notifier accepts all alerts
+ * @property {?boolean} send_all_events Optional: Should the notifier accepts all events
+ * @property {?[]String} selected_event_ids Optional: List of events accepted by this notifier
+ * @property {?Object} type_data Optional: Notitication platform dependant additional data
+ */
+
+/**
+ * @typedef {Object} NotifierUpdateParams
+ * @property {String} name Name of the notifier
+ * @property {?boolean} active Optional: Is the notifier active or not
+ * @property {?boolean} send_all_alerts Optional: Should the notifier accepts all alerts
+ * @property {?boolean} send_all_events Optional: Should the notifier accepts all events
+ * @property {?[]String} selected_event_ids Optional: List of events accepted by this notifier
+ * @property {?Object} type_data Optional: Notitication platform dependant additional data
  */
