@@ -9,7 +9,7 @@ export class Operation {
   /**
    * @param {Client} client Client instance
    * @param {String} url Location url
-   * @see http://developers.scalingo.com/operations
+   * @see https://developers.scalingo.com/operations
    */
   constructor(client, url) {
     this._client = client

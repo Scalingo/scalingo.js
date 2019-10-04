@@ -15,7 +15,7 @@ export default class Events {
 
   /**
    * Return all events of an application
-   * @see http://developers.scalingo.com/events#list-the-events-of-an-app
+   * @see https://developers.scalingo.com/events#list-the-events-of-an-app
    * @param {String} appId Id of the current application
    * @param {?EventsPaginationOpts} opts Object that contain the index of the page and the number of element per page
    * @return {Promise<AppEvents | APIError>}
@@ -26,7 +26,7 @@ export default class Events {
 
   /**
    * Return a list of event types
-   * @see http://developers.scalingo.com/event_types#list-the-event-types
+   * @see https://developers.scalingo.com/event_types#list-the-event-types
    * @return {Promise<EventType[] | APIError>}
    */
   listEventTypes() {
@@ -35,7 +35,7 @@ export default class Events {
 
   /**
    * Return a list of event catgories
-   * @see http://developers.scalingo.com/event_categories#list-the-event-categories
+   * @see https://developers.scalingo.com/event_categories#list-the-event-categories
    * @return {Promise<EventCategory[] | APIError>}
    */
   listEventCategories() {

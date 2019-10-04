@@ -15,9 +15,9 @@ export default class Apps{
 
   /**
    * Fetch a specific app
-   * @see http://developers.scalingo.com/apps#get-a-precise-application
+   * @see https://developers.scalingo.com/apps#get-a-precise-application
    * @param {String} id - ID of the application
-   * @return {Promise<App,APIError>} Promise that when resolved return an App. See: http://developers.scalingo.com/apps#application-attributes
+   * @return {Promise<App,APIError>} Promise that when resolved return an App. See: https://developers.scalingo.com/apps#application-attributes
    */
   find(id) {
     return unpackData(this._client.apiClient().get(`/apps/${id}`), "app")
@@ -25,8 +25,8 @@ export default class Apps{
 
   /**
    * Get all your applications and the one your are collaborator for
-   * @see http://developers.scalingo.com/apps#list-your-applications
-   * @return {Promise<App[], APIError>} Promise that when resolved return an App array. See: http://developers.scalingo.com/apps#application-attributes
+   * @see https://developers.scalingo.com/apps#list-your-applications
+   * @return {Promise<App[], APIError>} Promise that when resolved return an App array. See: https://developers.scalingo.com/apps#application-attributes
    */
   all() {
     return unpackData(this._client.apiClient().get('/apps'), "apps")
@@ -60,7 +60,7 @@ export default class Apps{
 
   /**
    * Open a listener on this app deployment events
-   * @see http://developers.scalingo.com/deployments#get-real-time-output-of-a-live-deployment
+   * @see https://developers.scalingo.com/deployments#get-real-time-output-of-a-live-deployment
    * @param {String} id ID of the application
    * @return {Promise<Listener, APIError>} Promise that when resolved return a Listener for this application.
    */
@@ -71,7 +71,7 @@ export default class Apps{
 
   /**
    * Get an authenticated URL for the application logs
-   * @see http://developers.scalingo.com/apps#access-to-the-application-logs
+   * @see https://developers.scalingo.com/apps#access-to-the-application-logs
    * @param {String} id ID of the application
    * @return {Promise<String, APIError>} Promise that when resolved returns a pre-signed URL to access application logs.
    */
@@ -82,7 +82,7 @@ export default class Apps{
 
 /**
  * @typedef {Object} App
- * @see http://developers.scalingo.com/apps
+ * @see https://developers.scalingo.com/apps
  * @property {String} id  unique ID
  * @property {String} name  name of the application, can substitute the ID
  * @property {Date} created_at creation date of the application

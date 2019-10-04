@@ -14,7 +14,7 @@ export default class Collaborators {
   
   /**
    * List all collaborators of an application
-   * @see http://developers.scalingo.com/collaborators#list-collaborators-of-an-app
+   * @see https://developers.scalingo.com/collaborators#list-collaborators-of-an-app
    * @params {String} appId ID of the app to get collaborators list
    * @return {Promise<Collaborator[] | APIError>}
    */
@@ -24,7 +24,7 @@ export default class Collaborators {
 
   /**
    * Remove a collaborator
-   * @see http://developers.scalingo.com/collaborators#delete-a-collaborator
+   * @see https://developers.scalingo.com/collaborators#delete-a-collaborator
    * @params {String} appId ID of the application
    * @params {String} collaboratorId ID of the collaborator to remove
    * @return {Promise<?APIError>}
@@ -35,7 +35,7 @@ export default class Collaborators {
 
   /**
    * Invite collaborators to an application
-   * @see http://developers.scalingo.com/collaborators#invite-collaborator-to-work-on-an-app
+   * @see https://developers.scalingo.com/collaborators#invite-collaborator-to-work-on-an-app
    * @params {String} appId Id of the application
    * @params {String} email Email of the collaborator to invite
    * @return {Promise<CollaboratorInvitation | APIError>}
@@ -46,7 +46,7 @@ export default class Collaborators {
 
   /**
    * Accept invitation to an application
-   * @see http://developers.scalingo.com/collaborators#accept-an-invitation-to-collaborate
+   * @see https://developers.scalingo.com/collaborators#accept-an-invitation-to-collaborate
    * @params {String} token Token of the invitation returned when adding a collaborator
    * @return {App | APIError}
    */

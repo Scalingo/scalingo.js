@@ -1,6 +1,6 @@
 /**
  * @typedef {Object} PaginationMeta
- * @see http://developers.scalingo.com/index#pagination
+ * @see https://developers.scalingo.com/index#pagination
  * @property {?number} prev_page Previous page number
  * @property {number} current_page Current page number
  * @property {number} next_page Next page number
@@ -10,7 +10,7 @@
 
 /**
  * @typedef {Object} PaginationOpts
- * @see http://developers.scalingo.com/index#pagination
+ * @see https://developers.scalingo.com/index#pagination
  * @property {?number} page Page number
  * @property {?number} per_page Items per page
  */

@@ -14,7 +14,7 @@ export default class Operations {
   
   /**
    * Get an operation
-   * @see http://developers.scalingo.com/operations#get-an-operation
+   * @see https://developers.scalingo.com/operations#get-an-operation
    * @param {String} appId ID of the application
    * @param {String} operationId ID of the operation
    * @return {Promise<Operation | APIError>}

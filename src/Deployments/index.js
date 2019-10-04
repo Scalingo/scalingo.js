@@ -14,7 +14,7 @@ export default class Deployments {
 
   /**
    * List all deployments for an app
-   * @see http://developers.scalingo.com/deployments#list-the-deployments-of-an-app
+   * @see https://developers.scalingo.com/deployments#list-the-deployments-of-an-app
    * @param {String} appId ID of the app
    * @param {PaginationOpts} opts optional parameters
    * @return {Promise<DeploymentsResult[] | APIError>} List of deployments for this app
@@ -25,7 +25,7 @@ export default class Deployments {
 
   /**
    * Get a deployment of an app
-   * @see http://developers.scalingo.com/deployments#get-a-particular-deployment
+   * @see https://developers.scalingo.com/deployments#get-a-particular-deployment
    * @param {String} appId ID of the app
    * @param {String} deploymentId ID of the deployment
    * @return {Promise<Deployment | APIError>} Details of the deployment
@@ -36,7 +36,7 @@ export default class Deployments {
 
   /**
    * Get the logs of a deployment
-   * @see http://developers.scalingo.com/deployments#get-the-output-of-the-deployment
+   * @see https://developers.scalingo.com/deployments#get-the-output-of-the-deployment
    * @param {String} appId ID of the app
    * @param {String} deploymentId ID of the deployment
    * @return {Promise<String | APIError>} Logs of the deployment
@@ -48,7 +48,7 @@ export default class Deployments {
 
 /**
  * @typedef {Object} Deployment
- * @see http://developers.scalingo.com/deployments
+ * @see https://developers.scalingo.com/deployments
  * @property {String} id unique ID
  * @property {String} app_id unique ID referencing the app this deployment belongs to
  * @property {Date} created_at date of creation
@@ -60,7 +60,7 @@ export default class Deployments {
 
 /**
  * @typedef {Object} DeploymentPusher
- * @see http://developers.scalingo.com/deployments
+ * @see https://developers.scalingo.com/deployments
  * @property {String} id unique ID
  * @property {String} email email of user who pushed
  * @property {String} username username on Scalingo's platform
@@ -68,7 +68,7 @@ export default class Deployments {
 
 /**
  * @typedef {Object} DeploymentLinks
- * @see http://developers.scalingo.com/deployments
+ * @see https://developers.scalingo.com/deployments
  * @property {String} output URL to the logs of the deployment
  */
 

@@ -100,20 +100,20 @@ export default class Listener {
 
 /**
  * @typedef {Object} EventNewDeployment
- * @see http://developers.scalingo.com/deployments#get-real-time-output-of-a-live-deployment
+ * @see https://developers.scalingo.com/deployments#get-real-time-output-of-a-live-deployment
  * @property {String} deployment ID of the new deployment
  */
 
 /**
  * @typedef {Object} EventNewDeploymentLog
- * @see http://developers.scalingo.com/deployments#get-real-time-output-of-a-live-deployment
+ * @see https://developers.scalingo.com/deployments#get-real-time-output-of-a-live-deployment
  * @property {String} id Deployment ID
  * @property {String} content log line received
  */
 
 /**
  * @typedef {Object} EventDeploymentStatusUpdated
- * @see http://developers.scalingo.com/deployments#get-real-time-output-of-a-live-deployment
+ * @see https://developers.scalingo.com/deployments#get-real-time-output-of-a-live-deployment
  * @property {String} id Deployment ID
  * @property {DeploymentStatus} status New deployment status
  */

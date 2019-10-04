@@ -15,7 +15,7 @@ export default class Containers {
 
   /**
    * Get container formation for an app
-   * @see http://developers.scalingo.com/apps#get-containers-list
+   * @see https://developers.scalingo.com/apps#get-containers-list
    * @param {String} appId ID of the app to get the formation from
    * @return {Promise<Container[] | APIError>}
    */
@@ -25,7 +25,7 @@ export default class Containers {
 
   /**
    * Scale an application
-   * @see http://developers.scalingo.com/apps#scale-an-application
+   * @see https://developers.scalingo.com/apps#scale-an-application
    * @param {String} appId ID of the app to scale
    * @param {Container[]} formation Formation to apply
    * @return {Promise<ContainersOperation | APIError>} final formation
@@ -39,7 +39,7 @@ export default class Containers {
   
   /**
    * List the every sizes of the containers
-   * @see http://developers.scalingo.com/container-sizes#list-the-container-sizes-available
+   * @see https://developers.scalingo.com/container-sizes#list-the-container-sizes-available
    * @return {Promise<ContainerSize[] | APIError>} attributes of each container
    */
   availableSizes() {
@@ -48,7 +48,7 @@ export default class Containers {
   
   /**
    * Restart containers
-   * @see http://developers.scalingo.com/apps#restart-an-application
+   * @see https://developers.scalingo.com/apps#restart-an-application
    * @param {String} appId ID of the app to scale
    * @param {?String[]} scope Array of containers name to restart
    * @return {Promise<Operation | APIError>} final formation

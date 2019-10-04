@@ -14,7 +14,7 @@ export default class Domains {
 
   /**
    * List all the domains of an application
-   * @see http://developers.scalingo.com/domains#list-all-the-domains-of-an-application
+   * @see https://developers.scalingo.com/domains#list-all-the-domains-of-an-application
    * @param {String} appId ID of the app to get domains list
    * @return {Promise<Domain[] | APIError>}
    */
@@ -24,7 +24,7 @@ export default class Domains {
 
   /**
    * Link a domain name to a specific application
-   * @see http://developers.scalingo.com/domains#link-a-domain-name-to-an-application
+   * @see https://developers.scalingo.com/domains#link-a-domain-name-to-an-application
    * @param {String} appId ID of the app to post to the specified application
    * @param {DomainParams} domain An object of the domain to link
    * @return {Promise<Domain | APIError>}
@@ -35,7 +35,7 @@ export default class Domains {
 
   /**
    * Delete a domain from a specific application
-   * @see http://developers.scalingo.com/domains#unlink-a-domain-name-from-an-application
+   * @see https://developers.scalingo.com/domains#unlink-a-domain-name-from-an-application
    * @param {String} appId ID of the app to post to the specified application
    * @param {String} domainId ID of the specified domain
    * @return {Promise<?APIError>}
@@ -46,7 +46,7 @@ export default class Domains {
 
   /**
    * Show a specific domain from an application
-   * @see http://developers.scalingo.com/domains#show-a-specific-domain-of-an-application
+   * @see https://developers.scalingo.com/domains#show-a-specific-domain-of-an-application
    * @param {String} appId ID of the app to post to the specified application
    * @param {String} domainId ID of the domain name
    * @return {Promise<Domain | APIError>}
@@ -57,7 +57,7 @@ export default class Domains {
 
   /**
    * Update a domain from a specific application
-   * @see http://developers.scalingo.com/domains#update-a-domain-name
+   * @see https://developers.scalingo.com/domains#update-a-domain-name
    * @param {String} appId ID of the app to post to the specified application
    * @param {String} domainId ID of the domain to update
    * @param {DomainUpdateParams} domain An object of the domain to update
@@ -78,7 +78,7 @@ export default class Domains {
  * @property {Boolean} ssl Flag if SSL with a custom certificate is enabled
  * @property {Date} validity Once a certificate has been submitted, display the validity of it
  * @property {Boolean} canonical The domain is the canonical domain of this application
- * @see http://developers.scalingo.com/domains
+ * @see https://developers.scalingo.com/domains
  */
 
 /**
@@ -86,7 +86,7 @@ export default class Domains {
  * @property {String} name Hostname you want to add
  * @property {?String} tlscert Optional: SSL Certificate you want to associate with the domain
  * @property {?String} tlskey Optional: Private key used to create the SSL certificate
- * @see http://developers.scalingo.com/domains#link-a-domain-name-to-an-application
+ * @see https://developers.scalingo.com/domains#link-a-domain-name-to-an-application
  */
 
 /**
@@ -94,7 +94,7 @@ export default class Domains {
  * @property {?String} tlscert Optional: SSL Certificate you want to associate with the domain
  * @property {?String} tlskey Optional: Private key used to create the SSL certificate
  * @property {?Boolean} canonical Optional: Set this domain as the canonical domain for this application
- * @see http://developers.scalingo.com/domains#update-a-domain-name
+ * @see https://developers.scalingo.com/domains#update-a-domain-name
  */
 
 /**

@@ -14,7 +14,7 @@ export default class Environment {
   
   /**
    * List all the environment variables of an application
-   * @see http://developers.scalingo.com/environment#list-environment-variables-of-an-app
+   * @see https://developers.scalingo.com/environment#list-environment-variables-of-an-app
    * @param {String} appId ID of the app to get domains list
    * @return {Promise<Variable[] | APIError>}
    */
@@ -24,7 +24,7 @@ export default class Environment {
   
   /**
    * Create an environment variable for an application
-   * @see http://developers.scalingo.com/environment#add-environment-variables-to-an-app
+   * @see https://developers.scalingo.com/environment#add-environment-variables-to-an-app
    * @param {String} appId ID of the app to get domains list
    * @param {VariableParams} variable An Object that contain the information about the environment variable
    * @return {Promise<Variable | APIError>}
@@ -35,7 +35,7 @@ export default class Environment {
   
   /**
    * Create or update multiple environment variables for an application
-   * @see http://developers.scalingo.com/environment#bulk-update-of-the-environment-of-an-app
+   * @see https://developers.scalingo.com/environment#bulk-update-of-the-environment-of-an-app
    * @param {String} appId ID of the app to get domains list
    * @param {VariableParams[]} variablesArray An array of Object that contain the information about the environment variables to update
    * @return {Promise<Variable[] | APIError>}
@@ -46,7 +46,7 @@ export default class Environment {
   
   /**
    * Update an environment variable
-   * @see http://developers.scalingo.com/environment#update-an-environment-variable
+   * @see https://developers.scalingo.com/environment#update-an-environment-variable
    * @param {String} appId ID of the app to get domains list
    * @param {String} id ID of the variable to update
    * @param {String} variable An string of the value of the environment variable to update
@@ -58,7 +58,7 @@ export default class Environment {
   
   /**
    * Delete an environment variable
-   * @see http://developers.scalingo.com/environment#delete-an-environment-variable
+   * @see https://developers.scalingo.com/environment#delete-an-environment-variable
    * @param {String} appId ID of the app to get domains list
    * @param {String} variableId ID of the variable to delete
    * @return {Promise<Variable[] | APIError>}
@@ -69,7 +69,7 @@ export default class Environment {
   
   /**
    * Delete multiple environment variables
-   * @see http://developers.scalingo.com/environment#bulk-delete-environment-variables-of-an-app
+   * @see https://developers.scalingo.com/environment#bulk-delete-environment-variables-of-an-app
    * @param {String} appId ID of the app
    * @param {String[]} variablesArray An array of variables id
    * @return {Promise<Variable[] | APIError>}
@@ -84,12 +84,12 @@ export default class Environment {
  * @property {String} id Unique ID of the environment variable
  * @property {String} name Name of the environment variable
  * @property {String} value The value of the environment variable
- * @see http://developers.scalingo.com/environment
+ * @see https://developers.scalingo.com/environment
  */
 
 /**
  * @typedef {Object} VariableParams
  * @property {String} name The name of the environment variable
  * @property {String} value The value of the environment variable
- * @see http://developers.scalingo.com/environment#add-environment-variables-to-an-app
+ * @see https://developers.scalingo.com/environment#add-environment-variables-to-an-app
  */

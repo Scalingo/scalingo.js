@@ -11,7 +11,7 @@ export default class Metrics {
 
   /**
    * List all the metrics available on the platform.
-   * @see http://developers.scalingo.com/metrics#list-the-metrics-available
+   * @see https://developers.scalingo.com/metrics#list-the-metrics-available
    * @return {Promise<MetricType[] | APIError>} Promise that when resolved return a list of all metrics available on the platform.
    */
   types() {
@@ -62,7 +62,7 @@ export default class Metrics {
 
 /**
  * @typedef {Object} MetricType
- * @see http://developers.scalingo.com/metrics
+ * @see https://developers.scalingo.com/metrics
  * @property {String} id unique identifier
  * @property {String} label human readable string explaining this metric
  * @property {String} suffix symbol used as a suffix after this metric value

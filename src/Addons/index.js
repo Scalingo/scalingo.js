@@ -5,7 +5,7 @@ import {unpackData} from '../utils.js'
  */
 export default class Addons {
   /**
-   * Create a new Client for the Containers API
+   * Create a new Client for the Addons API
    * @param {Client} client - Scalingo API Client
    */
   constructor(client) {
@@ -14,7 +14,7 @@ export default class Addons {
 
   /**
    * Get list of addons of an application
-   * @see http://developers.scalingo.com/addons#list-application-addons
+   * @see https://developers.scalingo.com/addons#list-application-addons
    * @param {String} appId ID of the app to get the formation from
    * @return {Promise<Addon[] | APIError>}
    */
@@ -24,7 +24,7 @@ export default class Addons {
 
   /**
    * Add an addon to an application
-   * @see http://developers.scalingo.com/addons#provision-an-addon
+   * @see https://developers.scalingo.com/addons#provision-an-addon
    * @param {String} appId ID of the app
    * @param {String} planId ID of the plan
    * @param {String} addonProviderId ID of the addon provider
@@ -37,7 +37,7 @@ export default class Addons {
 
   /**
    * List addon categories
-   * @see http://developers.scalingo.com/addon_providers#list-addon-categories
+   * @see https://developers.scalingo.com/addon_providers#list-addon-categories
    * @return {Promise<Category[] | APIError>}
    */
   listCategories() {
@@ -46,7 +46,7 @@ export default class Addons {
 
   /**
    * List addon providers
-   * @see http://developers.scalingo.com/addon_providers#list-addon-providers
+   * @see https://developers.scalingo.com/addon_providers#list-addon-providers
    * @param {?String} categoryId ID of the addon category
    * @return {Promise<AddonProvider[] | APIError>}
    */
@@ -59,7 +59,7 @@ export default class Addons {
 
   /**
    * Upgrade an addon
-   * @see http://developers.scalingo.com/addons#upgrade-an-addon
+   * @see https://developers.scalingo.com/addons#upgrade-an-addon
    * @param {String} appId ID of the current application
    * @param {Object} addon Contain the ID of the plan of your choice
    * @param {String} addonId ID of the current addon
@@ -71,7 +71,7 @@ export default class Addons {
 
   /**
    * Remove an addon
-   * @see http://developers.scalingo.com/addons#remove-an-addon
+   * @see https://developers.scalingo.com/addons#remove-an-addon
    * @param {String} appId ID of the current application
    * @param {String} addonId ID of the addon
    * @return {Promise<? | APIError>}
@@ -79,7 +79,7 @@ export default class Addons {
   destroy(appId, addonId) {
     return unpackData(this._client.apiClient().delete(`/apps/${appId}/addons/${addonId}`))
   }
-  
+
   /**
    * Get the sso of an addon
    * @param {String} appId The ID of the current application
@@ -89,7 +89,7 @@ export default class Addons {
   sso(appId, addonId) {
     return unpackData(this._client.apiClient().get(`/apps/${appId}/addons/${addonId}/sso`), "addon")
   }
-  
+
   /**
    * Get a specific addon
    * @param {String} appId The ID of the current application
