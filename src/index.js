@@ -1,17 +1,18 @@
 import Apps from './Apps'
+import Addons from './Addons'
+import Collaborators from './Collaborators'
 import Containers from './Containers'
+import Deployments from './Deployments'
+import Domains from './Domains'
+import Environment from './Environment'
+import Events from './Events'
+import Logs from './Logs'
 import Metrics from './Metrics'
+import Notifiers from './Notifiers'
+import NotificationPlatforms from './NotificationPlatforms'
+import Operations from './Operations'
 import Tokens from './Tokens'
 import Users from './Users'
-import Domains from './Domains'
-import Deployments from './Deployments'
-import Environment from './Environment'
-import Logs from './Logs'
-import Addons from './Addons'
-import Operations from './Operations'
-import Events from './Events'
-import Collaborators from './Collaborators'
-import Notifiers from './Notifiers'
 
 import axios from 'axios'
 
@@ -115,6 +116,12 @@ class Client {
      * @type {Notifiers}
      */
     this.Notifiers = new Notifiers(this)
+
+    /**
+     * Notification platforms API
+     * @type {NotificationPlatforms}
+     */
+    this.NotificationPlatforms = new NotificationPlatforms(this)
   }
 
   /**
