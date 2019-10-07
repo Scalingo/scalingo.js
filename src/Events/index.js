@@ -1,5 +1,4 @@
-import {unpackData} from '../utils.js'
-import { APIError } from "../errors.js";
+import { unpackData } from '../utils.js'
 
 /**
  * Events API Client
@@ -10,36 +9,44 @@ export default class Events {
    * @param {Client} client - Scalingo API Client
    */
   constructor(client) {
-    this._client = client;
+    this._client = client
   }
 
   /**
    * Return all events of an application
-   * @see http://developers.scalingo.com/events#list-the-events-of-an-app
+   * @see https://developers.scalingo.com/events#list-the-events-of-an-app
    * @param {String} appId Id of the current application
    * @param {?EventsPaginationOpts} opts Object that contain the index of the page and the number of element per page
    * @return {Promise<AppEvents | APIError>}
    */
   for(appId, opts) {
-    return unpackData(this._client.apiClient().get(`/apps/${appId}/events`, {params: opts}))
+    return unpackData(
+      this._client.apiClient().get(`/apps/${appId}/events`, { params: opts }),
+    )
   }
 
   /**
    * Return a list of event types
-   * @see http://developers.scalingo.com/event_types#list-the-event-types
+   * @see https://developers.scalingo.com/event_types#list-the-event-types
    * @return {Promise<EventType[] | APIError>}
    */
   listEventTypes() {
-    return unpackData(this._client.unauthenticatedClient().get('event_types'), "event_types")
+    return unpackData(
+      this._client.unauthenticatedClient().get('event_types'),
+      'event_types',
+    )
   }
 
   /**
    * Return a list of event catgories
-   * @see http://developers.scalingo.com/event_categories#list-the-event-categories
+   * @see https://developers.scalingo.com/event_categories#list-the-event-categories
    * @return {Promise<EventCategory[] | APIError>}
    */
   listEventCategories() {
-    return unpackData(this._client.unauthenticatedClient().get('event_categories'), "event_categories")
+    return unpackData(
+      this._client.unauthenticatedClient().get('event_categories'),
+      'event_categories',
+    )
   }
 }
 

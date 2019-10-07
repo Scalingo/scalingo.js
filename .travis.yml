@@ -3,8 +3,11 @@ before_deploy:
 install: yarn
 cache: yarn
 node_js:
-- 11.6
+- 10.16
 language: node_js
+script:
+  - yarn lint
+  - yarn test
 deploy:
   provider: npm
   email: hello@scalingo.com

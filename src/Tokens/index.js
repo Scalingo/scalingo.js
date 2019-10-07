@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {unpackData} from '../utils.js'
+import { unpackData } from '../utils.js'
 
 /**
  * Tokens API Client
@@ -10,7 +10,7 @@ export default class Tokens {
    * @param {Client} client - Scalingo API Client
    */
   constructor(client) {
-    this._client = client;
+    this._client = client
   }
 
   /**
@@ -19,12 +19,16 @@ export default class Tokens {
    * @return {Promise<String| APIError>} A valid Bearer Token that can be used against our infrastructure.
    */
   exchange(token) {
-    let request = axios.post(`${this._client._authApiUrl}/v1/tokens/exchange`, {}, {
-      auth: {
-        password: token,
+    let request = axios.post(
+      `${this._client._authApiUrl}/v1/tokens/exchange`,
+      {},
+      {
+        auth: {
+          password: token,
+        },
       },
-    })
-    return unpackData(request, "token")
+    )
+    return unpackData(request, 'token')
   }
 }
 

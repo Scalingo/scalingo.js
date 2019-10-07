@@ -1,4 +1,4 @@
-import {unpackData} from '../utils.js'
+import { unpackData } from '../utils.js'
 
 /**
  * Operations API Client
@@ -9,18 +9,21 @@ export default class Operations {
    * @param {Client} client - Scalingo API Client
    */
   constructor(client) {
-    this._client = client;
+    this._client = client
   }
-  
+
   /**
    * Get an operation
-   * @see http://developers.scalingo.com/operations#get-an-operation
+   * @see https://developers.scalingo.com/operations#get-an-operation
    * @param {String} appId ID of the application
    * @param {String} operationId ID of the operation
    * @return {Promise<Operation | APIError>}
    */
   operation(appId, operationId) {
-    return unpackData(this._client.apiClient().get(`/apps/${appId}/operations/${operationId}`), "operation")
+    return unpackData(
+      this._client.apiClient().get(`/apps/${appId}/operations/${operationId}`),
+      'operation',
+    )
   }
 }
 

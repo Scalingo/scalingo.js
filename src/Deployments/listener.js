@@ -20,7 +20,7 @@ export default class Listener {
     }
 
     this._ws.onclose = () => {
-      if(this._onClose) {
+      if (this._onClose) {
         this._onClose()
       }
       this._ws = null
@@ -32,23 +32,25 @@ export default class Listener {
   }
 
   _auth() {
-    this._ws.send(JSON.stringify({
-      type: "auth",
-      data: {
-        token: this._client._token,
-      }
-    }))
+    this._ws.send(
+      JSON.stringify({
+        type: 'auth',
+        data: {
+          token: this._client._token,
+        },
+      }),
+    )
   }
 
   _onMessage(message) {
     let data = JSON.parse(message.data)
-    if(this._messageTypes[data.type]) {
+    if (this._messageTypes[data.type]) {
       let result = data.data
 
       // If there was an ID in the original message
-      if(data.id) {
+      if (data.id) {
         // Inject it in the result object
-        result["id"] = data.id
+        result['id'] = data.id
       }
       this._messageTypes[data.type](result)
     }
@@ -58,7 +60,7 @@ export default class Listener {
    * Close the listener connection
    */
   close() {
-    if(this._ws) {
+    if (this._ws) {
       this._ws.close()
       this._ws = null
     }
@@ -78,7 +80,7 @@ export default class Listener {
    * @param {function(data: EventNewDeployment)} callback Callback to call when there is a new deployment
    */
   onNew(callback) {
-    this._messageTypes["new"] = callback
+    this._messageTypes['new'] = callback
   }
 
   /**
@@ -86,7 +88,7 @@ export default class Listener {
    * @param {function(data: EventNewDeploymentLog)} callback Callback to call when a new log line is received
    */
   onLog(callback) {
-    this._messageTypes["log"] = callback
+    this._messageTypes['log'] = callback
   }
 
   /**
@@ -94,26 +96,26 @@ export default class Listener {
    * @param {function(data: EventDeploymentStatusUpdated)} callback Callback to call when the deployment status is updated
    */
   onStatus(callback) {
-    this._messageTypes["status"] = callback
+    this._messageTypes['status'] = callback
   }
 }
 
 /**
  * @typedef {Object} EventNewDeployment
- * @see http://developers.scalingo.com/deployments#get-real-time-output-of-a-live-deployment
+ * @see https://developers.scalingo.com/deployments#get-real-time-output-of-a-live-deployment
  * @property {String} deployment ID of the new deployment
  */
 
 /**
  * @typedef {Object} EventNewDeploymentLog
- * @see http://developers.scalingo.com/deployments#get-real-time-output-of-a-live-deployment
+ * @see https://developers.scalingo.com/deployments#get-real-time-output-of-a-live-deployment
  * @property {String} id Deployment ID
  * @property {String} content log line received
  */
 
 /**
  * @typedef {Object} EventDeploymentStatusUpdated
- * @see http://developers.scalingo.com/deployments#get-real-time-output-of-a-live-deployment
+ * @see https://developers.scalingo.com/deployments#get-real-time-output-of-a-live-deployment
  * @property {String} id Deployment ID
  * @property {DeploymentStatus} status New deployment status
  */

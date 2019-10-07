@@ -1,35 +1,35 @@
-import {unpackData} from '../utils.js'
+import { unpackData } from '../utils.js'
 import Listener from '../Deployments/listener.js'
 
 /**
  * Apps API Client
  */
-export default class Apps{
+export default class Apps {
   /**
    * Create a new Client for the App API
    * @param {Client} client - Scalingo API Client
    */
   constructor(client) {
-    this._client = client;
+    this._client = client
   }
 
   /**
    * Fetch a specific app
-   * @see http://developers.scalingo.com/apps#get-a-precise-application
+   * @see https://developers.scalingo.com/apps#get-a-precise-application
    * @param {String} id - ID of the application
-   * @return {Promise<App,APIError>} Promise that when resolved return an App. See: http://developers.scalingo.com/apps#application-attributes
+   * @return {Promise<App,APIError>} Promise that when resolved return an App. See: https://developers.scalingo.com/apps#application-attributes
    */
   find(id) {
-    return unpackData(this._client.apiClient().get(`/apps/${id}`), "app")
+    return unpackData(this._client.apiClient().get(`/apps/${id}`), 'app')
   }
 
   /**
    * Get all your applications and the one your are collaborator for
-   * @see http://developers.scalingo.com/apps#list-your-applications
-   * @return {Promise<App[], APIError>} Promise that when resolved return an App array. See: http://developers.scalingo.com/apps#application-attributes
+   * @see https://developers.scalingo.com/apps#list-your-applications
+   * @return {Promise<App[], APIError>} Promise that when resolved return an App array. See: https://developers.scalingo.com/apps#application-attributes
    */
   all() {
-    return unpackData(this._client.apiClient().get('/apps'), "apps")
+    return unpackData(this._client.apiClient().get('/apps'), 'apps')
   }
 
   /**
@@ -47,20 +47,23 @@ export default class Apps{
 
     let headers = {}
 
-    if(opts) {
+    if (opts) {
       body['git_source'] = opts['git_source']
       body['parent_id'] = opts['parent_id']
       body['stack_id'] = opts['stack_id']
-      if(opts['dry_run']) {
-        headers['X-Dry-Run'] = "true"
+      if (opts['dry_run']) {
+        headers['X-Dry-Run'] = 'true'
       }
     }
-    return unpackData(this._client.apiClient().post('/apps', {app: body}, {headers}), "app")
+    return unpackData(
+      this._client.apiClient().post('/apps', { app: body }, { headers }),
+      'app',
+    )
   }
 
   /**
    * Open a listener on this app deployment events
-   * @see http://developers.scalingo.com/deployments#get-real-time-output-of-a-live-deployment
+   * @see https://developers.scalingo.com/deployments#get-real-time-output-of-a-live-deployment
    * @param {String} id ID of the application
    * @return {Promise<Listener, APIError>} Promise that when resolved return a Listener for this application.
    */
@@ -71,18 +74,21 @@ export default class Apps{
 
   /**
    * Get an authenticated URL for the application logs
-   * @see http://developers.scalingo.com/apps#access-to-the-application-logs
+   * @see https://developers.scalingo.com/apps#access-to-the-application-logs
    * @param {String} id ID of the application
    * @return {Promise<String, APIError>} Promise that when resolved returns a pre-signed URL to access application logs.
    */
   logsURL(id) {
-    return unpackData(this._client.apiClient().get(`/apps/${id}/logs`), "logs_url")
+    return unpackData(
+      this._client.apiClient().get(`/apps/${id}/logs`),
+      'logs_url',
+    )
   }
 }
 
 /**
  * @typedef {Object} App
- * @see http://developers.scalingo.com/apps
+ * @see https://developers.scalingo.com/apps
  * @property {String} id  unique ID
  * @property {String} name  name of the application, can substitute the ID
  * @property {Date} created_at creation date of the application

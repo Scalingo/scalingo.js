@@ -1,5 +1,5 @@
-import {unpackData} from '../utils.js'
-import {Operation} from "../Operations/utils";
+import { unpackData } from '../utils.js'
+import { Operation } from '../Operations/utils'
 
 /**
  * Containers API Client
@@ -10,51 +10,67 @@ export default class Containers {
    * @param {Client} client - Scalingo API Client
    */
   constructor(client) {
-    this._client = client;
+    this._client = client
   }
 
   /**
    * Get container formation for an app
-   * @see http://developers.scalingo.com/apps#get-containers-list
+   * @see https://developers.scalingo.com/apps#get-containers-list
    * @param {String} appId ID of the app to get the formation from
    * @return {Promise<Container[] | APIError>}
    */
   for(appId) {
-    return unpackData(this._client.apiClient().get(`/apps/${appId}/containers`), "containers")
+    return unpackData(
+      this._client.apiClient().get(`/apps/${appId}/containers`),
+      'containers',
+    )
   }
 
   /**
    * Scale an application
-   * @see http://developers.scalingo.com/apps#scale-an-application
+   * @see https://developers.scalingo.com/apps#scale-an-application
    * @param {String} appId ID of the app to scale
    * @param {Container[]} formation Formation to apply
    * @return {Promise<ContainersOperation | APIError>} final formation
    */
   async scale(appId, formation) {
-    let result = await unpackData(this._client.apiClient().post(`/apps/${appId}/scale`, {containers: formation}), "containers", {hasOperation: true})
+    let result = await unpackData(
+      this._client
+        .apiClient()
+        .post(`/apps/${appId}/scale`, { containers: formation }),
+      'containers',
+      { hasOperation: true },
+    )
     let operation = new Operation(this._client, result.operation)
     await operation.refresh()
-    return {formation: result.data, operation: operation}
+    return { formation: result.data, operation: operation }
   }
-  
+
   /**
    * List the every sizes of the containers
-   * @see http://developers.scalingo.com/container-sizes#list-the-container-sizes-available
+   * @see https://developers.scalingo.com/container-sizes#list-the-container-sizes-available
    * @return {Promise<ContainerSize[] | APIError>} attributes of each container
    */
   availableSizes() {
-    return unpackData(this._client.apiClient().get('/features/container_sizes'), "container_sizes")
+    return unpackData(
+      this._client.apiClient().get('/features/container_sizes'),
+      'container_sizes',
+    )
   }
-  
+
   /**
    * Restart containers
-   * @see http://developers.scalingo.com/apps#restart-an-application
+   * @see https://developers.scalingo.com/apps#restart-an-application
    * @param {String} appId ID of the app to scale
    * @param {?String[]} scope Array of containers name to restart
    * @return {Promise<Operation | APIError>} final formation
    */
   async restart(appId, scope) {
-    let result = await unpackData(this._client.apiClient().post(`/apps/${appId}/restart`, {scope: scope}), undefined, {hasOperation: true})
+    let result = await unpackData(
+      this._client.apiClient().post(`/apps/${appId}/restart`, { scope: scope }),
+      undefined,
+      { hasOperation: true },
+    )
     let operation = new Operation(this._client, result.operation)
     await operation.refresh()
     return operation
