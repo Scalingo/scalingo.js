@@ -44,8 +44,8 @@ describe('Metrics#get', () => {
 
   describe('When having complex queries', () => {
     it('should pass them as query parameters (since)', async () => {
-      let client = new Client('toto')
-      let mock = new MockAdapter(axios)
+      const client = new Client('toto')
+      const mock = new MockAdapter(axios)
       mock
         .onGet('https://api.scalingo.com/v1/apps/toto/stats/cpu/web', {
           params: { since: 32 },
@@ -54,7 +54,7 @@ describe('Metrics#get', () => {
           test: 'value',
         })
 
-      let result = await new Metrics(client).get('toto', 'cpu', {
+      const result = await new Metrics(client).get('toto', 'cpu', {
         containerType: 'web',
         since: 32,
       })
@@ -62,8 +62,8 @@ describe('Metrics#get', () => {
     })
 
     it('should pass them as query parameters (statisticsType)', async () => {
-      let client = new Client('toto')
-      let mock = new MockAdapter(axios)
+      const client = new Client('toto')
+      const mock = new MockAdapter(axios)
       mock
         .onGet('https://api.scalingo.com/v1/apps/toto/stats/requests', {
           params: { statistics_type: 'p95' },
@@ -72,7 +72,7 @@ describe('Metrics#get', () => {
           test: 'value',
         })
 
-      let result = await new Metrics(client).get('toto', 'requests', {
+      const result = await new Metrics(client).get('toto', 'requests', {
         statisticsType: 'p95',
       })
       expect(result).to.deep.eq({ test: 'value' })

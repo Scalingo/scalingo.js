@@ -34,7 +34,7 @@ export default class Metrics {
    * @return {Promise<Point[] | APIError>} Promise that when resolve return an array of points for the requested metrics
    */
   get(appId, metric, opts = {}) {
-    let {
+    const {
       since,
       statusCode,
       statisticsType,
@@ -42,7 +42,7 @@ export default class Metrics {
       containerType,
       last,
     } = opts
-    let params = {}
+    const params = {}
     let url = `/apps/${appId}/stats/${metric}`
     if (since !== undefined) {
       params['since'] = since

@@ -26,7 +26,7 @@ class Client {
    * @param {String} [opts.noUserAgent=false] - Do not set the user agent
    */
   constructor(token, opts = {}) {
-    let { apiUrl, authApiUrl } = opts
+    const { apiUrl, authApiUrl } = opts
 
     this._token = token
     this._apiUrl = apiUrl || 'https://api.scalingo.com'
@@ -175,8 +175,8 @@ export { Client }
  * @return {Promise<Client | Error>} a valid Client
  */
 export async function clientFromToken(token, opts) {
-  let client = new Client('', opts)
-  let bearerToken = await client.Tokens.exchange(token)
+  const client = new Client('', opts)
+  const bearerToken = await client.Tokens.exchange(token)
   client._token = bearerToken
   return client
 }

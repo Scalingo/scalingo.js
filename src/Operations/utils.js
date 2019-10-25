@@ -86,9 +86,9 @@ export class Operation {
    * @returns {Promise<any | APIError>}
    */
   wait() {
-    let vm = this
+    const vm = this
     return new Promise((resolve, reject) => {
-      let waitInterval = setInterval(function() {
+      const waitInterval = setInterval(function() {
         vm.refresh()
           .then((response) => {
             if (vm.status === 'done') {

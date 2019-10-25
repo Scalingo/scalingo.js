@@ -16,7 +16,7 @@ describe('Containers#for', () => {
 })
 
 describe('Containers#scale', () => {
-  let postOpts = {
+  const postOpts = {
     location:
       'https://api.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000',
   }
@@ -31,10 +31,10 @@ describe('Containers#scale', () => {
           { name: 'web', amount: 2, size: 'M' },
         ])
       }
-      let operation = Factory.build('operation')
+      const operation = Factory.build('operation')
       opts.axios.onGet(postOpts.location).reply(200, { operation: operation })
       return new Promise((resolve, reject) => {
-        let promise = new Containers(client).scale('toto', [
+        const promise = new Containers(client).scale('toto', [
           { name: 'web', amount: 2, size: 'M' },
         ])
         promise
@@ -60,7 +60,7 @@ describe('Container#availableSizes', () => {
 })
 
 describe('Container#restart', () => {
-  let postOpts = {
+  const postOpts = {
     emptyResponseBody: true,
     location:
       'https://api.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000',
@@ -74,7 +74,7 @@ describe('Container#restart', () => {
       if (opts.shouldFail) {
         return new Containers(client).restart('toto', ['web'])
       }
-      let operation = Factory.build('operation')
+      const operation = Factory.build('operation')
       opts.axios.onGet(postOpts.location).reply(200, { operation: operation })
       return new Promise((resolve, reject) => {
         new Containers(client)

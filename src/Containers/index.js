@@ -34,14 +34,14 @@ export default class Containers {
    * @return {Promise<ContainersOperation | APIError>} final formation
    */
   async scale(appId, formation) {
-    let result = await unpackData(
+    const result = await unpackData(
       this._client
         .apiClient()
         .post(`/apps/${appId}/scale`, { containers: formation }),
       'containers',
       { hasOperation: true },
     )
-    let operation = new Operation(this._client, result.operation)
+    const operation = new Operation(this._client, result.operation)
     await operation.refresh()
     return { formation: result.data, operation: operation }
   }
@@ -66,12 +66,12 @@ export default class Containers {
    * @return {Promise<Operation | APIError>} final formation
    */
   async restart(appId, scope) {
-    let result = await unpackData(
+    const result = await unpackData(
       this._client.apiClient().post(`/apps/${appId}/restart`, { scope: scope }),
       undefined,
       { hasOperation: true },
     )
-    let operation = new Operation(this._client, result.operation)
+    const operation = new Operation(this._client, result.operation)
     await operation.refresh()
     return operation
   }

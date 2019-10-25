@@ -7,14 +7,14 @@ import { APIError } from '../../src/errors'
 
 export function testGetter(url, opts, prefix, build) {
   it('calls the API and return the data when there is no errors', async () => {
-    let client = new Client('test-token')
-    let mock = new MockAdapter(axios)
+    const client = new Client('test-token')
+    const mock = new MockAdapter(axios)
     let response = { test: 'value' }
     if (prefix !== null) {
       response = { [prefix]: response }
     }
     mock.onGet(url).reply(200, response)
-    let result = await build(client)
+    const result = await build(client)
     expect(result).to.deep.eq({ test: 'value' })
     if (opts && opts['noAuth']) {
       expect(mock.history.get[0].headers.Authorization).to.be.undefined
@@ -26,8 +26,8 @@ export function testGetter(url, opts, prefix, build) {
   })
 
   it('returns an error when the API fails', async () => {
-    let client = new Client('test-token')
-    let mock = new MockAdapter(axios)
+    const client = new Client('test-token')
+    const mock = new MockAdapter(axios)
     mock.onGet(url).reply(404, {
       error: 'not found',
     })
@@ -44,11 +44,11 @@ export function testGetter(url, opts, prefix, build) {
 
 export function testPost(url, opts, body, prefix, build) {
   it('calls the API and return the data when there is no errors', async () => {
-    let client = new Client('test-token')
-    let mock = new MockAdapter(axios)
-    let resultValue = { data: 'value' }
+    const client = new Client('test-token')
+    const mock = new MockAdapter(axios)
+    const resultValue = { data: 'value' }
 
-    let headers = {}
+    const headers = {}
     let respBody = resultValue
 
     if (prefix) {
@@ -67,7 +67,7 @@ export function testPost(url, opts, body, prefix, build) {
 
     mock.onPost(url).reply(200, respBody, headers)
 
-    let result = await build(client, { shouldFail: false, axios: mock })
+    const result = await build(client, { shouldFail: false, axios: mock })
     if (!opts || !opts['emptyResponseBody']) {
       expect(result).to.deep.eq(resultValue)
     }
@@ -80,8 +80,8 @@ export function testPost(url, opts, body, prefix, build) {
   })
 
   it('returns an error when the API fails', async () => {
-    let client = new Client('test-token')
-    let mock = new MockAdapter(axios)
+    const client = new Client('test-token')
+    const mock = new MockAdapter(axios)
     mock.onPost(url).reply(404, {
       error: 'not found',
     })
@@ -98,8 +98,8 @@ export function testPost(url, opts, body, prefix, build) {
 
 export function testDelete(url, build) {
   it('calls the API and return the data when there is no errors', async () => {
-    let client = new Client('test-token')
-    let mock = new MockAdapter(axios)
+    const client = new Client('test-token')
+    const mock = new MockAdapter(axios)
     mock.onDelete(url).reply(204)
     await build(client)
     expect(mock.history.delete[0].headers.Authorization).to.eq(
@@ -108,8 +108,8 @@ export function testDelete(url, build) {
   })
 
   it('returns an error when the API fails', async () => {
-    let client = new Client('test-token')
-    let mock = new MockAdapter(axios)
+    const client = new Client('test-token')
+    const mock = new MockAdapter(axios)
     mock.onDelete(url).reply(404, {
       error: 'not found',
     })
@@ -126,12 +126,12 @@ export function testDelete(url, build) {
 
 export function testUpdate(url, body, prefix, build) {
   it('calls the API and return the data when there is no errors', async () => {
-    let client = new Client('test-token')
-    let mock = new MockAdapter(axios)
+    const client = new Client('test-token')
+    const mock = new MockAdapter(axios)
     mock.onPatch(url).reply(200, {
       [prefix]: { data: 'value' },
     })
-    let result = await build(client)
+    const result = await build(client)
     expect(result).to.deep.eq({ data: 'value' })
     expect(mock.history.patch[0].headers.Authorization).to.eq(
       'Bearer test-token',
@@ -140,8 +140,8 @@ export function testUpdate(url, body, prefix, build) {
   })
 
   it('returns an error when the API fails', async () => {
-    let client = new Client('test-token')
-    let mock = new MockAdapter(axios)
+    const client = new Client('test-token')
+    const mock = new MockAdapter(axios)
     mock.onPost(url).reply(404, {
       error: 'not found',
     })
@@ -158,20 +158,20 @@ export function testUpdate(url, body, prefix, build) {
 
 export function testPut(url, body, prefix, build) {
   it('calls the API and return the data when there is no errors', async () => {
-    let client = new Client('test-token')
-    let mock = new MockAdapter(axios)
+    const client = new Client('test-token')
+    const mock = new MockAdapter(axios)
     mock.onPut(url).reply(200, {
       [prefix]: { data: 'value' },
     })
-    let result = await build(client)
+    const result = await build(client)
     expect(result).to.deep.eq({ data: 'value' })
     expect(mock.history.put[0].headers.Authorization).to.eq('Bearer test-token')
     expect(JSON.parse(mock.history.put[0].data)).to.deep.eq(body)
   })
 
   it('returns an error when the API fails', async () => {
-    let client = new Client('test-token')
-    let mock = new MockAdapter(axios)
+    const client = new Client('test-token')
+    const mock = new MockAdapter(axios)
     mock.onPost(url).reply(404, {
       error: 'not found',
     })
@@ -189,17 +189,17 @@ export function testPut(url, body, prefix, build) {
 export function testParamsGetter(url, opts, build) {
   describe('ParamsGetter', () => {
     it('calls the API and return the data when there is no errors', async () => {
-      let client = new Client('test-token')
-      let mock = new MockAdapter(axios)
-      let response = { toto: 'tata' }
+      const client = new Client('test-token')
+      const mock = new MockAdapter(axios)
+      const response = { toto: 'tata' }
       mock.onGet(url, { params: opts }).reply(200, response)
-      let result = await build(client)
+      const result = await build(client)
       expect(result).to.deep.eq(response)
     })
 
     it('returns an error when the API fails', async () => {
-      let client = new Client('test-token')
-      let mock = new MockAdapter(axios)
+      const client = new Client('test-token')
+      const mock = new MockAdapter(axios)
       mock.onGet(url, { params: opts }).reply(404, {
         error: 'not found',
       })
