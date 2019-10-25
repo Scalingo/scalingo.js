@@ -3,10 +3,10 @@ import sinon from 'sinon'
 import { expect } from 'chai'
 
 describe('Listener', () => {
-  var stub
-  var listener
+  let stub
+  let listener
   beforeEach(() => {
-    let api = { _token: 'testToken' }
+    const api = { _token: 'testToken' }
     // Prevent the listener to really open the connection
     stub = sinon.stub(Listener.prototype, '_start')
     listener = new Listener(api, 'wss://test.fr')
@@ -18,7 +18,7 @@ describe('Listener', () => {
 
   describe('Listener#_auth', () => {
     it('should send the token', () => {
-      let ws = {
+      const ws = {
         send: sinon.stub(),
       }
       listener._ws = ws
@@ -33,7 +33,7 @@ describe('Listener', () => {
 
   describe('Listener#close', () => {
     it('should close the connection', () => {
-      let stub = sinon.stub()
+      const stub = sinon.stub()
       listener._ws = {
         close: stub,
       }
@@ -45,7 +45,7 @@ describe('Listener', () => {
 
   describe('Listener#onMessage', () => {
     it("shoult call the correct callback when we get a 'new' message", () => {
-      let stub = sinon.stub()
+      const stub = sinon.stub()
       listener.onNew(stub)
       listener._onMessage({
         data: JSON.stringify({
@@ -63,7 +63,7 @@ describe('Listener', () => {
     })
 
     it("should call the correct callback when we get a 'log' message", () => {
-      let stub = sinon.stub()
+      const stub = sinon.stub()
       listener.onLog(stub)
       listener._onMessage({
         data: JSON.stringify({
@@ -83,7 +83,7 @@ describe('Listener', () => {
     })
 
     it("should call the correct callback when we get a 'status' message", () => {
-      let stub = sinon.stub()
+      const stub = sinon.stub()
       listener.onStatus(stub)
       listener._onMessage({
         data: JSON.stringify({

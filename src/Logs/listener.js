@@ -8,7 +8,7 @@ export default class LogsListener {
    */
 
   constructor(client, url) {
-    let wsURL = new URL(url)
+    const wsURL = new URL(url)
     if (wsURL.protocol == 'http:' || wsURL.protocol == 'ws:') {
       wsURL.protocol = 'ws'
     } else {
@@ -48,8 +48,8 @@ export default class LogsListener {
   }
 
   _onMessage(message) {
-    let data = JSON.parse(message.data)
-    let event = data['event']
+    const data = JSON.parse(message.data)
+    const event = data['event']
 
     switch (event) {
       case 'log':

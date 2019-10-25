@@ -43,9 +43,9 @@ export default class Listener {
   }
 
   _onMessage(message) {
-    let data = JSON.parse(message.data)
+    const data = JSON.parse(message.data)
     if (this._messageTypes[data.type]) {
-      let result = data.data
+      const result = data.data
 
       // If there was an ID in the original message
       if (data.id) {

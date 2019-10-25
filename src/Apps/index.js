@@ -41,11 +41,11 @@ export default class Apps {
    */
 
   create(name, opts) {
-    let body = {
+    const body = {
       name: name,
     }
 
-    let headers = {}
+    const headers = {}
 
     if (opts) {
       body['git_source'] = opts['git_source']
@@ -68,7 +68,7 @@ export default class Apps {
    * @return {Promise<Listener, APIError>} Promise that when resolved return a Listener for this application.
    */
   async deploymentListener(id) {
-    let app = await this.find(id)
+    const app = await this.find(id)
     return new Listener(this._client, app.links.deployments_stream)
   }
 

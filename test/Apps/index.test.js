@@ -21,8 +21,8 @@ describe('App#find', () => {
 
 describe('App#deploymentListener', () => {
   it('should instantiate the Listener', async () => {
-    let client = new Apps(new Client('test-token'))
-    let mock = new MockAdapter(axios)
+    const client = new Apps(new Client('test-token'))
+    const mock = new MockAdapter(axios)
 
     mock.onGet(`https://api.scalingo.com/v1/apps/testApp`).reply(200, {
       app: {
@@ -33,8 +33,8 @@ describe('App#deploymentListener', () => {
     })
 
     // Prevent the listener to really open the connection
-    let stub = sinon.stub(Listener.prototype, '_start')
-    let listener = await client.deploymentListener('testApp')
+    const stub = sinon.stub(Listener.prototype, '_start')
+    const listener = await client.deploymentListener('testApp')
     expect(listener._url).to.eq('wss://test.dev/apps/testApp')
     stub.restore()
   })
@@ -77,8 +77,8 @@ describe('App#create', () => {
   })
 
   describe('Using the dry_run param', async () => {
-    let client = new Client('test-token')
-    let mock = new MockAdapter(axios)
+    const client = new Client('test-token')
+    const mock = new MockAdapter(axios)
 
     mock.onPost('https://api.scalingo.com/v1/apps').reply(200, {
       app: {

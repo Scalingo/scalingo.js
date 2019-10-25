@@ -19,7 +19,7 @@ export default class Tokens {
    * @return {Promise<String| APIError>} A valid Bearer Token that can be used against our infrastructure.
    */
   exchange(token) {
-    let request = axios.post(
+    const request = axios.post(
       `${this._client._authApiUrl}/v1/tokens/exchange`,
       {},
       {

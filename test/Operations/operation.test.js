@@ -8,12 +8,12 @@ import { Operation } from '../../src/Operations/utils'
 
 describe('Operations#OperationClass', () => {
   it('Should call the refresh method and returns no error', async () => {
-    let client = new Client('test-token')
-    let mock = new MockAdapter(axios)
-    let locationUri =
+    const client = new Client('test-token')
+    const mock = new MockAdapter(axios)
+    const locationUri =
       'https://api.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000'
 
-    let operationResponse = {
+    const operationResponse = {
       operation: {
         id: '54100930736f7563d5030000',
         created_at: new Date(),
@@ -25,7 +25,7 @@ describe('Operations#OperationClass', () => {
     }
     mock.onGet(locationUri).reply(200, operationResponse)
 
-    let operation = new Operation(client, locationUri)
+    const operation = new Operation(client, locationUri)
     await operation.refresh()
     expect(operation._id).to.eq(operationResponse.operation.id)
     expect(operation._status).to.eq('pending')
@@ -33,16 +33,16 @@ describe('Operations#OperationClass', () => {
   })
 
   it('Should call the refresh method and returns an error', async () => {
-    let client = new Client('test-token')
-    let mock = new MockAdapter(axios)
-    let locationUri =
+    const client = new Client('test-token')
+    const mock = new MockAdapter(axios)
+    const locationUri =
       'https://api.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000'
 
     mock.onGet(locationUri).reply(404, {
       error: 'not found',
     })
 
-    let operation = new Operation(client, locationUri)
+    const operation = new Operation(client, locationUri)
     try {
       await operation.refresh()
     } catch (error) {
@@ -53,12 +53,12 @@ describe('Operations#OperationClass', () => {
   })
 
   it('Should call the wait method and returns with no error', async () => {
-    let client = new Client('test-token')
-    let mock = new MockAdapter(axios)
-    let locationUri =
+    const client = new Client('test-token')
+    const mock = new MockAdapter(axios)
+    const locationUri =
       'https://api.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000'
 
-    let operationResponse = {
+    const operationResponse = {
       operation: {
         id: '54100930736f7563d5030000',
         created_at: new Date(),
@@ -69,7 +69,7 @@ describe('Operations#OperationClass', () => {
       },
     }
     mock.onGet(locationUri).reply(200, operationResponse)
-    let operation = new Operation(client, locationUri)
+    const operation = new Operation(client, locationUri)
 
     operation.setProperties({
       status: 'pending',

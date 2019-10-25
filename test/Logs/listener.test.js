@@ -3,7 +3,7 @@ import sinon from 'sinon'
 import LogsListener from '../../src/Logs/listener'
 
 describe('_onMessage', () => {
-  var startStub
+  let startStub
   beforeEach(() => {
     startStub = sinon.stub(LogsListener.prototype, '_start')
   })
@@ -13,8 +13,8 @@ describe('_onMessage', () => {
   })
 
   it('should call the log callback if it exists', () => {
-    let listener = new LogsListener(null, 'wss://test.fr')
-    let spy = sinon.stub()
+    const listener = new LogsListener(null, 'wss://test.fr')
+    const spy = sinon.stub()
     listener.onLog(spy)
 
     listener._onMessage({
@@ -25,14 +25,14 @@ describe('_onMessage', () => {
   })
 
   it('should not crash if the log callback is not defined', () => {
-    let listener = new LogsListener(null, 'wss://test.fr')
+    const listener = new LogsListener(null, 'wss://test.fr')
     listener._onMessage({
       data: `{"event": "log", "log": "test log"}`,
     })
   })
 
   describe('ws URL initialization', () => {
-    let protocols = [
+    const protocols = [
       {
         input: 'ws',
         output: 'ws',
@@ -51,9 +51,9 @@ describe('_onMessage', () => {
       },
     ]
 
-    for (let protocol of protocols) {
+    for (const protocol of protocols) {
       it(`should work for ${protocol.input}`, () => {
-        let listener = new LogsListener(null, `${protocol.input}://test.fr`)
+        const listener = new LogsListener(null, `${protocol.input}://test.fr`)
         expect(listener._url).to.eq(`${protocol.output}://test.fr/`)
       })
     }

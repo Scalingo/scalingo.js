@@ -4,18 +4,25 @@ module.exports = {
     mocha: true,
     node: true,
   },
-  extends: ['plugin:prettier/recommended', 'eslint:recommended'],
+  extends: [
+    'prettier',
+    'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint',
+    'plugin:prettier/recommended',
+    'eslint:recommended',
+  ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
-  plugins: ['prettier'],
+  plugins: ['@typescript-eslint'],
   rules: {
-    'prettier/prettier': 'error',
+    'no-extra-semi': 'off',
+    '@typescript-eslint/camelcase': 'warn',
+    '@typescript-eslint/no-use-before-define': 'warn',
   },
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  rules: {},
 }
