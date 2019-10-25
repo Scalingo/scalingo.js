@@ -86,12 +86,11 @@ export class Operation {
    * @returns {Promise<any | APIError>}
    */
   wait() {
-    const vm = this
     return new Promise((resolve, reject) => {
       const waitInterval = setInterval(function() {
-        vm.refresh()
+        this.refresh()
           .then((response) => {
-            if (vm.status === 'done') {
+            if (this.status === 'done') {
               resolve(response)
               clearInterval(waitInterval)
             }
