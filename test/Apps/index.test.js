@@ -1,11 +1,11 @@
-import Listener from '../../src/Deployments/listener.js'
-import { testGetter, testPost } from '../utils/http.js'
 import axios from 'axios'
 import MockAdapter from 'axios-mock-adapter'
-import { Client } from '../../src'
-import Apps from '../../src/Apps'
 import { expect } from 'chai'
 import sinon from 'sinon'
+import Listener from '../../src/Deployments/listener.js'
+import { testDelete, testGetter, testPost, testUpdate } from '../utils/http.js'
+import { Client } from '../../src'
+import Apps from '../../src/Apps'
 
 describe('App#all', () => {
   testGetter('https://api.scalingo.com/v1/apps', null, 'apps', (client) => {
@@ -97,6 +97,39 @@ describe('App#logsURL', () => {
     'logs_url',
     (client) => {
       return new Apps(client).logsURL('testApp')
+    },
+  )
+})
+
+describe('App#destroy', () => {
+  testDelete('https://api.scalingo.com/v1/apps/app-id', (client) => {
+    return new Apps(client).destroy('app-id', 'app-name')
+  })
+})
+
+describe('App#rename', () => {
+  testPost(
+    'https://api.scalingo.com/v1/apps/app-id/rename',
+    null,
+    { current_name: 'app-name', new_name: 'app-new-name' },
+    'app',
+    (client) => {
+      return new Apps(client).rename('app-id', 'app-name', 'app-new-name')
+    },
+  )
+})
+
+describe('App#transfer', () => {
+  testUpdate(
+    'https://api.scalingo.com/v1/apps/app-id',
+    { app: { owner: 'owner@example.com' } },
+    'app',
+    (client) => {
+      return new Apps(client).transfer(
+        'app-id',
+        'app-name',
+        'owner@example.com',
+      )
     },
   )
 })
