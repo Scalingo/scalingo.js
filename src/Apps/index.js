@@ -39,7 +39,6 @@ export default class Apps {
    * @param {AppCreateOpts} opts - Optional additional information
    * @return {Promise<App, APIError>} Promise that when resolved returns the App created.
    */
-
   create(name, opts) {
     const body = {
       name: name,
@@ -82,6 +81,62 @@ export default class Apps {
     return unpackData(
       this._client.apiClient().get(`/apps/${id}/logs`),
       'logs_url',
+    )
+  }
+
+  /**
+   * Destroy the given application.
+   * @see https://developers.scalingo.com/apps.html#delete-an-application
+   * @param {String} appID ID of the application
+   * @param {String} currentName Current name of the application. Used as validation.
+   * @return {Promise<null, APIError>} Promise that resolves when the app is deleted.
+   */
+  destroy(appID, currentName) {
+    return unpackData(
+      this._client
+        .apiClient()
+        .delete(`/apps/${appID}`, { params: { current_name: currentName } }),
+    )
+  }
+
+  /**
+   * Rename the application.
+   * @see https://developers.scalingo.com/apps.html#rename-an-application
+   * @param {String} appID ID of the application
+   * @param {String} currentName Current name of the application. Used as validation.
+   * @param {String} newName New name of the application.
+   * @return {Promise<App, APIError>} Promise that when resolved returns the App renamed.
+   */
+  rename(appID, currentName, newName) {
+    return unpackData(
+      this._client.apiClient().post(`/apps/${appID}/rename`, {
+        current_name: currentName,
+        new_name: newName,
+      }),
+      'app',
+    )
+  }
+
+  /**
+   * Transfer the ownership of the application to a new account.
+   * @see https://developers.scalingo.com/apps.html#transfer-ownership-of-an-application
+   * @param {String} appID ID of the application
+   * @param {String} currentName Current name of the application. Used as validation.
+   * @param {String} ownerEmail Email address of the new owner.
+   * @return {Promise<App, APIError>} Promise that when resolved returns the App transferred.
+   */
+  transfer(appID, currentName, ownerEmail) {
+    return unpackData(
+      this._client.apiClient().patch(
+        `/apps/${appID}`,
+        {
+          app: {
+            owner: ownerEmail,
+          },
+        },
+        { params: { current_name: currentName } },
+      ),
+      'app',
     )
   }
 }
