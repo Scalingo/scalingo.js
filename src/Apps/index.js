@@ -39,7 +39,6 @@ export default class Apps {
    * @param {AppCreateOpts} opts - Optional additional information
    * @return {Promise<App, APIError>} Promise that when resolved returns the App created.
    */
-
   create(name, opts) {
     const body = {
       name: name,
@@ -90,7 +89,7 @@ export default class Apps {
    * @see https://developers.scalingo.com/apps.html#delete-an-application
    * @param {String} appID ID of the application
    * @param {String} currentName Current name of the application. Used as validation.
-   * @return {Promise<null, APIError>} Promise that when resolved returns nothing.
+   * @return {Promise<null, APIError>} Promise that resolves when the app is deleted.
    */
   destroy(appID, currentName) {
     return unpackData(
@@ -124,7 +123,7 @@ export default class Apps {
    * @param {String} appID ID of the application
    * @param {String} currentName Current name of the application. Used as validation.
    * @param {String} ownerEmail Email address of the new owner.
-   * @return {Promise<App, APIError>} Promise that when resolved returns the App renamed.
+   * @return {Promise<App, APIError>} Promise that when resolved returns the App transferred.
    */
   transfer(appID, currentName, ownerEmail) {
     return unpackData(
