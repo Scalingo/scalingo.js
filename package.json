@@ -16,10 +16,10 @@
   },
   "dependencies": {
     "axios": "0.19.x",
-    "isomorphic-ws": "^4.0.1",
-    "rollup-plugin-json": "^4.0.0",
-    "rollup-plugin-polyfill": "^2.0.1",
-    "ws": "^7.0.0"
+    "isomorphic-ws": "4.x",
+    "rollup-plugin-json": "4.x",
+    "rollup-plugin-polyfill": "3.x",
+    "ws": "7.x"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
