@@ -139,6 +139,21 @@ export default class Apps {
       'app',
     )
   }
+
+  /**
+   * Update application settings: force HTTPS, sticky session, stack or router
+   * logs.
+   * @see https://developers.scalingo.com/apps#update-application-settings
+   * @param {String} appID ID of the application
+   * @param {AppUpdateOpts} appSettings - Settings to modify
+   * @return {Promise<App, APIError>} Promise that when resolved returns the updated App.
+   */
+  update(appID, appSettings) {
+    return unpackData(
+      this._client.apiClient().patch(`/apps/${appID}`, { app: appSettings }),
+      'app',
+    )
+  }
 }
 
 /**
@@ -171,4 +186,13 @@ export default class Apps {
  * @property {?String} parent_id ID of the parent app (used to create child apps)
  * @property {?String} stack_id ID of the stack the application should use
  * @property {?Boolean} dry_run If set to true, the API will run the validations but wont create the app
+ */
+
+/**
+ * @typedef {Object} AppUpdateOpts
+ * @see https://developers.scalingo.com/apps#update-application-settings
+ * @property {?Boolean} force_https Enable or disable force HTTPS on the application
+ * @property {?Boolean} sticky_session Enable or disable sticky session on the application
+ * @property {?Boolean} router_logs Enable or disable the router logs on the application
+ * @property {?String}  stack_id New stack ID
  */

@@ -133,3 +133,14 @@ describe('App#transfer', () => {
     },
   )
 })
+
+describe('App#update', () => {
+  testUpdate(
+    'https://api.scalingo.com/v1/apps/app-id',
+    { app: { force_https: true } },
+    'app',
+    (client) => {
+      return new Apps(client).update('app-id', { force_https: true })
+    },
+  )
+})
