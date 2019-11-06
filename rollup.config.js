@@ -7,6 +7,10 @@ export default {
   output: {
     file: 'dist/scalingo.js',
     format: 'umd',
+    globals: {
+      axios: 'axios',
+      'isomorphic-ws': 'WebSocket',
+    },
     name: 'scalingo',
   },
   external: ['axios', 'ws', 'isomorphic-ws'],
