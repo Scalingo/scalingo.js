@@ -11,6 +11,7 @@ import Metrics from './Metrics'
 import Notifiers from './Notifiers'
 import NotificationPlatforms from './NotificationPlatforms'
 import Operations from './Operations'
+import SCMRepoLinks from './SCMRepoLinks'
 import Tokens from './Tokens'
 import Users from './Users'
 
@@ -46,11 +47,19 @@ class Client {
      * @type {Containers}
      */
     this.Containers = new Containers(this)
+
     /**
      * Users API
      * @type {Users}
      */
     this.Users = new Users(this)
+
+    /**
+     * SCM Repo Links API
+     * @type {SCMRepoLinks}
+     */
+    this.SCMRepoLinks = new SCMRepoLinks(this)
+
     /**
      * Tokens API
      * @type {Tokens}
