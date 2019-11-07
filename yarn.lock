@@ -1608,11 +1608,6 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
-dateformat@^2.0.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/dateformat/-/dateformat-2.2.0.tgz#4065e2013cf9fb916ddfd82efb506ad4c6769062"
-  integrity sha1-QGXiATz5+5Ft39gu+1Bq1MZ2kGI=
-
 debug@3.1.0, debug@=3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
@@ -1948,12 +1943,10 @@ esdoc-unexported-identifier-plugin@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/esdoc-unexported-identifier-plugin/-/esdoc-unexported-identifier-plugin-1.0.0.tgz#1f9874c6a7c2bebf9ad397c3ceb75c9c69dabab1"
 
-"esdoc-uploader@https://github.com/EtienneM/esdoc-uploader.git#master":
-  version "1.0.1"
-  resolved "https://github.com/EtienneM/esdoc-uploader.git#d2ce89d56e9140ab5c8abafd71436f64d8fa25d0"
-  dependencies:
-    log-util "1.x"
-    request "2.x"
+esdoc-uploader@2.x:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/esdoc-uploader/-/esdoc-uploader-2.0.0.tgz#fac84ce0122237717d740ee47693cf5b423abd75"
+  integrity sha512-lKSBB+zBdlD0gSoamEFRC5Y44kwgj5i7RDkbELMuU/d/DkhcWggE716Gs51FHL33LUbwremuNmONyDDc2FzXfw==
 
 esdoc@1.x:
   version "1.1.0"
@@ -3125,14 +3118,6 @@ lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
 
-log-util@1.x:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/log-util/-/log-util-1.2.0.tgz#1f65db1f360418fad4b1e6ca16c0b0c39afec3a7"
-  integrity sha1-H2XbHzYEGPrUsebKFsCww5r+w6c=
-  dependencies:
-    chalk "^1.1.3"
-    dateformat "^2.0.0"
-
 lolex@^4.1.0, lolex@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/lolex/-/lolex-4.2.0.tgz#ddbd7f6213ca1ea5826901ab1222b65d714b3cd7"
@@ -3908,7 +3893,7 @@ repeating@^2.0.0:
   dependencies:
     is-finite "^1.0.0"
 
-request@2.x, request@^2.55.0:
+request@^2.55.0:
   version "2.88.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.88.0.tgz#9c2fca4f7d35b592efe57c7f0a55e81052124fef"
   dependencies:

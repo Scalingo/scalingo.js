@@ -33,7 +33,7 @@
     "esdoc": "1.x",
     "esdoc-ecmascript-proposal-plugin": "1.x",
     "esdoc-standard-plugin": "1.x",
-    "esdoc-uploader": "https://github.com/EtienneM/esdoc-uploader.git#master",
+    "esdoc-uploader": "2.x",
     "eslint": "6.x",
     "eslint-config-prettier": "6.x",
     "eslint-plugin-import": "2.x",
