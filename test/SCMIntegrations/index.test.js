@@ -3,7 +3,7 @@ import SCMIntegrations from '../../src/SCMIntegrations'
 
 describe('SCMIntegrations#find', () => {
   testGetter(
-    'https://api.scalingo.com/v1/scm_integrations/toto',
+    'https://auth.scalingo.com/v1/scm_integrations/toto',
     null,
     'scm_integration',
     (client) => {
@@ -14,7 +14,7 @@ describe('SCMIntegrations#find', () => {
 
 describe('SCMIntegrations#all', () => {
   testGetter(
-    'https://api.scalingo.com/v1/scm_integrations',
+    'https://auth.scalingo.com/v1/scm_integrations',
     null,
     'scm_integrations',
     (client) => {
@@ -30,7 +30,7 @@ describe('SCMIntegrations#create', () => {
     access_token: 'abcdef',
   }
   testPost(
-    'https://api.scalingo.com/v1/scm_integrations',
+    'https://auth.scalingo.com/v1/scm_integrations',
     null,
     { scm_integration: opts },
     'scm_integration',
@@ -42,7 +42,7 @@ describe('SCMIntegrations#create', () => {
 
 describe('SCMIntegrations#destroy', () => {
   testDelete(
-    'https://api.scalingo.com/v1/scm_integrations/integration-id',
+    'https://auth.scalingo.com/v1/scm_integrations/integration-id',
     (client) => {
       return new SCMIntegrations(client).destroy('integration-id')
     },
@@ -51,7 +51,7 @@ describe('SCMIntegrations#destroy', () => {
 
 describe('SCMIntegrations#importSSHKeys', () => {
   testPost(
-    'https://api.scalingo.com/v1/scm_integrations/integration-id/import_keys',
+    'https://auth.scalingo.com/v1/scm_integrations/integration-id/import_keys',
     null,
     null,
     'keys',

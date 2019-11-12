@@ -20,7 +20,7 @@ export default class SCMIntegrations {
    */
   find(integrationID) {
     return unpackData(
-      this._client.apiClient().get(`/scm_integrations/${integrationID}`),
+      this._client.authApiClient().get(`/scm_integrations/${integrationID}`),
       'scm_integration',
     )
   }
@@ -32,7 +32,7 @@ export default class SCMIntegrations {
    */
   all() {
     return unpackData(
-      this._client.apiClient().get('/scm_integrations'),
+      this._client.authApiClient().get('/scm_integrations'),
       'scm_integrations',
     )
   }
@@ -47,7 +47,7 @@ export default class SCMIntegrations {
   create(opts) {
     return unpackData(
       this._client
-        .apiClient()
+        .authApiClient()
         .post('/scm_integrations', { scm_integration: opts }),
       'scm_integration',
     )
@@ -61,7 +61,7 @@ export default class SCMIntegrations {
    */
   destroy(integrationID) {
     return unpackData(
-      this._client.apiClient().delete(`/scm_integrations/${integrationID}`),
+      this._client.authApiClient().delete(`/scm_integrations/${integrationID}`),
     )
   }
 
@@ -74,7 +74,7 @@ export default class SCMIntegrations {
   importSSHKeys(integrationID) {
     return unpackData(
       this._client
-        .apiClient()
+        .authApiClient()
         .post(`/scm_integrations/${integrationID}/import_keys`),
       'keys',
     )
