@@ -60,7 +60,7 @@ describe('SCMRepoLinks#manualDeploy', () => {
     'https://api.scalingo.com/v1/apps/biniou/scm_repo_link/manual_deploy',
     null,
     { branch: 'master' },
-    null,
+    'deployment',
     (client) => {
       return new SCMRepoLinks(client).manualDeploy('biniou', 'master')
     },

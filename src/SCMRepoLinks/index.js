@@ -83,6 +83,7 @@ export default class SCMRepoLinks {
         .post(`/apps/${appID}/scm_repo_link/manual_deploy`, {
           branch,
         }),
+      'deployment',
     )
   }
 
