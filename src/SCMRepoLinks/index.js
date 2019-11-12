@@ -45,7 +45,7 @@ export default class SCMRepoLinks {
    * Update a SCM integration link.
    * @see https://developers.scalingo.com/scm_repo_link
    * @param {String} appID - ID of the application
-   * @param {SCMRepoLinkCreateOpts} opts - SCM repo link information to update
+   * @param {SCMRepoLinkUpdateOpts} opts - SCM repo link information to update
    * @return {Promise<SCMRepoLink, APIError>} Promise that when resolved returns the SCMRepoLink updated.
    */
   update(appID, opts) {
