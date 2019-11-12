@@ -17,7 +17,7 @@ export default class Apps {
    * Fetch a specific app
    * @see https://developers.scalingo.com/apps#get-a-precise-application
    * @param {String} id - ID of the application
-   * @return {Promise<App,APIError>} Promise that when resolved return an App. See: https://developers.scalingo.com/apps#application-attributes
+   * @return {Promise<App, APIError>} Promise that when resolved returns an App. See: https://developers.scalingo.com/apps#application-attributes
    */
   find(id) {
     return unpackData(this._client.apiClient().get(`/apps/${id}`), 'app')
@@ -26,7 +26,7 @@ export default class Apps {
   /**
    * Get all your applications and the one your are collaborator for
    * @see https://developers.scalingo.com/apps#list-your-applications
-   * @return {Promise<App[], APIError>} Promise that when resolved return an App array. See: https://developers.scalingo.com/apps#application-attributes
+   * @return {Promise<App[], APIError>} Promise that when resolved returns an App array. See: https://developers.scalingo.com/apps#application-attributes
    */
   all() {
     return unpackData(this._client.apiClient().get('/apps'), 'apps')
@@ -64,7 +64,7 @@ export default class Apps {
    * Open a listener on this app deployment events
    * @see https://developers.scalingo.com/deployments#get-real-time-output-of-a-live-deployment
    * @param {String} id ID of the application
-   * @return {Promise<Listener, APIError>} Promise that when resolved return a Listener for this application.
+   * @return {Promise<Listener, APIError>} Promise that when resolved returns a Listener for this application.
    */
   async deploymentListener(id) {
     const app = await this.find(id)
@@ -159,7 +159,7 @@ export default class Apps {
 /**
  * @typedef {Object} App
  * @see https://developers.scalingo.com/apps
- * @property {String} id  unique ID
+ * @property {String} id unique ID
  * @property {String} name  name of the application, can substitute the ID
  * @property {Date} created_at creation date of the application
  * @property {Date} updated_at last time the application has been updated
