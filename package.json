@@ -1,6 +1,6 @@
 {
   "name": "scalingo",
-  "version": "0.0.35",
+  "version": "0.0.36",
   "description": "Wrapper for the Scalingo API",
   "main": "dist/scalingo.js",
   "module": "src/index.js",
