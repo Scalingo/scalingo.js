@@ -79,6 +79,57 @@ export default class SCMIntegrations {
       'keys',
     )
   }
+
+  /**
+   * Search pull requests in an SCM integration
+   * @see https://developers.scalingo.com/scm_integrations#
+   * @param {String} integrationID - ID of the integration
+   * @param {String} query - Query to filter the list of pull requests
+   * @return {Promise<PullRequest[], APIError>} Promise that when resolved returns the list of pull requests matching the query.
+   */
+  searchPullRequests(integrationID, query) {
+    return unpackData(
+      this._client
+        .authApiClient()
+        .get(`/scm_integrations/${integrationID}/search_pull_requests`, {
+          params: { query },
+        }),
+      'pull_requests',
+    )
+  }
+
+  /**
+   * Search repositories in an SCM integration
+   * @see https://developers.scalingo.com/scm_integrations#
+   * @param {String} integrationID - ID of the integration
+   * @param {String} query - Query to filter the list of repositories
+   * @return {Promise<Repository[], APIError>} Promise that when resolved returns the list of repositories matching the query.
+   */
+  searchRepositories(integrationID, query) {
+    return unpackData(
+      this._client
+        .authApiClient()
+        .get(`/scm_integrations/${integrationID}/search_repos`, {
+          params: { query },
+        }),
+      'repositories',
+    )
+  }
+
+  /**
+   * Get list of organizations attached to an SCM integration account.
+   * @see https://developers.scalingo.com/scm_integrations#
+   * @param {String} integrationID - ID of the integration
+   * @return {Promise<Organization[], APIError>} Promise that when resolved returns the list of organizations.
+   */
+  organizations(integrationID) {
+    return unpackData(
+      this._client
+        .authApiClient()
+        .get(`/scm_integrations/${integrationID}/orgs`),
+      'organizations',
+    )
+  }
 }
 
 /**
@@ -124,4 +175,34 @@ export default class SCMIntegrations {
  * @property {String} fingerprint Fingerprint of the SSH key
  * @property {Date} created_at Creation date of the SCM integration
  * @property {Object} owner Owner of the SSH key
+ */
+
+/**
+ * @typedef {Object} PullRequest
+ * @see https://developers.scalingo.com/scm_integrations#
+ * @property {Number} id Unique key ID
+ * @property {Number} number Pull/Merge request number
+ * @property {String} title Title of the pull/merge request
+ * @property {String} html_url URL to the pull/merge request
+ */
+
+/**
+ * @typedef {Object} Repository
+ * @see https://developers.scalingo.com/scm_integrations#
+ * @property {Number} id Unique key ID
+ * @property {String} description Description of the repository
+ * @property {String} fullName Name of the repository including the name of the
+ * owner (e.g. owner/repository)
+ * @property {String} name Name of the repository
+ * @property {String} url URL to the repository
+ */
+
+/**
+ * @typedef {Object} Organization
+ * @see https://developers.scalingo.com/scm_integrations#
+ * @property {Number} id Unique key ID
+ * @property {String} avatarUrl URL of the avatar of the organization
+ * @property {String} description Description of the organization
+ * @property {String} login Name of the organization
+ * @property {String} url URL to the SCM API for the organization
  */

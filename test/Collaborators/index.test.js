@@ -43,6 +43,7 @@ describe('Collaborators#inviteAccept', () => {
   testParamsGetter(
     'https://api.scalingo.com/v1/apps/collaboration',
     { token: 'toto-accept-token' },
+    null,
     (client) => {
       return new Collaborators(client).inviteAccept('toto-accept-token')
     },
