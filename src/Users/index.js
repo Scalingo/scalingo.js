@@ -52,9 +52,6 @@ export default class Users {
  * @property {?String} fullname
  * @property {?Boolean} tos_accepted Did the user accept our TOS
  * @property {?Boolean} email_newsletter Did the user opt in to receive newsletter
- * @property {?String} company
- * @property {?String} location
- * @property {?String} fullname
  * @property {?String} password
  * @property {?String} password_confirmation
  * @property {?String} current_password
