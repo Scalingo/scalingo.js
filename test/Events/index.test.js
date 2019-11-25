@@ -14,6 +14,7 @@ describe('Events#for', () => {
   testParamsGetter(
     'https://api.scalingo.com/v1/apps/tata/events',
     { page: 1, per_page: 2, from: 1 },
+    null,
     (client) => {
       return new Events(client).for('tata', { page: 1, per_page: 2, from: 1 })
     },

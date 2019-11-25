@@ -186,15 +186,18 @@ export function testPut(url, body, prefix, build) {
   })
 }
 
-export function testParamsGetter(url, opts, build) {
+export function testParamsGetter(url, opts, prefix, build) {
   describe('ParamsGetter', () => {
     it('calls the API and return the data when there is no errors', async () => {
       const client = new Client('test-token')
       const mock = new MockAdapter(axios)
-      const response = { toto: 'tata' }
+      let response = { toto: 'tata' }
+      if (prefix !== null) {
+        response = { [prefix]: response }
+      }
       mock.onGet(url, { params: opts }).reply(200, response)
       const result = await build(client)
-      expect(result).to.deep.eq(response)
+      expect(result).to.deep.eq({ toto: 'tata' })
     })
 
     it('returns an error when the API fails', async () => {

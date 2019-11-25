@@ -1,4 +1,9 @@
-import { testDelete, testGetter, testPost } from '../utils/http.js'
+import {
+  testDelete,
+  testGetter,
+  testParamsGetter,
+  testPost,
+} from '../utils/http.js'
 import SCMIntegrations from '../../src/SCMIntegrations'
 
 describe('SCMIntegrations#find', () => {
@@ -57,6 +62,39 @@ describe('SCMIntegrations#importSSHKeys', () => {
     'keys',
     (client) => {
       return new SCMIntegrations(client).importSSHKeys('integration-id')
+    },
+  )
+})
+
+describe('SCMIntegrations#searchPullRequests', () => {
+  testParamsGetter(
+    'https://auth.scalingo.com/v1/scm_integrations/biniou/search_pull_requests',
+    { query: 'toto' },
+    'pull_requests',
+    (client) => {
+      return new SCMIntegrations(client).searchPullRequests('biniou', 'toto')
+    },
+  )
+})
+
+describe('SCMIntegrations#searchRepositories', () => {
+  testParamsGetter(
+    'https://auth.scalingo.com/v1/scm_integrations/biniou/search_repos',
+    { query: 'toto' },
+    'repositories',
+    (client) => {
+      return new SCMIntegrations(client).searchRepositories('biniou', 'toto')
+    },
+  )
+})
+
+describe('SCMIntegrations#organizations', () => {
+  testGetter(
+    'https://auth.scalingo.com/v1/scm_integrations/biniou/orgs',
+    null,
+    'organizations',
+    (client) => {
+      return new SCMIntegrations(client).organizations('biniou')
     },
   )
 })
