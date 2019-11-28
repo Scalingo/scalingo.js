@@ -24,7 +24,7 @@ deploy:
 
     keep_history: true
     on:
-      branch: master
+      branch: fix/101/esdoc
 notifications:
   slack:
     rooms:
