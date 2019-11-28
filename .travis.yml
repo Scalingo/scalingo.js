@@ -23,6 +23,7 @@ deploy:
       secure: NVRwyZ1UEFASt+ltejw8X/IsFlaR54Rxba0hxUPirlfpX40URJpggJDogqfgrxTn6zkxmTM5lHXketpwrUL0rcN78214tUzwGCs11raIeYx8UHsPkQKZkVBuA1xqeX6EsBG+y8iMvvlbyy7QgoqG765WIBmY4JHKFXiEoRu5BeIRa4UlyOCm4WyuN6oV6awdM+hLq2W+1L4+bl32K3DzZv/Hi75ZWzOC+8vQiaS/f8NZNuIMLPO1uKNtFMnF00aMSFsHPy830QFe5ngZpsX/G8fntFipL/2S5pDr9SUiqf/jQAVhA1+QYVVHwEdogbjz71xgnKGPW89c+9EjZaWXNspYBQ3hqhfURsYwDTtPzuUlohIVoO7FKzUYJgM4t3sP3XhAmzEIZcGB9N41SsPdtWzYm1gMryTcPnYvMjncg8uHk91lKU8G5TnRlpYxXOhOtkns2qRrEYt6mSX3T5mXrqoM0RTTfrzSkooWpB0foknNcheIIG8sTMGRReiFLKCShu9+5qSXYLGznA61ipvv1lMriYEeBdbZcwfhnODamEuZIFP+Yno9jh616lI7jzkJQOyfbMAVbio2qTp2nMP78upzGT/R8E2DoplRBxc8ccXDElqMQ/hkENwA+Aue/E8rxPM6yIfJIFJRSWeKC2nps060MidSz4BRArtr/IZ10vE=
 
     keep_history: true
+    local_dir: docs/
     on:
       branch: fix/101/esdoc
 notifications:
