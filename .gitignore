@@ -1,9 +1,0 @@
-node_modules/
-yarn-error.log
-dist/
-docs/
-.idea/
-package-lock.json
-.DS_Store
-.vscode/
-*.save

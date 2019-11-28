@@ -1,0 +1,126 @@
+[
+  {
+    "name": "Addons#update",
+    "filePath": "src/Addons/index.js",
+    "lines": [
+      {
+        "lineNumber": 78,
+        "line": "  /**"
+      },
+      {
+        "lineNumber": 79,
+        "line": "   * Upgrade an addon"
+      },
+      {
+        "lineNumber": 80,
+        "line": "   * @see https://developers.scalingo.com/addons#upgrade-an-addon"
+      },
+      {
+        "lineNumber": 81,
+        "line": "   * @param {String} appId ID of the current application"
+      },
+      {
+        "lineNumber": 82,
+        "line": "   * @param {Object} addon Contain the ID of the plan of your choice"
+      },
+      {
+        "lineNumber": 83,
+        "line": "   * @param {String} addonId ID of the current addon"
+      },
+      {
+        "lineNumber": 84,
+        "line": "   * @return {Promise<AddonUpgrade | APIError>}"
+      },
+      {
+        "lineNumber": 85,
+        "line": "   */"
+      },
+      {
+        "lineNumber": 86,
+        "line": "  update(appId, addonId, addon) {"
+      }
+    ],
+    "codeParams": [
+      "appId",
+      "addonId",
+      "addon"
+    ],
+    "docParams": [
+      "appId",
+      "addon",
+      "addonId"
+    ]
+  },
+  {
+    "name": "Metrics#get",
+    "filePath": "src/Metrics/index.js",
+    "lines": [
+      {
+        "lineNumber": 22,
+        "line": "  /**"
+      },
+      {
+        "lineNumber": 23,
+        "line": "   * Fetch metrics for an app"
+      },
+      {
+        "lineNumber": 24,
+        "line": "   * @param {String} appId Application ID"
+      },
+      {
+        "lineNumber": 25,
+        "line": "   * @param {String} metrics Which metric to get. One of the following: [router, requests, cpu, ram, swap]"
+      },
+      {
+        "lineNumber": 26,
+        "line": "   * @param {Object} opts Optional params"
+      },
+      {
+        "lineNumber": 27,
+        "line": "   * @param {Number} opts.since Number of hours requested (max 71)"
+      },
+      {
+        "lineNumber": 28,
+        "line": "   * @param {String} opts.statusCode Only available when requesting router metrics. One of the following: [all, 1XX, 2XX, 3XX, 4XX, 5XX]"
+      },
+      {
+        "lineNumber": 29,
+        "line": "   * @param {String} opts.statisticsType Only available when requesting requests metrics. One of the following: [media, p95, p99]"
+      },
+      {
+        "lineNumber": 30,
+        "line": "   * @param {String} opts.containerType Container type filter"
+      },
+      {
+        "lineNumber": 31,
+        "line": "   * @param {Number} opts.containerIndex Container index (only available when containerType is set and for non router metrics)"
+      },
+      {
+        "lineNumber": 32,
+        "line": "   * @param {Boolean} opts.last only fetch the last metrics"
+      },
+      {
+        "lineNumber": 33,
+        "line": "   * @return {Promise<Point[] | APIError>} Promise that when resolve return an array of points for the requested metrics"
+      },
+      {
+        "lineNumber": 34,
+        "line": "   */"
+      },
+      {
+        "lineNumber": 35,
+        "line": "  get(appId, metric, opts = {}) {"
+      }
+    ],
+    "codeParams": [
+      "appId",
+      "metric",
+      "opts"
+    ],
+    "docParams": [
+      "appId",
+      "metrics",
+      "opts"
+    ]
+  }
+]
