@@ -1,10 +1,10 @@
 # Scalingo.js
 [![Build Status](https://travis-ci.org/Scalingo/scalingo.js.svg?branch=master)](https://travis-ci.org/Scalingo/scalingo.js)
-[![Documentation](https://doc.esdoc.org/github.com/Scalingo/scalingo.js/badge.svg)](https://doc.esdoc.org/github.com/Scalingo/scalingo.js/)
+[![Documentation](https://scalingo.github.io/scalingo.js/badge.svg)](https://scalingo.github.io/scalingo.js/)
 
 The Scalingo.js library provides convenient access to the Scalingo API. A
 documentation is [available
-online](https://doc.esdoc.org/github.com/Scalingo/scalingo.js/)
+online](https://scalingo.github.io/scalingo.js/)
 
 ## Usage
 

@@ -1943,11 +1943,6 @@ esdoc-unexported-identifier-plugin@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/esdoc-unexported-identifier-plugin/-/esdoc-unexported-identifier-plugin-1.0.0.tgz#1f9874c6a7c2bebf9ad397c3ceb75c9c69dabab1"
 
-esdoc-uploader@2.x:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/esdoc-uploader/-/esdoc-uploader-2.0.0.tgz#fac84ce0122237717d740ee47693cf5b423abd75"
-  integrity sha512-lKSBB+zBdlD0gSoamEFRC5Y44kwgj5i7RDkbELMuU/d/DkhcWggE716Gs51FHL33LUbwremuNmONyDDc2FzXfw==
-
 esdoc@1.x:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/esdoc/-/esdoc-1.1.0.tgz#07d40ebf791764cd537929c29111e20a857624f3"
