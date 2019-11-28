@@ -6,7 +6,6 @@ import Deployments from './Deployments'
 import Domains from './Domains'
 import Environment from './Environment'
 import Events from './Events'
-import Features from './Features'
 import Logs from './Logs'
 import Metrics from './Metrics'
 import Notifiers from './Notifiers'
@@ -121,12 +120,6 @@ class Client {
      * @type {Events}
      */
     this.Events = new Events(this)
-
-    /**
-     * Features API
-     * @type {Features}
-     */
-    this.Features = new Features(this)
 
     /**
      * Collaborators API
