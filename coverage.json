@@ -1,7 +1,7 @@
 {
-  "coverage": "69.44%",
-  "expectCount": 216,
-  "actualCount": 150,
+  "coverage": "69.19%",
+  "expectCount": 211,
+  "actualCount": 146,
   "files": {
     "src/Addons/index.js": {
       "expectCount": 11,
@@ -79,13 +79,6 @@
     "src/Events/index.js": {
       "expectCount": 6,
       "actualCount": 5,
-      "undocumentLines": [
-        12
-      ]
-    },
-    "src/Features/index.js": {
-      "expectCount": 4,
-      "actualCount": 3,
       "undocumentLines": [
         12
       ]
@@ -209,14 +202,14 @@
       ]
     },
     "src/index.js": {
-      "expectCount": 28,
-      "actualCount": 23,
+      "expectCount": 27,
+      "actualCount": 22,
       "undocumentLines": [
-        22,
+        21,
+        33,
         34,
         35,
-        36,
-        37
+        36
       ]
     },
     "src/utils.js": {

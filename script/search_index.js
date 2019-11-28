@@ -72,12 +72,6 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "scalingo/src/features/index.js~features",
-    "class/src/Features/index.js~Features.html",
-    "<span>Features</span> <span class=\"search-result-import-path\">scalingo/src/Features/index.js</span>",
-    "class"
-  ],
-  [
     "scalingo/src/deployments/listener.js~listener",
     "class/src/Deployments/listener.js~Listener.html",
     "<span>Listener</span> <span class=\"search-result-import-path\">scalingo/src/Deployments/listener.js</span>",
@@ -1080,30 +1074,6 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
-    "src/features/index.js",
-    "file/src/Features/index.js.html",
-    "src/Features/index.js",
-    "file"
-  ],
-  [
-    "src/features/index.js~containersize",
-    "typedef/index.html#static-typedef-ContainerSize",
-    "src/Features/index.js~ContainerSize",
-    "typedef"
-  ],
-  [
-    "src/features/index.js~features#constructor",
-    "class/src/Features/index.js~Features.html#instance-constructor-constructor",
-    "src/Features/index.js~Features#constructor",
-    "method"
-  ],
-  [
-    "src/features/index.js~features#containersizes",
-    "class/src/Features/index.js~Features.html#instance-method-containerSizes",
-    "src/Features/index.js~Features#containerSizes",
-    "method"
-  ],
-  [
     "src/logs/index.js",
     "file/src/Logs/index.js.html",
     "src/Logs/index.js",
@@ -1731,12 +1701,6 @@ window.esdocSearchIndex = [
     "src/index.js~client#events",
     "class/src/index.js~Client.html#instance-member-Events",
     "src/index.js~Client#Events",
-    "member"
-  ],
-  [
-    "src/index.js~client#features",
-    "class/src/index.js~Client.html#instance-member-Features",
-    "src/index.js~Client#Features",
     "member"
   ],
   [

@@ -82,8 +82,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EventType">EventType</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EventUser">EventUser</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EventsPaginationOpts">EventsPaginationOpts</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#features">Features</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Features/index.js~Features.html">Features</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ContainerSize">ContainerSize</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#logs">Logs</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Logs/index.js~Logs.html">Logs</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Logs/listener.js~LogsListener.html">LogsListener</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-AppLogsOpts">AppLogsOpts</a></span></span></li>
@@ -137,7 +135,6 @@ import Deployments from &apos;./Deployments&apos;
 import Domains from &apos;./Domains&apos;
 import Environment from &apos;./Environment&apos;
 import Events from &apos;./Events&apos;
-import Features from &apos;./Features&apos;
 import Logs from &apos;./Logs&apos;
 import Metrics from &apos;./Metrics&apos;
 import Notifiers from &apos;./Notifiers&apos;
@@ -252,12 +249,6 @@ class Client {
      * @type {Events}
      */
     this.Events = new Events(this)
-
-    /**
-     * Features API
-     * @type {Features}
-     */
-    this.Features = new Features(this)
 
     /**
      * Collaborators API
