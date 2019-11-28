@@ -1,5 +1,6 @@
 before_deploy:
 - yarn build
+- yarn docs
 install: yarn
 cache: yarn
 node_js:
@@ -8,7 +9,6 @@ language: node_js
 script:
   - yarn lint
   - yarn test
-  - yarn docs
 deploy:
   - provider: npm
     email: hello@scalingo.com
