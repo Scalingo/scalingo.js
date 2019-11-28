@@ -25,7 +25,7 @@ deploy:
     keep_history: true
     local_dir: docs/
     on:
-      branch: fix/101/esdoc
+      branch: master
 notifications:
   slack:
     rooms:
