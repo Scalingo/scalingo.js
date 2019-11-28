@@ -1,0 +1,33 @@
+before_deploy:
+- yarn build
+- yarn docs
+install: yarn
+cache: yarn
+node_js:
+- 10.16
+language: node_js
+script:
+  - yarn lint
+  - yarn test
+deploy:
+  - provider: npm
+    email: hello@scalingo.com
+    api_key:
+      secure: MzUgpYIRMO2q2ZpHmnzaCvNmAflKRiMKZVq89/fLXZH0qxcaXmUUflSh9mACocm57KGUYYHHa/utsSnj/MRtZ3+Oipcc86vDgKSxaMmZ2f6EHUPRb2TweCRWH9GHUso0byyhE++xndxtuK7j5Z5CE5jn3Nat9v9EsnR/eekA4Z5XiQunLuZdJETfutI7dlJ9aptZx0iQMgA5nmh63D+SAzH9rt6gmiFNi581I4a1vgz4PD2w2vBCg9iXc0mLSkc/A3RxHDchf2TbaMPW/lDvou7TFvZs5Pa8DFmfsB2l3/wbxC0z1wQujn/f2PHhXFBRyRQf+HezjGVFcb0TII6N6W1ERZOFuFSDiEKFPgjKmPsx6gl+QoNcWonE2LtADBYucRBSfL0xqxSaXmmBN9Sq/ej/ARAQolKgAetydQgI19ahMaqNwq5j+2bgswz0pg2I97SvbHvNMJXY6eKKPJLxCPkJhkvEA80qyXy3qzLL26jzWQxddf3nhJTFYMolVcQ5pc3ciCscu24wr+fuiK3/CsyElaZLnzjmTOXT7WCgy9DPSpe9UTkBH0T7VI14sUm1opIbX0GFAYc/21kcxk1M8xpvi+mhOoC5kM0EoHs/I77YIPiKJ3jHrBv9iiigRcWZIk1/uSvOlQTyOD/bWMYcpCwk4y4ATk4qR45Br58CBKQ=
+    skip_cleanup: true
+    on:
+      tags: true
+  - provider: pages
+    skip_cleanup: true
+    github_token:
+      secure: NVRwyZ1UEFASt+ltejw8X/IsFlaR54Rxba0hxUPirlfpX40URJpggJDogqfgrxTn6zkxmTM5lHXketpwrUL0rcN78214tUzwGCs11raIeYx8UHsPkQKZkVBuA1xqeX6EsBG+y8iMvvlbyy7QgoqG765WIBmY4JHKFXiEoRu5BeIRa4UlyOCm4WyuN6oV6awdM+hLq2W+1L4+bl32K3DzZv/Hi75ZWzOC+8vQiaS/f8NZNuIMLPO1uKNtFMnF00aMSFsHPy830QFe5ngZpsX/G8fntFipL/2S5pDr9SUiqf/jQAVhA1+QYVVHwEdogbjz71xgnKGPW89c+9EjZaWXNspYBQ3hqhfURsYwDTtPzuUlohIVoO7FKzUYJgM4t3sP3XhAmzEIZcGB9N41SsPdtWzYm1gMryTcPnYvMjncg8uHk91lKU8G5TnRlpYxXOhOtkns2qRrEYt6mSX3T5mXrqoM0RTTfrzSkooWpB0foknNcheIIG8sTMGRReiFLKCShu9+5qSXYLGznA61ipvv1lMriYEeBdbZcwfhnODamEuZIFP+Yno9jh616lI7jzkJQOyfbMAVbio2qTp2nMP78upzGT/R8E2DoplRBxc8ccXDElqMQ/hkENwA+Aue/E8rxPM6yIfJIFJRSWeKC2nps060MidSz4BRArtr/IZ10vE=
+
+    keep_history: true
+    on:
+      branch: fix/101/esdoc
+notifications:
+  slack:
+    rooms:
+      secure: I2AW+PAZdAhjW9xDAsYtGaZom0ZwwCQqWM+6Nn7vD4luViWNmriWKFlDHAvlvm9ekNYxImXFnk82mRSNqSuvRYJUHUIBH7okxP1khYdkSyJiBPLUPV3ApaEXOhTTLlN4hyJrD/xYd8xLXkzxFNFZXiLliOM/7/bTNgXgDLhPK8lw0jo+cTkdLtM1P8ozi/s25xfbk0w/OCXunF0MbwqIN1i5Ms0MkJGHULnH7rCYx4j9JTMZT/h87XxkxJ/N0IrAiNdW6DaOtnfSo9Xq/zbTMvsqutNaT9eIj28Uv2OyPAMMLLuMibzGDblemdIiZ8752sa1EaIBKJwMG8u1BfUrpJZOT2ggWX7LLrXMyt1VxqJg5DqlRkqmUY2ATYBKkQrkYfSH7CJgv9AbrWVD1VrHE/LPBexcAB1O8xFt4RitEVlF5O5QN+mknV9EPCJHwngWXfzVsMJe/ca7xSPdftMAeWGE5Szg2t8/Wc/wggmpJGwzG5UjmU2WMu8/q6cDIDwPXVH9vyBzCSNJ9KDwHByq9pp0KUv+XvQiy4DHUKn36c5SAuGjJ5xf+COic3nPCAlxweGKJduYR6JLM5p+XzDZI8dj+APeq+LfSQ95FA/jxqA9M3OlQEoUFdGxw3gLa/dwFRU9FOU6bRpfwDHgePPIj1dxeOF2gqDryoNJfVxqSYw=
+    on_success: always
+    on_failure: always
