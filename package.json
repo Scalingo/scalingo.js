@@ -11,8 +11,7 @@
     "build": "rollup -c",
     "docs": "esdoc",
     "lint": "eslint --ext .js ./src ./test",
-    "test": "mocha --require @babel/register --recursive",
-    "upload-doc": "esdoc-uploader"
+    "test": "mocha --require @babel/register --recursive"
   },
   "dependencies": {
     "axios": "0.19.x",
@@ -33,7 +32,6 @@
     "esdoc": "1.x",
     "esdoc-ecmascript-proposal-plugin": "1.x",
     "esdoc-standard-plugin": "1.x",
-    "esdoc-uploader": "2.x",
     "eslint": "6.x",
     "eslint-config-prettier": "6.x",
     "eslint-plugin-import": "2.x",
