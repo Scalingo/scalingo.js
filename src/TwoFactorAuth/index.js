@@ -1,7 +1,8 @@
 import { unpackData } from '../utils.js'
 
-export const defaultProvider = 'totp'
-export const supportedProviders = [defaultProvider]
+export const totpProvider = 'totp'
+export const defaultProvider = totpProvider
+export const supportedProviders = [totpProvider]
 
 export default class TwoFactorAuth {
   /**
@@ -22,15 +23,12 @@ export default class TwoFactorAuth {
 
   /**
    * Initiate the two-factor activation process.
-   * @param {String} tfaId the tfa status id
+   * @param {?String} [provider=totp] the 2FA provider
    * @return {Promise<TwoFactorAuthInitiateResponse | APIError>} Promise resolving with the current user two factor status
    */
-  initiate(tfaId) {
+  initiate(provider) {
     const data = {
-      tfa: {
-        id: tfaId,
-        provider: defaultProvider,
-      },
+      tfa: { provider: provider || defaultProvider },
     }
 
     return unpackData(
@@ -66,7 +64,6 @@ export default class TwoFactorAuth {
 
 /**
  * @typedef {Object} TwoFactorAuth
- * @property {String} id
  * @property {String} uuid
  * @property {Boolean} enabled
  * @property {?String} provider
@@ -74,7 +71,6 @@ export default class TwoFactorAuth {
 
 /**
  * @typedef {Object} TwoFactorAuthInitiateResponse
- * @property {String} id
  * @property {String} uuid
  * @property {Boolean} enabled
  * @property {String} provider

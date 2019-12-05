@@ -11,8 +11,8 @@ scalingo
   .clientFromToken(process.env.SCALINGO_TOKEN)
   .then((client) => {
     return client.TwoFactorAuth.status()
-      .then(({ id }) => {
-        return client.TwoFactorAuth.initiate(id)
+      .then(() => {
+        return client.TwoFactorAuth.initiate()
       })
       .then((tfa) => {
         const url = new URL(tfa.uri)

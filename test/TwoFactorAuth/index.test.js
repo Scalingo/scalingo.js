@@ -12,8 +12,8 @@ describe('TwoFactorAuth#status', () => {
   )
 })
 
-describe('TwoFactorAuth#disable', () => {
-  const expectedBody = { tfa: { id: 23, provider: 'totp' } }
+describe('TwoFactorAuth#initiate', () => {
+  const expectedBody = { tfa: { provider: 'totp' } }
 
   testPost(
     'https://auth.scalingo.com/v1/client/tfa',
@@ -21,7 +21,21 @@ describe('TwoFactorAuth#disable', () => {
     expectedBody,
     'tfa',
     (client) => {
-      return new TFA(client).initiate(23)
+      return new TFA(client).initiate()
+    },
+  )
+})
+
+describe('TwoFactorAuth#initiate with other provider', () => {
+  const expectedBody = { tfa: { provider: 'otherProvider' } }
+
+  testPost(
+    'https://auth.scalingo.com/v1/client/tfa',
+    null,
+    expectedBody,
+    'tfa',
+    (client) => {
+      return new TFA(client).initiate('otherProvider')
     },
   )
 })
