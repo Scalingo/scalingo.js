@@ -1,8 +1,8 @@
 import { unpackData } from '../utils.js'
 
-export const totpProvider = 'totp'
-export const defaultProvider = totpProvider
-export const supportedProviders = [totpProvider]
+export const TOTP_PROVIDER = 'totp'
+export const DEFAULT_PROVIDER = TOTP_PROVIDER
+export const SUPPORTED_PROVIDERS = [TOTP_PROVIDER]
 
 export default class TwoFactorAuth {
   /**
@@ -28,7 +28,7 @@ export default class TwoFactorAuth {
    */
   initiate(provider) {
     const data = {
-      tfa: { provider: provider || defaultProvider },
+      tfa: { provider: provider || DEFAULT_PROVIDER },
     }
 
     return unpackData(
