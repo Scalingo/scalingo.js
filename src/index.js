@@ -14,6 +14,7 @@ import Operations from './Operations'
 import SCMIntegrations from './SCMIntegrations'
 import SCMRepoLinks from './SCMRepoLinks'
 import Tokens from './Tokens'
+import TwoFactorAuth from './TwoFactorAuth'
 import Users from './Users'
 
 import axios from 'axios'
@@ -138,6 +139,12 @@ class Client {
      * @type {NotificationPlatforms}
      */
     this.NotificationPlatforms = new NotificationPlatforms(this)
+
+    /**
+     * Two Factors Auth API
+     * @type {TwoFactorAuth}
+     */
+    this.TwoFactorAuth = new TwoFactorAuth(this)
   }
 
   /**
