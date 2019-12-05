@@ -17,6 +17,15 @@ export default class TwoFactorAuth {
     return unpackData(this._client.authApiClient().get('/client/tfa'), 'tfa')
   }
 
+  /**
+   * Disable the two-factor auth for this user. Will raise an error if not enabled.
+   * @return {Promise<TwoFactorAuth | APIError>} Promise resolving with the current user two factor status
+   */
+  disable() {
+    return unpackData(this._client.authApiClient().delete('/client/tfa'))
+  }
+}
+
 /**
  * @typedef {Object} TwoFactorAuth
  * @property {String} id
