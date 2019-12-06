@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">SCMIntegrations | Scalingo</title>
+  <title data-ice="title">TwoFactorAuth | Scalingo</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -134,17 +134,17 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import SCMIntegrations from &apos;<span><a href="file/src/SCMIntegrations/index.js.html#lineNumber6">scalingo/src/SCMIntegrations/index.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import TwoFactorAuth from &apos;<span><a href="file/src/TwoFactorAuth/index.js.html#lineNumber7">scalingo/src/TwoFactorAuth/index.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/SCMIntegrations/index.js.html#lineNumber6">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/TwoFactorAuth/index.js.html#lineNumber7">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
-  <h1 data-ice="name">SCMIntegrations</h1>
+  <h1 data-ice="name">TwoFactorAuth</h1>
 
   
 
@@ -160,8 +160,7 @@
 
   
   
-  <div class="description" data-ice="description"><p>SCM Integrations API Client</p>
-</div>
+  
   
 
   
@@ -193,13 +192,13 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/SCMIntegrations/index.js~SCMIntegrations.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">(client: <span><a href="class/src/index.js~Client.html">Client</a></span>)</span>
+          <span class="code" data-ice="name"><span><a href="class/src/TwoFactorAuth/index.js~TwoFactorAuth.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">(client: <span><a href="class/src/index.js~Client.html">Client</a></span>)</span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Create a new Client for the SCM integrations API</p>
+        <div data-ice="description"><p>Create a new Client for the Users API</p>
 </div>
       </div>
     </td>
@@ -230,13 +229,13 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/SCMIntegrations/index.js~SCMIntegrations.html#instance-method-all">all</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><span><a href="typedef/index.html#static-typedef-SCMIntegration">SCMIntegration</a></span><span>[]</span></span>, <span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/src/TwoFactorAuth/index.js~TwoFactorAuth.html#instance-method-disable">disable</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="class/src/TwoFactorAuth/index.js~TwoFactorAuth.html">TwoFactorAuth</a></span>|<span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Get all SCM integrations related to your account</p>
+        <div data-ice="description"><p>Disable the two-factor auth for this user.</p>
 </div>
       </div>
     </td>
@@ -259,13 +258,13 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/SCMIntegrations/index.js~SCMIntegrations.html#instance-method-create">create</a></span></span><span class="code" data-ice="signature">(opts: <span><a href="typedef/index.html#static-typedef-SCMIntegrationCreateOpts">SCMIntegrationCreateOpts</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-SCMIntegration">SCMIntegration</a></span>, <span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/src/TwoFactorAuth/index.js~TwoFactorAuth.html#instance-method-initiate">initiate</a></span></span><span class="code" data-ice="signature">(provider: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-TwoFactorAuthInitiateResponse">TwoFactorAuthInitiateResponse</a></span>|<span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Create/Link a new SCM integration.</p>
+        <div data-ice="description"><p>Initiate the two-factor activation process.</p>
 </div>
       </div>
     </td>
@@ -288,13 +287,13 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/SCMIntegrations/index.js~SCMIntegrations.html#instance-method-destroy">destroy</a></span></span><span class="code" data-ice="signature">(integrationID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null">null</a></span>, <span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/src/TwoFactorAuth/index.js~TwoFactorAuth.html#instance-method-status">status</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="class/src/TwoFactorAuth/index.js~TwoFactorAuth.html">TwoFactorAuth</a></span>|<span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Delete/Unlink a SCM integration from your account.</p>
+        <div data-ice="description"><p>Returns the current user two-factor status</p>
 </div>
       </div>
     </td>
@@ -317,129 +316,13 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/SCMIntegrations/index.js~SCMIntegrations.html#instance-method-find">find</a></span></span><span class="code" data-ice="signature">(integrationID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-SCMIntegration">SCMIntegration</a></span>, <span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/src/TwoFactorAuth/index.js~TwoFactorAuth.html#instance-method-validate">validate</a></span></span><span class="code" data-ice="signature">(attempt: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-TwoFactorAuthValidateResponse">TwoFactorAuthValidateResponse</a></span>|<span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Fetch a specific SCM integration</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/SCMIntegrations/index.js~SCMIntegrations.html#instance-method-importSSHKeys">importSSHKeys</a></span></span><span class="code" data-ice="signature">(integrationID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><span>SSHKey</span><span>[]</span></span>, <span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Import SSH keys from a SCM platform</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/SCMIntegrations/index.js~SCMIntegrations.html#instance-method-organizations">organizations</a></span></span><span class="code" data-ice="signature">(integrationID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><span><a href="typedef/index.html#static-typedef-Organization">Organization</a></span><span>[]</span></span>, <span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Get list of organizations attached to an SCM integration account.</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/SCMIntegrations/index.js~SCMIntegrations.html#instance-method-searchPullRequests">searchPullRequests</a></span></span><span class="code" data-ice="signature">(integrationID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><span><a href="typedef/index.html#static-typedef-PullRequest">PullRequest</a></span><span>[]</span></span>, <span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Search pull requests in an SCM integration</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/SCMIntegrations/index.js~SCMIntegrations.html#instance-method-searchRepositories">searchRepositories</a></span></span><span class="code" data-ice="signature">(integrationID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><span><a href="typedef/index.html#static-typedef-Repository">Repository</a></span><span>[]</span></span>, <span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Search repositories in an SCM integration</p>
+        <div data-ice="description"><p>Validate the two-factor activation process.</p>
 </div>
       </div>
     </td>
@@ -470,14 +353,14 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/SCMIntegrations/index.js.html#lineNumber11">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/TwoFactorAuth/index.js.html#lineNumber12">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Create a new Client for the SCM integrations API</p>
+  <div data-ice="description"><p>Create a new Client for the Users API</p>
 </div>
 
   
@@ -524,25 +407,25 @@
 <div data-ice="methodDetails"><h2 data-ice="title">Public Methods</h2>
 
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-all">
+  <h3 data-ice="anchor" id="instance-method-disable">
     <span class="access" data-ice="access">public</span>
     
     
     
     
     
-    <span class="code" data-ice="name">all</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><span><a href="typedef/index.html#static-typedef-SCMIntegration">SCMIntegration</a></span><span>[]</span></span>, <span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
+    <span class="code" data-ice="name">disable</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="class/src/TwoFactorAuth/index.js~TwoFactorAuth.html">TwoFactorAuth</a></span>|<span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/SCMIntegrations/index.js.html#lineNumber33">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/TwoFactorAuth/index.js.html#lineNumber60">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Get all SCM integrations related to your account</p>
+  <div data-ice="description"><p>Disable the two-factor auth for this user. Will raise an error if not enabled.</p>
 </div>
 
   
@@ -555,8 +438,8 @@
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><span><a href="typedef/index.html#static-typedef-SCMIntegration">SCMIntegration</a></span><span>[]</span></span>, <span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</td>
-          <td class="return-desc" data-ice="returnDescription"><p>Promise that when resolved returns a SCMIntegration array.</p>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="class/src/TwoFactorAuth/index.js~TwoFactorAuth.html">TwoFactorAuth</a></span>|<span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</td>
+          <td class="return-desc" data-ice="returnDescription"><p>Promise resolving with the current user two factor status</p>
 </td>
         </tr>
       </tbody>
@@ -577,30 +460,29 @@
 
   
 
-  <div data-ice="see"><h4>See:</h4><ul><li><span><a href="https://developers.scalingo.com/scm_integrations#list-all-the-scm-integrations-of-your-account">https://developers.scalingo.com/scm_integrations#list-all-the-scm-integrations-of-your-account</a></span></li></ul></div>
+  
   
 </div>
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-create">
+  <h3 data-ice="anchor" id="instance-method-initiate">
     <span class="access" data-ice="access">public</span>
     
     
     
     
     
-    <span class="code" data-ice="name">create</span><span class="code" data-ice="signature">(opts: <span><a href="typedef/index.html#static-typedef-SCMIntegrationCreateOpts">SCMIntegrationCreateOpts</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-SCMIntegration">SCMIntegration</a></span>, <span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
+    <span class="code" data-ice="name">initiate</span><span class="code" data-ice="signature">(provider: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-TwoFactorAuthInitiateResponse">TwoFactorAuthInitiateResponse</a></span>|<span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/SCMIntegrations/index.js.html#lineNumber47">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/TwoFactorAuth/index.js.html#lineNumber29">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Create/Link a new SCM integration. Only GitHub Enterprise and GitLab self-hosted
-types are handled with this route.</p>
+  <div data-ice="description"><p>Initiate the two-factor activation process.</p>
 </div>
 
   
@@ -614,10 +496,12 @@ types are handled with this route.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">opts</td>
-      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-SCMIntegrationCreateOpts">SCMIntegrationCreateOpts</a></span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>SCM integration information</p>
+      <td data-ice="name" class="code" data-depth="0">provider</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
+      <td data-ice="appendix"><ul><li>optional</li>
+<li>default: totp</li>
+<li>nullable: true</li></ul></td>
+      <td data-ice="description"><p>the 2FA provider</p>
 </td>
     </tr>
 </tbody>
@@ -630,8 +514,8 @@ types are handled with this route.</p>
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-SCMIntegration">SCMIntegration</a></span>, <span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</td>
-          <td class="return-desc" data-ice="returnDescription"><p>Promise that when resolved returns the SCMIntegration created.</p>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-TwoFactorAuthInitiateResponse">TwoFactorAuthInitiateResponse</a></span>|<span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</td>
+          <td class="return-desc" data-ice="returnDescription"><p>Promise resolving with the current user two factor status</p>
 </td>
         </tr>
       </tbody>
@@ -652,29 +536,86 @@ types are handled with this route.</p>
 
   
 
-  <div data-ice="see"><h4>See:</h4><ul><li><span><a href="https://developers.scalingo.com/scm_integrations#createlink-an-scm-integration-with-your-account">https://developers.scalingo.com/scm_integrations#createlink-an-scm-integration-with-your-account</a></span></li></ul></div>
+  
   
 </div>
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-destroy">
+  <h3 data-ice="anchor" id="instance-method-status">
     <span class="access" data-ice="access">public</span>
     
     
     
     
     
-    <span class="code" data-ice="name">destroy</span><span class="code" data-ice="signature">(integrationID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null">null</a></span>, <span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
+    <span class="code" data-ice="name">status</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="class/src/TwoFactorAuth/index.js~TwoFactorAuth.html">TwoFactorAuth</a></span>|<span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/SCMIntegrations/index.js.html#lineNumber62">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/TwoFactorAuth/index.js.html#lineNumber20">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Delete/Unlink a SCM integration from your account.</p>
+  <div data-ice="description"><p>Returns the current user two-factor status</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="class/src/TwoFactorAuth/index.js~TwoFactorAuth.html">TwoFactorAuth</a></span>|<span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</td>
+          <td class="return-desc" data-ice="returnDescription"><p>Promise resolving with the current user two factor status</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-validate">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">validate</span><span class="code" data-ice="signature">(attempt: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-TwoFactorAuthValidateResponse">TwoFactorAuthValidateResponse</a></span>|<span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/TwoFactorAuth/index.js.html#lineNumber45">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Validate the two-factor activation process.</p>
 </div>
 
   
@@ -688,10 +629,10 @@ types are handled with this route.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">integrationID</td>
-      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
+      <td data-ice="name" class="code" data-depth="0">attempt</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>ID of the integration</p>
+      <td data-ice="description"><p>the &quot;pin number&quot; given by the authenticator</p>
 </td>
     </tr>
 </tbody>
@@ -704,8 +645,8 @@ types are handled with this route.</p>
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null">null</a></span>, <span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</td>
-          <td class="return-desc" data-ice="returnDescription"><p>Promise that resolves when the SCM integration is deleted.</p>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-TwoFactorAuthValidateResponse">TwoFactorAuthValidateResponse</a></span>|<span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</td>
+          <td class="return-desc" data-ice="returnDescription"><p>Promise resolving with the current user two factor status</p>
 </td>
         </tr>
       </tbody>
@@ -726,391 +667,7 @@ types are handled with this route.</p>
 
   
 
-  <div data-ice="see"><h4>See:</h4><ul><li><span><a href="https://developers.scalingo.com/scm_integrations#createlink-an-scm-integration-with-your-account">https://developers.scalingo.com/scm_integrations#createlink-an-scm-integration-with-your-account</a></span></li></ul></div>
   
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-find">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">find</span><span class="code" data-ice="signature">(integrationID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-SCMIntegration">SCMIntegration</a></span>, <span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/SCMIntegrations/index.js.html#lineNumber21">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  <div data-ice="description"><p>Fetch a specific SCM integration</p>
-</div>
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">integrationID</td>
-      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>ID of the integration</p>
-</td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  <div class="return-params" data-ice="returnParams">
-    <h4>Return:</h4>
-    <table>
-      <tbody>
-        <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-SCMIntegration">SCMIntegration</a></span>, <span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</td>
-          <td class="return-desc" data-ice="returnDescription"><p>Promise that when resolved returns a SCMIntegration</p>
-</td>
-        </tr>
-      </tbody>
-    </table>
-    <div data-ice="returnProperties">
-</div>
-  </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  <div data-ice="see"><h4>See:</h4><ul><li><span><a href="https://developers.scalingo.com/scm_integrations#show-a-specific-scm-integration">https://developers.scalingo.com/scm_integrations#show-a-specific-scm-integration</a></span></li></ul></div>
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-importSSHKeys">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">importSSHKeys</span><span class="code" data-ice="signature">(integrationID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><span>SSHKey</span><span>[]</span></span>, <span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/SCMIntegrations/index.js.html#lineNumber74">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  <div data-ice="description"><p>Import SSH keys from a SCM platform</p>
-</div>
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">integrationID</td>
-      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>ID of the integration</p>
-</td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  <div class="return-params" data-ice="returnParams">
-    <h4>Return:</h4>
-    <table>
-      <tbody>
-        <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><span>SSHKey</span><span>[]</span></span>, <span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</td>
-          <td class="return-desc" data-ice="returnDescription"><p>Promise that when resolved returns the imported keys.</p>
-</td>
-        </tr>
-      </tbody>
-    </table>
-    <div data-ice="returnProperties">
-</div>
-  </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  <div data-ice="see"><h4>See:</h4><ul><li><span><a href="https://developers.scalingo.com/scm_integrations#createlink-an-scm-integration-with-your-account">https://developers.scalingo.com/scm_integrations#createlink-an-scm-integration-with-your-account</a></span></li></ul></div>
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-organizations">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">organizations</span><span class="code" data-ice="signature">(integrationID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><span><a href="typedef/index.html#static-typedef-Organization">Organization</a></span><span>[]</span></span>, <span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/SCMIntegrations/index.js.html#lineNumber125">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  <div data-ice="description"><p>Get list of organizations attached to an SCM integration account.</p>
-</div>
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">integrationID</td>
-      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>ID of the integration</p>
-</td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  <div class="return-params" data-ice="returnParams">
-    <h4>Return:</h4>
-    <table>
-      <tbody>
-        <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><span><a href="typedef/index.html#static-typedef-Organization">Organization</a></span><span>[]</span></span>, <span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</td>
-          <td class="return-desc" data-ice="returnDescription"><p>Promise that when resolved returns the list of organizations.</p>
-</td>
-        </tr>
-      </tbody>
-    </table>
-    <div data-ice="returnProperties">
-</div>
-  </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  <div data-ice="see"><h4>See:</h4><ul><li><span><a href="https://developers.scalingo.com/scm_integrations#">https://developers.scalingo.com/scm_integrations#</a></span></li></ul></div>
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-searchPullRequests">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">searchPullRequests</span><span class="code" data-ice="signature">(integrationID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><span><a href="typedef/index.html#static-typedef-PullRequest">PullRequest</a></span><span>[]</span></span>, <span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/SCMIntegrations/index.js.html#lineNumber90">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  <div data-ice="description"><p>Search pull requests in an SCM integration</p>
-</div>
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">integrationID</td>
-      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>ID of the integration</p>
-</td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">query</td>
-      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>Query to filter the list of pull requests</p>
-</td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  <div class="return-params" data-ice="returnParams">
-    <h4>Return:</h4>
-    <table>
-      <tbody>
-        <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><span><a href="typedef/index.html#static-typedef-PullRequest">PullRequest</a></span><span>[]</span></span>, <span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</td>
-          <td class="return-desc" data-ice="returnDescription"><p>Promise that when resolved returns the list of pull requests matching the query.</p>
-</td>
-        </tr>
-      </tbody>
-    </table>
-    <div data-ice="returnProperties">
-</div>
-  </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  <div data-ice="see"><h4>See:</h4><ul><li><span><a href="https://developers.scalingo.com/scm_integrations#">https://developers.scalingo.com/scm_integrations#</a></span></li></ul></div>
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-searchRepositories">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">searchRepositories</span><span class="code" data-ice="signature">(integrationID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><span><a href="typedef/index.html#static-typedef-Repository">Repository</a></span><span>[]</span></span>, <span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/SCMIntegrations/index.js.html#lineNumber108">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  <div data-ice="description"><p>Search repositories in an SCM integration</p>
-</div>
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">integrationID</td>
-      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>ID of the integration</p>
-</td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">query</td>
-      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>Query to filter the list of repositories</p>
-</td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  <div class="return-params" data-ice="returnParams">
-    <h4>Return:</h4>
-    <table>
-      <tbody>
-        <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><span><a href="typedef/index.html#static-typedef-Repository">Repository</a></span><span>[]</span></span>, <span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</td>
-          <td class="return-desc" data-ice="returnDescription"><p>Promise that when resolved returns the list of repositories matching the query.</p>
-</td>
-        </tr>
-      </tbody>
-    </table>
-    <div data-ice="returnProperties">
-</div>
-  </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  <div data-ice="see"><h4>See:</h4><ul><li><span><a href="https://developers.scalingo.com/scm_integrations#">https://developers.scalingo.com/scm_integrations#</a></span></li></ul></div>
   
 </div>
 </div>

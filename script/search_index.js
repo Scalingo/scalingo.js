@@ -42,6 +42,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "scalingo/src/twofactorauth/index.js~default_provider",
+    "variable/index.html#static-variable-DEFAULT_PROVIDER",
+    "<span>DEFAULT_PROVIDER</span> <span class=\"search-result-import-path\">scalingo/src/TwoFactorAuth/index.js</span>",
+    "variable"
+  ],
+  [
     "scalingo/src/deployments/index.js~deployments",
     "class/src/Deployments/index.js~Deployments.html",
     "<span>Deployments</span> <span class=\"search-result-import-path\">scalingo/src/Deployments/index.js</span>",
@@ -150,9 +156,27 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
+    "scalingo/src/twofactorauth/index.js~supported_providers",
+    "variable/index.html#static-variable-SUPPORTED_PROVIDERS",
+    "<span>SUPPORTED_PROVIDERS</span> <span class=\"search-result-import-path\">scalingo/src/TwoFactorAuth/index.js</span>",
+    "variable"
+  ],
+  [
+    "scalingo/src/twofactorauth/index.js~totp_provider",
+    "variable/index.html#static-variable-TOTP_PROVIDER",
+    "<span>TOTP_PROVIDER</span> <span class=\"search-result-import-path\">scalingo/src/TwoFactorAuth/index.js</span>",
+    "variable"
+  ],
+  [
     "scalingo/src/tokens/index.js~tokens",
     "class/src/Tokens/index.js~Tokens.html",
     "<span>Tokens</span> <span class=\"search-result-import-path\">scalingo/src/Tokens/index.js</span>",
+    "class"
+  ],
+  [
+    "scalingo/src/twofactorauth/index.js~twofactorauth",
+    "class/src/TwoFactorAuth/index.js~TwoFactorAuth.html",
+    "<span>TwoFactorAuth</span> <span class=\"search-result-import-path\">scalingo/src/TwoFactorAuth/index.js</span>",
     "class"
   ],
   [
@@ -1578,6 +1602,60 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/twofactorauth/index.js",
+    "file/src/TwoFactorAuth/index.js.html",
+    "src/TwoFactorAuth/index.js",
+    "file"
+  ],
+  [
+    "src/twofactorauth/index.js~twofactorauth",
+    "typedef/index.html#static-typedef-TwoFactorAuth",
+    "src/TwoFactorAuth/index.js~TwoFactorAuth",
+    "typedef"
+  ],
+  [
+    "src/twofactorauth/index.js~twofactorauth#constructor",
+    "class/src/TwoFactorAuth/index.js~TwoFactorAuth.html#instance-constructor-constructor",
+    "src/TwoFactorAuth/index.js~TwoFactorAuth#constructor",
+    "method"
+  ],
+  [
+    "src/twofactorauth/index.js~twofactorauth#disable",
+    "class/src/TwoFactorAuth/index.js~TwoFactorAuth.html#instance-method-disable",
+    "src/TwoFactorAuth/index.js~TwoFactorAuth#disable",
+    "method"
+  ],
+  [
+    "src/twofactorauth/index.js~twofactorauth#initiate",
+    "class/src/TwoFactorAuth/index.js~TwoFactorAuth.html#instance-method-initiate",
+    "src/TwoFactorAuth/index.js~TwoFactorAuth#initiate",
+    "method"
+  ],
+  [
+    "src/twofactorauth/index.js~twofactorauth#status",
+    "class/src/TwoFactorAuth/index.js~TwoFactorAuth.html#instance-method-status",
+    "src/TwoFactorAuth/index.js~TwoFactorAuth#status",
+    "method"
+  ],
+  [
+    "src/twofactorauth/index.js~twofactorauth#validate",
+    "class/src/TwoFactorAuth/index.js~TwoFactorAuth.html#instance-method-validate",
+    "src/TwoFactorAuth/index.js~TwoFactorAuth#validate",
+    "method"
+  ],
+  [
+    "src/twofactorauth/index.js~twofactorauthinitiateresponse",
+    "typedef/index.html#static-typedef-TwoFactorAuthInitiateResponse",
+    "src/TwoFactorAuth/index.js~TwoFactorAuthInitiateResponse",
+    "typedef"
+  ],
+  [
+    "src/twofactorauth/index.js~twofactorauthvalidateresponse",
+    "typedef/index.html#static-typedef-TwoFactorAuthValidateResponse",
+    "src/TwoFactorAuth/index.js~TwoFactorAuthValidateResponse",
+    "typedef"
+  ],
+  [
     "src/users/index.js",
     "file/src/Users/index.js.html",
     "src/Users/index.js",
@@ -1749,6 +1827,12 @@ window.esdocSearchIndex = [
     "src/index.js~client#tokens",
     "class/src/index.js~Client.html#instance-member-Tokens",
     "src/index.js~Client#Tokens",
+    "member"
+  ],
+  [
+    "src/index.js~client#twofactorauth",
+    "class/src/index.js~Client.html#instance-member-TwoFactorAuth",
+    "src/index.js~Client#TwoFactorAuth",
     "member"
   ],
   [

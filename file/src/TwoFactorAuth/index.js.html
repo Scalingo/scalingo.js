@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="">
-  <title data-ice="title">Source | Scalingo</title>
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/TwoFactorAuth/index.js | Scalingo</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -133,248 +133,93 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1>Source <img data-ice="coverageBadge" src="./badge.svg"><span data-ice="totalCoverageCount" class="total-coverage-count">152/222</span></h1>
+<div class="content" data-ice="content"><h1 data-ice="title">src/TwoFactorAuth/index.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { unpackData } from &apos;../utils.js&apos;
 
-<table class="files-summary" data-ice="files" data-use-coverage="true">
-  <thead>
-    <tr>
-      <td>File</td>
-      <td>Identifier</td>
-      <td class="coverage">Document</td>
-      <td style="display: none;">Size</td>
-      <td style="display: none;">Lines</td>
-      <td style="display: none;">Updated</td>
-    </tr>
-  </thead>
-  <tbody>
-    
-  <tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/Addons/index.js.html#errorLines=12">src/Addons/index.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="class/src/Addons/index.js~Addons.html">Addons</a></span></td>
-      <td class="coverage"><span data-ice="coverage">90 %</span><span data-ice="coverageCount" class="coverage-count">10/11</span></td>
-      <td style="display: none;" data-ice="size">6033 byte</td>
-      <td style="display: none;" data-ice="lines">192</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/Apps/index.js.html#errorLines=13">src/Apps/index.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="class/src/Apps/index.js~Apps.html">Apps</a></span></td>
-      <td class="coverage"><span data-ice="coverage">91 %</span><span data-ice="coverageCount" class="coverage-count">11/12</span></td>
-      <td style="display: none;" data-ice="size">7193 byte</td>
-      <td style="display: none;" data-ice="lines">198</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/Collaborators/index.js.html#errorLines=12">src/Collaborators/index.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="class/src/Collaborators/index.js~Collaborators.html">Collaborators</a></span></td>
-      <td class="coverage"><span data-ice="coverage">85 %</span><span data-ice="coverageCount" class="coverage-count">6/7</span></td>
-      <td style="display: none;" data-ice="size">2700 byte</td>
-      <td style="display: none;" data-ice="lines">89</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/Collaborators/status.js.html#errorLines=1,2,3">src/Collaborators/status.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-ACCEPTED">ACCEPTED</a></span>
-<span><a href="variable/index.html#static-variable-PENDING">PENDING</a></span>
-<span><a href="variable/index.html#static-variable-USER_ACCOUNT_DELETED">USER_ACCOUNT_DELETED</a></span></td>
-      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/3</span></td>
-      <td style="display: none;" data-ice="size">194 byte</td>
-      <td style="display: none;" data-ice="lines">9</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/Containers/index.js.html#errorLines=13">src/Containers/index.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="class/src/Containers/index.js~Containers.html">Containers</a></span></td>
-      <td class="coverage"><span data-ice="coverage">85 %</span><span data-ice="coverageCount" class="coverage-count">6/7</span></td>
-      <td style="display: none;" data-ice="size">3330 byte</td>
-      <td style="display: none;" data-ice="lines">103</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/Deployments/index.js.html#errorLines=12">src/Deployments/index.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="class/src/Deployments/index.js~Deployments.html">Deployments</a></span></td>
-      <td class="coverage"><span data-ice="coverage">83 %</span><span data-ice="coverageCount" class="coverage-count">5/6</span></td>
-      <td style="display: none;" data-ice="size">3711 byte</td>
-      <td style="display: none;" data-ice="lines">111</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/Deployments/listener.js.html#errorLines=10,11,12,16,17,3,34,45,75">src/Deployments/listener.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="class/src/Deployments/listener.js~Listener.html">Listener</a></span></td>
-      <td class="coverage"><span data-ice="coverage">40 %</span><span data-ice="coverageCount" class="coverage-count">6/15</span></td>
-      <td style="display: none;" data-ice="size">3030 byte</td>
-      <td style="display: none;" data-ice="lines">121</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/Domains/index.js.html#errorLines=12">src/Domains/index.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="class/src/Domains/index.js~Domains.html">Domains</a></span></td>
-      <td class="coverage"><span data-ice="coverage">87 %</span><span data-ice="coverageCount" class="coverage-count">7/8</span></td>
-      <td style="display: none;" data-ice="size">4578 byte</td>
-      <td style="display: none;" data-ice="lines">127</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/Environment/index.js.html#errorLines=12">src/Environment/index.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="class/src/Environment/index.js~Environment.html">Environment</a></span></td>
-      <td class="coverage"><span data-ice="coverage">88 %</span><span data-ice="coverageCount" class="coverage-count">8/9</span></td>
-      <td style="display: none;" data-ice="size">3940 byte</td>
-      <td style="display: none;" data-ice="lines">119</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/Events/index.js.html#errorLines=12">src/Events/index.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="class/src/Events/index.js~Events.html">Events</a></span></td>
-      <td class="coverage"><span data-ice="coverage">83 %</span><span data-ice="coverageCount" class="coverage-count">5/6</span></td>
-      <td style="display: none;" data-ice="size">3023 byte</td>
-      <td style="display: none;" data-ice="lines">99</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/Logs/index.js.html#errorLines=10,4">src/Logs/index.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="class/src/Logs/index.js~Logs.html">Logs</a></span></td>
-      <td class="coverage"><span data-ice="coverage">66 %</span><span data-ice="coverageCount" class="coverage-count">4/6</span></td>
-      <td style="display: none;" data-ice="size">2323 byte</td>
-      <td style="display: none;" data-ice="lines">71</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/Logs/listener.js.html#errorLines=17,18,19,23,24,3,50">src/Logs/listener.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="class/src/Logs/listener.js~LogsListener.html">LogsListener</a></span></td>
-      <td class="coverage"><span data-ice="coverage">30 %</span><span data-ice="coverageCount" class="coverage-count">3/10</span></td>
-      <td style="display: none;" data-ice="size">1314 byte</td>
-      <td style="display: none;" data-ice="lines">62</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/Metrics/index.js.html#errorLines=7,8">src/Metrics/index.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="class/src/Metrics/index.js~Metrics.html">Metrics</a></span></td>
-      <td class="coverage"><span data-ice="coverage">60 %</span><span data-ice="coverageCount" class="coverage-count">3/5</span></td>
-      <td style="display: none;" data-ice="size">2789 byte</td>
-      <td style="display: none;" data-ice="lines">84</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/NotificationPlatforms/index.js.html#errorLines=12">src/NotificationPlatforms/index.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="class/src/NotificationPlatforms/index.js~NotificationPlatforms.html">NotificationPlatforms</a></span></td>
-      <td class="coverage"><span data-ice="coverage">75 %</span><span data-ice="coverageCount" class="coverage-count">3/4</span></td>
-      <td style="display: none;" data-ice="size">1135 byte</td>
-      <td style="display: none;" data-ice="lines">37</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/NotificationPlatforms/list.js.html#errorLines=1,2,3,4">src/NotificationPlatforms/list.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-EMAIL">EMAIL</a></span>
-<span><a href="variable/index.html#static-variable-ROCKET_CHAT">ROCKET_CHAT</a></span>
-<span><a href="variable/index.html#static-variable-SLACK">SLACK</a></span>
-<span><a href="variable/index.html#static-variable-WEBHOOK">WEBHOOK</a></span></td>
-      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/4</span></td>
-      <td style="display: none;" data-ice="size">196 byte</td>
-      <td style="display: none;" data-ice="lines">11</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/Notifiers/index.js.html#errorLines=12">src/Notifiers/index.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="class/src/Notifiers/index.js~Notifiers.html">Notifiers</a></span></td>
-      <td class="coverage"><span data-ice="coverage">88 %</span><span data-ice="coverageCount" class="coverage-count">8/9</span></td>
-      <td style="display: none;" data-ice="size">4858 byte</td>
-      <td style="display: none;" data-ice="lines">138</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/Operations/index.js.html#errorLines=12">src/Operations/index.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="class/src/Operations/index.js~Operations.html">Operations</a></span></td>
-      <td class="coverage"><span data-ice="coverage">75 %</span><span data-ice="coverageCount" class="coverage-count">3/4</span></td>
-      <td style="display: none;" data-ice="size">1022 byte</td>
-      <td style="display: none;" data-ice="lines">38</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/Operations/utils.js.html#errorLines=14,15,16,17,18,19,20,21,24,28,32,36,40,44">src/Operations/utils.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="class/src/Operations/utils.js~Operation.html">Operation</a></span></td>
-      <td class="coverage"><span data-ice="coverage">26 %</span><span data-ice="coverageCount" class="coverage-count">5/19</span></td>
-      <td style="display: none;" data-ice="size">2442 byte</td>
-      <td style="display: none;" data-ice="lines">109</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/SCMIntegrations/index.js.html#errorLines=12">src/SCMIntegrations/index.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="class/src/SCMIntegrations/index.js~SCMIntegrations.html">SCMIntegrations</a></span></td>
-      <td class="coverage"><span data-ice="coverage">90 %</span><span data-ice="coverageCount" class="coverage-count">10/11</span></td>
-      <td style="display: none;" data-ice="size">7518 byte</td>
-      <td style="display: none;" data-ice="lines">208</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/SCMRepoLinks/index.js.html#errorLines=12">src/SCMRepoLinks/index.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="class/src/SCMRepoLinks/index.js~SCMRepoLinks.html">SCMRepoLinks</a></span></td>
-      <td class="coverage"><span data-ice="coverage">90 %</span><span data-ice="coverageCount" class="coverage-count">10/11</span></td>
-      <td style="display: none;" data-ice="size">7160 byte</td>
-      <td style="display: none;" data-ice="lines">200</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/Tokens/index.js.html#errorLines=13">src/Tokens/index.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="class/src/Tokens/index.js~Tokens.html">Tokens</a></span></td>
-      <td class="coverage"><span data-ice="coverage">75 %</span><span data-ice="coverageCount" class="coverage-count">3/4</span></td>
-      <td style="display: none;" data-ice="size">1164 byte</td>
-      <td style="display: none;" data-ice="lines">44</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/TwoFactorAuth/index.js.html#errorLines=13,3,4,5,7">src/TwoFactorAuth/index.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-DEFAULT_PROVIDER">DEFAULT_PROVIDER</a></span>
-<span><a href="variable/index.html#static-variable-SUPPORTED_PROVIDERS">SUPPORTED_PROVIDERS</a></span>
-<span><a href="variable/index.html#static-variable-TOTP_PROVIDER">TOTP_PROVIDER</a></span>
-<span><a href="class/src/TwoFactorAuth/index.js~TwoFactorAuth.html">TwoFactorAuth</a></span></td>
-      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">5/10</span></td>
-      <td style="display: none;" data-ice="size">2322 byte</td>
-      <td style="display: none;" data-ice="lines">84</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/Users/index.js.html#errorLines=3,9">src/Users/index.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="class/src/Users/index.js~Users.html">Users</a></span></td>
-      <td class="coverage"><span data-ice="coverage">60 %</span><span data-ice="coverageCount" class="coverage-count">3/5</span></td>
-      <td style="display: none;" data-ice="size">1950 byte</td>
-      <td style="display: none;" data-ice="lines">66</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/errors.js.html#errorLines=16,17,23">src/errors.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="class/src/errors.js~APIError.html">APIError</a></span></td>
-      <td class="coverage"><span data-ice="coverage">57 %</span><span data-ice="coverageCount" class="coverage-count">4/7</span></td>
-      <td style="display: none;" data-ice="size">977 byte</td>
-      <td style="display: none;" data-ice="lines">42</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/index.js.html#errorLines=22,34,35,36,37">src/index.js</a></span></td>
-      <td data-ice="identifier" class="identifiers"><span><a href="class/src/index.js~Client.html">Client</a></span>
-<span><a href="function/index.html#static-function-clientFromToken">clientFromToken</a></span></td>
-      <td class="coverage"><span data-ice="coverage">82 %</span><span data-ice="coverageCount" class="coverage-count">23/28</span></td>
-      <td style="display: none;" data-ice="size">5001 byte</td>
-      <td style="display: none;" data-ice="lines">205</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/meta.js.html">src/meta.js</a></span></td>
-      <td data-ice="identifier" class="identifiers">-</td>
-      <td class="coverage"><span data-ice="coverage">-</span></td>
-      <td style="display: none;" data-ice="size">577 byte</td>
-      <td style="display: none;" data-ice="lines">16</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-<tr data-ice="file">
-      <td data-ice="filePath"><span><a href="file/src/utils.js.html">src/utils.js</a></span></td>
-      <td data-ice="identifier" class="identifiers">-</td>
-      <td class="coverage"><span data-ice="coverage">100 %</span><span data-ice="coverageCount" class="coverage-count">1/1</span></td>
-      <td style="display: none;" data-ice="size">692 byte</td>
-      <td style="display: none;" data-ice="lines">28</td>
-      <td style="display: none;" data-ice="updated">2019-12-06 13:09:23 (UTC)</td>
-    </tr>
-</tbody>
-</table>
+export const TOTP_PROVIDER = &apos;totp&apos;
+export const DEFAULT_PROVIDER = TOTP_PROVIDER
+export const SUPPORTED_PROVIDERS = [TOTP_PROVIDER]
+
+export default class TwoFactorAuth {
+  /**
+   * Create a new Client for the Users API
+   * @param {Client} client - Scalingo API Client
+   */
+  constructor(client) {
+    this._client = client
+  }
+
+  /**
+   * Returns the current user two-factor status
+   * @return {Promise&lt;TwoFactorAuth | APIError&gt;} Promise resolving with the current user two factor status
+   */
+  status() {
+    return unpackData(this._client.authApiClient().get(&apos;/client/tfa&apos;), &apos;tfa&apos;)
+  }
+
+  /**
+   * Initiate the two-factor activation process.
+   * @param {?String} [provider=totp] the 2FA provider
+   * @return {Promise&lt;TwoFactorAuthInitiateResponse | APIError&gt;} Promise resolving with the current user two factor status
+   */
+  initiate(provider) {
+    const data = {
+      tfa: { provider: provider || DEFAULT_PROVIDER },
+    }
+
+    return unpackData(
+      this._client.authApiClient().post(&apos;/client/tfa&apos;, data),
+      &apos;tfa&apos;,
+    )
+  }
+
+  /**
+   * Validate the two-factor activation process.
+   * @param {Number} attempt the &quot;pin number&quot; given by the authenticator
+   * @return {Promise&lt;TwoFactorAuthValidateResponse | APIError&gt;} Promise resolving with the current user two factor status
+   */
+  validate(attempt) {
+    const data = {
+      tfa: { attempt },
+    }
+
+    return unpackData(
+      this._client.authApiClient().post(&apos;/client/tfa/validate&apos;, data),
+      &apos;tfa&apos;,
+    )
+  }
+
+  /**
+   * Disable the two-factor auth for this user. Will raise an error if not enabled.
+   * @return {Promise&lt;TwoFactorAuth | APIError&gt;} Promise resolving with the current user two factor status
+   */
+  disable() {
+    return unpackData(this._client.authApiClient().delete(&apos;/client/tfa&apos;))
+  }
+}
+
+/**
+ * @typedef {Object} TwoFactorAuth
+ * @property {String} uuid
+ * @property {Boolean} enabled
+ * @property {?String} provider
+ */
+
+/**
+ * @typedef {Object} TwoFactorAuthInitiateResponse
+ * @property {String} uuid
+ * @property {Boolean} enabled
+ * @property {String} provider
+ * @property {String} uri
+ */
+
+/**
+ * @typedef {Object} TwoFactorAuthValidateResponse
+ * @property {Array&lt;String&gt;} codes A list of recovery codes
+ * @property {TwoFactorAuth} user The two factor auth status
+ */
+</code></pre>
+
 </div>
 
 <footer class="footer">

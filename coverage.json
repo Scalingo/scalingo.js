@@ -1,7 +1,7 @@
 {
-  "coverage": "69.19%",
-  "expectCount": 211,
-  "actualCount": 146,
+  "coverage": "68.46%",
+  "expectCount": 222,
+  "actualCount": 152,
   "files": {
     "src/Addons/index.js": {
       "expectCount": 11,
@@ -184,6 +184,17 @@
         13
       ]
     },
+    "src/TwoFactorAuth/index.js": {
+      "expectCount": 10,
+      "actualCount": 5,
+      "undocumentLines": [
+        3,
+        4,
+        5,
+        7,
+        13
+      ]
+    },
     "src/Users/index.js": {
       "expectCount": 5,
       "actualCount": 3,
@@ -202,14 +213,14 @@
       ]
     },
     "src/index.js": {
-      "expectCount": 27,
-      "actualCount": 22,
+      "expectCount": 28,
+      "actualCount": 23,
       "undocumentLines": [
-        21,
-        33,
+        22,
         34,
         35,
-        36
+        36,
+        37
       ]
     },
     "src/utils.js": {

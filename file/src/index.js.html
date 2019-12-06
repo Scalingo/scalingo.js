@@ -118,6 +118,13 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SCMRepoLinkUpdateOpts">SCMRepoLinkUpdateOpts</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#tokens">Tokens</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Tokens/index.js~Tokens.html">Tokens</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Token">Token</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#twofactorauth">TwoFactorAuth</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/TwoFactorAuth/index.js~TwoFactorAuth.html">TwoFactorAuth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DEFAULT_PROVIDER">DEFAULT_PROVIDER</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SUPPORTED_PROVIDERS">SUPPORTED_PROVIDERS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TOTP_PROVIDER">TOTP_PROVIDER</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="class/src/TwoFactorAuth/index.js~TwoFactorAuth.html">TwoFactorAuth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TwoFactorAuthInitiateResponse">TwoFactorAuthInitiateResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TwoFactorAuthValidateResponse">TwoFactorAuthValidateResponse</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#users">Users</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Users/index.js~Users.html">Users</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-AccountUpdateParams">AccountUpdateParams</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-GithubProfile">GithubProfile</a></span></span></li>
@@ -143,6 +150,7 @@ import Operations from &apos;./Operations&apos;
 import SCMIntegrations from &apos;./SCMIntegrations&apos;
 import SCMRepoLinks from &apos;./SCMRepoLinks&apos;
 import Tokens from &apos;./Tokens&apos;
+import TwoFactorAuth from &apos;./TwoFactorAuth&apos;
 import Users from &apos;./Users&apos;
 
 import axios from &apos;axios&apos;
@@ -267,6 +275,12 @@ class Client {
      * @type {NotificationPlatforms}
      */
     this.NotificationPlatforms = new NotificationPlatforms(this)
+
+    /**
+     * Two Factors Auth API
+     * @type {TwoFactorAuth}
+     */
+    this.TwoFactorAuth = new TwoFactorAuth(this)
   }
 
   /**
