@@ -17,7 +17,7 @@ export default class Tokens {
    * List all known tokens
    * @return {Promise<Token[] | APIError>} A list of tokens
    */
-  list() {
+  all() {
     return unpackData(this._client.authApiClient().get('/tokens'), 'tokens')
   }
 

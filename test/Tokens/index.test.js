@@ -7,7 +7,7 @@ describe('Tokens#list', () => {
     null,
     'tokens',
     (client) => {
-      return new Tokens(client).list()
+      return new Tokens(client).all()
     },
   )
 })
