@@ -69,7 +69,7 @@ export default class SCMIntegrations {
    * Import SSH keys from a SCM platform
    * @see https://developers.scalingo.com/scm_integrations#createlink-an-scm-integration-with-your-account
    * @param {String} integrationID - ID of the integration
-   * @return {Promise<SSHKey[], APIError>} Promise that when resolved returns the imported keys.
+   * @return {Promise<Key[], APIError>} Promise that when resolved returns the imported keys.
    */
   importSSHKeys(integrationID) {
     return unpackData(
@@ -164,17 +164,6 @@ export default class SCMIntegrations {
  * @property {String} url Endpoint URL of the SCM platform (e.g.
  * https://gitlab.example.com)
  * @property {String} access_token Access token provided by an SCM platform
- */
-
-/**
- * @typedef {Object} Key
- * @see https://developers.scalingo.com/scm_integrations#createlink-an-scm-integration-with-your-account
- * @property {String} id Unique key ID
- * @property {String} name Key name
- * @property {String} content
- * @property {String} fingerprint Fingerprint of the SSH key
- * @property {Date} created_at Creation date of the SCM integration
- * @property {Object} owner Owner of the SSH key
  */
 
 /**
