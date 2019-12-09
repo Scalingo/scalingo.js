@@ -14,7 +14,7 @@ export default class Stats {
 
   /**
    * Return referrals stats for current user
-   * @return {Promise<ReferralsStats | APIError>} A list of keys
+   * @return {Promise<ReferralsStats | APIError>} The referrals stats for the current user
    */
   referrals() {
     return unpackData(
