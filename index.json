@@ -5424,6 +5424,284 @@
   {
     "__docId__": 180,
     "kind": "file",
+    "name": "src/Keys/index.js",
+    "content": "import { unpackData } from '../utils.js'\n\n/**\n * Keys API Client\n */\nexport default class Keys {\n  /**\n   * Create a new Client for the Keys API\n   * @param {Client} client - Scalingo API Client\n   */\n  constructor(client) {\n    this._client = client\n  }\n\n  /**\n   * List all known keys\n   * @return {Promise<Key[] | APIError>} A list of keys\n   */\n  all() {\n    return unpackData(this._client.apiClient().get('/keys'), 'keys')\n  }\n\n  /**\n   * Show one specific key\n   * @return {Promise<Key | APIError>} A key\n   */\n  show(id) {\n    return unpackData(this._client.apiClient().get(`/keys/${id}`), 'key')\n  }\n\n  /**\n   * Create a new key\n   * @param {String} name - The name of the new key\n   * @param {String} content - Public SSH key content (ie. content of ~/.ssh/id_rsa.pub)\n   * @return {Promise<Key | APIError>} The newly created key\n   */\n  create(name, content) {\n    const data = { name, content }\n    return unpackData(this._client.apiClient().post('/keys', data, null), 'key')\n  }\n\n  /**\n   * Destroy a key\n   * @param {String} id - The id of the key to destroy\n   * @return {Promise<? | APIError>}\n   */\n  destroy(id) {\n    return unpackData(this._client.apiClient().delete(`/keys/${id}`))\n  }\n}\n\n/**\n * @typedef {Object} Key\n * @see https://developers.scalingo.com/keys\n * @property {String} id Unique key ID\n * @property {String} name Key name\n * @property {String} content\n * @property {String} fingerprint Fingerprint of the SSH key\n * @property {Date} created_at Creation date of the SSH Key\n * @property {Object} owner Owner of the SSH key\n */\n",
+    "static": true,
+    "longname": "/home/travis/build/Scalingo/scalingo.js/src/Keys/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 181,
+    "kind": "class",
+    "name": "Keys",
+    "memberof": "src/Keys/index.js",
+    "static": true,
+    "longname": "src/Keys/index.js~Keys",
+    "access": "public",
+    "export": true,
+    "importPath": "scalingo/src/Keys/index.js",
+    "importStyle": "Keys",
+    "description": "Keys API Client",
+    "lineNumber": 6,
+    "interface": false
+  },
+  {
+    "__docId__": 182,
+    "kind": "typedef",
+    "name": "Key",
+    "memberof": "src/Keys/index.js",
+    "static": true,
+    "longname": "src/Keys/index.js~Key",
+    "access": "public",
+    "description": "",
+    "see": [
+      "https://developers.scalingo.com/keys"
+    ],
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "Unique key ID"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "name",
+        "description": "Key name"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "content",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "fingerprint",
+        "description": "Fingerprint of the SSH key"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Date"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "created_at",
+        "description": "Creation date of the SSH Key"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "owner",
+        "description": "Owner of the SSH key"
+      }
+    ],
+    "type": {
+      "types": [
+        "Object"
+      ],
+      "optional": false,
+      "name": "Key"
+    }
+  },
+  {
+    "__docId__": 183,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/Keys/index.js~Keys",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Keys/index.js~Keys#constructor",
+    "access": "public",
+    "description": "Create a new Client for the Keys API",
+    "lineNumber": 11,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Client"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "client",
+        "description": "Scalingo API Client"
+      }
+    ]
+  },
+  {
+    "__docId__": 184,
+    "kind": "member",
+    "name": "_client",
+    "memberof": "src/Keys/index.js~Keys",
+    "static": false,
+    "longname": "src/Keys/index.js~Keys#_client",
+    "access": "private",
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 185,
+    "kind": "method",
+    "name": "all",
+    "memberof": "src/Keys/index.js~Keys",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Keys/index.js~Keys#all",
+    "access": "public",
+    "description": "List all known keys",
+    "lineNumber": 19,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<Key[] | APIError>"
+      ],
+      "spread": false,
+      "description": "A list of keys"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 186,
+    "kind": "method",
+    "name": "show",
+    "memberof": "src/Keys/index.js~Keys",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Keys/index.js~Keys#show",
+    "access": "public",
+    "description": "Show one specific key",
+    "lineNumber": 27,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<Key | APIError>"
+      ],
+      "spread": false,
+      "description": "A key"
+    },
+    "params": [
+      {
+        "name": "id",
+        "types": [
+          "*"
+        ]
+      }
+    ]
+  },
+  {
+    "__docId__": 187,
+    "kind": "method",
+    "name": "create",
+    "memberof": "src/Keys/index.js~Keys",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Keys/index.js~Keys#create",
+    "access": "public",
+    "description": "Create a new key",
+    "lineNumber": 37,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "name",
+        "description": "The name of the new key"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "content",
+        "description": "Public SSH key content (ie. content of ~/.ssh/id_rsa.pub)"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<Key | APIError>"
+      ],
+      "spread": false,
+      "description": "The newly created key"
+    }
+  },
+  {
+    "__docId__": 188,
+    "kind": "method",
+    "name": "destroy",
+    "memberof": "src/Keys/index.js~Keys",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Keys/index.js~Keys#destroy",
+    "access": "public",
+    "description": "Destroy a key",
+    "lineNumber": 47,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "The id of the key to destroy"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<? | APIError>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 189,
+    "kind": "file",
     "name": "src/Logs/index.js",
     "content": "import LogsListener from '../Logs/listener'\nimport { unpackData } from '../utils.js'\n\nexport default class Logs {\n  /**\n   * Create a new Client for the Logs API\n   * @param {Client} client - Scalingo API client\n   */\n  constructor(client) {\n    this._client = client\n  }\n\n  /**\n   * Get application logs\n   * @see https://developers.scalingo.com/logs\n   * @param {String} id - ID of the application\n   * @param {AppLogsOpts} opts - Optional additional information\n   * @return {Promise<String, APIError>} Promise that when resolved returns the application logs\n   */\n  async for(id, opts) {\n    let url = await this._client.Apps.logsURL(id)\n    url = `${url}&stream=false`\n    if (opts && opts['count']) {\n      url = `${url}&n=${opts['count']}`\n    }\n\n    return unpackData(this._client.unauthenticatedClient().get(url))\n  }\n\n  /**\n   * Open a listener on this app logs\n   * @see https://developers.scalingo.com/logs\n   * @param {String} id ID of the application\n   * @return {Promise<LogsListener, APIError>} Promise that when resolved returns a logs listener for this application.\n   */\n  async listenerFor(id) {\n    let url = await this._client.Apps.logsURL(id)\n    url = `${url}&stream=true`\n\n    return new LogsListener(this._client, url)\n  }\n\n  /**\n   * Get logs archives for an app\n   * @see https://developers.scalingo.com/apps#access-to-the-application-logs-archives\n   * @param {String} id ID of the application\n   * @return {Promise<Archive[], APIError>} Promise that when resolved returns a list of logs archives for this application\n   */\n  archives(id) {\n    // Pagination is not supported in the lib. We're waiting correct pagination metadata.\n    // See: https://github.com/Scalingo/api/issues/1438\n    return unpackData(\n      this._client.apiClient().get(`/apps/${id}/logs_archives`),\n      'archives',\n    )\n  }\n}\n\n/**\n * @typedef {Object} AppLogsOpts\n * @property {Number} count Number of log lines to fetch\n */\n\n/**\n * @typedef {Object} Archive\n * @see https://developers.scalingo.com/apps#access-to-the-application-logs-archives\n * @property {String} url Pre-signed URL to download logs archives\n * @property {Number} size Size of the logs archive\n * @property {Date} from Date of the first log line present in the archive\n * @property {Date} to Date of the last log line present in the archive\n */\n",
     "static": true,
@@ -5433,7 +5711,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 181,
+    "__docId__": 190,
     "kind": "class",
     "name": "Logs",
     "memberof": "src/Logs/index.js",
@@ -5449,7 +5727,7 @@
     "interface": false
   },
   {
-    "__docId__": 182,
+    "__docId__": 191,
     "kind": "typedef",
     "name": "AppLogsOpts",
     "memberof": "src/Logs/index.js",
@@ -5478,7 +5756,7 @@
     }
   },
   {
-    "__docId__": 183,
+    "__docId__": 192,
     "kind": "typedef",
     "name": "Archive",
     "memberof": "src/Logs/index.js",
@@ -5540,7 +5818,7 @@
     }
   },
   {
-    "__docId__": 184,
+    "__docId__": 193,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/Logs/index.js~Logs",
@@ -5565,7 +5843,7 @@
     ]
   },
   {
-    "__docId__": 185,
+    "__docId__": 194,
     "kind": "member",
     "name": "_client",
     "memberof": "src/Logs/index.js~Logs",
@@ -5583,7 +5861,7 @@
     }
   },
   {
-    "__docId__": 186,
+    "__docId__": 195,
     "kind": "method",
     "name": "for",
     "memberof": "src/Logs/index.js~Logs",
@@ -5629,7 +5907,7 @@
     }
   },
   {
-    "__docId__": 187,
+    "__docId__": 196,
     "kind": "method",
     "name": "listenerFor",
     "memberof": "src/Logs/index.js~Logs",
@@ -5665,7 +5943,7 @@
     }
   },
   {
-    "__docId__": 188,
+    "__docId__": 197,
     "kind": "method",
     "name": "archives",
     "memberof": "src/Logs/index.js~Logs",
@@ -5701,7 +5979,7 @@
     }
   },
   {
-    "__docId__": 189,
+    "__docId__": 198,
     "kind": "file",
     "name": "src/Logs/listener.js",
     "content": "import WebSocket from 'isomorphic-ws'\n\nexport default class LogsListener {\n  /**\n   * Create a new Application log listener\n   * @param {Client} client Scalingo API Client\n   * @param {String} url URL to the logs websocket API\n   */\n\n  constructor(client, url) {\n    const wsURL = new URL(url)\n    if (wsURL.protocol == 'http:' || wsURL.protocol == 'ws:') {\n      wsURL.protocol = 'ws'\n    } else {\n      wsURL.protocol = 'wss'\n    }\n    this._client = client\n    this._url = wsURL.toString()\n    this._onLog = null\n    this._start()\n  }\n\n  _start() {\n    this._ws = new WebSocket(this._url)\n    this._ws.onclose = () => {\n      this._ws = null\n    }\n    this._ws.onmessage = (message) => {\n      this._onMessage(message)\n    }\n  }\n\n  /**\n   * Close the listener connection\n   */\n  close() {\n    if (this._ws) {\n      this._ws.close()\n    }\n  }\n\n  /**\n   * Setup a callback that will be called when a new log line is received\n   * @param {function(log: String)} callback Callback to call when a new log line is received\n   */\n  onLog(callback) {\n    this._onLog = callback\n  }\n\n  _onMessage(message) {\n    const data = JSON.parse(message.data)\n    const event = data['event']\n\n    switch (event) {\n      case 'log':\n        if (this._onLog) {\n          this._onLog(data['log'])\n        }\n        break\n    }\n  }\n}\n",
@@ -5712,7 +5990,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 190,
+    "__docId__": 199,
     "kind": "class",
     "name": "LogsListener",
     "memberof": "src/Logs/listener.js",
@@ -5728,7 +6006,7 @@
     "interface": false
   },
   {
-    "__docId__": 191,
+    "__docId__": 200,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/Logs/listener.js~LogsListener",
@@ -5763,7 +6041,7 @@
     ]
   },
   {
-    "__docId__": 192,
+    "__docId__": 201,
     "kind": "member",
     "name": "_client",
     "memberof": "src/Logs/listener.js~LogsListener",
@@ -5781,7 +6059,7 @@
     }
   },
   {
-    "__docId__": 193,
+    "__docId__": 202,
     "kind": "member",
     "name": "_url",
     "memberof": "src/Logs/listener.js~LogsListener",
@@ -5799,7 +6077,7 @@
     }
   },
   {
-    "__docId__": 194,
+    "__docId__": 203,
     "kind": "member",
     "name": "_onLog",
     "memberof": "src/Logs/listener.js~LogsListener",
@@ -5817,7 +6095,7 @@
     }
   },
   {
-    "__docId__": 195,
+    "__docId__": 204,
     "kind": "method",
     "name": "_start",
     "memberof": "src/Logs/listener.js~LogsListener",
@@ -5834,7 +6112,7 @@
     "return": null
   },
   {
-    "__docId__": 196,
+    "__docId__": 205,
     "kind": "member",
     "name": "_ws",
     "memberof": "src/Logs/listener.js~LogsListener",
@@ -5852,7 +6130,7 @@
     }
   },
   {
-    "__docId__": 198,
+    "__docId__": 207,
     "kind": "method",
     "name": "close",
     "memberof": "src/Logs/listener.js~LogsListener",
@@ -5867,7 +6145,7 @@
     "return": null
   },
   {
-    "__docId__": 199,
+    "__docId__": 208,
     "kind": "method",
     "name": "onLog",
     "memberof": "src/Logs/listener.js~LogsListener",
@@ -5893,7 +6171,7 @@
     "return": null
   },
   {
-    "__docId__": 201,
+    "__docId__": 210,
     "kind": "method",
     "name": "_onMessage",
     "memberof": "src/Logs/listener.js~LogsListener",
@@ -5917,7 +6195,7 @@
     "return": null
   },
   {
-    "__docId__": 202,
+    "__docId__": 211,
     "kind": "file",
     "name": "src/Metrics/index.js",
     "content": "import { unpackData } from '../utils'\n\n/**\n * Metrics API Client\n */\nexport default class Metrics {\n  constructor(client) {\n    this._client = client\n  }\n\n  /**\n   * List all the metrics available on the platform.\n   * @see https://developers.scalingo.com/metrics#list-the-metrics-available\n   * @return {Promise<MetricType[] | APIError>} Promise that when resolved return a list of all metrics available on the platform.\n   */\n  types() {\n    return unpackData(\n      this._client.apiClient().get('/features/metrics'),\n      'metrics',\n    )\n  }\n\n  /**\n   * Fetch metrics for an app\n   * @param {String} appId Application ID\n   * @param {String} metrics Which metric to get. One of the following: [router, requests, cpu, ram, swap]\n   * @param {Object} opts Optional params\n   * @param {Number} opts.since Number of hours requested (max 71)\n   * @param {String} opts.statusCode Only available when requesting router metrics. One of the following: [all, 1XX, 2XX, 3XX, 4XX, 5XX]\n   * @param {String} opts.statisticsType Only available when requesting requests metrics. One of the following: [media, p95, p99]\n   * @param {String} opts.containerType Container type filter\n   * @param {Number} opts.containerIndex Container index (only available when containerType is set and for non router metrics)\n   * @param {Boolean} opts.last only fetch the last metrics\n   * @return {Promise<Point[] | APIError>} Promise that when resolve return an array of points for the requested metrics\n   */\n  get(appId, metric, opts = {}) {\n    const {\n      since,\n      statusCode,\n      statisticsType,\n      containerIndex,\n      containerType,\n      last,\n    } = opts\n    const params = {}\n    let url = `/apps/${appId}/stats/${metric}`\n    if (since !== undefined) {\n      params['since'] = since\n    }\n    if (statusCode !== undefined) {\n      params['status_code'] = statusCode\n    }\n    if (statisticsType !== undefined) {\n      params['statistics_type'] = statisticsType\n    }\n    if (last !== undefined) {\n      params['last'] = last\n    }\n\n    if (containerType !== undefined) {\n      url = `${url}/${containerType}`\n      if (containerIndex !== undefined) {\n        url = `${url}/${containerIndex}`\n      }\n    }\n\n    return unpackData(this._client.apiClient().get(url, { params: params }))\n  }\n}\n\n/**\n * @typedef {Object} MetricType\n * @see https://developers.scalingo.com/metrics\n * @property {String} id unique identifier\n * @property {String} label human readable string explaining this metric\n * @property {String} suffix symbol used as a suffix after this metric value\n * @property {String} type type of metric. Can be either global or router\n */\n\n/**\n * @typedef {Object} Point\n * @property {String} time Time of the current point\n * @property {Number} value value of the current point\n */\n",
@@ -5928,7 +6206,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 203,
+    "__docId__": 212,
     "kind": "class",
     "name": "Metrics",
     "memberof": "src/Metrics/index.js",
@@ -5943,7 +6221,7 @@
     "interface": false
   },
   {
-    "__docId__": 204,
+    "__docId__": 213,
     "kind": "typedef",
     "name": "MetricType",
     "memberof": "src/Metrics/index.js",
@@ -6005,7 +6283,7 @@
     }
   },
   {
-    "__docId__": 205,
+    "__docId__": 214,
     "kind": "typedef",
     "name": "Point",
     "memberof": "src/Metrics/index.js",
@@ -6044,7 +6322,7 @@
     }
   },
   {
-    "__docId__": 206,
+    "__docId__": 215,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/Metrics/index.js~Metrics",
@@ -6058,7 +6336,7 @@
     "undocument": true
   },
   {
-    "__docId__": 207,
+    "__docId__": 216,
     "kind": "member",
     "name": "_client",
     "memberof": "src/Metrics/index.js~Metrics",
@@ -6076,7 +6354,7 @@
     }
   },
   {
-    "__docId__": 208,
+    "__docId__": 217,
     "kind": "method",
     "name": "types",
     "memberof": "src/Metrics/index.js~Metrics",
@@ -6101,7 +6379,7 @@
     "params": []
   },
   {
-    "__docId__": 209,
+    "__docId__": 218,
     "kind": "method",
     "name": "get",
     "memberof": "src/Metrics/index.js~Metrics",
@@ -6214,7 +6492,7 @@
     }
   },
   {
-    "__docId__": 210,
+    "__docId__": 219,
     "kind": "file",
     "name": "src/NotificationPlatforms/index.js",
     "content": "import { unpackData } from '../utils.js'\n\n/**\n * Notification Platforms API Client\n */\nexport default class NotificationPlatforms {\n  /**\n   * Create a new Client for the Notification Platforms API\n   * @param {Client} client - Scalingo API Client\n   */\n  constructor(client) {\n    this._client = client\n  }\n\n  /**\n   * List notification platforms\n   * @see https://developers.scalingo.com/notification_platforms\n   * @return {Promise<NotificationPlatform[] | APIError>}\n   */\n  list() {\n    return unpackData(\n      this._client.unauthenticatedClient().get('/notification_platforms'),\n      'notification_platforms',\n    )\n  }\n}\n\n/**\n * @typedef {Object} NotificationPlatform\n * @property {String} id Unique ID identifying the notification platform\n * @property {String} name Name of the notification platform\n * @property {String} display_name Human readable name for this notification platform\n * @property {String} logo_url URL to a logo for this notification platform\n * @property {String[]} available_event_ids list of event type IDs accepted by\n * this platform\n * @property {String} description Description of the platform\n */\n",
@@ -6225,7 +6503,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 211,
+    "__docId__": 220,
     "kind": "class",
     "name": "NotificationPlatforms",
     "memberof": "src/NotificationPlatforms/index.js",
@@ -6240,7 +6518,7 @@
     "interface": false
   },
   {
-    "__docId__": 212,
+    "__docId__": 221,
     "kind": "typedef",
     "name": "NotificationPlatform",
     "memberof": "src/NotificationPlatforms/index.js",
@@ -6319,7 +6597,7 @@
     }
   },
   {
-    "__docId__": 213,
+    "__docId__": 222,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/NotificationPlatforms/index.js~NotificationPlatforms",
@@ -6344,7 +6622,7 @@
     ]
   },
   {
-    "__docId__": 214,
+    "__docId__": 223,
     "kind": "member",
     "name": "_client",
     "memberof": "src/NotificationPlatforms/index.js~NotificationPlatforms",
@@ -6362,7 +6640,7 @@
     }
   },
   {
-    "__docId__": 215,
+    "__docId__": 224,
     "kind": "method",
     "name": "list",
     "memberof": "src/NotificationPlatforms/index.js~NotificationPlatforms",
@@ -6387,7 +6665,7 @@
     "params": []
   },
   {
-    "__docId__": 216,
+    "__docId__": 225,
     "kind": "file",
     "name": "src/NotificationPlatforms/list.js",
     "content": "export const EMAIL = 'email'\nexport const ROCKET_CHAT = 'rocket_chat'\nexport const SLACK = 'slack'\nexport const WEBHOOK = 'webhook'\n\nexport default {\n  EMAIL,\n  ROCKET_CHAT,\n  SLACK,\n  WEBHOOK,\n}\n",
@@ -6398,7 +6676,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 217,
+    "__docId__": 226,
     "kind": "variable",
     "name": "EMAIL",
     "memberof": "src/NotificationPlatforms/list.js",
@@ -6418,7 +6696,7 @@
     }
   },
   {
-    "__docId__": 218,
+    "__docId__": 227,
     "kind": "variable",
     "name": "ROCKET_CHAT",
     "memberof": "src/NotificationPlatforms/list.js",
@@ -6438,7 +6716,7 @@
     }
   },
   {
-    "__docId__": 219,
+    "__docId__": 228,
     "kind": "variable",
     "name": "SLACK",
     "memberof": "src/NotificationPlatforms/list.js",
@@ -6458,7 +6736,7 @@
     }
   },
   {
-    "__docId__": 220,
+    "__docId__": 229,
     "kind": "variable",
     "name": "WEBHOOK",
     "memberof": "src/NotificationPlatforms/list.js",
@@ -6478,7 +6756,7 @@
     }
   },
   {
-    "__docId__": 221,
+    "__docId__": 230,
     "kind": "file",
     "name": "src/Notifiers/index.js",
     "content": "import { unpackData } from '../utils.js'\n\n/**\n * Notifiers API Client\n */\nexport default class Notifiers {\n  /**\n   * Create a new Client for the Notifiers API\n   * @param {Client} client - Scalingo API Client\n   */\n  constructor(client) {\n    this._client = client\n  }\n\n  /**\n   * Get list of notifiers of an application\n   * @see https://developers.scalingo.com/notifiers#list-application-notifiers\n   * @param {String} appId ID of the app to get the notifiers from\n   * @return {Promise<Notifier[] | APIError>}\n   */\n  for(appId) {\n    return unpackData(\n      this._client.apiClient().get(`/apps/${appId}/notifiers`),\n      'notifiers',\n    )\n  }\n\n  /**\n   * Add a notifier to an application\n   * @see https://developers.scalingo.com/notifiers#add-a-notifier\n   * @param {String} appId ID of the app\n   * @param {NotifierCreateParams} notifier New notifier configuration\n   * @return {Promise<Notifier | APIError>}\n   */\n  create(appId, notifier) {\n    return unpackData(\n      this._client.apiClient().post(`/apps/${appId}/notifiers`, {\n        notifier: notifier,\n      }),\n      'notifier',\n    )\n  }\n\n  /**\n   * Upgrade a notifier\n   * @see https://developers.scalingo.com/notifiers#update-a-notifier\n   * @param {String} appId ID of the current application\n   * @param {String} notifierId ID of the current notifier\n   * @param {NotifierUpdateParams} notifier Updated notifier configuration\n   * @return {Promise<Notifier | APIError>}\n   */\n  update(appId, notifierId, notifier) {\n    return unpackData(\n      this._client.apiClient().patch(`/apps/${appId}/notifiers/${notifierId}`, {\n        notifier: notifier,\n      }),\n      'notifier',\n    )\n  }\n\n  /**\n   * Remove a notifier\n   * @see https://developers.scalingo.com/notifiers#remove-a-notifier\n   * @param {String} appId ID of the current application\n   * @param {String} notifierId ID of the notifier\n   * @return {Promise<? | APIError>}\n   */\n  destroy(appId, notifierId) {\n    return unpackData(\n      this._client.apiClient().delete(`/apps/${appId}/notifiers/${notifierId}`),\n    )\n  }\n\n  /**\n   * Send a test notification to the notifier\n   * @see https://developers.scalingo.com/notifiers#test-a-notifier\n   * @param {String} appId The ID of the current application\n   * @param {String} notifierId The ID of the notifier\n   * @return {Promise<? | APIError>}\n   */\n  test(appId, notifierId) {\n    return unpackData(\n      this._client\n        .apiClient()\n        .post(`/apps/${appId}/notifiers/${notifierId}/test`),\n    )\n  }\n\n  /**\n   * Get a specific notifier\n   * @param {String} appId The ID of the current application\n   * @param {String} notifierId The ID of the notifier to get\n   * @return {Promise<Notifier | APIError>}\n   */\n  get(appId, notifierId) {\n    return unpackData(\n      this._client.apiClient().get(`/apps/${appId}/notifiers/${notifierId}`),\n      'notifier',\n    )\n  }\n}\n\n/**\n * @typedef {Object} Notifier\n * @property {String} id Unique ID identifying the notifier\n * @property {String} app_id Unique ID referencing the app this notifier belongs to\n * @property {Date} created_at Creation date of the notifier\n * @property {Date} updated_at Last notifier update date\n * @property {String} name Name of the notifier\n * @property {boolean} active Is the notifier active or not\n * @property {String} type Notifier type\n * @property {String} platform_id Notification platform used by this notifer\n * @property {boolean} send_all_alerts Should the notifier accepts all alerts\n * @property {boolean} send_all_events Should the notifier accepts all events\n * @property {[]String} selected_event_ids List of events accepted by this notifier\n * @property {Object} type_data Notitication platform dependant additional data\n */\n\n/**\n * @typedef {Object} NotifierCreateParams\n * @property {String} platform_id Notification platform used by this notifer\n * @property {String} name Name of the notifier\n * @property {?boolean} active Optional: Is the notifier active or not\n * @property {?boolean} send_all_alerts Optional: Should the notifier accepts all alerts\n * @property {?boolean} send_all_events Optional: Should the notifier accepts all events\n * @property {?[]String} selected_event_ids Optional: List of events accepted by this notifier\n * @property {?Object} type_data Optional: Notitication platform dependant additional data\n */\n\n/**\n * @typedef {Object} NotifierUpdateParams\n * @property {String} name Name of the notifier\n * @property {?boolean} active Optional: Is the notifier active or not\n * @property {?boolean} send_all_alerts Optional: Should the notifier accepts all alerts\n * @property {?boolean} send_all_events Optional: Should the notifier accepts all events\n * @property {?[]String} selected_event_ids Optional: List of events accepted by this notifier\n * @property {?Object} type_data Optional: Notitication platform dependant additional data\n */\n",
@@ -6489,7 +6767,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 222,
+    "__docId__": 231,
     "kind": "class",
     "name": "Notifiers",
     "memberof": "src/Notifiers/index.js",
@@ -6504,7 +6782,7 @@
     "interface": false
   },
   {
-    "__docId__": 223,
+    "__docId__": 232,
     "kind": "typedef",
     "name": "Notifier",
     "memberof": "src/Notifiers/index.js",
@@ -6643,7 +6921,7 @@
     }
   },
   {
-    "__docId__": 224,
+    "__docId__": 233,
     "kind": "typedef",
     "name": "NotifierCreateParams",
     "memberof": "src/Notifiers/index.js",
@@ -6732,7 +7010,7 @@
     }
   },
   {
-    "__docId__": 225,
+    "__docId__": 234,
     "kind": "typedef",
     "name": "NotifierUpdateParams",
     "memberof": "src/Notifiers/index.js",
@@ -6811,7 +7089,7 @@
     }
   },
   {
-    "__docId__": 226,
+    "__docId__": 235,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/Notifiers/index.js~Notifiers",
@@ -6836,7 +7114,7 @@
     ]
   },
   {
-    "__docId__": 227,
+    "__docId__": 236,
     "kind": "member",
     "name": "_client",
     "memberof": "src/Notifiers/index.js~Notifiers",
@@ -6854,7 +7132,7 @@
     }
   },
   {
-    "__docId__": 228,
+    "__docId__": 237,
     "kind": "method",
     "name": "for",
     "memberof": "src/Notifiers/index.js~Notifiers",
@@ -6890,7 +7168,7 @@
     }
   },
   {
-    "__docId__": 229,
+    "__docId__": 238,
     "kind": "method",
     "name": "create",
     "memberof": "src/Notifiers/index.js~Notifiers",
@@ -6936,7 +7214,7 @@
     }
   },
   {
-    "__docId__": 230,
+    "__docId__": 239,
     "kind": "method",
     "name": "update",
     "memberof": "src/Notifiers/index.js~Notifiers",
@@ -6992,7 +7270,7 @@
     }
   },
   {
-    "__docId__": 231,
+    "__docId__": 240,
     "kind": "method",
     "name": "destroy",
     "memberof": "src/Notifiers/index.js~Notifiers",
@@ -7038,7 +7316,7 @@
     }
   },
   {
-    "__docId__": 232,
+    "__docId__": 241,
     "kind": "method",
     "name": "test",
     "memberof": "src/Notifiers/index.js~Notifiers",
@@ -7084,7 +7362,7 @@
     }
   },
   {
-    "__docId__": 233,
+    "__docId__": 242,
     "kind": "method",
     "name": "get",
     "memberof": "src/Notifiers/index.js~Notifiers",
@@ -7127,7 +7405,7 @@
     }
   },
   {
-    "__docId__": 234,
+    "__docId__": 243,
     "kind": "file",
     "name": "src/Operations/index.js",
     "content": "import { unpackData } from '../utils.js'\n\n/**\n * Operations API Client\n */\nexport default class Operations {\n  /**\n   * Create a new Client for the Containers API\n   * @param {Client} client - Scalingo API Client\n   */\n  constructor(client) {\n    this._client = client\n  }\n\n  /**\n   * Get an operation\n   * @see https://developers.scalingo.com/operations#get-an-operation\n   * @param {String} appId ID of the application\n   * @param {String} operationId ID of the operation\n   * @return {Promise<Operation | APIError>}\n   */\n  operation(appId, operationId) {\n    return unpackData(\n      this._client.apiClient().get(`/apps/${appId}/operations/${operationId}`),\n      'operation',\n    )\n  }\n}\n\n/**\n * @typedef {Object} Operation\n * {String} id Unique ID of the operation\n * {Date} created_at Creation date of the operation\n * {Date} finished_at Last time the application has been updated\n * {String} status Status of the operation\n * {String} type Type of operation\n * {String} error Text of the error if there is one\n */\n",
@@ -7138,7 +7416,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 235,
+    "__docId__": 244,
     "kind": "class",
     "name": "Operations",
     "memberof": "src/Operations/index.js",
@@ -7153,7 +7431,7 @@
     "interface": false
   },
   {
-    "__docId__": 236,
+    "__docId__": 245,
     "kind": "typedef",
     "name": "Operation",
     "memberof": "src/Operations/index.js",
@@ -7170,7 +7448,7 @@
     }
   },
   {
-    "__docId__": 237,
+    "__docId__": 246,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/Operations/index.js~Operations",
@@ -7195,7 +7473,7 @@
     ]
   },
   {
-    "__docId__": 238,
+    "__docId__": 247,
     "kind": "member",
     "name": "_client",
     "memberof": "src/Operations/index.js~Operations",
@@ -7213,7 +7491,7 @@
     }
   },
   {
-    "__docId__": 239,
+    "__docId__": 248,
     "kind": "method",
     "name": "operation",
     "memberof": "src/Operations/index.js~Operations",
@@ -7259,7 +7537,7 @@
     }
   },
   {
-    "__docId__": 240,
+    "__docId__": 249,
     "kind": "file",
     "name": "src/Operations/utils.js",
     "content": "import { APIError } from '../errors'\n\n/**\n * @example\n * let operation = new Operation(Client, locationUrl)\n */\nexport class Operation {\n  /**\n   * @param {Client} client Client instance\n   * @param {String} url Location url\n   * @see https://developers.scalingo.com/operations\n   */\n  constructor(client, url) {\n    this._client = client\n    this._id = null\n    this._created_at = null\n    this._finished_at = null\n    this._status = null\n    this._type = null\n    this._error = null\n    this._url = url\n  }\n\n  get id() {\n    return this._id\n  }\n\n  get status() {\n    return this._status\n  }\n\n  get created_at() {\n    return this._created_at\n  }\n\n  get finished_at() {\n    return this._finished_at\n  }\n\n  get error() {\n    return this._error\n  }\n\n  get type() {\n    return this._type\n  }\n\n  /**\n   * Set properties of the Operation object\n   * @param values Operation object\n   */\n  setProperties(values) {\n    this._id = values.id\n    this._created_at = values.created_at\n    this._finished_at = values.finished_at\n    this._type = values.type\n    this._status = values.status\n    this._error = values.error\n  }\n\n  /**\n   * Get the response of the API call to get the operation's infos\n   * @returns {Promise<Operation | APIError>}\n   */\n  async refresh() {\n    return new Promise((resolve, reject) => {\n      this._client\n        .apiClient()\n        .get(this._url)\n        .then((response) => {\n          this.setProperties(response.data.operation)\n          resolve(response.data.operation)\n        })\n        .catch((error) => {\n          if (error.response) {\n            reject(new APIError(error.response.status, error.response.data))\n            return\n          }\n          reject(error)\n        })\n    })\n  }\n\n  /**\n   * It will call the refresh method until operation's status isn't 'done'\n   * @returns {Promise<any | APIError>}\n   */\n  wait() {\n    return new Promise((resolve, reject) => {\n      const waitInterval = setInterval(function() {\n        this.refresh()\n          .then((response) => {\n            if (this.status === 'done') {\n              resolve(response)\n              clearInterval(waitInterval)\n            }\n          })\n          .catch((error) => {\n            clearInterval(waitInterval)\n            if (error.response) {\n              reject(new APIError(error.response.status, error.response.data))\n              return\n            }\n            reject(error)\n          })\n      }, 1000)\n    })\n  }\n}\n",
@@ -7270,7 +7548,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 241,
+    "__docId__": 250,
     "kind": "class",
     "name": "Operation",
     "memberof": "src/Operations/utils.js",
@@ -7288,7 +7566,7 @@
     "interface": false
   },
   {
-    "__docId__": 242,
+    "__docId__": 251,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/Operations/utils.js~Operation",
@@ -7326,7 +7604,7 @@
     ]
   },
   {
-    "__docId__": 243,
+    "__docId__": 252,
     "kind": "member",
     "name": "_client",
     "memberof": "src/Operations/utils.js~Operation",
@@ -7344,7 +7622,7 @@
     }
   },
   {
-    "__docId__": 244,
+    "__docId__": 253,
     "kind": "member",
     "name": "_id",
     "memberof": "src/Operations/utils.js~Operation",
@@ -7362,7 +7640,7 @@
     }
   },
   {
-    "__docId__": 245,
+    "__docId__": 254,
     "kind": "member",
     "name": "_created_at",
     "memberof": "src/Operations/utils.js~Operation",
@@ -7380,7 +7658,7 @@
     }
   },
   {
-    "__docId__": 246,
+    "__docId__": 255,
     "kind": "member",
     "name": "_finished_at",
     "memberof": "src/Operations/utils.js~Operation",
@@ -7398,7 +7676,7 @@
     }
   },
   {
-    "__docId__": 247,
+    "__docId__": 256,
     "kind": "member",
     "name": "_status",
     "memberof": "src/Operations/utils.js~Operation",
@@ -7416,7 +7694,7 @@
     }
   },
   {
-    "__docId__": 248,
+    "__docId__": 257,
     "kind": "member",
     "name": "_type",
     "memberof": "src/Operations/utils.js~Operation",
@@ -7434,7 +7712,7 @@
     }
   },
   {
-    "__docId__": 249,
+    "__docId__": 258,
     "kind": "member",
     "name": "_error",
     "memberof": "src/Operations/utils.js~Operation",
@@ -7452,7 +7730,7 @@
     }
   },
   {
-    "__docId__": 250,
+    "__docId__": 259,
     "kind": "member",
     "name": "_url",
     "memberof": "src/Operations/utils.js~Operation",
@@ -7470,7 +7748,7 @@
     }
   },
   {
-    "__docId__": 251,
+    "__docId__": 260,
     "kind": "get",
     "name": "id",
     "memberof": "src/Operations/utils.js~Operation",
@@ -7489,7 +7767,7 @@
     }
   },
   {
-    "__docId__": 252,
+    "__docId__": 261,
     "kind": "get",
     "name": "status",
     "memberof": "src/Operations/utils.js~Operation",
@@ -7508,7 +7786,7 @@
     }
   },
   {
-    "__docId__": 253,
+    "__docId__": 262,
     "kind": "get",
     "name": "created_at",
     "memberof": "src/Operations/utils.js~Operation",
@@ -7527,7 +7805,7 @@
     }
   },
   {
-    "__docId__": 254,
+    "__docId__": 263,
     "kind": "get",
     "name": "finished_at",
     "memberof": "src/Operations/utils.js~Operation",
@@ -7546,7 +7824,7 @@
     }
   },
   {
-    "__docId__": 255,
+    "__docId__": 264,
     "kind": "get",
     "name": "error",
     "memberof": "src/Operations/utils.js~Operation",
@@ -7565,7 +7843,7 @@
     }
   },
   {
-    "__docId__": 256,
+    "__docId__": 265,
     "kind": "get",
     "name": "type",
     "memberof": "src/Operations/utils.js~Operation",
@@ -7584,7 +7862,7 @@
     }
   },
   {
-    "__docId__": 257,
+    "__docId__": 266,
     "kind": "method",
     "name": "setProperties",
     "memberof": "src/Operations/utils.js~Operation",
@@ -7610,7 +7888,7 @@
     "return": null
   },
   {
-    "__docId__": 264,
+    "__docId__": 273,
     "kind": "method",
     "name": "refresh",
     "memberof": "src/Operations/utils.js~Operation",
@@ -7638,7 +7916,7 @@
     "params": []
   },
   {
-    "__docId__": 265,
+    "__docId__": 274,
     "kind": "method",
     "name": "wait",
     "memberof": "src/Operations/utils.js~Operation",
@@ -7666,10 +7944,10 @@
     "params": []
   },
   {
-    "__docId__": 266,
+    "__docId__": 275,
     "kind": "file",
     "name": "src/SCMIntegrations/index.js",
-    "content": "import { unpackData } from '../utils.js'\n\n/**\n * SCM Integrations API Client\n */\nexport default class SCMIntegrations {\n  /**\n   * Create a new Client for the SCM integrations API\n   * @param {Client} client - Scalingo API Client\n   */\n  constructor(client) {\n    this._client = client\n  }\n\n  /**\n   * Fetch a specific SCM integration\n   * @see https://developers.scalingo.com/scm_integrations#show-a-specific-scm-integration\n   * @param {String} integrationID - ID of the integration\n   * @return {Promise<SCMIntegration,APIError>} Promise that when resolved returns a SCMIntegration\n   */\n  find(integrationID) {\n    return unpackData(\n      this._client.authApiClient().get(`/scm_integrations/${integrationID}`),\n      'scm_integration',\n    )\n  }\n\n  /**\n   * Get all SCM integrations related to your account\n   * @see https://developers.scalingo.com/scm_integrations#list-all-the-scm-integrations-of-your-account\n   * @return {Promise<SCMIntegration[], APIError>} Promise that when resolved returns a SCMIntegration array.\n   */\n  all() {\n    return unpackData(\n      this._client.authApiClient().get('/scm_integrations'),\n      'scm_integrations',\n    )\n  }\n\n  /**\n   * Create/Link a new SCM integration. Only GitHub Enterprise and GitLab self-hosted\n   * types are handled with this route.\n   * @see https://developers.scalingo.com/scm_integrations#createlink-an-scm-integration-with-your-account\n   * @param {SCMIntegrationCreateOpts} opts - SCM integration information\n   * @return {Promise<SCMIntegration, APIError>} Promise that when resolved returns the SCMIntegration created.\n   */\n  create(opts) {\n    return unpackData(\n      this._client\n        .authApiClient()\n        .post('/scm_integrations', { scm_integration: opts }),\n      'scm_integration',\n    )\n  }\n\n  /**\n   * Delete/Unlink a SCM integration from your account.\n   * @see https://developers.scalingo.com/scm_integrations#createlink-an-scm-integration-with-your-account\n   * @param {String} integrationID - ID of the integration\n   * @return {Promise<null, APIError>} Promise that resolves when the SCM integration is deleted.\n   */\n  destroy(integrationID) {\n    return unpackData(\n      this._client.authApiClient().delete(`/scm_integrations/${integrationID}`),\n    )\n  }\n\n  /**\n   * Import SSH keys from a SCM platform\n   * @see https://developers.scalingo.com/scm_integrations#createlink-an-scm-integration-with-your-account\n   * @param {String} integrationID - ID of the integration\n   * @return {Promise<SSHKey[], APIError>} Promise that when resolved returns the imported keys.\n   */\n  importSSHKeys(integrationID) {\n    return unpackData(\n      this._client\n        .authApiClient()\n        .post(`/scm_integrations/${integrationID}/import_keys`),\n      'keys',\n    )\n  }\n\n  /**\n   * Search pull requests in an SCM integration\n   * @see https://developers.scalingo.com/scm_integrations#\n   * @param {String} integrationID - ID of the integration\n   * @param {String} query - Query to filter the list of pull requests\n   * @return {Promise<PullRequest[], APIError>} Promise that when resolved returns the list of pull requests matching the query.\n   */\n  searchPullRequests(integrationID, query) {\n    return unpackData(\n      this._client\n        .authApiClient()\n        .get(`/scm_integrations/${integrationID}/search_pull_requests`, {\n          params: { query },\n        }),\n      'pull_requests',\n    )\n  }\n\n  /**\n   * Search repositories in an SCM integration\n   * @see https://developers.scalingo.com/scm_integrations#\n   * @param {String} integrationID - ID of the integration\n   * @param {String} query - Query to filter the list of repositories\n   * @return {Promise<Repository[], APIError>} Promise that when resolved returns the list of repositories matching the query.\n   */\n  searchRepositories(integrationID, query) {\n    return unpackData(\n      this._client\n        .authApiClient()\n        .get(`/scm_integrations/${integrationID}/search_repos`, {\n          params: { query },\n        }),\n      'repositories',\n    )\n  }\n\n  /**\n   * Get list of organizations attached to an SCM integration account.\n   * @see https://developers.scalingo.com/scm_integrations#\n   * @param {String} integrationID - ID of the integration\n   * @return {Promise<Organization[], APIError>} Promise that when resolved returns the list of organizations.\n   */\n  organizations(integrationID) {\n    return unpackData(\n      this._client\n        .authApiClient()\n        .get(`/scm_integrations/${integrationID}/orgs`),\n      'organizations',\n    )\n  }\n}\n\n/**\n * @typedef {Object} SCMIntegration\n * @see https://developers.scalingo.com/scm_integrations\n * @property {String} id Unique ID\n * @property {SCMType} scm_type Type of the SCM integration\n * @property {String} url URL where the SCM platform is hosted\n * @property {Date} created_at Creation date of the SCM integration\n * @property {String} uid User ID provided by the SCM platform\n * @property {String} username Username provided by the SCM platform\n * @property {String} avatar_url User avatar URL provided by the SCM platform\n * @property {String} email User email provided by the SCM platform\n * @property {String} profile_url User profile URL provided by the SCM platform\n * @property {Object} owner Owner of the SCM integration\n */\n\n/**\n * @typedef {String} SCMType\n * @desc\n * Can take one of the following values:\n * - **github** is a GitHub.com integration\n * - **gitlab** is a GitLab.com integration\n * - **github-enterprise** is a GitHub Enterprise self-hosted instance\n * - **gitlab-self-hosted** is a GitLab self-hosted instance\n */\n\n/**\n * @typedef {Object} SCMIntegrationCreateOpts\n * @see https://developers.scalingo.com/scm_integrations#createlink-an-scm-integration-with-your-account\n * @property {SCMType} scm_type Type of the SCM integration\n * @property {String} url Endpoint URL of the SCM platform (e.g.\n * https://gitlab.example.com)\n * @property {String} access_token Access token provided by an SCM platform\n */\n\n/**\n * @typedef {Object} Key\n * @see https://developers.scalingo.com/scm_integrations#createlink-an-scm-integration-with-your-account\n * @property {String} id Unique key ID\n * @property {String} name Key name\n * @property {String} content\n * @property {String} fingerprint Fingerprint of the SSH key\n * @property {Date} created_at Creation date of the SCM integration\n * @property {Object} owner Owner of the SSH key\n */\n\n/**\n * @typedef {Object} PullRequest\n * @see https://developers.scalingo.com/scm_integrations#\n * @property {Number} id Unique key ID\n * @property {Number} number Pull/Merge request number\n * @property {String} title Title of the pull/merge request\n * @property {String} html_url URL to the pull/merge request\n */\n\n/**\n * @typedef {Object} Repository\n * @see https://developers.scalingo.com/scm_integrations#\n * @property {Number} id Unique key ID\n * @property {String} description Description of the repository\n * @property {String} fullName Name of the repository including the name of the\n * owner (e.g. owner/repository)\n * @property {String} name Name of the repository\n * @property {String} url URL to the repository\n */\n\n/**\n * @typedef {Object} Organization\n * @see https://developers.scalingo.com/scm_integrations#\n * @property {Number} id Unique key ID\n * @property {String} avatarUrl URL of the avatar of the organization\n * @property {String} description Description of the organization\n * @property {String} login Name of the organization\n * @property {String} url URL to the SCM API for the organization\n */\n",
+    "content": "import { unpackData } from '../utils.js'\n\n/**\n * SCM Integrations API Client\n */\nexport default class SCMIntegrations {\n  /**\n   * Create a new Client for the SCM integrations API\n   * @param {Client} client - Scalingo API Client\n   */\n  constructor(client) {\n    this._client = client\n  }\n\n  /**\n   * Fetch a specific SCM integration\n   * @see https://developers.scalingo.com/scm_integrations#show-a-specific-scm-integration\n   * @param {String} integrationID - ID of the integration\n   * @return {Promise<SCMIntegration,APIError>} Promise that when resolved returns a SCMIntegration\n   */\n  find(integrationID) {\n    return unpackData(\n      this._client.authApiClient().get(`/scm_integrations/${integrationID}`),\n      'scm_integration',\n    )\n  }\n\n  /**\n   * Get all SCM integrations related to your account\n   * @see https://developers.scalingo.com/scm_integrations#list-all-the-scm-integrations-of-your-account\n   * @return {Promise<SCMIntegration[], APIError>} Promise that when resolved returns a SCMIntegration array.\n   */\n  all() {\n    return unpackData(\n      this._client.authApiClient().get('/scm_integrations'),\n      'scm_integrations',\n    )\n  }\n\n  /**\n   * Create/Link a new SCM integration. Only GitHub Enterprise and GitLab self-hosted\n   * types are handled with this route.\n   * @see https://developers.scalingo.com/scm_integrations#createlink-an-scm-integration-with-your-account\n   * @param {SCMIntegrationCreateOpts} opts - SCM integration information\n   * @return {Promise<SCMIntegration, APIError>} Promise that when resolved returns the SCMIntegration created.\n   */\n  create(opts) {\n    return unpackData(\n      this._client\n        .authApiClient()\n        .post('/scm_integrations', { scm_integration: opts }),\n      'scm_integration',\n    )\n  }\n\n  /**\n   * Delete/Unlink a SCM integration from your account.\n   * @see https://developers.scalingo.com/scm_integrations#createlink-an-scm-integration-with-your-account\n   * @param {String} integrationID - ID of the integration\n   * @return {Promise<null, APIError>} Promise that resolves when the SCM integration is deleted.\n   */\n  destroy(integrationID) {\n    return unpackData(\n      this._client.authApiClient().delete(`/scm_integrations/${integrationID}`),\n    )\n  }\n\n  /**\n   * Import SSH keys from a SCM platform\n   * @see https://developers.scalingo.com/scm_integrations#createlink-an-scm-integration-with-your-account\n   * @param {String} integrationID - ID of the integration\n   * @return {Promise<Key[], APIError>} Promise that when resolved returns the imported keys.\n   */\n  importSSHKeys(integrationID) {\n    return unpackData(\n      this._client\n        .authApiClient()\n        .post(`/scm_integrations/${integrationID}/import_keys`),\n      'keys',\n    )\n  }\n\n  /**\n   * Search pull requests in an SCM integration\n   * @see https://developers.scalingo.com/scm_integrations#\n   * @param {String} integrationID - ID of the integration\n   * @param {String} query - Query to filter the list of pull requests\n   * @return {Promise<PullRequest[], APIError>} Promise that when resolved returns the list of pull requests matching the query.\n   */\n  searchPullRequests(integrationID, query) {\n    return unpackData(\n      this._client\n        .authApiClient()\n        .get(`/scm_integrations/${integrationID}/search_pull_requests`, {\n          params: { query },\n        }),\n      'pull_requests',\n    )\n  }\n\n  /**\n   * Search repositories in an SCM integration\n   * @see https://developers.scalingo.com/scm_integrations#\n   * @param {String} integrationID - ID of the integration\n   * @param {String} query - Query to filter the list of repositories\n   * @return {Promise<Repository[], APIError>} Promise that when resolved returns the list of repositories matching the query.\n   */\n  searchRepositories(integrationID, query) {\n    return unpackData(\n      this._client\n        .authApiClient()\n        .get(`/scm_integrations/${integrationID}/search_repos`, {\n          params: { query },\n        }),\n      'repositories',\n    )\n  }\n\n  /**\n   * Get list of organizations attached to an SCM integration account.\n   * @see https://developers.scalingo.com/scm_integrations#\n   * @param {String} integrationID - ID of the integration\n   * @return {Promise<Organization[], APIError>} Promise that when resolved returns the list of organizations.\n   */\n  organizations(integrationID) {\n    return unpackData(\n      this._client\n        .authApiClient()\n        .get(`/scm_integrations/${integrationID}/orgs`),\n      'organizations',\n    )\n  }\n}\n\n/**\n * @typedef {Object} SCMIntegration\n * @see https://developers.scalingo.com/scm_integrations\n * @property {String} id Unique ID\n * @property {SCMType} scm_type Type of the SCM integration\n * @property {String} url URL where the SCM platform is hosted\n * @property {Date} created_at Creation date of the SCM integration\n * @property {String} uid User ID provided by the SCM platform\n * @property {String} username Username provided by the SCM platform\n * @property {String} avatar_url User avatar URL provided by the SCM platform\n * @property {String} email User email provided by the SCM platform\n * @property {String} profile_url User profile URL provided by the SCM platform\n * @property {Object} owner Owner of the SCM integration\n */\n\n/**\n * @typedef {String} SCMType\n * @desc\n * Can take one of the following values:\n * - **github** is a GitHub.com integration\n * - **gitlab** is a GitLab.com integration\n * - **github-enterprise** is a GitHub Enterprise self-hosted instance\n * - **gitlab-self-hosted** is a GitLab self-hosted instance\n */\n\n/**\n * @typedef {Object} SCMIntegrationCreateOpts\n * @see https://developers.scalingo.com/scm_integrations#createlink-an-scm-integration-with-your-account\n * @property {SCMType} scm_type Type of the SCM integration\n * @property {String} url Endpoint URL of the SCM platform (e.g.\n * https://gitlab.example.com)\n * @property {String} access_token Access token provided by an SCM platform\n */\n\n/**\n * @typedef {Object} PullRequest\n * @see https://developers.scalingo.com/scm_integrations#\n * @property {Number} id Unique key ID\n * @property {Number} number Pull/Merge request number\n * @property {String} title Title of the pull/merge request\n * @property {String} html_url URL to the pull/merge request\n */\n\n/**\n * @typedef {Object} Repository\n * @see https://developers.scalingo.com/scm_integrations#\n * @property {Number} id Unique key ID\n * @property {String} description Description of the repository\n * @property {String} fullName Name of the repository including the name of the\n * owner (e.g. owner/repository)\n * @property {String} name Name of the repository\n * @property {String} url URL to the repository\n */\n\n/**\n * @typedef {Object} Organization\n * @see https://developers.scalingo.com/scm_integrations#\n * @property {Number} id Unique key ID\n * @property {String} avatarUrl URL of the avatar of the organization\n * @property {String} description Description of the organization\n * @property {String} login Name of the organization\n * @property {String} url URL to the SCM API for the organization\n */\n",
     "static": true,
     "longname": "/home/travis/build/Scalingo/scalingo.js/src/SCMIntegrations/index.js",
     "access": "public",
@@ -7677,7 +7955,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 267,
+    "__docId__": 276,
     "kind": "class",
     "name": "SCMIntegrations",
     "memberof": "src/SCMIntegrations/index.js",
@@ -7692,7 +7970,7 @@
     "interface": false
   },
   {
-    "__docId__": 268,
+    "__docId__": 277,
     "kind": "typedef",
     "name": "SCMIntegration",
     "memberof": "src/SCMIntegrations/index.js",
@@ -7814,7 +8092,7 @@
     }
   },
   {
-    "__docId__": 269,
+    "__docId__": 278,
     "kind": "typedef",
     "name": "SCMType",
     "memberof": "src/SCMIntegrations/index.js",
@@ -7831,7 +8109,7 @@
     }
   },
   {
-    "__docId__": 270,
+    "__docId__": 279,
     "kind": "typedef",
     "name": "SCMIntegrationCreateOpts",
     "memberof": "src/SCMIntegrations/index.js",
@@ -7883,89 +8161,7 @@
     }
   },
   {
-    "__docId__": 271,
-    "kind": "typedef",
-    "name": "Key",
-    "memberof": "src/SCMIntegrations/index.js",
-    "static": true,
-    "longname": "src/SCMIntegrations/index.js~Key",
-    "access": "public",
-    "description": "",
-    "see": [
-      "https://developers.scalingo.com/scm_integrations#createlink-an-scm-integration-with-your-account"
-    ],
-    "properties": [
-      {
-        "nullable": null,
-        "types": [
-          "String"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "id",
-        "description": "Unique key ID"
-      },
-      {
-        "nullable": null,
-        "types": [
-          "String"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "name",
-        "description": "Key name"
-      },
-      {
-        "nullable": null,
-        "types": [
-          "String"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "content",
-        "description": ""
-      },
-      {
-        "nullable": null,
-        "types": [
-          "String"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "fingerprint",
-        "description": "Fingerprint of the SSH key"
-      },
-      {
-        "nullable": null,
-        "types": [
-          "Date"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "created_at",
-        "description": "Creation date of the SCM integration"
-      },
-      {
-        "nullable": null,
-        "types": [
-          "Object"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "owner",
-        "description": "Owner of the SSH key"
-      }
-    ],
-    "type": {
-      "types": [
-        "Object"
-      ],
-      "optional": false,
-      "name": "Key"
-    }
-  },
-  {
-    "__docId__": 272,
+    "__docId__": 280,
     "kind": "typedef",
     "name": "PullRequest",
     "memberof": "src/SCMIntegrations/index.js",
@@ -8027,7 +8223,7 @@
     }
   },
   {
-    "__docId__": 273,
+    "__docId__": 281,
     "kind": "typedef",
     "name": "Repository",
     "memberof": "src/SCMIntegrations/index.js",
@@ -8099,7 +8295,7 @@
     }
   },
   {
-    "__docId__": 274,
+    "__docId__": 282,
     "kind": "typedef",
     "name": "Organization",
     "memberof": "src/SCMIntegrations/index.js",
@@ -8171,7 +8367,7 @@
     }
   },
   {
-    "__docId__": 275,
+    "__docId__": 283,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/SCMIntegrations/index.js~SCMIntegrations",
@@ -8196,7 +8392,7 @@
     ]
   },
   {
-    "__docId__": 276,
+    "__docId__": 284,
     "kind": "member",
     "name": "_client",
     "memberof": "src/SCMIntegrations/index.js~SCMIntegrations",
@@ -8214,7 +8410,7 @@
     }
   },
   {
-    "__docId__": 277,
+    "__docId__": 285,
     "kind": "method",
     "name": "find",
     "memberof": "src/SCMIntegrations/index.js~SCMIntegrations",
@@ -8250,7 +8446,7 @@
     }
   },
   {
-    "__docId__": 278,
+    "__docId__": 286,
     "kind": "method",
     "name": "all",
     "memberof": "src/SCMIntegrations/index.js~SCMIntegrations",
@@ -8275,7 +8471,7 @@
     "params": []
   },
   {
-    "__docId__": 279,
+    "__docId__": 287,
     "kind": "method",
     "name": "create",
     "memberof": "src/SCMIntegrations/index.js~SCMIntegrations",
@@ -8311,7 +8507,7 @@
     }
   },
   {
-    "__docId__": 280,
+    "__docId__": 288,
     "kind": "method",
     "name": "destroy",
     "memberof": "src/SCMIntegrations/index.js~SCMIntegrations",
@@ -8347,7 +8543,7 @@
     }
   },
   {
-    "__docId__": 281,
+    "__docId__": 289,
     "kind": "method",
     "name": "importSSHKeys",
     "memberof": "src/SCMIntegrations/index.js~SCMIntegrations",
@@ -8376,14 +8572,14 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<SSHKey[], APIError>"
+        "Promise<Key[], APIError>"
       ],
       "spread": false,
       "description": "Promise that when resolved returns the imported keys."
     }
   },
   {
-    "__docId__": 282,
+    "__docId__": 290,
     "kind": "method",
     "name": "searchPullRequests",
     "memberof": "src/SCMIntegrations/index.js~SCMIntegrations",
@@ -8429,7 +8625,7 @@
     }
   },
   {
-    "__docId__": 283,
+    "__docId__": 291,
     "kind": "method",
     "name": "searchRepositories",
     "memberof": "src/SCMIntegrations/index.js~SCMIntegrations",
@@ -8475,7 +8671,7 @@
     }
   },
   {
-    "__docId__": 284,
+    "__docId__": 292,
     "kind": "method",
     "name": "organizations",
     "memberof": "src/SCMIntegrations/index.js~SCMIntegrations",
@@ -8511,7 +8707,7 @@
     }
   },
   {
-    "__docId__": 285,
+    "__docId__": 293,
     "kind": "file",
     "name": "src/SCMRepoLinks/index.js",
     "content": "import { unpackData } from '../utils.js'\n\n/**\n * SCM repo links API Client\n */\nexport default class SCMRepoLinks {\n  /**\n   * Create a new Client for the SCM repo links API\n   * @param {Client} client - Scalingo API Client\n   */\n  constructor(client) {\n    this._client = client\n  }\n\n  /**\n   * Get the repo link associated to an application.\n   * @see https://developers.scalingo.com/scm_repo_link#get-an-integration-link\n   * @param {String} appID - ID of the application\n   * @return {Promise<SCMRepoLink, APIError>} Promise that when resolved returns a SCMRepoLink\n   */\n  find(appID) {\n    return unpackData(\n      this._client.apiClient().get(`/apps/${appID}/scm_repo_link`),\n      'scm_repo_link',\n    )\n  }\n\n  /**\n   * Create a SCM repo link.\n   * @see https://developers.scalingo.com/scm_repo_link#create-a-scm-integration-link\n   * @param {String} appID - ID of the application\n   * @param {SCMRepoLinkCreateOpts} opts - SCM repo link information\n   * @return {Promise<SCMRepoLink, APIError>} Promise that when resolved returns the SCMRepoLink created.\n   */\n  create(appID, opts) {\n    return unpackData(\n      this._client\n        .apiClient()\n        .post(`/apps/${appID}/scm_repo_link`, { scm_repo_link: opts }),\n      'scm_repo_link',\n    )\n  }\n\n  /**\n   * Update a SCM integration link.\n   * @see https://developers.scalingo.com/scm_repo_link\n   * @param {String} appID - ID of the application\n   * @param {SCMRepoLinkUpdateOpts} opts - SCM repo link information to update\n   * @return {Promise<SCMRepoLink, APIError>} Promise that when resolved returns the SCMRepoLink updated.\n   */\n  update(appID, opts) {\n    return unpackData(\n      this._client\n        .apiClient()\n        .patch(`/apps/${appID}/scm_repo_link`, { scm_repo_link: opts }),\n      'scm_repo_link',\n    )\n  }\n\n  /**\n   * Delete a SCM repo link\n   * @see https://developers.scalingo.com/scm_repo_link#delete-an-integration-link\n   * @param {String} appID ID of the application\n   * @return {Promise<null, APIError>} Promise that resolves when the link is deleted.\n   */\n  destroy(appID) {\n    return unpackData(\n      this._client.apiClient().delete(`/apps/${appID}/scm_repo_link`),\n    )\n  }\n\n  /**\n   * Manually deploy an application\n   * @see https://developers.scalingo.com/scm_repo_link#manual-deploy\n   * @param {String} appID ID of the application\n   * @param {String} branch Name of the branch to deploy.\n   * @return {Promise<Deployment, APIError>} Promise that when resolved returns the Deployment started.\n   */\n  manualDeploy(appID, branch) {\n    return unpackData(\n      this._client\n        .apiClient()\n        .post(`/apps/${appID}/scm_repo_link/manual_deploy`, {\n          branch,\n        }),\n      'deployment',\n    )\n  }\n\n  /**\n   * Manually deploy a review app of the given pull/merge request\n   * @see https://developers.scalingo.com/scm_repo_link#manual-review-app\n   * @param {String} appID ID of the application\n   * @param {String} pullRequestID ID of the pull/merge request to deploy\n   * @return {Promise<App, APIError>} Promise that when resolved returns the App\n   * created.\n   */\n  manualReviewApp(appID, pullRequestID) {\n    return unpackData(\n      this._client\n        .apiClient()\n        .post(`/apps/${appID}/scm_repo_link/manual_review_app`, {\n          pull_request_id: pullRequestID,\n        }),\n      'review_app',\n    )\n  }\n\n  /**\n   * List the branches of the remote repository.\n   * @see https://developers.scalingo.com/scm_repo_link\n   * @param {String} appID - ID of the application\n   * @return {Promise<Branch[], APIError>} Promise that when resolved returns an\n   * array of branches.\n   */\n  branches(appID) {\n    return unpackData(\n      this._client.apiClient().get(`/apps/${appID}/scm_repo_link/branches`),\n      'branches',\n    )\n  }\n\n  /**\n   * List the merge/pull requests of the remote repository.\n   * @see https://developers.scalingo.com/scm_repo_link\n   * @param {String} appID - ID of the application\n   * @return {Promise<PullRequest[], APIError>} Promise that when resolved returns an\n   * array of pull requests.\n   */\n  pulls(appID) {\n    return unpackData(\n      this._client.apiClient().get(`/apps/${appID}/scm_repo_link/pulls`),\n      'pulls',\n    )\n  }\n}\n\n/**\n * @typedef {Object} SCMRepoLink\n * @see https://developers.scalingo.com/scm_repo_link\n * @property {String} id Unique ID\n * @property {String} app_id Application ID\n * @property {String} scm_integration_uuid ID of the SCM integration\n * @property {Object} linker Description of the user that linked this repository\n * @property {String} owner Repository owner name\n * @property {String} repo Repository name\n * @property {String} branch Name of the branch used for auto-deployment\n * @property {SCMType} scm_type Type of the SCM integration\n * @property {Date} created_at Creation date of the SCM link\n * @property {Date} updated_at Last time the SCM link has been updated\n * @property {Boolean} auto_deploy_enabled Trigger a new deployment when the linked branch is updated\n * @property {Boolean} deploy_review_apps_enabled Activation of the review apps feature\n * @property {Boolean} delete_on_close_enabled Review App: delete the review app when the pull request is closed\n * @property {Number} hours_before_delete_on_close Review App: time to wait before deleting a review app linked to a closed pull request (in hours)\n * @property {Boolean} delete_stale_enabled Review App: delete the review app when there is no activity on the pull request\n * @property {number} hours_before_delete_stale Review App: time to wait for activity on the pull request before deleting the review app (in hours)\n * @property {Date} last_auto_deploy_at Date of the last deployment triggered by this link\n */\n\n/**\n * @typedef {Object} Branch\n * @see https://developers.scalingo.com/scm_repo_link\n * @property {String} name Name of the branch\n */\n\n/**\n * @typedef {Object} PullRequest\n * @see https://developers.scalingo.com/scm_repo_link\n * @property {Number} id\n * @property {String} html_url URL to the pull/merge request\n * @property {Number} number Number identifying the pull/merge request on the\n * SCM tool\n * @property {String} title Title of the pull/merge request\n */\n\n/**\n * @typedef {Object} SCMRepoLinkCreateOpts\n * @see https://developers.scalingo.com/scm_repo_link#create-a-scm-integration-link\n * @property {?String} source\n * @property {?String} branch\n * @property {?String} auth_integration_uuid\n * @property {?Boolean} auto_deploy_enabled\n * @property {?Boolean} deploy_review_apps_enabled\n * @property {?Boolean} delete_on_close_enabled\n * @property {?Number} hours_before_delete_on_close\n * @property {?Boolean} delete_stale_enabled\n * @property {?Number} hours_before_delete_stale\n */\n\n/**\n * @typedef {Object} SCMRepoLinkUpdateOpts\n * @see https://developers.scalingo.com/scm_repo_link#update-a-scm-integration-link\n * @property {?String} branch\n * @property {?Boolean} auto_deploy_enabled\n * @property {?Boolean} deploy_review_apps_enabled\n * @property {?Boolean} delete_on_close_enabled\n * @property {?Number} hours_before_delete_on_close\n * @property {?Boolean} delete_stale_enabled\n * @property {?Number} hours_before_delete_stale\n */\n",
@@ -8522,7 +8718,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 286,
+    "__docId__": 294,
     "kind": "class",
     "name": "SCMRepoLinks",
     "memberof": "src/SCMRepoLinks/index.js",
@@ -8537,7 +8733,7 @@
     "interface": false
   },
   {
-    "__docId__": 287,
+    "__docId__": 295,
     "kind": "typedef",
     "name": "SCMRepoLink",
     "memberof": "src/SCMRepoLinks/index.js",
@@ -8729,7 +8925,7 @@
     }
   },
   {
-    "__docId__": 288,
+    "__docId__": 296,
     "kind": "typedef",
     "name": "Branch",
     "memberof": "src/SCMRepoLinks/index.js",
@@ -8761,7 +8957,7 @@
     }
   },
   {
-    "__docId__": 289,
+    "__docId__": 297,
     "kind": "typedef",
     "name": "PullRequest",
     "memberof": "src/SCMRepoLinks/index.js",
@@ -8823,7 +9019,7 @@
     }
   },
   {
-    "__docId__": 290,
+    "__docId__": 298,
     "kind": "typedef",
     "name": "SCMRepoLinkCreateOpts",
     "memberof": "src/SCMRepoLinks/index.js",
@@ -8935,7 +9131,7 @@
     }
   },
   {
-    "__docId__": 291,
+    "__docId__": 299,
     "kind": "typedef",
     "name": "SCMRepoLinkUpdateOpts",
     "memberof": "src/SCMRepoLinks/index.js",
@@ -9027,7 +9223,7 @@
     }
   },
   {
-    "__docId__": 292,
+    "__docId__": 300,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/SCMRepoLinks/index.js~SCMRepoLinks",
@@ -9052,7 +9248,7 @@
     ]
   },
   {
-    "__docId__": 293,
+    "__docId__": 301,
     "kind": "member",
     "name": "_client",
     "memberof": "src/SCMRepoLinks/index.js~SCMRepoLinks",
@@ -9070,7 +9266,7 @@
     }
   },
   {
-    "__docId__": 294,
+    "__docId__": 302,
     "kind": "method",
     "name": "find",
     "memberof": "src/SCMRepoLinks/index.js~SCMRepoLinks",
@@ -9106,7 +9302,7 @@
     }
   },
   {
-    "__docId__": 295,
+    "__docId__": 303,
     "kind": "method",
     "name": "create",
     "memberof": "src/SCMRepoLinks/index.js~SCMRepoLinks",
@@ -9152,7 +9348,7 @@
     }
   },
   {
-    "__docId__": 296,
+    "__docId__": 304,
     "kind": "method",
     "name": "update",
     "memberof": "src/SCMRepoLinks/index.js~SCMRepoLinks",
@@ -9198,7 +9394,7 @@
     }
   },
   {
-    "__docId__": 297,
+    "__docId__": 305,
     "kind": "method",
     "name": "destroy",
     "memberof": "src/SCMRepoLinks/index.js~SCMRepoLinks",
@@ -9234,7 +9430,7 @@
     }
   },
   {
-    "__docId__": 298,
+    "__docId__": 306,
     "kind": "method",
     "name": "manualDeploy",
     "memberof": "src/SCMRepoLinks/index.js~SCMRepoLinks",
@@ -9280,7 +9476,7 @@
     }
   },
   {
-    "__docId__": 299,
+    "__docId__": 307,
     "kind": "method",
     "name": "manualReviewApp",
     "memberof": "src/SCMRepoLinks/index.js~SCMRepoLinks",
@@ -9326,7 +9522,7 @@
     }
   },
   {
-    "__docId__": 300,
+    "__docId__": 308,
     "kind": "method",
     "name": "branches",
     "memberof": "src/SCMRepoLinks/index.js~SCMRepoLinks",
@@ -9362,7 +9558,7 @@
     }
   },
   {
-    "__docId__": 301,
+    "__docId__": 309,
     "kind": "method",
     "name": "pulls",
     "memberof": "src/SCMRepoLinks/index.js~SCMRepoLinks",
@@ -9398,7 +9594,7 @@
     }
   },
   {
-    "__docId__": 302,
+    "__docId__": 310,
     "kind": "file",
     "name": "src/Tokens/index.js",
     "content": "import axios from 'axios'\nimport { unpackData } from '../utils.js'\n\n/**\n * Tokens API Client\n */\nexport default class Tokens {\n  /**\n   * Create a new Client for the Token API\n   * @param {Client} client - Scalingo API Client\n   */\n  constructor(client) {\n    this._client = client\n  }\n\n  /**\n   * Exchange a Token for a JWT\n   * @param {!String} token A valid token\n   * @return {Promise<String| APIError>} A valid Bearer Token that can be used against our infrastructure.\n   */\n  exchange(token) {\n    const request = axios.post(\n      `${this._client._authApiUrl}/v1/tokens/exchange`,\n      {},\n      {\n        auth: {\n          password: token,\n        },\n      },\n    )\n    return unpackData(request, 'token')\n  }\n}\n\n/**\n * @typedef {Object} Token\n * @see https://developers.scalingo.com/tokens\n * @property {String} id ID of the token\n * @property {String} name Name of the token\n * @property {String} created_at Creation date of this token\n * @property {?String} last_used_at Date of the last usage of this token\n * @property {String} issued_at When was the token issued\n * @property {?String} token Actual token (only shown on token creation endpoint)\n */\n",
@@ -9409,7 +9605,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 303,
+    "__docId__": 311,
     "kind": "class",
     "name": "Tokens",
     "memberof": "src/Tokens/index.js",
@@ -9424,7 +9620,7 @@
     "interface": false
   },
   {
-    "__docId__": 304,
+    "__docId__": 312,
     "kind": "typedef",
     "name": "Token",
     "memberof": "src/Tokens/index.js",
@@ -9506,7 +9702,7 @@
     }
   },
   {
-    "__docId__": 305,
+    "__docId__": 313,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/Tokens/index.js~Tokens",
@@ -9531,7 +9727,7 @@
     ]
   },
   {
-    "__docId__": 306,
+    "__docId__": 314,
     "kind": "member",
     "name": "_client",
     "memberof": "src/Tokens/index.js~Tokens",
@@ -9549,7 +9745,7 @@
     }
   },
   {
-    "__docId__": 307,
+    "__docId__": 315,
     "kind": "method",
     "name": "exchange",
     "memberof": "src/Tokens/index.js~Tokens",
@@ -9582,7 +9778,7 @@
     }
   },
   {
-    "__docId__": 308,
+    "__docId__": 316,
     "kind": "file",
     "name": "src/TwoFactorAuth/index.js",
     "content": "import { unpackData } from '../utils.js'\n\nexport const TOTP_PROVIDER = 'totp'\nexport const DEFAULT_PROVIDER = TOTP_PROVIDER\nexport const SUPPORTED_PROVIDERS = [TOTP_PROVIDER]\n\nexport default class TwoFactorAuth {\n  /**\n   * Create a new Client for the Users API\n   * @param {Client} client - Scalingo API Client\n   */\n  constructor(client) {\n    this._client = client\n  }\n\n  /**\n   * Returns the current user two-factor status\n   * @return {Promise<TwoFactorAuth | APIError>} Promise resolving with the current user two factor status\n   */\n  status() {\n    return unpackData(this._client.authApiClient().get('/client/tfa'), 'tfa')\n  }\n\n  /**\n   * Initiate the two-factor activation process.\n   * @param {?String} [provider=totp] the 2FA provider\n   * @return {Promise<TwoFactorAuthInitiateResponse | APIError>} Promise resolving with the current user two factor status\n   */\n  initiate(provider) {\n    const data = {\n      tfa: { provider: provider || DEFAULT_PROVIDER },\n    }\n\n    return unpackData(\n      this._client.authApiClient().post('/client/tfa', data),\n      'tfa',\n    )\n  }\n\n  /**\n   * Validate the two-factor activation process.\n   * @param {Number} attempt the \"pin number\" given by the authenticator\n   * @return {Promise<TwoFactorAuthValidateResponse | APIError>} Promise resolving with the current user two factor status\n   */\n  validate(attempt) {\n    const data = {\n      tfa: { attempt },\n    }\n\n    return unpackData(\n      this._client.authApiClient().post('/client/tfa/validate', data),\n      'tfa',\n    )\n  }\n\n  /**\n   * Disable the two-factor auth for this user. Will raise an error if not enabled.\n   * @return {Promise<TwoFactorAuth | APIError>} Promise resolving with the current user two factor status\n   */\n  disable() {\n    return unpackData(this._client.authApiClient().delete('/client/tfa'))\n  }\n}\n\n/**\n * @typedef {Object} TwoFactorAuth\n * @property {String} uuid\n * @property {Boolean} enabled\n * @property {?String} provider\n */\n\n/**\n * @typedef {Object} TwoFactorAuthInitiateResponse\n * @property {String} uuid\n * @property {Boolean} enabled\n * @property {String} provider\n * @property {String} uri\n */\n\n/**\n * @typedef {Object} TwoFactorAuthValidateResponse\n * @property {Array<String>} codes A list of recovery codes\n * @property {TwoFactorAuth} user The two factor auth status\n */\n",
@@ -9593,7 +9789,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 309,
+    "__docId__": 317,
     "kind": "variable",
     "name": "TOTP_PROVIDER",
     "memberof": "src/TwoFactorAuth/index.js",
@@ -9613,7 +9809,7 @@
     }
   },
   {
-    "__docId__": 310,
+    "__docId__": 318,
     "kind": "variable",
     "name": "DEFAULT_PROVIDER",
     "memberof": "src/TwoFactorAuth/index.js",
@@ -9633,7 +9829,7 @@
     }
   },
   {
-    "__docId__": 311,
+    "__docId__": 319,
     "kind": "variable",
     "name": "SUPPORTED_PROVIDERS",
     "memberof": "src/TwoFactorAuth/index.js",
@@ -9653,7 +9849,7 @@
     }
   },
   {
-    "__docId__": 312,
+    "__docId__": 320,
     "kind": "class",
     "name": "TwoFactorAuth",
     "memberof": "src/TwoFactorAuth/index.js",
@@ -9669,7 +9865,7 @@
     "interface": false
   },
   {
-    "__docId__": 313,
+    "__docId__": 321,
     "kind": "typedef",
     "name": "TwoFactorAuth",
     "memberof": "src/TwoFactorAuth/index.js",
@@ -9718,7 +9914,7 @@
     }
   },
   {
-    "__docId__": 314,
+    "__docId__": 322,
     "kind": "typedef",
     "name": "TwoFactorAuthInitiateResponse",
     "memberof": "src/TwoFactorAuth/index.js",
@@ -9777,7 +9973,7 @@
     }
   },
   {
-    "__docId__": 315,
+    "__docId__": 323,
     "kind": "typedef",
     "name": "TwoFactorAuthValidateResponse",
     "memberof": "src/TwoFactorAuth/index.js",
@@ -9816,7 +10012,7 @@
     }
   },
   {
-    "__docId__": 316,
+    "__docId__": 324,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/TwoFactorAuth/index.js~TwoFactorAuth",
@@ -9841,7 +10037,7 @@
     ]
   },
   {
-    "__docId__": 317,
+    "__docId__": 325,
     "kind": "member",
     "name": "_client",
     "memberof": "src/TwoFactorAuth/index.js~TwoFactorAuth",
@@ -9859,7 +10055,7 @@
     }
   },
   {
-    "__docId__": 318,
+    "__docId__": 326,
     "kind": "method",
     "name": "status",
     "memberof": "src/TwoFactorAuth/index.js~TwoFactorAuth",
@@ -9881,7 +10077,7 @@
     "params": []
   },
   {
-    "__docId__": 319,
+    "__docId__": 327,
     "kind": "method",
     "name": "initiate",
     "memberof": "src/TwoFactorAuth/index.js~TwoFactorAuth",
@@ -9916,7 +10112,7 @@
     }
   },
   {
-    "__docId__": 320,
+    "__docId__": 328,
     "kind": "method",
     "name": "validate",
     "memberof": "src/TwoFactorAuth/index.js~TwoFactorAuth",
@@ -9949,7 +10145,7 @@
     }
   },
   {
-    "__docId__": 321,
+    "__docId__": 329,
     "kind": "method",
     "name": "disable",
     "memberof": "src/TwoFactorAuth/index.js~TwoFactorAuth",
@@ -9971,7 +10167,7 @@
     "params": []
   },
   {
-    "__docId__": 322,
+    "__docId__": 330,
     "kind": "file",
     "name": "src/Users/index.js",
     "content": "import { unpackData } from '../utils.js'\n\nexport default class Users {\n  /**\n   * Create a new Client for the Users API\n   * @param {Client} client - Scalingo API Client\n   */\n  constructor(client) {\n    this._client = client\n  }\n\n  /**\n   * Fetch the current user account informations\n   * @return {Promise<User | APIError>} Promise that when resolve return the user account informations\n   */\n  self() {\n    return unpackData(this._client.authApiClient().get('/users/self'), 'user')\n  }\n\n  /**\n   * Updates the current user account informations\n   * @param {AccountUpdateParams} attributes - User attributes to update\n   * @return {Promise<User | APIError>} Promise that when resolve return the user account informations\n   */\n  updateAccount(attributes) {\n    return unpackData(\n      this._client.authApiClient().put('/users/account', { user: attributes }),\n      'user',\n    )\n  }\n}\n\n/**\n * @typedef {Object} User\n * @property {String} id\n * @property {String} email\n * @property {String} username\n * @property {String} uuid\n * @property {?String} company\n * @property {?String} location\n * @property {String} fullname\n * @property {?GithubProfile} github Github profile of the user\n * @property {Boolean} tos_accepted Did the user accept our TOS\n */\n\n/**\n * @typedef {Object} AccountUpdateParams\n * @property {?String} email\n * @property {?String} username\n * @property {?String} company\n * @property {?String} location\n * @property {?String} fullname\n * @property {?Boolean} tos_accepted Did the user accept our TOS\n * @property {?Boolean} email_newsletter Did the user opt in to receive newsletter\n * @property {?String} password\n * @property {?String} password_confirmation\n * @property {?String} current_password\n */\n\n/**\n * @typedef {Object} GithubProfile\n * @property {String} username Github Username\n * @property {?String} email Email linked to this Github account\n * @property {String} avatar_url\n * @property {String} profile_url\n */\n",
@@ -9982,7 +10178,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 323,
+    "__docId__": 331,
     "kind": "class",
     "name": "Users",
     "memberof": "src/Users/index.js",
@@ -9998,7 +10194,7 @@
     "interface": false
   },
   {
-    "__docId__": 324,
+    "__docId__": 332,
     "kind": "typedef",
     "name": "User",
     "memberof": "src/Users/index.js",
@@ -10107,7 +10303,7 @@
     }
   },
   {
-    "__docId__": 325,
+    "__docId__": 333,
     "kind": "typedef",
     "name": "AccountUpdateParams",
     "memberof": "src/Users/index.js",
@@ -10226,7 +10422,7 @@
     }
   },
   {
-    "__docId__": 326,
+    "__docId__": 334,
     "kind": "typedef",
     "name": "GithubProfile",
     "memberof": "src/Users/index.js",
@@ -10285,7 +10481,7 @@
     }
   },
   {
-    "__docId__": 327,
+    "__docId__": 335,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/Users/index.js~Users",
@@ -10310,7 +10506,7 @@
     ]
   },
   {
-    "__docId__": 328,
+    "__docId__": 336,
     "kind": "member",
     "name": "_client",
     "memberof": "src/Users/index.js~Users",
@@ -10328,7 +10524,7 @@
     }
   },
   {
-    "__docId__": 329,
+    "__docId__": 337,
     "kind": "method",
     "name": "self",
     "memberof": "src/Users/index.js~Users",
@@ -10350,7 +10546,7 @@
     "params": []
   },
   {
-    "__docId__": 330,
+    "__docId__": 338,
     "kind": "method",
     "name": "updateAccount",
     "memberof": "src/Users/index.js~Users",
@@ -10383,7 +10579,7 @@
     }
   },
   {
-    "__docId__": 331,
+    "__docId__": 339,
     "kind": "file",
     "name": "src/errors.js",
     "content": "/**\n * Error returned when the Scalingo API return something else than 200\n */\nexport class APIError extends Error {\n  /**\n   * Create a new instance of APIError\n   * @param {Number} status HTTP status code of the request\n   * @param {Object} data Body of the HTTP response (parsed as JSON)\n   */\n  constructor(status, data) {\n    let message = `An error occurred (status=${status})`\n    if (data && data.error) {\n      message = data.error\n    }\n    super(message)\n    this._status = status\n    this._data = data\n\n    // Remove ourself from the stack trace\n    if ('captureStackTrace' in Error) {\n      Error.captureStackTrace(this, APIError)\n    } else {\n      this.stack = new Error(this._status + this._data).stack\n    }\n  }\n\n  /**\n   * HTTP Status code returned by the API\n   * @return {Number}\n   */\n  get status() {\n    return this._status\n  }\n\n  /**\n   * Body of the HTTP response (parsed as JSON)\n   * @return {Object}\n   */\n  get data() {\n    return this._data\n  }\n}\n",
@@ -10394,7 +10590,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 332,
+    "__docId__": 340,
     "kind": "class",
     "name": "APIError",
     "memberof": "src/errors.js",
@@ -10412,7 +10608,7 @@
     ]
   },
   {
-    "__docId__": 333,
+    "__docId__": 341,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/errors.js~APIError",
@@ -10447,7 +10643,7 @@
     ]
   },
   {
-    "__docId__": 334,
+    "__docId__": 342,
     "kind": "member",
     "name": "_status",
     "memberof": "src/errors.js~APIError",
@@ -10465,7 +10661,7 @@
     }
   },
   {
-    "__docId__": 335,
+    "__docId__": 343,
     "kind": "member",
     "name": "_data",
     "memberof": "src/errors.js~APIError",
@@ -10483,7 +10679,7 @@
     }
   },
   {
-    "__docId__": 336,
+    "__docId__": 344,
     "kind": "member",
     "name": "stack",
     "memberof": "src/errors.js~APIError",
@@ -10500,7 +10696,7 @@
     }
   },
   {
-    "__docId__": 337,
+    "__docId__": 345,
     "kind": "get",
     "name": "status",
     "memberof": "src/errors.js~APIError",
@@ -10526,7 +10722,7 @@
     }
   },
   {
-    "__docId__": 338,
+    "__docId__": 346,
     "kind": "get",
     "name": "data",
     "memberof": "src/errors.js~APIError",
@@ -10552,10 +10748,10 @@
     }
   },
   {
-    "__docId__": 339,
+    "__docId__": 347,
     "kind": "file",
     "name": "src/index.js",
-    "content": "import Apps from './Apps'\nimport Addons from './Addons'\nimport Collaborators from './Collaborators'\nimport Containers from './Containers'\nimport Deployments from './Deployments'\nimport Domains from './Domains'\nimport Environment from './Environment'\nimport Events from './Events'\nimport Logs from './Logs'\nimport Metrics from './Metrics'\nimport Notifiers from './Notifiers'\nimport NotificationPlatforms from './NotificationPlatforms'\nimport Operations from './Operations'\nimport SCMIntegrations from './SCMIntegrations'\nimport SCMRepoLinks from './SCMRepoLinks'\nimport Tokens from './Tokens'\nimport TwoFactorAuth from './TwoFactorAuth'\nimport Users from './Users'\n\nimport axios from 'axios'\n\nclass Client {\n  /**\n   * Create a new Client for the Scalingo API.\n   * @param {String} token - Bearer Token for the current user.\n   * @param {Object} opts - Optional configuration\n   * @param {String} [opts.apiUrl=https://api.scalingo.com] - URL to the Scalingo API.\n   * @param {String} [opts.authApiUrl=https://auth.scalingo.com] - URL to the Scalingo Authentication API.\n   * @param {String} [opts.noUserAgent=false] - Do not set the user agent\n   */\n  constructor(token, opts = {}) {\n    const { apiUrl, authApiUrl } = opts\n\n    this._token = token\n    this._apiUrl = apiUrl || 'https://api.scalingo.com'\n    this._authApiUrl = authApiUrl || 'https://auth.scalingo.com'\n    this._headers = {}\n    if (opts && !opts.noUserAgent) {\n      this._headers['User-Agent'] = 'Scalingo Javascript Client'\n    }\n\n    /**\n     * Apps API\n     * @type {Apps}\n     */\n    this.Apps = new Apps(this)\n    /**\n     * Containers API\n     * @type {Containers}\n     */\n    this.Containers = new Containers(this)\n\n    /**\n     * Users API\n     * @type {Users}\n     */\n    this.Users = new Users(this)\n\n    /**\n     * SCMIntegrations API\n     * @type {SCMIntegrations}\n     */\n    this.SCMIntegrations = new SCMIntegrations(this)\n\n    /**\n     * SCM Repo Links API\n     * @type {SCMRepoLinks}\n     */\n    this.SCMRepoLinks = new SCMRepoLinks(this)\n\n    /**\n     * Tokens API\n     * @type {Tokens}\n     */\n    this.Tokens = new Tokens(this)\n\n    /**\n     * Metrics API\n     * @type {Metrics}\n     */\n    this.Metrics = new Metrics(this)\n\n    /**\n     * Domains API\n     * @type {Domains}\n     */\n    this.Domains = new Domains(this)\n\n    /**\n     * Environment API\n     * @type {Environment}\n     */\n    this.Environment = new Environment(this)\n\n    /**\n     * Deployments API\n     * @type {Environment}\n     */\n    this.Deployments = new Deployments(this)\n\n    /**\n     * Logs API\n     * @type {Logs}\n     */\n    this.Logs = new Logs(this)\n\n    /**\n     * Addons API\n     * @type {Addons}\n     */\n    this.Addons = new Addons(this)\n\n    /**\n     * Operations API\n     * @type {Operation}\n     */\n    this.Operations = new Operations(this)\n\n    /**\n     * Events API\n     * @type {Events}\n     */\n    this.Events = new Events(this)\n\n    /**\n     * Collaborators API\n     * @type {Collaborators}\n     */\n    this.Collaborators = new Collaborators(this)\n\n    /**\n     * Notifiers API\n     * @type {Notifiers}\n     */\n    this.Notifiers = new Notifiers(this)\n\n    /**\n     * Notification platforms API\n     * @type {NotificationPlatforms}\n     */\n    this.NotificationPlatforms = new NotificationPlatforms(this)\n\n    /**\n     * Two Factors Auth API\n     * @type {TwoFactorAuth}\n     */\n    this.TwoFactorAuth = new TwoFactorAuth(this)\n  }\n\n  /**\n   * Create an axios instance configured for the Scalingo API\n   * @return {Object} Axios client for the Scalingo API\n   */\n  apiClient() {\n    return axios.create({\n      baseURL: `${this._apiUrl}/v1/`,\n      headers: Object.assign({}, this._headers, {\n        Authorization: `Bearer ${this._token}`,\n      }),\n    })\n  }\n\n  /**\n   * Create an axios instance configured for the Scalingo Authentication API\n   * @return {Object} Axios client for the Scalingo Authentication API\n   */\n  authApiClient() {\n    return axios.create({\n      baseURL: `${this._authApiUrl}/v1/`,\n      headers: Object.assign({}, this._headers, {\n        Authorization: `Bearer ${this._token}`,\n      }),\n    })\n  }\n\n  /**\n   * Create a vanilla axios instance\n   * @return {Object} Axios instance\n   */\n  unauthenticatedClient() {\n    return axios.create({\n      baseURL: `${this._apiUrl}/v1/`,\n      headers: this._headers,\n    })\n  }\n}\n\nexport default Client\nexport { Client }\n\n/**\n * Return a client from a user token.\n * It exchange the token and then return a new client.\n * @param {String} token A User token\n * @param {Object} opts - Optional configuration\n * @param {String} [opts.apiUrl=https://api.scalingo.com] - URL to the Scalingo API.\n * @param {String} [opts.authApiUrl=https://auth.scalingo.com] - URL to the Scalingo Authentication API.\n * @return {Promise<Client | Error>} a valid Client\n */\nexport async function clientFromToken(token, opts) {\n  const client = new Client('', opts)\n  const bearerToken = await client.Tokens.exchange(token)\n  client._token = bearerToken\n  return client\n}\n",
+    "content": "import Apps from './Apps'\nimport Addons from './Addons'\nimport Collaborators from './Collaborators'\nimport Containers from './Containers'\nimport Deployments from './Deployments'\nimport Domains from './Domains'\nimport Environment from './Environment'\nimport Events from './Events'\nimport Keys from './Keys'\nimport Logs from './Logs'\nimport Metrics from './Metrics'\nimport Notifiers from './Notifiers'\nimport NotificationPlatforms from './NotificationPlatforms'\nimport Operations from './Operations'\nimport SCMIntegrations from './SCMIntegrations'\nimport SCMRepoLinks from './SCMRepoLinks'\nimport Tokens from './Tokens'\nimport TwoFactorAuth from './TwoFactorAuth'\nimport Users from './Users'\n\nimport axios from 'axios'\n\nclass Client {\n  /**\n   * Create a new Client for the Scalingo API.\n   * @param {String} token - Bearer Token for the current user.\n   * @param {Object} opts - Optional configuration\n   * @param {String} [opts.apiUrl=https://api.scalingo.com] - URL to the Scalingo API.\n   * @param {String} [opts.authApiUrl=https://auth.scalingo.com] - URL to the Scalingo Authentication API.\n   * @param {String} [opts.noUserAgent=false] - Do not set the user agent\n   */\n  constructor(token, opts = {}) {\n    const { apiUrl, authApiUrl } = opts\n\n    this._token = token\n    this._apiUrl = apiUrl || 'https://api.scalingo.com'\n    this._authApiUrl = authApiUrl || 'https://auth.scalingo.com'\n    this._headers = {}\n    if (opts && !opts.noUserAgent) {\n      this._headers['User-Agent'] = 'Scalingo Javascript Client'\n    }\n\n    /**\n     * Apps API\n     * @type {Apps}\n     */\n    this.Apps = new Apps(this)\n    /**\n     * Containers API\n     * @type {Containers}\n     */\n    this.Containers = new Containers(this)\n\n    /**\n     * Users API\n     * @type {Users}\n     */\n    this.Users = new Users(this)\n\n    /**\n     * SCMIntegrations API\n     * @type {SCMIntegrations}\n     */\n    this.SCMIntegrations = new SCMIntegrations(this)\n\n    /**\n     * SCM Repo Links API\n     * @type {SCMRepoLinks}\n     */\n    this.SCMRepoLinks = new SCMRepoLinks(this)\n\n    /**\n     * Tokens API\n     * @type {Tokens}\n     */\n    this.Tokens = new Tokens(this)\n\n    /**\n     * Metrics API\n     * @type {Metrics}\n     */\n    this.Metrics = new Metrics(this)\n\n    /**\n     * Domains API\n     * @type {Domains}\n     */\n    this.Domains = new Domains(this)\n\n    /**\n     * Environment API\n     * @type {Environment}\n     */\n    this.Environment = new Environment(this)\n\n    /**\n     * Deployments API\n     * @type {Environment}\n     */\n    this.Deployments = new Deployments(this)\n\n    /**\n     * Keys API\n     * @type {Keys}\n     */\n    this.Keys = new Keys(this)\n\n    /**\n     * Logs API\n     * @type {Logs}\n     */\n    this.Logs = new Logs(this)\n\n    /**\n     * Addons API\n     * @type {Addons}\n     */\n    this.Addons = new Addons(this)\n\n    /**\n     * Operations API\n     * @type {Operation}\n     */\n    this.Operations = new Operations(this)\n\n    /**\n     * Events API\n     * @type {Events}\n     */\n    this.Events = new Events(this)\n\n    /**\n     * Collaborators API\n     * @type {Collaborators}\n     */\n    this.Collaborators = new Collaborators(this)\n\n    /**\n     * Notifiers API\n     * @type {Notifiers}\n     */\n    this.Notifiers = new Notifiers(this)\n\n    /**\n     * Notification platforms API\n     * @type {NotificationPlatforms}\n     */\n    this.NotificationPlatforms = new NotificationPlatforms(this)\n\n    /**\n     * Two Factors Auth API\n     * @type {TwoFactorAuth}\n     */\n    this.TwoFactorAuth = new TwoFactorAuth(this)\n  }\n\n  /**\n   * Create an axios instance configured for the Scalingo API\n   * @return {Object} Axios client for the Scalingo API\n   */\n  apiClient() {\n    return axios.create({\n      baseURL: `${this._apiUrl}/v1/`,\n      headers: Object.assign({}, this._headers, {\n        Authorization: `Bearer ${this._token}`,\n      }),\n    })\n  }\n\n  /**\n   * Create an axios instance configured for the Scalingo Authentication API\n   * @return {Object} Axios client for the Scalingo Authentication API\n   */\n  authApiClient() {\n    return axios.create({\n      baseURL: `${this._authApiUrl}/v1/`,\n      headers: Object.assign({}, this._headers, {\n        Authorization: `Bearer ${this._token}`,\n      }),\n    })\n  }\n\n  /**\n   * Create a vanilla axios instance\n   * @return {Object} Axios instance\n   */\n  unauthenticatedClient() {\n    return axios.create({\n      baseURL: `${this._apiUrl}/v1/`,\n      headers: this._headers,\n    })\n  }\n}\n\nexport default Client\nexport { Client }\n\n/**\n * Return a client from a user token.\n * It exchange the token and then return a new client.\n * @param {String} token A User token\n * @param {Object} opts - Optional configuration\n * @param {String} [opts.apiUrl=https://api.scalingo.com] - URL to the Scalingo API.\n * @param {String} [opts.authApiUrl=https://auth.scalingo.com] - URL to the Scalingo Authentication API.\n * @return {Promise<Client | Error>} a valid Client\n */\nexport async function clientFromToken(token, opts) {\n  const client = new Client('', opts)\n  const bearerToken = await client.Tokens.exchange(token)\n  client._token = bearerToken\n  return client\n}\n",
     "static": true,
     "longname": "/home/travis/build/Scalingo/scalingo.js/src/index.js",
     "access": "public",
@@ -10563,7 +10759,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 340,
+    "__docId__": 348,
     "kind": "function",
     "name": "clientFromToken",
     "memberof": "src/index.js",
@@ -10576,7 +10772,7 @@
     "importPath": "scalingo/src/index.js",
     "importStyle": "{clientFromToken}",
     "description": "Return a client from a user token.\nIt exchange the token and then return a new client.",
-    "lineNumber": 200,
+    "lineNumber": 207,
     "params": [
       {
         "nullable": null,
@@ -10633,7 +10829,7 @@
     }
   },
   {
-    "__docId__": 341,
+    "__docId__": 349,
     "kind": "class",
     "name": "Client",
     "memberof": "src/index.js",
@@ -10644,12 +10840,12 @@
     "importPath": "scalingo/src/index.js",
     "importStyle": "Client",
     "description": null,
-    "lineNumber": 22,
+    "lineNumber": 23,
     "undocument": true,
     "interface": false
   },
   {
-    "__docId__": 342,
+    "__docId__": 350,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/index.js~Client",
@@ -10659,7 +10855,7 @@
     "longname": "src/index.js~Client#constructor",
     "access": "public",
     "description": "Create a new Client for the Scalingo API.",
-    "lineNumber": 31,
+    "lineNumber": 32,
     "params": [
       {
         "nullable": null,
@@ -10720,30 +10916,12 @@
     ]
   },
   {
-    "__docId__": 343,
+    "__docId__": 351,
     "kind": "member",
     "name": "_token",
     "memberof": "src/index.js~Client",
     "static": false,
     "longname": "src/index.js~Client#_token",
-    "access": "private",
-    "description": null,
-    "lineNumber": 34,
-    "undocument": true,
-    "ignore": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 344,
-    "kind": "member",
-    "name": "_apiUrl",
-    "memberof": "src/index.js~Client",
-    "static": false,
-    "longname": "src/index.js~Client#_apiUrl",
     "access": "private",
     "description": null,
     "lineNumber": 35,
@@ -10756,12 +10934,12 @@
     }
   },
   {
-    "__docId__": 345,
+    "__docId__": 352,
     "kind": "member",
-    "name": "_authApiUrl",
+    "name": "_apiUrl",
     "memberof": "src/index.js~Client",
     "static": false,
-    "longname": "src/index.js~Client#_authApiUrl",
+    "longname": "src/index.js~Client#_apiUrl",
     "access": "private",
     "description": null,
     "lineNumber": 36,
@@ -10774,7 +10952,25 @@
     }
   },
   {
-    "__docId__": 346,
+    "__docId__": 353,
+    "kind": "member",
+    "name": "_authApiUrl",
+    "memberof": "src/index.js~Client",
+    "static": false,
+    "longname": "src/index.js~Client#_authApiUrl",
+    "access": "private",
+    "description": null,
+    "lineNumber": 37,
+    "undocument": true,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 354,
     "kind": "member",
     "name": "_headers",
     "memberof": "src/index.js~Client",
@@ -10782,7 +10978,7 @@
     "longname": "src/index.js~Client#_headers",
     "access": "private",
     "description": null,
-    "lineNumber": 37,
+    "lineNumber": 38,
     "undocument": true,
     "ignore": true,
     "type": {
@@ -10792,7 +10988,7 @@
     }
   },
   {
-    "__docId__": 347,
+    "__docId__": 355,
     "kind": "member",
     "name": "Apps",
     "memberof": "src/index.js~Client",
@@ -10800,7 +10996,7 @@
     "longname": "src/index.js~Client#Apps",
     "access": "public",
     "description": "Apps API",
-    "lineNumber": 46,
+    "lineNumber": 47,
     "type": {
       "nullable": null,
       "types": [
@@ -10811,7 +11007,7 @@
     }
   },
   {
-    "__docId__": 348,
+    "__docId__": 356,
     "kind": "member",
     "name": "Containers",
     "memberof": "src/index.js~Client",
@@ -10819,7 +11015,7 @@
     "longname": "src/index.js~Client#Containers",
     "access": "public",
     "description": "Containers API",
-    "lineNumber": 51,
+    "lineNumber": 52,
     "type": {
       "nullable": null,
       "types": [
@@ -10830,7 +11026,7 @@
     }
   },
   {
-    "__docId__": 349,
+    "__docId__": 357,
     "kind": "member",
     "name": "Users",
     "memberof": "src/index.js~Client",
@@ -10838,7 +11034,7 @@
     "longname": "src/index.js~Client#Users",
     "access": "public",
     "description": "Users API",
-    "lineNumber": 57,
+    "lineNumber": 58,
     "type": {
       "nullable": null,
       "types": [
@@ -10849,7 +11045,7 @@
     }
   },
   {
-    "__docId__": 350,
+    "__docId__": 358,
     "kind": "member",
     "name": "SCMIntegrations",
     "memberof": "src/index.js~Client",
@@ -10857,7 +11053,7 @@
     "longname": "src/index.js~Client#SCMIntegrations",
     "access": "public",
     "description": "SCMIntegrations API",
-    "lineNumber": 63,
+    "lineNumber": 64,
     "type": {
       "nullable": null,
       "types": [
@@ -10868,7 +11064,7 @@
     }
   },
   {
-    "__docId__": 351,
+    "__docId__": 359,
     "kind": "member",
     "name": "SCMRepoLinks",
     "memberof": "src/index.js~Client",
@@ -10876,7 +11072,7 @@
     "longname": "src/index.js~Client#SCMRepoLinks",
     "access": "public",
     "description": "SCM Repo Links API",
-    "lineNumber": 69,
+    "lineNumber": 70,
     "type": {
       "nullable": null,
       "types": [
@@ -10887,7 +11083,7 @@
     }
   },
   {
-    "__docId__": 352,
+    "__docId__": 360,
     "kind": "member",
     "name": "Tokens",
     "memberof": "src/index.js~Client",
@@ -10895,7 +11091,7 @@
     "longname": "src/index.js~Client#Tokens",
     "access": "public",
     "description": "Tokens API",
-    "lineNumber": 75,
+    "lineNumber": 76,
     "type": {
       "nullable": null,
       "types": [
@@ -10906,7 +11102,7 @@
     }
   },
   {
-    "__docId__": 353,
+    "__docId__": 361,
     "kind": "member",
     "name": "Metrics",
     "memberof": "src/index.js~Client",
@@ -10914,7 +11110,7 @@
     "longname": "src/index.js~Client#Metrics",
     "access": "public",
     "description": "Metrics API",
-    "lineNumber": 81,
+    "lineNumber": 82,
     "type": {
       "nullable": null,
       "types": [
@@ -10925,7 +11121,7 @@
     }
   },
   {
-    "__docId__": 354,
+    "__docId__": 362,
     "kind": "member",
     "name": "Domains",
     "memberof": "src/index.js~Client",
@@ -10933,7 +11129,7 @@
     "longname": "src/index.js~Client#Domains",
     "access": "public",
     "description": "Domains API",
-    "lineNumber": 87,
+    "lineNumber": 88,
     "type": {
       "nullable": null,
       "types": [
@@ -10944,7 +11140,7 @@
     }
   },
   {
-    "__docId__": 355,
+    "__docId__": 363,
     "kind": "member",
     "name": "Environment",
     "memberof": "src/index.js~Client",
@@ -10952,7 +11148,7 @@
     "longname": "src/index.js~Client#Environment",
     "access": "public",
     "description": "Environment API",
-    "lineNumber": 93,
+    "lineNumber": 94,
     "type": {
       "nullable": null,
       "types": [
@@ -10963,7 +11159,7 @@
     }
   },
   {
-    "__docId__": 356,
+    "__docId__": 364,
     "kind": "member",
     "name": "Deployments",
     "memberof": "src/index.js~Client",
@@ -10971,7 +11167,7 @@
     "longname": "src/index.js~Client#Deployments",
     "access": "public",
     "description": "Deployments API",
-    "lineNumber": 99,
+    "lineNumber": 100,
     "type": {
       "nullable": null,
       "types": [
@@ -10982,7 +11178,26 @@
     }
   },
   {
-    "__docId__": 357,
+    "__docId__": 365,
+    "kind": "member",
+    "name": "Keys",
+    "memberof": "src/index.js~Client",
+    "static": false,
+    "longname": "src/index.js~Client#Keys",
+    "access": "public",
+    "description": "Keys API",
+    "lineNumber": 106,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Keys"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 366,
     "kind": "member",
     "name": "Logs",
     "memberof": "src/index.js~Client",
@@ -10990,7 +11205,7 @@
     "longname": "src/index.js~Client#Logs",
     "access": "public",
     "description": "Logs API",
-    "lineNumber": 105,
+    "lineNumber": 112,
     "type": {
       "nullable": null,
       "types": [
@@ -11001,7 +11216,7 @@
     }
   },
   {
-    "__docId__": 358,
+    "__docId__": 367,
     "kind": "member",
     "name": "Addons",
     "memberof": "src/index.js~Client",
@@ -11009,7 +11224,7 @@
     "longname": "src/index.js~Client#Addons",
     "access": "public",
     "description": "Addons API",
-    "lineNumber": 111,
+    "lineNumber": 118,
     "type": {
       "nullable": null,
       "types": [
@@ -11020,7 +11235,7 @@
     }
   },
   {
-    "__docId__": 359,
+    "__docId__": 368,
     "kind": "member",
     "name": "Operations",
     "memberof": "src/index.js~Client",
@@ -11028,7 +11243,7 @@
     "longname": "src/index.js~Client#Operations",
     "access": "public",
     "description": "Operations API",
-    "lineNumber": 117,
+    "lineNumber": 124,
     "type": {
       "nullable": null,
       "types": [
@@ -11039,7 +11254,7 @@
     }
   },
   {
-    "__docId__": 360,
+    "__docId__": 369,
     "kind": "member",
     "name": "Events",
     "memberof": "src/index.js~Client",
@@ -11047,7 +11262,7 @@
     "longname": "src/index.js~Client#Events",
     "access": "public",
     "description": "Events API",
-    "lineNumber": 123,
+    "lineNumber": 130,
     "type": {
       "nullable": null,
       "types": [
@@ -11058,7 +11273,7 @@
     }
   },
   {
-    "__docId__": 361,
+    "__docId__": 370,
     "kind": "member",
     "name": "Collaborators",
     "memberof": "src/index.js~Client",
@@ -11066,7 +11281,7 @@
     "longname": "src/index.js~Client#Collaborators",
     "access": "public",
     "description": "Collaborators API",
-    "lineNumber": 129,
+    "lineNumber": 136,
     "type": {
       "nullable": null,
       "types": [
@@ -11077,7 +11292,7 @@
     }
   },
   {
-    "__docId__": 362,
+    "__docId__": 371,
     "kind": "member",
     "name": "Notifiers",
     "memberof": "src/index.js~Client",
@@ -11085,7 +11300,7 @@
     "longname": "src/index.js~Client#Notifiers",
     "access": "public",
     "description": "Notifiers API",
-    "lineNumber": 135,
+    "lineNumber": 142,
     "type": {
       "nullable": null,
       "types": [
@@ -11096,7 +11311,7 @@
     }
   },
   {
-    "__docId__": 363,
+    "__docId__": 372,
     "kind": "member",
     "name": "NotificationPlatforms",
     "memberof": "src/index.js~Client",
@@ -11104,7 +11319,7 @@
     "longname": "src/index.js~Client#NotificationPlatforms",
     "access": "public",
     "description": "Notification platforms API",
-    "lineNumber": 141,
+    "lineNumber": 148,
     "type": {
       "nullable": null,
       "types": [
@@ -11115,7 +11330,7 @@
     }
   },
   {
-    "__docId__": 364,
+    "__docId__": 373,
     "kind": "member",
     "name": "TwoFactorAuth",
     "memberof": "src/index.js~Client",
@@ -11123,7 +11338,7 @@
     "longname": "src/index.js~Client#TwoFactorAuth",
     "access": "public",
     "description": "Two Factors Auth API",
-    "lineNumber": 147,
+    "lineNumber": 154,
     "type": {
       "nullable": null,
       "types": [
@@ -11134,7 +11349,7 @@
     }
   },
   {
-    "__docId__": 365,
+    "__docId__": 374,
     "kind": "method",
     "name": "apiClient",
     "memberof": "src/index.js~Client",
@@ -11144,7 +11359,7 @@
     "longname": "src/index.js~Client#apiClient",
     "access": "public",
     "description": "Create an axios instance configured for the Scalingo API",
-    "lineNumber": 154,
+    "lineNumber": 161,
     "return": {
       "nullable": null,
       "types": [
@@ -11156,7 +11371,7 @@
     "params": []
   },
   {
-    "__docId__": 366,
+    "__docId__": 375,
     "kind": "method",
     "name": "authApiClient",
     "memberof": "src/index.js~Client",
@@ -11166,7 +11381,7 @@
     "longname": "src/index.js~Client#authApiClient",
     "access": "public",
     "description": "Create an axios instance configured for the Scalingo Authentication API",
-    "lineNumber": 167,
+    "lineNumber": 174,
     "return": {
       "nullable": null,
       "types": [
@@ -11178,7 +11393,7 @@
     "params": []
   },
   {
-    "__docId__": 367,
+    "__docId__": 376,
     "kind": "method",
     "name": "unauthenticatedClient",
     "memberof": "src/index.js~Client",
@@ -11188,7 +11403,7 @@
     "longname": "src/index.js~Client#unauthenticatedClient",
     "access": "public",
     "description": "Create a vanilla axios instance",
-    "lineNumber": 180,
+    "lineNumber": 187,
     "return": {
       "nullable": null,
       "types": [
@@ -11200,7 +11415,7 @@
     "params": []
   },
   {
-    "__docId__": 368,
+    "__docId__": 377,
     "kind": "file",
     "name": "src/meta.js",
     "content": "/**\n * @typedef {Object} PaginationMeta\n * @see https://developers.scalingo.com/index#pagination\n * @property {?number} prev_page Previous page number\n * @property {number} current_page Current page number\n * @property {number} next_page Next page number\n * @property {number} total_pages Total amout of pages\n * @property {number} total_count Total amount of items in the collection\n */\n\n/**\n * @typedef {Object} PaginationOpts\n * @see https://developers.scalingo.com/index#pagination\n * @property {?number} page Page number\n * @property {?number} per_page Items per page\n */\n",
@@ -11211,7 +11426,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 369,
+    "__docId__": 378,
     "kind": "typedef",
     "name": "PaginationMeta",
     "memberof": "src/meta.js",
@@ -11283,7 +11498,7 @@
     }
   },
   {
-    "__docId__": 370,
+    "__docId__": 379,
     "kind": "typedef",
     "name": "PaginationOpts",
     "memberof": "src/meta.js",
@@ -11325,7 +11540,7 @@
     }
   },
   {
-    "__docId__": 371,
+    "__docId__": 380,
     "kind": "file",
     "name": "src/utils.js",
     "content": "import { APIError } from './errors'\n\n/**\n * @ignore\n */\nexport function unpackData(axiosRequest, prefix, opts) {\n  return new Promise((resolve, reject) => {\n    axiosRequest\n      .then((response) => {\n        let data = response.data\n        if (prefix !== undefined) {\n          data = response.data[prefix]\n        }\n        if (opts && opts['hasOperation']) {\n          resolve({ data: data, operation: response.headers.location })\n        } else {\n          resolve(data)\n        }\n      })\n      .catch((error) => {\n        if (error.response) {\n          reject(new APIError(error.response.status, error.response.data))\n          return\n        }\n        reject(error)\n      })\n  })\n}\n",
@@ -11336,7 +11551,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 372,
+    "__docId__": 381,
     "kind": "function",
     "name": "unpackData",
     "memberof": "src/utils.js",

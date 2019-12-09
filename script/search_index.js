@@ -78,6 +78,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "scalingo/src/keys/index.js~keys",
+    "class/src/Keys/index.js~Keys.html",
+    "<span>Keys</span> <span class=\"search-result-import-path\">scalingo/src/Keys/index.js</span>",
+    "class"
+  ],
+  [
     "scalingo/src/deployments/listener.js~listener",
     "class/src/Deployments/listener.js~Listener.html",
     "<span>Listener</span> <span class=\"search-result-import-path\">scalingo/src/Deployments/listener.js</span>",
@@ -1098,6 +1104,48 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "src/keys/index.js",
+    "file/src/Keys/index.js.html",
+    "src/Keys/index.js",
+    "file"
+  ],
+  [
+    "src/keys/index.js~key",
+    "typedef/index.html#static-typedef-Key",
+    "src/Keys/index.js~Key",
+    "typedef"
+  ],
+  [
+    "src/keys/index.js~keys#all",
+    "class/src/Keys/index.js~Keys.html#instance-method-all",
+    "src/Keys/index.js~Keys#all",
+    "method"
+  ],
+  [
+    "src/keys/index.js~keys#constructor",
+    "class/src/Keys/index.js~Keys.html#instance-constructor-constructor",
+    "src/Keys/index.js~Keys#constructor",
+    "method"
+  ],
+  [
+    "src/keys/index.js~keys#create",
+    "class/src/Keys/index.js~Keys.html#instance-method-create",
+    "src/Keys/index.js~Keys#create",
+    "method"
+  ],
+  [
+    "src/keys/index.js~keys#destroy",
+    "class/src/Keys/index.js~Keys.html#instance-method-destroy",
+    "src/Keys/index.js~Keys#destroy",
+    "method"
+  ],
+  [
+    "src/keys/index.js~keys#show",
+    "class/src/Keys/index.js~Keys.html#instance-method-show",
+    "src/Keys/index.js~Keys#show",
+    "method"
+  ],
+  [
     "src/logs/index.js",
     "file/src/Logs/index.js.html",
     "src/Logs/index.js",
@@ -1390,12 +1438,6 @@ window.esdocSearchIndex = [
     "file/src/SCMIntegrations/index.js.html",
     "src/SCMIntegrations/index.js",
     "file"
-  ],
-  [
-    "src/scmintegrations/index.js~key",
-    "typedef/index.html#static-typedef-Key",
-    "src/SCMIntegrations/index.js~Key",
-    "typedef"
   ],
   [
     "src/scmintegrations/index.js~organization",
@@ -1779,6 +1821,12 @@ window.esdocSearchIndex = [
     "src/index.js~client#events",
     "class/src/index.js~Client.html#instance-member-Events",
     "src/index.js~Client#Events",
+    "member"
+  ],
+  [
+    "src/index.js~client#keys",
+    "class/src/index.js~Client.html#instance-member-Keys",
+    "src/index.js~Client#Keys",
     "member"
   ],
   [
