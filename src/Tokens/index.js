@@ -14,6 +14,47 @@ export default class Tokens {
   }
 
   /**
+   * List all known tokens
+   * @return {Promise<Token[] | APIError>} A list of tokens
+   */
+  all() {
+    return unpackData(this._client.authApiClient().get('/tokens'), 'tokens')
+  }
+
+  /**
+   * Create a new token
+   * @param {String} name - The name of the new token
+   * @return {Promise<Token | APIError>} The newly created token
+   */
+  create(name) {
+    return unpackData(
+      this._client.authApiClient().post('/tokens', { name }, null),
+      'token',
+    )
+  }
+
+  /**
+   * Renew a token
+   * @param {String} id - The id of the token to renew
+   * @return {Promise<Token | APIError>} The newly created token
+   */
+  renew(id) {
+    return unpackData(
+      this._client.authApiClient().patch(`/tokens/${id}/renew`, null, null),
+      'token',
+    )
+  }
+
+  /**
+   * Destroy a token
+   * @param {String} id - The id of the token to destroy
+   * @return {Promise<? | APIError>}
+   */
+  destroy(id) {
+    return unpackData(this._client.authApiClient().delete(`/tokens/${id}`))
+  }
+
+  /**
    * Exchange a Token for a JWT
    * @param {!String} token A valid token
    * @return {Promise<String| APIError>} A valid Bearer Token that can be used against our infrastructure.
