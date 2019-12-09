@@ -6,6 +6,7 @@ import Deployments from './Deployments'
 import Domains from './Domains'
 import Environment from './Environment'
 import Events from './Events'
+import Keys from './Keys'
 import Logs from './Logs'
 import Metrics from './Metrics'
 import Notifiers from './Notifiers'
@@ -97,6 +98,12 @@ class Client {
      * @type {Environment}
      */
     this.Deployments = new Deployments(this)
+
+    /**
+     * Keys API
+     * @type {Keys}
+     */
+    this.Keys = new Keys(this)
 
     /**
      * Logs API
