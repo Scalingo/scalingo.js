@@ -1074,6 +1074,12 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "src/events/index.js~events#all",
+    "class/src/Events/index.js~Events.html#instance-method-all",
+    "src/Events/index.js~Events#all",
+    "method"
+  ],
+  [
     "src/events/index.js~events#constructor",
     "class/src/Events/index.js~Events.html#instance-constructor-constructor",
     "src/Events/index.js~Events#constructor",
