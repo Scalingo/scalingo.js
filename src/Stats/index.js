@@ -13,7 +13,7 @@ export default class Stats {
   }
 
   /**
-   * List all known keys
+   * Return referrals stats for current user
    * @return {Promise<ReferralsStats | APIError>} A list of keys
    */
   referrals() {
