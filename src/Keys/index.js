@@ -51,11 +51,11 @@ export default class Keys {
 
 /**
  * @typedef {Object} Key
- * @see https://developers.scalingo.com/scm_integrations#createlink-an-scm-integration-with-your-account
+ * @see https://developers.scalingo.com/keys
  * @property {String} id Unique key ID
  * @property {String} name Key name
  * @property {String} content
  * @property {String} fingerprint Fingerprint of the SSH key
- * @property {Date} created_at Creation date of the SCM integration
+ * @property {Date} created_at Creation date of the SSH Key
  * @property {Object} owner Owner of the SSH key
  */
