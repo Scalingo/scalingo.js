@@ -13,10 +13,20 @@ export default class Events {
   }
 
   /**
+   * Return all events for all applications of user
+   * @see https://developers.scalingo.com/events#list-current-user-events
+   * @param {?EventsPaginationOpts} opts Object that contains the index of the page and the number of elements per page
+   * @return {Promise<AppEvents | APIError>}
+   */
+  all(opts) {
+    return unpackData(this._client.apiClient().get('/events', { params: opts }))
+  }
+
+  /**
    * Return all events of an application
    * @see https://developers.scalingo.com/events#list-the-events-of-an-app
    * @param {String} appId Id of the current application
-   * @param {?EventsPaginationOpts} opts Object that contain the index of the page and the number of element per page
+   * @param {?EventsPaginationOpts} opts Object that contains the index of the page and the number of elements per page
    * @return {Promise<AppEvents | APIError>}
    */
   for(appId, opts) {

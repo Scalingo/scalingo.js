@@ -1,6 +1,21 @@
 import { testGetter, testParamsGetter } from '../utils/http.js'
 import Events from '../../src/Events'
 
+describe('Events#all', () => {
+  testGetter('https://api.scalingo.com/v1/events', null, null, (client) => {
+    return new Events(client).all({ page: 1, from: 2 })
+  })
+
+  testParamsGetter(
+    'https://api.scalingo.com/v1/events',
+    { page: 1, per_page: 2, from: 1 },
+    null,
+    (client) => {
+      return new Events(client).all({ page: 1, per_page: 2, from: 1 })
+    },
+  )
+})
+
 describe('Events#for', () => {
   testGetter(
     'https://api.scalingo.com/v1/apps/tata/events',
