@@ -15,7 +15,7 @@ export default class TwoFactorAuth {
 
   /**
    * Returns the current user two-factor status
-   * @return {Promise<TwoFactorAuth | APIError>} Promise resolving with the current user two factor status
+   * @return {Promise<TwoFactorAuthObject | APIError>} Promise resolving with the current user two factor status
    */
   status() {
     return unpackData(this._client.authApiClient().get('/client/tfa'), 'tfa')
@@ -55,7 +55,7 @@ export default class TwoFactorAuth {
 
   /**
    * Disable the two-factor auth for this user. Will raise an error if not enabled.
-   * @return {Promise<TwoFactorAuth | APIError>} Promise resolving with the current user two factor status
+   * @return {Promise<TwoFactorAuthObject | APIError>} Promise resolving with the current user two factor status
    */
   disable() {
     return unpackData(this._client.authApiClient().delete('/client/tfa'))
@@ -63,7 +63,7 @@ export default class TwoFactorAuth {
 }
 
 /**
- * @typedef {Object} TwoFactorAuth
+ * @typedef {Object} TwoFactorAuthObject
  * @property {String} uuid
  * @property {Boolean} enabled
  * @property {?String} provider
