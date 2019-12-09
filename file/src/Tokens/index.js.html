@@ -123,8 +123,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DEFAULT_PROVIDER">DEFAULT_PROVIDER</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SUPPORTED_PROVIDERS">SUPPORTED_PROVIDERS</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TOTP_PROVIDER">TOTP_PROVIDER</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="class/src/TwoFactorAuth/index.js~TwoFactorAuth.html">TwoFactorAuth</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TwoFactorAuthInitiateResponse">TwoFactorAuthInitiateResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TwoFactorAuthObject">TwoFactorAuthObject</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TwoFactorAuthValidateResponse">TwoFactorAuthValidateResponse</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#users">Users</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Users/index.js~Users.html">Users</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-AccountUpdateParams">AccountUpdateParams</a></span></span></li>
@@ -148,6 +148,47 @@ export default class Tokens {
    */
   constructor(client) {
     this._client = client
+  }
+
+  /**
+   * List all known tokens
+   * @return {Promise&lt;Token[] | APIError&gt;} A list of tokens
+   */
+  all() {
+    return unpackData(this._client.authApiClient().get(&apos;/tokens&apos;), &apos;tokens&apos;)
+  }
+
+  /**
+   * Create a new token
+   * @param {String} name - The name of the new token
+   * @return {Promise&lt;Token | APIError&gt;} The newly created token
+   */
+  create(name) {
+    return unpackData(
+      this._client.authApiClient().post(&apos;/tokens&apos;, { name }, null),
+      &apos;token&apos;,
+    )
+  }
+
+  /**
+   * Renew a token
+   * @param {String} id - The id of the token to renew
+   * @return {Promise&lt;Token | APIError&gt;} The newly created token
+   */
+  renew(id) {
+    return unpackData(
+      this._client.authApiClient().patch(`/tokens/${id}/renew`, null, null),
+      &apos;token&apos;,
+    )
+  }
+
+  /**
+   * Destroy a token
+   * @param {String} id - The id of the token to destroy
+   * @return {Promise&lt;? | APIError&gt;}
+   */
+  destroy(id) {
+    return unpackData(this._client.authApiClient().delete(`/tokens/${id}`))
   }
 
   /**

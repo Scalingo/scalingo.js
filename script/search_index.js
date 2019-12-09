@@ -1638,9 +1638,27 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "src/tokens/index.js~tokens#all",
+    "class/src/Tokens/index.js~Tokens.html#instance-method-all",
+    "src/Tokens/index.js~Tokens#all",
+    "method"
+  ],
+  [
     "src/tokens/index.js~tokens#constructor",
     "class/src/Tokens/index.js~Tokens.html#instance-constructor-constructor",
     "src/Tokens/index.js~Tokens#constructor",
+    "method"
+  ],
+  [
+    "src/tokens/index.js~tokens#create",
+    "class/src/Tokens/index.js~Tokens.html#instance-method-create",
+    "src/Tokens/index.js~Tokens#create",
+    "method"
+  ],
+  [
+    "src/tokens/index.js~tokens#destroy",
+    "class/src/Tokens/index.js~Tokens.html#instance-method-destroy",
+    "src/Tokens/index.js~Tokens#destroy",
     "method"
   ],
   [
@@ -1650,16 +1668,16 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/tokens/index.js~tokens#renew",
+    "class/src/Tokens/index.js~Tokens.html#instance-method-renew",
+    "src/Tokens/index.js~Tokens#renew",
+    "method"
+  ],
+  [
     "src/twofactorauth/index.js",
     "file/src/TwoFactorAuth/index.js.html",
     "src/TwoFactorAuth/index.js",
     "file"
-  ],
-  [
-    "src/twofactorauth/index.js~twofactorauth",
-    "typedef/index.html#static-typedef-TwoFactorAuth",
-    "src/TwoFactorAuth/index.js~TwoFactorAuth",
-    "typedef"
   ],
   [
     "src/twofactorauth/index.js~twofactorauth#constructor",
@@ -1695,6 +1713,12 @@ window.esdocSearchIndex = [
     "src/twofactorauth/index.js~twofactorauthinitiateresponse",
     "typedef/index.html#static-typedef-TwoFactorAuthInitiateResponse",
     "src/TwoFactorAuth/index.js~TwoFactorAuthInitiateResponse",
+    "typedef"
+  ],
+  [
+    "src/twofactorauth/index.js~twofactorauthobject",
+    "typedef/index.html#static-typedef-TwoFactorAuthObject",
+    "src/TwoFactorAuth/index.js~TwoFactorAuthObject",
     "typedef"
   ],
   [

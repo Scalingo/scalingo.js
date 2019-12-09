@@ -123,8 +123,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DEFAULT_PROVIDER">DEFAULT_PROVIDER</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SUPPORTED_PROVIDERS">SUPPORTED_PROVIDERS</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TOTP_PROVIDER">TOTP_PROVIDER</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="class/src/TwoFactorAuth/index.js~TwoFactorAuth.html">TwoFactorAuth</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TwoFactorAuthInitiateResponse">TwoFactorAuthInitiateResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TwoFactorAuthObject">TwoFactorAuthObject</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TwoFactorAuthValidateResponse">TwoFactorAuthValidateResponse</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#users">Users</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Users/index.js~Users.html">Users</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-AccountUpdateParams">AccountUpdateParams</a></span></span></li>
@@ -152,7 +152,7 @@ export default class TwoFactorAuth {
 
   /**
    * Returns the current user two-factor status
-   * @return {Promise&lt;TwoFactorAuth | APIError&gt;} Promise resolving with the current user two factor status
+   * @return {Promise&lt;TwoFactorAuthObject | APIError&gt;} Promise resolving with the current user two factor status
    */
   status() {
     return unpackData(this._client.authApiClient().get(&apos;/client/tfa&apos;), &apos;tfa&apos;)
@@ -192,7 +192,7 @@ export default class TwoFactorAuth {
 
   /**
    * Disable the two-factor auth for this user. Will raise an error if not enabled.
-   * @return {Promise&lt;TwoFactorAuth | APIError&gt;} Promise resolving with the current user two factor status
+   * @return {Promise&lt;TwoFactorAuthObject | APIError&gt;} Promise resolving with the current user two factor status
    */
   disable() {
     return unpackData(this._client.authApiClient().delete(&apos;/client/tfa&apos;))
@@ -200,7 +200,7 @@ export default class TwoFactorAuth {
 }
 
 /**
- * @typedef {Object} TwoFactorAuth
+ * @typedef {Object} TwoFactorAuthObject
  * @property {String} uuid
  * @property {Boolean} enabled
  * @property {?String} provider

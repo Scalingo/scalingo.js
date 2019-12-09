@@ -9633,7 +9633,7 @@
     "__docId__": 311,
     "kind": "file",
     "name": "src/Tokens/index.js",
-    "content": "import axios from 'axios'\nimport { unpackData } from '../utils.js'\n\n/**\n * Tokens API Client\n */\nexport default class Tokens {\n  /**\n   * Create a new Client for the Token API\n   * @param {Client} client - Scalingo API Client\n   */\n  constructor(client) {\n    this._client = client\n  }\n\n  /**\n   * Exchange a Token for a JWT\n   * @param {!String} token A valid token\n   * @return {Promise<String| APIError>} A valid Bearer Token that can be used against our infrastructure.\n   */\n  exchange(token) {\n    const request = axios.post(\n      `${this._client._authApiUrl}/v1/tokens/exchange`,\n      {},\n      {\n        auth: {\n          password: token,\n        },\n      },\n    )\n    return unpackData(request, 'token')\n  }\n}\n\n/**\n * @typedef {Object} Token\n * @see https://developers.scalingo.com/tokens\n * @property {String} id ID of the token\n * @property {String} name Name of the token\n * @property {String} created_at Creation date of this token\n * @property {?String} last_used_at Date of the last usage of this token\n * @property {String} issued_at When was the token issued\n * @property {?String} token Actual token (only shown on token creation endpoint)\n */\n",
+    "content": "import axios from 'axios'\nimport { unpackData } from '../utils.js'\n\n/**\n * Tokens API Client\n */\nexport default class Tokens {\n  /**\n   * Create a new Client for the Token API\n   * @param {Client} client - Scalingo API Client\n   */\n  constructor(client) {\n    this._client = client\n  }\n\n  /**\n   * List all known tokens\n   * @return {Promise<Token[] | APIError>} A list of tokens\n   */\n  all() {\n    return unpackData(this._client.authApiClient().get('/tokens'), 'tokens')\n  }\n\n  /**\n   * Create a new token\n   * @param {String} name - The name of the new token\n   * @return {Promise<Token | APIError>} The newly created token\n   */\n  create(name) {\n    return unpackData(\n      this._client.authApiClient().post('/tokens', { name }, null),\n      'token',\n    )\n  }\n\n  /**\n   * Renew a token\n   * @param {String} id - The id of the token to renew\n   * @return {Promise<Token | APIError>} The newly created token\n   */\n  renew(id) {\n    return unpackData(\n      this._client.authApiClient().patch(`/tokens/${id}/renew`, null, null),\n      'token',\n    )\n  }\n\n  /**\n   * Destroy a token\n   * @param {String} id - The id of the token to destroy\n   * @return {Promise<? | APIError>}\n   */\n  destroy(id) {\n    return unpackData(this._client.authApiClient().delete(`/tokens/${id}`))\n  }\n\n  /**\n   * Exchange a Token for a JWT\n   * @param {!String} token A valid token\n   * @return {Promise<String| APIError>} A valid Bearer Token that can be used against our infrastructure.\n   */\n  exchange(token) {\n    const request = axios.post(\n      `${this._client._authApiUrl}/v1/tokens/exchange`,\n      {},\n      {\n        auth: {\n          password: token,\n        },\n      },\n    )\n    return unpackData(request, 'token')\n  }\n}\n\n/**\n * @typedef {Object} Token\n * @see https://developers.scalingo.com/tokens\n * @property {String} id ID of the token\n * @property {String} name Name of the token\n * @property {String} created_at Creation date of this token\n * @property {?String} last_used_at Date of the last usage of this token\n * @property {String} issued_at When was the token issued\n * @property {?String} token Actual token (only shown on token creation endpoint)\n */\n",
     "static": true,
     "longname": "/home/travis/build/Scalingo/scalingo.js/src/Tokens/index.js",
     "access": "public",
@@ -9783,6 +9783,127 @@
   {
     "__docId__": 316,
     "kind": "method",
+    "name": "all",
+    "memberof": "src/Tokens/index.js~Tokens",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Tokens/index.js~Tokens#all",
+    "access": "public",
+    "description": "List all known tokens",
+    "lineNumber": 20,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<Token[] | APIError>"
+      ],
+      "spread": false,
+      "description": "A list of tokens"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 317,
+    "kind": "method",
+    "name": "create",
+    "memberof": "src/Tokens/index.js~Tokens",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Tokens/index.js~Tokens#create",
+    "access": "public",
+    "description": "Create a new token",
+    "lineNumber": 29,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "name",
+        "description": "The name of the new token"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<Token | APIError>"
+      ],
+      "spread": false,
+      "description": "The newly created token"
+    }
+  },
+  {
+    "__docId__": 318,
+    "kind": "method",
+    "name": "renew",
+    "memberof": "src/Tokens/index.js~Tokens",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Tokens/index.js~Tokens#renew",
+    "access": "public",
+    "description": "Renew a token",
+    "lineNumber": 41,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "The id of the token to renew"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<Token | APIError>"
+      ],
+      "spread": false,
+      "description": "The newly created token"
+    }
+  },
+  {
+    "__docId__": 319,
+    "kind": "method",
+    "name": "destroy",
+    "memberof": "src/Tokens/index.js~Tokens",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Tokens/index.js~Tokens#destroy",
+    "access": "public",
+    "description": "Destroy a token",
+    "lineNumber": 53,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "The id of the token to destroy"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<? | APIError>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 320,
+    "kind": "method",
     "name": "exchange",
     "memberof": "src/Tokens/index.js~Tokens",
     "generator": false,
@@ -9791,7 +9912,7 @@
     "longname": "src/Tokens/index.js~Tokens#exchange",
     "access": "public",
     "description": "Exchange a Token for a JWT",
-    "lineNumber": 21,
+    "lineNumber": 62,
     "params": [
       {
         "nullable": false,
@@ -9814,10 +9935,10 @@
     }
   },
   {
-    "__docId__": 317,
+    "__docId__": 321,
     "kind": "file",
     "name": "src/TwoFactorAuth/index.js",
-    "content": "import { unpackData } from '../utils.js'\n\nexport const TOTP_PROVIDER = 'totp'\nexport const DEFAULT_PROVIDER = TOTP_PROVIDER\nexport const SUPPORTED_PROVIDERS = [TOTP_PROVIDER]\n\nexport default class TwoFactorAuth {\n  /**\n   * Create a new Client for the Users API\n   * @param {Client} client - Scalingo API Client\n   */\n  constructor(client) {\n    this._client = client\n  }\n\n  /**\n   * Returns the current user two-factor status\n   * @return {Promise<TwoFactorAuth | APIError>} Promise resolving with the current user two factor status\n   */\n  status() {\n    return unpackData(this._client.authApiClient().get('/client/tfa'), 'tfa')\n  }\n\n  /**\n   * Initiate the two-factor activation process.\n   * @param {?String} [provider=totp] the 2FA provider\n   * @return {Promise<TwoFactorAuthInitiateResponse | APIError>} Promise resolving with the current user two factor status\n   */\n  initiate(provider) {\n    const data = {\n      tfa: { provider: provider || DEFAULT_PROVIDER },\n    }\n\n    return unpackData(\n      this._client.authApiClient().post('/client/tfa', data),\n      'tfa',\n    )\n  }\n\n  /**\n   * Validate the two-factor activation process.\n   * @param {Number} attempt the \"pin number\" given by the authenticator\n   * @return {Promise<TwoFactorAuthValidateResponse | APIError>} Promise resolving with the current user two factor status\n   */\n  validate(attempt) {\n    const data = {\n      tfa: { attempt },\n    }\n\n    return unpackData(\n      this._client.authApiClient().post('/client/tfa/validate', data),\n      'tfa',\n    )\n  }\n\n  /**\n   * Disable the two-factor auth for this user. Will raise an error if not enabled.\n   * @return {Promise<TwoFactorAuth | APIError>} Promise resolving with the current user two factor status\n   */\n  disable() {\n    return unpackData(this._client.authApiClient().delete('/client/tfa'))\n  }\n}\n\n/**\n * @typedef {Object} TwoFactorAuth\n * @property {String} uuid\n * @property {Boolean} enabled\n * @property {?String} provider\n */\n\n/**\n * @typedef {Object} TwoFactorAuthInitiateResponse\n * @property {String} uuid\n * @property {Boolean} enabled\n * @property {String} provider\n * @property {String} uri\n */\n\n/**\n * @typedef {Object} TwoFactorAuthValidateResponse\n * @property {Array<String>} codes A list of recovery codes\n * @property {TwoFactorAuth} user The two factor auth status\n */\n",
+    "content": "import { unpackData } from '../utils.js'\n\nexport const TOTP_PROVIDER = 'totp'\nexport const DEFAULT_PROVIDER = TOTP_PROVIDER\nexport const SUPPORTED_PROVIDERS = [TOTP_PROVIDER]\n\nexport default class TwoFactorAuth {\n  /**\n   * Create a new Client for the Users API\n   * @param {Client} client - Scalingo API Client\n   */\n  constructor(client) {\n    this._client = client\n  }\n\n  /**\n   * Returns the current user two-factor status\n   * @return {Promise<TwoFactorAuthObject | APIError>} Promise resolving with the current user two factor status\n   */\n  status() {\n    return unpackData(this._client.authApiClient().get('/client/tfa'), 'tfa')\n  }\n\n  /**\n   * Initiate the two-factor activation process.\n   * @param {?String} [provider=totp] the 2FA provider\n   * @return {Promise<TwoFactorAuthInitiateResponse | APIError>} Promise resolving with the current user two factor status\n   */\n  initiate(provider) {\n    const data = {\n      tfa: { provider: provider || DEFAULT_PROVIDER },\n    }\n\n    return unpackData(\n      this._client.authApiClient().post('/client/tfa', data),\n      'tfa',\n    )\n  }\n\n  /**\n   * Validate the two-factor activation process.\n   * @param {Number} attempt the \"pin number\" given by the authenticator\n   * @return {Promise<TwoFactorAuthValidateResponse | APIError>} Promise resolving with the current user two factor status\n   */\n  validate(attempt) {\n    const data = {\n      tfa: { attempt },\n    }\n\n    return unpackData(\n      this._client.authApiClient().post('/client/tfa/validate', data),\n      'tfa',\n    )\n  }\n\n  /**\n   * Disable the two-factor auth for this user. Will raise an error if not enabled.\n   * @return {Promise<TwoFactorAuthObject | APIError>} Promise resolving with the current user two factor status\n   */\n  disable() {\n    return unpackData(this._client.authApiClient().delete('/client/tfa'))\n  }\n}\n\n/**\n * @typedef {Object} TwoFactorAuthObject\n * @property {String} uuid\n * @property {Boolean} enabled\n * @property {?String} provider\n */\n\n/**\n * @typedef {Object} TwoFactorAuthInitiateResponse\n * @property {String} uuid\n * @property {Boolean} enabled\n * @property {String} provider\n * @property {String} uri\n */\n\n/**\n * @typedef {Object} TwoFactorAuthValidateResponse\n * @property {Array<String>} codes A list of recovery codes\n * @property {TwoFactorAuth} user The two factor auth status\n */\n",
     "static": true,
     "longname": "/home/travis/build/Scalingo/scalingo.js/src/TwoFactorAuth/index.js",
     "access": "public",
@@ -9825,7 +9946,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 318,
+    "__docId__": 322,
     "kind": "variable",
     "name": "TOTP_PROVIDER",
     "memberof": "src/TwoFactorAuth/index.js",
@@ -9845,7 +9966,7 @@
     }
   },
   {
-    "__docId__": 319,
+    "__docId__": 323,
     "kind": "variable",
     "name": "DEFAULT_PROVIDER",
     "memberof": "src/TwoFactorAuth/index.js",
@@ -9865,7 +9986,7 @@
     }
   },
   {
-    "__docId__": 320,
+    "__docId__": 324,
     "kind": "variable",
     "name": "SUPPORTED_PROVIDERS",
     "memberof": "src/TwoFactorAuth/index.js",
@@ -9885,7 +10006,7 @@
     }
   },
   {
-    "__docId__": 321,
+    "__docId__": 325,
     "kind": "class",
     "name": "TwoFactorAuth",
     "memberof": "src/TwoFactorAuth/index.js",
@@ -9901,12 +10022,12 @@
     "interface": false
   },
   {
-    "__docId__": 322,
+    "__docId__": 326,
     "kind": "typedef",
-    "name": "TwoFactorAuth",
+    "name": "TwoFactorAuthObject",
     "memberof": "src/TwoFactorAuth/index.js",
     "static": true,
-    "longname": "src/TwoFactorAuth/index.js~TwoFactorAuth",
+    "longname": "src/TwoFactorAuth/index.js~TwoFactorAuthObject",
     "access": "public",
     "description": "",
     "properties": [
@@ -9946,11 +10067,11 @@
         "Object"
       ],
       "optional": false,
-      "name": "TwoFactorAuth"
+      "name": "TwoFactorAuthObject"
     }
   },
   {
-    "__docId__": 323,
+    "__docId__": 327,
     "kind": "typedef",
     "name": "TwoFactorAuthInitiateResponse",
     "memberof": "src/TwoFactorAuth/index.js",
@@ -10009,7 +10130,7 @@
     }
   },
   {
-    "__docId__": 324,
+    "__docId__": 328,
     "kind": "typedef",
     "name": "TwoFactorAuthValidateResponse",
     "memberof": "src/TwoFactorAuth/index.js",
@@ -10048,7 +10169,7 @@
     }
   },
   {
-    "__docId__": 325,
+    "__docId__": 329,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/TwoFactorAuth/index.js~TwoFactorAuth",
@@ -10073,7 +10194,7 @@
     ]
   },
   {
-    "__docId__": 326,
+    "__docId__": 330,
     "kind": "member",
     "name": "_client",
     "memberof": "src/TwoFactorAuth/index.js~TwoFactorAuth",
@@ -10091,7 +10212,7 @@
     }
   },
   {
-    "__docId__": 327,
+    "__docId__": 331,
     "kind": "method",
     "name": "status",
     "memberof": "src/TwoFactorAuth/index.js~TwoFactorAuth",
@@ -10105,7 +10226,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<TwoFactorAuth | APIError>"
+        "Promise<TwoFactorAuthObject | APIError>"
       ],
       "spread": false,
       "description": "Promise resolving with the current user two factor status"
@@ -10113,7 +10234,7 @@
     "params": []
   },
   {
-    "__docId__": 328,
+    "__docId__": 332,
     "kind": "method",
     "name": "initiate",
     "memberof": "src/TwoFactorAuth/index.js~TwoFactorAuth",
@@ -10148,7 +10269,7 @@
     }
   },
   {
-    "__docId__": 329,
+    "__docId__": 333,
     "kind": "method",
     "name": "validate",
     "memberof": "src/TwoFactorAuth/index.js~TwoFactorAuth",
@@ -10181,7 +10302,7 @@
     }
   },
   {
-    "__docId__": 330,
+    "__docId__": 334,
     "kind": "method",
     "name": "disable",
     "memberof": "src/TwoFactorAuth/index.js~TwoFactorAuth",
@@ -10195,7 +10316,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "Promise<TwoFactorAuth | APIError>"
+        "Promise<TwoFactorAuthObject | APIError>"
       ],
       "spread": false,
       "description": "Promise resolving with the current user two factor status"
@@ -10203,7 +10324,7 @@
     "params": []
   },
   {
-    "__docId__": 331,
+    "__docId__": 335,
     "kind": "file",
     "name": "src/Users/index.js",
     "content": "import { unpackData } from '../utils.js'\n\nexport default class Users {\n  /**\n   * Create a new Client for the Users API\n   * @param {Client} client - Scalingo API Client\n   */\n  constructor(client) {\n    this._client = client\n  }\n\n  /**\n   * Fetch the current user account informations\n   * @return {Promise<User | APIError>} Promise that when resolve return the user account informations\n   */\n  self() {\n    return unpackData(this._client.authApiClient().get('/users/self'), 'user')\n  }\n\n  /**\n   * Updates the current user account informations\n   * @param {AccountUpdateParams} attributes - User attributes to update\n   * @return {Promise<User | APIError>} Promise that when resolve return the user account informations\n   */\n  updateAccount(attributes) {\n    return unpackData(\n      this._client.authApiClient().put('/users/account', { user: attributes }),\n      'user',\n    )\n  }\n}\n\n/**\n * @typedef {Object} User\n * @property {String} id\n * @property {String} email\n * @property {String} username\n * @property {String} uuid\n * @property {?String} company\n * @property {?String} location\n * @property {String} fullname\n * @property {?GithubProfile} github Github profile of the user\n * @property {Boolean} tos_accepted Did the user accept our TOS\n */\n\n/**\n * @typedef {Object} AccountUpdateParams\n * @property {?String} email\n * @property {?String} username\n * @property {?String} company\n * @property {?String} location\n * @property {?String} fullname\n * @property {?Boolean} tos_accepted Did the user accept our TOS\n * @property {?Boolean} email_newsletter Did the user opt in to receive newsletter\n * @property {?String} password\n * @property {?String} password_confirmation\n * @property {?String} current_password\n */\n\n/**\n * @typedef {Object} GithubProfile\n * @property {String} username Github Username\n * @property {?String} email Email linked to this Github account\n * @property {String} avatar_url\n * @property {String} profile_url\n */\n",
@@ -10214,7 +10335,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 332,
+    "__docId__": 336,
     "kind": "class",
     "name": "Users",
     "memberof": "src/Users/index.js",
@@ -10230,7 +10351,7 @@
     "interface": false
   },
   {
-    "__docId__": 333,
+    "__docId__": 337,
     "kind": "typedef",
     "name": "User",
     "memberof": "src/Users/index.js",
@@ -10339,7 +10460,7 @@
     }
   },
   {
-    "__docId__": 334,
+    "__docId__": 338,
     "kind": "typedef",
     "name": "AccountUpdateParams",
     "memberof": "src/Users/index.js",
@@ -10458,7 +10579,7 @@
     }
   },
   {
-    "__docId__": 335,
+    "__docId__": 339,
     "kind": "typedef",
     "name": "GithubProfile",
     "memberof": "src/Users/index.js",
@@ -10517,7 +10638,7 @@
     }
   },
   {
-    "__docId__": 336,
+    "__docId__": 340,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/Users/index.js~Users",
@@ -10542,7 +10663,7 @@
     ]
   },
   {
-    "__docId__": 337,
+    "__docId__": 341,
     "kind": "member",
     "name": "_client",
     "memberof": "src/Users/index.js~Users",
@@ -10560,7 +10681,7 @@
     }
   },
   {
-    "__docId__": 338,
+    "__docId__": 342,
     "kind": "method",
     "name": "self",
     "memberof": "src/Users/index.js~Users",
@@ -10582,7 +10703,7 @@
     "params": []
   },
   {
-    "__docId__": 339,
+    "__docId__": 343,
     "kind": "method",
     "name": "updateAccount",
     "memberof": "src/Users/index.js~Users",
@@ -10615,7 +10736,7 @@
     }
   },
   {
-    "__docId__": 340,
+    "__docId__": 344,
     "kind": "file",
     "name": "src/errors.js",
     "content": "/**\n * Error returned when the Scalingo API return something else than 200\n */\nexport class APIError extends Error {\n  /**\n   * Create a new instance of APIError\n   * @param {Number} status HTTP status code of the request\n   * @param {Object} data Body of the HTTP response (parsed as JSON)\n   */\n  constructor(status, data) {\n    let message = `An error occurred (status=${status})`\n    if (data && data.error) {\n      message = data.error\n    }\n    super(message)\n    this._status = status\n    this._data = data\n\n    // Remove ourself from the stack trace\n    if ('captureStackTrace' in Error) {\n      Error.captureStackTrace(this, APIError)\n    } else {\n      this.stack = new Error(this._status + this._data).stack\n    }\n  }\n\n  /**\n   * HTTP Status code returned by the API\n   * @return {Number}\n   */\n  get status() {\n    return this._status\n  }\n\n  /**\n   * Body of the HTTP response (parsed as JSON)\n   * @return {Object}\n   */\n  get data() {\n    return this._data\n  }\n}\n",
@@ -10626,7 +10747,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 341,
+    "__docId__": 345,
     "kind": "class",
     "name": "APIError",
     "memberof": "src/errors.js",
@@ -10644,7 +10765,7 @@
     ]
   },
   {
-    "__docId__": 342,
+    "__docId__": 346,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/errors.js~APIError",
@@ -10679,7 +10800,7 @@
     ]
   },
   {
-    "__docId__": 343,
+    "__docId__": 347,
     "kind": "member",
     "name": "_status",
     "memberof": "src/errors.js~APIError",
@@ -10697,7 +10818,7 @@
     }
   },
   {
-    "__docId__": 344,
+    "__docId__": 348,
     "kind": "member",
     "name": "_data",
     "memberof": "src/errors.js~APIError",
@@ -10715,7 +10836,7 @@
     }
   },
   {
-    "__docId__": 345,
+    "__docId__": 349,
     "kind": "member",
     "name": "stack",
     "memberof": "src/errors.js~APIError",
@@ -10732,7 +10853,7 @@
     }
   },
   {
-    "__docId__": 346,
+    "__docId__": 350,
     "kind": "get",
     "name": "status",
     "memberof": "src/errors.js~APIError",
@@ -10758,7 +10879,7 @@
     }
   },
   {
-    "__docId__": 347,
+    "__docId__": 351,
     "kind": "get",
     "name": "data",
     "memberof": "src/errors.js~APIError",
@@ -10784,7 +10905,7 @@
     }
   },
   {
-    "__docId__": 348,
+    "__docId__": 352,
     "kind": "file",
     "name": "src/index.js",
     "content": "import Apps from './Apps'\nimport Addons from './Addons'\nimport Collaborators from './Collaborators'\nimport Containers from './Containers'\nimport Deployments from './Deployments'\nimport Domains from './Domains'\nimport Environment from './Environment'\nimport Events from './Events'\nimport Keys from './Keys'\nimport Logs from './Logs'\nimport Metrics from './Metrics'\nimport Notifiers from './Notifiers'\nimport NotificationPlatforms from './NotificationPlatforms'\nimport Operations from './Operations'\nimport SCMIntegrations from './SCMIntegrations'\nimport SCMRepoLinks from './SCMRepoLinks'\nimport Tokens from './Tokens'\nimport TwoFactorAuth from './TwoFactorAuth'\nimport Users from './Users'\n\nimport axios from 'axios'\n\nclass Client {\n  /**\n   * Create a new Client for the Scalingo API.\n   * @param {String} token - Bearer Token for the current user.\n   * @param {Object} opts - Optional configuration\n   * @param {String} [opts.apiUrl=https://api.scalingo.com] - URL to the Scalingo API.\n   * @param {String} [opts.authApiUrl=https://auth.scalingo.com] - URL to the Scalingo Authentication API.\n   * @param {String} [opts.noUserAgent=false] - Do not set the user agent\n   */\n  constructor(token, opts = {}) {\n    const { apiUrl, authApiUrl } = opts\n\n    this._token = token\n    this._apiUrl = apiUrl || 'https://api.scalingo.com'\n    this._authApiUrl = authApiUrl || 'https://auth.scalingo.com'\n    this._headers = {}\n    if (opts && !opts.noUserAgent) {\n      this._headers['User-Agent'] = 'Scalingo Javascript Client'\n    }\n\n    /**\n     * Apps API\n     * @type {Apps}\n     */\n    this.Apps = new Apps(this)\n    /**\n     * Containers API\n     * @type {Containers}\n     */\n    this.Containers = new Containers(this)\n\n    /**\n     * Users API\n     * @type {Users}\n     */\n    this.Users = new Users(this)\n\n    /**\n     * SCMIntegrations API\n     * @type {SCMIntegrations}\n     */\n    this.SCMIntegrations = new SCMIntegrations(this)\n\n    /**\n     * SCM Repo Links API\n     * @type {SCMRepoLinks}\n     */\n    this.SCMRepoLinks = new SCMRepoLinks(this)\n\n    /**\n     * Tokens API\n     * @type {Tokens}\n     */\n    this.Tokens = new Tokens(this)\n\n    /**\n     * Metrics API\n     * @type {Metrics}\n     */\n    this.Metrics = new Metrics(this)\n\n    /**\n     * Domains API\n     * @type {Domains}\n     */\n    this.Domains = new Domains(this)\n\n    /**\n     * Environment API\n     * @type {Environment}\n     */\n    this.Environment = new Environment(this)\n\n    /**\n     * Deployments API\n     * @type {Environment}\n     */\n    this.Deployments = new Deployments(this)\n\n    /**\n     * Keys API\n     * @type {Keys}\n     */\n    this.Keys = new Keys(this)\n\n    /**\n     * Logs API\n     * @type {Logs}\n     */\n    this.Logs = new Logs(this)\n\n    /**\n     * Addons API\n     * @type {Addons}\n     */\n    this.Addons = new Addons(this)\n\n    /**\n     * Operations API\n     * @type {Operation}\n     */\n    this.Operations = new Operations(this)\n\n    /**\n     * Events API\n     * @type {Events}\n     */\n    this.Events = new Events(this)\n\n    /**\n     * Collaborators API\n     * @type {Collaborators}\n     */\n    this.Collaborators = new Collaborators(this)\n\n    /**\n     * Notifiers API\n     * @type {Notifiers}\n     */\n    this.Notifiers = new Notifiers(this)\n\n    /**\n     * Notification platforms API\n     * @type {NotificationPlatforms}\n     */\n    this.NotificationPlatforms = new NotificationPlatforms(this)\n\n    /**\n     * Two Factors Auth API\n     * @type {TwoFactorAuth}\n     */\n    this.TwoFactorAuth = new TwoFactorAuth(this)\n  }\n\n  /**\n   * Create an axios instance configured for the Scalingo API\n   * @return {Object} Axios client for the Scalingo API\n   */\n  apiClient() {\n    return axios.create({\n      baseURL: `${this._apiUrl}/v1/`,\n      headers: Object.assign({}, this._headers, {\n        Authorization: `Bearer ${this._token}`,\n      }),\n    })\n  }\n\n  /**\n   * Create an axios instance configured for the Scalingo Authentication API\n   * @return {Object} Axios client for the Scalingo Authentication API\n   */\n  authApiClient() {\n    return axios.create({\n      baseURL: `${this._authApiUrl}/v1/`,\n      headers: Object.assign({}, this._headers, {\n        Authorization: `Bearer ${this._token}`,\n      }),\n    })\n  }\n\n  /**\n   * Create a vanilla axios instance\n   * @return {Object} Axios instance\n   */\n  unauthenticatedClient() {\n    return axios.create({\n      baseURL: `${this._apiUrl}/v1/`,\n      headers: this._headers,\n    })\n  }\n}\n\nexport default Client\nexport { Client }\n\n/**\n * Return a client from a user token.\n * It exchange the token and then return a new client.\n * @param {String} token A User token\n * @param {Object} opts - Optional configuration\n * @param {String} [opts.apiUrl=https://api.scalingo.com] - URL to the Scalingo API.\n * @param {String} [opts.authApiUrl=https://auth.scalingo.com] - URL to the Scalingo Authentication API.\n * @return {Promise<Client | Error>} a valid Client\n */\nexport async function clientFromToken(token, opts) {\n  const client = new Client('', opts)\n  const bearerToken = await client.Tokens.exchange(token)\n  client._token = bearerToken\n  return client\n}\n",
@@ -10795,7 +10916,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 349,
+    "__docId__": 353,
     "kind": "function",
     "name": "clientFromToken",
     "memberof": "src/index.js",
@@ -10865,7 +10986,7 @@
     }
   },
   {
-    "__docId__": 350,
+    "__docId__": 354,
     "kind": "class",
     "name": "Client",
     "memberof": "src/index.js",
@@ -10881,7 +11002,7 @@
     "interface": false
   },
   {
-    "__docId__": 351,
+    "__docId__": 355,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/index.js~Client",
@@ -10952,7 +11073,7 @@
     ]
   },
   {
-    "__docId__": 352,
+    "__docId__": 356,
     "kind": "member",
     "name": "_token",
     "memberof": "src/index.js~Client",
@@ -10970,7 +11091,7 @@
     }
   },
   {
-    "__docId__": 353,
+    "__docId__": 357,
     "kind": "member",
     "name": "_apiUrl",
     "memberof": "src/index.js~Client",
@@ -10988,7 +11109,7 @@
     }
   },
   {
-    "__docId__": 354,
+    "__docId__": 358,
     "kind": "member",
     "name": "_authApiUrl",
     "memberof": "src/index.js~Client",
@@ -11006,7 +11127,7 @@
     }
   },
   {
-    "__docId__": 355,
+    "__docId__": 359,
     "kind": "member",
     "name": "_headers",
     "memberof": "src/index.js~Client",
@@ -11024,7 +11145,7 @@
     }
   },
   {
-    "__docId__": 356,
+    "__docId__": 360,
     "kind": "member",
     "name": "Apps",
     "memberof": "src/index.js~Client",
@@ -11043,7 +11164,7 @@
     }
   },
   {
-    "__docId__": 357,
+    "__docId__": 361,
     "kind": "member",
     "name": "Containers",
     "memberof": "src/index.js~Client",
@@ -11062,7 +11183,7 @@
     }
   },
   {
-    "__docId__": 358,
+    "__docId__": 362,
     "kind": "member",
     "name": "Users",
     "memberof": "src/index.js~Client",
@@ -11081,7 +11202,7 @@
     }
   },
   {
-    "__docId__": 359,
+    "__docId__": 363,
     "kind": "member",
     "name": "SCMIntegrations",
     "memberof": "src/index.js~Client",
@@ -11100,7 +11221,7 @@
     }
   },
   {
-    "__docId__": 360,
+    "__docId__": 364,
     "kind": "member",
     "name": "SCMRepoLinks",
     "memberof": "src/index.js~Client",
@@ -11119,7 +11240,7 @@
     }
   },
   {
-    "__docId__": 361,
+    "__docId__": 365,
     "kind": "member",
     "name": "Tokens",
     "memberof": "src/index.js~Client",
@@ -11138,7 +11259,7 @@
     }
   },
   {
-    "__docId__": 362,
+    "__docId__": 366,
     "kind": "member",
     "name": "Metrics",
     "memberof": "src/index.js~Client",
@@ -11157,7 +11278,7 @@
     }
   },
   {
-    "__docId__": 363,
+    "__docId__": 367,
     "kind": "member",
     "name": "Domains",
     "memberof": "src/index.js~Client",
@@ -11176,7 +11297,7 @@
     }
   },
   {
-    "__docId__": 364,
+    "__docId__": 368,
     "kind": "member",
     "name": "Environment",
     "memberof": "src/index.js~Client",
@@ -11195,7 +11316,7 @@
     }
   },
   {
-    "__docId__": 365,
+    "__docId__": 369,
     "kind": "member",
     "name": "Deployments",
     "memberof": "src/index.js~Client",
@@ -11214,7 +11335,7 @@
     }
   },
   {
-    "__docId__": 366,
+    "__docId__": 370,
     "kind": "member",
     "name": "Keys",
     "memberof": "src/index.js~Client",
@@ -11233,7 +11354,7 @@
     }
   },
   {
-    "__docId__": 367,
+    "__docId__": 371,
     "kind": "member",
     "name": "Logs",
     "memberof": "src/index.js~Client",
@@ -11252,7 +11373,7 @@
     }
   },
   {
-    "__docId__": 368,
+    "__docId__": 372,
     "kind": "member",
     "name": "Addons",
     "memberof": "src/index.js~Client",
@@ -11271,7 +11392,7 @@
     }
   },
   {
-    "__docId__": 369,
+    "__docId__": 373,
     "kind": "member",
     "name": "Operations",
     "memberof": "src/index.js~Client",
@@ -11290,7 +11411,7 @@
     }
   },
   {
-    "__docId__": 370,
+    "__docId__": 374,
     "kind": "member",
     "name": "Events",
     "memberof": "src/index.js~Client",
@@ -11309,7 +11430,7 @@
     }
   },
   {
-    "__docId__": 371,
+    "__docId__": 375,
     "kind": "member",
     "name": "Collaborators",
     "memberof": "src/index.js~Client",
@@ -11328,7 +11449,7 @@
     }
   },
   {
-    "__docId__": 372,
+    "__docId__": 376,
     "kind": "member",
     "name": "Notifiers",
     "memberof": "src/index.js~Client",
@@ -11347,7 +11468,7 @@
     }
   },
   {
-    "__docId__": 373,
+    "__docId__": 377,
     "kind": "member",
     "name": "NotificationPlatforms",
     "memberof": "src/index.js~Client",
@@ -11366,7 +11487,7 @@
     }
   },
   {
-    "__docId__": 374,
+    "__docId__": 378,
     "kind": "member",
     "name": "TwoFactorAuth",
     "memberof": "src/index.js~Client",
@@ -11385,7 +11506,7 @@
     }
   },
   {
-    "__docId__": 375,
+    "__docId__": 379,
     "kind": "method",
     "name": "apiClient",
     "memberof": "src/index.js~Client",
@@ -11407,7 +11528,7 @@
     "params": []
   },
   {
-    "__docId__": 376,
+    "__docId__": 380,
     "kind": "method",
     "name": "authApiClient",
     "memberof": "src/index.js~Client",
@@ -11429,7 +11550,7 @@
     "params": []
   },
   {
-    "__docId__": 377,
+    "__docId__": 381,
     "kind": "method",
     "name": "unauthenticatedClient",
     "memberof": "src/index.js~Client",
@@ -11451,7 +11572,7 @@
     "params": []
   },
   {
-    "__docId__": 378,
+    "__docId__": 382,
     "kind": "file",
     "name": "src/meta.js",
     "content": "/**\n * @typedef {Object} PaginationMeta\n * @see https://developers.scalingo.com/index#pagination\n * @property {?number} prev_page Previous page number\n * @property {number} current_page Current page number\n * @property {number} next_page Next page number\n * @property {number} total_pages Total amout of pages\n * @property {number} total_count Total amount of items in the collection\n */\n\n/**\n * @typedef {Object} PaginationOpts\n * @see https://developers.scalingo.com/index#pagination\n * @property {?number} page Page number\n * @property {?number} per_page Items per page\n */\n",
@@ -11462,7 +11583,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 379,
+    "__docId__": 383,
     "kind": "typedef",
     "name": "PaginationMeta",
     "memberof": "src/meta.js",
@@ -11534,7 +11655,7 @@
     }
   },
   {
-    "__docId__": 380,
+    "__docId__": 384,
     "kind": "typedef",
     "name": "PaginationOpts",
     "memberof": "src/meta.js",
@@ -11576,7 +11697,7 @@
     }
   },
   {
-    "__docId__": 381,
+    "__docId__": 385,
     "kind": "file",
     "name": "src/utils.js",
     "content": "import { APIError } from './errors'\n\n/**\n * @ignore\n */\nexport function unpackData(axiosRequest, prefix, opts) {\n  return new Promise((resolve, reject) => {\n    axiosRequest\n      .then((response) => {\n        let data = response.data\n        if (prefix !== undefined) {\n          data = response.data[prefix]\n        }\n        if (opts && opts['hasOperation']) {\n          resolve({ data: data, operation: response.headers.location })\n        } else {\n          resolve(data)\n        }\n      })\n      .catch((error) => {\n        if (error.response) {\n          reject(new APIError(error.response.status, error.response.data))\n          return\n        }\n        reject(error)\n      })\n  })\n}\n",
@@ -11587,7 +11708,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 382,
+    "__docId__": 386,
     "kind": "function",
     "name": "unpackData",
     "memberof": "src/utils.js",
