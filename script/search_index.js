@@ -168,6 +168,12 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
+    "scalingo/src/stats/index.js~stats",
+    "class/src/Stats/index.js~Stats.html",
+    "<span>Stats</span> <span class=\"search-result-import-path\">scalingo/src/Stats/index.js</span>",
+    "class"
+  ],
+  [
     "scalingo/src/twofactorauth/index.js~totp_provider",
     "variable/index.html#static-variable-TOTP_PROVIDER",
     "<span>TOTP_PROVIDER</span> <span class=\"search-result-import-path\">scalingo/src/TwoFactorAuth/index.js</span>",
@@ -1626,6 +1632,30 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/stats/index.js",
+    "file/src/Stats/index.js.html",
+    "src/Stats/index.js",
+    "file"
+  ],
+  [
+    "src/stats/index.js~referralsstats",
+    "typedef/index.html#static-typedef-ReferralsStats",
+    "src/Stats/index.js~ReferralsStats",
+    "typedef"
+  ],
+  [
+    "src/stats/index.js~stats#constructor",
+    "class/src/Stats/index.js~Stats.html#instance-constructor-constructor",
+    "src/Stats/index.js~Stats#constructor",
+    "method"
+  ],
+  [
+    "src/stats/index.js~stats#referrals",
+    "class/src/Stats/index.js~Stats.html#instance-method-referrals",
+    "src/Stats/index.js~Stats#referrals",
+    "method"
+  ],
+  [
     "src/tokens/index.js",
     "file/src/Tokens/index.js.html",
     "src/Tokens/index.js",
@@ -1899,6 +1929,12 @@ window.esdocSearchIndex = [
     "src/index.js~client#scmrepolinks",
     "class/src/index.js~Client.html#instance-member-SCMRepoLinks",
     "src/index.js~Client#SCMRepoLinks",
+    "member"
+  ],
+  [
+    "src/index.js~client#stats",
+    "class/src/index.js~Client.html#instance-member-Stats",
+    "src/index.js~Client#Stats",
     "member"
   ],
   [

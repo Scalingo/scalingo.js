@@ -117,6 +117,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SCMRepoLink">SCMRepoLink</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SCMRepoLinkCreateOpts">SCMRepoLinkCreateOpts</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-SCMRepoLinkUpdateOpts">SCMRepoLinkUpdateOpts</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#stats">Stats</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Stats/index.js~Stats.html">Stats</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ReferralsStats">ReferralsStats</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#tokens">Tokens</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Tokens/index.js~Tokens.html">Tokens</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Token">Token</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#twofactorauth">TwoFactorAuth</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/TwoFactorAuth/index.js~TwoFactorAuth.html">TwoFactorAuth</a></span></span></li>
@@ -151,6 +153,7 @@ import NotificationPlatforms from &apos;./NotificationPlatforms&apos;
 import Operations from &apos;./Operations&apos;
 import SCMIntegrations from &apos;./SCMIntegrations&apos;
 import SCMRepoLinks from &apos;./SCMRepoLinks&apos;
+import Stats from &apos;./Stats&apos;
 import Tokens from &apos;./Tokens&apos;
 import TwoFactorAuth from &apos;./TwoFactorAuth&apos;
 import Users from &apos;./Users&apos;
@@ -205,6 +208,12 @@ class Client {
      * @type {SCMRepoLinks}
      */
     this.SCMRepoLinks = new SCMRepoLinks(this)
+
+    /**
+     * Stats API
+     * @type {Stats}
+     */
+    this.Stats = new Stats(this)
 
     /**
      * Tokens API

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">src/Keys/index.js | Scalingo</title>
+  <title data-ice="title">Stats | Scalingo</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -136,70 +136,251 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/Keys/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { unpackData } from &apos;../utils.js&apos;
+<div class="content" data-ice="content"><div class="header-notice">
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Stats from &apos;<span><a href="file/src/Stats/index.js.html#lineNumber6">scalingo/src/Stats/index.js</a></span>&apos;</code></pre></div>
+  <span data-ice="access">public</span>
+  <span data-ice="kind">class</span>
+  
+  
+  
+  <span data-ice="source">| <span><a href="file/src/Stats/index.js.html#lineNumber6">source</a></span></span>
+</div>
 
-/**
- * Keys API Client
- */
-export default class Keys {
-  /**
-   * Create a new Client for the Keys API
-   * @param {Client} client - Scalingo API Client
-   */
-  constructor(client) {
-    this._client = client
-  }
+<div class="self-detail detail">
+  <h1 data-ice="name">Stats</h1>
 
-  /**
-   * List all known keys
-   * @return {Promise&lt;Key[] | APIError&gt;} A list of keys
-   */
-  all() {
-    return unpackData(this._client.apiClient().get(&apos;/keys&apos;), &apos;keys&apos;)
-  }
+  
 
-  /**
-   * Show one specific key
-   * @return {Promise&lt;Key | APIError&gt;} A key
-   */
-  show(id) {
-    return unpackData(this._client.apiClient().get(`/keys/${id}`), &apos;key&apos;)
-  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
-  /**
-   * Create a new key
-   * @param {String} name - The name of the new key
-   * @param {String} content - Public SSH key content (ie. content of ~/.ssh/id_rsa.pub)
-   * @return {Promise&lt;Key | APIError&gt;} The newly created key
-   */
-  create(name, content) {
-    const data = { name, content }
-    return unpackData(this._client.apiClient().post(&apos;/keys&apos;, data, null), &apos;key&apos;)
-  }
+  
+  
+  <div class="description" data-ice="description"><p>Stats API Client</p>
+</div>
+  
 
-  /**
-   * Destroy a key
-   * @param {String} id - The id of the key to destroy
-   * @return {Promise&lt;? | APIError&gt;}
-   */
-  destroy(id) {
-    return unpackData(this._client.apiClient().delete(`/keys/${id}`))
-  }
-}
+  
 
-/**
- * @typedef {Object} Key
- * @see https://developers.scalingo.com/keys
- * @property {String} id Unique key ID
- * @property {String} name Key name
- * @property {String} content
- * @property {String} fingerprint Fingerprint of the SSH key
- * @property {Date} created_at Creation date of the SSH Key
- * @property {Object} owner Owner of the SSH key
- */
-</code></pre>
+  
 
+  
+
+  
+</div>
+
+
+
+<div data-ice="constructorSummary"><h2>Constructor Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Public Constructor</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Stats/index.js~Stats.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">(client: <span><a href="class/src/index.js~Client.html">Client</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Create a new Client for the Stats API</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+<div data-ice="methodSummary"><h2>Method Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Public Methods</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/Stats/index.js~Stats.html#instance-method-referrals">referrals</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-ReferralsStats">ReferralsStats</a></span>|<span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Return referrals stats for current user</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+<div data-ice="constructorDetails"><h2 data-ice="title">Public Constructors</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-constructor-constructor">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">constructor</span><span class="code" data-ice="signature">(client: <span><a href="class/src/index.js~Client.html">Client</a></span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/Stats/index.js.html#lineNumber11">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Create a new Client for the Stats API</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">client</td>
+      <td data-ice="type" class="code"><span><a href="class/src/index.js~Client.html">Client</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Scalingo API Client</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
+
+<div data-ice="methodDetails"><h2 data-ice="title">Public Methods</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-referrals">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">referrals</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-ReferralsStats">ReferralsStats</a></span>|<span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/Stats/index.js.html#lineNumber19">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Return referrals stats for current user</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="typedef/index.html#static-typedef-ReferralsStats">ReferralsStats</a></span>|<span><a href="class/src/errors.js~APIError.html">APIError</a></span>&gt;</td>
+          <td class="return-desc" data-ice="returnDescription"><p>The referrals stats for the current user</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
 </div>
 
 <footer class="footer">

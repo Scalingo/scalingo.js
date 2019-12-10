@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">src/Keys/index.js | Scalingo</title>
+  <title data-ice="title">src/Stats/index.js | Scalingo</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -136,15 +136,15 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/Keys/index.js</h1>
+<div class="content" data-ice="content"><h1 data-ice="title">src/Stats/index.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { unpackData } from &apos;../utils.js&apos;
 
 /**
- * Keys API Client
+ * Stats API Client
  */
-export default class Keys {
+export default class Stats {
   /**
-   * Create a new Client for the Keys API
+   * Create a new Client for the Stats API
    * @param {Client} client - Scalingo API Client
    */
   constructor(client) {
@@ -152,51 +152,23 @@ export default class Keys {
   }
 
   /**
-   * List all known keys
-   * @return {Promise&lt;Key[] | APIError&gt;} A list of keys
+   * Return referrals stats for current user
+   * @return {Promise&lt;ReferralsStats | APIError&gt;} The referrals stats for the current user
    */
-  all() {
-    return unpackData(this._client.apiClient().get(&apos;/keys&apos;), &apos;keys&apos;)
-  }
-
-  /**
-   * Show one specific key
-   * @return {Promise&lt;Key | APIError&gt;} A key
-   */
-  show(id) {
-    return unpackData(this._client.apiClient().get(`/keys/${id}`), &apos;key&apos;)
-  }
-
-  /**
-   * Create a new key
-   * @param {String} name - The name of the new key
-   * @param {String} content - Public SSH key content (ie. content of ~/.ssh/id_rsa.pub)
-   * @return {Promise&lt;Key | APIError&gt;} The newly created key
-   */
-  create(name, content) {
-    const data = { name, content }
-    return unpackData(this._client.apiClient().post(&apos;/keys&apos;, data, null), &apos;key&apos;)
-  }
-
-  /**
-   * Destroy a key
-   * @param {String} id - The id of the key to destroy
-   * @return {Promise&lt;? | APIError&gt;}
-   */
-  destroy(id) {
-    return unpackData(this._client.apiClient().delete(`/keys/${id}`))
+  referrals() {
+    return unpackData(
+      this._client.apiClient().get(&apos;/account/referrals/stats&apos;),
+      &apos;referral_stats&apos;,
+    )
   }
 }
 
 /**
- * @typedef {Object} Key
- * @see https://developers.scalingo.com/keys
- * @property {String} id Unique key ID
- * @property {String} name Key name
- * @property {String} content
- * @property {String} fingerprint Fingerprint of the SSH key
- * @property {Date} created_at Creation date of the SSH Key
- * @property {Object} owner Owner of the SSH key
+ * @typedef {Object} ReferralsStats
+ * @property {Number} clicks Number of people who have clicked on the link
+ * @property {Number} signups Number of people who have signed up from the link
+ * @property {Number} amount_earned how much credit has been added to the account
+ * @property {String} url User&apos;s referral link
  */
 </code></pre>
 
