@@ -14,6 +14,7 @@ import NotificationPlatforms from './NotificationPlatforms'
 import Operations from './Operations'
 import SCMIntegrations from './SCMIntegrations'
 import SCMRepoLinks from './SCMRepoLinks'
+import Stats from './Stats'
 import Tokens from './Tokens'
 import TwoFactorAuth from './TwoFactorAuth'
 import Users from './Users'
@@ -68,6 +69,12 @@ class Client {
      * @type {SCMRepoLinks}
      */
     this.SCMRepoLinks = new SCMRepoLinks(this)
+
+    /**
+     * Stats API
+     * @type {Stats}
+     */
+    this.Stats = new Stats(this)
 
     /**
      * Tokens API
