@@ -2,14 +2,14 @@ import { testGetter, testPost, testDelete } from '../utils/http.js'
 import Keys from '../../src/Keys'
 
 describe('Keys#all', () => {
-  testGetter('https://api.scalingo.com/v1/keys', null, 'keys', (client) => {
+  testGetter('https://auth.scalingo.com/v1/keys', null, 'keys', (client) => {
     return new Keys(client).all()
   })
 })
 
 describe('Keys#show', () => {
   testGetter(
-    'https://api.scalingo.com/v1/keys/some-key-id',
+    'https://auth.scalingo.com/v1/keys/some-key-id',
     null,
     'key',
     (client) => {
@@ -25,7 +25,7 @@ describe('Keys#create', () => {
   }
 
   testPost(
-    'https://api.scalingo.com/v1/keys',
+    'https://auth.scalingo.com/v1/keys',
     null,
     expectedBody,
     'key',
@@ -36,7 +36,7 @@ describe('Keys#create', () => {
 })
 
 describe('Keys#destroy', () => {
-  testDelete('https://api.scalingo.com/v1/keys/some-key-id', (client) => {
+  testDelete('https://auth.scalingo.com/v1/keys/some-key-id', (client) => {
     return new Keys(client).destroy('some-key-id')
   })
 })

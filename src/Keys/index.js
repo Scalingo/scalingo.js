@@ -17,7 +17,7 @@ export default class Keys {
    * @return {Promise<Key[] | APIError>} A list of keys
    */
   all() {
-    return unpackData(this._client.apiClient().get('/keys'), 'keys')
+    return unpackData(this._client.authApiClient().get('/keys'), 'keys')
   }
 
   /**
@@ -25,7 +25,7 @@ export default class Keys {
    * @return {Promise<Key | APIError>} A key
    */
   show(id) {
-    return unpackData(this._client.apiClient().get(`/keys/${id}`), 'key')
+    return unpackData(this._client.authApiClient().get(`/keys/${id}`), 'key')
   }
 
   /**
@@ -36,7 +36,10 @@ export default class Keys {
    */
   create(name, content) {
     const data = { name, content }
-    return unpackData(this._client.apiClient().post('/keys', data, null), 'key')
+    return unpackData(
+      this._client.authApiClient().post('/keys', data, null),
+      'key',
+    )
   }
 
   /**
@@ -45,7 +48,7 @@ export default class Keys {
    * @return {Promise<? | APIError>}
    */
   destroy(id) {
-    return unpackData(this._client.apiClient().delete(`/keys/${id}`))
+    return unpackData(this._client.authApiClient().delete(`/keys/${id}`))
   }
 }
 
