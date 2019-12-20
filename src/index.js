@@ -1,5 +1,6 @@
 import Apps from './Apps'
 import Addons from './Addons'
+import Billing from './Billing'
 import Collaborators from './Collaborators'
 import Containers from './Containers'
 import Deployments from './Deployments'
@@ -48,6 +49,13 @@ class Client {
      * @type {Apps}
      */
     this.Apps = new Apps(this)
+
+    /**
+     * Billing API
+     * @type {Billing}
+     */
+    this.Billing = new Billing(this)
+
     /**
      * Containers API
      * @type {Containers}
