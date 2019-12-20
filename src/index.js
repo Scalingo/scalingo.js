@@ -28,14 +28,16 @@ class Client {
    * @param {Object} opts - Optional configuration
    * @param {String} [opts.apiUrl=https://api.scalingo.com] - URL to the Scalingo API.
    * @param {String} [opts.authApiUrl=https://auth.scalingo.com] - URL to the Scalingo Authentication API.
+   * @param {String} [opts.billingApiUrl=https://cashmachine.scalingo.com] - URL to the Scalingo Billing API.
    * @param {String} [opts.noUserAgent=false] - Do not set the user agent
    */
   constructor(token, opts = {}) {
-    const { apiUrl, authApiUrl } = opts
+    const { apiUrl, authApiUrl, billingApiUrl } = opts
 
     this._token = token
     this._apiUrl = apiUrl || 'https://api.scalingo.com'
     this._authApiUrl = authApiUrl || 'https://auth.scalingo.com'
+    this._billingApiUrl = billingApiUrl || 'https://cashmachine.scalingo.com'
     this._headers = {}
     if (opts && !opts.noUserAgent) {
       this._headers['User-Agent'] = 'Scalingo Javascript Client'
@@ -188,6 +190,19 @@ class Client {
   }
 
   /**
+   * Create an axios instance configured for the Scalingo Billing API
+   * @return {Object} Axios client for the Scalingo Billing API
+   */
+  billingApiClient() {
+    return axios.create({
+      baseURL: `${this._billingApiUrl}/`,
+      headers: Object.assign({}, this._headers, {
+        Authorization: `Bearer ${this._token}`,
+      }),
+    })
+  }
+
+  /**
    * Create a vanilla axios instance
    * @return {Object} Axios instance
    */
@@ -209,6 +224,7 @@ export { Client }
  * @param {Object} opts - Optional configuration
  * @param {String} [opts.apiUrl=https://api.scalingo.com] - URL to the Scalingo API.
  * @param {String} [opts.authApiUrl=https://auth.scalingo.com] - URL to the Scalingo Authentication API.
+ * @param {String} [opts.billingApiUrl=https://cashmachine.scalingo.com] - URL to the Scalingo Billing API.
  * @return {Promise<Client | Error>} a valid Client
  */
 export async function clientFromToken(token, opts) {
