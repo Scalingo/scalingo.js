@@ -24,6 +24,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "scalingo/src/billing/index.js~billing",
+    "class/src/Billing/index.js~Billing.html",
+    "<span>Billing</span> <span class=\"search-result-import-path\">scalingo/src/Billing/index.js</span>",
+    "class"
+  ],
+  [
     "scalingo/src/index.js~client",
     "class/src/index.js~Client.html",
     "<span>Client</span> <span class=\"search-result-import-path\">scalingo/src/index.js</span>",
@@ -682,6 +688,54 @@ window.esdocSearchIndex = [
     "class/src/Apps/index.js~Apps.html#instance-method-update",
     "src/Apps/index.js~Apps#update",
     "method"
+  ],
+  [
+    "src/billing/index.js",
+    "file/src/Billing/index.js.html",
+    "src/Billing/index.js",
+    "file"
+  ],
+  [
+    "src/billing/index.js~billing#constructor",
+    "class/src/Billing/index.js~Billing.html#instance-constructor-constructor",
+    "src/Billing/index.js~Billing#constructor",
+    "method"
+  ],
+  [
+    "src/billing/index.js~billing#createprofile",
+    "class/src/Billing/index.js~Billing.html#instance-method-createProfile",
+    "src/Billing/index.js~Billing#createProfile",
+    "method"
+  ],
+  [
+    "src/billing/index.js~billing#profile",
+    "class/src/Billing/index.js~Billing.html#instance-method-profile",
+    "src/Billing/index.js~Billing#profile",
+    "method"
+  ],
+  [
+    "src/billing/index.js~billing#updateprofile",
+    "class/src/Billing/index.js~Billing.html#instance-method-updateProfile",
+    "src/Billing/index.js~Billing#updateProfile",
+    "method"
+  ],
+  [
+    "src/billing/index.js~billingprofile",
+    "typedef/index.html#static-typedef-BillingProfile",
+    "src/Billing/index.js~BillingProfile",
+    "typedef"
+  ],
+  [
+    "src/billing/index.js~paypalpaymentmethod",
+    "typedef/index.html#static-typedef-PaypalPaymentMethod",
+    "src/Billing/index.js~PaypalPaymentMethod",
+    "typedef"
+  ],
+  [
+    "src/billing/index.js~stripepaymentmethod",
+    "typedef/index.html#static-typedef-StripePaymentMethod",
+    "src/Billing/index.js~StripePaymentMethod",
+    "typedef"
   ],
   [
     "src/collaborators/index.js",
@@ -1848,6 +1902,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/index.js~client#billing",
+    "class/src/index.js~Client.html#instance-member-Billing",
+    "src/index.js~Client#Billing",
+    "member"
+  ],
+  [
     "src/index.js~client#collaborators",
     "class/src/index.js~Client.html#instance-member-Collaborators",
     "src/index.js~Client#Collaborators",
@@ -1965,6 +2025,12 @@ window.esdocSearchIndex = [
     "src/index.js~client#authapiclient",
     "class/src/index.js~Client.html#instance-method-authApiClient",
     "src/index.js~Client#authApiClient",
+    "method"
+  ],
+  [
+    "src/index.js~client#billingapiclient",
+    "class/src/index.js~Client.html#instance-method-billingApiClient",
+    "src/index.js~Client#billingApiClient",
     "method"
   ],
   [

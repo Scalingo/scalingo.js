@@ -1,7 +1,7 @@
 {
-  "coverage": "70%",
-  "expectCount": 240,
-  "actualCount": 168,
+  "coverage": "70.28%",
+  "expectCount": 249,
+  "actualCount": 175,
   "files": {
     "src/Addons/index.js": {
       "expectCount": 11,
@@ -15,6 +15,13 @@
       "actualCount": 11,
       "undocumentLines": [
         13
+      ]
+    },
+    "src/Billing/index.js": {
+      "expectCount": 6,
+      "actualCount": 5,
+      "undocumentLines": [
+        12
       ]
     },
     "src/Collaborators/index.js": {
@@ -227,14 +234,15 @@
       ]
     },
     "src/index.js": {
-      "expectCount": 30,
-      "actualCount": 25,
+      "expectCount": 33,
+      "actualCount": 27,
       "undocumentLines": [
-        24,
-        36,
-        37,
+        25,
         38,
-        39
+        39,
+        40,
+        41,
+        42
       ]
     },
     "src/utils.js": {

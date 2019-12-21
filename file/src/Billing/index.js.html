@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">src/Deployments/index.js | Scalingo</title>
+  <title data-ice="title">src/Billing/index.js | Scalingo</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -140,117 +140,96 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/Deployments/index.js</h1>
+<div class="content" data-ice="content"><h1 data-ice="title">src/Billing/index.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { unpackData } from &apos;../utils&apos;
-/**
- * Deployment API Client
- */
 
-export default class Deployments {
+/**
+ * Billing API Client
+ */
+export default class Billing {
   /**
-   * Create a new Client for the Deployment API
-   * @param {Client} client Scalingo API Client
+   * Create new Client for the Billing API
+   * @params {Client} client - Scalingo API Client
    */
   constructor(client) {
     this._client = client
   }
 
   /**
-   * List all deployments for an app
-   * @see https://developers.scalingo.com/deployments#list-the-deployments-of-an-app
-   * @param {String} appId ID of the app
-   * @param {PaginationOpts} opts optional parameters
-   * @return {Promise&lt;DeploymentsResult[] | APIError&gt;} List of deployments for this app
+   * Return the billing profile of current user
+   * @see https://developers.scalingo.com/billing#billing-profile
+   * @return {Promise&lt;BillingProfile | APIError&gt;}
    */
-  for(appId, opts) {
+  profile() {
     return unpackData(
-      this._client
-        .apiClient()
-        .get(`/apps/${appId}/deployments`, { params: opts }),
+      this._client.billingApiClient().get(&apos;/profile&apos;),
+      &apos;profile&apos;,
     )
   }
 
   /**
-   * Get a deployment of an app
-   * @see https://developers.scalingo.com/deployments#get-a-particular-deployment
-   * @param {String} appId ID of the app
-   * @param {String} deploymentId ID of the deployment
-   * @return {Promise&lt;Deployment | APIError&gt;} Details of the deployment
+   * Create the billing profile of current user. Returns an error if already existing
+   * @see https://developers.scalingo.com/billing#billing-profile
+   * @param {BillingProfile} profile The billing profile to create
+   * @return {Promise&lt;BillingProfile | APIError&gt;}
    */
-  find(appId, deploymentId) {
+  createProfile(profile) {
     return unpackData(
-      this._client
-        .apiClient()
-        .get(`/apps/${appId}/deployments/${deploymentId}`),
-      &apos;deployment&apos;,
+      this._client.billingApiClient().post(&apos;/profiles&apos;, { profile }),
+      &apos;profile&apos;,
     )
   }
 
   /**
-   * Get the logs of a deployment
-   * @see https://developers.scalingo.com/deployments#get-the-output-of-the-deployment
-   * @param {String} appId ID of the app
-   * @param {String} deploymentId ID of the deployment
-   * @return {Promise&lt;String | APIError&gt;} Logs of the deployment
+   * Update the billing profile of current user. Returns an error if not already existing
+   * @param {String} id The if of the billing profile to update
+   * @param {BillingProfile} profile The attributes to update
+   * @return {Promise&lt;BillingProfile | APIError&gt;}
    */
-  logs(appId, deploymentId) {
+  updateProfile(id, profile) {
     return unpackData(
-      this._client
-        .apiClient()
-        .get(`/apps/${appId}/deployments/${deploymentId}/output`),
+      this._client.billingApiClient().put(`/profiles/${id}`, { profile }),
+      &apos;profile&apos;,
     )
   }
 }
 
 /**
- * @typedef {Object} Deployment
- * @see https://developers.scalingo.com/deployments
- * @property {String} id unique ID
- * @property {String} app_id unique ID referencing the app this deployment belongs to
- * @property {Date} created_at date of creation
- * @property {DeploymentStatus} status status of the deployment (building, success, aborted, *-error)
- * @property {String} git_ref git SHA
- * @property {DeploymentPusher} pusher embedded user who pushed the GIT reference
- * @property {DeploymentLinks} links hypermedia links about the deployment
+ * @typedef {Object} BillingProfile
+ * @property {String} id
+ * @property {String} name
+ * @property {?String} email
+ * @property {?String} credit
+ * @property {String} address_line1
+ * @property {?String} address_line2
+ * @property {String} address_zip
+ * @property {String} address_city
+ * @property {?String} address_state
+ * @property {String} address_country
+ * @property {?String} vat_number
+ * @property {?String} company
+ * @property {?String} payment_method
+ * @property {?StripePaymentMethod} stripe_payment_method
+ * @property {?PaypalPaymentMethod} paypal_payment_method
  */
 
 /**
- * @typedef {Object} DeploymentPusher
- * @see https://developers.scalingo.com/deployments
- * @property {String} id unique ID
- * @property {String} email email of user who pushed
- * @property {String} username username on Scalingo&apos;s platform
+ * @typedef {Object} StripePaymentMethod
+ * @property {String} id
+ * @property {?String} default_card_last4
+ * @property {?String} default_card_exp
+ * @property {?String} default_card_brand
+ * @property {?String} default_card_name
+ * @property {?String} sepa_bank_code
+ * @property {?String} sepa_country
+ * @property {?String} sepa_last4
+ * @property {?String} sepa_mandate_reference
+ * @property {?String} sepa_mandate_url
  */
 
 /**
- * @typedef {Object} DeploymentLinks
- * @see https://developers.scalingo.com/deployments
- * @property {String} output URL to the logs of the deployment
- */
-
-/**
- * @typedef {Object} DeploymentsResult
- * @property {Deployment[]} deployments List of deployments
- * @property {DeploymentsMeta} meta metadata linked to this request
- */
-
-/**
- * @typedef {Object} DeploymentsMeta
- * @property {PaginationMeta} pagination Pagination metadata
- */
-
-/**
- * @typedef {String} DeploymentStatus
- * @desc
- * Can take the following values:
- * - **building**: when the buildpack is chosen and executed
- * - **pushing**: the generated Docker image is pushed to our registry
- * - **starting**: the order to start your app has been transmitted to our scheduler
- * - **success**: the application has correctly started, end of deployment
- * - **crashed-error**: the application failed to boot, have a look to the logs
- * - **timeout-error**: the application has not started in 60 seconds
- * - **build-error**: something went wrong during the buildpack execution, have a look at deployments logs
- * - **aborted**: if the connection is broken between the pusher and our infrastructure, the deployment is considered as canceled.
+ * @typedef {Object} PaypalPaymentMethod
+ * @property {String} id
  */
 </code></pre>
 

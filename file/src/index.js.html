@@ -46,6 +46,10 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-AppCreateOpts">AppCreateOpts</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-AppLinks">AppLinks</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-AppUpdateOpts">AppUpdateOpts</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#billing">Billing</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Billing/index.js~Billing.html">Billing</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-BillingProfile">BillingProfile</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-PaypalPaymentMethod">PaypalPaymentMethod</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-StripePaymentMethod">StripePaymentMethod</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#collaborators">Collaborators</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Collaborators/index.js~Collaborators.html">Collaborators</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ACCEPTED">ACCEPTED</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PENDING">PENDING</a></span></span></li>
@@ -139,6 +143,7 @@
 <div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Apps from &apos;./Apps&apos;
 import Addons from &apos;./Addons&apos;
+import Billing from &apos;./Billing&apos;
 import Collaborators from &apos;./Collaborators&apos;
 import Containers from &apos;./Containers&apos;
 import Deployments from &apos;./Deployments&apos;
@@ -167,14 +172,16 @@ class Client {
    * @param {Object} opts - Optional configuration
    * @param {String} [opts.apiUrl=https://api.scalingo.com] - URL to the Scalingo API.
    * @param {String} [opts.authApiUrl=https://auth.scalingo.com] - URL to the Scalingo Authentication API.
+   * @param {String} [opts.billingApiUrl=https://cashmachine.scalingo.com] - URL to the Scalingo Billing API.
    * @param {String} [opts.noUserAgent=false] - Do not set the user agent
    */
   constructor(token, opts = {}) {
-    const { apiUrl, authApiUrl } = opts
+    const { apiUrl, authApiUrl, billingApiUrl } = opts
 
     this._token = token
     this._apiUrl = apiUrl || &apos;https://api.scalingo.com&apos;
     this._authApiUrl = authApiUrl || &apos;https://auth.scalingo.com&apos;
+    this._billingApiUrl = billingApiUrl || &apos;https://cashmachine.scalingo.com&apos;
     this._headers = {}
     if (opts &amp;&amp; !opts.noUserAgent) {
       this._headers[&apos;User-Agent&apos;] = &apos;Scalingo Javascript Client&apos;
@@ -185,6 +192,13 @@ class Client {
      * @type {Apps}
      */
     this.Apps = new Apps(this)
+
+    /**
+     * Billing API
+     * @type {Billing}
+     */
+    this.Billing = new Billing(this)
+
     /**
      * Containers API
      * @type {Containers}
@@ -327,6 +341,19 @@ class Client {
   }
 
   /**
+   * Create an axios instance configured for the Scalingo Billing API
+   * @return {Object} Axios client for the Scalingo Billing API
+   */
+  billingApiClient() {
+    return axios.create({
+      baseURL: `${this._billingApiUrl}/`,
+      headers: Object.assign({}, this._headers, {
+        Authorization: `Bearer ${this._token}`,
+      }),
+    })
+  }
+
+  /**
    * Create a vanilla axios instance
    * @return {Object} Axios instance
    */
@@ -348,6 +375,7 @@ export { Client }
  * @param {Object} opts - Optional configuration
  * @param {String} [opts.apiUrl=https://api.scalingo.com] - URL to the Scalingo API.
  * @param {String} [opts.authApiUrl=https://auth.scalingo.com] - URL to the Scalingo Authentication API.
+ * @param {String} [opts.billingApiUrl=https://cashmachine.scalingo.com] - URL to the Scalingo Billing API.
  * @return {Promise&lt;Client | Error&gt;} a valid Client
  */
 export async function clientFromToken(token, opts) {
