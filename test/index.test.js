@@ -23,20 +23,23 @@ describe('new Client', () => {
     expect(client._token).to.eq('test')
     expect(client._apiUrl).to.eq('https://api.scalingo.com')
     expect(client._authApiUrl).to.eq('https://auth.scalingo.com')
+    expect(client._billingApiUrl).to.eq('https://cashmachine.scalingo.com')
   })
 
   it('should apply correct opts', () => {
     const client = new Client('test', {
       apiUrl: 'https://api.test.com',
       authApiUrl: 'https://auth.test.com',
+      billingApiUrl: 'https://billing.test.com',
     })
     expect(client._apiUrl).to.eq('https://api.test.com')
     expect(client._authApiUrl).to.eq('https://auth.test.com')
+    expect(client._billingApiUrl).to.eq('https://billing.test.com')
   })
 })
 
 describe('apiClient', () => {
-  it('should set the user agent and the breater token', () => {
+  it('should set the user agent and the bearer token', () => {
     const client = new Client('totothetoken').apiClient()
     expect(client.defaults.headers).to.contains({
       Authorization: 'Bearer totothetoken',
@@ -44,8 +47,27 @@ describe('apiClient', () => {
     })
   })
 
-  it('should just set the breater token if opts.noUserAgent', () => {
+  it('should just set the bearer token if opts.noUserAgent', () => {
     const client = new Client('totothetoken', { noUserAgent: true }).apiClient()
+    expect(client.defaults.headers).to.contains({
+      Authorization: 'Bearer totothetoken',
+    })
+  })
+})
+
+describe('billingApiClient', () => {
+  it('should set the user agent and the bearer token', () => {
+    const client = new Client('totothetoken').billingApiClient()
+    expect(client.defaults.headers).to.contains({
+      Authorization: 'Bearer totothetoken',
+      'User-Agent': 'Scalingo Javascript Client',
+    })
+  })
+
+  it('should just set the bearer token if opts.noUserAgent', () => {
+    const client = new Client('totothetoken', {
+      noUserAgent: true,
+    }).billingApiClient()
     expect(client.defaults.headers).to.contains({
       Authorization: 'Bearer totothetoken',
     })
