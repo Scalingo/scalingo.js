@@ -1,24 +1,52 @@
 import { unpackData } from '../utils'
+import { Client, APIResponse } from '..'
+import { App } from '@/Apps'
+
+export interface CollaboratorInvitation {
+  /** Id of the collaborator */
+  id: string
+  /** Email of the collaborator to invite */
+  email: string
+  /** Username of the person to invite */
+  username: string
+  /** Status of the invitation */
+  status: string
+  /** Link of for the invitation */
+  invitation_link: string
+}
+
+export interface Collaborator {
+  /** Id of the collaborator */
+  id: string
+  /** Email of the collaborator to invite */
+  email: string
+  /** Username of the person to invite */
+  username: string
+  /** Status of the invitation */
+  status: string
+}
 
 /**
  * Collaborators API Client
  */
 export default class Collaborators {
+  /** Scalingo API Client */
+  _client: Client
+
   /**
-   * Create new Client for the Collaborators API
-   * @params {Client} client - Scalingo API Client
+   * Create a new "thematic" client
+   * @param client Scalingo API Client
    */
-  constructor(client) {
+  constructor(client: Client) {
     this._client = client
   }
 
   /**
    * List all collaborators of an application
    * @see https://developers.scalingo.com/collaborators#list-collaborators-of-an-app
-   * @params {String} appId ID of the app to get collaborators list
-   * @return {Promise<Collaborator[] | APIError>}
+   * @param appId ID of the app to get collaborators list}
    */
-  for(appId) {
+  for(appId: string): APIResponse<Collaborator[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/collaborators`),
       'collaborators',
@@ -28,11 +56,10 @@ export default class Collaborators {
   /**
    * Remove a collaborator
    * @see https://developers.scalingo.com/collaborators#delete-a-collaborator
-   * @params {String} appId ID of the application
-   * @params {String} collaboratorId ID of the collaborator to remove
-   * @return {Promise<?APIError>}
+   * @param appId ID of the application
+   * @param collaboratorId ID of the collaborator to remove
    */
-  destroy(appId, collaboratorId) {
+  destroy(appId: string, collaboratorId: string): APIResponse {
     return unpackData(
       this._client
         .apiClient()
@@ -43,11 +70,10 @@ export default class Collaborators {
   /**
    * Invite collaborators to an application
    * @see https://developers.scalingo.com/collaborators#invite-collaborator-to-work-on-an-app
-   * @params {String} appId Id of the application
-   * @params {String} email Email of the collaborator to invite
-   * @return {Promise<CollaboratorInvitation | APIError>}
+   * @param appId Id of the application
+   * @param email Email of the collaborator to invite
    */
-  invite(appId, email) {
+  invite(appId: string, email: string): APIResponse<CollaboratorInvitation> {
     return unpackData(
       this._client.apiClient().post(`/apps/${appId}/collaborators`, {
         collaborator: { email: email },
@@ -60,9 +86,8 @@ export default class Collaborators {
    * Accept invitation to an application
    * @see https://developers.scalingo.com/collaborators#accept-an-invitation-to-collaborate
    * @params {String} token Token of the invitation returned when adding a collaborator
-   * @return {App | APIError}
    */
-  inviteAccept(token) {
+  inviteAccept(token: string): APIResponse<App> {
     return unpackData(
       this._client
         .apiClient()
@@ -70,20 +95,3 @@ export default class Collaborators {
     )
   }
 }
-
-/**
- * @typedef {Object} CollaboratorInvitation
- * @property {String} id Id of the collaborator
- * @property {String} email Email of the collaborator to invite
- * @property {String} username Username of the person to invite
- * @property {String} status Status of the invitation
- * @property {String} invitation_link Link of for the invitation
- */
-
-/**
- * @typedef {Object} Collaborator
- * @property {String} id Id of the collaborator
- * @property {String} email Email of the collaborator to invite
- * @property {String} username Username of the person to invite
- * @property {String} status Status of the invitation
- */

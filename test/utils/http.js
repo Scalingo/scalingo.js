@@ -136,7 +136,12 @@ export function testUpdate(url, body, prefix, build) {
     expect(mock.history.patch[0].headers.Authorization).to.eq(
       'Bearer test-token',
     )
-    expect(JSON.parse(mock.history.patch[0].data)).to.deep.eq(body)
+
+    const parsedBody = mock.history.patch[0].data
+      ? JSON.parse(mock.history.patch[0].data)
+      : null
+
+    expect(parsedBody).to.deep.eq(body)
   })
 
   it('returns an error when the API fails', async () => {
