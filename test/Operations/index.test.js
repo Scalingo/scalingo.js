@@ -1,4 +1,4 @@
-import { testGetter } from '../utils/http.js'
+import { testGetter } from '../utils/http'
 import Operations from '../../src/Operations'
 
 describe('Operations#getOperation', () => {

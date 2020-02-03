@@ -1,4 +1,4 @@
-import { unpackData } from '../utils.js'
+import { unpackData } from '../utils'
 
 export const TOTP_PROVIDER = 'totp'
 export const DEFAULT_PROVIDER = TOTP_PROVIDER

@@ -1,4 +1,4 @@
-import Listener from '../../src/Deployments/listener.js'
+import Listener from '../../src/Deployments/listener'
 import sinon from 'sinon'
 import { expect } from 'chai'
 

@@ -1,4 +1,4 @@
-import { testGetter, testPost, testUpdate, testDelete } from '../utils/http.js'
+import { testGetter, testPost, testUpdate, testDelete } from '../utils/http'
 import Domains from '../../src/Domains'
 
 describe('Domains#for', () => {

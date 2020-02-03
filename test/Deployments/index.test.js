@@ -1,4 +1,4 @@
-import { testGetter } from '../utils/http.js'
+import { testGetter } from '../utils/http'
 import Deployments from '../../src/Deployments'
 
 describe('Deployments#find', () => {

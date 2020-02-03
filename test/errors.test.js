@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { unpackData } from '../src/utils.js'
+import { unpackData } from '../src/utils'
 import { APIError } from '../src/errors'
 
 describe('unpackData', () => {

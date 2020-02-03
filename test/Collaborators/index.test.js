@@ -3,7 +3,7 @@ import {
   testDelete,
   testPost,
   testParamsGetter,
-} from '../utils/http.js'
+} from '../utils/http'
 import Collaborators from '../../src/Collaborators'
 import '../factories'
 

@@ -1,4 +1,4 @@
-import { testGetter } from '../utils/http.js'
+import { testGetter } from '../utils/http'
 import Metrics from '../../src/Metrics'
 import { Client } from '../../src'
 import MockAdapter from 'axios-mock-adapter'

@@ -1,4 +1,4 @@
-import { unpackData } from '../utils.js'
+import { unpackData } from '../utils'
 
 /**
  * SCM Integrations API Client

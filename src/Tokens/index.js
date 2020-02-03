@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { unpackData } from '../utils.js'
+import { unpackData } from '../utils'
 
 /**
  * Tokens API Client

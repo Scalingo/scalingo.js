@@ -4,7 +4,7 @@ import {
   testUpdate,
   testDelete,
   testPut,
-} from '../utils/http.js'
+} from '../utils/http'
 import Environment from '../../src/Environment'
 
 describe('Environment#for', () => {

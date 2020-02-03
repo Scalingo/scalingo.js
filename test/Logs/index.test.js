@@ -5,7 +5,7 @@ import { Client } from '../../src'
 import Apps from '../../src/Apps'
 import LogsListener from '../../src/Logs/listener'
 import sinon from 'sinon'
-import { testGetter } from '../utils/http.js'
+import { testGetter } from '../utils/http'
 import Logs from '../../src/Logs'
 
 describe('Logs#for', () => {

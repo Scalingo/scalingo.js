@@ -1,4 +1,4 @@
-import { unpackData } from '../utils.js'
+import { unpackData } from '../utils'
 import { Operation } from '../Operations/utils'
 
 /**

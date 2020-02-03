@@ -1,4 +1,4 @@
-import { testGetter, testPost } from '../utils/http.js'
+import { testGetter, testPost } from '../utils/http'
 import Containers from '../../src/Containers'
 import { Factory } from 'rosie'
 import { expect } from 'chai'

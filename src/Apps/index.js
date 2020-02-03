@@ -1,5 +1,5 @@
-import { unpackData } from '../utils.js'
-import Listener from '../Deployments/listener.js'
+import { unpackData } from '../utils'
+import Listener from '../Deployments/listener'
 
 /**
  * Apps API Client

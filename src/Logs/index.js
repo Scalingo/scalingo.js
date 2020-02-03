@@ -1,5 +1,5 @@
 import LogsListener from '../Logs/listener'
-import { unpackData } from '../utils.js'
+import { unpackData } from '../utils'
 
 export default class Logs {
   /**
