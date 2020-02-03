@@ -87,7 +87,7 @@ export class Operation {
    */
   wait() {
     return new Promise((resolve, reject) => {
-      const waitInterval = setInterval(function() {
+      const waitInterval = setInterval(() => {
         this.refresh()
           .then((response) => {
             if (this.status === 'done') {

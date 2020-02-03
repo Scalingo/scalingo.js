@@ -11,7 +11,8 @@
     "build": "rollup -c",
     "docs": "esdoc",
     "lint": "eslint --ext .js ./src ./test",
-    "test": "mocha --require @babel/register --recursive"
+    "test": "mocha --require @babel/register --recursive",
+    "test-ts": "ts-mocha --require @babel/register --recursive --paths -p test/tsconfig.test.json test/*.js test/**/*.test.js"
   },
   "dependencies": {
     "axios": "0.19.x",
@@ -44,7 +45,9 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rosie": "2.x",
     "sinon": "7.x",
-    "typescript": "3.x"
+    "ts-mocha": "^6.0.0",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^3.7.5"
   },
   "publishConfig": {
     "access": "public"
