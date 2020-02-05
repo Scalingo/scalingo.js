@@ -1,4 +1,4 @@
-import { unpackData } from '@/utils'
+import { unpackData } from '../utils'
 import { Client, APIResponse } from '..'
 
 export const TOTP_PROVIDER = 'totp'

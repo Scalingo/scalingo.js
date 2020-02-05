@@ -1,6 +1,6 @@
 import WebSocket from 'isomorphic-ws'
 import { Client } from '..'
-import { DeploymentStatus } from '@/Deployments'
+import { DeploymentStatus } from '../Deployments'
 
 /** @see https://developers.scalingo.com/deployments#get-real-time-output-of-a-live-deployment */
 export interface EventNewDeployment {

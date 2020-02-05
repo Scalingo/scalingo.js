@@ -1,6 +1,6 @@
 import { unpackData } from '../utils'
 import { Client, APIResponse } from '..'
-import { Key } from '@/Keys'
+import { Key } from '../Keys'
 
 /**
  * Can take one of the following values:

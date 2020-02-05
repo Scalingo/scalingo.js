@@ -1,6 +1,6 @@
 import { unpackData } from '../utils'
 import { Client, APIResponse } from '..'
-import { PaginationMeta } from '@/meta'
+import { PaginationMeta } from '../meta'
 
 export interface EventsPaginationOpts {
   /** Page number */

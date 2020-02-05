@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { unpackData } from '@/utils'
+import { unpackData } from '../utils'
 import { Client, APIResponse } from '..'
 
 export interface Token {

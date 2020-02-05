@@ -1,4 +1,4 @@
-import { unpackData } from '@/utils'
+import { unpackData } from '../utils'
 import { Client, APIResponse } from '..'
 
 type SCMType = 'github' | 'gitlab' | 'github-enterprise' | 'gitlab-self-hosted'

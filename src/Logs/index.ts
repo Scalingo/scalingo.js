@@ -1,7 +1,7 @@
 import LogsListener from '../Logs/listener'
 import { unpackData } from '../utils'
 import { Client, APIResponse } from '..'
-import { APIError } from '@/errors'
+import { APIError } from '../errors'
 
 export interface AppLogsOpts {
   /** Number of log lines to fetch */

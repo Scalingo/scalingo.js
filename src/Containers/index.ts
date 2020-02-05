@@ -1,7 +1,7 @@
 import { unpackData } from '../utils'
 import { Operation } from '../Operations/utils'
 import { Client, APIResponse } from '..'
-import { APIError } from '@/errors'
+import { APIError } from '../errors'
 
 export interface ContainersOperation {
   /** Response of the API call */

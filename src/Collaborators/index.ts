@@ -1,6 +1,6 @@
 import { unpackData } from '../utils'
 import { Client, APIResponse } from '..'
-import { App } from '@/Apps'
+import { App } from '../Apps'
 
 export interface CollaboratorInvitation {
   /** Id of the collaborator */

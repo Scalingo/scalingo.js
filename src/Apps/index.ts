@@ -1,7 +1,7 @@
 import { unpackData } from '../utils'
 import Listener from '../Deployments/listener'
 import { Client, APIResponse } from '..'
-import { APIError } from '@/errors'
+import { APIError } from '../errors'
 
 /** @see https://developers.scalingo.com/apps */
 export interface App {
