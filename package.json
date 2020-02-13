@@ -8,9 +8,10 @@
   "author": "Jonathan Hurter <john@scalingo.com>",
   "license": "MIT",
   "scripts": {
-    "build": "yarn lint --quiet && rollup -c",
+    "build": "yarn eslint --quiet && tsc && rollup -c",
     "docs": "typedoc src",
-    "lint": "tsc --noEmit && eslint --ext .js,.ts ./src ./test",
+    "lint": "tsc --noEmit && yarn eslint",
+    "eslint": "eslint --ext .js,.ts ./src ./test",
     "test": "ts-mocha --require @babel/register --recursive --paths -p test/tsconfig.test.json test/*.js test/**/*.test.js"
   },
   "dependencies": {

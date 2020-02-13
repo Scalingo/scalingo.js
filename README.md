@@ -30,6 +30,12 @@ let user = await client.Users.self()
 console.log(user)
 ```
 
+### Advanced / TypeScript consumers
+
+Requiring or importing `'scalingo'` as shown above will consume the rollup build output.
+
+If you wish to consume the source directly, for instance for typescript consumers, you can `import Scalingo from 'scalingo/src'` instead.
+
 ## Examples
 
 A bunch of examples are available in the `examples` folder to show how to use

@@ -9,26 +9,16 @@ import pkg from './package.json'
 
 export default {
   input: 'src/index.ts',
-  output: [
-    {
-      file: pkg.main,
-      format: 'umd',
-      globals: {
-        axios: 'axios',
-        'isomorphic-ws': 'WebSocket',
-      },
-      name: 'scalingo',
+  output: {
+    file: pkg.main,
+    format: 'umd',
+    globals: {
+      axios: 'axios',
+      'isomorphic-ws': 'WebSocket',
     },
-    {
-      file: pkg.module,
-      format: 'es',
-      globals: {
-        axios: 'axios',
-        'isomorphic-ws': 'WebSocket',
-      },
-      sourcemap: true,
-    },
-  ],
+    name: 'scalingo',
+    sourcemap: true,
+  },
   external: ['axios', 'ws', 'isomorphic-ws'],
   watch: {
     include: 'src/**',
