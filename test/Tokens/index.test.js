@@ -1,4 +1,4 @@
-import { testDelete, testGetter, testPost, testUpdate } from '../utils/http.js'
+import { testDelete, testGetter, testPost, testUpdate } from '../utils/http'
 import Tokens from '../../src/Tokens'
 
 describe('Tokens#list', () => {

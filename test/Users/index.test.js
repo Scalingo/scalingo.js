@@ -1,4 +1,4 @@
-import { testGetter, testPut } from '../utils/http.js'
+import { testGetter, testPut } from '../utils/http'
 import Users from '../../src/Users'
 
 describe('Users#self', () => {

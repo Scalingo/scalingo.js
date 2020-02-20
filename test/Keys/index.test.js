@@ -1,4 +1,4 @@
-import { testGetter, testPost, testDelete } from '../utils/http.js'
+import { testGetter, testPost, testDelete } from '../utils/http'
 import Keys from '../../src/Keys'
 
 describe('Keys#all', () => {

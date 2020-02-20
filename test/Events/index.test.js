@@ -1,4 +1,4 @@
-import { testGetter, testParamsGetter } from '../utils/http.js'
+import { testGetter, testParamsGetter } from '../utils/http'
 import Events from '../../src/Events'
 
 describe('Events#all', () => {

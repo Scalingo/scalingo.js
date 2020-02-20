@@ -3,7 +3,7 @@ import {
   testGetter,
   testParamsGetter,
   testPost,
-} from '../utils/http.js'
+} from '../utils/http'
 import SCMIntegrations from '../../src/SCMIntegrations'
 
 describe('SCMIntegrations#find', () => {

@@ -1,16 +1,22 @@
 import { APIError } from '../errors'
+import { Client } from '..'
 
-/**
- * @example
- * let operation = new Operation(Client, locationUrl)
- */
 export class Operation {
+  _client: Client | null
+  _id?: string | null
+  _created_at?: string | null
+  _finished_at?: string | null
+  _status?: string | null
+  _type?: string | null
+  _error?: any
+  _url?: string | null
+
   /**
-   * @param {Client} client Client instance
-   * @param {String} url Location url
+   * @param client Client instance
+   * @param url Location url
    * @see https://developers.scalingo.com/operations
    */
-  constructor(client, url) {
+  constructor(client: Client, url: string) {
     this._client = client
     this._id = null
     this._created_at = null
@@ -21,27 +27,27 @@ export class Operation {
     this._url = url
   }
 
-  get id() {
+  get id(): string | null | undefined {
     return this._id
   }
 
-  get status() {
+  get status(): string | null | undefined {
     return this._status
   }
 
-  get created_at() {
+  get created_at(): string | null | undefined {
     return this._created_at
   }
 
-  get finished_at() {
+  get finished_at(): string | null | undefined {
     return this._finished_at
   }
 
-  get error() {
+  get error(): any {
     return this._error
   }
 
-  get type() {
+  get type(): string | null | undefined {
     return this._type
   }
 
@@ -49,7 +55,7 @@ export class Operation {
    * Set properties of the Operation object
    * @param values Operation object
    */
-  setProperties(values) {
+  setProperties(values: Partial<Operation>): void {
     this._id = values.id
     this._created_at = values.created_at
     this._finished_at = values.finished_at
@@ -60,10 +66,14 @@ export class Operation {
 
   /**
    * Get the response of the API call to get the operation's infos
-   * @returns {Promise<Operation | APIError>}
    */
-  async refresh() {
+  async refresh(): Promise<Operation | APIError | Error> {
     return new Promise((resolve, reject) => {
+      if (!this._client || !this._url) {
+        reject(new Error('missing url'))
+        return
+      }
+
       this._client
         .apiClient()
         .get(this._url)
@@ -83,27 +93,29 @@ export class Operation {
 
   /**
    * It will call the refresh method until operation's status isn't 'done'
-   * @returns {Promise<any | APIError>}
    */
-  wait() {
+  wait(): Promise<Operation | APIError | Error> {
     return new Promise((resolve, reject) => {
-      const waitInterval = setInterval(function() {
-        this.refresh()
-          .then((response) => {
-            if (this.status === 'done') {
-              resolve(response)
-              clearInterval(waitInterval)
-            }
-          })
-          .catch((error) => {
+      const waitInterval = setInterval(async () => {
+        try {
+          const response = (await this.refresh()) as Operation
+          if (this.status === 'done') {
+            resolve(response)
             clearInterval(waitInterval)
-            if (error.response) {
-              reject(new APIError(error.response.status, error.response.data))
-              return
-            }
-            reject(error)
-          })
+          }
+        } catch (error) {
+          clearInterval(waitInterval)
+
+          if (error.response) {
+            reject(new APIError(error.response.status, error.response.data))
+            return
+          }
+
+          reject(error)
+        }
       }, 1000)
     })
   }
 }
+
+export default Operation
