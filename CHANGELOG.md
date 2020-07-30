@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 0.1.3
+
 * Tooling: bump `dependencies`, typescript & typedoc
 * Improv: Better deployment listener
 * Fix: Misuse of promise typings (b8ad8f4, e9dd910)
