@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>TwoFactorAuthValidateResponse | scalingo</title>
+	<title>LifecycleHandlers | scalingo</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_twofactorauth_index_.html">&quot;TwoFactorAuth/index&quot;</a>
+					<a href="../modules/_deployments_listener_.html">&quot;Deployments/listener&quot;</a>
 				</li>
 				<li>
-					<a href="_twofactorauth_index_.twofactorauthvalidateresponse.html">TwoFactorAuthValidateResponse</a>
+					<a href="_deployments_listener_.lifecyclehandlers.html">LifecycleHandlers</a>
 				</li>
 			</ul>
-			<h1>Interface TwoFactorAuthValidateResponse</h1>
+			<h1>Interface LifecycleHandlers</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">TwoFactorAuthValidateResponse</span>
+						<span class="target">LifecycleHandlers</span>
 					</li>
 				</ul>
 			</section>
@@ -84,8 +84,10 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_twofactorauth_index_.twofactorauthvalidateresponse.html#codes" class="tsd-kind-icon">codes</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_twofactorauth_index_.twofactorauthvalidateresponse.html#user" class="tsd-kind-icon">user</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_deployments_listener_.lifecyclehandlers.html#beforeclose" class="tsd-kind-icon">before<wbr>Close</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_deployments_listener_.lifecyclehandlers.html#beforeopen" class="tsd-kind-icon">before<wbr>Open</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_deployments_listener_.lifecyclehandlers.html#onclose" class="tsd-kind-icon">on<wbr>Close</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_deployments_listener_.lifecyclehandlers.html#onopen" class="tsd-kind-icon">on<wbr>Open</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,34 +96,44 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="codes" class="tsd-anchor"></a>
-					<h3>codes</h3>
-					<div class="tsd-signature tsd-kind-icon">codes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+					<a name="beforeclose" class="tsd-anchor"></a>
+					<h3>before<wbr>Close</h3>
+					<div class="tsd-signature tsd-kind-icon">before<wbr>Close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/TwoFactorAuth/index.ts#L23">src/TwoFactorAuth/index.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L45">src/Deployments/listener.ts:45</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>A list of recovery codes</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="user" class="tsd-anchor"></a>
-					<h3>user</h3>
-					<div class="tsd-signature tsd-kind-icon">user<span class="tsd-signature-symbol">:</span> <a href="../classes/_twofactorauth_index_.twofactorauth.html" class="tsd-signature-type">TwoFactorAuth</a></div>
+					<a name="beforeopen" class="tsd-anchor"></a>
+					<h3>before<wbr>Open</h3>
+					<div class="tsd-signature tsd-kind-icon">before<wbr>Open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/TwoFactorAuth/index.ts#L26">src/TwoFactorAuth/index.ts:26</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L43">src/Deployments/listener.ts:43</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The two factors auth status</p>
-						</div>
-					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="onclose" class="tsd-anchor"></a>
+					<h3>on<wbr>Close</h3>
+					<div class="tsd-signature tsd-kind-icon">on<wbr>Close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">WebSocket.CloseEvent</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L46">src/Deployments/listener.ts:46</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="onopen" class="tsd-anchor"></a>
+					<h3>on<wbr>Open</h3>
+					<div class="tsd-signature tsd-kind-icon">on<wbr>Open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">WebSocket.OpenEvent</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L44">src/Deployments/listener.ts:44</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -132,44 +144,65 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/_twofactorauth_index_.html">&quot;<wbr>Two<wbr>Factor<wbr>Auth/index&quot;</a>
+						<a href="../modules/_deployments_listener_.html">&quot;<wbr>Deployments/listener&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_twofactorauth_index_.twofactorauth.html" class="tsd-kind-icon">Two<wbr>Factor<wbr>Auth</a>
+						<a href="../classes/_deployments_listener_.listener.html" class="tsd-kind-icon">Listener</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_twofactorauth_index_.twofactorauthinitiateresponse.html" class="tsd-kind-icon">Two<wbr>Factor<wbr>Auth<wbr>Initiate<wbr>Response</a>
+						<a href="_deployments_listener_.eventdeploymentstatusupdated.html" class="tsd-kind-icon">Event<wbr>Deployment<wbr>Status<wbr>Updated</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_twofactorauth_index_.twofactorauthobject.html" class="tsd-kind-icon">Two<wbr>Factor<wbr>Auth<wbr>Object</a>
+						<a href="_deployments_listener_.eventnewdeployment.html" class="tsd-kind-icon">Event<wbr>New<wbr>Deployment</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_deployments_listener_.eventnewdeploymentlog.html" class="tsd-kind-icon">Event<wbr>New<wbr>Deployment<wbr>Log</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_twofactorauth_index_.twofactorauthvalidateresponse.html" class="tsd-kind-icon">Two<wbr>Factor<wbr>Auth<wbr>Validate<wbr>Response</a>
+						<a href="_deployments_listener_.lifecyclehandlers.html" class="tsd-kind-icon">Lifecycle<wbr>Handlers</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_twofactorauth_index_.twofactorauthvalidateresponse.html#codes" class="tsd-kind-icon">codes</a>
+								<a href="_deployments_listener_.lifecyclehandlers.html#beforeclose" class="tsd-kind-icon">before<wbr>Close</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_twofactorauth_index_.twofactorauthvalidateresponse.html#user" class="tsd-kind-icon">user</a>
+								<a href="_deployments_listener_.lifecyclehandlers.html#beforeopen" class="tsd-kind-icon">before<wbr>Open</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_deployments_listener_.lifecyclehandlers.html#onclose" class="tsd-kind-icon">on<wbr>Close</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_deployments_listener_.lifecyclehandlers.html#onopen" class="tsd-kind-icon">on<wbr>Open</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="../modules/_twofactorauth_index_.html#default_provider" class="tsd-kind-icon">DEFAULT_<wbr>PROVIDER</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_deployments_listener_.messagehandlers.html" class="tsd-kind-icon">Message<wbr>Handlers</a>
 					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="../modules/_twofactorauth_index_.html#supported_providers" class="tsd-kind-icon">SUPPORTED_<wbr>PROVIDERS</a>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_deployments_listener_.html#deploymentloghandler" class="tsd-kind-icon">Deployment<wbr>Log<wbr>Handler</a>
 					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="../modules/_twofactorauth_index_.html#totp_provider" class="tsd-kind-icon">TOTP_<wbr>PROVIDER</a>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_deployments_listener_.html#deploymentstatushandler" class="tsd-kind-icon">Deployment<wbr>Status<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="../modules/_deployments_listener_.html#messagetypes" class="tsd-kind-icon">Message<wbr>Types</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_deployments_listener_.html#newdeploymenthandler" class="tsd-kind-icon">New<wbr>Deployment<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_deployments_listener_.html#unknownhandler" class="tsd-kind-icon">Unknown<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_deployments_listener_.html#knownmessagetype" class="tsd-kind-icon">known<wbr>Message<wbr>Type</a>
 					</li>
 				</ul>
 			</nav>

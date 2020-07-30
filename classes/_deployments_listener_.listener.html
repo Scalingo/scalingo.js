@@ -90,24 +90,32 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_deployments_listener_.listener.html#_client" class="tsd-kind-icon">_client</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_deployments_listener_.listener.html#_messagetypes" class="tsd-kind-icon">_message<wbr>Types</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_deployments_listener_.listener.html#_onclose" class="tsd-kind-icon">_on<wbr>Close</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_deployments_listener_.listener.html#_url" class="tsd-kind-icon">_url</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_deployments_listener_.listener.html#_ws" class="tsd-kind-icon">_ws</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_deployments_listener_.listener.html#client" class="tsd-kind-icon">client</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_deployments_listener_.listener.html#url" class="tsd-kind-icon">url</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_deployments_listener_.listener.html#ws" class="tsd-kind-icon">ws</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_deployments_listener_.listener.html#_auth" class="tsd-kind-icon">_auth</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_deployments_listener_.listener.html#_onmessage" class="tsd-kind-icon">_on<wbr>Message</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_deployments_listener_.listener.html#_start" class="tsd-kind-icon">_start</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_deployments_listener_.listener.html#beforeclose" class="tsd-kind-icon">before<wbr>Close</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_deployments_listener_.listener.html#beforeopen" class="tsd-kind-icon">before<wbr>Open</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_deployments_listener_.listener.html#close" class="tsd-kind-icon">close</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_deployments_listener_.listener.html#handlemessage" class="tsd-kind-icon">handle<wbr>Message</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_deployments_listener_.listener.html#onclose" class="tsd-kind-icon">on<wbr>Close</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_deployments_listener_.listener.html#onlog" class="tsd-kind-icon">on<wbr>Log</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_deployments_listener_.listener.html#onnew" class="tsd-kind-icon">on<wbr>New</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_deployments_listener_.listener.html#onopen" class="tsd-kind-icon">on<wbr>Open</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_deployments_listener_.listener.html#onstatus" class="tsd-kind-icon">on<wbr>Status</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_deployments_listener_.listener.html#performauth" class="tsd-kind-icon">perform<wbr>Auth</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_deployments_listener_.listener.html#start" class="tsd-kind-icon">start</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal tsd-parent-kind-class tsd-is-private"><a href="_deployments_listener_.listener.html#lifecyclehandlers" class="tsd-kind-icon">lifecycle<wbr>Handlers</a></li>
+								<li class="tsd-kind-object-literal tsd-parent-kind-class tsd-is-private"><a href="_deployments_listener_.listener.html#wshandlers" class="tsd-kind-icon">ws<wbr>Handlers</a></li>
 							</ul>
 						</section>
 					</div>
@@ -119,13 +127,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Listener<span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><a href="_index_.client.html" class="tsd-signature-type">Client</a>, url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_deployments_listener_.listener.html" class="tsd-signature-type">Listener</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Listener<span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><a href="_index_.client.html" class="tsd-signature-type">Client</a>, url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, autoStart<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_deployments_listener_.listener.html" class="tsd-signature-type">Listener</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/7b241bb/src/Deployments/listener.ts#L48">src/Deployments/listener.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L74">src/Deployments/listener.ts:74</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -151,6 +159,14 @@
 										</div>
 									</div>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> autoStart: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>wether to start the listener right away</p>
+										</div>
+									</div>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_deployments_listener_.listener.html" class="tsd-signature-type">Listener</a></h4>
 						</li>
@@ -160,12 +176,12 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="_client" class="tsd-anchor"></a>
-					<h3>_client</h3>
-					<div class="tsd-signature tsd-kind-icon">_client<span class="tsd-signature-symbol">:</span> <a href="_index_.client.html" class="tsd-signature-type">Client</a></div>
+					<a name="client" class="tsd-anchor"></a>
+					<h3>client</h3>
+					<div class="tsd-signature tsd-kind-icon">client<span class="tsd-signature-symbol">:</span> <a href="_index_.client.html" class="tsd-signature-type">Client</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/7b241bb/src/Deployments/listener.ts#L39">src/Deployments/listener.ts:39</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L55">src/Deployments/listener.ts:55</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -175,32 +191,12 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="_messagetypes" class="tsd-anchor"></a>
-					<h3>_message<wbr>Types</h3>
-					<div class="tsd-signature tsd-kind-icon">_message<wbr>Types<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_deployments_listener_.messagehandlers.html" class="tsd-signature-type">MessageHandlers</a></div>
+					<a name="url" class="tsd-anchor"></a>
+					<h3>url</h3>
+					<div class="tsd-signature tsd-kind-icon">url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/7b241bb/src/Deployments/listener.ts#L41">src/Deployments/listener.ts:41</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="_onclose" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> _on<wbr>Close</h3>
-					<div class="tsd-signature tsd-kind-icon">_on<wbr>Close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">WebSocket.CloseEvent</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/7b241bb/src/Deployments/listener.ts#L48">src/Deployments/listener.ts:48</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="_url" class="tsd-anchor"></a>
-					<h3>_url</h3>
-					<div class="tsd-signature tsd-kind-icon">_url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/7b241bb/src/Deployments/listener.ts#L44">src/Deployments/listener.ts:44</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L58">src/Deployments/listener.ts:58</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -209,13 +205,13 @@
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="_ws" class="tsd-anchor"></a>
-					<h3>_ws</h3>
-					<div class="tsd-signature tsd-kind-icon">_ws<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WebSocket</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="ws" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> ws</h3>
+					<div class="tsd-signature tsd-kind-icon">ws<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WebSocket</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/7b241bb/src/Deployments/listener.ts#L46">src/Deployments/listener.ts:46</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L74">src/Deployments/listener.ts:74</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -223,39 +219,42 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="_auth" class="tsd-anchor"></a>
-					<h3>_auth</h3>
+					<a name="beforeclose" class="tsd-anchor"></a>
+					<h3>before<wbr>Close</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">_auth<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">before<wbr>Close<span class="tsd-signature-symbol">(</span>handler<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/7b241bb/src/Deployments/listener.ts#L76">src/Deployments/listener.ts:76</a></li>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L187">src/Deployments/listener.ts:187</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="_onmessage" class="tsd-anchor"></a>
-					<h3>_on<wbr>Message</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">_on<wbr>Message<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MessageEvent</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/7b241bb/src/Deployments/listener.ts#L87">src/Deployments/listener.ts:87</a></li>
-								</ul>
-							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Setup a handler that will be called just before the connection is closed.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>message: <span class="tsd-signature-type">MessageEvent</span></h5>
+									<h5>handler: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>handler to call</p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -263,18 +262,44 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="_start" class="tsd-anchor"></a>
-					<h3>_start</h3>
+					<a name="beforeopen" class="tsd-anchor"></a>
+					<h3>before<wbr>Open</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">_start<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">before<wbr>Open<span class="tsd-signature-symbol">(</span>handler<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/7b241bb/src/Deployments/listener.ts#L62">src/Deployments/listener.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L171">src/Deployments/listener.ts:171</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Setup a handler that will be called just before the connection is opened.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>handler: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>handler to call</p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -289,7 +314,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/7b241bb/src/Deployments/listener.ts#L103">src/Deployments/listener.ts:103</a></li>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L121">src/Deployments/listener.ts:121</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -302,29 +327,57 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="onclose" class="tsd-anchor"></a>
-					<h3>on<wbr>Close</h3>
+					<a name="handlemessage" class="tsd-anchor"></a>
+					<h3>handle<wbr>Message</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>Close<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">WebSocket.CloseEvent</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">handle<wbr>Message<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MessageEvent</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/7b241bb/src/Deployments/listener.ts#L112">src/Deployments/listener.ts:112</a></li>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L143">src/Deployments/listener.ts:143</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Setup a callback that will be called when the connection is closed.</p>
+									<p>Generic incoming message handling</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>callback: <span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">WebSocket.CloseEvent</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<h5>message: <span class="tsd-signature-type">MessageEvent</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="onclose" class="tsd-anchor"></a>
+					<h3>on<wbr>Close</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Close<span class="tsd-signature-symbol">(</span>handler<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">WebSocket.CloseEvent</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L195">src/Deployments/listener.ts:195</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Setup a handler that will be called when the connection is closed.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>handler: <span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">WebSocket.CloseEvent</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Callback to call when the connection is closed</p>
+										<p>andler to call when the connection is closed</p>
 									</div>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
@@ -354,26 +407,26 @@
 					<a name="onlog" class="tsd-anchor"></a>
 					<h3>on<wbr>Log</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>Log<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/_deployments_listener_.eventnewdeploymentlog.html" class="tsd-signature-type">EventNewDeploymentLog</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Log<span class="tsd-signature-symbol">(</span>handler<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/_deployments_listener_.eventnewdeploymentlog.html" class="tsd-signature-type">EventNewDeploymentLog</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/7b241bb/src/Deployments/listener.ts#L128">src/Deployments/listener.ts:128</a></li>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L211">src/Deployments/listener.ts:211</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Setup a callback that will be called when a new log line is received.</p>
+									<p>Setup a handler that will be called when a new log line is received.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>callback: <span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/_deployments_listener_.eventnewdeploymentlog.html" class="tsd-signature-type">EventNewDeploymentLog</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<h5>handler: <span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/_deployments_listener_.eventnewdeploymentlog.html" class="tsd-signature-type">EventNewDeploymentLog</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Callback to call when a new log line is received</p>
+										<p>handler to call when a new log line is received</p>
 									</div>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
@@ -403,26 +456,26 @@
 					<a name="onnew" class="tsd-anchor"></a>
 					<h3>on<wbr>New</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>New<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/_deployments_listener_.eventnewdeployment.html" class="tsd-signature-type">EventNewDeployment</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<wbr>New<span class="tsd-signature-symbol">(</span>handler<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/_deployments_listener_.eventnewdeployment.html" class="tsd-signature-type">EventNewDeployment</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/7b241bb/src/Deployments/listener.ts#L120">src/Deployments/listener.ts:120</a></li>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L203">src/Deployments/listener.ts:203</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Setup a callback that will be called when there is a new deployment.</p>
+									<p>Setup a handler that will be called when there is a new deployment.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>callback: <span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/_deployments_listener_.eventnewdeployment.html" class="tsd-signature-type">EventNewDeployment</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<h5>handler: <span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/_deployments_listener_.eventnewdeployment.html" class="tsd-signature-type">EventNewDeployment</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Callback to call when there is a new deployment</p>
+										<p>handler to call when there is a new deployment</p>
 									</div>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
@@ -449,29 +502,78 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="onstatus" class="tsd-anchor"></a>
-					<h3>on<wbr>Status</h3>
+					<a name="onopen" class="tsd-anchor"></a>
+					<h3>on<wbr>Open</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">on<wbr>Status<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/_deployments_listener_.eventdeploymentstatusupdated.html" class="tsd-signature-type">EventDeploymentStatusUpdated</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Open<span class="tsd-signature-symbol">(</span>handler<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">WebSocket.OpenEvent</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/7b241bb/src/Deployments/listener.ts#L136">src/Deployments/listener.ts:136</a></li>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L179">src/Deployments/listener.ts:179</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Setup a callback that will be called when the deployment status is updated.</p>
+									<p>Setup a handler that will be called when the connection is opened.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>callback: <span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/_deployments_listener_.eventdeploymentstatusupdated.html" class="tsd-signature-type">EventDeploymentStatusUpdated</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<h5>handler: <span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">WebSocket.OpenEvent</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Callback to call when the deployment status is updated</p>
+										<p>handler to call</p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">WebSocket.OpenEvent</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5><span class="tsd-flag ts-flagOptional">Optional</span> e: <span class="tsd-signature-type">WebSocket.OpenEvent</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="onstatus" class="tsd-anchor"></a>
+					<h3>on<wbr>Status</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Status<span class="tsd-signature-symbol">(</span>handler<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/_deployments_listener_.eventdeploymentstatusupdated.html" class="tsd-signature-type">EventDeploymentStatusUpdated</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L219">src/Deployments/listener.ts:219</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Setup a handler that will be called when the deployment status is updated.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>handler: <span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/_deployments_listener_.eventdeploymentstatusupdated.html" class="tsd-signature-type">EventDeploymentStatusUpdated</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>handler to call when the deployment status is updated</p>
 									</div>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
@@ -497,6 +599,143 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="performauth" class="tsd-anchor"></a>
+					<h3>perform<wbr>Auth</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">perform<wbr>Auth<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L131">src/Deployments/listener.ts:131</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="start" class="tsd-anchor"></a>
+					<h3>start</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">start<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L94">src/Deployments/listener.ts:94</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-class tsd-is-private">
+					<a name="lifecyclehandlers" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> lifecycle<wbr>Handlers</h3>
+					<div class="tsd-signature tsd-kind-icon">lifecycle<wbr>Handlers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L67">src/Deployments/listener.ts:67</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="lifecyclehandlers.beforeclose-1" class="tsd-anchor"></a>
+						<h3>before<wbr>Close</h3>
+						<div class="tsd-signature tsd-kind-icon">before<wbr>Close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L70">src/Deployments/listener.ts:70</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="lifecyclehandlers.beforeopen-1" class="tsd-anchor"></a>
+						<h3>before<wbr>Open</h3>
+						<div class="tsd-signature tsd-kind-icon">before<wbr>Open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L68">src/Deployments/listener.ts:68</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="lifecyclehandlers.onclose-1" class="tsd-anchor"></a>
+						<h3>on<wbr>Close</h3>
+						<div class="tsd-signature tsd-kind-icon">on<wbr>Close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L71">src/Deployments/listener.ts:71</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="lifecyclehandlers.onopen-1" class="tsd-anchor"></a>
+						<h3>on<wbr>Open</h3>
+						<div class="tsd-signature tsd-kind-icon">on<wbr>Open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L69">src/Deployments/listener.ts:69</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-class tsd-is-private">
+					<a name="wshandlers" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> ws<wbr>Handlers</h3>
+					<div class="tsd-signature tsd-kind-icon">ws<wbr>Handlers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L60">src/Deployments/listener.ts:60</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="wshandlers.log" class="tsd-anchor"></a>
+						<h3>log</h3>
+						<div class="tsd-signature tsd-kind-icon">log<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L62">src/Deployments/listener.ts:62</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="wshandlers.new" class="tsd-anchor"></a>
+						<h3>new</h3>
+						<div class="tsd-signature tsd-kind-icon">new<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L61">src/Deployments/listener.ts:61</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="wshandlers.status" class="tsd-anchor"></a>
+						<h3>status</h3>
+						<div class="tsd-signature tsd-kind-icon">status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L63">src/Deployments/listener.ts:63</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="wshandlers.unknown" class="tsd-anchor"></a>
+						<h3>unknown</h3>
+						<div class="tsd-signature tsd-kind-icon">unknown<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L64">src/Deployments/listener.ts:64</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -521,31 +760,25 @@
 								<a href="_deployments_listener_.listener.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_deployments_listener_.listener.html#_client" class="tsd-kind-icon">_client</a>
+								<a href="_deployments_listener_.listener.html#client" class="tsd-kind-icon">client</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_deployments_listener_.listener.html#_messagetypes" class="tsd-kind-icon">_message<wbr>Types</a>
+								<a href="_deployments_listener_.listener.html#url" class="tsd-kind-icon">url</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_deployments_listener_.listener.html#_onclose" class="tsd-kind-icon">_on<wbr>Close</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_deployments_listener_.listener.html#_url" class="tsd-kind-icon">_url</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_deployments_listener_.listener.html#_ws" class="tsd-kind-icon">_ws</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_deployments_listener_.listener.html#ws" class="tsd-kind-icon">ws</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_deployments_listener_.listener.html#_auth" class="tsd-kind-icon">_auth</a>
+								<a href="_deployments_listener_.listener.html#beforeclose" class="tsd-kind-icon">before<wbr>Close</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_deployments_listener_.listener.html#_onmessage" class="tsd-kind-icon">_on<wbr>Message</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_deployments_listener_.listener.html#_start" class="tsd-kind-icon">_start</a>
+								<a href="_deployments_listener_.listener.html#beforeopen" class="tsd-kind-icon">before<wbr>Open</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_deployments_listener_.listener.html#close" class="tsd-kind-icon">close</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_deployments_listener_.listener.html#handlemessage" class="tsd-kind-icon">handle<wbr>Message</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_deployments_listener_.listener.html#onclose" class="tsd-kind-icon">on<wbr>Close</a>
@@ -557,7 +790,22 @@
 								<a href="_deployments_listener_.listener.html#onnew" class="tsd-kind-icon">on<wbr>New</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_deployments_listener_.listener.html#onopen" class="tsd-kind-icon">on<wbr>Open</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_deployments_listener_.listener.html#onstatus" class="tsd-kind-icon">on<wbr>Status</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_deployments_listener_.listener.html#performauth" class="tsd-kind-icon">perform<wbr>Auth</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_deployments_listener_.listener.html#start" class="tsd-kind-icon">start</a>
+							</li>
+							<li class=" tsd-kind-object-literal tsd-parent-kind-class tsd-is-private">
+								<a href="_deployments_listener_.listener.html#lifecyclehandlers" class="tsd-kind-icon">lifecycle<wbr>Handlers</a>
+							</li>
+							<li class=" tsd-kind-object-literal tsd-parent-kind-class tsd-is-private">
+								<a href="_deployments_listener_.listener.html#wshandlers" class="tsd-kind-icon">ws<wbr>Handlers</a>
 							</li>
 						</ul>
 					</li>
@@ -573,7 +821,28 @@
 						<a href="../interfaces/_deployments_listener_.eventnewdeploymentlog.html" class="tsd-kind-icon">Event<wbr>New<wbr>Deployment<wbr>Log</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_deployments_listener_.lifecyclehandlers.html" class="tsd-kind-icon">Lifecycle<wbr>Handlers</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="../interfaces/_deployments_listener_.messagehandlers.html" class="tsd-kind-icon">Message<wbr>Handlers</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_deployments_listener_.html#deploymentloghandler" class="tsd-kind-icon">Deployment<wbr>Log<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_deployments_listener_.html#deploymentstatushandler" class="tsd-kind-icon">Deployment<wbr>Status<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="../modules/_deployments_listener_.html#messagetypes" class="tsd-kind-icon">Message<wbr>Types</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_deployments_listener_.html#newdeploymenthandler" class="tsd-kind-icon">New<wbr>Deployment<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_deployments_listener_.html#unknownhandler" class="tsd-kind-icon">Unknown<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_deployments_listener_.html#knownmessagetype" class="tsd-kind-icon">known<wbr>Message<wbr>Type</a>
 					</li>
 				</ul>
 			</nav>

@@ -82,10 +82,190 @@
 								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/_deployments_listener_.eventdeploymentstatusupdated.html" class="tsd-kind-icon">Event<wbr>Deployment<wbr>Status<wbr>Updated</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/_deployments_listener_.eventnewdeployment.html" class="tsd-kind-icon">Event<wbr>New<wbr>Deployment</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/_deployments_listener_.eventnewdeploymentlog.html" class="tsd-kind-icon">Event<wbr>New<wbr>Deployment<wbr>Log</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/_deployments_listener_.lifecyclehandlers.html" class="tsd-kind-icon">Lifecycle<wbr>Handlers</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/_deployments_listener_.messagehandlers.html" class="tsd-kind-icon">Message<wbr>Handlers</a></li>
 							</ul>
 						</section>
+						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported"><a href="_deployments_listener_.html#deploymentloghandler" class="tsd-kind-icon">Deployment<wbr>Log<wbr>Handler</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported"><a href="_deployments_listener_.html#deploymentstatushandler" class="tsd-kind-icon">Deployment<wbr>Status<wbr>Handler</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_deployments_listener_.html#messagetypes" class="tsd-kind-icon">Message<wbr>Types</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported"><a href="_deployments_listener_.html#newdeploymenthandler" class="tsd-kind-icon">New<wbr>Deployment<wbr>Handler</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported"><a href="_deployments_listener_.html#unknownhandler" class="tsd-kind-icon">Unknown<wbr>Handler</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_deployments_listener_.html#knownmessagetype" class="tsd-kind-icon">known<wbr>Message<wbr>Type</a></li>
+							</ul>
+						</section>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="deploymentloghandler" class="tsd-anchor"></a>
+					<h3>Deployment<wbr>Log<wbr>Handler</h3>
+					<div class="tsd-signature tsd-kind-icon">Deployment<wbr>Log<wbr>Handler<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/_deployments_listener_.eventnewdeploymentlog.html" class="tsd-signature-type">EventNewDeploymentLog</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L30">src/Deployments/listener.ts:30</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/_deployments_listener_.eventnewdeploymentlog.html" class="tsd-signature-type">EventNewDeploymentLog</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>e: <a href="../interfaces/_deployments_listener_.eventnewdeploymentlog.html" class="tsd-signature-type">EventNewDeploymentLog</a></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="deploymentstatushandler" class="tsd-anchor"></a>
+					<h3>Deployment<wbr>Status<wbr>Handler</h3>
+					<div class="tsd-signature tsd-kind-icon">Deployment<wbr>Status<wbr>Handler<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/_deployments_listener_.eventdeploymentstatusupdated.html" class="tsd-signature-type">EventDeploymentStatusUpdated</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L31">src/Deployments/listener.ts:31</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/_deployments_listener_.eventdeploymentstatusupdated.html" class="tsd-signature-type">EventDeploymentStatusUpdated</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>e: <a href="../interfaces/_deployments_listener_.eventdeploymentstatusupdated.html" class="tsd-signature-type">EventDeploymentStatusUpdated</a></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module">
+					<a name="messagetypes" class="tsd-anchor"></a>
+					<h3>Message<wbr>Types</h3>
+					<div class="tsd-signature tsd-kind-icon">Message<wbr>Types<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"new"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"log"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"status"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L34">src/Deployments/listener.ts:34</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="newdeploymenthandler" class="tsd-anchor"></a>
+					<h3>New<wbr>Deployment<wbr>Handler</h3>
+					<div class="tsd-signature tsd-kind-icon">New<wbr>Deployment<wbr>Handler<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/_deployments_listener_.eventnewdeployment.html" class="tsd-signature-type">EventNewDeployment</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L29">src/Deployments/listener.ts:29</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../interfaces/_deployments_listener_.eventnewdeployment.html" class="tsd-signature-type">EventNewDeployment</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>e: <a href="../interfaces/_deployments_listener_.eventnewdeployment.html" class="tsd-signature-type">EventNewDeployment</a></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="unknownhandler" class="tsd-anchor"></a>
+					<h3>Unknown<wbr>Handler</h3>
+					<div class="tsd-signature tsd-kind-icon">Unknown<wbr>Handler<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L32">src/Deployments/listener.ts:32</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">[]</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="knownmessagetype" class="tsd-anchor"></a>
+					<h3>known<wbr>Message<wbr>Type</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">known<wbr>Message<wbr>Type<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">str</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">MessageTypes</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/53937fb/src/Deployments/listener.ts#L49">src/Deployments/listener.ts:49</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>str: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">str</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">MessageTypes</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -115,7 +295,28 @@
 						<a href="../interfaces/_deployments_listener_.eventnewdeploymentlog.html" class="tsd-kind-icon">Event<wbr>New<wbr>Deployment<wbr>Log</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_deployments_listener_.lifecyclehandlers.html" class="tsd-kind-icon">Lifecycle<wbr>Handlers</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="../interfaces/_deployments_listener_.messagehandlers.html" class="tsd-kind-icon">Message<wbr>Handlers</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_deployments_listener_.html#deploymentloghandler" class="tsd-kind-icon">Deployment<wbr>Log<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_deployments_listener_.html#deploymentstatushandler" class="tsd-kind-icon">Deployment<wbr>Status<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="_deployments_listener_.html#messagetypes" class="tsd-kind-icon">Message<wbr>Types</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_deployments_listener_.html#newdeploymenthandler" class="tsd-kind-icon">New<wbr>Deployment<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_deployments_listener_.html#unknownhandler" class="tsd-kind-icon">Unknown<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_deployments_listener_.html#knownmessagetype" class="tsd-kind-icon">known<wbr>Message<wbr>Type</a>
 					</li>
 				</ul>
 			</nav>
