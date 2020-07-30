@@ -48,15 +48,32 @@ export interface DeploymentsMeta {
   pagination: PaginationMeta
 }
 
+/** Building is ongoing */
+export const STATUS_BUILDING = 'building'
+/** The code is being pushed */
+export const STATUS_PUSHING = 'pushing'
+/** The application is starting */
+export const STATUS_STARTING = 'starting'
+/** The deployment was succesful */
+export const STATUS_SUCCESS = 'success'
+/** The application built crashed when booting */
+export const STATUS_CRASHED_ERROR = 'crashed-error'
+/** The application built took too long to respond after booting */
+export const STATUS_TIMEOUT_ERROR = 'timeout-error'
+/** The application couldn't be built */
+export const STATUS_BUILD_ERROR = 'build-error'
+/** The deployment was aborted */
+export const STATUS_ABORTED = 'aborted'
+
 export type DeploymentStatus =
-  | 'building'
-  | 'pushing'
-  | 'starting'
-  | 'success'
-  | 'crashed-error'
-  | 'timeout-error'
-  | 'build-error'
-  | 'aborted'
+  | typeof STATUS_BUILDING
+  | typeof STATUS_PUSHING
+  | typeof STATUS_STARTING
+  | typeof STATUS_SUCCESS
+  | typeof STATUS_CRASHED_ERROR
+  | typeof STATUS_TIMEOUT_ERROR
+  | typeof STATUS_BUILD_ERROR
+  | typeof STATUS_ABORTED
 
 /**
  * Deployment API Client
