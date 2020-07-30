@@ -33,9 +33,9 @@ describe('App#deploymentListener', () => {
     })
 
     // Prevent the listener to really open the connection
-    const stub = sinon.stub(Listener.prototype, '_start')
+    const stub = sinon.stub(Listener.prototype, 'start')
     const listener = await client.deploymentListener('testApp')
-    expect(listener._url).to.eq('wss://test.dev/apps/testApp')
+    expect(listener.url).to.eq('wss://test.dev/apps/testApp')
     stub.restore()
   })
 })

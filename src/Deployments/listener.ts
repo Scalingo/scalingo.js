@@ -26,114 +26,197 @@ export interface EventDeploymentStatusUpdated {
   status: DeploymentStatus
 }
 
-export interface MessageHandlers {
-  [index: string]: ((e: any) => void) | undefined | null
+type NewDeploymentHandler = (e: EventNewDeployment) => void
+type DeploymentLogHandler = (e: EventNewDeploymentLog) => void
+type DeploymentStatusHandler = (e: EventDeploymentStatusUpdated) => void
+type UnknownHandler = (...args: unknown[]) => void
 
-  new?: (e: EventNewDeployment) => void
-  log?: (e: EventNewDeploymentLog) => void
-  status?: (e: EventDeploymentStatusUpdated) => void
+export type MessageTypes = 'new' | 'log' | 'status'
+export interface MessageHandlers {
+  new: NewDeploymentHandler[]
+  log: DeploymentLogHandler[]
+  status: DeploymentStatusHandler[]
+  unknown: UnknownHandler[]
+}
+
+export interface LifecycleHandlers {
+  beforeOpen: (() => void)[]
+  onOpen: ((e?: WebSocket.OpenEvent) => void)[]
+  beforeClose: (() => void)[]
+  onClose: ((e?: WebSocket.CloseEvent) => void)[]
+}
+
+function knownMessageType(str: string): str is MessageTypes {
+  return ['new', 'log', 'status'].includes(str)
 }
 
 export default class Listener {
   /** Scalingo API Client */
-  _client: Client
-
-  _messageTypes: MessageHandlers = {}
+  readonly client: Client
 
   /** URL of the stream to listen to */
-  _url: string
+  readonly url: string
 
-  _ws: WebSocket | undefined | null
+  private wsHandlers: MessageHandlers = {
+    new: [],
+    log: [],
+    status: [],
+    unknown: [],
+  }
 
-  _onClose?: (e?: WebSocket.CloseEvent) => void
+  private lifecycleHandlers: LifecycleHandlers = {
+    beforeOpen: [],
+    onOpen: [],
+    beforeClose: [],
+    onClose: [],
+  }
+
+  private ws: WebSocket | undefined | null
 
   /**
    * Create a new deployment listener
    * @param client Scalingo API Client
    * @param url URL of the stream to listen to
+   * @param autoStart wether to start the listener right away
    */
-  constructor(client: Client, url: string) {
-    this._client = client
-    this._messageTypes = {}
-    this._url = url
-    this._start()
-  }
+  constructor(client: Client, url: string, autoStart = true) {
+    this.client = client
+    this.url = url
 
-  _start(): void {
-    this._ws = new WebSocket(this._url)
-    this._ws.onopen = (): void => this._auth()
+    // Auth on login
+    this.onOpen(() => this.performAuth())
 
-    this._ws.onclose = (): void => {
-      this._onClose?.()
-      this._ws = null
-    }
-
-    this._ws.onmessage = (message): void => {
-      this._onMessage(message)
+    if (autoStart) {
+      this.start()
     }
   }
 
-  _auth(): void {
-    this._ws?.send(
-      JSON.stringify({
-        type: 'auth',
-        data: {
-          token: this._client._token,
-        },
-      }),
-    )
-  }
+  start(): void {
+    // Before opening
+    for (const callback of this.lifecycleHandlers.beforeOpen) {
+      callback()
+    }
 
-  _onMessage(message: WebSocket.MessageEvent): void {
-    const data = JSON.parse(message.data.toString())
-    if (this._messageTypes[data.type]) {
-      const result = data.data
+    this.ws = new WebSocket(this.url)
+    this.ws.onopen = (e): void => {
+      for (const callback of this.lifecycleHandlers.onOpen) {
+        callback(e)
+      }
+    }
 
-      // If there was an ID in the original message
-      if (data.id) {
-        // Inject it in the result object
-        result['id'] = data.id
+    this.ws.onclose = (e): void => {
+      for (const callback of this.lifecycleHandlers.onClose) {
+        callback(e)
       }
 
-      this._messageTypes[data.type]?.(result)
+      this.ws = null
+    }
+
+    this.ws.onmessage = (message): void => {
+      this.handleMessage(message)
     }
   }
 
   /** Close the listener connection */
   close(): void {
-    this._ws?.close()
-    this._ws = null
+    // Before opening
+    for (const callback of this.lifecycleHandlers.beforeClose) {
+      callback()
+    }
+
+    this.ws?.close()
+    this.ws = null
+  }
+
+  performAuth(): void {
+    this.ws?.send(
+      JSON.stringify({
+        type: 'auth',
+        data: {
+          token: this.client._token,
+        },
+      }),
+    )
+  }
+
+  /** Generic incoming message handling */
+  handleMessage(message: WebSocket.MessageEvent): void {
+    const data = JSON.parse(message.data.toString())
+    const type = data.type as string
+
+    if (knownMessageType(type) && this.wsHandlers[type]) {
+      const result = data.data
+
+      // If there was an ID in the original message
+      if (data.id) {
+        // Inject it in the result object
+        result.id = data.id
+      }
+
+      for (const callback of this.wsHandlers[type]) {
+        callback(result)
+      }
+    } else {
+      for (const callback of this.wsHandlers.unknown) {
+        callback(data)
+      }
+    }
+  }
+
+  // Lifecycle handlers
+  /**
+   * Setup a handler that will be called just before the connection is opened.
+   * @param handler handler to call
+   */
+  beforeOpen(handler: () => void): void {
+    this.lifecycleHandlers.beforeOpen.push(handler)
   }
 
   /**
-   * Setup a callback that will be called when the connection is closed.
-   * @param {function()} callback Callback to call when the connection is closed
+   * Setup a handler that will be called when the connection is opened.
+   * @param handler handler to call
    */
-  onClose(callback: (e?: WebSocket.CloseEvent) => void): void {
-    this._onClose = callback
+  onOpen(handler: (e?: WebSocket.OpenEvent) => void): void {
+    this.lifecycleHandlers.onOpen.push(handler)
   }
 
   /**
-   * Setup a callback that will be called when there is a new deployment.
-   * @param callback Callback to call when there is a new deployment
+   * Setup a handler that will be called just before the connection is closed.
+   * @param handler handler to call
    */
-  onNew(callback: (e: EventNewDeployment) => void): void {
-    this._messageTypes['new'] = callback
+  beforeClose(handler: () => void): void {
+    this.lifecycleHandlers.beforeClose.push(handler)
   }
 
   /**
-   * Setup a callback that will be called when a new log line is received.
-   * @param callback Callback to call when a new log line is received
+   * Setup a handler that will be called when the connection is closed.
+   * @param handler andler to call when the connection is closed
    */
-  onLog(callback: (e: EventNewDeploymentLog) => void): void {
-    this._messageTypes['log'] = callback
+  onClose(handler: (e?: WebSocket.CloseEvent) => void): void {
+    this.lifecycleHandlers.onClose.push(handler)
   }
 
   /**
-   * Setup a callback that will be called when the deployment status is updated.
-   * @param callback Callback to call when the deployment status is updated
+   * Setup a handler that will be called when there is a new deployment.
+   * @param handler handler to call when there is a new deployment
    */
-  onStatus(callback: (e: EventDeploymentStatusUpdated) => void): void {
-    this._messageTypes['status'] = callback
+  onNew(handler: (e: EventNewDeployment) => void): void {
+    this.wsHandlers.new.push(handler)
+  }
+
+  /**
+   * Setup a handler that will be called when a new log line is received.
+   * @param handler handler to call when a new log line is received
+   */
+  onLog(handler: (e: EventNewDeploymentLog) => void): void {
+    this.wsHandlers.log.push(handler)
+  }
+
+  /**
+   * Setup a handler that will be called when the deployment status is updated.
+   * @param handler handler to call when the deployment status is updated
+   */
+  onStatus(handler: (e: EventDeploymentStatusUpdated) => void): void {
+    this.wsHandlers.status.push(handler)
   }
 }
