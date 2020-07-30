@@ -3,6 +3,36 @@ import Listener from '../Deployments/listener'
 import { Client, APIResponse } from '..'
 import { APIError } from '../errors'
 
+/** Application is new, no code is running */
+export const STATUS_NEW = 'new'
+
+/** Application is stopped, no containers are active */
+export const STATUS_STOPPED = 'stopped'
+
+/** Application is running */
+export const STATUS_RUNNING = 'running'
+
+/** Application has crashed */
+export const STATUS_CRASHED = 'crashed'
+
+/** Application is restarting */
+export const STATUS_RESTARTING = 'restarting'
+
+/** Application is changing the container formation */
+export const STATUS_SCALING = 'scaling'
+
+/** Application is starting up */
+export const STATUS_BOOTING = 'booting'
+
+export type AppStatus =
+  | typeof STATUS_NEW
+  | typeof STATUS_STOPPED
+  | typeof STATUS_RUNNING
+  | typeof STATUS_CRASHED
+  | typeof STATUS_RESTARTING
+  | typeof STATUS_SCALING
+  | typeof STATUS_BOOTING
+
 /** @see https://developers.scalingo.com/apps */
 export interface App {
   /** unique ID */
@@ -33,6 +63,8 @@ export interface App {
   last_deployed_by: string
   /** id of the last successful deployment */
   last_deployment_id: string
+  /** current status of the application */
+  status: AppStatus
 }
 
 export interface AppLinks {
