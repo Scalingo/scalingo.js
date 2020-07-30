@@ -98,7 +98,7 @@ export default class Deployments {
    * @param opts optional parameters
    * @return List of deployments for this app
    */
-  for(appId: string, opts: PaginationOpts): APIResponse<DeploymentsResult[]> {
+  for(appId: string, opts: PaginationOpts): APIResponse<DeploymentsResult> {
     return unpackData(
       this._client
         .apiClient()
