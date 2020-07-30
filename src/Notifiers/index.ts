@@ -1,5 +1,5 @@
 import { unpackData } from '../utils'
-import { Client, APIResponse } from '..'
+import { Client } from '..'
 
 export interface Notifier {
   /** Unique ID identifying the notifier */
@@ -80,7 +80,7 @@ export default class Notifiers {
    * @see https://developers.scalingo.com/notifiers#list-application-notifiers
    * @param appId ID of the app to get the notifiers from
    */
-  for(appId: string): APIResponse<Notifier[]> {
+  for(appId: string): Promise<Notifier[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/notifiers`),
       'notifiers',
@@ -93,7 +93,7 @@ export default class Notifiers {
    * @param appId ID of the app
    * @param notifier New notifier configuration
    */
-  create(appId: string, notifier: NotifierCreateParams): APIResponse<Notifier> {
+  create(appId: string, notifier: NotifierCreateParams): Promise<Notifier> {
     return unpackData(
       this._client.apiClient().post(`/apps/${appId}/notifiers`, {
         notifier: notifier,
@@ -113,7 +113,7 @@ export default class Notifiers {
     appId: string,
     notifierId: string,
     notifier: NotifierUpdateParams,
-  ): APIResponse<Notifier> {
+  ): Promise<Notifier> {
     return unpackData(
       this._client.apiClient().patch(`/apps/${appId}/notifiers/${notifierId}`, {
         notifier: notifier,
@@ -128,7 +128,7 @@ export default class Notifiers {
    * @param appId ID of the current application
    * @param notifierId ID of the notifier
    */
-  destroy(appId: string, notifierId: string): APIResponse {
+  destroy(appId: string, notifierId: string): Promise<void> {
     return unpackData(
       this._client.apiClient().delete(`/apps/${appId}/notifiers/${notifierId}`),
     )
@@ -140,7 +140,7 @@ export default class Notifiers {
    * @param appId The ID of the current application
    * @param notifierId The ID of the notifier
    */
-  test(appId: string, notifierId: string): APIResponse {
+  test(appId: string, notifierId: string): Promise<void> {
     return unpackData(
       this._client
         .apiClient()
@@ -153,7 +153,7 @@ export default class Notifiers {
    * @param {String} appId The ID of the current application
    * @param {String} notifierId The ID of the notifier to get
    */
-  get(appId: string, notifierId: string): APIResponse<Notifier> {
+  get(appId: string, notifierId: string): Promise<Notifier> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/notifiers/${notifierId}`),
       'notifier',

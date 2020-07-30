@@ -1,5 +1,5 @@
 import { unpackData } from '../utils'
-import { Client, APIResponse } from '..'
+import { Client } from '..'
 
 export interface ReferralsStats {
   /** Number of people who have clicked on the link */
@@ -31,7 +31,7 @@ export class Stats {
    * Return referrals stats for current user
    * @return The referrals stats for the current user
    */
-  referrals(): APIResponse<ReferralsStats> {
+  referrals(): Promise<ReferralsStats> {
     return unpackData(
       this._client.apiClient().get('/account/referrals/stats'),
       'referral_stats',

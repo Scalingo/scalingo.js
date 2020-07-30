@@ -1,5 +1,5 @@
 import { unpackData } from '../utils'
-import { Client, APIResponse } from '..'
+import { Client } from '..'
 import { Operation } from './utils'
 
 /**
@@ -23,7 +23,7 @@ export default class Operations {
    * @param appId ID of the application
    * @param operationId ID of the operation
    */
-  operation(appId: string, operationId: string): APIResponse<Operation> {
+  operation(appId: string, operationId: string): Promise<Operation> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/operations/${operationId}`),
       'operation',

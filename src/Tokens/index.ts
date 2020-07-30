@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { unpackData } from '../utils'
-import { Client, APIResponse } from '..'
+import { Client } from '..'
 
 export interface Token {
   /** ID of the token */
@@ -36,7 +36,7 @@ export class Tokens {
    * List all known tokens
    * @return A list of tokens
    */
-  all(): APIResponse<Token[]> {
+  all(): Promise<Token[]> {
     return unpackData(this._client.authApiClient().get('/tokens'), 'tokens')
   }
 
@@ -45,7 +45,7 @@ export class Tokens {
    * @param name The name of the new token
    * @return The newly created token
    */
-  create(name: string): APIResponse<Token> {
+  create(name: string): Promise<Token> {
     return unpackData(
       this._client.authApiClient().post('/tokens', { name }),
       'token',
@@ -57,7 +57,7 @@ export class Tokens {
    * @param id The id of the token to renew
    * @return The newly created token
    */
-  renew(id: string): APIResponse<Token> {
+  renew(id: string): Promise<Token> {
     return unpackData(
       this._client.authApiClient().patch(`/tokens/${id}/renew`),
       'token',
@@ -68,7 +68,7 @@ export class Tokens {
    * Destroy a token
    * @param id The id of the token to destroy
    */
-  destroy(id: string): APIResponse<void> {
+  destroy(id: string): Promise<void> {
     return unpackData(this._client.authApiClient().delete(`/tokens/${id}`))
   }
 
@@ -77,7 +77,7 @@ export class Tokens {
    * @param token A valid token
    * @return A valid Bearer Token that can be used against our infrastructure.
    */
-  exchange(token: string): APIResponse<string> {
+  exchange(token: string): Promise<string> {
     const request = axios.post(
       `${this._client._authApiUrl}/v1/tokens/exchange`,
       {},

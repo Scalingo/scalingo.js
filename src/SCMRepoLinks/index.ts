@@ -1,5 +1,5 @@
 import { unpackData } from '../utils'
-import { Client, APIResponse } from '..'
+import { Client } from '..'
 
 type SCMType = 'github' | 'gitlab' | 'github-enterprise' | 'gitlab-self-hosted'
 
@@ -122,7 +122,7 @@ export class SCMRepoLinks {
    * @param appID ID of the application
    * @return Promise that when resolved returns a SCMRepoLink
    */
-  find(appID: string): APIResponse<SCMRepoLink> {
+  find(appID: string): Promise<SCMRepoLink> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appID}/scm_repo_link`),
       'scm_repo_link',
@@ -136,7 +136,7 @@ export class SCMRepoLinks {
    * @param opts SCM repo link information
    * @return Promise that when resolved returns the SCMRepoLink created.
    */
-  create(appID: string, opts: SCMRepoLinkCreateOpts): APIResponse<SCMRepoLink> {
+  create(appID: string, opts: SCMRepoLinkCreateOpts): Promise<SCMRepoLink> {
     return unpackData(
       this._client
         .apiClient()
@@ -152,7 +152,7 @@ export class SCMRepoLinks {
    * @param opts SCM repo link information to update
    * @return Promise that when resolved returns the SCMRepoLink updated.
    */
-  update(appID: string, opts: SCMRepoLinkCreateOpts): APIResponse<SCMRepoLink> {
+  update(appID: string, opts: SCMRepoLinkCreateOpts): Promise<SCMRepoLink> {
     return unpackData(
       this._client
         .apiClient()
@@ -167,7 +167,7 @@ export class SCMRepoLinks {
    * @param {String} appID ID of the application
    * @return {Promise<null, APIError>} Promise that resolves when the link is deleted.
    */
-  destroy(appID: string): APIResponse {
+  destroy(appID: string): Promise<void> {
     return unpackData(
       this._client.apiClient().delete(`/apps/${appID}/scm_repo_link`),
     )
@@ -179,9 +179,9 @@ export class SCMRepoLinks {
    * @param appID ID of the application
    * @param branch Name of the branch to deploy.
    * @return Promise that when resolved returns the Deployment started.
-   * @todo APIResponse<Deployment>
+   * @todo Promise<Deployment>
    */
-  manualDeploy(appID: string, branch: string): APIResponse<any> {
+  manualDeploy(appID: string, branch: string): Promise<any> {
     return unpackData(
       this._client
         .apiClient()
@@ -198,9 +198,9 @@ export class SCMRepoLinks {
    * @param appID ID of the application
    * @param pullRequestID ID of the pull/merge request to deploy
    * @return Promise that when resolved returns the App created.
-   * @todo APIResponse<App>
+   * @todo Promise<App>
    */
-  manualReviewApp(appID: string, pullRequestID: string): APIResponse<any> {
+  manualReviewApp(appID: string, pullRequestID: string): Promise<any> {
     return unpackData(
       this._client
         .apiClient()
@@ -216,9 +216,9 @@ export class SCMRepoLinks {
    * @see https://developers.scalingo.com/scm_repo_link
    * @param appID ID of the application
    * @return Promise that when resolved returns an array of branches.
-   * @todo APIResponse<Branch[]>
+   * @todo Promise<Branch[]>
    */
-  branches(appID: string): APIResponse<any> {
+  branches(appID: string): Promise<any> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appID}/scm_repo_link/branches`),
       'branches',
@@ -230,9 +230,9 @@ export class SCMRepoLinks {
    * @see https://developers.scalingo.com/scm_repo_link
    * @param appID ID of the application
    * @return Promise that when resolved returns an array of pull requests.
-   * @todo APIResponse<PullRequest[]>
+   * @todo Promise<PullRequest[]>
    */
-  pulls(appID: string): APIResponse<any> {
+  pulls(appID: string): Promise<any> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appID}/scm_repo_link/pulls`),
       'pulls',

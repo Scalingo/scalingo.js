@@ -1,6 +1,6 @@
 import { unpackData } from '../utils'
 import { Operation } from '../Operations/utils'
-import { Client, APIResponse } from '..'
+import { Client } from '..'
 import { APIError } from '../errors'
 
 export interface ContainersOperation {
@@ -58,7 +58,7 @@ export default class Containers {
    * @see https://developers.scalingo.com/apps#get-containers-list
    * @param appId ID of the app to get the formation from
    */
-  for(appId: string): APIResponse<Container[]> {
+  for(appId: string): Promise<Container[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/containers`),
       'containers',
@@ -93,7 +93,7 @@ export default class Containers {
    * @see https://developers.scalingo.com/container-sizes#list-the-container-sizes-available
    * @return attributes of each container
    */
-  availableSizes(): APIResponse<ContainerSize[]> {
+  availableSizes(): Promise<ContainerSize[]> {
     return unpackData(
       this._client.apiClient().get('/features/container_sizes'),
       'container_sizes',

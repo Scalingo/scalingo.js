@@ -1,5 +1,5 @@
 import { unpackData } from '../utils'
-import { Client, APIResponse } from '..'
+import { Client } from '..'
 import { Key } from '../Keys'
 
 /**
@@ -106,7 +106,7 @@ export default class SCMIntegrations {
    * @param integrationID ID of the integration
    * @return Promise that when resolved returns a SCMIntegration
    */
-  find(integrationID: string): APIResponse<SCMIntegration> {
+  find(integrationID: string): Promise<SCMIntegration> {
     return unpackData(
       this._client.authApiClient().get(`/scm_integrations/${integrationID}`),
       'scm_integration',
@@ -118,7 +118,7 @@ export default class SCMIntegrations {
    * @see https://developers.scalingo.com/scm_integrations#list-all-the-scm-integrations-of-your-account
    * @return Promise that when resolved returns a SCMIntegration array.
    */
-  all(): APIResponse<SCMIntegration[]> {
+  all(): Promise<SCMIntegration[]> {
     return unpackData(
       this._client.authApiClient().get('/scm_integrations'),
       'scm_integrations',
@@ -132,7 +132,7 @@ export default class SCMIntegrations {
    * @param opts SCM integration information
    * @return Promise that when resolved returns the SCMIntegration created.
    */
-  create(opts: SCMIntegrationCreateOpts): APIResponse<SCMIntegration> {
+  create(opts: SCMIntegrationCreateOpts): Promise<SCMIntegration> {
     return unpackData(
       this._client
         .authApiClient()
@@ -147,7 +147,7 @@ export default class SCMIntegrations {
    * @param integrationID ID of the integration
    * @return Promise that resolves when the SCM integration is deleted.
    */
-  destroy(integrationID: string): APIResponse {
+  destroy(integrationID: string): Promise<void> {
     return unpackData(
       this._client.authApiClient().delete(`/scm_integrations/${integrationID}`),
     )
@@ -159,7 +159,7 @@ export default class SCMIntegrations {
    * @param integrationID ID of the integration
    * @return Promise that when resolved returns the imported keys.
    */
-  importSSHKeys(integrationID: string): APIResponse<Key[]> {
+  importSSHKeys(integrationID: string): Promise<Key[]> {
     return unpackData(
       this._client
         .authApiClient()
@@ -178,7 +178,7 @@ export default class SCMIntegrations {
   searchPullRequests(
     integrationID: string,
     query: string,
-  ): APIResponse<PullRequest[]> {
+  ): Promise<PullRequest[]> {
     return unpackData(
       this._client
         .authApiClient()
@@ -199,7 +199,7 @@ export default class SCMIntegrations {
   searchRepositories(
     integrationID: string,
     query: string,
-  ): APIResponse<Repository[]> {
+  ): Promise<Repository[]> {
     return unpackData(
       this._client
         .authApiClient()
@@ -216,7 +216,7 @@ export default class SCMIntegrations {
    * @param integrationID ID of the integration
    * @return Promise that when resolved returns the list of organizations.
    */
-  organizations(integrationID: string): APIResponse<Organization[]> {
+  organizations(integrationID: string): Promise<Organization[]> {
     return unpackData(
       this._client
         .authApiClient()

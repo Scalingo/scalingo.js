@@ -1,5 +1,5 @@
 import { unpackData } from '../utils'
-import { Client, APIResponse } from '..'
+import { Client } from '..'
 
 export interface NotificationPlatform {
   /** Unique ID identifying the notification platform */
@@ -35,7 +35,7 @@ export default class NotificationPlatforms {
    * List notification platforms
    * @see https://developers.scalingo.com/notification_platforms
    */
-  list(): APIResponse<NotificationPlatform> {
+  list(): Promise<NotificationPlatform> {
     return unpackData(
       this._client.unauthenticatedClient().get('/notification_platforms'),
       'notification_platforms',

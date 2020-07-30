@@ -1,6 +1,6 @@
 import LogsListener from '../Logs/listener'
 import { unpackData } from '../utils'
-import { Client, APIResponse } from '..'
+import { Client } from '..'
 import { APIError } from '../errors'
 
 export interface AppLogsOpts {
@@ -69,7 +69,7 @@ export default class Logs {
    * @param id ID of the application
    * @return Promise that when resolved returns a list of logs archives for this application
    */
-  archives(id: string): APIResponse<Archive[] | APIError> {
+  archives(id: string): Promise<Archive[] | APIError> {
     // Pagination is not supported in the lib. We're waiting correct pagination metadata.
     // See: https://github.com/Scalingo/api/issues/1438
     return unpackData(

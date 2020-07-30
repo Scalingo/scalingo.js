@@ -1,5 +1,5 @@
 import { unpackData } from '../utils'
-import { Client, APIResponse } from '..'
+import { Client } from '..'
 
 /** @see https://developers.scalingo.com/keys */
 export interface Key {
@@ -35,14 +35,14 @@ export default class Keys {
   /**
    * List all known keys
    */
-  all(): APIResponse<Key[]> {
+  all(): Promise<Key[]> {
     return unpackData(this._client.authApiClient().get('/keys'), 'keys')
   }
 
   /**
    * Show one specific key
    */
-  show(id: string): APIResponse<Key> {
+  show(id: string): Promise<Key> {
     return unpackData(this._client.authApiClient().get(`/keys/${id}`), 'key')
   }
 
@@ -51,7 +51,7 @@ export default class Keys {
    * @param name The name of the new key
    * @param content Public SSH key content (ie. content of ~/.ssh/id_rsa.pub)
    */
-  create(name: string, content: string): APIResponse<Key> {
+  create(name: string, content: string): Promise<Key> {
     const data = { name, content }
     return unpackData(this._client.authApiClient().post('/keys', data), 'key')
   }
@@ -60,7 +60,7 @@ export default class Keys {
    * Destroy a key
    * @param id The id of the key to destroy
    */
-  destroy(id: string): APIResponse {
+  destroy(id: string): Promise<void> {
     return unpackData(this._client.authApiClient().delete(`/keys/${id}`))
   }
 }

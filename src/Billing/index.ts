@@ -1,5 +1,5 @@
 import { unpackData } from '../utils'
-import { Client, APIResponse } from '..'
+import { Client } from '..'
 
 export interface BillingProfile {
   id: string
@@ -55,7 +55,7 @@ export default class Billing {
    * Return the billing profile of current user
    * @see https://developers.scalingo.com/billing#billing-profile
    */
-  profile(): APIResponse<BillingProfile> {
+  profile(): Promise<BillingProfile> {
     return unpackData(
       this._client.billingApiClient().get('/profile'),
       'profile',
@@ -67,9 +67,7 @@ export default class Billing {
    * @see https://developers.scalingo.com/billing#billing-profile
    * @param profile The billing profile to create
    */
-  createProfile(
-    profile: Omit<BillingProfile, 'id'>,
-  ): APIResponse<BillingProfile> {
+  createProfile(profile: Omit<BillingProfile, 'id'>): Promise<BillingProfile> {
     return unpackData(
       this._client.billingApiClient().post('/profiles', { profile }),
       'profile',
@@ -84,7 +82,7 @@ export default class Billing {
   updateProfile(
     id: string,
     profile: Omit<BillingProfile, 'id'>,
-  ): APIResponse<BillingProfile> {
+  ): Promise<BillingProfile> {
     return unpackData(
       this._client.billingApiClient().put(`/profiles/${id}`, { profile }),
       'profile',

@@ -1,6 +1,6 @@
 import { unpackData } from '../utils'
 import Listener from '../Deployments/listener'
-import { Client, APIResponse } from '..'
+import { Client } from '..'
 import { APIError } from '../errors'
 
 /** Application is new, no code is running */
@@ -117,7 +117,7 @@ export default class Apps {
    * @param id ID of the application
    * @return Promise that when resolved returns an App. See: https://developers.scalingo.com/apps#application-attributes
    */
-  find(id: string): APIResponse<App> {
+  find(id: string): Promise<App> {
     return unpackData(this._client.apiClient().get(`/apps/${id}`), 'app')
   }
 
@@ -126,7 +126,7 @@ export default class Apps {
    * @see https://developers.scalingo.com/apps#list-your-applications
    * @return Promise that when resolved returns an App array. See: https://developers.scalingo.com/apps#application-attributes
    */
-  all(): APIResponse<App[]> {
+  all(): Promise<App[]> {
     return unpackData(this._client.apiClient().get('/apps'), 'apps')
   }
 
@@ -137,7 +137,7 @@ export default class Apps {
    * @param opts Optional additional information
    * @return Promise that when resolved returns the App created.
    */
-  create(name: string, opts: AppCreateOpts): APIResponse<App> {
+  create(name: string, opts: AppCreateOpts): Promise<App> {
     const body: Record<string, any> = {
       name: name,
     }
@@ -175,7 +175,7 @@ export default class Apps {
    * @param id ID of the application
    * @return Promise that when resolved returns a pre-signed URL to access application logs.
    */
-  logsURL(id: string): APIResponse<string> {
+  logsURL(id: string): Promise<string> {
     return unpackData(
       this._client.apiClient().get(`/apps/${id}/logs`),
       'logs_url',
@@ -189,7 +189,7 @@ export default class Apps {
    * @param currentName Current name of the application. Used as validation.
    * @return Promise that resolves when the app is deleted.
    */
-  destroy(appID: string, currentName: string): APIResponse {
+  destroy(appID: string, currentName: string): Promise<void> {
     return unpackData(
       this._client
         .apiClient()
@@ -205,11 +205,7 @@ export default class Apps {
    * @param newName New name of the application.
    * @return Promise that when resolved returns the App renamed.
    */
-  rename(
-    appID: string,
-    currentName: string,
-    newName: string,
-  ): APIResponse<App> {
+  rename(appID: string, currentName: string, newName: string): Promise<App> {
     return unpackData(
       this._client.apiClient().post(`/apps/${appID}/rename`, {
         current_name: currentName,
@@ -231,7 +227,7 @@ export default class Apps {
     appID: string,
     currentName: string,
     ownerEmail: string,
-  ): APIResponse<App> {
+  ): Promise<App> {
     return unpackData(
       this._client.apiClient().patch(
         `/apps/${appID}`,
@@ -254,7 +250,7 @@ export default class Apps {
    * @param {AppUpdateOpts} appSettings - Settings to modify
    * @return {Promise<App, APIError>} Promise that when resolved returns the updated App.
    */
-  update(appID: string, appSettings: AppUpdateOpts): APIResponse<App> {
+  update(appID: string, appSettings: AppUpdateOpts): Promise<App> {
     return unpackData(
       this._client.apiClient().patch(`/apps/${appID}`, { app: appSettings }),
       'app',

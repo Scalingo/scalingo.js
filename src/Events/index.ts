@@ -1,5 +1,5 @@
 import { unpackData } from '../utils'
-import { Client, APIResponse } from '..'
+import { Client } from '..'
 import { PaginationMeta } from '../meta'
 
 export interface EventsPaginationOpts {
@@ -87,7 +87,7 @@ export default class Events {
    * @see https://developers.scalingo.com/events#list-current-user-events
    * @param opts Object that contains the index of the page and the number of elements per page
    */
-  all(opts?: EventsPaginationOpts): APIResponse<AppEvents> {
+  all(opts?: EventsPaginationOpts): Promise<AppEvents> {
     return unpackData(this._client.apiClient().get('/events', { params: opts }))
   }
 
@@ -97,7 +97,7 @@ export default class Events {
    * @param appId Id of the current application
    * @param opts Object that contains the index of the page and the number of elements per page
    */
-  for(appId: string, opts?: EventsPaginationOpts): APIResponse<AppEvents> {
+  for(appId: string, opts?: EventsPaginationOpts): Promise<AppEvents> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/events`, { params: opts }),
     )
@@ -107,7 +107,7 @@ export default class Events {
    * Return a list of event types
    * @see https://developers.scalingo.com/event_types#list-the-event-types
    */
-  listEventTypes(): APIResponse<EventType[]> {
+  listEventTypes(): Promise<EventType[]> {
     return unpackData(
       this._client.unauthenticatedClient().get('event_types'),
       'event_types',
@@ -118,7 +118,7 @@ export default class Events {
    * Return a list of event catgories
    * @see https://developers.scalingo.com/event_categories#list-the-event-categories
    */
-  listEventCategories(): APIResponse<EventCategory[]> {
+  listEventCategories(): Promise<EventCategory[]> {
     return unpackData(
       this._client.unauthenticatedClient().get('event_categories'),
       'event_categories',

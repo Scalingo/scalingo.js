@@ -1,5 +1,5 @@
 import { unpackData } from '../utils'
-import { Client, APIResponse } from '..'
+import { Client } from '..'
 
 export interface User {
   id: string
@@ -58,7 +58,7 @@ export class Users {
    * Fetch the current user account informations
    * @return Promise that when resolve return the user account informations
    */
-  self(): APIResponse<User> {
+  self(): Promise<User> {
     return unpackData(this._client.authApiClient().get('/users/self'), 'user')
   }
 
@@ -67,7 +67,7 @@ export class Users {
    * @param attributes User attributes to update
    * @return Promise that when resolve return the user account informations
    */
-  updateAccount(attributes: AccountUpdateParams): APIResponse<User> {
+  updateAccount(attributes: AccountUpdateParams): Promise<User> {
     return unpackData(
       this._client.authApiClient().put('/users/account', { user: attributes }),
       'user',

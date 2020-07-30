@@ -1,5 +1,5 @@
 import { unpackData } from '../utils'
-import { Client, APIResponse } from '..'
+import { Client } from '..'
 
 export interface AddonSso {
   /** The id of the addon */
@@ -111,7 +111,7 @@ export default class Addons {
    * @see https://developers.scalingo.com/addons#list-application-addons
    * @param appId ID of the app to get the addons from
    */
-  for(appId: string): APIResponse<Addon[]> {
+  for(appId: string): Promise<Addon[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/addons`),
       'addons',
@@ -129,7 +129,7 @@ export default class Addons {
     appId: string,
     planId: string,
     addonProviderId: string,
-  ): APIResponse<Addon> {
+  ): Promise<Addon> {
     return unpackData(
       this._client.apiClient().post(`/apps/${appId}/addons`, {
         addon: { plan_id: planId, addon_provider_id: addonProviderId },
@@ -142,7 +142,7 @@ export default class Addons {
    * List addon categories
    * @see https://developers.scalingo.com/addon_providers#list-addon-categories
    */
-  listCategories(): APIResponse<Category[]> {
+  listCategories(): Promise<Category[]> {
     return unpackData(
       this._client.unauthenticatedClient().get('/addon_categories'),
       'addon_categories',
@@ -154,7 +154,7 @@ export default class Addons {
    * @see https://developers.scalingo.com/addon_providers#list-addon-providers
    * @param categoryId ID of the addon category
    */
-  listProviders(categoryId?: string): APIResponse<AddonProvider[]> {
+  listProviders(categoryId?: string): Promise<AddonProvider[]> {
     if (categoryId) {
       return unpackData(
         this._client
@@ -181,7 +181,7 @@ export default class Addons {
     appId: string,
     addonId: string,
     addon: AddonUpdateParams,
-  ): APIResponse<AddonUpgrade> {
+  ): Promise<AddonUpgrade> {
     return unpackData(
       this._client
         .apiClient()
@@ -196,7 +196,7 @@ export default class Addons {
    * @param appId ID of the current application
    * @param addonId ID of the addon
    */
-  destroy(appId: string, addonId: string): APIResponse {
+  destroy(appId: string, addonId: string): Promise<void> {
     return unpackData(
       this._client.apiClient().delete(`/apps/${appId}/addons/${addonId}`),
     )
@@ -207,7 +207,7 @@ export default class Addons {
    * @param appId The ID of the current application
    * @param addonId The ID of the addon
    */
-  sso(appId: string, addonId: string): APIResponse<AddonSso> {
+  sso(appId: string, addonId: string): Promise<AddonSso> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/addons/${addonId}/sso`),
       'addon',
@@ -219,7 +219,7 @@ export default class Addons {
    * @param appId The ID of the current application
    * @param addonId The ID of the addon to get
    */
-  getAddon(appId: string, addonId: string): APIResponse<Addon> {
+  getAddon(appId: string, addonId: string): Promise<Addon> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/addons/${addonId}`),
       'addon',

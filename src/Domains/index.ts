@@ -1,5 +1,5 @@
 import { unpackData } from '../utils'
-import { Client, APIResponse } from '..'
+import { Client } from '..'
 
 /**
  * @desc
@@ -77,7 +77,7 @@ export default class Domains {
    * @see https://developers.scalingo.com/domains#list-all-the-domains-of-an-application
    * @param appId ID of the app to get domains list
    */
-  for(appId: string): APIResponse<Domain[]> {
+  for(appId: string): Promise<Domain[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/domains`),
       'domains',
@@ -90,7 +90,7 @@ export default class Domains {
    * @param appId ID of the app to post to the specified application
    * @param domain An object of the domain to link
    */
-  create(appId: string, domain: DomainCreateParams): APIResponse<Domain> {
+  create(appId: string, domain: DomainCreateParams): Promise<Domain> {
     return unpackData(
       this._client
         .apiClient()
@@ -105,7 +105,7 @@ export default class Domains {
    * @param appId ID of the app to post to the specified application
    * @param domainId ID of the specified domain
    */
-  destroy(appId: string, domainId: string): APIResponse {
+  destroy(appId: string, domainId: string): Promise<void> {
     return unpackData(
       this._client.apiClient().delete(`/apps/${appId}/domains/${domainId}`),
     )
@@ -117,7 +117,7 @@ export default class Domains {
    * @param appId ID of the app to post to the specified application
    * @param domainId ID of the domain name
    */
-  show(appId: string, domainId: string): APIResponse<Domain> {
+  show(appId: string, domainId: string): Promise<Domain> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/domains/${domainId}`),
       'domain',
@@ -135,7 +135,7 @@ export default class Domains {
     appId: string,
     domainId: string,
     domain: DomainUpdateParams,
-  ): APIResponse<Domain> {
+  ): Promise<Domain> {
     return unpackData(
       this._client
         .apiClient()

@@ -1,5 +1,5 @@
 import { unpackData } from '../utils'
-import { Client, APIResponse } from '..'
+import { Client } from '..'
 
 export const TOTP_PROVIDER = 'totp'
 export const DEFAULT_PROVIDER = TOTP_PROVIDER
@@ -42,7 +42,7 @@ export class TwoFactorAuth {
    * Returns the current user two-factor status
    * @return Promise resolving with the current user two factor status
    */
-  status(): APIResponse<TwoFactorAuthObject> {
+  status(): Promise<TwoFactorAuthObject> {
     return unpackData(this._client.authApiClient().get('/client/tfa'), 'tfa')
   }
 
@@ -53,7 +53,7 @@ export class TwoFactorAuth {
    */
   initiate(
     provider = DEFAULT_PROVIDER,
-  ): APIResponse<TwoFactorAuthInitiateResponse> {
+  ): Promise<TwoFactorAuthInitiateResponse> {
     const data = {
       tfa: { provider: provider || DEFAULT_PROVIDER },
     }
@@ -69,7 +69,7 @@ export class TwoFactorAuth {
    * @param attempt the "pin number" given by the authenticator
    * @return Promise resolving with the current user two factor status
    */
-  validate(attempt: number): APIResponse<TwoFactorAuthValidateResponse> {
+  validate(attempt: number): Promise<TwoFactorAuthValidateResponse> {
     const data = {
       tfa: { attempt },
     }
@@ -84,7 +84,7 @@ export class TwoFactorAuth {
    * Disable the two-factor auth for this user. Will raise an error if not enabled.
    * @return Promise resolving with the current user two factor status
    */
-  disable(): APIResponse<TwoFactorAuthObject> {
+  disable(): Promise<TwoFactorAuthObject> {
     return unpackData(this._client.authApiClient().delete('/client/tfa'))
   }
 }

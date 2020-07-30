@@ -1,5 +1,5 @@
 import { unpackData } from '../utils'
-import { Client, APIResponse } from '..'
+import { Client } from '..'
 
 /** @see https://developers.scalingo.com/metrics */
 export interface MetricType {
@@ -55,7 +55,7 @@ export default class Metrics {
    * @see https://developers.scalingo.com/metrics#list-the-metrics-available
    * @return Promise that when resolved return a list of all metrics available on the platform.
    */
-  types(): APIResponse<MetricType[]> {
+  types(): Promise<MetricType[]> {
     return unpackData(
       this._client.apiClient().get('/features/metrics'),
       'metrics',
@@ -73,7 +73,7 @@ export default class Metrics {
     appId: string,
     metric: string,
     opts: MetricsQuery = {},
-  ): APIResponse<Point[]> {
+  ): Promise<Point[]> {
     const {
       since,
       statusCode,

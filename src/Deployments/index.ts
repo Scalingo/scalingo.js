@@ -1,5 +1,5 @@
 import { unpackData } from '../utils'
-import { Client, APIResponse } from '..'
+import { Client } from '..'
 import { PaginationMeta, PaginationOpts } from '../meta'
 
 /** @see https://developers.scalingo.com/deployments */
@@ -98,7 +98,7 @@ export default class Deployments {
    * @param opts optional parameters
    * @return List of deployments for this app
    */
-  for(appId: string, opts: PaginationOpts): APIResponse<DeploymentsResult> {
+  for(appId: string, opts: PaginationOpts): Promise<DeploymentsResult> {
     return unpackData(
       this._client
         .apiClient()
@@ -113,7 +113,7 @@ export default class Deployments {
    * @param deploymentId ID of the deployment
    * @return {Promise<Deployment | APIError>} Details of the deployment
    */
-  find(appId: string, deploymentId: string): APIResponse<Deployment> {
+  find(appId: string, deploymentId: string): Promise<Deployment> {
     return unpackData(
       this._client
         .apiClient()
@@ -129,7 +129,7 @@ export default class Deployments {
    * @param deploymentId ID of the deployment
    * @return Logs of the deployment
    */
-  logs(appId: string, deploymentId: string): APIResponse<string> {
+  logs(appId: string, deploymentId: string): Promise<string> {
     return unpackData(
       this._client
         .apiClient()

@@ -1,5 +1,5 @@
 import { unpackData } from '../utils'
-import { Client, APIResponse } from '..'
+import { Client } from '..'
 
 /** @see https://developers.scalingo.com/environment */
 export interface Variable {
@@ -34,7 +34,7 @@ export default class Environment {
    * @see https://developers.scalingo.com/environment#list-environment-variables-of-an-app
    * @param appId ID of the app to get domains list
    */
-  for(appId: string): APIResponse<Variable[]> {
+  for(appId: string): Promise<Variable[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/variables`),
       'variables',
@@ -47,7 +47,7 @@ export default class Environment {
    * @param appId ID of the app to get domains list
    * @param variable An Object that contain the information about the environment variable
    */
-  create(appId: string, variable: VariableParams): APIResponse<Variable> {
+  create(appId: string, variable: VariableParams): Promise<Variable> {
     return unpackData(
       this._client
         .apiClient()
@@ -65,7 +65,7 @@ export default class Environment {
   bulkUpdate(
     appId: string,
     variablesArray: VariableParams[],
-  ): APIResponse<Variable[]> {
+  ): Promise<Variable[]> {
     return unpackData(
       this._client
         .apiClient()
@@ -81,7 +81,7 @@ export default class Environment {
    * @param id ID of the variable to update
    * @param value An string of the value of the environment variable to update
    */
-  update(appId: string, id: string, value: string): APIResponse<Variable[]> {
+  update(appId: string, id: string, value: string): Promise<Variable[]> {
     return unpackData(
       this._client.apiClient().patch(`/apps/${appId}/variables/${id}`, {
         variable: { value },
@@ -96,7 +96,7 @@ export default class Environment {
    * @param appId ID of the app to get domains list
    * @param variableId ID of the variable to delete
    */
-  destroy(appId: string, variableId: string): APIResponse<Variable[]> {
+  destroy(appId: string, variableId: string): Promise<Variable[]> {
     return unpackData(
       this._client.apiClient().delete(`/apps/${appId}/variables/${variableId}`),
     )
@@ -108,10 +108,7 @@ export default class Environment {
    * @param appId ID of the app
    * @param variablesArray An array of variables id
    */
-  bulkDestroy(
-    appId: string,
-    variablesArray: string[],
-  ): APIResponse<Variable[]> {
+  bulkDestroy(appId: string, variablesArray: string[]): Promise<Variable[]> {
     return unpackData(
       this._client.apiClient().delete(`/apps/${appId}/variables`, {
         data: { variable_ids: variablesArray },

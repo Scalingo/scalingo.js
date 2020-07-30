@@ -23,8 +23,6 @@ import Tokens from './Tokens'
 import TwoFactorAuth from './TwoFactorAuth'
 import Users from './Users'
 
-export type APIResponse<T = void> = Promise<T | APIError>
-
 export interface ScalingoClientOptions {
   apiUrl?: string
   authApiUrl?: string

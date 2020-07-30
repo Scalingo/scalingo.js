@@ -1,5 +1,5 @@
 import { unpackData } from '../utils'
-import { Client, APIResponse } from '..'
+import { Client } from '..'
 import { App } from '../Apps'
 
 export interface CollaboratorInvitation {
@@ -46,7 +46,7 @@ export default class Collaborators {
    * @see https://developers.scalingo.com/collaborators#list-collaborators-of-an-app
    * @param appId ID of the app to get collaborators list}
    */
-  for(appId: string): APIResponse<Collaborator[]> {
+  for(appId: string): Promise<Collaborator[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/collaborators`),
       'collaborators',
@@ -59,7 +59,7 @@ export default class Collaborators {
    * @param appId ID of the application
    * @param collaboratorId ID of the collaborator to remove
    */
-  destroy(appId: string, collaboratorId: string): APIResponse {
+  destroy(appId: string, collaboratorId: string): Promise<void> {
     return unpackData(
       this._client
         .apiClient()
@@ -73,7 +73,7 @@ export default class Collaborators {
    * @param appId Id of the application
    * @param email Email of the collaborator to invite
    */
-  invite(appId: string, email: string): APIResponse<CollaboratorInvitation> {
+  invite(appId: string, email: string): Promise<CollaboratorInvitation> {
     return unpackData(
       this._client.apiClient().post(`/apps/${appId}/collaborators`, {
         collaborator: { email: email },
@@ -87,7 +87,7 @@ export default class Collaborators {
    * @see https://developers.scalingo.com/collaborators#accept-an-invitation-to-collaborate
    * @params {String} token Token of the invitation returned when adding a collaborator
    */
-  inviteAccept(token: string): APIResponse<App> {
+  inviteAccept(token: string): Promise<App> {
     return unpackData(
       this._client
         .apiClient()
