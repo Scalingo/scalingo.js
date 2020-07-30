@@ -1,7 +1,6 @@
 import { unpackData } from '../utils'
 import { Operation } from '../Operations/utils'
 import { Client } from '..'
-import { APIError } from '../errors'
 
 export interface ContainersOperation {
   /** Response of the API call */
@@ -75,7 +74,7 @@ export default class Containers {
   async scale(
     appId: string,
     formation: Container[],
-  ): Promise<ContainersOperation | APIError> {
+  ): Promise<ContainersOperation> {
     const result = await unpackData(
       this._client
         .apiClient()
@@ -107,7 +106,7 @@ export default class Containers {
    * @param scope Array of containers name to restart
    * @return final formation
    */
-  async restart(appId: string, scope?: string): Promise<Operation | APIError> {
+  async restart(appId: string, scope?: string): Promise<Operation> {
     const result = await unpackData(
       this._client.apiClient().post(`/apps/${appId}/restart`, { scope: scope }),
       undefined,

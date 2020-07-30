@@ -111,7 +111,7 @@ export default class Deployments {
    * @see https://developers.scalingo.com/deployments#get-a-particular-deployment
    * @param appId ID of the app
    * @param deploymentId ID of the deployment
-   * @return {Promise<Deployment | APIError>} Details of the deployment
+   * @return {Promise<Deployment>} Details of the deployment
    */
   find(appId: string, deploymentId: string): Promise<Deployment> {
     return unpackData(

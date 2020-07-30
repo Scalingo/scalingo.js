@@ -1,5 +1,4 @@
 import axios, { AxiosInstance } from 'axios'
-import { APIError } from './errors'
 
 import Apps from './Apps'
 import Addons from './Addons'
@@ -177,7 +176,7 @@ export default Client
 export async function clientFromToken(
   token: string,
   opts: ScalingoClientOptions,
-): Promise<Client | APIError> {
+): Promise<Client> {
   const client = new Client('', opts)
   const bearerToken = (await client.Tokens.exchange(token)) as string
   client._token = bearerToken

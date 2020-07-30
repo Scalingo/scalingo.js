@@ -67,7 +67,7 @@ export class Operation {
   /**
    * Get the response of the API call to get the operation's infos
    */
-  async refresh(): Promise<Operation | APIError | Error> {
+  async refresh(): Promise<Operation> {
     return new Promise((resolve, reject) => {
       if (!this._client || !this._url) {
         reject(new Error('missing url'))
@@ -94,7 +94,7 @@ export class Operation {
   /**
    * It will call the refresh method until operation's status isn't 'done'
    */
-  wait(): Promise<Operation | APIError | Error> {
+  wait(): Promise<Operation> {
     return new Promise((resolve, reject) => {
       const waitInterval = setInterval(async () => {
         try {

@@ -67,7 +67,7 @@ export default class Metrics {
    * @param appId Application ID
    * @param metrics Which metric to get. One of the following: [router, requests, cpu, ram, swap]
    * @param opts Optional params
-   * @return {Promise<Point[] | APIError>} Promise that when resolve return an array of points for the requested metrics
+   * @return {Promise<Point[]>} Promise that when resolve return an array of points for the requested metrics
    */
   get(
     appId: string,

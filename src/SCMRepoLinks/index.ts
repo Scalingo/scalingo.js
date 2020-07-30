@@ -165,7 +165,7 @@ export class SCMRepoLinks {
    * Delete a SCM repo link
    * @see https://developers.scalingo.com/scm_repo_link#delete-an-integration-link
    * @param {String} appID ID of the application
-   * @return {Promise<null, APIError>} Promise that resolves when the link is deleted.
+   * @return {Promise<null>} Promise that resolves when the link is deleted.
    */
   destroy(appID: string): Promise<void> {
     return unpackData(

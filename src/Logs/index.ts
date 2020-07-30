@@ -1,7 +1,6 @@
 import LogsListener from '../Logs/listener'
 import { unpackData } from '../utils'
 import { Client } from '..'
-import { APIError } from '../errors'
 
 export interface AppLogsOpts {
   /** Number of log lines to fetch */
@@ -39,7 +38,7 @@ export default class Logs {
    * @param opts Optional additional information
    * @return Promise that when resolved returns the application logs
    */
-  async for(id: string, opts: AppLogsOpts): Promise<string | APIError> {
+  async for(id: string, opts: AppLogsOpts): Promise<string> {
     let url = await this._client.Apps.logsURL(id)
     url = `${url}&stream=false`
 
@@ -54,9 +53,9 @@ export default class Logs {
    * Open a listener on this app logs
    * @see https://developers.scalingo.com/logs
    * @param {String} id ID of the application
-   * @return {Promise<LogsListener, APIError>} Promise that when resolved returns a logs listener for this application.
+   * @return {Promise<LogsListener>} Promise that when resolved returns a logs listener for this application.
    */
-  async listenerFor(id: string): Promise<LogsListener | APIError> {
+  async listenerFor(id: string): Promise<LogsListener> {
     let url = await this._client.Apps.logsURL(id)
     url = `${url}&stream=true`
 
@@ -69,7 +68,7 @@ export default class Logs {
    * @param id ID of the application
    * @return Promise that when resolved returns a list of logs archives for this application
    */
-  archives(id: string): Promise<Archive[] | APIError> {
+  archives(id: string): Promise<Archive[]> {
     // Pagination is not supported in the lib. We're waiting correct pagination metadata.
     // See: https://github.com/Scalingo/api/issues/1438
     return unpackData(

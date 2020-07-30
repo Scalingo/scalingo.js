@@ -1,7 +1,6 @@
 import { unpackData } from '../utils'
 import Listener from '../Deployments/listener'
 import { Client } from '..'
-import { APIError } from '../errors'
 
 /** Application is new, no code is running */
 export const STATUS_NEW = 'new'
@@ -164,7 +163,7 @@ export default class Apps {
    * @param id ID of the application
    * @return Promise that when resolved returns a Listener for this application.
    */
-  async deploymentListener(id: string): Promise<Listener | APIError> {
+  async deploymentListener(id: string): Promise<Listener> {
     const app = (await this.find(id)) as App
     return new Listener(this._client, app.links.deployments_stream)
   }
@@ -248,7 +247,7 @@ export default class Apps {
    * @see https://developers.scalingo.com/apps#update-application-settings
    * @param {String} appID ID of the application
    * @param {AppUpdateOpts} appSettings - Settings to modify
-   * @return {Promise<App, APIError>} Promise that when resolved returns the updated App.
+   * @return {Promise<App>} Promise that when resolved returns the updated App.
    */
   update(appID: string, appSettings: AppUpdateOpts): Promise<App> {
     return unpackData(
