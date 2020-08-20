@@ -48,6 +48,8 @@ export interface DeploymentsMeta {
   pagination: PaginationMeta
 }
 
+/** Deployment has been queued and will start shortly **/
+export const STATUS_QUEUED = 'queued'
 /** Building is ongoing */
 export const STATUS_BUILDING = 'building'
 /** The code is being pushed */
@@ -66,6 +68,7 @@ export const STATUS_BUILD_ERROR = 'build-error'
 export const STATUS_ABORTED = 'aborted'
 
 export type DeploymentStatus =
+  | typeof STATUS_QUEUED
   | typeof STATUS_BUILDING
   | typeof STATUS_PUSHING
   | typeof STATUS_STARTING
