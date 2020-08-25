@@ -64,7 +64,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										}
@@ -104,7 +104,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1065,
+								"id": 1067,
 								"name": "Client"
 							}
 						},
@@ -1889,7 +1889,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										}
@@ -1929,7 +1929,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1065,
+								"id": 1067,
 								"name": "Client"
 							}
 						},
@@ -3835,7 +3835,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										}
@@ -3875,7 +3875,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1065,
+								"id": 1067,
 								"name": "Client"
 							}
 						},
@@ -4996,7 +4996,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										}
@@ -5036,7 +5036,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1065,
+								"id": 1067,
 								"name": "Client"
 							}
 						},
@@ -5665,7 +5665,7 @@
 			]
 		},
 		{
-			"id": 1118,
+			"id": 1120,
 			"name": "\"Collaborators/status\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -5675,7 +5675,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/Collaborators/status.ts",
 			"children": [
 				{
-					"id": 1119,
+					"id": 1121,
 					"name": "ACCEPTED",
 					"kind": 32,
 					"kindString": "Variable",
@@ -5697,7 +5697,7 @@
 					"defaultValue": "\"accepted\""
 				},
 				{
-					"id": 1120,
+					"id": 1122,
 					"name": "PENDING",
 					"kind": 32,
 					"kindString": "Variable",
@@ -5719,7 +5719,7 @@
 					"defaultValue": "\"pending\""
 				},
 				{
-					"id": 1121,
+					"id": 1123,
 					"name": "USER_ACCOUNT_DELETED",
 					"kind": 32,
 					"kindString": "Variable",
@@ -5746,9 +5746,9 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						1119,
-						1120,
-						1121
+						1121,
+						1122,
+						1123
 					]
 				}
 			],
@@ -5819,7 +5819,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										}
@@ -5859,7 +5859,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1065,
+								"id": 1067,
 								"name": "Client"
 							}
 						},
@@ -6676,7 +6676,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										}
@@ -6716,7 +6716,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1065,
+								"id": 1067,
 								"name": "Client"
 							}
 						},
@@ -7916,7 +7916,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										},
@@ -7989,7 +7989,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1065,
+								"id": 1067,
 								"name": "Client"
 							}
 						},
@@ -10206,7 +10206,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										}
@@ -10246,7 +10246,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1065,
+								"id": 1067,
 								"name": "Client"
 							}
 						},
@@ -11328,7 +11328,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										}
@@ -11368,7 +11368,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1065,
+								"id": 1067,
 								"name": "Client"
 							}
 						},
@@ -12158,7 +12158,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										}
@@ -12198,7 +12198,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1065,
+								"id": 1067,
 								"name": "Client"
 							}
 						},
@@ -13354,7 +13354,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										}
@@ -13394,7 +13394,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1065,
+								"id": 1067,
 								"name": "Client"
 							}
 						},
@@ -13935,7 +13935,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										}
@@ -13975,7 +13975,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1065,
+								"id": 1067,
 								"name": "Client"
 							}
 						},
@@ -14492,7 +14492,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										},
@@ -14548,7 +14548,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1065,
+								"id": 1067,
 								"name": "Client"
 							}
 						},
@@ -15003,7 +15003,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										}
@@ -15043,7 +15043,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1065,
+								"id": 1067,
 								"name": "Client"
 							}
 						},
@@ -15749,7 +15749,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										}
@@ -15789,7 +15789,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1065,
+								"id": 1067,
 								"name": "Client"
 							}
 						},
@@ -16071,7 +16071,7 @@
 			]
 		},
 		{
-			"id": 1122,
+			"id": 1124,
 			"name": "\"NotificationPlatforms/list\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -16081,7 +16081,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/NotificationPlatforms/list.ts",
 			"children": [
 				{
-					"id": 1123,
+					"id": 1125,
 					"name": "EMAIL",
 					"kind": 32,
 					"kindString": "Variable",
@@ -16103,7 +16103,7 @@
 					"defaultValue": "\"email\""
 				},
 				{
-					"id": 1124,
+					"id": 1126,
 					"name": "ROCKET_CHAT",
 					"kind": 32,
 					"kindString": "Variable",
@@ -16125,7 +16125,7 @@
 					"defaultValue": "\"rocket_chat\""
 				},
 				{
-					"id": 1125,
+					"id": 1127,
 					"name": "SLACK",
 					"kind": 32,
 					"kindString": "Variable",
@@ -16147,7 +16147,7 @@
 					"defaultValue": "\"slack\""
 				},
 				{
-					"id": 1126,
+					"id": 1128,
 					"name": "WEBHOOK",
 					"kind": 32,
 					"kindString": "Variable",
@@ -16174,10 +16174,10 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						1123,
-						1124,
 						1125,
-						1126
+						1126,
+						1127,
+						1128
 					]
 				}
 			],
@@ -16248,7 +16248,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										}
@@ -16288,7 +16288,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1065,
+								"id": 1067,
 								"name": "Client"
 							}
 						},
@@ -17703,7 +17703,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										}
@@ -17743,7 +17743,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1065,
+								"id": 1067,
 								"name": "Client"
 							}
 						},
@@ -17944,7 +17944,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										},
@@ -18000,7 +18000,7 @@
 								"types": [
 									{
 										"type": "reference",
-										"id": 1065,
+										"id": 1067,
 										"name": "Client"
 									},
 									{
@@ -18733,7 +18733,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										}
@@ -18773,7 +18773,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1065,
+								"id": 1067,
 								"name": "Client"
 							}
 						},
@@ -20336,7 +20336,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										}
@@ -20376,7 +20376,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1065,
+								"id": 1067,
 								"name": "Client"
 							}
 						},
@@ -22388,7 +22388,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										}
@@ -22428,7 +22428,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1065,
+								"id": 1067,
 								"name": "Client"
 							}
 						},
@@ -22712,7 +22712,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										}
@@ -22752,7 +22752,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1065,
+								"id": 1067,
 								"name": "Client"
 							}
 						},
@@ -23345,7 +23345,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										}
@@ -23385,7 +23385,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1065,
+								"id": 1067,
 								"name": "Client"
 							}
 						},
@@ -24077,7 +24077,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										}
@@ -24117,9 +24117,50 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1065,
+								"id": 1067,
 								"name": "Client"
 							}
+						},
+						{
+							"id": 1059,
+							"name": "requestAccountDeletion",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 1060,
+									"name": "requestAccountDeletion",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Request the account's deletion. Requires a subsequent validation done via email."
+									},
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "reference",
+												"id": 1023,
+												"name": "User"
+											}
+										],
+										"name": "Promise"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/Users/index.ts",
+									"line": 80,
+									"character": 24
+								}
+							]
 						},
 						{
 							"id": 1054,
@@ -24244,6 +24285,7 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
+								1059,
 								1054,
 								1056
 							]
@@ -25538,7 +25580,7 @@
 			]
 		},
 		{
-			"id": 1059,
+			"id": 1061,
 			"name": "\"index\"",
 			"kind": 1,
 			"kindString": "External module",
@@ -25548,7 +25590,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/index.ts",
 			"children": [
 				{
-					"id": 1065,
+					"id": 1067,
 					"name": "Client",
 					"kind": 128,
 					"kindString": "Class",
@@ -25557,7 +25599,7 @@
 					},
 					"children": [
 						{
-							"id": 1071,
+							"id": 1073,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -25569,7 +25611,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1072,
+									"id": 1074,
 									"name": "new Client",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -25581,7 +25623,7 @@
 									},
 									"parameters": [
 										{
-											"id": 1073,
+											"id": 1075,
 											"name": "token",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -25597,7 +25639,7 @@
 											}
 										},
 										{
-											"id": 1074,
+											"id": 1076,
 											"name": "opts",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -25609,7 +25651,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1060,
+												"id": 1062,
 												"name": "ScalingoClientOptions"
 											},
 											"defaultValue": "{}"
@@ -25617,7 +25659,7 @@
 									],
 									"type": {
 										"type": "reference",
-										"id": 1065,
+										"id": 1067,
 										"name": "Client"
 									}
 								}
@@ -25631,7 +25673,7 @@
 							]
 						},
 						{
-							"id": 1076,
+							"id": 1078,
 							"name": "Addons",
 							"kind": 1024,
 							"kindString": "Property",
@@ -25653,7 +25695,7 @@
 							"defaultValue": "new Addons(this)"
 						},
 						{
-							"id": 1075,
+							"id": 1077,
 							"name": "Apps",
 							"kind": 1024,
 							"kindString": "Property",
@@ -25675,7 +25717,7 @@
 							"defaultValue": "new Apps(this)"
 						},
 						{
-							"id": 1077,
+							"id": 1079,
 							"name": "Billing",
 							"kind": 1024,
 							"kindString": "Property",
@@ -25697,7 +25739,7 @@
 							"defaultValue": "new Billing(this)"
 						},
 						{
-							"id": 1078,
+							"id": 1080,
 							"name": "Collaborators",
 							"kind": 1024,
 							"kindString": "Property",
@@ -25719,7 +25761,7 @@
 							"defaultValue": "new Collaborators(this)"
 						},
 						{
-							"id": 1079,
+							"id": 1081,
 							"name": "Containers",
 							"kind": 1024,
 							"kindString": "Property",
@@ -25741,7 +25783,7 @@
 							"defaultValue": "new Containers(this)"
 						},
 						{
-							"id": 1080,
+							"id": 1082,
 							"name": "Deployments",
 							"kind": 1024,
 							"kindString": "Property",
@@ -25763,7 +25805,7 @@
 							"defaultValue": "new Deployments(this)"
 						},
 						{
-							"id": 1081,
+							"id": 1083,
 							"name": "Domains",
 							"kind": 1024,
 							"kindString": "Property",
@@ -25785,7 +25827,7 @@
 							"defaultValue": "new Domains(this)"
 						},
 						{
-							"id": 1082,
+							"id": 1084,
 							"name": "Environment",
 							"kind": 1024,
 							"kindString": "Property",
@@ -25807,7 +25849,7 @@
 							"defaultValue": "new Environment(this)"
 						},
 						{
-							"id": 1083,
+							"id": 1085,
 							"name": "Events",
 							"kind": 1024,
 							"kindString": "Property",
@@ -25829,7 +25871,7 @@
 							"defaultValue": "new Events(this)"
 						},
 						{
-							"id": 1084,
+							"id": 1086,
 							"name": "Keys",
 							"kind": 1024,
 							"kindString": "Property",
@@ -25851,7 +25893,7 @@
 							"defaultValue": "new Keys(this)"
 						},
 						{
-							"id": 1085,
+							"id": 1087,
 							"name": "Logs",
 							"kind": 1024,
 							"kindString": "Property",
@@ -25873,7 +25915,7 @@
 							"defaultValue": "new Logs(this)"
 						},
 						{
-							"id": 1086,
+							"id": 1088,
 							"name": "Metrics",
 							"kind": 1024,
 							"kindString": "Property",
@@ -25895,7 +25937,7 @@
 							"defaultValue": "new Metrics(this)"
 						},
 						{
-							"id": 1088,
+							"id": 1090,
 							"name": "NotificationPlatforms",
 							"kind": 1024,
 							"kindString": "Property",
@@ -25917,7 +25959,7 @@
 							"defaultValue": "new NotificationPlatforms(this)"
 						},
 						{
-							"id": 1087,
+							"id": 1089,
 							"name": "Notifiers",
 							"kind": 1024,
 							"kindString": "Property",
@@ -25939,7 +25981,7 @@
 							"defaultValue": "new Notifiers(this)"
 						},
 						{
-							"id": 1089,
+							"id": 1091,
 							"name": "Operations",
 							"kind": 1024,
 							"kindString": "Property",
@@ -25961,7 +26003,7 @@
 							"defaultValue": "new Operations(this)"
 						},
 						{
-							"id": 1090,
+							"id": 1092,
 							"name": "SCMIntegrations",
 							"kind": 1024,
 							"kindString": "Property",
@@ -25983,7 +26025,7 @@
 							"defaultValue": "new SCMIntegrations(this)"
 						},
 						{
-							"id": 1091,
+							"id": 1093,
 							"name": "SCMRepoLinks",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26005,7 +26047,7 @@
 							"defaultValue": "new SCMRepoLinks(this)"
 						},
 						{
-							"id": 1092,
+							"id": 1094,
 							"name": "Stats",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26027,7 +26069,7 @@
 							"defaultValue": "new Stats(this)"
 						},
 						{
-							"id": 1093,
+							"id": 1095,
 							"name": "Tokens",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26049,7 +26091,7 @@
 							"defaultValue": "new Tokens(this)"
 						},
 						{
-							"id": 1094,
+							"id": 1096,
 							"name": "TwoFactorAuth",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26071,7 +26113,7 @@
 							"defaultValue": "new TwoFactorAuth(this)"
 						},
 						{
-							"id": 1095,
+							"id": 1097,
 							"name": "Users",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26093,7 +26135,7 @@
 							"defaultValue": "new Users(this)"
 						},
 						{
-							"id": 1067,
+							"id": 1069,
 							"name": "_apiUrl",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26116,7 +26158,7 @@
 							}
 						},
 						{
-							"id": 1068,
+							"id": 1070,
 							"name": "_authApiUrl",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26139,7 +26181,7 @@
 							}
 						},
 						{
-							"id": 1069,
+							"id": 1071,
 							"name": "_billingApiUrl",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26162,7 +26204,7 @@
 							}
 						},
 						{
-							"id": 1070,
+							"id": 1072,
 							"name": "_headers",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26195,7 +26237,7 @@
 							}
 						},
 						{
-							"id": 1066,
+							"id": 1068,
 							"name": "_token",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26218,7 +26260,7 @@
 							}
 						},
 						{
-							"id": 1096,
+							"id": 1098,
 							"name": "apiClient",
 							"kind": 2048,
 							"kindString": "Method",
@@ -26227,7 +26269,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1097,
+									"id": 1099,
 									"name": "apiClient",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -26253,7 +26295,7 @@
 							]
 						},
 						{
-							"id": 1098,
+							"id": 1100,
 							"name": "authApiClient",
 							"kind": 2048,
 							"kindString": "Method",
@@ -26262,7 +26304,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1099,
+									"id": 1101,
 									"name": "authApiClient",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -26288,7 +26330,7 @@
 							]
 						},
 						{
-							"id": 1100,
+							"id": 1102,
 							"name": "billingApiClient",
 							"kind": 2048,
 							"kindString": "Method",
@@ -26297,7 +26339,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1101,
+									"id": 1103,
 									"name": "billingApiClient",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -26323,7 +26365,7 @@
 							]
 						},
 						{
-							"id": 1102,
+							"id": 1104,
 							"name": "unauthenticatedClient",
 							"kind": 2048,
 							"kindString": "Method",
@@ -26332,7 +26374,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1103,
+									"id": 1105,
 									"name": "unauthenticatedClient",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -26363,17 +26405,15 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								1071
+								1073
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1076,
-								1075,
-								1077,
 								1078,
+								1077,
 								1079,
 								1080,
 								1081,
@@ -26382,30 +26422,32 @@
 								1084,
 								1085,
 								1086,
-								1088,
 								1087,
-								1089,
+								1088,
 								1090,
+								1089,
 								1091,
 								1092,
 								1093,
 								1094,
 								1095,
-								1067,
-								1068,
+								1096,
+								1097,
 								1069,
 								1070,
-								1066
+								1071,
+								1072,
+								1068
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								1096,
 								1098,
 								1100,
-								1102
+								1102,
+								1104
 							]
 						}
 					],
@@ -26418,7 +26460,7 @@
 					]
 				},
 				{
-					"id": 1104,
+					"id": 1106,
 					"name": "EndpointClient",
 					"kind": 128,
 					"kindString": "Class",
@@ -26427,7 +26469,7 @@
 					},
 					"children": [
 						{
-							"id": 1106,
+							"id": 1108,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -26439,7 +26481,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1107,
+									"id": 1109,
 									"name": "new EndpointClient",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -26451,7 +26493,7 @@
 									},
 									"parameters": [
 										{
-											"id": 1108,
+											"id": 1110,
 											"name": "client",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -26463,14 +26505,14 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1065,
+												"id": 1067,
 												"name": "Client"
 											}
 										}
 									],
 									"type": {
 										"type": "reference",
-										"id": 1104,
+										"id": 1106,
 										"name": "EndpointClient"
 									}
 								}
@@ -26484,7 +26526,7 @@
 							]
 						},
 						{
-							"id": 1105,
+							"id": 1107,
 							"name": "_client",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26503,7 +26545,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1065,
+								"id": 1067,
 								"name": "Client"
 							}
 						}
@@ -26513,14 +26555,14 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								1106
+								1108
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1105
+								1107
 							]
 						}
 					],
@@ -26533,7 +26575,7 @@
 					]
 				},
 				{
-					"id": 1060,
+					"id": 1062,
 					"name": "ScalingoClientOptions",
 					"kind": 256,
 					"kindString": "Interface",
@@ -26542,7 +26584,7 @@
 					},
 					"children": [
 						{
-							"id": 1061,
+							"id": 1063,
 							"name": "apiUrl",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26572,7 +26614,7 @@
 							}
 						},
 						{
-							"id": 1062,
+							"id": 1064,
 							"name": "authApiUrl",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26602,7 +26644,7 @@
 							}
 						},
 						{
-							"id": 1063,
+							"id": 1065,
 							"name": "billingApiUrl",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26632,7 +26674,7 @@
 							}
 						},
 						{
-							"id": 1064,
+							"id": 1066,
 							"name": "noUserAgent",
 							"kind": 1024,
 							"kindString": "Property",
@@ -26671,10 +26713,10 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1061,
-								1062,
 								1063,
-								1064
+								1064,
+								1065,
+								1066
 							]
 						}
 					],
@@ -26687,7 +26729,7 @@
 					]
 				},
 				{
-					"id": 1114,
+					"id": 1116,
 					"name": "clientFromToken",
 					"kind": 64,
 					"kindString": "Function",
@@ -26696,7 +26738,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1115,
+							"id": 1117,
 							"name": "clientFromToken",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -26708,7 +26750,7 @@
 							},
 							"parameters": [
 								{
-									"id": 1116,
+									"id": 1118,
 									"name": "token",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -26724,7 +26766,7 @@
 									}
 								},
 								{
-									"id": 1117,
+									"id": 1119,
 									"name": "opts",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -26736,7 +26778,7 @@
 									},
 									"type": {
 										"type": "reference",
-										"id": 1060,
+										"id": 1062,
 										"name": "ScalingoClientOptions"
 									}
 								}
@@ -26746,7 +26788,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 1065,
+										"id": 1067,
 										"name": "Client"
 									}
 								],
@@ -26763,7 +26805,7 @@
 					]
 				},
 				{
-					"id": 1109,
+					"id": 1111,
 					"name": "defaultClientOptions",
 					"kind": 2097152,
 					"kindString": "Object literal",
@@ -26773,7 +26815,7 @@
 					},
 					"children": [
 						{
-							"id": 1110,
+							"id": 1112,
 							"name": "apiUrl",
 							"kind": 32,
 							"kindString": "Variable",
@@ -26794,7 +26836,7 @@
 							"defaultValue": "\"https://api.scalingo.com\""
 						},
 						{
-							"id": 1111,
+							"id": 1113,
 							"name": "authApiUrl",
 							"kind": 32,
 							"kindString": "Variable",
@@ -26815,7 +26857,7 @@
 							"defaultValue": "\"https://auth.scalingo.com\""
 						},
 						{
-							"id": 1112,
+							"id": 1114,
 							"name": "billingApiUrl",
 							"kind": 32,
 							"kindString": "Variable",
@@ -26836,7 +26878,7 @@
 							"defaultValue": "\"https://cashmachine.scalingo.com\""
 						},
 						{
-							"id": 1113,
+							"id": 1115,
 							"name": "noUserAgent",
 							"kind": 32,
 							"kindString": "Variable",
@@ -26862,10 +26904,10 @@
 							"title": "Variables",
 							"kind": 32,
 							"children": [
-								1110,
-								1111,
 								1112,
-								1113
+								1113,
+								1114,
+								1115
 							]
 						}
 					],
@@ -26887,29 +26929,29 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						1065,
-						1104
+						1067,
+						1106
 					]
 				},
 				{
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						1060
+						1062
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						1114
+						1116
 					]
 				},
 				{
 					"title": "Object literals",
 					"kind": 2097152,
 					"children": [
-						1109
+						1111
 					]
 				}
 			],
@@ -27253,7 +27295,7 @@
 				202,
 				355,
 				399,
-				1118,
+				1120,
 				463,
 				38,
 				85,
@@ -27265,7 +27307,7 @@
 				649,
 				698,
 				784,
-				1122,
+				1124,
 				726,
 				799,
 				430,
@@ -27276,7 +27318,7 @@
 				991,
 				1022,
 				1,
-				1059,
+				1061,
 				28,
 				22
 			]
