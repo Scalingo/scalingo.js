@@ -1,30 +1,10 @@
 import { unpackData } from '../utils'
 import { Client } from '..'
-import { App } from '../Apps'
-
-export interface CollaboratorInvitation {
-  /** Id of the collaborator */
-  id: string
-  /** Email of the collaborator to invite */
-  email: string
-  /** Username of the person to invite */
-  username: string
-  /** Status of the invitation */
-  status: string
-  /** Link of for the invitation */
-  invitation_link: string
-}
-
-export interface Collaborator {
-  /** Id of the collaborator */
-  id: string
-  /** Email of the collaborator to invite */
-  email: string
-  /** Username of the person to invite */
-  username: string
-  /** Status of the invitation */
-  status: string
-}
+import { App } from '../models/regional/apps'
+import {
+  Collaborator,
+  CollaboratorInvitation,
+} from '../models/regional/collaborators'
 
 /**
  * Collaborators API Client

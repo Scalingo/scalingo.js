@@ -1,20 +1,6 @@
 import { unpackData } from '../utils'
 import { Client } from '..'
-
-export interface NotificationPlatform {
-  /** Unique ID identifying the notification platform */
-  id: string
-  /** Name of the notification platform */
-  name: string
-  /** Human readable name for this notification platform */
-  display_name: string
-  /** URL to a logo for this notification platform */
-  logo_url: string
-  /** list of event type IDs accepted by this platform */
-  available_event_ids: string[]
-  /** Description of the platform */
-  description: string
-}
+import { NotificationPlatform } from '../models/regional/notification_platforms'
 
 /**
  * Notification Platforms API Client

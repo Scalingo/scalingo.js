@@ -1,15 +1,6 @@
 import { unpackData } from '../utils'
 import { Client } from '..'
-
-/** @see https://developers.scalingo.com/environment */
-export interface Variable {
-  /** Unique ID of the environment variable */
-  id: string
-  /** Name of the environment variable */
-  name: string
-  /** The value of the environment variable */
-  value: string
-}
+import { Variable } from '../models/regional/environment'
 
 /** @see https://developers.scalingo.com/environment#add-environment-variables-to-an-app */
 type VariableParams = Partial<Omit<Variable, 'id'>>
