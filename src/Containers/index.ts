@@ -1,6 +1,6 @@
 import { unpackData } from '../utils'
 import { Client } from '..'
-import Operation from 'src/Operations/utils'
+import Operation from '../Operations/utils'
 import {
   Container,
   ContainersOperation,

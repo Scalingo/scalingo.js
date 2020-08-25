@@ -1,5 +1,9 @@
 ## Unreleased
 
+* move models (types and consts) to src/models
+
+## 0.1.4
+
 * Users: request account deletion
 * Deployments: new status "queued"
 
