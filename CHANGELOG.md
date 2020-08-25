@@ -1,5 +1,8 @@
 ## Unreleased
 
+* Users: request account deletion
+* Deployments: new status "queued"
+
 ## 0.1.3
 
 * Tooling: bump `dependencies`, typescript & typedoc
