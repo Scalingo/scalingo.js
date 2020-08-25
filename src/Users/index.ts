@@ -73,6 +73,13 @@ export class Users {
       'user',
     )
   }
+
+  /**
+   * Request the account's deletion. Requires a subsequent validation done via email.
+   */
+  requestAccountDeletion(): Promise<User> {
+    return unpackData(this._client.authApiClient().post('/users/delete'))
+  }
 }
 
 export default Users
