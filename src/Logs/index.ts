@@ -2,11 +2,7 @@ import LogsListener from '../Logs/listener'
 import { unpackData } from '../utils'
 import { Client } from '..'
 import { Archive } from '../models/regional/logs'
-
-export interface AppLogsOpts {
-  /** Number of log lines to fetch */
-  count: number
-}
+import { IndexParams } from '../params/regional/logs'
 
 export default class Logs {
   /** Scalingo API Client */
@@ -27,7 +23,7 @@ export default class Logs {
    * @param opts Optional additional information
    * @return Promise that when resolved returns the application logs
    */
-  async for(id: string, opts: AppLogsOpts): Promise<string> {
+  async for(id: string, opts: IndexParams): Promise<string> {
     let url = await this._client.Apps.logsURL(id)
     url = `${url}&stream=false`
 

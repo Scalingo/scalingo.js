@@ -2,21 +2,7 @@ import { unpackData } from '../utils'
 import { Client } from '..'
 
 import { User } from '../models/auth/user'
-
-export interface AccountUpdateParams {
-  email?: string
-  username?: string
-  company?: string
-  location?: string
-  fullname?: string
-  /** Did the user accept our TOS */
-  tos_accepted?: boolean
-  /** Did the user opt in to receive newsletter */
-  email_newsletter?: boolean
-  password?: string
-  password_confirmation?: string
-  current_password?: string
-}
+import { UpdateParams } from '../params/auth/user'
 
 export class Users {
   /** Scalingo API Client */
@@ -43,7 +29,7 @@ export class Users {
    * @param attributes User attributes to update
    * @return Promise that when resolve return the user account informations
    */
-  updateAccount(attributes: AccountUpdateParams): Promise<User> {
+  updateAccount(attributes: UpdateParams): Promise<User> {
     return unpackData(
       this._client.authApiClient().put('/users/account', { user: attributes }),
       'user',

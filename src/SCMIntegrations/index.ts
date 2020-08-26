@@ -3,21 +3,12 @@ import { Client } from '..'
 import { Key } from '../models/auth/keys'
 import {
   SCMIntegration,
-  SCMType,
   PullRequest,
   Repository,
   Organization,
 } from '../models/auth/scm_integrations'
 
-/** @see https://developers.scalingo.com/scm_integrations#createlink-an-scm-integration-with-your-account */
-export interface SCMIntegrationCreateOpts {
-  /** Type of the SCM integration */
-  scm_type: SCMType
-  /** Endpoint URL of the SCM platform (e.g. https://gitlab.example.com) */
-  url: string
-  /** Access token provided by an SCM platform */
-  access_token: string
-}
+import { CreateParams } from '../params/auth/scm_integrations'
 
 /**
  * SCM Integrations API Client
@@ -66,7 +57,7 @@ export default class SCMIntegrations {
    * @param opts SCM integration information
    * @return Promise that when resolved returns the SCMIntegration created.
    */
-  create(opts: SCMIntegrationCreateOpts): Promise<SCMIntegration> {
+  create(opts: CreateParams): Promise<SCMIntegration> {
     return unpackData(
       this._client
         .authApiClient()

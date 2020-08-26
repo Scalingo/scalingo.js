@@ -1,21 +1,7 @@
 import { unpackData } from '../utils'
 import { Client } from '..'
 import { MetricType, Point } from '../models/regional/metrics'
-
-export interface MetricsQuery {
-  /** Number of hours requested (max 71) */
-  since?: number
-  /** Only available when requesting router metrics. One of the following: [all, 1XX, 2XX, 3XX, 4XX, 5XX] */
-  statusCode?: string
-  /** Only available when requesting requests metrics. One of the following: [media, p95, p99] */
-  statisticsType?: string
-  /** Container type filter */
-  containerType?: string
-  /** Container index (only available when containerType is set and for non router metrics) */
-  containerIndex?: number
-  /** only fetch the last metrics */
-  last?: boolean
-}
+import { QueryParams } from '../params/regional/metrics'
 
 /**
  * Metrics API Client
@@ -51,11 +37,7 @@ export default class Metrics {
    * @param opts Optional params
    * @return {Promise<Point[]>} Promise that when resolve return an array of points for the requested metrics
    */
-  get(
-    appId: string,
-    metric: string,
-    opts: MetricsQuery = {},
-  ): Promise<Point[]> {
+  get(appId: string, metric: string, opts: QueryParams = {}): Promise<Point[]> {
     const {
       since,
       statusCode,

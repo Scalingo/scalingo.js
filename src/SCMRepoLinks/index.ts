@@ -1,30 +1,7 @@
 import { unpackData } from '../utils'
 import { Client } from '..'
 import { SCMRepoLink } from '../models/regional/scm_repo_links'
-
-/** @see https://developers.scalingo.com/scm_repo_link#create-a-scm-integration-link */
-export interface SCMRepoLinkCreateOpts {
-  source?: string
-  branch?: string
-  auth_integration_uuid?: string
-  auto_deploy_enabled?: boolean
-  deploy_review_apps_enabled?: boolean
-  delete_on_close_enabled?: boolean
-  hours_before_delete_on_close?: number
-  delete_stale_enabled?: boolean
-  hours_before_delete_stale?: number
-}
-
-/** @see https://developers.scalingo.com/scm_repo_link#update-a-scm-integration-link */
-export interface SCMRepoLinkUpdateOpts {
-  branch?: string
-  auto_deploy_enabled?: boolean
-  deploy_review_apps_enabled?: boolean
-  delete_on_close_enabled?: boolean
-  hours_before_delete_on_close?: number
-  delete_stale_enabled?: boolean
-  hours_before_delete_stale?: number
-}
+import { CreateParams, UpdateParams } from '../params/regional/scm_repo_links'
 
 /**
  * SCM repo links API Client
@@ -61,7 +38,7 @@ export class SCMRepoLinks {
    * @param opts SCM repo link information
    * @return Promise that when resolved returns the SCMRepoLink created.
    */
-  create(appID: string, opts: SCMRepoLinkCreateOpts): Promise<SCMRepoLink> {
+  create(appID: string, opts: CreateParams): Promise<SCMRepoLink> {
     return unpackData(
       this._client
         .apiClient()
@@ -77,7 +54,7 @@ export class SCMRepoLinks {
    * @param opts SCM repo link information to update
    * @return Promise that when resolved returns the SCMRepoLink updated.
    */
-  update(appID: string, opts: SCMRepoLinkCreateOpts): Promise<SCMRepoLink> {
+  update(appID: string, opts: UpdateParams): Promise<SCMRepoLink> {
     return unpackData(
       this._client
         .apiClient()

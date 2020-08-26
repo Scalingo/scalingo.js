@@ -1,38 +1,7 @@
 import { unpackData } from '../utils'
 import { Client } from '..'
 import { Notifier } from '../models/regional/notifiers'
-
-export interface NotifierCreateParams {
-  /** Notification platform used by this notifer */
-  platform_id: string
-  /** Name of the notifier */
-  name: string
-  /**  Optional: Is the notifier active or not */
-  active?: boolean
-  /**  Optional: Should the notifier accepts all alerts */
-  send_all_alerts?: boolean
-  /**  Optional: Should the notifier accepts all events */
-  send_all_events?: boolean
-  /**  Optional: List of events accepted by this notifier */
-  selected_event_ids?: string[]
-  /**  Optional: Notitication platform dependant additional data */
-  type_data?: Record<string, any>
-}
-
-export interface NotifierUpdateParams {
-  /** Name of the notifier */
-  name: string
-  /**  Optional: Is the notifier active or not */
-  active?: boolean
-  /**  Optional: Should the notifier accepts all alerts */
-  send_all_alerts?: boolean
-  /**  Optional: Should the notifier accepts all events */
-  send_all_events?: boolean
-  /**  Optional: List of events accepted by this notifier */
-  selected_event_ids?: string[]
-  /**  Optional: Notitication platform dependant additional data */
-  type_data?: Record<string, any>
-}
+import { CreateParams, UpdateParams } from '../params/regional/notifiers'
 
 /**
  * Notifiers API Client
@@ -67,7 +36,7 @@ export default class Notifiers {
    * @param appId ID of the app
    * @param notifier New notifier configuration
    */
-  create(appId: string, notifier: NotifierCreateParams): Promise<Notifier> {
+  create(appId: string, notifier: CreateParams): Promise<Notifier> {
     return unpackData(
       this._client.apiClient().post(`/apps/${appId}/notifiers`, {
         notifier: notifier,
@@ -86,7 +55,7 @@ export default class Notifiers {
   update(
     appId: string,
     notifierId: string,
-    notifier: NotifierUpdateParams,
+    notifier: UpdateParams,
   ): Promise<Notifier> {
     return unpackData(
       this._client.apiClient().patch(`/apps/${appId}/notifiers/${notifierId}`, {
