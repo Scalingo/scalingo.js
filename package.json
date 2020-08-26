@@ -53,8 +53,8 @@
     "sinon": "7.x",
     "ts-mocha": "^6.0.0",
     "tsconfig-paths": "^3.9.0",
-    "typedoc": "^0.16.9",
-    "typescript": "^3.7.5"
+    "typedoc": "^0.18.0",
+    "typescript": "^4.0.2"
   },
   "publishConfig": {
     "access": "public"

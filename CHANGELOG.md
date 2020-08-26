@@ -1,5 +1,6 @@
 ## Unreleased
 
+* Chore: upgrade typescript/tsdoc
 * Chore: upgrade linter ecosystem & styleguide
 * Breaking: move params types to src/params
 * Breaking: change signature of Apps#create, Addons#create
