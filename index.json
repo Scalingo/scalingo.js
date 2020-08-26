@@ -80,7 +80,7 @@
 								{
 									"fileName": "src/Addons/index.ts",
 									"line": 18,
-									"character": 17
+									"character": 18
 								}
 							]
 						},
@@ -843,7 +843,7 @@
 								{
 									"fileName": "src/Apps/index.ts",
 									"line": 13,
-									"character": 17
+									"character": 18
 								}
 							]
 						},
@@ -1676,7 +1676,7 @@
 								{
 									"fileName": "src/Billing/index.ts",
 									"line": 10,
-									"character": 17
+									"character": 18
 								}
 							]
 						},
@@ -2040,7 +2040,7 @@
 								{
 									"fileName": "src/Collaborators/index.ts",
 									"line": 14,
-									"character": 17
+									"character": 18
 								}
 							]
 						},
@@ -2491,7 +2491,7 @@
 								{
 									"fileName": "src/Containers/index.ts",
 									"line": 14,
-									"character": 17
+									"character": 18
 								}
 							]
 						},
@@ -2944,7 +2944,7 @@
 								{
 									"fileName": "src/Deployments/index.ts",
 									"line": 12,
-									"character": 17
+									"character": 18
 								}
 							]
 						},
@@ -3375,7 +3375,7 @@
 								{
 									"fileName": "src/Deployments/listener.ts",
 									"line": 74,
-									"character": 42
+									"character": 43
 								}
 							]
 						},
@@ -5632,7 +5632,7 @@
 								{
 									"fileName": "src/Domains/index.ts",
 									"line": 11,
-									"character": 17
+									"character": 18
 								}
 							]
 						},
@@ -6198,7 +6198,7 @@
 								{
 									"fileName": "src/Environment/index.ts",
 									"line": 15,
-									"character": 17
+									"character": 18
 								}
 							]
 						},
@@ -6852,7 +6852,7 @@
 								{
 									"fileName": "src/Events/index.ts",
 									"line": 11,
-									"character": 17
+									"character": 18
 								}
 							]
 						},
@@ -7025,7 +7025,7 @@
 							"sources": [
 								{
 									"fileName": "src/Events/index.ts",
-									"line": 36,
+									"line": 38,
 									"character": 5
 								}
 							]
@@ -7075,7 +7075,7 @@
 							"sources": [
 								{
 									"fileName": "src/Events/index.ts",
-									"line": 57,
+									"line": 59,
 									"character": 21
 								}
 							]
@@ -7125,7 +7125,7 @@
 							"sources": [
 								{
 									"fileName": "src/Events/index.ts",
-									"line": 46,
+									"line": 48,
 									"character": 16
 								}
 							]
@@ -7258,7 +7258,7 @@
 								{
 									"fileName": "src/Keys/index.ts",
 									"line": 11,
-									"character": 17
+									"character": 18
 								}
 							]
 						},
@@ -7644,7 +7644,7 @@
 								{
 									"fileName": "src/Logs/index.ts",
 									"line": 9,
-									"character": 17
+									"character": 18
 								}
 							]
 						},
@@ -8029,7 +8029,7 @@
 								{
 									"fileName": "src/Logs/listener.ts",
 									"line": 13,
-									"character": 41
+									"character": 42
 								}
 							]
 						},
@@ -8524,7 +8524,7 @@
 								{
 									"fileName": "src/Metrics/index.ts",
 									"line": 11,
-									"character": 17
+									"character": 18
 								}
 							]
 						},
@@ -8823,7 +8823,7 @@
 								{
 									"fileName": "src/NotificationPlatforms/index.ts",
 									"line": 10,
-									"character": 17
+									"character": 18
 								}
 							]
 						},
@@ -9023,7 +9023,7 @@
 								{
 									"fileName": "src/Notifiers/index.ts",
 									"line": 11,
-									"character": 17
+									"character": 18
 								}
 							]
 						},
@@ -9664,7 +9664,7 @@
 								{
 									"fileName": "src/Operations/index.ts",
 									"line": 10,
-									"character": 17
+									"character": 18
 								}
 							]
 						},
@@ -9921,7 +9921,7 @@
 								{
 									"fileName": "src/Operations/utils.ts",
 									"line": 12,
-									"character": 22
+									"character": 23
 								}
 							]
 						},
@@ -10694,7 +10694,7 @@
 								{
 									"fileName": "src/SCMIntegrations/index.ts",
 									"line": 18,
-									"character": 17
+									"character": 18
 								}
 							]
 						},
@@ -11411,7 +11411,7 @@
 								{
 									"fileName": "src/SCMRepoLinks/index.ts",
 									"line": 11,
-									"character": 17
+									"character": 18
 								}
 							]
 						},
@@ -12176,7 +12176,7 @@
 								{
 									"fileName": "src/Stats/index.ts",
 									"line": 10,
-									"character": 17
+									"character": 18
 								}
 							]
 						},
@@ -12371,7 +12371,7 @@
 								{
 									"fileName": "src/Tokens/index.ts",
 									"line": 12,
-									"character": 17
+									"character": 18
 								}
 							]
 						},
@@ -12807,7 +12807,7 @@
 								{
 									"fileName": "src/TwoFactorAuth/index.ts",
 									"line": 13,
-									"character": 17
+									"character": 18
 								}
 							]
 						},
@@ -13165,7 +13165,7 @@
 								{
 									"fileName": "src/Users/index.ts",
 									"line": 9,
-									"character": 17
+									"character": 18
 								}
 							]
 						},
@@ -13486,7 +13486,7 @@
 								{
 									"fileName": "src/errors.ts",
 									"line": 8,
-									"character": 28
+									"character": 29
 								}
 							]
 						},
@@ -14033,7 +14033,7 @@
 								{
 									"fileName": "src/index.ts",
 									"line": 53,
-									"character": 31
+									"character": 32
 								}
 							]
 						},
@@ -14886,7 +14886,7 @@
 								{
 									"fileName": "src/index.ts",
 									"line": 153,
-									"character": 17
+									"character": 18
 								}
 							]
 						},
