@@ -1,15 +1,7 @@
 import { unpackData } from '../utils'
 import { Client } from '..'
 import { AppEvents, EventType, EventCategory } from '../models/regional/events'
-
-export interface EventsPaginationOpts {
-  /** Page number */
-  page?: number
-  /** Items per page */
-  per_page?: number
-  /** The N last hours - min: 1 max: 72 */
-  from?: number
-}
+import { IndexParams } from '../params/regional/events'
 
 /**
  * Events API Client
@@ -31,7 +23,7 @@ export default class Events {
    * @see https://developers.scalingo.com/events#list-current-user-events
    * @param opts Object that contains the index of the page and the number of elements per page
    */
-  all(opts?: EventsPaginationOpts): Promise<AppEvents> {
+  all(opts?: IndexParams): Promise<AppEvents> {
     return unpackData(this._client.apiClient().get('/events', { params: opts }))
   }
 
@@ -41,7 +33,7 @@ export default class Events {
    * @param appId Id of the current application
    * @param opts Object that contains the index of the page and the number of elements per page
    */
-  for(appId: string, opts?: EventsPaginationOpts): Promise<AppEvents> {
+  for(appId: string, opts?: IndexParams): Promise<AppEvents> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/events`, { params: opts }),
     )
