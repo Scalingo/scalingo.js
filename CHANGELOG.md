@@ -1,5 +1,6 @@
 ## Unreleased
 
+* Breaking: change signature of Apps#create, move (some) params types to src/params
 * Breaking: compile destination is now `lib`
 * Breaking: move models (types and consts) to src/models
 

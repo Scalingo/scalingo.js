@@ -48,7 +48,7 @@ describe('App#create', () => {
       { app: { name: 'testApp' } },
       'app',
       (client) => {
-        return new Apps(client).create('testApp')
+        return new Apps(client).create({ name: 'testApp' })
       },
     )
   })
@@ -67,7 +67,8 @@ describe('App#create', () => {
       },
       'app',
       (client) => {
-        return new Apps(client).create('testApp', {
+        return new Apps(client).create({
+          name: 'testApp',
           git_source: 'https://github.com/test/test',
           stack_id: 'abcdef',
           parent_id: 'abcdef1234',

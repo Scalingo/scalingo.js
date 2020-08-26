@@ -3,30 +3,7 @@ import Listener from '../Deployments/listener'
 import { Client } from '..'
 
 import { App } from '../models/regional/apps'
-
-/** @see https://developers.scalingo.com/apps#create-an-application */
-export interface AppCreateOpts {
-  /** ID of the parent app (used to create child apps) */
-  parent_id?: string
-  /** ID of the stack the application should use */
-  stack_id?: string
-  /** If set to true, the API will run the validations but wont create the app */
-  dry_run?: boolean
-  /** URL to the future GitHub repository if your need to deploy from there without going through the git push workflow */
-  git_source?: string
-}
-
-/** @see https://developers.scalingo.com/apps#update-application-settings */
-export interface AppUpdateOpts {
-  /** Enable or disable force HTTPS on the application */
-  force_https?: boolean
-  /** Enable or disable sticky session on the application */
-  sticky_session?: boolean
-  /** Enable or disable the router logs on the application */
-  router_logs?: boolean
-  /** New stack ID */
-  stack_id?: string
-}
+import { CreateParams, UpdateParams } from '../params/regional/apps'
 
 /**
  * Apps API Client
@@ -69,18 +46,19 @@ export default class Apps {
    * @param opts Optional additional information
    * @return Promise that when resolved returns the App created.
    */
-  create(name: string, opts: AppCreateOpts): Promise<App> {
-    const body: Record<string, any> = {
-      name: name,
+  create(payload: CreateParams): Promise<App> {
+    const body: CreateParams = {
+      name: payload.name,
     }
 
-    const headers: Record<string, any> = {}
+    const headers: Record<string, string> = {}
 
-    if (opts) {
-      body['git_source'] = opts['git_source']
-      body['parent_id'] = opts['parent_id']
-      body['stack_id'] = opts['stack_id']
-      if (opts['dry_run']) {
+    if (payload) {
+      body.git_source = payload.git_source
+      body.parent_id = payload.parent_id
+      body.stack_id = payload.stack_id
+
+      if (payload.dry_run) {
         headers['X-Dry-Run'] = 'true'
       }
     }
@@ -182,7 +160,7 @@ export default class Apps {
    * @param {AppUpdateOpts} appSettings - Settings to modify
    * @return {Promise<App>} Promise that when resolved returns the updated App.
    */
-  update(appID: string, appSettings: AppUpdateOpts): Promise<App> {
+  update(appID: string, appSettings: UpdateParams): Promise<App> {
     return unpackData(
       this._client.apiClient().patch(`/apps/${appID}`, { app: appSettings }),
       'app',
