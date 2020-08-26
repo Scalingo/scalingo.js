@@ -6,18 +6,9 @@ import {
   Category,
   AddonProvider,
   AddonSso,
+  AddonUpgradeResponse,
 } from '../models/regional/addons'
-
-export interface AddonUpgrade {
-  /** Array of variables */
-  vars: string[]
-  /** Custom message from the addon provider */
-  message: string
-}
-
-export interface AddonUpdateParams {
-  plan_id: string
-}
+import { CreateParams, UpdateParams } from '../params/regional/addons'
 
 /**
  * Addons API Client
@@ -50,17 +41,11 @@ export default class Addons {
    * Add an addon to an application
    * @see https://developers.scalingo.com/addons#provision-an-addon
    * @param appId ID of the app
-   * @param planId ID of the plan
-   * @param addonProviderId ID of the addon provider
    */
-  create(
-    appId: string,
-    planId: string,
-    addonProviderId: string,
-  ): Promise<Addon> {
+  create(appId: string, payload: CreateParams): Promise<Addon> {
     return unpackData(
       this._client.apiClient().post(`/apps/${appId}/addons`, {
-        addon: { plan_id: planId, addon_provider_id: addonProviderId },
+        addon: payload,
       }),
       'addon',
     )
@@ -108,8 +93,8 @@ export default class Addons {
   update(
     appId: string,
     addonId: string,
-    addon: AddonUpdateParams,
-  ): Promise<AddonUpgrade> {
+    addon: UpdateParams,
+  ): Promise<AddonUpgradeResponse> {
     return unpackData(
       this._client
         .apiClient()

@@ -19,7 +19,10 @@ describe('Addons#create', () => {
     { addon: { plan_id: 'test-plan', addon_provider_id: 'test-provider' } },
     'addon',
     (client) => {
-      return new Addons(client).create('toto', 'test-plan', 'test-provider')
+      return new Addons(client).create('toto', {
+        plan_id: 'test-plan',
+        addon_provider_id: 'test-provider',
+      })
     },
   )
 })

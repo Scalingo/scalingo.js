@@ -13,6 +13,13 @@ export interface Addon {
   addon_provider: AddonProvider
 }
 
+export interface AddonUpgradeResponse {
+  /** Array of variables */
+  vars: string[]
+  /** Custom message from the addon provider */
+  message: string
+}
+
 export interface Plan {
   /** Unique ID of the plan */
   id: string
