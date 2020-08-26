@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>scalingo</title>
-	<meta name="description" content="">
+	<meta name="description" content="Documentation for scalingo">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -13,7 +13,7 @@
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -76,17 +76,17 @@
 					<h2>Usage</h2>
 				</a>
 				<p>The package needs to be configured with your a token which are available in your Scalingo <a href="https://my.scalingo.com/profile">dashboard</a>.</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> scalingo = <span class="hljs-built_in">require</span>(<span class="hljs-string">'scalingo'</span>)
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> scalingo = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;scalingo&#x27;</span>)
 
-scalingo.clientFromToken(<span class="hljs-string">"tk-us-..."</span>).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">client</span>) </span>{
+scalingo.clientFromToken(<span class="hljs-string">&quot;tk-us-...&quot;</span>).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">client</span>) </span>{
   <span class="hljs-keyword">return</span> client.Users.self()
 }).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">user</span>) </span>{
   <span class="hljs-built_in">console</span>.log(user)
 })</code></pre>
 				<p>Or using ES modules, this looks more like:</p>
-				<pre><code class="language-js"><span class="hljs-keyword">import</span> Scalingo <span class="hljs-keyword">from</span> <span class="hljs-string">'scalingo'</span>
+				<pre><code class="language-js"><span class="hljs-keyword">import</span> Scalingo <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;scalingo&#x27;</span>
 
-<span class="hljs-keyword">let</span> client = <span class="hljs-keyword">await</span> Scalingo.clientFromToken(<span class="hljs-string">"tk-us-..."</span>)
+<span class="hljs-keyword">let</span> client = <span class="hljs-keyword">await</span> Scalingo.clientFromToken(<span class="hljs-string">&quot;tk-us-...&quot;</span>)
 <span class="hljs-keyword">let</span> user = <span class="hljs-keyword">await</span> client.Users.self()
 <span class="hljs-built_in">console</span>.log(user)</code></pre>
 				<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
@@ -98,7 +98,7 @@ scalingo.clientFromToken(<span class="hljs-string">"tk-us-..."</span>).then(<spa
 					<a href="https://my.scalingo.com/profile">dashboard</a>. Then modify the example so that
 					the application name and the possible IDs match one of your application.
 				Eventually execute the example with:</p>
-				<pre><code class="language-bash"><span class="hljs-built_in">export</span> SCALINGO_TOKEN=<span class="hljs-string">"tk-us-...."</span>
+				<pre><code class="language-bash"><span class="hljs-built_in">export</span> SCALINGO_TOKEN=<span class="hljs-string">&quot;tk-us-....&quot;</span>
 node examples/Addons/add_addon.js</code></pre>
 				<a href="#development" id="development" style="color: inherit; text-decoration: none;">
 					<h2>Development</h2>
@@ -106,7 +106,7 @@ node examples/Addons/add_addon.js</code></pre>
 				<a href="#release-a-new-version" id="release-a-new-version" style="color: inherit; text-decoration: none;">
 					<h3>Release a new version</h3>
 				</a>
-				<pre><code class="language-bash"><span class="hljs-comment"># If it's a patch (see https://docs.npmjs.com/cli/version.html)</span>
+				<pre><code class="language-bash"><span class="hljs-comment"># If it&#x27;s a patch (see https://docs.npmjs.com/cli/version.html)</span>
 npm version patch
 git push --tags
 git push origin master</code></pre>
@@ -118,191 +118,191 @@ git push origin master</code></pre>
 					<li class="globals  ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_addons_index_.html">&quot;<wbr>Addons/index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_addons_index_.html">&quot;src/<wbr>Addons/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_apps_index_.html">&quot;<wbr>Apps/index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_apps_index_.html">&quot;src/<wbr>Apps/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_billing_index_.html">&quot;<wbr>Billing/index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_billing_index_.html">&quot;src/<wbr>Billing/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_collaborators_index_.html">&quot;<wbr>Collaborators/index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_collaborators_index_.html">&quot;src/<wbr>Collaborators/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_containers_index_.html">&quot;<wbr>Containers/index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_containers_index_.html">&quot;src/<wbr>Containers/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_deployments_index_.html">&quot;<wbr>Deployments/index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_deployments_index_.html">&quot;src/<wbr>Deployments/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_deployments_listener_.html">&quot;<wbr>Deployments/listener&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_deployments_listener_.html">&quot;src/<wbr>Deployments/listener&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_domains_index_.html">&quot;<wbr>Domains/index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_domains_index_.html">&quot;src/<wbr>Domains/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_environment_index_.html">&quot;<wbr>Environment/index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_environment_index_.html">&quot;src/<wbr>Environment/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_events_index_.html">&quot;<wbr>Events/index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_events_index_.html">&quot;src/<wbr>Events/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_keys_index_.html">&quot;<wbr>Keys/index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_keys_index_.html">&quot;src/<wbr>Keys/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_logs_index_.html">&quot;<wbr>Logs/index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_logs_index_.html">&quot;src/<wbr>Logs/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_logs_listener_.html">&quot;<wbr>Logs/listener&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_logs_listener_.html">&quot;src/<wbr>Logs/listener&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_metrics_index_.html">&quot;<wbr>Metrics/index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_metrics_index_.html">&quot;src/<wbr>Metrics/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_notificationplatforms_index_.html">&quot;<wbr>Notification<wbr>Platforms/index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_notificationplatforms_index_.html">&quot;src/<wbr>Notification<wbr>Platforms/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_notifiers_index_.html">&quot;<wbr>Notifiers/index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_notifiers_index_.html">&quot;src/<wbr>Notifiers/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_operations_index_.html">&quot;<wbr>Operations/index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_operations_index_.html">&quot;src/<wbr>Operations/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_operations_utils_.html">&quot;<wbr>Operations/utils&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_operations_utils_.html">&quot;src/<wbr>Operations/utils&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_scmintegrations_index_.html">&quot;SCMIntegrations/index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_scmintegrations_index_.html">&quot;src/SCMIntegrations/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_scmrepolinks_index_.html">&quot;SCMRepo<wbr>Links/index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_scmrepolinks_index_.html">&quot;src/SCMRepo<wbr>Links/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_stats_index_.html">&quot;<wbr>Stats/index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_stats_index_.html">&quot;src/<wbr>Stats/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_tokens_index_.html">&quot;<wbr>Tokens/index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_tokens_index_.html">&quot;src/<wbr>Tokens/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_twofactorauth_index_.html">&quot;<wbr>Two<wbr>Factor<wbr>Auth/index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_twofactorauth_index_.html">&quot;src/<wbr>Two<wbr>Factor<wbr>Auth/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_users_index_.html">&quot;<wbr>Users/index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_users_index_.html">&quot;src/<wbr>Users/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_errors_.html">&quot;errors&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_errors_.html">&quot;src/errors&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_index_.html">&quot;index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_index_.html">&quot;src/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_meta_.html">&quot;meta&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_meta_.html">&quot;src/meta&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_auth_index_.html">&quot;models/auth/index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_auth_index_.html">&quot;src/models/auth/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_auth_keys_.html">&quot;models/auth/keys&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_auth_keys_.html">&quot;src/models/auth/keys&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_auth_scm_integrations_.html">&quot;models/auth/scm_<wbr>integrations&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_auth_scm_integrations_.html">&quot;src/models/auth/scm_<wbr>integrations&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_auth_tokens_.html">&quot;models/auth/tokens&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_auth_tokens_.html">&quot;src/models/auth/tokens&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_auth_two_factor_auth_.html">&quot;models/auth/two_<wbr>factor_<wbr>auth&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_auth_two_factor_auth_.html">&quot;src/models/auth/two_<wbr>factor_<wbr>auth&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_auth_user_.html">&quot;models/auth/user&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_auth_user_.html">&quot;src/models/auth/user&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_billing_index_.html">&quot;models/billing/index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_billing_index_.html">&quot;src/models/billing/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_billing_profiles_.html">&quot;models/billing/profiles&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_billing_profiles_.html">&quot;src/models/billing/profiles&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_regional_addons_.html">&quot;models/regional/addons&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_regional_addons_.html">&quot;src/models/regional/addons&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_regional_apps_.html">&quot;models/regional/apps&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_regional_apps_.html">&quot;src/models/regional/apps&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_regional_collaborators_.html">&quot;models/regional/collaborators&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_regional_collaborators_.html">&quot;src/models/regional/collaborators&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_regional_containers_.html">&quot;models/regional/containers&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_regional_containers_.html">&quot;src/models/regional/containers&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_regional_deployments_.html">&quot;models/regional/deployments&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_regional_deployments_.html">&quot;src/models/regional/deployments&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_regional_domains_.html">&quot;models/regional/domains&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_regional_domains_.html">&quot;src/models/regional/domains&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_regional_environment_.html">&quot;models/regional/environment&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_regional_environment_.html">&quot;src/models/regional/environment&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_regional_events_.html">&quot;models/regional/events&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_regional_events_.html">&quot;src/models/regional/events&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_regional_index_.html">&quot;models/regional/index&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_regional_index_.html">&quot;src/models/regional/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_regional_logs_.html">&quot;models/regional/logs&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_regional_logs_.html">&quot;src/models/regional/logs&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_regional_metrics_.html">&quot;models/regional/metrics&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_regional_metrics_.html">&quot;src/models/regional/metrics&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_regional_notification_platforms_.html">&quot;models/regional/notification_<wbr>platforms&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_regional_notification_platforms_.html">&quot;src/models/regional/notification_<wbr>platforms&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_regional_notifiers_.html">&quot;models/regional/notifiers&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_regional_notifiers_.html">&quot;src/models/regional/notifiers&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_regional_scm_repo_links_.html">&quot;models/regional/scm_<wbr>repo_<wbr>links&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_regional_scm_repo_links_.html">&quot;src/models/regional/scm_<wbr>repo_<wbr>links&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_models_regional_stats_.html">&quot;models/regional/stats&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_regional_stats_.html">&quot;src/models/regional/stats&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_params_auth_scm_integrations_.html">&quot;params/auth/scm_<wbr>integrations&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_params_auth_scm_integrations_.html">&quot;src/params/auth/scm_<wbr>integrations&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_params_auth_user_.html">&quot;params/auth/user&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_params_auth_user_.html">&quot;src/params/auth/user&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_params_regional_addons_.html">&quot;params/regional/addons&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_params_regional_addons_.html">&quot;src/params/regional/addons&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_params_regional_apps_.html">&quot;params/regional/apps&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_params_regional_apps_.html">&quot;src/params/regional/apps&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_params_regional_domains_.html">&quot;params/regional/domains&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_params_regional_domains_.html">&quot;src/params/regional/domains&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_params_regional_environment_.html">&quot;params/regional/environment&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_params_regional_environment_.html">&quot;src/params/regional/environment&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_params_regional_events_.html">&quot;params/regional/events&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_params_regional_events_.html">&quot;src/params/regional/events&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_params_regional_logs_.html">&quot;params/regional/logs&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_params_regional_logs_.html">&quot;src/params/regional/logs&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_params_regional_metrics_.html">&quot;params/regional/metrics&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_params_regional_metrics_.html">&quot;src/params/regional/metrics&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_params_regional_notifiers_.html">&quot;params/regional/notifiers&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_params_regional_notifiers_.html">&quot;src/params/regional/notifiers&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_params_regional_scm_repo_links_.html">&quot;params/regional/scm_<wbr>repo_<wbr>links&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_params_regional_scm_repo_links_.html">&quot;src/params/regional/scm_<wbr>repo_<wbr>links&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_utils_.html">&quot;utils&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_utils_.html">&quot;src/utils&quot;</a>
 					</li>
 				</ul>
 			</nav>
@@ -318,57 +318,16 @@ git push origin master</code></pre>
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
 				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
 			</ul>
 		</div>
 	</div>
@@ -378,6 +337,5 @@ git push origin master</code></pre>
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

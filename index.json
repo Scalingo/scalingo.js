@@ -7,9 +7,9 @@
 	"children": [
 		{
 			"id": 1129,
-			"name": "\"Addons/index\"",
+			"name": "\"src/Addons/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -770,9 +770,9 @@
 		},
 		{
 			"id": 224,
-			"name": "\"Apps/index\"",
+			"name": "\"src/Apps/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -1603,9 +1603,9 @@
 		},
 		{
 			"id": 292,
-			"name": "\"Billing/index\"",
+			"name": "\"src/Billing/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -1967,9 +1967,9 @@
 		},
 		{
 			"id": 322,
-			"name": "\"Collaborators/index\"",
+			"name": "\"src/Collaborators/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -2418,9 +2418,9 @@
 		},
 		{
 			"id": 392,
-			"name": "\"Containers/index\"",
+			"name": "\"src/Containers/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -2871,9 +2871,9 @@
 		},
 		{
 			"id": 411,
-			"name": "\"Deployments/index\"",
+			"name": "\"src/Deployments/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -3272,9 +3272,9 @@
 		},
 		{
 			"id": 68,
-			"name": "\"Deployments/listener\"",
+			"name": "\"src/Deployments/listener\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -3385,7 +3385,8 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isExported": true
+								"isExported": true,
+								"isReadonly": true
 							},
 							"comment": {
 								"shortText": "Scalingo API Client"
@@ -3409,7 +3410,8 @@
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {
-								"isExported": true
+								"isExported": true,
+								"isReadonly": true
 							},
 							"comment": {
 								"shortText": "URL of the stream to listen to"
@@ -5559,9 +5561,9 @@
 		},
 		{
 			"id": 449,
-			"name": "\"Domains/index\"",
+			"name": "\"src/Domains/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -6125,9 +6127,9 @@
 		},
 		{
 			"id": 486,
-			"name": "\"Environment/index\"",
+			"name": "\"src/Environment/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -6779,9 +6781,9 @@
 		},
 		{
 			"id": 548,
-			"name": "\"Events/index\"",
+			"name": "\"src/Events/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -7185,9 +7187,9 @@
 		},
 		{
 			"id": 573,
-			"name": "\"Keys/index\"",
+			"name": "\"src/Keys/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -7574,9 +7576,9 @@
 		},
 		{
 			"id": 626,
-			"name": "\"Logs/index\"",
+			"name": "\"src/Logs/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -7943,9 +7945,9 @@
 		},
 		{
 			"id": 591,
-			"name": "\"Logs/listener\"",
+			"name": "\"src/Logs/listener\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -8451,9 +8453,9 @@
 		},
 		{
 			"id": 659,
-			"name": "\"Metrics/index\"",
+			"name": "\"src/Metrics/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -8750,9 +8752,9 @@
 		},
 		{
 			"id": 744,
-			"name": "\"NotificationPlatforms/index\"",
+			"name": "\"src/NotificationPlatforms/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -8950,9 +8952,9 @@
 		},
 		{
 			"id": 702,
-			"name": "\"Notifiers/index\"",
+			"name": "\"src/Notifiers/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -9591,9 +9593,9 @@
 		},
 		{
 			"id": 752,
-			"name": "\"Operations/index\"",
+			"name": "\"src/Operations/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -9825,9 +9827,9 @@
 		},
 		{
 			"id": 342,
-			"name": "\"Operations/utils\"",
+			"name": "\"src/Operations/utils\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -10621,9 +10623,9 @@
 		},
 		{
 			"id": 797,
-			"name": "\"SCMIntegrations/index\"",
+			"name": "\"src/SCMIntegrations/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -11338,9 +11340,9 @@
 		},
 		{
 			"id": 874,
-			"name": "\"SCMRepoLinks/index\"",
+			"name": "\"src/SCMRepoLinks/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -12103,9 +12105,9 @@
 		},
 		{
 			"id": 914,
-			"name": "\"Stats/index\"",
+			"name": "\"src/Stats/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -12298,9 +12300,9 @@
 		},
 		{
 			"id": 930,
-			"name": "\"Tokens/index\"",
+			"name": "\"src/Tokens/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -12737,9 +12739,9 @@
 		},
 		{
 			"id": 966,
-			"name": "\"TwoFactorAuth/index\"",
+			"name": "\"src/TwoFactorAuth/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -13095,9 +13097,9 @@
 		},
 		{
 			"id": 1010,
-			"name": "\"Users/index\"",
+			"name": "\"src/Users/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -13391,9 +13393,9 @@
 		},
 		{
 			"id": 1,
-			"name": "\"errors\"",
+			"name": "\"src/errors\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -13550,7 +13552,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts",
+									"fileName": "node_modules/typescript/lib/lib.es5.d.ts",
 									"line": 974,
 									"character": 11
 								}
@@ -13575,7 +13577,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts",
+									"fileName": "node_modules/typescript/lib/lib.es5.d.ts",
 									"line": 973,
 									"character": 8
 								}
@@ -13601,7 +13603,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts",
+									"fileName": "node_modules/typescript/lib/lib.es5.d.ts",
 									"line": 975,
 									"character": 9
 								}
@@ -13636,7 +13638,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts",
+									"fileName": "node_modules/typescript/lib/lib.es5.d.ts",
 									"line": 984,
 									"character": 17
 								}
@@ -13793,7 +13795,7 @@
 							"flags": {},
 							"sources": [
 								{
-									"fileName": "node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts",
+									"fileName": "node_modules/typescript/lib/lib.es5.d.ts",
 									"line": 974,
 									"character": 11
 								}
@@ -13816,7 +13818,7 @@
 							"flags": {},
 							"sources": [
 								{
-									"fileName": "node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts",
+									"fileName": "node_modules/typescript/lib/lib.es5.d.ts",
 									"line": 973,
 									"character": 8
 								}
@@ -13841,7 +13843,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts",
+									"fileName": "node_modules/typescript/lib/lib.es5.d.ts",
 									"line": 975,
 									"character": 9
 								}
@@ -13875,7 +13877,7 @@
 							},
 							"sources": [
 								{
-									"fileName": "node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts",
+									"fileName": "node_modules/typescript/lib/lib.es5.d.ts",
 									"line": 984,
 									"character": 17
 								}
@@ -13946,9 +13948,9 @@
 		},
 		{
 			"id": 1023,
-			"name": "\"index\"",
+			"name": "\"src/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -15330,9 +15332,9 @@
 		},
 		{
 			"id": 28,
-			"name": "\"meta\"",
+			"name": "\"src/meta\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -15635,9 +15637,9 @@
 		},
 		{
 			"id": 1164,
-			"name": "\"models/auth/index\"",
+			"name": "\"src/models/auth/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -15827,9 +15829,9 @@
 		},
 		{
 			"id": 565,
-			"name": "\"models/auth/keys\"",
+			"name": "\"src/models/auth/keys\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -16043,9 +16045,9 @@
 		},
 		{
 			"id": 762,
-			"name": "\"models/auth/scm_integrations\"",
+			"name": "\"src/models/auth/scm_integrations\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -16844,9 +16846,9 @@
 		},
 		{
 			"id": 922,
-			"name": "\"models/auth/tokens\"",
+			"name": "\"src/models/auth/tokens\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -17062,9 +17064,9 @@
 		},
 		{
 			"id": 950,
-			"name": "\"models/auth/two_factor_auth\"",
+			"name": "\"src/models/auth/two_factor_auth\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -17457,9 +17459,9 @@
 		},
 		{
 			"id": 982,
-			"name": "\"models/auth/user\"",
+			"name": "\"src/models/auth/user\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -17834,9 +17836,9 @@
 		},
 		{
 			"id": 1180,
-			"name": "\"models/billing/index\"",
+			"name": "\"src/models/billing/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -17894,9 +17896,9 @@
 		},
 		{
 			"id": 262,
-			"name": "\"models/billing/profiles\"",
+			"name": "\"src/models/billing/profiles\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -18712,9 +18714,9 @@
 		},
 		{
 			"id": 1082,
-			"name": "\"models/regional/addons\"",
+			"name": "\"src/models/regional/addons\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -19729,9 +19731,9 @@
 		},
 		{
 			"id": 185,
-			"name": "\"models/regional/apps\"",
+			"name": "\"src/models/regional/apps\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -20486,9 +20488,9 @@
 		},
 		{
 			"id": 307,
-			"name": "\"models/regional/collaborators\"",
+			"name": "\"src/models/regional/collaborators\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -20858,9 +20860,9 @@
 		},
 		{
 			"id": 375,
-			"name": "\"models/regional/containers\"",
+			"name": "\"src/models/regional/containers\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -21283,9 +21285,9 @@
 		},
 		{
 			"id": 38,
-			"name": "\"models/regional/deployments\"",
+			"name": "\"src/models/regional/deployments\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -22146,9 +22148,9 @@
 		},
 		{
 			"id": 429,
-			"name": "\"models/regional/domains\"",
+			"name": "\"src/models/regional/domains\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -22457,9 +22459,9 @@
 		},
 		{
 			"id": 475,
-			"name": "\"models/regional/environment\"",
+			"name": "\"src/models/regional/environment\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -22591,9 +22593,9 @@
 		},
 		{
 			"id": 516,
-			"name": "\"models/regional/events\"",
+			"name": "\"src/models/regional/events\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -23273,9 +23275,9 @@
 		},
 		{
 			"id": 1184,
-			"name": "\"models/regional/index\"",
+			"name": "\"src/models/regional/index\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -23971,9 +23973,9 @@
 		},
 		{
 			"id": 617,
-			"name": "\"models/regional/logs\"",
+			"name": "\"src/models/regional/logs\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -24129,9 +24131,9 @@
 		},
 		{
 			"id": 642,
-			"name": "\"models/regional/metrics\"",
+			"name": "\"src/models/regional/metrics\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -24362,9 +24364,9 @@
 		},
 		{
 			"id": 732,
-			"name": "\"models/regional/notification_platforms\"",
+			"name": "\"src/models/regional/notification_platforms\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -24661,9 +24663,9 @@
 		},
 		{
 			"id": 672,
-			"name": "\"models/regional/notifiers\"",
+			"name": "\"src/models/regional/notifiers\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -25016,9 +25018,9 @@
 		},
 		{
 			"id": 828,
-			"name": "\"models/regional/scm_repo_links\"",
+			"name": "\"src/models/regional/scm_repo_links\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -25728,9 +25730,9 @@
 		},
 		{
 			"id": 908,
-			"name": "\"models/regional/stats\"",
+			"name": "\"src/models/regional/stats\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -25878,9 +25880,9 @@
 		},
 		{
 			"id": 792,
-			"name": "\"params/auth/scm_integrations\"",
+			"name": "\"src/params/auth/scm_integrations\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -26013,9 +26015,9 @@
 		},
 		{
 			"id": 998,
-			"name": "\"params/auth/user\"",
+			"name": "\"src/params/auth/user\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -26391,9 +26393,9 @@
 		},
 		{
 			"id": 1123,
-			"name": "\"params/regional/addons\"",
+			"name": "\"src/params/regional/addons\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -26544,9 +26546,9 @@
 		},
 		{
 			"id": 212,
-			"name": "\"params/regional/apps\"",
+			"name": "\"src/params/regional/apps\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -26953,9 +26955,9 @@
 		},
 		{
 			"id": 440,
-			"name": "\"params/regional/domains\"",
+			"name": "\"src/params/regional/domains\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -27248,9 +27250,9 @@
 		},
 		{
 			"id": 480,
-			"name": "\"params/regional/environment\"",
+			"name": "\"src/params/regional/environment\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -27410,9 +27412,9 @@
 		},
 		{
 			"id": 543,
-			"name": "\"params/regional/events\"",
+			"name": "\"src/params/regional/events\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -27566,9 +27568,9 @@
 		},
 		{
 			"id": 623,
-			"name": "\"params/regional/logs\"",
+			"name": "\"src/params/regional/logs\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -27644,9 +27646,9 @@
 		},
 		{
 			"id": 651,
-			"name": "\"params/regional/metrics\"",
+			"name": "\"src/params/regional/metrics\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -27906,9 +27908,9 @@
 		},
 		{
 			"id": 686,
-			"name": "\"params/regional/notifiers\"",
+			"name": "\"src/params/regional/notifiers\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -28413,9 +28415,9 @@
 		},
 		{
 			"id": 855,
-			"name": "\"params/regional/scm_repo_links\"",
+			"name": "\"src/params/regional/scm_repo_links\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -29038,9 +29040,9 @@
 		},
 		{
 			"id": 22,
-			"name": "\"utils\"",
+			"name": "\"src/utils\"",
 			"kind": 1,
-			"kindString": "External module",
+			"kindString": "Module",
 			"flags": {
 				"isExported": true
 			},
@@ -29056,7 +29058,7 @@
 	],
 	"groups": [
 		{
-			"title": "External modules",
+			"title": "Modules",
 			"kind": 1,
 			"children": [
 				1129,
