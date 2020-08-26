@@ -3,98 +3,98 @@ import {
   testGetter,
   testParamsGetter,
   testPost,
-} from '../utils/http'
-import SCMIntegrations from '../../src/SCMIntegrations'
+} from "../utils/http";
+import SCMIntegrations from "../../src/SCMIntegrations";
 
-describe('SCMIntegrations#find', () => {
+describe("SCMIntegrations#find", () => {
   testGetter(
-    'https://auth.scalingo.com/v1/scm_integrations/toto',
+    "https://auth.scalingo.com/v1/scm_integrations/toto",
     null,
-    'scm_integration',
+    "scm_integration",
     (client) => {
-      return new SCMIntegrations(client).find('toto')
-    },
-  )
-})
+      return new SCMIntegrations(client).find("toto");
+    }
+  );
+});
 
-describe('SCMIntegrations#all', () => {
+describe("SCMIntegrations#all", () => {
   testGetter(
-    'https://auth.scalingo.com/v1/scm_integrations',
+    "https://auth.scalingo.com/v1/scm_integrations",
     null,
-    'scm_integrations',
+    "scm_integrations",
     (client) => {
-      return new SCMIntegrations(client).all()
-    },
-  )
-})
+      return new SCMIntegrations(client).all();
+    }
+  );
+});
 
-describe('SCMIntegrations#create', () => {
+describe("SCMIntegrations#create", () => {
   const opts = {
-    scm_type: 'gitlab-self-hosted',
-    url: 'https://gitlab.example.com',
-    access_token: 'abcdef',
-  }
+    scm_type: "gitlab-self-hosted",
+    url: "https://gitlab.example.com",
+    access_token: "abcdef",
+  };
   testPost(
-    'https://auth.scalingo.com/v1/scm_integrations',
+    "https://auth.scalingo.com/v1/scm_integrations",
     null,
     { scm_integration: opts },
-    'scm_integration',
+    "scm_integration",
     (client) => {
-      return new SCMIntegrations(client).create(opts)
-    },
-  )
-})
+      return new SCMIntegrations(client).create(opts);
+    }
+  );
+});
 
-describe('SCMIntegrations#destroy', () => {
+describe("SCMIntegrations#destroy", () => {
   testDelete(
-    'https://auth.scalingo.com/v1/scm_integrations/integration-id',
+    "https://auth.scalingo.com/v1/scm_integrations/integration-id",
     (client) => {
-      return new SCMIntegrations(client).destroy('integration-id')
-    },
-  )
-})
+      return new SCMIntegrations(client).destroy("integration-id");
+    }
+  );
+});
 
-describe('SCMIntegrations#importSSHKeys', () => {
+describe("SCMIntegrations#importSSHKeys", () => {
   testPost(
-    'https://auth.scalingo.com/v1/scm_integrations/integration-id/import_keys',
+    "https://auth.scalingo.com/v1/scm_integrations/integration-id/import_keys",
     null,
     null,
-    'keys',
+    "keys",
     (client) => {
-      return new SCMIntegrations(client).importSSHKeys('integration-id')
-    },
-  )
-})
+      return new SCMIntegrations(client).importSSHKeys("integration-id");
+    }
+  );
+});
 
-describe('SCMIntegrations#searchPullRequests', () => {
+describe("SCMIntegrations#searchPullRequests", () => {
   testParamsGetter(
-    'https://auth.scalingo.com/v1/scm_integrations/biniou/search_pull_requests',
-    { query: 'toto' },
-    'pull_requests',
+    "https://auth.scalingo.com/v1/scm_integrations/biniou/search_pull_requests",
+    { query: "toto" },
+    "pull_requests",
     (client) => {
-      return new SCMIntegrations(client).searchPullRequests('biniou', 'toto')
-    },
-  )
-})
+      return new SCMIntegrations(client).searchPullRequests("biniou", "toto");
+    }
+  );
+});
 
-describe('SCMIntegrations#searchRepositories', () => {
+describe("SCMIntegrations#searchRepositories", () => {
   testParamsGetter(
-    'https://auth.scalingo.com/v1/scm_integrations/biniou/search_repos',
-    { query: 'toto' },
-    'repositories',
+    "https://auth.scalingo.com/v1/scm_integrations/biniou/search_repos",
+    { query: "toto" },
+    "repositories",
     (client) => {
-      return new SCMIntegrations(client).searchRepositories('biniou', 'toto')
-    },
-  )
-})
+      return new SCMIntegrations(client).searchRepositories("biniou", "toto");
+    }
+  );
+});
 
-describe('SCMIntegrations#organizations', () => {
+describe("SCMIntegrations#organizations", () => {
   testGetter(
-    'https://auth.scalingo.com/v1/scm_integrations/biniou/orgs',
+    "https://auth.scalingo.com/v1/scm_integrations/biniou/orgs",
     null,
-    'organizations',
+    "organizations",
     (client) => {
-      return new SCMIntegrations(client).organizations('biniou')
-    },
-  )
-})
+      return new SCMIntegrations(client).organizations("biniou");
+    }
+  );
+});

@@ -1,26 +1,26 @@
-import { testGetter, testPut } from '../utils/http'
-import Users from '../../src/Users'
+import { testGetter, testPut } from "../utils/http";
+import Users from "../../src/Users";
 
-describe('Users#self', () => {
+describe("Users#self", () => {
   testGetter(
-    'https://auth.scalingo.com/v1/users/self',
+    "https://auth.scalingo.com/v1/users/self",
     null,
-    'user',
+    "user",
     (client) => {
-      return new Users(client).self()
-    },
-  )
-})
+      return new Users(client).self();
+    }
+  );
+});
 
-describe('Users#updateAccount', () => {
+describe("Users#updateAccount", () => {
   testPut(
-    'https://auth.scalingo.com/v1/users/account',
-    { user: { company: 'New company' } },
-    'user',
+    "https://auth.scalingo.com/v1/users/account",
+    { user: { company: "New company" } },
+    "user",
     (client) => {
       return new Users(client).updateAccount({
-        company: 'New company',
-      })
-    },
-  )
-})
+        company: "New company",
+      });
+    }
+  );
+});

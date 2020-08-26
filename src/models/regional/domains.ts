@@ -8,28 +8,28 @@
  * - **error**: There was an error while creating the certificate
  */
 export type LetsEncryptStatus =
-  | 'pending_dns'
-  | 'new'
-  | 'created'
-  | 'dns_required'
-  | 'error'
+  | "pending_dns"
+  | "new"
+  | "created"
+  | "dns_required"
+  | "error";
 
 /** @see https://developers.scalingo.com/domains */
 export interface Domain {
   /** Unique ID of the domain */
-  id: string
+  id: string;
   /** Hostname your want to associate with the app */
-  name: string
+  name: string;
   /** Subject of the submitted certificate */
-  tlscert: string
+  tlscert: string;
   /** Private key type and length */
-  tlskey: string
+  tlskey: string;
   /** Show the current state of the Let's Encrypt certificate */
-  letsencrypt_status: LetsEncryptStatus
+  letsencrypt_status: LetsEncryptStatus;
   /** Flag if SSL with a custom certificate is enabled */
-  ssl: boolean
+  ssl: boolean;
   /** Once a certificate has been submitted, display the validity of it */
-  validity: string
+  validity: string;
   /** The domain is the canonical domain of this application */
-  canonical: boolean
+  canonical: boolean;
 }

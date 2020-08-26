@@ -1,19 +1,19 @@
-import LogsListener from '../Logs/listener'
-import { unpackData } from '../utils'
-import { Client } from '..'
-import { Archive } from '../models/regional/logs'
-import { IndexParams } from '../params/regional/logs'
+import LogsListener from "../Logs/listener";
+import { unpackData } from "../utils";
+import { Client } from "..";
+import { Archive } from "../models/regional/logs";
+import { IndexParams } from "../params/regional/logs";
 
 export default class Logs {
   /** Scalingo API Client */
-  _client: Client
+  _client: Client;
 
   /**
    * Create a new "thematic" client
    * @param client Scalingo API Client
    */
   constructor(client: Client) {
-    this._client = client
+    this._client = client;
   }
 
   /**
@@ -24,14 +24,14 @@ export default class Logs {
    * @return Promise that when resolved returns the application logs
    */
   async for(id: string, opts: IndexParams): Promise<string> {
-    let url = await this._client.Apps.logsURL(id)
-    url = `${url}&stream=false`
+    let url = await this._client.Apps.logsURL(id);
+    url = `${url}&stream=false`;
 
-    if (opts && opts['count']) {
-      url = `${url}&n=${opts['count']}`
+    if (opts && opts["count"]) {
+      url = `${url}&n=${opts["count"]}`;
     }
 
-    return unpackData(this._client.unauthenticatedClient().get(url))
+    return unpackData(this._client.unauthenticatedClient().get(url));
   }
 
   /**
@@ -41,10 +41,10 @@ export default class Logs {
    * @return {Promise<LogsListener>} Promise that when resolved returns a logs listener for this application.
    */
   async listenerFor(id: string): Promise<LogsListener> {
-    let url = await this._client.Apps.logsURL(id)
-    url = `${url}&stream=true`
+    let url = await this._client.Apps.logsURL(id);
+    url = `${url}&stream=true`;
 
-    return new LogsListener(this._client, url)
+    return new LogsListener(this._client, url);
   }
 
   /**
@@ -58,7 +58,7 @@ export default class Logs {
     // See: https://github.com/Scalingo/api/issues/1438
     return unpackData(
       this._client.apiClient().get(`/apps/${id}/logs_archives`),
-      'archives',
-    )
+      "archives"
+    );
   }
 }

@@ -1,7 +1,7 @@
-import { unpackData } from '../utils'
-import { Client } from '..'
-import { PaginationOpts } from '../meta'
-import { DeploymentsResult, Deployment } from '../models/regional/deployments'
+import { unpackData } from "../utils";
+import { Client } from "..";
+import { PaginationOpts } from "../meta";
+import { DeploymentsResult, Deployment } from "../models/regional/deployments";
 
 /**
  * Deployment API Client
@@ -9,14 +9,14 @@ import { DeploymentsResult, Deployment } from '../models/regional/deployments'
 
 export default class Deployments {
   /** Scalingo API Client */
-  _client: Client
+  _client: Client;
 
   /**
    * Create a new "thematic" client
    * @param client Scalingo API Client
    */
   constructor(client: Client) {
-    this._client = client
+    this._client = client;
   }
 
   /**
@@ -30,8 +30,8 @@ export default class Deployments {
     return unpackData(
       this._client
         .apiClient()
-        .get(`/apps/${appId}/deployments`, { params: opts }),
-    )
+        .get(`/apps/${appId}/deployments`, { params: opts })
+    );
   }
 
   /**
@@ -46,8 +46,8 @@ export default class Deployments {
       this._client
         .apiClient()
         .get(`/apps/${appId}/deployments/${deploymentId}`),
-      'deployment',
-    )
+      "deployment"
+    );
   }
 
   /**
@@ -61,7 +61,7 @@ export default class Deployments {
     return unpackData(
       this._client
         .apiClient()
-        .get(`/apps/${appId}/deployments/${deploymentId}/output`),
-    )
+        .get(`/apps/${appId}/deployments/${deploymentId}/output`)
+    );
   }
 }

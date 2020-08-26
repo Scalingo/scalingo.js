@@ -1,21 +1,21 @@
-import { unpackData } from '../utils'
-import { Client } from '..'
-import { Notifier } from '../models/regional/notifiers'
-import { CreateParams, UpdateParams } from '../params/regional/notifiers'
+import { unpackData } from "../utils";
+import { Client } from "..";
+import { Notifier } from "../models/regional/notifiers";
+import { CreateParams, UpdateParams } from "../params/regional/notifiers";
 
 /**
  * Notifiers API Client
  */
 export default class Notifiers {
   /** Scalingo API Client */
-  _client: Client
+  _client: Client;
 
   /**
    * Create a new "thematic" client
    * @param client Scalingo API Client
    */
   constructor(client: Client) {
-    this._client = client
+    this._client = client;
   }
 
   /**
@@ -26,8 +26,8 @@ export default class Notifiers {
   for(appId: string): Promise<Notifier[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/notifiers`),
-      'notifiers',
-    )
+      "notifiers"
+    );
   }
 
   /**
@@ -41,8 +41,8 @@ export default class Notifiers {
       this._client.apiClient().post(`/apps/${appId}/notifiers`, {
         notifier: notifier,
       }),
-      'notifier',
-    )
+      "notifier"
+    );
   }
 
   /**
@@ -55,14 +55,14 @@ export default class Notifiers {
   update(
     appId: string,
     notifierId: string,
-    notifier: UpdateParams,
+    notifier: UpdateParams
   ): Promise<Notifier> {
     return unpackData(
       this._client.apiClient().patch(`/apps/${appId}/notifiers/${notifierId}`, {
         notifier: notifier,
       }),
-      'notifier',
-    )
+      "notifier"
+    );
   }
 
   /**
@@ -73,8 +73,8 @@ export default class Notifiers {
    */
   destroy(appId: string, notifierId: string): Promise<void> {
     return unpackData(
-      this._client.apiClient().delete(`/apps/${appId}/notifiers/${notifierId}`),
-    )
+      this._client.apiClient().delete(`/apps/${appId}/notifiers/${notifierId}`)
+    );
   }
 
   /**
@@ -87,8 +87,8 @@ export default class Notifiers {
     return unpackData(
       this._client
         .apiClient()
-        .post(`/apps/${appId}/notifiers/${notifierId}/test`),
-    )
+        .post(`/apps/${appId}/notifiers/${notifierId}/test`)
+    );
   }
 
   /**
@@ -99,7 +99,7 @@ export default class Notifiers {
   get(appId: string, notifierId: string): Promise<Notifier> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/notifiers/${notifierId}`),
-      'notifier',
-    )
+      "notifier"
+    );
   }
 }

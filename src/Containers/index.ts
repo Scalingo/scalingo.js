@@ -1,24 +1,24 @@
-import { unpackData } from '../utils'
-import { Client } from '..'
-import Operation from '../Operations/utils'
+import { unpackData } from "../utils";
+import { Client } from "..";
+import Operation from "../Operations/utils";
 import {
   Container,
   ContainersOperation,
   ContainerSize,
-} from '../models/regional/containers'
+} from "../models/regional/containers";
 /**
  * Containers API Client
  */
 export default class Containers {
   /** Scalingo API Client */
-  _client: Client
+  _client: Client;
 
   /**
    * Create a new "thematic" client
    * @param client Scalingo API Client
    */
   constructor(client: Client) {
-    this._client = client
+    this._client = client;
   }
 
   /**
@@ -29,8 +29,8 @@ export default class Containers {
   for(appId: string): Promise<Container[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/containers`),
-      'containers',
-    )
+      "containers"
+    );
   }
 
   /**
@@ -42,18 +42,18 @@ export default class Containers {
    */
   async scale(
     appId: string,
-    formation: Container[],
+    formation: Container[]
   ): Promise<ContainersOperation> {
     const result = await unpackData(
       this._client
         .apiClient()
         .post(`/apps/${appId}/scale`, { containers: formation }),
-      'containers',
-      { hasOperation: true },
-    )
-    const operation = new Operation(this._client, result.operation)
-    await operation.refresh()
-    return { formation: result.data, operation: operation }
+      "containers",
+      { hasOperation: true }
+    );
+    const operation = new Operation(this._client, result.operation);
+    await operation.refresh();
+    return { formation: result.data, operation: operation };
   }
 
   /**
@@ -63,9 +63,9 @@ export default class Containers {
    */
   availableSizes(): Promise<ContainerSize[]> {
     return unpackData(
-      this._client.apiClient().get('/features/container_sizes'),
-      'container_sizes',
-    )
+      this._client.apiClient().get("/features/container_sizes"),
+      "container_sizes"
+    );
   }
 
   /**
@@ -79,10 +79,10 @@ export default class Containers {
     const result = await unpackData(
       this._client.apiClient().post(`/apps/${appId}/restart`, { scope: scope }),
       undefined,
-      { hasOperation: true },
-    )
-    const operation = new Operation(this._client, result.operation)
-    await operation.refresh()
-    return operation
+      { hasOperation: true }
+    );
+    const operation = new Operation(this._client, result.operation);
+    await operation.refresh();
+    return operation;
   }
 }

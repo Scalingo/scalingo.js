@@ -1,21 +1,21 @@
-import { unpackData } from '../utils'
-import { Client } from '..'
-import { AppEvents, EventType, EventCategory } from '../models/regional/events'
-import { IndexParams } from '../params/regional/events'
+import { unpackData } from "../utils";
+import { Client } from "..";
+import { AppEvents, EventType, EventCategory } from "../models/regional/events";
+import { IndexParams } from "../params/regional/events";
 
 /**
  * Events API Client
  */
 export default class Events {
   /** Scalingo API Client */
-  _client: Client
+  _client: Client;
 
   /**
    * Create a new "thematic" client
    * @param client Scalingo API Client
    */
   constructor(client: Client) {
-    this._client = client
+    this._client = client;
   }
 
   /**
@@ -24,7 +24,9 @@ export default class Events {
    * @param opts Object that contains the index of the page and the number of elements per page
    */
   all(opts?: IndexParams): Promise<AppEvents> {
-    return unpackData(this._client.apiClient().get('/events', { params: opts }))
+    return unpackData(
+      this._client.apiClient().get("/events", { params: opts })
+    );
   }
 
   /**
@@ -35,8 +37,8 @@ export default class Events {
    */
   for(appId: string, opts?: IndexParams): Promise<AppEvents> {
     return unpackData(
-      this._client.apiClient().get(`/apps/${appId}/events`, { params: opts }),
-    )
+      this._client.apiClient().get(`/apps/${appId}/events`, { params: opts })
+    );
   }
 
   /**
@@ -45,9 +47,9 @@ export default class Events {
    */
   listEventTypes(): Promise<EventType[]> {
     return unpackData(
-      this._client.unauthenticatedClient().get('event_types'),
-      'event_types',
-    )
+      this._client.unauthenticatedClient().get("event_types"),
+      "event_types"
+    );
   }
 
   /**
@@ -56,8 +58,8 @@ export default class Events {
    */
   listEventCategories(): Promise<EventCategory[]> {
     return unpackData(
-      this._client.unauthenticatedClient().get('event_categories'),
-      'event_categories',
-    )
+      this._client.unauthenticatedClient().get("event_categories"),
+      "event_categories"
+    );
   }
 }

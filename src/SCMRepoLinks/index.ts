@@ -1,21 +1,21 @@
-import { unpackData } from '../utils'
-import { Client } from '..'
-import { SCMRepoLink } from '../models/regional/scm_repo_links'
-import { CreateParams, UpdateParams } from '../params/regional/scm_repo_links'
+import { unpackData } from "../utils";
+import { Client } from "..";
+import { SCMRepoLink } from "../models/regional/scm_repo_links";
+import { CreateParams, UpdateParams } from "../params/regional/scm_repo_links";
 
 /**
  * SCM repo links API Client
  */
 export class SCMRepoLinks {
   /** Scalingo API Client */
-  _client: Client
+  _client: Client;
 
   /**
    * Create a new "thematic" client
    * @param client Scalingo API Client
    */
   constructor(client: Client) {
-    this._client = client
+    this._client = client;
   }
 
   /**
@@ -27,8 +27,8 @@ export class SCMRepoLinks {
   find(appID: string): Promise<SCMRepoLink> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appID}/scm_repo_link`),
-      'scm_repo_link',
-    )
+      "scm_repo_link"
+    );
   }
 
   /**
@@ -43,8 +43,8 @@ export class SCMRepoLinks {
       this._client
         .apiClient()
         .post(`/apps/${appID}/scm_repo_link`, { scm_repo_link: opts }),
-      'scm_repo_link',
-    )
+      "scm_repo_link"
+    );
   }
 
   /**
@@ -59,8 +59,8 @@ export class SCMRepoLinks {
       this._client
         .apiClient()
         .patch(`/apps/${appID}/scm_repo_link`, { scm_repo_link: opts }),
-      'scm_repo_link',
-    )
+      "scm_repo_link"
+    );
   }
 
   /**
@@ -71,8 +71,8 @@ export class SCMRepoLinks {
    */
   destroy(appID: string): Promise<void> {
     return unpackData(
-      this._client.apiClient().delete(`/apps/${appID}/scm_repo_link`),
-    )
+      this._client.apiClient().delete(`/apps/${appID}/scm_repo_link`)
+    );
   }
 
   /**
@@ -90,8 +90,8 @@ export class SCMRepoLinks {
         .post(`/apps/${appID}/scm_repo_link/manual_deploy`, {
           branch,
         }),
-      'deployment',
-    )
+      "deployment"
+    );
   }
 
   /**
@@ -109,8 +109,8 @@ export class SCMRepoLinks {
         .post(`/apps/${appID}/scm_repo_link/manual_review_app`, {
           pull_request_id: pullRequestID,
         }),
-      'review_app',
-    )
+      "review_app"
+    );
   }
 
   /**
@@ -123,8 +123,8 @@ export class SCMRepoLinks {
   branches(appID: string): Promise<any> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appID}/scm_repo_link/branches`),
-      'branches',
-    )
+      "branches"
+    );
   }
 
   /**
@@ -137,9 +137,9 @@ export class SCMRepoLinks {
   pulls(appID: string): Promise<any> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appID}/scm_repo_link/pulls`),
-      'pulls',
-    )
+      "pulls"
+    );
   }
 }
 
-export default SCMRepoLinks
+export default SCMRepoLinks;

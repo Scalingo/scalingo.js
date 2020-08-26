@@ -1,35 +1,35 @@
-import { unpackData } from '../utils'
-import { Client } from '..'
+import { unpackData } from "../utils";
+import { Client } from "..";
 
-import { Key } from '../models/auth/keys'
+import { Key } from "../models/auth/keys";
 
 /**
  * Keys API Client
  */
 export default class Keys {
   /** Scalingo API Client */
-  _client: Client
+  _client: Client;
 
   /**
    * Create a new "thematic" client
    * @param client Scalingo API Client
    */
   constructor(client: Client) {
-    this._client = client
+    this._client = client;
   }
 
   /**
    * List all known keys
    */
   all(): Promise<Key[]> {
-    return unpackData(this._client.authApiClient().get('/keys'), 'keys')
+    return unpackData(this._client.authApiClient().get("/keys"), "keys");
   }
 
   /**
    * Show one specific key
    */
   show(id: string): Promise<Key> {
-    return unpackData(this._client.authApiClient().get(`/keys/${id}`), 'key')
+    return unpackData(this._client.authApiClient().get(`/keys/${id}`), "key");
   }
 
   /**
@@ -38,8 +38,8 @@ export default class Keys {
    * @param content Public SSH key content (ie. content of ~/.ssh/id_rsa.pub)
    */
   create(name: string, content: string): Promise<Key> {
-    const data = { name, content }
-    return unpackData(this._client.authApiClient().post('/keys', data), 'key')
+    const data = { name, content };
+    return unpackData(this._client.authApiClient().post("/keys", data), "key");
   }
 
   /**
@@ -47,6 +47,6 @@ export default class Keys {
    * @param id The id of the key to destroy
    */
   destroy(id: string): Promise<void> {
-    return unpackData(this._client.authApiClient().delete(`/keys/${id}`))
+    return unpackData(this._client.authApiClient().delete(`/keys/${id}`));
   }
 }

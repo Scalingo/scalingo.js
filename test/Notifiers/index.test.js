@@ -1,78 +1,78 @@
-import { testDelete, testGetter, testPost, testUpdate } from '../utils/http'
-import Notifiers from '../../src/Notifiers'
+import { testDelete, testGetter, testPost, testUpdate } from "../utils/http";
+import Notifiers from "../../src/Notifiers";
 
-describe('Notifiers#for', () => {
+describe("Notifiers#for", () => {
   testGetter(
-    'https://api.scalingo.com/v1/apps/toto/notifiers',
+    "https://api.scalingo.com/v1/apps/toto/notifiers",
     null,
-    'notifiers',
+    "notifiers",
     (client) => {
-      return new Notifiers(client).for('toto')
-    },
-  )
-})
+      return new Notifiers(client).for("toto");
+    }
+  );
+});
 
-describe('Notifiers#create', () => {
+describe("Notifiers#create", () => {
   const notifier = {
-    platform_id: '5982f145d48c3600273ef08a',
+    platform_id: "5982f145d48c3600273ef08a",
     active: true,
-    name: 'My Custom Webhook',
-    type_data: { webhook_url: 'https://myapp.fr/webhook/scalingo' },
-  }
+    name: "My Custom Webhook",
+    type_data: { webhook_url: "https://myapp.fr/webhook/scalingo" },
+  };
   testPost(
-    'https://api.scalingo.com/v1/apps/toto/notifiers',
+    "https://api.scalingo.com/v1/apps/toto/notifiers",
     null,
     {
       notifier: notifier,
     },
-    'notifier',
+    "notifier",
     (client) => {
-      return new Notifiers(client).create('toto', notifier)
-    },
-  )
-})
+      return new Notifiers(client).create("toto", notifier);
+    }
+  );
+});
 
-describe('Notifiers#update', () => {
+describe("Notifiers#update", () => {
   testUpdate(
-    'https://api.scalingo.com/v1/apps/toto/notifiers/54100930736f7563d5030000',
-    { notifier: { plan_id: '54100930736f7563d5030000' } },
-    'notifier',
+    "https://api.scalingo.com/v1/apps/toto/notifiers/54100930736f7563d5030000",
+    { notifier: { plan_id: "54100930736f7563d5030000" } },
+    "notifier",
     (client) => {
-      return new Notifiers(client).update('toto', '54100930736f7563d5030000', {
-        plan_id: '54100930736f7563d5030000',
-      })
-    },
-  )
-})
+      return new Notifiers(client).update("toto", "54100930736f7563d5030000", {
+        plan_id: "54100930736f7563d5030000",
+      });
+    }
+  );
+});
 
-describe('Notifiers#destroy', () => {
+describe("Notifiers#destroy", () => {
   testDelete(
-    'https://api.scalingo.com/v1/apps/toto/notifiers/54100930736f7563d5030000',
+    "https://api.scalingo.com/v1/apps/toto/notifiers/54100930736f7563d5030000",
     (client) => {
-      return new Notifiers(client).destroy('toto', '54100930736f7563d5030000')
-    },
-  )
-})
+      return new Notifiers(client).destroy("toto", "54100930736f7563d5030000");
+    }
+  );
+});
 
-describe('Notifiers#test', () => {
+describe("Notifiers#test", () => {
   testPost(
-    'https://api.scalingo.com/v1/apps/toto/notifiers/titi/test',
+    "https://api.scalingo.com/v1/apps/toto/notifiers/titi/test",
     null,
     null,
     null,
     (client) => {
-      return new Notifiers(client).test('toto', 'titi')
-    },
-  )
-})
+      return new Notifiers(client).test("toto", "titi");
+    }
+  );
+});
 
-describe('Notifiers#get', () => {
+describe("Notifiers#get", () => {
   testGetter(
-    'https://api.scalingo.com/v1/apps/toto/notifiers/tata',
+    "https://api.scalingo.com/v1/apps/toto/notifiers/tata",
     null,
-    'notifier',
+    "notifier",
     (client) => {
-      return new Notifiers(client).get('toto', 'tata')
-    },
-  )
-})
+      return new Notifiers(client).get("toto", "tata");
+    }
+  );
+});

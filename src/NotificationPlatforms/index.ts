@@ -1,20 +1,20 @@
-import { unpackData } from '../utils'
-import { Client } from '..'
-import { NotificationPlatform } from '../models/regional/notification_platforms'
+import { unpackData } from "../utils";
+import { Client } from "..";
+import { NotificationPlatform } from "../models/regional/notification_platforms";
 
 /**
  * Notification Platforms API Client
  */
 export default class NotificationPlatforms {
   /** Scalingo API Client */
-  _client: Client
+  _client: Client;
 
   /**
    * Create a new "thematic" client
    * @param client Scalingo API Client
    */
   constructor(client: Client) {
-    this._client = client
+    this._client = client;
   }
 
   /**
@@ -23,8 +23,8 @@ export default class NotificationPlatforms {
    */
   list(): Promise<NotificationPlatform> {
     return unpackData(
-      this._client.unauthenticatedClient().get('/notification_platforms'),
-      'notification_platforms',
-    )
+      this._client.unauthenticatedClient().get("/notification_platforms"),
+      "notification_platforms"
+    );
   }
 }

@@ -1,15 +1,15 @@
 /** @see https://developers.scalingo.com/keys */
 export interface Key {
   /** Unique key ID */
-  id: string
+  id: string;
   /** Key name */
-  name: string
+  name: string;
   /** Content of the SSH key */
-  content: string
+  content: string;
   /** Fingerprint of the SSH key */
-  fingerprint: string
+  fingerprint: string;
   /** Creation date of the SSH Key */
-  created_at: string
+  created_at: string;
   /** Owner of the SSH key */
-  owner: Record<string, any>
+  owner: Record<string, any>;
 }

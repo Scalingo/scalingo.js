@@ -1,11 +1,11 @@
 /** @see https://developers.scalingo.com/apps#access-to-the-application-logs-archives */
 export interface Archive {
   /** Pre-signed URL to download logs archives */
-  url: string
+  url: string;
   /** Size of the logs archive */
-  size: number
+  size: number;
   /** Date of the first log line present in the archive */
-  from: string
+  from: string;
   /** Date of the last log line present in the archive */
-  to: string
+  to: string;
 }

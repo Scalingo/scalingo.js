@@ -1,5 +1,5 @@
-import { unpackData } from '../utils'
-import { Client } from '..'
+import { unpackData } from "../utils";
+import { Client } from "..";
 
 import {
   Addon,
@@ -7,22 +7,22 @@ import {
   AddonProvider,
   AddonSso,
   AddonUpgradeResponse,
-} from '../models/regional/addons'
-import { CreateParams, UpdateParams } from '../params/regional/addons'
+} from "../models/regional/addons";
+import { CreateParams, UpdateParams } from "../params/regional/addons";
 
 /**
  * Addons API Client
  */
 export default class Addons {
   /** Scalingo API Client */
-  _client: Client
+  _client: Client;
 
   /**
    * Create a new "thematic" client
    * @param client Scalingo API Client
    */
   constructor(client: Client) {
-    this._client = client
+    this._client = client;
   }
 
   /**
@@ -33,8 +33,8 @@ export default class Addons {
   for(appId: string): Promise<Addon[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/addons`),
-      'addons',
-    )
+      "addons"
+    );
   }
 
   /**
@@ -47,8 +47,8 @@ export default class Addons {
       this._client.apiClient().post(`/apps/${appId}/addons`, {
         addon: payload,
       }),
-      'addon',
-    )
+      "addon"
+    );
   }
 
   /**
@@ -57,9 +57,9 @@ export default class Addons {
    */
   listCategories(): Promise<Category[]> {
     return unpackData(
-      this._client.unauthenticatedClient().get('/addon_categories'),
-      'addon_categories',
-    )
+      this._client.unauthenticatedClient().get("/addon_categories"),
+      "addon_categories"
+    );
   }
 
   /**
@@ -73,13 +73,13 @@ export default class Addons {
         this._client
           .unauthenticatedClient()
           .get(`/addon_providers?category_id=${categoryId}`),
-        'addon_providers',
-      )
+        "addon_providers"
+      );
     } else {
       return unpackData(
         this._client.unauthenticatedClient().get(`/addon_providers`),
-        'addon_providers',
-      )
+        "addon_providers"
+      );
     }
   }
 
@@ -93,14 +93,14 @@ export default class Addons {
   update(
     appId: string,
     addonId: string,
-    addon: UpdateParams,
+    addon: UpdateParams
   ): Promise<AddonUpgradeResponse> {
     return unpackData(
       this._client
         .apiClient()
         .patch(`/apps/${appId}/addons/${addonId}`, { addon: addon }),
-      'addon',
-    )
+      "addon"
+    );
   }
 
   /**
@@ -111,8 +111,8 @@ export default class Addons {
    */
   destroy(appId: string, addonId: string): Promise<void> {
     return unpackData(
-      this._client.apiClient().delete(`/apps/${appId}/addons/${addonId}`),
-    )
+      this._client.apiClient().delete(`/apps/${appId}/addons/${addonId}`)
+    );
   }
 
   /**
@@ -123,8 +123,8 @@ export default class Addons {
   sso(appId: string, addonId: string): Promise<AddonSso> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/addons/${addonId}/sso`),
-      'addon',
-    )
+      "addon"
+    );
   }
 
   /**
@@ -135,7 +135,7 @@ export default class Addons {
   getAddon(appId: string, addonId: string): Promise<Addon> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/addons/${addonId}`),
-      'addon',
-    )
+      "addon"
+    );
   }
 }

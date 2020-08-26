@@ -1,23 +1,23 @@
-import { unpackData } from '../utils'
-import Listener from '../Deployments/listener'
-import { Client } from '..'
+import { unpackData } from "../utils";
+import Listener from "../Deployments/listener";
+import { Client } from "..";
 
-import { App } from '../models/regional/apps'
-import { CreateParams, UpdateParams } from '../params/regional/apps'
+import { App } from "../models/regional/apps";
+import { CreateParams, UpdateParams } from "../params/regional/apps";
 
 /**
  * Apps API Client
  */
 export default class Apps {
   /** Scalingo API Client */
-  _client: Client
+  _client: Client;
 
   /**
    * Create a new "thematic" client
    * @param client Scalingo API Client
    */
   constructor(client: Client) {
-    this._client = client
+    this._client = client;
   }
 
   /**
@@ -27,7 +27,7 @@ export default class Apps {
    * @return Promise that when resolved returns an App. See: https://developers.scalingo.com/apps#application-attributes
    */
   find(id: string): Promise<App> {
-    return unpackData(this._client.apiClient().get(`/apps/${id}`), 'app')
+    return unpackData(this._client.apiClient().get(`/apps/${id}`), "app");
   }
 
   /**
@@ -36,7 +36,7 @@ export default class Apps {
    * @return Promise that when resolved returns an App array. See: https://developers.scalingo.com/apps#application-attributes
    */
   all(): Promise<App[]> {
-    return unpackData(this._client.apiClient().get('/apps'), 'apps')
+    return unpackData(this._client.apiClient().get("/apps"), "apps");
   }
 
   /**
@@ -49,23 +49,23 @@ export default class Apps {
   create(payload: CreateParams): Promise<App> {
     const body: CreateParams = {
       name: payload.name,
-    }
+    };
 
-    const headers: Record<string, string> = {}
+    const headers: Record<string, string> = {};
 
     if (payload) {
-      body.git_source = payload.git_source
-      body.parent_id = payload.parent_id
-      body.stack_id = payload.stack_id
+      body.git_source = payload.git_source;
+      body.parent_id = payload.parent_id;
+      body.stack_id = payload.stack_id;
 
       if (payload.dry_run) {
-        headers['X-Dry-Run'] = 'true'
+        headers["X-Dry-Run"] = "true";
       }
     }
     return unpackData(
-      this._client.apiClient().post('/apps', { app: body }, { headers }),
-      'app',
-    )
+      this._client.apiClient().post("/apps", { app: body }, { headers }),
+      "app"
+    );
   }
 
   /**
@@ -75,8 +75,8 @@ export default class Apps {
    * @return Promise that when resolved returns a Listener for this application.
    */
   async deploymentListener(id: string): Promise<Listener> {
-    const app = (await this.find(id)) as App
-    return new Listener(this._client, app.links.deployments_stream)
+    const app = (await this.find(id)) as App;
+    return new Listener(this._client, app.links.deployments_stream);
   }
 
   /**
@@ -88,8 +88,8 @@ export default class Apps {
   logsURL(id: string): Promise<string> {
     return unpackData(
       this._client.apiClient().get(`/apps/${id}/logs`),
-      'logs_url',
-    )
+      "logs_url"
+    );
   }
 
   /**
@@ -103,8 +103,8 @@ export default class Apps {
     return unpackData(
       this._client
         .apiClient()
-        .delete(`/apps/${appID}`, { params: { current_name: currentName } }),
-    )
+        .delete(`/apps/${appID}`, { params: { current_name: currentName } })
+    );
   }
 
   /**
@@ -121,8 +121,8 @@ export default class Apps {
         current_name: currentName,
         new_name: newName,
       }),
-      'app',
-    )
+      "app"
+    );
   }
 
   /**
@@ -136,7 +136,7 @@ export default class Apps {
   transfer(
     appID: string,
     currentName: string,
-    ownerEmail: string,
+    ownerEmail: string
   ): Promise<App> {
     return unpackData(
       this._client.apiClient().patch(
@@ -146,10 +146,10 @@ export default class Apps {
             owner: ownerEmail,
           },
         },
-        { params: { current_name: currentName } },
+        { params: { current_name: currentName } }
       ),
-      'app',
-    )
+      "app"
+    );
   }
 
   /**
@@ -163,7 +163,7 @@ export default class Apps {
   update(appID: string, appSettings: UpdateParams): Promise<App> {
     return unpackData(
       this._client.apiClient().patch(`/apps/${appID}`, { app: appSettings }),
-      'app',
-    )
+      "app"
+    );
   }
 }

@@ -1,42 +1,42 @@
-import { testGetter, testPost, testDelete } from '../utils/http'
-import Keys from '../../src/Keys'
+import { testGetter, testPost, testDelete } from "../utils/http";
+import Keys from "../../src/Keys";
 
-describe('Keys#all', () => {
-  testGetter('https://auth.scalingo.com/v1/keys', null, 'keys', (client) => {
-    return new Keys(client).all()
-  })
-})
+describe("Keys#all", () => {
+  testGetter("https://auth.scalingo.com/v1/keys", null, "keys", (client) => {
+    return new Keys(client).all();
+  });
+});
 
-describe('Keys#show', () => {
+describe("Keys#show", () => {
   testGetter(
-    'https://auth.scalingo.com/v1/keys/some-key-id',
+    "https://auth.scalingo.com/v1/keys/some-key-id",
     null,
-    'key',
+    "key",
     (client) => {
-      return new Keys(client).show('some-key-id')
-    },
-  )
-})
+      return new Keys(client).show("some-key-id");
+    }
+  );
+});
 
-describe('Keys#create', () => {
+describe("Keys#create", () => {
   const expectedBody = {
-    name: 'Key name',
-    content: 'Key content',
-  }
+    name: "Key name",
+    content: "Key content",
+  };
 
   testPost(
-    'https://auth.scalingo.com/v1/keys',
+    "https://auth.scalingo.com/v1/keys",
     null,
     expectedBody,
-    'key',
+    "key",
     (client) => {
-      return new Keys(client).create('Key name', 'Key content')
-    },
-  )
-})
+      return new Keys(client).create("Key name", "Key content");
+    }
+  );
+});
 
-describe('Keys#destroy', () => {
-  testDelete('https://auth.scalingo.com/v1/keys/some-key-id', (client) => {
-    return new Keys(client).destroy('some-key-id')
-  })
-})
+describe("Keys#destroy", () => {
+  testDelete("https://auth.scalingo.com/v1/keys/some-key-id", (client) => {
+    return new Keys(client).destroy("some-key-id");
+  });
+});

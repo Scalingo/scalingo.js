@@ -1,19 +1,19 @@
-import { unpackData } from '../utils'
-import { Client } from '..'
+import { unpackData } from "../utils";
+import { Client } from "..";
 
-import { User } from '../models/auth/user'
-import { UpdateParams } from '../params/auth/user'
+import { User } from "../models/auth/user";
+import { UpdateParams } from "../params/auth/user";
 
 export class Users {
   /** Scalingo API Client */
-  _client: Client
+  _client: Client;
 
   /**
    * Create a new "thematic" client
    * @param client Scalingo API Client
    */
   constructor(client: Client) {
-    this._client = client
+    this._client = client;
   }
 
   /**
@@ -21,7 +21,7 @@ export class Users {
    * @return Promise that when resolve return the user account informations
    */
   self(): Promise<User> {
-    return unpackData(this._client.authApiClient().get('/users/self'), 'user')
+    return unpackData(this._client.authApiClient().get("/users/self"), "user");
   }
 
   /**
@@ -31,17 +31,17 @@ export class Users {
    */
   updateAccount(attributes: UpdateParams): Promise<User> {
     return unpackData(
-      this._client.authApiClient().put('/users/account', { user: attributes }),
-      'user',
-    )
+      this._client.authApiClient().put("/users/account", { user: attributes }),
+      "user"
+    );
   }
 
   /**
    * Request the account's deletion. Requires a subsequent validation done via email.
    */
   requestAccountDeletion(): Promise<User> {
-    return unpackData(this._client.authApiClient().post('/users/delete'))
+    return unpackData(this._client.authApiClient().post("/users/delete"));
   }
 }
 
-export default Users
+export default Users;

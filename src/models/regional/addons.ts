@@ -1,85 +1,85 @@
 export interface Addon {
   /** Unique ID identifying the addon */
-  id: string
+  id: string;
   /** When the addon has been created */
-  provisioned_at: string
+  provisioned_at: string;
   /** When the addon has been deleted/upgraded */
-  deprovisioned_at: string
+  deprovisioned_at: string;
   /** Resource reference */
-  resource_id: string
+  resource_id: string;
   /** Embedded reference to Plan resource */
-  plan: Plan
+  plan: Plan;
   /** Embedded reference to AddonProvider resource */
-  addon_provider: AddonProvider
+  addon_provider: AddonProvider;
 }
 
 export interface AddonUpgradeResponse {
   /** Array of variables */
-  vars: string[]
+  vars: string[];
   /** Custom message from the addon provider */
-  message: string
+  message: string;
 }
 
 export interface Plan {
   /** Unique ID of the plan */
-  id: string
+  id: string;
   /** Name of the plan (internal reference) */
-  name: string
+  name: string;
   /** User friendly name */
-  display_name: string
+  display_name: string;
   /** The price of the plan in euros */
-  price: number
+  price: number;
   /** Description of the plan */
-  description: string
+  description: string;
 }
 
 export interface AddonProvider {
   /** Unique ID of the addon provider */
-  id: string
+  id: string;
   /** Name of the addon provider */
-  name: string
+  name: string;
   /** The url of the logo */
-  logo_url: string
+  logo_url: string;
   /** Short description of the addon provider */
-  short_description: string
+  short_description: string;
   /** Complete description of the addon provider */
-  description: string
+  description: string;
   /** Embedded category object */
-  category: Category
+  category: Category;
   /** Name of the company offering this addon */
-  provider_name: string
+  provider_name: string;
   /** URL of the company offering this addon */
-  provider_url: string
+  provider_url: string;
   /** Embedded array of plans for this addon */
-  plans: Plan[]
+  plans: Plan[];
 }
 
 export interface Category {
   /** ID of the category */
-  id: string
+  id: string;
   /** Description of the category */
-  description: string
+  description: string;
   /** Name of the category */
-  name: string
+  name: string;
 }
 
 export interface AddonSso {
   /** The id of the addon */
-  id: string
+  id: string;
   /** The id of the current App */
-  appId: string
+  appId: string;
   /** The id of the resource */
-  resourceId: string
+  resourceId: string;
   /** Embedded reference to Plan resource */
-  plan: Plan
+  plan: Plan;
   /** Embedded reference to AddonProvider resource */
-  addon_provider: AddonProvider
+  addon_provider: AddonProvider;
   /** When the addon has been created */
-  provisioned_at: string
+  provisioned_at: string;
   /** When the addon has been deleted/upgraded */
-  deprovisioned_at: string
+  deprovisioned_at: string;
   /** The current status of the addon */
-  status: string
+  status: string;
   /** The sso url of the addon */
-  ssoUrl: string
+  ssoUrl: string;
 }

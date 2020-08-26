@@ -1,24 +1,24 @@
-import { unpackData } from '../utils'
-import { Client } from '..'
-import { App } from '../models/regional/apps'
+import { unpackData } from "../utils";
+import { Client } from "..";
+import { App } from "../models/regional/apps";
 import {
   Collaborator,
   CollaboratorInvitation,
-} from '../models/regional/collaborators'
+} from "../models/regional/collaborators";
 
 /**
  * Collaborators API Client
  */
 export default class Collaborators {
   /** Scalingo API Client */
-  _client: Client
+  _client: Client;
 
   /**
    * Create a new "thematic" client
    * @param client Scalingo API Client
    */
   constructor(client: Client) {
-    this._client = client
+    this._client = client;
   }
 
   /**
@@ -29,8 +29,8 @@ export default class Collaborators {
   for(appId: string): Promise<Collaborator[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/collaborators`),
-      'collaborators',
-    )
+      "collaborators"
+    );
   }
 
   /**
@@ -43,8 +43,8 @@ export default class Collaborators {
     return unpackData(
       this._client
         .apiClient()
-        .delete(`/apps/${appId}/collaborators/${collaboratorId}`),
-    )
+        .delete(`/apps/${appId}/collaborators/${collaboratorId}`)
+    );
   }
 
   /**
@@ -58,8 +58,8 @@ export default class Collaborators {
       this._client.apiClient().post(`/apps/${appId}/collaborators`, {
         collaborator: { email: email },
       }),
-      'collaborator',
-    )
+      "collaborator"
+    );
   }
 
   /**
@@ -71,7 +71,7 @@ export default class Collaborators {
     return unpackData(
       this._client
         .apiClient()
-        .get('/apps/collaboration', { params: { token: token } }),
-    )
+        .get("/apps/collaboration", { params: { token: token } })
+    );
   }
 }

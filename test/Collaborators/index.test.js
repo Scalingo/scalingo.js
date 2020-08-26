@@ -3,49 +3,49 @@ import {
   testDelete,
   testPost,
   testParamsGetter,
-} from '../utils/http'
-import Collaborators from '../../src/Collaborators'
-import '../factories'
+} from "../utils/http";
+import Collaborators from "../../src/Collaborators";
+import "../factories";
 
-describe('Collaborators#for', () => {
+describe("Collaborators#for", () => {
   testGetter(
-    'https://api.scalingo.com/v1/apps/toto/collaborators',
+    "https://api.scalingo.com/v1/apps/toto/collaborators",
     null,
-    'collaborators',
+    "collaborators",
     (client) => {
-      return new Collaborators(client).for('toto')
-    },
-  )
-})
+      return new Collaborators(client).for("toto");
+    }
+  );
+});
 
-describe('Collaborators#destroy', () => {
+describe("Collaborators#destroy", () => {
   testDelete(
-    'https://api.scalingo.com/v1/apps/toto/collaborators/1234',
+    "https://api.scalingo.com/v1/apps/toto/collaborators/1234",
     (client) => {
-      return new Collaborators(client).destroy('toto', '1234')
-    },
-  )
-})
+      return new Collaborators(client).destroy("toto", "1234");
+    }
+  );
+});
 
-describe('Collaborators#invite', () => {
+describe("Collaborators#invite", () => {
   testPost(
-    'https://api.scalingo.com/v1/apps/toto/collaborators',
+    "https://api.scalingo.com/v1/apps/toto/collaborators",
     null,
-    { collaborator: { email: 'toto@titi.tata' } },
-    'collaborator',
+    { collaborator: { email: "toto@titi.tata" } },
+    "collaborator",
     (client) => {
-      return new Collaborators(client).invite('toto', 'toto@titi.tata')
-    },
-  )
-})
+      return new Collaborators(client).invite("toto", "toto@titi.tata");
+    }
+  );
+});
 
-describe('Collaborators#inviteAccept', () => {
+describe("Collaborators#inviteAccept", () => {
   testParamsGetter(
-    'https://api.scalingo.com/v1/apps/collaboration',
-    { token: 'toto-accept-token' },
+    "https://api.scalingo.com/v1/apps/collaboration",
+    { token: "toto-accept-token" },
     null,
     (client) => {
-      return new Collaborators(client).inviteAccept('toto-accept-token')
-    },
-  )
-})
+      return new Collaborators(client).inviteAccept("toto-accept-token");
+    }
+  );
+});

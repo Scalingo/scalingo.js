@@ -1,22 +1,22 @@
-import axios from 'axios'
-import { unpackData } from '../utils'
-import { Client } from '..'
+import axios from "axios";
+import { unpackData } from "../utils";
+import { Client } from "..";
 
-import { Token } from '../models/auth/tokens'
+import { Token } from "../models/auth/tokens";
 
 /**
  * Tokens API Client
  */
 export class Tokens {
   /** Scalingo API Client */
-  _client: Client
+  _client: Client;
 
   /**
    * Create a new "thematic" client
    * @param client Scalingo API Client
    */
   constructor(client: Client) {
-    this._client = client
+    this._client = client;
   }
 
   /**
@@ -24,7 +24,7 @@ export class Tokens {
    * @return A list of tokens
    */
   all(): Promise<Token[]> {
-    return unpackData(this._client.authApiClient().get('/tokens'), 'tokens')
+    return unpackData(this._client.authApiClient().get("/tokens"), "tokens");
   }
 
   /**
@@ -34,9 +34,9 @@ export class Tokens {
    */
   create(name: string): Promise<Token> {
     return unpackData(
-      this._client.authApiClient().post('/tokens', { name }),
-      'token',
-    )
+      this._client.authApiClient().post("/tokens", { name }),
+      "token"
+    );
   }
 
   /**
@@ -47,8 +47,8 @@ export class Tokens {
   renew(id: string): Promise<Token> {
     return unpackData(
       this._client.authApiClient().patch(`/tokens/${id}/renew`),
-      'token',
-    )
+      "token"
+    );
   }
 
   /**
@@ -56,7 +56,7 @@ export class Tokens {
    * @param id The id of the token to destroy
    */
   destroy(id: string): Promise<void> {
-    return unpackData(this._client.authApiClient().delete(`/tokens/${id}`))
+    return unpackData(this._client.authApiClient().delete(`/tokens/${id}`));
   }
 
   /**
@@ -70,13 +70,13 @@ export class Tokens {
       {},
       {
         auth: {
-          username: '',
+          username: "",
           password: token,
         },
-      },
-    )
-    return unpackData(request, 'token')
+      }
+    );
+    return unpackData(request, "token");
   }
 }
 
-export default Tokens
+export default Tokens;

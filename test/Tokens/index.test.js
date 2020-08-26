@@ -1,44 +1,44 @@
-import { testDelete, testGetter, testPost, testUpdate } from '../utils/http'
-import Tokens from '../../src/Tokens'
+import { testDelete, testGetter, testPost, testUpdate } from "../utils/http";
+import Tokens from "../../src/Tokens";
 
-describe('Tokens#list', () => {
+describe("Tokens#list", () => {
   testGetter(
-    'https://auth.scalingo.com/v1/tokens',
+    "https://auth.scalingo.com/v1/tokens",
     null,
-    'tokens',
+    "tokens",
     (client) => {
-      return new Tokens(client).all()
-    },
-  )
-})
+      return new Tokens(client).all();
+    }
+  );
+});
 
-describe('Tokens#create', () => {
-  const expectedBody = { name: 'some-token' }
+describe("Tokens#create", () => {
+  const expectedBody = { name: "some-token" };
 
   testPost(
-    'https://auth.scalingo.com/v1/tokens',
+    "https://auth.scalingo.com/v1/tokens",
     null,
     expectedBody,
-    'token',
+    "token",
     (client) => {
-      return new Tokens(client).create('some-token')
-    },
-  )
-})
+      return new Tokens(client).create("some-token");
+    }
+  );
+});
 
-describe('Tokens#renew', () => {
+describe("Tokens#renew", () => {
   testUpdate(
-    'https://auth.scalingo.com/v1/tokens/some-id/renew',
+    "https://auth.scalingo.com/v1/tokens/some-id/renew",
     null,
-    'token',
+    "token",
     (client) => {
-      return new Tokens(client).renew('some-id')
-    },
-  )
-})
+      return new Tokens(client).renew("some-id");
+    }
+  );
+});
 
-describe('Tokens#destroy', () => {
-  testDelete('https://auth.scalingo.com/v1/tokens/some-id', (client) => {
-    return new Tokens(client).destroy('some-id')
-  })
-})
+describe("Tokens#destroy", () => {
+  testDelete("https://auth.scalingo.com/v1/tokens/some-id", (client) => {
+    return new Tokens(client).destroy("some-id");
+  });
+});

@@ -1,13 +1,13 @@
-import { testGetter } from '../utils/http'
-import Stats from '../../src/Stats'
+import { testGetter } from "../utils/http";
+import Stats from "../../src/Stats";
 
-describe('Stats#referrals', () => {
+describe("Stats#referrals", () => {
   testGetter(
-    'https://api.scalingo.com/v1/account/referrals/stats',
+    "https://api.scalingo.com/v1/account/referrals/stats",
     null,
-    'referral_stats',
+    "referral_stats",
     (client) => {
-      return new Stats(client).referrals()
-    },
-  )
-})
+      return new Stats(client).referrals();
+    }
+  );
+});

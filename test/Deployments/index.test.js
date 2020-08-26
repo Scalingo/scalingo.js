@@ -1,24 +1,24 @@
-import { testGetter } from '../utils/http'
-import Deployments from '../../src/Deployments'
+import { testGetter } from "../utils/http";
+import Deployments from "../../src/Deployments";
 
-describe('Deployments#find', () => {
+describe("Deployments#find", () => {
   testGetter(
-    'https://api.scalingo.com/v1/apps/testApp/deployments/deploy1234',
+    "https://api.scalingo.com/v1/apps/testApp/deployments/deploy1234",
     null,
-    'deployment',
+    "deployment",
     (client) => {
-      return new Deployments(client).find('testApp', 'deploy1234')
-    },
-  )
-})
+      return new Deployments(client).find("testApp", "deploy1234");
+    }
+  );
+});
 
-describe('Deployments#logs', () => {
+describe("Deployments#logs", () => {
   testGetter(
-    'https://api.scalingo.com/v1/apps/testApp/deployments/deploy1234/output',
+    "https://api.scalingo.com/v1/apps/testApp/deployments/deploy1234/output",
     null,
     null,
     (client) => {
-      return new Deployments(client).logs('testApp', 'deploy1234')
-    },
-  )
-})
+      return new Deployments(client).logs("testApp", "deploy1234");
+    }
+  );
+});

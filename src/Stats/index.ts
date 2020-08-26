@@ -1,20 +1,20 @@
-import { unpackData } from '../utils'
-import { Client } from '..'
-import { ReferralsStats } from '../models/regional/stats'
+import { unpackData } from "../utils";
+import { Client } from "..";
+import { ReferralsStats } from "../models/regional/stats";
 
 /**
  * Stats API Client
  */
 export class Stats {
   /** Scalingo API Client */
-  _client: Client
+  _client: Client;
 
   /**
    * Create a new "thematic" client
    * @param client Scalingo API Client
    */
   constructor(client: Client) {
-    this._client = client
+    this._client = client;
   }
 
   /**
@@ -23,10 +23,10 @@ export class Stats {
    */
   referrals(): Promise<ReferralsStats> {
     return unpackData(
-      this._client.apiClient().get('/account/referrals/stats'),
-      'referral_stats',
-    )
+      this._client.apiClient().get("/account/referrals/stats"),
+      "referral_stats"
+    );
   }
 }
 
-export default Stats
+export default Stats;

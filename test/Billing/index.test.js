@@ -1,40 +1,40 @@
-import { testGetter, testPost, testPut } from '../utils/http'
-import Billing from '../../src/Billing'
+import { testGetter, testPost, testPut } from "../utils/http";
+import Billing from "../../src/Billing";
 
-describe('Billing#profile', () => {
+describe("Billing#profile", () => {
   testGetter(
-    'https://cashmachine.scalingo.com/profile',
+    "https://cashmachine.scalingo.com/profile",
     null,
-    'profile',
+    "profile",
     (client) => {
-      return new Billing(client).profile()
-    },
-  )
-})
+      return new Billing(client).profile();
+    }
+  );
+});
 
-describe('Billing#createProfile', () => {
-  const payload = { some: 'payload' }
+describe("Billing#createProfile", () => {
+  const payload = { some: "payload" };
 
   testPost(
-    'https://cashmachine.scalingo.com/profiles',
+    "https://cashmachine.scalingo.com/profiles",
     null,
     { profile: payload },
-    'profile',
+    "profile",
     (client) => {
-      return new Billing(client).createProfile(payload)
-    },
-  )
-})
+      return new Billing(client).createProfile(payload);
+    }
+  );
+});
 
-describe('Billing#updateProfile', () => {
-  const payload = { some: 'payload' }
+describe("Billing#updateProfile", () => {
+  const payload = { some: "payload" };
 
   testPut(
-    'https://cashmachine.scalingo.com/profiles/test-id',
+    "https://cashmachine.scalingo.com/profiles/test-id",
     { profile: payload },
-    'profile',
+    "profile",
     (client) => {
-      return new Billing(client).updateProfile('test-id', payload)
-    },
-  )
-})
+      return new Billing(client).updateProfile("test-id", payload);
+    }
+  );
+});

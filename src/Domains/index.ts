@@ -1,21 +1,21 @@
-import { unpackData } from '../utils'
-import { Client } from '..'
-import { Domain } from '../models/regional/domains'
-import { CreateParams, UpdateParams } from '../params/regional/domains'
+import { unpackData } from "../utils";
+import { Client } from "..";
+import { Domain } from "../models/regional/domains";
+import { CreateParams, UpdateParams } from "../params/regional/domains";
 
 /**
  * Domains API Client
  */
 export default class Domains {
   /** Scalingo API Client */
-  _client: Client
+  _client: Client;
 
   /**
    * Create a new "thematic" client
    * @param client Scalingo API Client
    */
   constructor(client: Client) {
-    this._client = client
+    this._client = client;
   }
 
   /**
@@ -26,8 +26,8 @@ export default class Domains {
   for(appId: string): Promise<Domain[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/domains`),
-      'domains',
-    )
+      "domains"
+    );
   }
 
   /**
@@ -41,8 +41,8 @@ export default class Domains {
       this._client
         .apiClient()
         .post(`/apps/${appId}/domains`, { domain: domain }),
-      'domain',
-    )
+      "domain"
+    );
   }
 
   /**
@@ -53,8 +53,8 @@ export default class Domains {
    */
   destroy(appId: string, domainId: string): Promise<void> {
     return unpackData(
-      this._client.apiClient().delete(`/apps/${appId}/domains/${domainId}`),
-    )
+      this._client.apiClient().delete(`/apps/${appId}/domains/${domainId}`)
+    );
   }
 
   /**
@@ -66,8 +66,8 @@ export default class Domains {
   show(appId: string, domainId: string): Promise<Domain> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/domains/${domainId}`),
-      'domain',
-    )
+      "domain"
+    );
   }
 
   /**
@@ -80,13 +80,13 @@ export default class Domains {
   update(
     appId: string,
     domainId: string,
-    domain: UpdateParams,
+    domain: UpdateParams
   ): Promise<Domain> {
     return unpackData(
       this._client
         .apiClient()
         .patch(`/apps/${appId}/domains/${domainId}`, { domain: domain }),
-      'domain',
-    )
+      "domain"
+    );
   }
 }

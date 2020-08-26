@@ -1,21 +1,21 @@
-import { unpackData } from '../utils'
-import { Client } from '..'
-import { MetricType, Point } from '../models/regional/metrics'
-import { QueryParams } from '../params/regional/metrics'
+import { unpackData } from "../utils";
+import { Client } from "..";
+import { MetricType, Point } from "../models/regional/metrics";
+import { QueryParams } from "../params/regional/metrics";
 
 /**
  * Metrics API Client
  */
 export default class Metrics {
   /** Scalingo API Client */
-  _client: Client
+  _client: Client;
 
   /**
    * Create a new "thematic" client
    * @param client Scalingo API Client
    */
   constructor(client: Client) {
-    this._client = client
+    this._client = client;
   }
 
   /**
@@ -25,9 +25,9 @@ export default class Metrics {
    */
   types(): Promise<MetricType[]> {
     return unpackData(
-      this._client.apiClient().get('/features/metrics'),
-      'metrics',
-    )
+      this._client.apiClient().get("/features/metrics"),
+      "metrics"
+    );
   }
 
   /**
@@ -45,36 +45,36 @@ export default class Metrics {
       containerIndex,
       containerType,
       last,
-    } = opts
+    } = opts;
 
-    const params: Record<string, any> = {}
+    const params: Record<string, any> = {};
 
-    let url = `/apps/${appId}/stats/${metric}`
+    let url = `/apps/${appId}/stats/${metric}`;
 
     if (since !== undefined) {
-      params['since'] = since
+      params["since"] = since;
     }
 
     if (statusCode !== undefined) {
-      params['status_code'] = statusCode
+      params["status_code"] = statusCode;
     }
 
     if (statisticsType !== undefined) {
-      params['statistics_type'] = statisticsType
+      params["statistics_type"] = statisticsType;
     }
 
     if (last !== undefined) {
-      params['last'] = last
+      params["last"] = last;
     }
 
     if (containerType !== undefined) {
-      url = `${url}/${containerType}`
+      url = `${url}/${containerType}`;
 
       if (containerIndex !== undefined) {
-        url = `${url}/${containerIndex}`
+        url = `${url}/${containerIndex}`;
       }
     }
 
-    return unpackData(this._client.apiClient().get(url, { params: params }))
+    return unpackData(this._client.apiClient().get(url, { params: params }));
   }
 }

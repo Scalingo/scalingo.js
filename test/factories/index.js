@@ -1,1 +1,1 @@
-require('./operations')
+require("./operations");

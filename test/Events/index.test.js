@@ -1,59 +1,59 @@
-import { testGetter, testParamsGetter } from '../utils/http'
-import Events from '../../src/Events'
+import { testGetter, testParamsGetter } from "../utils/http";
+import Events from "../../src/Events";
 
-describe('Events#all', () => {
-  testGetter('https://api.scalingo.com/v1/events', null, null, (client) => {
-    return new Events(client).all({ page: 1, from: 2 })
-  })
+describe("Events#all", () => {
+  testGetter("https://api.scalingo.com/v1/events", null, null, (client) => {
+    return new Events(client).all({ page: 1, from: 2 });
+  });
 
   testParamsGetter(
-    'https://api.scalingo.com/v1/events',
+    "https://api.scalingo.com/v1/events",
     { page: 1, per_page: 2, from: 1 },
     null,
     (client) => {
-      return new Events(client).all({ page: 1, per_page: 2, from: 1 })
-    },
-  )
-})
+      return new Events(client).all({ page: 1, per_page: 2, from: 1 });
+    }
+  );
+});
 
-describe('Events#for', () => {
+describe("Events#for", () => {
   testGetter(
-    'https://api.scalingo.com/v1/apps/tata/events',
+    "https://api.scalingo.com/v1/apps/tata/events",
     null,
     null,
     (client) => {
-      return new Events(client).for('tata', { page: 1, from: 2 })
-    },
-  )
+      return new Events(client).for("tata", { page: 1, from: 2 });
+    }
+  );
 
   testParamsGetter(
-    'https://api.scalingo.com/v1/apps/tata/events',
+    "https://api.scalingo.com/v1/apps/tata/events",
     { page: 1, per_page: 2, from: 1 },
     null,
     (client) => {
-      return new Events(client).for('tata', { page: 1, per_page: 2, from: 1 })
-    },
-  )
-})
+      return new Events(client).for("tata", { page: 1, per_page: 2, from: 1 });
+    }
+  );
+});
 
-describe('Events#listEventTypes', () => {
+describe("Events#listEventTypes", () => {
   testGetter(
-    'https://api.scalingo.com/v1/event_types',
+    "https://api.scalingo.com/v1/event_types",
     { noAuth: true },
-    'event_types',
+    "event_types",
     (client) => {
-      return new Events(client).listEventTypes()
-    },
-  )
-})
+      return new Events(client).listEventTypes();
+    }
+  );
+});
 
-describe('Events#listEventCategories', () => {
+describe("Events#listEventCategories", () => {
   testGetter(
-    'https://api.scalingo.com/v1/event_categories',
+    "https://api.scalingo.com/v1/event_categories",
     { noAuth: true },
-    'event_categories',
+    "event_categories",
     (client) => {
-      return new Events(client).listEventCategories()
-    },
-  )
-})
+      return new Events(client).listEventCategories();
+    }
+  );
+});

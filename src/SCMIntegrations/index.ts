@@ -1,28 +1,28 @@
-import { unpackData } from '../utils'
-import { Client } from '..'
-import { Key } from '../models/auth/keys'
+import { unpackData } from "../utils";
+import { Client } from "..";
+import { Key } from "../models/auth/keys";
 import {
   SCMIntegration,
   PullRequest,
   Repository,
   Organization,
-} from '../models/auth/scm_integrations'
+} from "../models/auth/scm_integrations";
 
-import { CreateParams } from '../params/auth/scm_integrations'
+import { CreateParams } from "../params/auth/scm_integrations";
 
 /**
  * SCM Integrations API Client
  */
 export default class SCMIntegrations {
   /** Scalingo API Client */
-  _client: Client
+  _client: Client;
 
   /**
    * Create a new "thematic" client
    * @param client Scalingo API Client
    */
   constructor(client: Client) {
-    this._client = client
+    this._client = client;
   }
 
   /**
@@ -34,8 +34,8 @@ export default class SCMIntegrations {
   find(integrationID: string): Promise<SCMIntegration> {
     return unpackData(
       this._client.authApiClient().get(`/scm_integrations/${integrationID}`),
-      'scm_integration',
-    )
+      "scm_integration"
+    );
   }
 
   /**
@@ -45,9 +45,9 @@ export default class SCMIntegrations {
    */
   all(): Promise<SCMIntegration[]> {
     return unpackData(
-      this._client.authApiClient().get('/scm_integrations'),
-      'scm_integrations',
-    )
+      this._client.authApiClient().get("/scm_integrations"),
+      "scm_integrations"
+    );
   }
 
   /**
@@ -61,9 +61,9 @@ export default class SCMIntegrations {
     return unpackData(
       this._client
         .authApiClient()
-        .post('/scm_integrations', { scm_integration: opts }),
-      'scm_integration',
-    )
+        .post("/scm_integrations", { scm_integration: opts }),
+      "scm_integration"
+    );
   }
 
   /**
@@ -74,8 +74,8 @@ export default class SCMIntegrations {
    */
   destroy(integrationID: string): Promise<void> {
     return unpackData(
-      this._client.authApiClient().delete(`/scm_integrations/${integrationID}`),
-    )
+      this._client.authApiClient().delete(`/scm_integrations/${integrationID}`)
+    );
   }
 
   /**
@@ -89,8 +89,8 @@ export default class SCMIntegrations {
       this._client
         .authApiClient()
         .post(`/scm_integrations/${integrationID}/import_keys`),
-      'keys',
-    )
+      "keys"
+    );
   }
 
   /**
@@ -102,7 +102,7 @@ export default class SCMIntegrations {
    */
   searchPullRequests(
     integrationID: string,
-    query: string,
+    query: string
   ): Promise<PullRequest[]> {
     return unpackData(
       this._client
@@ -110,8 +110,8 @@ export default class SCMIntegrations {
         .get(`/scm_integrations/${integrationID}/search_pull_requests`, {
           params: { query },
         }),
-      'pull_requests',
-    )
+      "pull_requests"
+    );
   }
 
   /**
@@ -123,7 +123,7 @@ export default class SCMIntegrations {
    */
   searchRepositories(
     integrationID: string,
-    query: string,
+    query: string
   ): Promise<Repository[]> {
     return unpackData(
       this._client
@@ -131,8 +131,8 @@ export default class SCMIntegrations {
         .get(`/scm_integrations/${integrationID}/search_repos`, {
           params: { query },
         }),
-      'repositories',
-    )
+      "repositories"
+    );
   }
 
   /**
@@ -146,7 +146,7 @@ export default class SCMIntegrations {
       this._client
         .authApiClient()
         .get(`/scm_integrations/${integrationID}/orgs`),
-      'organizations',
-    )
+      "organizations"
+    );
   }
 }

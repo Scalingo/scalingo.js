@@ -1,94 +1,94 @@
-import { testDelete, testGetter, testPost, testUpdate } from '../utils/http'
-import Addons from '../../src/Addons'
+import { testDelete, testGetter, testPost, testUpdate } from "../utils/http";
+import Addons from "../../src/Addons";
 
-describe('Addons#for', () => {
+describe("Addons#for", () => {
   testGetter(
-    'https://api.scalingo.com/v1/apps/toto/addons',
+    "https://api.scalingo.com/v1/apps/toto/addons",
     null,
-    'addons',
+    "addons",
     (client) => {
-      return new Addons(client).for('toto')
-    },
-  )
-})
+      return new Addons(client).for("toto");
+    }
+  );
+});
 
-describe('Addons#create', () => {
+describe("Addons#create", () => {
   testPost(
-    'https://api.scalingo.com/v1/apps/toto/addons',
+    "https://api.scalingo.com/v1/apps/toto/addons",
     null,
-    { addon: { plan_id: 'test-plan', addon_provider_id: 'test-provider' } },
-    'addon',
+    { addon: { plan_id: "test-plan", addon_provider_id: "test-provider" } },
+    "addon",
     (client) => {
-      return new Addons(client).create('toto', {
-        plan_id: 'test-plan',
-        addon_provider_id: 'test-provider',
-      })
-    },
-  )
-})
+      return new Addons(client).create("toto", {
+        plan_id: "test-plan",
+        addon_provider_id: "test-provider",
+      });
+    }
+  );
+});
 
-describe('Addons#listCategories', () => {
+describe("Addons#listCategories", () => {
   testGetter(
-    'https://api.scalingo.com/v1/addon_categories',
+    "https://api.scalingo.com/v1/addon_categories",
     { noAuth: true },
-    'addon_categories',
+    "addon_categories",
     (client) => {
-      return new Addons(client).listCategories()
-    },
-  )
-})
+      return new Addons(client).listCategories();
+    }
+  );
+});
 
-describe('Addons#listProviders', () => {
+describe("Addons#listProviders", () => {
   testGetter(
-    'https://api.scalingo.com/v1/addon_providers?category_id=1234',
+    "https://api.scalingo.com/v1/addon_providers?category_id=1234",
     { noAuth: true },
-    'addon_providers',
+    "addon_providers",
     (client) => {
-      return new Addons(client).listProviders('1234')
-    },
-  )
-})
+      return new Addons(client).listProviders("1234");
+    }
+  );
+});
 
-describe('Addons#update', () => {
+describe("Addons#update", () => {
   testUpdate(
-    'https://api.scalingo.com/v1/apps/toto/addons/54100930736f7563d5030000',
-    { addon: { plan_id: '54100930736f7563d5030000' } },
-    'addon',
+    "https://api.scalingo.com/v1/apps/toto/addons/54100930736f7563d5030000",
+    { addon: { plan_id: "54100930736f7563d5030000" } },
+    "addon",
     (client) => {
-      return new Addons(client).update('toto', '54100930736f7563d5030000', {
-        plan_id: '54100930736f7563d5030000',
-      })
-    },
-  )
-})
+      return new Addons(client).update("toto", "54100930736f7563d5030000", {
+        plan_id: "54100930736f7563d5030000",
+      });
+    }
+  );
+});
 
-describe('Addons#destroy', () => {
+describe("Addons#destroy", () => {
   testDelete(
-    'https://api.scalingo.com/v1/apps/toto/addons/54100930736f7563d5030000',
+    "https://api.scalingo.com/v1/apps/toto/addons/54100930736f7563d5030000",
     (client) => {
-      return new Addons(client).destroy('toto', '54100930736f7563d5030000')
-    },
-  )
-})
+      return new Addons(client).destroy("toto", "54100930736f7563d5030000");
+    }
+  );
+});
 
-describe('Addons#sso', () => {
+describe("Addons#sso", () => {
   testGetter(
-    'https://api.scalingo.com/v1/apps/toto/addons/titi/sso',
+    "https://api.scalingo.com/v1/apps/toto/addons/titi/sso",
     null,
-    'addon',
+    "addon",
     (client) => {
-      return new Addons(client).sso('toto', 'titi')
-    },
-  )
-})
+      return new Addons(client).sso("toto", "titi");
+    }
+  );
+});
 
-describe('Addons#getAddon', () => {
+describe("Addons#getAddon", () => {
   testGetter(
-    'https://api.scalingo.com/v1/apps/toto/addons/tata',
+    "https://api.scalingo.com/v1/apps/toto/addons/tata",
     null,
-    'addon',
+    "addon",
     (client) => {
-      return new Addons(client).getAddon('toto', 'tata')
-    },
-  )
-})
+      return new Addons(client).getAddon("toto", "tata");
+    }
+  );
+});

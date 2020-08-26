@@ -1,23 +1,23 @@
-import { unpackData } from '../utils'
-import { Client } from '..'
+import { unpackData } from "../utils";
+import { Client } from "..";
 
 import {
   TwoFactorAuthObject,
   DEFAULT_PROVIDER,
   TwoFactorAuthInitiateResponse,
   TwoFactorAuthValidateResponse,
-} from '../models/auth/two_factor_auth'
+} from "../models/auth/two_factor_auth";
 
 export class TwoFactorAuth {
   /** Scalingo API Client */
-  _client: Client
+  _client: Client;
 
   /**
    * Create a new "thematic" client
    * @param client Scalingo API Client
    */
   constructor(client: Client) {
-    this._client = client
+    this._client = client;
   }
 
   /**
@@ -25,7 +25,7 @@ export class TwoFactorAuth {
    * @return Promise resolving with the current user two factor status
    */
   status(): Promise<TwoFactorAuthObject> {
-    return unpackData(this._client.authApiClient().get('/client/tfa'), 'tfa')
+    return unpackData(this._client.authApiClient().get("/client/tfa"), "tfa");
   }
 
   /**
@@ -34,16 +34,16 @@ export class TwoFactorAuth {
    * @return Promise resolving with the current user two factor status
    */
   initiate(
-    provider = DEFAULT_PROVIDER,
+    provider = DEFAULT_PROVIDER
   ): Promise<TwoFactorAuthInitiateResponse> {
     const data = {
       tfa: { provider: provider || DEFAULT_PROVIDER },
-    }
+    };
 
     return unpackData(
-      this._client.authApiClient().post('/client/tfa', data),
-      'tfa',
-    )
+      this._client.authApiClient().post("/client/tfa", data),
+      "tfa"
+    );
   }
 
   /**
@@ -54,12 +54,12 @@ export class TwoFactorAuth {
   validate(attempt: number): Promise<TwoFactorAuthValidateResponse> {
     const data = {
       tfa: { attempt },
-    }
+    };
 
     return unpackData(
-      this._client.authApiClient().post('/client/tfa/validate', data),
-      'tfa',
-    )
+      this._client.authApiClient().post("/client/tfa/validate", data),
+      "tfa"
+    );
   }
 
   /**
@@ -67,8 +67,8 @@ export class TwoFactorAuth {
    * @return Promise resolving with the current user two factor status
    */
   disable(): Promise<TwoFactorAuthObject> {
-    return unpackData(this._client.authApiClient().delete('/client/tfa'))
+    return unpackData(this._client.authApiClient().delete("/client/tfa"));
   }
 }
 
-export default TwoFactorAuth
+export default TwoFactorAuth;

@@ -1,56 +1,56 @@
-import axios, { AxiosInstance } from 'axios'
+import axios, { AxiosInstance } from "axios";
 
-import Apps from './Apps'
-import Addons from './Addons'
-import Billing from './Billing'
-import Collaborators from './Collaborators'
-import Containers from './Containers'
-import Deployments from './Deployments'
-import Domains from './Domains'
-import Environment from './Environment'
-import Events from './Events'
-import Keys from './Keys'
-import Logs from './Logs'
-import Metrics from './Metrics'
-import Notifiers from './Notifiers'
-import NotificationPlatforms from './NotificationPlatforms'
-import Operations from './Operations'
-import SCMIntegrations from './SCMIntegrations'
-import SCMRepoLinks from './SCMRepoLinks'
-import Stats from './Stats'
-import Tokens from './Tokens'
-import TwoFactorAuth from './TwoFactorAuth'
-import Users from './Users'
+import Apps from "./Apps";
+import Addons from "./Addons";
+import Billing from "./Billing";
+import Collaborators from "./Collaborators";
+import Containers from "./Containers";
+import Deployments from "./Deployments";
+import Domains from "./Domains";
+import Environment from "./Environment";
+import Events from "./Events";
+import Keys from "./Keys";
+import Logs from "./Logs";
+import Metrics from "./Metrics";
+import Notifiers from "./Notifiers";
+import NotificationPlatforms from "./NotificationPlatforms";
+import Operations from "./Operations";
+import SCMIntegrations from "./SCMIntegrations";
+import SCMRepoLinks from "./SCMRepoLinks";
+import Stats from "./Stats";
+import Tokens from "./Tokens";
+import TwoFactorAuth from "./TwoFactorAuth";
+import Users from "./Users";
 
 export interface ScalingoClientOptions {
-  apiUrl?: string
-  authApiUrl?: string
-  billingApiUrl?: string
-  noUserAgent?: boolean
+  apiUrl?: string;
+  authApiUrl?: string;
+  billingApiUrl?: string;
+  noUserAgent?: boolean;
 }
 
 export const defaultClientOptions: Required<ScalingoClientOptions> = {
-  apiUrl: 'https://api.scalingo.com',
-  authApiUrl: 'https://auth.scalingo.com',
-  billingApiUrl: 'https://cashmachine.scalingo.com',
+  apiUrl: "https://api.scalingo.com",
+  authApiUrl: "https://auth.scalingo.com",
+  billingApiUrl: "https://cashmachine.scalingo.com",
   noUserAgent: false,
-}
+};
 
 export class Client {
   /** Bearer Token for the current user. */
-  _token: string
+  _token: string;
 
   /** URL to the main Scalingo API. */
-  _apiUrl: string
+  _apiUrl: string;
 
   /** URL to the Scalingo Authentication API. */
-  _authApiUrl: string
+  _authApiUrl: string;
 
   /** URL to the Scalingo Billing API. */
-  _billingApiUrl: string
+  _billingApiUrl: string;
 
   /** Global HTTP headers */
-  _headers: Record<string, any>
+  _headers: Record<string, any>;
 
   /**
    * Create a new Client for the Scalingo API.
@@ -62,40 +62,40 @@ export class Client {
    * @param opts.noUserAgent=false] - Do not set the user agent
    */
   constructor(token: string, opts: ScalingoClientOptions = {}) {
-    const { apiUrl, authApiUrl, billingApiUrl } = opts
+    const { apiUrl, authApiUrl, billingApiUrl } = opts;
 
-    this._token = token
-    this._apiUrl = apiUrl || defaultClientOptions.apiUrl
-    this._authApiUrl = authApiUrl || defaultClientOptions.authApiUrl
-    this._billingApiUrl = billingApiUrl || defaultClientOptions.billingApiUrl
-    this._headers = {}
+    this._token = token;
+    this._apiUrl = apiUrl || defaultClientOptions.apiUrl;
+    this._authApiUrl = authApiUrl || defaultClientOptions.authApiUrl;
+    this._billingApiUrl = billingApiUrl || defaultClientOptions.billingApiUrl;
+    this._headers = {};
 
     if (opts && !opts.noUserAgent) {
-      this._headers['User-Agent'] = 'Scalingo Javascript Client'
+      this._headers["User-Agent"] = "Scalingo Javascript Client";
     }
   }
 
-  Apps = new Apps(this)
-  Addons = new Addons(this)
-  Billing = new Billing(this)
-  Collaborators = new Collaborators(this)
-  Containers = new Containers(this)
-  Deployments = new Deployments(this)
-  Domains = new Domains(this)
-  Environment = new Environment(this)
-  Events = new Events(this)
-  Keys = new Keys(this)
-  Logs = new Logs(this)
-  Metrics = new Metrics(this)
-  Notifiers = new Notifiers(this)
-  NotificationPlatforms = new NotificationPlatforms(this)
-  Operations = new Operations(this)
-  SCMIntegrations = new SCMIntegrations(this)
-  SCMRepoLinks = new SCMRepoLinks(this)
-  Stats = new Stats(this)
-  Tokens = new Tokens(this)
-  TwoFactorAuth = new TwoFactorAuth(this)
-  Users = new Users(this)
+  Apps = new Apps(this);
+  Addons = new Addons(this);
+  Billing = new Billing(this);
+  Collaborators = new Collaborators(this);
+  Containers = new Containers(this);
+  Deployments = new Deployments(this);
+  Domains = new Domains(this);
+  Environment = new Environment(this);
+  Events = new Events(this);
+  Keys = new Keys(this);
+  Logs = new Logs(this);
+  Metrics = new Metrics(this);
+  Notifiers = new Notifiers(this);
+  NotificationPlatforms = new NotificationPlatforms(this);
+  Operations = new Operations(this);
+  SCMIntegrations = new SCMIntegrations(this);
+  SCMRepoLinks = new SCMRepoLinks(this);
+  Stats = new Stats(this);
+  Tokens = new Tokens(this);
+  TwoFactorAuth = new TwoFactorAuth(this);
+  Users = new Users(this);
 
   /**
    * Create an axios instance configured for the Scalingo API
@@ -107,7 +107,7 @@ export class Client {
       headers: Object.assign({}, this._headers, {
         Authorization: `Bearer ${this._token}`,
       }),
-    })
+    });
   }
 
   /**
@@ -120,7 +120,7 @@ export class Client {
       headers: Object.assign({}, this._headers, {
         Authorization: `Bearer ${this._token}`,
       }),
-    })
+    });
   }
 
   /**
@@ -133,7 +133,7 @@ export class Client {
       headers: Object.assign({}, this._headers, {
         Authorization: `Bearer ${this._token}`,
       }),
-    })
+    });
   }
 
   /**
@@ -144,24 +144,24 @@ export class Client {
     return axios.create({
       baseURL: `${this._apiUrl}/v1/`,
       headers: this._headers,
-    })
+    });
   }
 }
 
 export class EndpointClient {
   /** Scalingo API Client */
-  _client: Client
+  _client: Client;
 
   /**
    * Create a new "thematic" client
    * @param client Scalingo API Client
    */
   constructor(client: Client) {
-    this._client = client
+    this._client = client;
   }
 }
 
-export default Client
+export default Client;
 
 /**
  * Return a client from a user token.
@@ -175,10 +175,10 @@ export default Client
  */
 export async function clientFromToken(
   token: string,
-  opts: ScalingoClientOptions,
+  opts: ScalingoClientOptions
 ): Promise<Client> {
-  const client = new Client('', opts)
-  const bearerToken = (await client.Tokens.exchange(token)) as string
-  client._token = bearerToken
-  return client
+  const client = new Client("", opts);
+  const bearerToken = (await client.Tokens.exchange(token)) as string;
+  client._token = bearerToken;
+  return client;
 }

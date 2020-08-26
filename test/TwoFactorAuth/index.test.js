@@ -1,61 +1,61 @@
-import { testDelete, testGetter, testPost } from '../utils/http'
-import TFA from '../../src/TwoFactorAuth'
+import { testDelete, testGetter, testPost } from "../utils/http";
+import TFA from "../../src/TwoFactorAuth";
 
-describe('TwoFactorAuth#status', () => {
+describe("TwoFactorAuth#status", () => {
   testGetter(
-    'https://auth.scalingo.com/v1/client/tfa',
+    "https://auth.scalingo.com/v1/client/tfa",
     null,
-    'tfa',
+    "tfa",
     (client) => {
-      return new TFA(client).status()
-    },
-  )
-})
+      return new TFA(client).status();
+    }
+  );
+});
 
-describe('TwoFactorAuth#initiate', () => {
-  const expectedBody = { tfa: { provider: 'totp' } }
+describe("TwoFactorAuth#initiate", () => {
+  const expectedBody = { tfa: { provider: "totp" } };
 
   testPost(
-    'https://auth.scalingo.com/v1/client/tfa',
+    "https://auth.scalingo.com/v1/client/tfa",
     null,
     expectedBody,
-    'tfa',
+    "tfa",
     (client) => {
-      return new TFA(client).initiate()
-    },
-  )
-})
+      return new TFA(client).initiate();
+    }
+  );
+});
 
-describe('TwoFactorAuth#initiate with other provider', () => {
-  const expectedBody = { tfa: { provider: 'otherProvider' } }
+describe("TwoFactorAuth#initiate with other provider", () => {
+  const expectedBody = { tfa: { provider: "otherProvider" } };
 
   testPost(
-    'https://auth.scalingo.com/v1/client/tfa',
+    "https://auth.scalingo.com/v1/client/tfa",
     null,
     expectedBody,
-    'tfa',
+    "tfa",
     (client) => {
-      return new TFA(client).initiate('otherProvider')
-    },
-  )
-})
+      return new TFA(client).initiate("otherProvider");
+    }
+  );
+});
 
-describe('TwoFactorAuth#validate', () => {
-  const expectedBody = { tfa: { attempt: 5223 } }
+describe("TwoFactorAuth#validate", () => {
+  const expectedBody = { tfa: { attempt: 5223 } };
 
   testPost(
-    'https://auth.scalingo.com/v1/client/tfa/validate',
+    "https://auth.scalingo.com/v1/client/tfa/validate",
     null,
     expectedBody,
-    'tfa',
+    "tfa",
     (client) => {
-      return new TFA(client).validate(5223)
-    },
-  )
-})
+      return new TFA(client).validate(5223);
+    }
+  );
+});
 
-describe('TwoFactorAuth#disable', () => {
-  testDelete('https://auth.scalingo.com/v1/client/tfa', (client) => {
-    return new TFA(client).disable()
-  })
-})
+describe("TwoFactorAuth#disable", () => {
+  testDelete("https://auth.scalingo.com/v1/client/tfa", (client) => {
+    return new TFA(client).disable();
+  });
+});

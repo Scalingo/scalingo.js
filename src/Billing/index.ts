@@ -1,20 +1,20 @@
-import { unpackData } from '../utils'
-import { Client } from '..'
-import { BillingProfile } from '../models/billing/profiles'
+import { unpackData } from "../utils";
+import { Client } from "..";
+import { BillingProfile } from "../models/billing/profiles";
 
 /**
  * Billing API Client
  */
 export default class Billing {
   /** Scalingo API Client */
-  _client: Client
+  _client: Client;
 
   /**
    * Create a new "thematic" client
    * @param client Scalingo API Client
    */
   constructor(client: Client) {
-    this._client = client
+    this._client = client;
   }
 
   /**
@@ -23,9 +23,9 @@ export default class Billing {
    */
   profile(): Promise<BillingProfile> {
     return unpackData(
-      this._client.billingApiClient().get('/profile'),
-      'profile',
-    )
+      this._client.billingApiClient().get("/profile"),
+      "profile"
+    );
   }
 
   /**
@@ -33,11 +33,11 @@ export default class Billing {
    * @see https://developers.scalingo.com/billing#billing-profile
    * @param profile The billing profile to create
    */
-  createProfile(profile: Omit<BillingProfile, 'id'>): Promise<BillingProfile> {
+  createProfile(profile: Omit<BillingProfile, "id">): Promise<BillingProfile> {
     return unpackData(
-      this._client.billingApiClient().post('/profiles', { profile }),
-      'profile',
-    )
+      this._client.billingApiClient().post("/profiles", { profile }),
+      "profile"
+    );
   }
 
   /**
@@ -47,11 +47,11 @@ export default class Billing {
    */
   updateProfile(
     id: string,
-    profile: Omit<BillingProfile, 'id'>,
+    profile: Omit<BillingProfile, "id">
   ): Promise<BillingProfile> {
     return unpackData(
       this._client.billingApiClient().put(`/profiles/${id}`, { profile }),
-      'profile',
-    )
+      "profile"
+    );
   }
 }

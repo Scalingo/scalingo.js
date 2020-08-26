@@ -1,33 +1,33 @@
-export const ACCEPTED = 'accepted'
-export const PENDING = 'pending'
-export const USER_ACCOUNT_DELETED = 'user account deleted'
+export const ACCEPTED = "accepted";
+export const PENDING = "pending";
+export const USER_ACCOUNT_DELETED = "user account deleted";
 
 export default {
   ACCEPTED,
   PENDING,
   USER_ACCOUNT_DELETED,
-}
+};
 
 export interface Collaborator {
   /** Id of the collaborator */
-  id: string
+  id: string;
   /** Email of the collaborator to invite */
-  email: string
+  email: string;
   /** Username of the person to invite */
-  username: string
+  username: string;
   /** Status of the invitation */
-  status: string
+  status: string;
 }
 
 export interface CollaboratorInvitation {
   /** Id of the collaborator */
-  id: string
+  id: string;
   /** Email of the collaborator to invite */
-  email: string
+  email: string;
   /** Username of the person to invite */
-  username: string
+  username: string;
   /** Status of the invitation */
-  status: string
+  status: string;
   /** Link of for the invitation */
-  invitation_link: string
+  invitation_link: string;
 }

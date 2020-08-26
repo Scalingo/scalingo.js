@@ -1,20 +1,20 @@
-import { unpackData } from '../utils'
-import { Client } from '..'
-import { Operation } from './utils'
+import { unpackData } from "../utils";
+import { Client } from "..";
+import { Operation } from "./utils";
 
 /**
  * Operations API Client
  */
 export default class Operations {
   /** Scalingo API Client */
-  _client: Client
+  _client: Client;
 
   /**
    * Create a new "thematic" client
    * @param client Scalingo API Client
    */
   constructor(client: Client) {
-    this._client = client
+    this._client = client;
   }
 
   /**
@@ -26,7 +26,7 @@ export default class Operations {
   operation(appId: string, operationId: string): Promise<Operation> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/operations/${operationId}`),
-      'operation',
-    )
+      "operation"
+    );
   }
 }

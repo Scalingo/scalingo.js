@@ -1,13 +1,13 @@
-import { testGetter } from '../utils/http'
-import Operations from '../../src/Operations'
+import { testGetter } from "../utils/http";
+import Operations from "../../src/Operations";
 
-describe('Operations#getOperation', () => {
+describe("Operations#getOperation", () => {
   testGetter(
-    'https://api.scalingo.com/v1/apps/toto/operations/tata',
+    "https://api.scalingo.com/v1/apps/toto/operations/tata",
     null,
-    'operation',
+    "operation",
     (client) => {
-      return new Operations(client).operation('toto', 'tata')
-    },
-  )
-})
+      return new Operations(client).operation("toto", "tata");
+    }
+  );
+});

@@ -1,26 +1,26 @@
 export interface Notifier {
   /** Unique ID identifying the notifier */
-  id: string
+  id: string;
   /** Unique ID referencing the app this notifier belongs to */
-  app_id: string
+  app_id: string;
   /** Creation date of the notifier */
-  created_at: string
+  created_at: string;
   /** Last notifier update date */
-  updated_at: string
+  updated_at: string;
   /** Name of the notifier */
-  name: string
+  name: string;
   /** Is the notifier active or not */
-  active: boolean
+  active: boolean;
   /** Notifier type */
-  type: string
+  type: string;
   /** Notification platform used by this notifer */
-  platform_id: string
+  platform_id: string;
   /** Should the notifier accepts all alerts */
-  send_all_alerts: boolean
+  send_all_alerts: boolean;
   /** Should the notifier accepts all events */
-  send_all_events: boolean
+  send_all_events: boolean;
   /** List of events accepted by this notifier */
-  selected_event_ids: string[]
+  selected_event_ids: string[];
   /** Notitication platform dependant additional data */
-  type_data: Record<string, any>
+  type_data: Record<string, any>;
 }

@@ -4,83 +4,86 @@ import {
   testUpdate,
   testDelete,
   testPut,
-} from '../utils/http'
-import Environment from '../../src/Environment'
+} from "../utils/http";
+import Environment from "../../src/Environment";
 
-describe('Environment#for', () => {
+describe("Environment#for", () => {
   testGetter(
-    'https://api.scalingo.com/v1/apps/tata/variables',
+    "https://api.scalingo.com/v1/apps/tata/variables",
     null,
-    'variables',
+    "variables",
     (client) => {
-      return new Environment(client).for('tata')
-    },
-  )
-})
+      return new Environment(client).for("tata");
+    }
+  );
+});
 
-describe('Environment#create', () => {
+describe("Environment#create", () => {
   testPost(
-    'https://api.scalingo.com/v1/apps/tata/variables',
+    "https://api.scalingo.com/v1/apps/tata/variables",
     null,
-    { variable: { name: 'tata', value: '$toto' } },
-    'variable',
+    { variable: { name: "tata", value: "$toto" } },
+    "variable",
     (client) => {
-      return new Environment(client).create('tata', {
-        name: 'tata',
-        value: '$toto',
-      })
-    },
-  )
-})
+      return new Environment(client).create("tata", {
+        name: "tata",
+        value: "$toto",
+      });
+    }
+  );
+});
 
-describe('Environment#bulkUpdate', () => {
+describe("Environment#bulkUpdate", () => {
   testPut(
-    'https://api.scalingo.com/v1/apps/tata/variables',
+    "https://api.scalingo.com/v1/apps/tata/variables",
     {
       variables: [
-        { name: 'tata', value: '$toto' },
-        { name: 'tutu', value: '$tete' },
+        { name: "tata", value: "$toto" },
+        { name: "tutu", value: "$tete" },
       ],
     },
-    'variables',
+    "variables",
     (client) => {
-      return new Environment(client).bulkUpdate('tata', [
-        { name: 'tata', value: '$toto' },
-        { name: 'tutu', value: '$tete' },
-      ])
-    },
-  )
-})
+      return new Environment(client).bulkUpdate("tata", [
+        { name: "tata", value: "$toto" },
+        { name: "tutu", value: "$tete" },
+      ]);
+    }
+  );
+});
 
-describe('Environment#update', () => {
+describe("Environment#update", () => {
   testUpdate(
-    'https://api.scalingo.com/v1/apps/tata/variables/54101384736f7563d5040000',
-    { variable: { value: '$toto' } },
-    'variable',
+    "https://api.scalingo.com/v1/apps/tata/variables/54101384736f7563d5040000",
+    { variable: { value: "$toto" } },
+    "variable",
     (client) => {
       return new Environment(client).update(
-        'tata',
-        '54101384736f7563d5040000',
-        '$toto',
-      )
-    },
-  )
-})
+        "tata",
+        "54101384736f7563d5040000",
+        "$toto"
+      );
+    }
+  );
+});
 
-describe('Environment#destroy', () => {
+describe("Environment#destroy", () => {
   testDelete(
-    'https://api.scalingo.com/v1/apps/tata/variables/54101384736f7563d5040000',
+    "https://api.scalingo.com/v1/apps/tata/variables/54101384736f7563d5040000",
     (client) => {
-      return new Environment(client).destroy('tata', '54101384736f7563d5040000')
-    },
-  )
-})
+      return new Environment(client).destroy(
+        "tata",
+        "54101384736f7563d5040000"
+      );
+    }
+  );
+});
 
-describe('Environment#bulkDestroy', () => {
-  testDelete('https://api.scalingo.com/v1/apps/tata/variables', (client) => {
-    return new Environment(client).bulkDestroy('tata', [
-      '54101384736f7563d5040000',
-      '54101384736f7563d5040001',
-    ])
-  })
-})
+describe("Environment#bulkDestroy", () => {
+  testDelete("https://api.scalingo.com/v1/apps/tata/variables", (client) => {
+    return new Environment(client).bulkDestroy("tata", [
+      "54101384736f7563d5040000",
+      "54101384736f7563d5040001",
+    ]);
+  });
+});

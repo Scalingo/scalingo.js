@@ -1,25 +1,25 @@
-import { unpackData } from '../utils'
-import { Client } from '..'
-import { Variable } from '../models/regional/environment'
+import { unpackData } from "../utils";
+import { Client } from "..";
+import { Variable } from "../models/regional/environment";
 import {
   CreateParams,
   UpdateParams,
   BulkUpdateParams,
-} from '../params/regional/environment'
+} from "../params/regional/environment";
 
 /**
  * Environment API Client
  */
 export default class Environment {
   /** Scalingo API Client */
-  _client: Client
+  _client: Client;
 
   /**
    * Create a new "thematic" client
    * @param client Scalingo API Client
    */
   constructor(client: Client) {
-    this._client = client
+    this._client = client;
   }
 
   /**
@@ -30,8 +30,8 @@ export default class Environment {
   for(appId: string): Promise<Variable[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/variables`),
-      'variables',
-    )
+      "variables"
+    );
   }
 
   /**
@@ -45,8 +45,8 @@ export default class Environment {
       this._client
         .apiClient()
         .post(`/apps/${appId}/variables`, { variable: variable }),
-      'variable',
-    )
+      "variable"
+    );
   }
 
   /**
@@ -57,14 +57,14 @@ export default class Environment {
    */
   bulkUpdate(
     appId: string,
-    variablesArray: BulkUpdateParams,
+    variablesArray: BulkUpdateParams
   ): Promise<Variable[]> {
     return unpackData(
       this._client
         .apiClient()
         .put(`/apps/${appId}/variables`, { variables: variablesArray }),
-      'variables',
-    )
+      "variables"
+    );
   }
 
   /**
@@ -79,8 +79,8 @@ export default class Environment {
       this._client.apiClient().patch(`/apps/${appId}/variables/${id}`, {
         variable: { value },
       }),
-      'variable',
-    )
+      "variable"
+    );
   }
 
   /**
@@ -91,8 +91,8 @@ export default class Environment {
    */
   destroy(appId: string, variableId: string): Promise<void> {
     return unpackData(
-      this._client.apiClient().delete(`/apps/${appId}/variables/${variableId}`),
-    )
+      this._client.apiClient().delete(`/apps/${appId}/variables/${variableId}`)
+    );
   }
 
   /**
@@ -105,7 +105,7 @@ export default class Environment {
     return unpackData(
       this._client.apiClient().delete(`/apps/${appId}/variables`, {
         data: { variable_ids: variablesArray },
-      }),
-    )
+      })
+    );
   }
 }

@@ -6,71 +6,71 @@
  * - **gitlab-self-hosted** is a GitLab self-hosted instance
  */
 export type SCMType =
-  | 'github'
-  | 'gitlab'
-  | 'github-enterprise'
-  | 'gitlab-self-hosted'
+  | "github"
+  | "gitlab"
+  | "github-enterprise"
+  | "gitlab-self-hosted";
 
 /** @see https://developers.scalingo.com/scm_integrations */
 export interface SCMIntegration {
   /** Unique ID */
-  id: string
+  id: string;
   /** Type of the SCM integration */
-  scm_type: SCMType
+  scm_type: SCMType;
   /** URL where the SCM platform is hosted */
-  url: string
+  url: string;
   /** Creation date of the SCM integration */
-  created_at: string
+  created_at: string;
   /** User ID provided by the SCM platform */
-  uid: string
+  uid: string;
   /** Username provided by the SCM platform */
-  username: string
+  username: string;
   /** User avatar URL provided by the SCM platform */
-  avatar_url: string
+  avatar_url: string;
   /** User email provided by the SCM platform */
-  email: string
+  email: string;
   /** User profile URL provided by the SCM platform */
-  profile_url: string
+  profile_url: string;
   /** Owner of the SCM integration */
-  owner: Record<string, any>
+  owner: Record<string, any>;
 }
 
 /** @see https://developers.scalingo.com/scm_integrations# */
 export interface PullRequest {
   /** Unique key ID */
-  id: number
+  id: number;
   /** Pull/Merge request number */
-  number: number
+  number: number;
   /** Title of the pull/merge request */
-  title: string
+  title: string;
   /** URL to the pull/merge request */
-  html_url: string
+  html_url: string;
 }
 
 /** @see https://developers.scalingo.com/scm_integrations# */
 export interface Repository {
   /** Unique key ID */
-  id: number
+  id: number;
   /** Description of the repository */
-  description: string
+  description: string;
   /** Name of the repository including the name of the owner (e.g. owner/repository) */
-  fullName: string
+  fullName: string;
   /** Name of the repository */
-  name: string
+  name: string;
   /** URL to the repository */
-  url: string
+  url: string;
 }
 
 /** @see https://developers.scalingo.com/scm_integrations# */
 export interface Organization {
   /** Unique key ID */
-  id: number
+  id: number;
   /** URL of the avatar of the organization */
-  avatarUrl: string
+  avatarUrl: string;
   /** Description of the organization */
-  description: string
+  description: string;
   /** Name of the organization */
-  login: string
+  login: string;
   /** URL to the SCM API for the organization */
-  url: string
+  url: string;
 }
