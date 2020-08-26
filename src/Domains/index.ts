@@ -1,26 +1,7 @@
 import { unpackData } from '../utils'
 import { Client } from '..'
 import { Domain } from '../models/regional/domains'
-
-/** @see https://developers.scalingo.com/domains#link-a-domain-name-to-an-application */
-export interface DomainCreateParams {
-  /** Hostname you want to add */
-  name: string
-  /** SSL Certificate you want to associate with the domain */
-  tlscert?: string
-  /** Private key used to create the SSL certificate */
-  tlskey?: string
-}
-
-/** @see https://developers.scalingo.com/domains#update-a-domain-name */
-export interface DomainUpdateParams {
-  /** SSL Certificate you want to associate with the domain */
-  tlscert?: string
-  /** Private key used to create the SSL certificate */
-  tlskey?: string
-  /** Set this domain as the canonical domain for this application */
-  canonical?: boolean
-}
+import { CreateParams, UpdateParams } from '../params/regional/domains'
 
 /**
  * Domains API Client
@@ -55,7 +36,7 @@ export default class Domains {
    * @param appId ID of the app to post to the specified application
    * @param domain An object of the domain to link
    */
-  create(appId: string, domain: DomainCreateParams): Promise<Domain> {
+  create(appId: string, domain: CreateParams): Promise<Domain> {
     return unpackData(
       this._client
         .apiClient()
@@ -99,7 +80,7 @@ export default class Domains {
   update(
     appId: string,
     domainId: string,
-    domain: DomainUpdateParams,
+    domain: UpdateParams,
   ): Promise<Domain> {
     return unpackData(
       this._client

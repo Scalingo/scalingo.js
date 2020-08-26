@@ -1,9 +1,11 @@
 import { unpackData } from '../utils'
 import { Client } from '..'
 import { Variable } from '../models/regional/environment'
-
-/** @see https://developers.scalingo.com/environment#add-environment-variables-to-an-app */
-type VariableParams = Partial<Omit<Variable, 'id'>>
+import {
+  CreateParams,
+  UpdateParams,
+  BulkUpdateParams,
+} from '../params/regional/environment'
 
 /**
  * Environment API Client
@@ -38,7 +40,7 @@ export default class Environment {
    * @param appId ID of the app to get domains list
    * @param variable An Object that contain the information about the environment variable
    */
-  create(appId: string, variable: VariableParams): Promise<Variable> {
+  create(appId: string, variable: CreateParams): Promise<Variable> {
     return unpackData(
       this._client
         .apiClient()
@@ -55,7 +57,7 @@ export default class Environment {
    */
   bulkUpdate(
     appId: string,
-    variablesArray: VariableParams[],
+    variablesArray: BulkUpdateParams,
   ): Promise<Variable[]> {
     return unpackData(
       this._client
@@ -72,7 +74,7 @@ export default class Environment {
    * @param id ID of the variable to update
    * @param value An string of the value of the environment variable to update
    */
-  update(appId: string, id: string, value: string): Promise<Variable[]> {
+  update(appId: string, id: string, value: UpdateParams): Promise<Variable> {
     return unpackData(
       this._client.apiClient().patch(`/apps/${appId}/variables/${id}`, {
         variable: { value },
@@ -87,7 +89,7 @@ export default class Environment {
    * @param appId ID of the app to get domains list
    * @param variableId ID of the variable to delete
    */
-  destroy(appId: string, variableId: string): Promise<Variable[]> {
+  destroy(appId: string, variableId: string): Promise<void> {
     return unpackData(
       this._client.apiClient().delete(`/apps/${appId}/variables/${variableId}`),
     )
@@ -99,7 +101,7 @@ export default class Environment {
    * @param appId ID of the app
    * @param variablesArray An array of variables id
    */
-  bulkDestroy(appId: string, variablesArray: string[]): Promise<Variable[]> {
+  bulkDestroy(appId: string, variablesArray: string[]): Promise<void> {
     return unpackData(
       this._client.apiClient().delete(`/apps/${appId}/variables`, {
         data: { variable_ids: variablesArray },
