@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>AppCreateOpts | scalingo</title>
+	<title>AddonUpgradeResponse | scalingo</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,33 +56,24 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_apps_index_.html">&quot;Apps/index&quot;</a>
+					<a href="../modules/_models_regional_addons_.html">&quot;models/regional/addons&quot;</a>
 				</li>
 				<li>
-					<a href="_apps_index_.appcreateopts.html">AppCreateOpts</a>
+					<a href="_models_regional_addons_.addonupgraderesponse.html">AddonUpgradeResponse</a>
 				</li>
 			</ul>
-			<h1>Interface AppCreateOpts</h1>
+			<h1>Interface AddonUpgradeResponse</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<dl class="tsd-comment-tags">
-						<dt>see</dt>
-						<dd><p><a href="https://developers.scalingo.com/apps#create-an-application">https://developers.scalingo.com/apps#create-an-application</a></p>
-						</dd>
-					</dl>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">AppCreateOpts</span>
+						<span class="target">AddonUpgradeResponse</span>
 					</li>
 				</ul>
 			</section>
@@ -93,10 +84,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apps_index_.appcreateopts.html#dry_run" class="tsd-kind-icon">dry_<wbr>run</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apps_index_.appcreateopts.html#git_source" class="tsd-kind-icon">git_<wbr>source</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apps_index_.appcreateopts.html#parent_id" class="tsd-kind-icon">parent_<wbr>id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_apps_index_.appcreateopts.html#stack_id" class="tsd-kind-icon">stack_<wbr>id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_models_regional_addons_.addonupgraderesponse.html#message" class="tsd-kind-icon">message</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_models_regional_addons_.addonupgraderesponse.html#vars" class="tsd-kind-icon">vars</a></li>
 							</ul>
 						</section>
 					</div>
@@ -105,62 +94,32 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="dry_run" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> dry_<wbr>run</h3>
-					<div class="tsd-signature tsd-kind-icon">dry_<wbr>run<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
+					<a name="message" class="tsd-anchor"></a>
+					<h3>message</h3>
+					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/272025f/src/Apps/index.ts#L14">src/Apps/index.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/e923354/src/models/regional/addons.ts#L20">src/models/regional/addons.ts:20</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>If set to true, the API will run the validations but wont create the app</p>
+							<p>Custom message from the addon provider</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="git_source" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> git_<wbr>source</h3>
-					<div class="tsd-signature tsd-kind-icon">git_<wbr>source<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<a name="vars" class="tsd-anchor"></a>
+					<h3>vars</h3>
+					<div class="tsd-signature tsd-kind-icon">vars<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/272025f/src/Apps/index.ts#L16">src/Apps/index.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/e923354/src/models/regional/addons.ts#L18">src/models/regional/addons.ts:18</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>URL to the future GitHub repository if your need to deploy from there without going through the git push workflow</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="parent_id" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> parent_<wbr>id</h3>
-					<div class="tsd-signature tsd-kind-icon">parent_<wbr>id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/272025f/src/Apps/index.ts#L10">src/Apps/index.ts:10</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>ID of the parent app (used to create child apps)</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="stack_id" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> stack_<wbr>id</h3>
-					<div class="tsd-signature tsd-kind-icon">stack_<wbr>id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/272025f/src/Apps/index.ts#L12">src/Apps/index.ts:12</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>ID of the stack the application should use</p>
+							<p>Array of variables</p>
 						</div>
 					</div>
 				</section>
@@ -173,38 +132,41 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/_apps_index_.html">&quot;<wbr>Apps/index&quot;</a>
+						<a href="../modules/_models_regional_addons_.html">&quot;models/regional/addons&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_apps_index_.apps.html" class="tsd-kind-icon">Apps</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_models_regional_addons_.addon.html" class="tsd-kind-icon">Addon</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_models_regional_addons_.addonprovider.html" class="tsd-kind-icon">Addon<wbr>Provider</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_models_regional_addons_.addonsso.html" class="tsd-kind-icon">Addon<wbr>Sso</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_apps_index_.appcreateopts.html" class="tsd-kind-icon">App<wbr>Create<wbr>Opts</a>
+						<a href="_models_regional_addons_.addonupgraderesponse.html" class="tsd-kind-icon">Addon<wbr>Upgrade<wbr>Response</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_apps_index_.appcreateopts.html#dry_run" class="tsd-kind-icon">dry_<wbr>run</a>
+								<a href="_models_regional_addons_.addonupgraderesponse.html#message" class="tsd-kind-icon">message</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_apps_index_.appcreateopts.html#git_source" class="tsd-kind-icon">git_<wbr>source</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_apps_index_.appcreateopts.html#parent_id" class="tsd-kind-icon">parent_<wbr>id</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_apps_index_.appcreateopts.html#stack_id" class="tsd-kind-icon">stack_<wbr>id</a>
+								<a href="_models_regional_addons_.addonupgraderesponse.html#vars" class="tsd-kind-icon">vars</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_apps_index_.appupdateopts.html" class="tsd-kind-icon">App<wbr>Update<wbr>Opts</a>
+						<a href="_models_regional_addons_.category.html" class="tsd-kind-icon">Category</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_models_regional_addons_.plan.html" class="tsd-kind-icon">Plan</a>
 					</li>
 				</ul>
 			</nav>

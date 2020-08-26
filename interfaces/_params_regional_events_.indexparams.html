@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>NotifierCreateParams | scalingo</title>
+	<title>IndexParams | scalingo</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_notifiers_index_.html">&quot;Notifiers/index&quot;</a>
+					<a href="../modules/_params_regional_events_.html">&quot;params/regional/events&quot;</a>
 				</li>
 				<li>
-					<a href="_notifiers_index_.notifiercreateparams.html">NotifierCreateParams</a>
+					<a href="_params_regional_events_.indexparams.html">IndexParams</a>
 				</li>
 			</ul>
-			<h1>Interface NotifierCreateParams</h1>
+			<h1>Interface IndexParams</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">NotifierCreateParams</span>
+						<span class="target">IndexParams</span>
 					</li>
 				</ul>
 			</section>
@@ -84,13 +84,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_notifiers_index_.notifiercreateparams.html#active" class="tsd-kind-icon">active</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_notifiers_index_.notifiercreateparams.html#name" class="tsd-kind-icon">name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_notifiers_index_.notifiercreateparams.html#platform_id" class="tsd-kind-icon">platform_<wbr>id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_notifiers_index_.notifiercreateparams.html#selected_event_ids" class="tsd-kind-icon">selected_<wbr>event_<wbr>ids</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_notifiers_index_.notifiercreateparams.html#send_all_alerts" class="tsd-kind-icon">send_<wbr>all_<wbr>alerts</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_notifiers_index_.notifiercreateparams.html#send_all_events" class="tsd-kind-icon">send_<wbr>all_<wbr>events</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_notifiers_index_.notifiercreateparams.html#type_data" class="tsd-kind-icon">type_<wbr>data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_params_regional_events_.indexparams.html#from" class="tsd-kind-icon">from</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_params_regional_events_.indexparams.html#page" class="tsd-kind-icon">page</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_params_regional_events_.indexparams.html#per_page" class="tsd-kind-icon">per_<wbr>page</a></li>
 							</ul>
 						</section>
 					</div>
@@ -99,107 +95,47 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="active" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> active</h3>
-					<div class="tsd-signature tsd-kind-icon">active<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
+					<a name="from" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> from</h3>
+					<div class="tsd-signature tsd-kind-icon">from<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/272025f/src/Notifiers/index.ts#L11">src/Notifiers/index.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/e923354/src/params/regional/events.ts#L7">src/params/regional/events.ts:7</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Optional: Is the notifier active or not</p>
+							<p>The N last hours - min: 1 max: 72</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="name" class="tsd-anchor"></a>
-					<h3>name</h3>
-					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="page" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> page</h3>
+					<div class="tsd-signature tsd-kind-icon">page<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/272025f/src/Notifiers/index.ts#L9">src/Notifiers/index.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/e923354/src/params/regional/events.ts#L3">src/params/regional/events.ts:3</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Name of the notifier</p>
+							<p>Page number</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="platform_id" class="tsd-anchor"></a>
-					<h3>platform_<wbr>id</h3>
-					<div class="tsd-signature tsd-kind-icon">platform_<wbr>id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="per_page" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> per_<wbr>page</h3>
+					<div class="tsd-signature tsd-kind-icon">per_<wbr>page<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/272025f/src/Notifiers/index.ts#L7">src/Notifiers/index.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/e923354/src/params/regional/events.ts#L5">src/params/regional/events.ts:5</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Notification platform used by this notifer</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="selected_event_ids" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> selected_<wbr>event_<wbr>ids</h3>
-					<div class="tsd-signature tsd-kind-icon">selected_<wbr>event_<wbr>ids<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/272025f/src/Notifiers/index.ts#L17">src/Notifiers/index.ts:17</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Optional: List of events accepted by this notifier</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="send_all_alerts" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> send_<wbr>all_<wbr>alerts</h3>
-					<div class="tsd-signature tsd-kind-icon">send_<wbr>all_<wbr>alerts<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/272025f/src/Notifiers/index.ts#L13">src/Notifiers/index.ts:13</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Optional: Should the notifier accepts all alerts</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="send_all_events" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> send_<wbr>all_<wbr>events</h3>
-					<div class="tsd-signature tsd-kind-icon">send_<wbr>all_<wbr>events<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/272025f/src/Notifiers/index.ts#L15">src/Notifiers/index.ts:15</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Optional: Should the notifier accepts all events</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="type_data" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> type_<wbr>data</h3>
-					<div class="tsd-signature tsd-kind-icon">type_<wbr>data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/272025f/src/Notifiers/index.ts#L19">src/Notifiers/index.ts:19</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Optional: Notitication platform dependant additional data</p>
+							<p>Items per page</p>
 						</div>
 					</div>
 				</section>
@@ -212,48 +148,30 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/_notifiers_index_.html">&quot;<wbr>Notifiers/index&quot;</a>
+						<a href="../modules/_params_regional_events_.html">&quot;params/regional/events&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_notifiers_index_.notifiers.html" class="tsd-kind-icon">Notifiers</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_notifiers_index_.notifiercreateparams.html" class="tsd-kind-icon">Notifier<wbr>Create<wbr>Params</a>
+						<a href="_params_regional_events_.indexparams.html" class="tsd-kind-icon">Index<wbr>Params</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_notifiers_index_.notifiercreateparams.html#active" class="tsd-kind-icon">active</a>
+								<a href="_params_regional_events_.indexparams.html#from" class="tsd-kind-icon">from</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_notifiers_index_.notifiercreateparams.html#name" class="tsd-kind-icon">name</a>
+								<a href="_params_regional_events_.indexparams.html#page" class="tsd-kind-icon">page</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_notifiers_index_.notifiercreateparams.html#platform_id" class="tsd-kind-icon">platform_<wbr>id</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_notifiers_index_.notifiercreateparams.html#selected_event_ids" class="tsd-kind-icon">selected_<wbr>event_<wbr>ids</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_notifiers_index_.notifiercreateparams.html#send_all_alerts" class="tsd-kind-icon">send_<wbr>all_<wbr>alerts</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_notifiers_index_.notifiercreateparams.html#send_all_events" class="tsd-kind-icon">send_<wbr>all_<wbr>events</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_notifiers_index_.notifiercreateparams.html#type_data" class="tsd-kind-icon">type_<wbr>data</a>
+								<a href="_params_regional_events_.indexparams.html#per_page" class="tsd-kind-icon">per_<wbr>page</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_notifiers_index_.notifierupdateparams.html" class="tsd-kind-icon">Notifier<wbr>Update<wbr>Params</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
