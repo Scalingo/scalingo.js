@@ -6,6 +6,7 @@
 * Breaking: change signature of Apps#create, Addons#create
 * Breaking: compile destination is now `lib`
 * Breaking: move models (types and consts) to src/models
+* Users: stop free trial
 
 ## 0.1.4
 
