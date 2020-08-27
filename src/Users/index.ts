@@ -37,6 +37,15 @@ export class Users {
   }
 
   /**
+   * Request to stop the free trial of the current user account.
+   */
+  stopFreeTrial(): Promise<void> {
+    return unpackData(
+      this._client.authApiClient().post("/users/stop_free_trial")
+    );
+  }
+
+  /**
    * Request the account's deletion. Requires a subsequent validation done via email.
    */
   requestAccountDeletion(): Promise<User> {
