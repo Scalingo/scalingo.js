@@ -769,6 +769,227 @@
 			]
 		},
 		{
+			"id": 1180,
+			"name": "\"src/Alerts/index\"",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/Alerts/index.ts",
+			"children": [
+				{
+					"id": 1181,
+					"name": "Alerts",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"shortText": "Alerts API Client"
+					},
+					"children": [
+						{
+							"id": 1183,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Create a new \"thematic\" client"
+							},
+							"signatures": [
+								{
+									"id": 1184,
+									"name": "new Alerts",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "Create a new \"thematic\" client"
+									},
+									"parameters": [
+										{
+											"id": 1185,
+											"name": "client",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"shortText": "Scalingo API Client\n"
+											},
+											"type": {
+												"type": "reference",
+												"id": 1031,
+												"name": "Client"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 1181,
+										"name": "Alerts"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/Alerts/index.ts",
+									"line": 10,
+									"character": 18
+								}
+							]
+						},
+						{
+							"id": 1182,
+							"name": "_client",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Scalingo API Client"
+							},
+							"sources": [
+								{
+									"fileName": "src/Alerts/index.ts",
+									"line": 10,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 1031,
+								"name": "Client"
+							}
+						},
+						{
+							"id": 1186,
+							"name": "for",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 1187,
+									"name": "for",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "List all the alerts of an application",
+										"tags": [
+											{
+												"tag": "see",
+												"text": "https://developers.scalingo.com/alerts#list-alerts-of-an-app"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 1188,
+											"name": "appId",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "ID of the app to get alerts list\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 1167,
+													"name": "Alert"
+												}
+											}
+										],
+										"name": "Promise"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/Alerts/index.ts",
+									"line": 25,
+									"character": 5
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								1183
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								1182
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								1186
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/Alerts/index.ts",
+							"line": 8,
+							"character": 27
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						1181
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/Alerts/index.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
 			"id": 224,
 			"name": "\"src/Apps/index\"",
 			"kind": 1,
@@ -15677,7 +15898,7 @@
 			]
 		},
 		{
-			"id": 1166,
+			"id": 1189,
 			"name": "\"src/models/auth/index\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -15687,7 +15908,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/models/auth/index.ts",
 			"children": [
 				{
-					"id": 1175,
+					"id": 1198,
 					"name": "DEFAULT_PROVIDER",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -15697,7 +15918,7 @@
 					"target": 964
 				},
 				{
-					"id": 1181,
+					"id": 1204,
 					"name": "GithubProfile",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -15707,7 +15928,7 @@
 					"target": 993
 				},
 				{
-					"id": 1167,
+					"id": 1190,
 					"name": "Key",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -15717,7 +15938,7 @@
 					"target": 566
 				},
 				{
-					"id": 1172,
+					"id": 1195,
 					"name": "Organization",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -15727,7 +15948,7 @@
 					"target": 785
 				},
 				{
-					"id": 1170,
+					"id": 1193,
 					"name": "PullRequest",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -15737,7 +15958,7 @@
 					"target": 774
 				},
 				{
-					"id": 1171,
+					"id": 1194,
 					"name": "Repository",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -15747,7 +15968,7 @@
 					"target": 779
 				},
 				{
-					"id": 1169,
+					"id": 1192,
 					"name": "SCMIntegration",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -15757,7 +15978,7 @@
 					"target": 763
 				},
 				{
-					"id": 1168,
+					"id": 1191,
 					"name": "SCMType",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -15767,7 +15988,7 @@
 					"target": 791
 				},
 				{
-					"id": 1176,
+					"id": 1199,
 					"name": "SUPPORTED_PROVIDERS",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -15777,7 +15998,7 @@
 					"target": 965
 				},
 				{
-					"id": 1174,
+					"id": 1197,
 					"name": "TOTP_PROVIDER",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -15787,7 +16008,7 @@
 					"target": 963
 				},
 				{
-					"id": 1173,
+					"id": 1196,
 					"name": "Token",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -15797,7 +16018,7 @@
 					"target": 923
 				},
 				{
-					"id": 1178,
+					"id": 1201,
 					"name": "TwoFactorAuthInitiateResponse",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -15807,7 +16028,7 @@
 					"target": 955
 				},
 				{
-					"id": 1177,
+					"id": 1200,
 					"name": "TwoFactorAuthObject",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -15817,7 +16038,7 @@
 					"target": 951
 				},
 				{
-					"id": 1179,
+					"id": 1202,
 					"name": "TwoFactorAuthValidateResponse",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -15827,7 +16048,7 @@
 					"target": 960
 				},
 				{
-					"id": 1180,
+					"id": 1203,
 					"name": "User",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -15842,21 +16063,21 @@
 					"title": "References",
 					"kind": 16777216,
 					"children": [
-						1175,
-						1181,
-						1167,
-						1172,
-						1170,
-						1171,
-						1169,
-						1168,
-						1176,
-						1174,
-						1173,
-						1178,
-						1177,
-						1179,
-						1180
+						1198,
+						1204,
+						1190,
+						1195,
+						1193,
+						1194,
+						1192,
+						1191,
+						1199,
+						1197,
+						1196,
+						1201,
+						1200,
+						1202,
+						1203
 					]
 				}
 			],
@@ -17876,7 +18097,7 @@
 			]
 		},
 		{
-			"id": 1182,
+			"id": 1205,
 			"name": "\"src/models/billing/index\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -17886,7 +18107,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/models/billing/index.ts",
 			"children": [
 				{
-					"id": 1183,
+					"id": 1206,
 					"name": "BillingProfile",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -17896,7 +18117,7 @@
 					"target": 263
 				},
 				{
-					"id": 1185,
+					"id": 1208,
 					"name": "PaypalPaymentMethod",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -17906,7 +18127,7 @@
 					"target": 290
 				},
 				{
-					"id": 1184,
+					"id": 1207,
 					"name": "StripePaymentMethod",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -17921,9 +18142,9 @@
 					"title": "References",
 					"kind": 16777216,
 					"children": [
-						1183,
-						1185,
-						1184
+						1206,
+						1208,
+						1207
 					]
 				}
 			],
@@ -19765,6 +19986,320 @@
 			"sources": [
 				{
 					"fileName": "src/models/regional/addons.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 1166,
+			"name": "\"src/models/regional/alerts\"",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {
+				"isExported": true
+			},
+			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/models/regional/alerts.ts",
+			"children": [
+				{
+					"id": 1167,
+					"name": "Alert",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"comment": {
+						"tags": [
+							{
+								"tag": "see",
+								"text": "https://developers.scalingo.com/alerts"
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 1169,
+							"name": "app_id",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/alerts.ts",
+									"line": 4,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 1172,
+							"name": "container_type",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/alerts.ts",
+									"line": 7,
+									"character": 16
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 1170,
+							"name": "created_at",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/alerts.ts",
+									"line": 5,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 1173,
+							"name": "disabled",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/alerts.ts",
+									"line": 8,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 1177,
+							"name": "duration_before_trigger",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/alerts.ts",
+									"line": 12,
+									"character": 25
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 1168,
+							"name": "id",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/alerts.ts",
+									"line": 3,
+									"character": 4
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 1175,
+							"name": "limit",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/alerts.ts",
+									"line": 10,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 1179,
+							"name": "metadata",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/alerts.ts",
+									"line": 14,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 1174,
+							"name": "metric",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/alerts.ts",
+									"line": 9,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 1178,
+							"name": "remind_every",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/alerts.ts",
+									"line": 13,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 1176,
+							"name": "send_when_below",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/alerts.ts",
+									"line": 11,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 1171,
+							"name": "updated_at",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/alerts.ts",
+									"line": 6,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								1169,
+								1172,
+								1170,
+								1173,
+								1177,
+								1168,
+								1175,
+								1179,
+								1174,
+								1178,
+								1176,
+								1171
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/models/regional/alerts.ts",
+							"line": 2,
+							"character": 22
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						1167
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "src/models/regional/alerts.ts",
 					"line": 1,
 					"character": 0
 				}
@@ -23315,7 +23850,7 @@
 			]
 		},
 		{
-			"id": 1186,
+			"id": 1209,
 			"name": "\"src/models/regional/index\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -23325,7 +23860,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/models/regional/index.ts",
 			"children": [
 				{
-					"id": 1203,
+					"id": 1226,
 					"name": "ACCEPTED",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23335,7 +23870,7 @@
 					"target": 319
 				},
 				{
-					"id": 1187,
+					"id": 1210,
 					"name": "Addon",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23345,7 +23880,7 @@
 					"target": 1085
 				},
 				{
-					"id": 1190,
+					"id": 1213,
 					"name": "AddonProvider",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23355,7 +23890,7 @@
 					"target": 1101
 				},
 				{
-					"id": 1192,
+					"id": 1215,
 					"name": "AddonSso",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23365,7 +23900,7 @@
 					"target": 1115
 				},
 				{
-					"id": 1188,
+					"id": 1211,
 					"name": "AddonUpgradeResponse",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23375,7 +23910,7 @@
 					"target": 1092
 				},
 				{
-					"id": 1201,
+					"id": 1224,
 					"name": "App",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23385,7 +23920,7 @@
 					"target": 186
 				},
 				{
-					"id": 1231,
+					"id": 1254,
 					"name": "AppEvents",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23395,7 +23930,7 @@
 					"target": 528
 				},
 				{
-					"id": 1202,
+					"id": 1225,
 					"name": "AppLinks",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23405,7 +23940,7 @@
 					"target": 202
 				},
 				{
-					"id": 1200,
+					"id": 1223,
 					"name": "AppStatus",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23415,7 +23950,7 @@
 					"target": 211
 				},
 				{
-					"id": 1234,
+					"id": 1257,
 					"name": "Archive",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23425,7 +23960,7 @@
 					"target": 618
 				},
 				{
-					"id": 1245,
+					"id": 1268,
 					"name": "Branch",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23435,7 +23970,7 @@
 					"target": 847
 				},
 				{
-					"id": 1191,
+					"id": 1214,
 					"name": "Category",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23445,7 +23980,7 @@
 					"target": 1111
 				},
 				{
-					"id": 1206,
+					"id": 1229,
 					"name": "Collaborator",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23455,7 +23990,7 @@
 					"target": 308
 				},
 				{
-					"id": 1207,
+					"id": 1230,
 					"name": "CollaboratorInvitation",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23465,7 +24000,7 @@
 					"target": 313
 				},
 				{
-					"id": 1209,
+					"id": 1232,
 					"name": "Container",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23475,7 +24010,7 @@
 					"target": 379
 				},
 				{
-					"id": 1210,
+					"id": 1233,
 					"name": "ContainerSize",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23485,7 +24020,7 @@
 					"target": 383
 				},
 				{
-					"id": 1208,
+					"id": 1231,
 					"name": "ContainersOperation",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23495,7 +24030,7 @@
 					"target": 376
 				},
 				{
-					"id": 1211,
+					"id": 1234,
 					"name": "Deployment",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23505,7 +24040,7 @@
 					"target": 39
 				},
 				{
-					"id": 1213,
+					"id": 1236,
 					"name": "DeploymentLinks",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23515,7 +24050,7 @@
 					"target": 51
 				},
 				{
-					"id": 1212,
+					"id": 1235,
 					"name": "DeploymentPusher",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23525,7 +24060,7 @@
 					"target": 47
 				},
 				{
-					"id": 1225,
+					"id": 1248,
 					"name": "DeploymentStatus",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23535,7 +24070,7 @@
 					"target": 67
 				},
 				{
-					"id": 1215,
+					"id": 1238,
 					"name": "DeploymentsMeta",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23545,7 +24080,7 @@
 					"target": 56
 				},
 				{
-					"id": 1214,
+					"id": 1237,
 					"name": "DeploymentsResult",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23555,7 +24090,7 @@
 					"target": 53
 				},
 				{
-					"id": 1227,
+					"id": 1250,
 					"name": "Domain",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23565,7 +24100,7 @@
 					"target": 430
 				},
 				{
-					"id": 1237,
+					"id": 1260,
 					"name": "EMAIL",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23575,7 +24110,7 @@
 					"target": 740
 				},
 				{
-					"id": 1232,
+					"id": 1255,
 					"name": "Event",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23585,7 +24120,7 @@
 					"target": 531
 				},
 				{
-					"id": 1229,
+					"id": 1252,
 					"name": "EventCategory",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23595,7 +24130,7 @@
 					"target": 517
 				},
 				{
-					"id": 1230,
+					"id": 1253,
 					"name": "EventType",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23605,7 +24140,7 @@
 					"target": 522
 				},
 				{
-					"id": 1233,
+					"id": 1256,
 					"name": "EventUser",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23615,7 +24150,7 @@
 					"target": 539
 				},
 				{
-					"id": 1226,
+					"id": 1249,
 					"name": "LetsEncryptStatus",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23625,7 +24160,7 @@
 					"target": 439
 				},
 				{
-					"id": 1235,
+					"id": 1258,
 					"name": "MetricType",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23635,7 +24170,7 @@
 					"target": 643
 				},
 				{
-					"id": 1241,
+					"id": 1264,
 					"name": "NotificationPlatform",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23645,7 +24180,7 @@
 					"target": 733
 				},
 				{
-					"id": 1242,
+					"id": 1265,
 					"name": "Notifier",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23655,7 +24190,7 @@
 					"target": 673
 				},
 				{
-					"id": 1204,
+					"id": 1227,
 					"name": "PENDING",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23665,7 +24200,7 @@
 					"target": 320
 				},
 				{
-					"id": 1189,
+					"id": 1212,
 					"name": "Plan",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23675,7 +24210,7 @@
 					"target": 1095
 				},
 				{
-					"id": 1236,
+					"id": 1259,
 					"name": "Point",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23685,7 +24220,7 @@
 					"target": 648
 				},
 				{
-					"id": 1246,
+					"id": 1269,
 					"name": "PullRequest",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23695,7 +24230,7 @@
 					"target": 849
 				},
 				{
-					"id": 1238,
+					"id": 1261,
 					"name": "ROCKET_CHAT",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23705,7 +24240,7 @@
 					"target": 741
 				},
 				{
-					"id": 1247,
+					"id": 1270,
 					"name": "ReferralsStats",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23715,7 +24250,7 @@
 					"target": 909
 				},
 				{
-					"id": 1244,
+					"id": 1267,
 					"name": "SCMRepoLink",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23725,7 +24260,7 @@
 					"target": 829
 				},
 				{
-					"id": 1243,
+					"id": 1266,
 					"name": "SCMType",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23735,7 +24270,7 @@
 					"target": 854
 				},
 				{
-					"id": 1239,
+					"id": 1262,
 					"name": "SLACK",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23745,7 +24280,7 @@
 					"target": 742
 				},
 				{
-					"id": 1224,
+					"id": 1247,
 					"name": "STATUS_ABORTED",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23755,7 +24290,7 @@
 					"target": 66
 				},
 				{
-					"id": 1199,
+					"id": 1222,
 					"name": "STATUS_BOOTING",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23765,7 +24300,7 @@
 					"target": 210
 				},
 				{
-					"id": 1217,
+					"id": 1240,
 					"name": "STATUS_BUILDING",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23775,7 +24310,7 @@
 					"target": 59
 				},
 				{
-					"id": 1223,
+					"id": 1246,
 					"name": "STATUS_BUILD_ERROR",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23785,7 +24320,7 @@
 					"target": 65
 				},
 				{
-					"id": 1196,
+					"id": 1219,
 					"name": "STATUS_CRASHED",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23795,7 +24330,7 @@
 					"target": 207
 				},
 				{
-					"id": 1221,
+					"id": 1244,
 					"name": "STATUS_CRASHED_ERROR",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23805,7 +24340,7 @@
 					"target": 63
 				},
 				{
-					"id": 1193,
+					"id": 1216,
 					"name": "STATUS_NEW",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23815,7 +24350,7 @@
 					"target": 204
 				},
 				{
-					"id": 1218,
+					"id": 1241,
 					"name": "STATUS_PUSHING",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23825,7 +24360,7 @@
 					"target": 60
 				},
 				{
-					"id": 1216,
+					"id": 1239,
 					"name": "STATUS_QUEUED",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23835,7 +24370,7 @@
 					"target": 58
 				},
 				{
-					"id": 1197,
+					"id": 1220,
 					"name": "STATUS_RESTARTING",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23845,7 +24380,7 @@
 					"target": 208
 				},
 				{
-					"id": 1195,
+					"id": 1218,
 					"name": "STATUS_RUNNING",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23855,7 +24390,7 @@
 					"target": 206
 				},
 				{
-					"id": 1198,
+					"id": 1221,
 					"name": "STATUS_SCALING",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23865,7 +24400,7 @@
 					"target": 209
 				},
 				{
-					"id": 1219,
+					"id": 1242,
 					"name": "STATUS_STARTING",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23875,7 +24410,7 @@
 					"target": 61
 				},
 				{
-					"id": 1194,
+					"id": 1217,
 					"name": "STATUS_STOPPED",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23885,7 +24420,7 @@
 					"target": 205
 				},
 				{
-					"id": 1220,
+					"id": 1243,
 					"name": "STATUS_SUCCESS",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23895,7 +24430,7 @@
 					"target": 62
 				},
 				{
-					"id": 1222,
+					"id": 1245,
 					"name": "STATUS_TIMEOUT_ERROR",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23905,7 +24440,7 @@
 					"target": 64
 				},
 				{
-					"id": 1205,
+					"id": 1228,
 					"name": "USER_ACCOUNT_DELETED",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23915,7 +24450,7 @@
 					"target": 321
 				},
 				{
-					"id": 1228,
+					"id": 1251,
 					"name": "Variable",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23925,7 +24460,7 @@
 					"target": 476
 				},
 				{
-					"id": 1240,
+					"id": 1263,
 					"name": "WEBHOOK",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -23940,67 +24475,67 @@
 					"title": "References",
 					"kind": 16777216,
 					"children": [
-						1203,
-						1187,
-						1190,
-						1192,
-						1188,
-						1201,
-						1231,
-						1202,
-						1200,
-						1234,
-						1245,
-						1191,
-						1206,
-						1207,
-						1209,
+						1226,
 						1210,
-						1208,
-						1211,
 						1213,
-						1212,
-						1225,
 						1215,
+						1211,
+						1224,
+						1254,
+						1225,
+						1223,
+						1257,
+						1268,
 						1214,
-						1227,
-						1237,
-						1232,
 						1229,
 						1230,
+						1232,
 						1233,
-						1226,
-						1235,
-						1241,
-						1242,
-						1204,
-						1189,
+						1231,
+						1234,
 						1236,
-						1246,
+						1235,
+						1248,
 						1238,
+						1237,
+						1250,
+						1260,
+						1255,
+						1252,
+						1253,
+						1256,
+						1249,
+						1258,
+						1264,
+						1265,
+						1227,
+						1212,
+						1259,
+						1269,
+						1261,
+						1270,
+						1267,
+						1266,
+						1262,
 						1247,
-						1244,
-						1243,
-						1239,
-						1224,
-						1199,
-						1217,
-						1223,
-						1196,
-						1221,
-						1193,
-						1218,
-						1216,
-						1197,
-						1195,
-						1198,
-						1219,
-						1194,
-						1220,
 						1222,
-						1205,
+						1240,
+						1246,
+						1219,
+						1244,
+						1216,
+						1241,
+						1239,
+						1220,
+						1218,
+						1221,
+						1242,
+						1217,
+						1243,
+						1245,
 						1228,
-						1240
+						1251,
+						1263
 					]
 				}
 			],
@@ -29103,6 +29638,7 @@
 			"kind": 1,
 			"children": [
 				1131,
+				1180,
 				224,
 				292,
 				322,
@@ -29129,15 +29665,16 @@
 				1,
 				1025,
 				28,
-				1166,
+				1189,
 				565,
 				762,
 				922,
 				950,
 				982,
-				1182,
+				1205,
 				262,
 				1084,
+				1166,
 				185,
 				307,
 				375,
@@ -29145,7 +29682,7 @@
 				429,
 				475,
 				516,
-				1186,
+				1209,
 				617,
 				642,
 				732,
