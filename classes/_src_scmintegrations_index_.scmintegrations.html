@@ -104,6 +104,7 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_src_scmintegrations_index_.scmintegrations.html#all" class="tsd-kind-icon">all</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_src_scmintegrations_index_.scmintegrations.html#branchesforrepo" class="tsd-kind-icon">branches<wbr>For<wbr>Repo</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_src_scmintegrations_index_.scmintegrations.html#create" class="tsd-kind-icon">create</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_src_scmintegrations_index_.scmintegrations.html#destroy" class="tsd-kind-icon">destroy</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_src_scmintegrations_index_.scmintegrations.html#find" class="tsd-kind-icon">find</a></li>
@@ -128,7 +129,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/428bada/src/SCMIntegrations/index.ts#L18">src/SCMIntegrations/index.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/6984c90/src/SCMIntegrations/index.ts#L19">src/SCMIntegrations/index.ts:19</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -160,7 +161,7 @@
 					<div class="tsd-signature tsd-kind-icon">_client<span class="tsd-signature-symbol">:</span> <a href="_src_index_.client.html" class="tsd-signature-type">Client</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/428bada/src/SCMIntegrations/index.ts#L18">src/SCMIntegrations/index.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/6984c90/src/SCMIntegrations/index.ts#L19">src/SCMIntegrations/index.ts:19</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -182,7 +183,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/428bada/src/SCMIntegrations/index.ts#L46">src/SCMIntegrations/index.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/6984c90/src/SCMIntegrations/index.ts#L47">src/SCMIntegrations/index.ts:47</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -201,6 +202,46 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="branchesforrepo" class="tsd-anchor"></a>
+					<h3>branches<wbr>For<wbr>Repo</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">branches<wbr>For<wbr>Repo<span class="tsd-signature-symbol">(</span>integrationID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, repo_name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_src_models_auth_scm_integrations_.branch.html" class="tsd-signature-type">Branch</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/6984c90/src/SCMIntegrations/index.ts#L161">src/SCMIntegrations/index.ts:161</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Search repositories in an SCM integration</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>see</dt>
+									<dd><p><a href="https://developers.scalingo.com/scm_integrations#">https://developers.scalingo.com/scm_integrations#</a></p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>integrationID: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>ID of the integration</p>
+									</div>
+								</li>
+								<li>
+									<h5>repo_name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_src_models_auth_scm_integrations_.branch.html" class="tsd-signature-type">Branch</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>Promise that when resolved returns the list of repositories matching the query.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="create" class="tsd-anchor"></a>
 					<h3>create</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -210,7 +251,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/428bada/src/SCMIntegrations/index.ts#L60">src/SCMIntegrations/index.ts:60</a></li>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/6984c90/src/SCMIntegrations/index.ts#L61">src/SCMIntegrations/index.ts:61</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -248,7 +289,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/428bada/src/SCMIntegrations/index.ts#L75">src/SCMIntegrations/index.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/6984c90/src/SCMIntegrations/index.ts#L76">src/SCMIntegrations/index.ts:76</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -285,7 +326,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/428bada/src/SCMIntegrations/index.ts#L34">src/SCMIntegrations/index.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/6984c90/src/SCMIntegrations/index.ts#L35">src/SCMIntegrations/index.ts:35</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -322,7 +363,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/428bada/src/SCMIntegrations/index.ts#L87">src/SCMIntegrations/index.ts:87</a></li>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/6984c90/src/SCMIntegrations/index.ts#L88">src/SCMIntegrations/index.ts:88</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -359,7 +400,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/428bada/src/SCMIntegrations/index.ts#L144">src/SCMIntegrations/index.ts:144</a></li>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/6984c90/src/SCMIntegrations/index.ts#L145">src/SCMIntegrations/index.ts:145</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -396,7 +437,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/428bada/src/SCMIntegrations/index.ts#L103">src/SCMIntegrations/index.ts:103</a></li>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/6984c90/src/SCMIntegrations/index.ts#L104">src/SCMIntegrations/index.ts:104</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -439,7 +480,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/428bada/src/SCMIntegrations/index.ts#L124">src/SCMIntegrations/index.ts:124</a></li>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/6984c90/src/SCMIntegrations/index.ts#L125">src/SCMIntegrations/index.ts:125</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -500,6 +541,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_src_scmintegrations_index_.scmintegrations.html#all" class="tsd-kind-icon">all</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_src_scmintegrations_index_.scmintegrations.html#branchesforrepo" class="tsd-kind-icon">branches<wbr>For<wbr>Repo</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_src_scmintegrations_index_.scmintegrations.html#create" class="tsd-kind-icon">create</a>

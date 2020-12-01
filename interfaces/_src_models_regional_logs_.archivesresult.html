@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Branch | scalingo</title>
+	<title>ArchivesResult | scalingo</title>
 	<meta name="description" content="Documentation for scalingo">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,33 +56,24 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_src_models_regional_scm_repo_links_.html">&quot;src/models/regional/scm_repo_links&quot;</a>
+					<a href="../modules/_src_models_regional_logs_.html">&quot;src/models/regional/logs&quot;</a>
 				</li>
 				<li>
-					<a href="_src_models_regional_scm_repo_links_.branch.html">Branch</a>
+					<a href="_src_models_regional_logs_.archivesresult.html">ArchivesResult</a>
 				</li>
 			</ul>
-			<h1>Interface Branch</h1>
+			<h1>Interface ArchivesResult</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<dl class="tsd-comment-tags">
-						<dt>see</dt>
-						<dd><p><a href="https://developers.scalingo.com/scm_repo_link">https://developers.scalingo.com/scm_repo_link</a></p>
-						</dd>
-					</dl>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Branch</span>
+						<span class="target">ArchivesResult</span>
 					</li>
 				</ul>
 			</section>
@@ -93,7 +84,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_regional_scm_repo_links_.branch.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_regional_logs_.archivesresult.html#archives" class="tsd-kind-icon">archives</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_regional_logs_.archivesresult.html#has_more" class="tsd-kind-icon">has_<wbr>more</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_regional_logs_.archivesresult.html#next_cursor" class="tsd-kind-icon">next_<wbr>cursor</a></li>
 							</ul>
 						</section>
 					</div>
@@ -102,19 +95,34 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="name" class="tsd-anchor"></a>
-					<h3>name</h3>
-					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="archives" class="tsd-anchor"></a>
+					<h3>archives</h3>
+					<div class="tsd-signature tsd-kind-icon">archives<span class="tsd-signature-symbol">:</span> <a href="_src_models_regional_logs_.archive.html" class="tsd-signature-type">Archive</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/428bada/src/models/regional/scm_repo_links.ts#L64">src/models/regional/scm_repo_links.ts:64</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/6984c90/src/models/regional/logs.ts#L14">src/models/regional/logs.ts:14</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Name of the branch</p>
-						</div>
-					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="has_more" class="tsd-anchor"></a>
+					<h3>has_<wbr>more</h3>
+					<div class="tsd-signature tsd-kind-icon">has_<wbr>more<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/6984c90/src/models/regional/logs.ts#L16">src/models/regional/logs.ts:16</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="next_cursor" class="tsd-anchor"></a>
+					<h3>next_<wbr>cursor</h3>
+					<div class="tsd-signature tsd-kind-icon">next_<wbr>cursor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/6984c90/src/models/regional/logs.ts#L15">src/models/regional/logs.ts:15</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -125,33 +133,33 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="../modules/_src_models_regional_scm_repo_links_.html">&quot;src/models/regional/scm_<wbr>repo_<wbr>links&quot;</a>
+						<a href="../modules/_src_models_regional_logs_.html">&quot;src/models/regional/logs&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_src_models_regional_logs_.archive.html" class="tsd-kind-icon">Archive</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="_src_models_regional_scm_repo_links_.branch.html" class="tsd-kind-icon">Branch</a>
+						<a href="_src_models_regional_logs_.archivesresult.html" class="tsd-kind-icon">Archives<wbr>Result</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_src_models_regional_scm_repo_links_.branch.html#name" class="tsd-kind-icon">name</a>
+								<a href="_src_models_regional_logs_.archivesresult.html#archives" class="tsd-kind-icon">archives</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_src_models_regional_logs_.archivesresult.html#has_more" class="tsd-kind-icon">has_<wbr>more</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_src_models_regional_logs_.archivesresult.html#next_cursor" class="tsd-kind-icon">next_<wbr>cursor</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_src_models_regional_scm_repo_links_.pullrequest.html" class="tsd-kind-icon">Pull<wbr>Request</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_src_models_regional_scm_repo_links_.scmrepolink.html" class="tsd-kind-icon">SCMRepo<wbr>Link</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="../modules/_src_models_regional_scm_repo_links_.html#scmtype" class="tsd-kind-icon">SCMType</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
