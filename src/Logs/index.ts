@@ -1,7 +1,7 @@
 import LogsListener from "../Logs/listener";
 import { unpackData } from "../utils";
 import { Client } from "..";
-import { Archive } from "../models/regional/logs";
+import { ArchivesResult } from "../models/regional/logs";
 import { IndexParams } from "../params/regional/logs";
 
 export default class Logs {
@@ -53,12 +53,11 @@ export default class Logs {
    * @param id ID of the application
    * @return Promise that when resolved returns a list of logs archives for this application
    */
-  archives(id: string): Promise<Archive[]> {
+  archives(id: string): Promise<ArchivesResult> {
     // Pagination is not supported in the lib. We're waiting correct pagination metadata.
     // See: https://github.com/Scalingo/api/issues/1438
     return unpackData(
-      this._client.apiClient().get(`/apps/${id}/logs_archives`),
-      "archives"
+      this._client.apiClient().get(`/apps/${id}/logs_archives`)
     );
   }
 }

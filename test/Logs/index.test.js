@@ -99,7 +99,7 @@ describe("Logs#archive", () => {
   testGetter(
     "https://api.scalingo.com/v1/apps/biniou/logs_archives",
     null,
-    "archives",
+    null,
     (client) => {
       return new Logs(client).archives("biniou");
     }

@@ -9,3 +9,9 @@ export interface Archive {
   /** Date of the last log line present in the archive */
   to: string;
 }
+
+export interface ArchivesResult {
+  archives: Archive[];
+  next_cursor: string;
+  has_more: boolean;
+}
