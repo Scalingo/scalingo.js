@@ -6,6 +6,8 @@ The Scalingo.js library provides convenient access to the Scalingo API. A
 documentation is [available
 online](https://scalingo.github.io/scalingo.js/)
 
+Note: 0.2.0 is a breaking change from previous versions.
+
 ## Usage
 
 The package needs to be configured with your a token which are available in your Scalingo [dashboard](https://my.scalingo.com/profile).

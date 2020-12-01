@@ -1,4 +1,4 @@
-## Unreleased
+## 0.2.0
 
 * Chore: upgrade typescript/tsdoc
 * Chore: upgrade linter ecosystem & styleguide
@@ -6,7 +6,10 @@
 * Breaking: change signature of Apps#create, Addons#create
 * Breaking: compile destination is now `lib`
 * Breaking: move models (types and consts) to src/models
+* Breaking: Log archive response has changed
 * Users: stop free trial
+* New: App alerts endpoint
+* New: get repo branches for a SCM integration
 
 ## 0.1.4
 
