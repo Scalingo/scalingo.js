@@ -1,6 +1,7 @@
 import axios, { AxiosInstance } from "axios";
 
 import Apps from "./Apps";
+import Alerts from "./Alerts";
 import Addons from "./Addons";
 import Billing from "./Billing";
 import Collaborators from "./Collaborators";
@@ -77,6 +78,7 @@ export class Client {
 
   Apps = new Apps(this);
   Addons = new Addons(this);
+  Alerts = new Alerts(this);
   Billing = new Billing(this);
   Collaborators = new Collaborators(this);
   Containers = new Containers(this);

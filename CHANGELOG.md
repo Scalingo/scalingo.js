@@ -1,3 +1,7 @@
+## 0.2.1
+
+* Bugfix: Alerts endpoint was not added to the main client
+
 ## 0.2.0
 
 * Chore: upgrade typescript/tsdoc
