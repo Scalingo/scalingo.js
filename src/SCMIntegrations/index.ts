@@ -6,6 +6,7 @@ import {
   PullRequest,
   Repository,
   Organization,
+  Branch,
 } from "../models/auth/scm_integrations";
 
 import { CreateParams } from "../params/auth/scm_integrations";
@@ -147,6 +148,24 @@ export default class SCMIntegrations {
         .authApiClient()
         .get(`/scm_integrations/${integrationID}/orgs`),
       "organizations"
+    );
+  }
+
+  /**
+   * Search repositories in an SCM integration
+   * @see https://developers.scalingo.com/scm_integrations#
+   * @param integrationID ID of the integration
+   * @param query Query to filter the list of repositories
+   * @return Promise that when resolved returns the list of repositories matching the query.
+   */
+  branchesForRepo(integrationID: string, repo_name: string): Promise<Branch[]> {
+    return unpackData(
+      this._client
+        .authApiClient()
+        .get(`/scm_integrations/${integrationID}/branches`, {
+          params: { repo_name },
+        }),
+      "branches"
     );
   }
 }

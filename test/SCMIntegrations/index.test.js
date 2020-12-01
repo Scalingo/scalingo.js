@@ -98,3 +98,14 @@ describe("SCMIntegrations#organizations", () => {
     }
   );
 });
+
+describe("SCMIntegrations#branchesForRepo", () => {
+  testParamsGetter(
+    "https://auth.scalingo.com/v1/scm_integrations/biniou/branches",
+    { repo_name: "myrepo" },
+    "branches",
+    (client) => {
+      return new SCMIntegrations(client).branchesForRepo("biniou", "myrepo");
+    }
+  );
+});
