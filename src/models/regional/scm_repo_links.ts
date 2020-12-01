@@ -59,12 +59,6 @@ export interface SCMRepoLink {
 }
 
 /** @see https://developers.scalingo.com/scm_repo_link */
-export interface Branch {
-  /** Name of the branch */
-  name: string;
-}
-
-/** @see https://developers.scalingo.com/scm_repo_link */
 export interface PullRequest {
   id: string;
 

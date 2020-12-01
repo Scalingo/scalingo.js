@@ -32,8 +32,12 @@ export type AppStatus =
 export interface App {
   /** unique ID */
   id: string;
+  /** unique ID (different format) */
+  uuid: string;
   /** name of the application, can substitute the ID */
   name: string;
+  /** region of the application */
+  region: string;
   /** creation date of the application */
   created_at: string;
   /** last time the application has been updated */
@@ -46,6 +50,10 @@ export interface App {
   url: string;
   /** object of related link like deployments_stream */
   links: AppLinks;
+  /** App-specific limits */
+  limits: Record<string, number>;
+  /** App-specific flags */
+  flags: Record<string, boolean>;
   /** activation of force HTTPS */
   force_https: boolean;
   /** activation of sticky session */

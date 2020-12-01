@@ -74,3 +74,9 @@ export interface Organization {
   /** URL to the SCM API for the organization */
   url: string;
 }
+
+/** @see https://developers.scalingo.com/scm_repo_link */
+export interface Branch {
+  /** Name of the branch */
+  name: string;
+}
