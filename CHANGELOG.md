@@ -1,3 +1,7 @@
+## 0.2.2
+
+* Improv: user typings, missing deployment status
+
 ## 0.2.1
 
 * Bugfix: Alerts endpoint was not added to the main client
