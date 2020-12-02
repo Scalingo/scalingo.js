@@ -11,6 +11,4 @@ export interface UpdateParams {
   password?: string;
   password_confirmation?: string;
   current_password?: string;
-  /** User-specific flags */
-  flags: Record<string, boolean>;
 }

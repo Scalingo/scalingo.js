@@ -64,6 +64,8 @@ export const STATUS_TIMEOUT_ERROR = "timeout-error";
 export const STATUS_BUILD_ERROR = "build-error";
 /** The deployment was aborted */
 export const STATUS_ABORTED = "aborted";
+/** The deployment failed because a hook failed */
+export const STATUS_HOOK_ERROR = "hook-error";
 
 export type DeploymentStatus =
   | typeof STATUS_QUEUED
@@ -74,4 +76,5 @@ export type DeploymentStatus =
   | typeof STATUS_CRASHED_ERROR
   | typeof STATUS_TIMEOUT_ERROR
   | typeof STATUS_BUILD_ERROR
-  | typeof STATUS_ABORTED;
+  | typeof STATUS_ABORTED
+  | typeof STATUS_HOOK_ERROR;
