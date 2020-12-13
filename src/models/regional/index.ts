@@ -1,4 +1,6 @@
 export * from "./addons";
+export * from "./alerts";
+export * from "./autoscalers";
 export * from "./apps";
 export * from "./collaborators";
 export * from "./containers";

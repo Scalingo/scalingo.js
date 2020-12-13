@@ -1,7 +1,16 @@
+export type MetricTypes =
+  | "cpu"
+  | "memory"
+  | "swap"
+  | "p95_response_time"
+  | "5XX"
+  | "all"
+  | "rpm_per_container";
+
 /** @see https://developers.scalingo.com/metrics */
 export interface MetricType {
   /** unique identifier */
-  id: string;
+  id: MetricTypes | string;
   /** human readable string explaining this metric */
   label: string;
   /** symbol used as a suffix after this metric value */

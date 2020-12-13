@@ -1,3 +1,7 @@
+## 0.2.3
+
+* New: autoscalers endpoint
+
 ## 0.2.2
 
 * Improv: user typings, missing deployment status
