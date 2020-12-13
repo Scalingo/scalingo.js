@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Addon | scalingo</title>
+	<title>UpdateParams | scalingo</title>
 	<meta name="description" content="Documentation for scalingo">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,24 +56,33 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_src_models_regional_addons_.html">&quot;src/models/regional/addons&quot;</a>
+					<a href="../modules/_src_params_regional_autoscalers_.html">&quot;src/params/regional/autoscalers&quot;</a>
 				</li>
 				<li>
-					<a href="_src_models_regional_addons_.addon.html">Addon</a>
+					<a href="_src_params_regional_autoscalers_.updateparams.html">UpdateParams</a>
 				</li>
 			</ul>
-			<h1>Interface Addon</h1>
+			<h1>Interface UpdateParams</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<dl class="tsd-comment-tags">
+						<dt>see</dt>
+						<dd><p><a href="https://developers.scalingo.com/autoscalers#update-an-autoscaler">https://developers.scalingo.com/autoscalers#update-an-autoscaler</a></p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Addon</span>
+						<span class="target">UpdateParams</span>
 					</li>
 				</ul>
 			</section>
@@ -84,12 +93,11 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_regional_addons_.addon.html#addon_provider" class="tsd-kind-icon">addon_<wbr>provider</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_regional_addons_.addon.html#deprovisioned_at" class="tsd-kind-icon">deprovisioned_<wbr>at</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_regional_addons_.addon.html#id" class="tsd-kind-icon">id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_regional_addons_.addon.html#plan" class="tsd-kind-icon">plan</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_regional_addons_.addon.html#provisioned_at" class="tsd-kind-icon">provisioned_<wbr>at</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_regional_addons_.addon.html#resource_id" class="tsd-kind-icon">resource_<wbr>id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_params_regional_autoscalers_.updateparams.html#disabled" class="tsd-kind-icon">disabled</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_params_regional_autoscalers_.updateparams.html#max_containers" class="tsd-kind-icon">max_<wbr>containers</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_params_regional_autoscalers_.updateparams.html#metric" class="tsd-kind-icon">metric</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_params_regional_autoscalers_.updateparams.html#min_containers" class="tsd-kind-icon">min_<wbr>containers</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_params_regional_autoscalers_.updateparams.html#target" class="tsd-kind-icon">target</a></li>
 							</ul>
 						</section>
 					</div>
@@ -98,92 +106,77 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="addon_provider" class="tsd-anchor"></a>
-					<h3>addon_<wbr>provider</h3>
-					<div class="tsd-signature tsd-kind-icon">addon_<wbr>provider<span class="tsd-signature-symbol">:</span> <a href="_src_models_regional_addons_.addonprovider.html" class="tsd-signature-type">AddonProvider</a></div>
+					<a name="disabled" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> disabled</h3>
+					<div class="tsd-signature tsd-kind-icon">disabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/dafc485/src/models/regional/addons.ts#L13">src/models/regional/addons.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/dafc485/src/params/regional/autoscalers.ts#L28">src/params/regional/autoscalers.ts:28</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Embedded reference to AddonProvider resource</p>
+							<p>Is the autoscaler disabled</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="deprovisioned_at" class="tsd-anchor"></a>
-					<h3>deprovisioned_<wbr>at</h3>
-					<div class="tsd-signature tsd-kind-icon">deprovisioned_<wbr>at<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="max_containers" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> max_<wbr>containers</h3>
+					<div class="tsd-signature tsd-kind-icon">max_<wbr>containers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/dafc485/src/models/regional/addons.ts#L7">src/models/regional/addons.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/dafc485/src/params/regional/autoscalers.ts#L22">src/params/regional/autoscalers.ts:22</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>When the addon has been deleted/upgraded</p>
+							<p>Upper limit of containers</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="id" class="tsd-anchor"></a>
-					<h3>id</h3>
-					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="metric" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> metric</h3>
+					<div class="tsd-signature tsd-kind-icon">metric<span class="tsd-signature-symbol">:</span> <a href="../modules/_src_models_regional_metrics_.html#metrictypes" class="tsd-signature-type">MetricTypes</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/dafc485/src/models/regional/addons.ts#L3">src/models/regional/addons.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/dafc485/src/params/regional/autoscalers.ts#L24">src/params/regional/autoscalers.ts:24</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Unique ID identifying the addon</p>
+							<p>Metric name this autoscaler is about</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="plan" class="tsd-anchor"></a>
-					<h3>plan</h3>
-					<div class="tsd-signature tsd-kind-icon">plan<span class="tsd-signature-symbol">:</span> <a href="_src_models_regional_addons_.plan.html" class="tsd-signature-type">Plan</a></div>
+					<a name="min_containers" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> min_<wbr>containers</h3>
+					<div class="tsd-signature tsd-kind-icon">min_<wbr>containers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/dafc485/src/models/regional/addons.ts#L11">src/models/regional/addons.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/dafc485/src/params/regional/autoscalers.ts#L20">src/params/regional/autoscalers.ts:20</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Embedded reference to Plan resource</p>
+							<p>Lower limit of containers</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="provisioned_at" class="tsd-anchor"></a>
-					<h3>provisioned_<wbr>at</h3>
-					<div class="tsd-signature tsd-kind-icon">provisioned_<wbr>at<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="target" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> target</h3>
+					<div class="tsd-signature tsd-kind-icon">target<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/dafc485/src/models/regional/addons.ts#L5">src/models/regional/addons.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/dafc485/src/params/regional/autoscalers.ts#L26">src/params/regional/autoscalers.ts:26</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>When the addon has been created</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="resource_id" class="tsd-anchor"></a>
-					<h3>resource_<wbr>id</h3>
-					<div class="tsd-signature tsd-kind-icon">resource_<wbr>id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/dafc485/src/models/regional/addons.ts#L9">src/models/regional/addons.ts:9</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Resource reference</p>
+							<p>Metric value the autoscaler aims to reach</p>
 						</div>
 					</div>
 				</section>
@@ -196,54 +189,39 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="../modules/_src_models_regional_addons_.html">&quot;src/models/regional/addons&quot;</a>
+						<a href="../modules/_src_params_regional_autoscalers_.html">&quot;src/params/regional/autoscalers&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_src_params_regional_autoscalers_.createparams.html" class="tsd-kind-icon">Create<wbr>Params</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="_src_models_regional_addons_.addon.html" class="tsd-kind-icon">Addon</a>
+						<a href="_src_params_regional_autoscalers_.updateparams.html" class="tsd-kind-icon">Update<wbr>Params</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_src_models_regional_addons_.addon.html#addon_provider" class="tsd-kind-icon">addon_<wbr>provider</a>
+								<a href="_src_params_regional_autoscalers_.updateparams.html#disabled" class="tsd-kind-icon">disabled</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_src_models_regional_addons_.addon.html#deprovisioned_at" class="tsd-kind-icon">deprovisioned_<wbr>at</a>
+								<a href="_src_params_regional_autoscalers_.updateparams.html#max_containers" class="tsd-kind-icon">max_<wbr>containers</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_src_models_regional_addons_.addon.html#id" class="tsd-kind-icon">id</a>
+								<a href="_src_params_regional_autoscalers_.updateparams.html#metric" class="tsd-kind-icon">metric</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_src_models_regional_addons_.addon.html#plan" class="tsd-kind-icon">plan</a>
+								<a href="_src_params_regional_autoscalers_.updateparams.html#min_containers" class="tsd-kind-icon">min_<wbr>containers</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_src_models_regional_addons_.addon.html#provisioned_at" class="tsd-kind-icon">provisioned_<wbr>at</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_src_models_regional_addons_.addon.html#resource_id" class="tsd-kind-icon">resource_<wbr>id</a>
+								<a href="_src_params_regional_autoscalers_.updateparams.html#target" class="tsd-kind-icon">target</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_src_models_regional_addons_.addonprovider.html" class="tsd-kind-icon">Addon<wbr>Provider</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_src_models_regional_addons_.addonsso.html" class="tsd-kind-icon">Addon<wbr>Sso</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_src_models_regional_addons_.addonupgraderesponse.html" class="tsd-kind-icon">Addon<wbr>Upgrade<wbr>Response</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_src_models_regional_addons_.category.html" class="tsd-kind-icon">Category</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_src_models_regional_addons_.plan.html" class="tsd-kind-icon">Plan</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
