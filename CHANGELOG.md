@@ -1,3 +1,7 @@
+## 0.2.4
+
+* Types: update Addon
+
 ## 0.2.3
 
 * New: autoscalers endpoint

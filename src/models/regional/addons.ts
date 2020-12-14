@@ -1,16 +1,20 @@
 export interface Addon {
   /** Unique ID identifying the addon */
   id: string;
+  /** Unique ID identifying the addon's app */
+  app_id: string;
+  /** Resource reference */
+  resource_id: string;
   /** When the addon has been created */
   provisioned_at: string;
   /** When the addon has been deleted/upgraded */
   deprovisioned_at: string;
-  /** Resource reference */
-  resource_id: string;
   /** Embedded reference to Plan resource */
   plan: Plan;
   /** Embedded reference to AddonProvider resource */
   addon_provider: AddonProvider;
+  /** Current status of the addon */
+  status: "running" | "provisioning" | "suspended";
 }
 
 export interface AddonUpgradeResponse {
