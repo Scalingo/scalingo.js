@@ -6,7 +6,7 @@
 	"originalName": "",
 	"children": [
 		{
-			"id": 1182,
+			"id": 1306,
 			"name": "\"src/Addons/index\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -16,7 +16,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/Addons/index.ts",
 			"children": [
 				{
-					"id": 1183,
+					"id": 1307,
 					"name": "Addons",
 					"kind": 128,
 					"kindString": "Class",
@@ -28,7 +28,7 @@
 					},
 					"children": [
 						{
-							"id": 1185,
+							"id": 1309,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -40,7 +40,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1186,
+									"id": 1310,
 									"name": "new Addons",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -52,7 +52,7 @@
 									},
 									"parameters": [
 										{
-											"id": 1187,
+											"id": 1311,
 											"name": "client",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -64,14 +64,14 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										}
 									],
 									"type": {
 										"type": "reference",
-										"id": 1183,
+										"id": 1307,
 										"name": "Addons"
 									}
 								}
@@ -85,7 +85,7 @@
 							]
 						},
 						{
-							"id": 1184,
+							"id": 1308,
 							"name": "_client",
 							"kind": 1024,
 							"kindString": "Property",
@@ -104,12 +104,12 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
 						{
-							"id": 1191,
+							"id": 1315,
 							"name": "create",
 							"kind": 2048,
 							"kindString": "Method",
@@ -118,7 +118,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1192,
+									"id": 1316,
 									"name": "create",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -136,7 +136,7 @@
 									},
 									"parameters": [
 										{
-											"id": 1193,
+											"id": 1317,
 											"name": "appId",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -152,7 +152,7 @@
 											}
 										},
 										{
-											"id": 1194,
+											"id": 1318,
 											"name": "payload",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -161,7 +161,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1177,
+												"id": 1301,
 												"name": "CreateParams"
 											}
 										}
@@ -171,7 +171,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 1134,
+												"id": 1002,
 												"name": "Addon"
 											}
 										],
@@ -188,7 +188,7 @@
 							]
 						},
 						{
-							"id": 1205,
+							"id": 1329,
 							"name": "destroy",
 							"kind": 2048,
 							"kindString": "Method",
@@ -197,7 +197,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1206,
+									"id": 1330,
 									"name": "destroy",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -215,7 +215,7 @@
 									},
 									"parameters": [
 										{
-											"id": 1207,
+											"id": 1331,
 											"name": "appId",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -231,7 +231,7 @@
 											}
 										},
 										{
-											"id": 1208,
+											"id": 1332,
 											"name": "addonId",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -268,7 +268,7 @@
 							]
 						},
 						{
-							"id": 1188,
+							"id": 1312,
 							"name": "for",
 							"kind": 2048,
 							"kindString": "Method",
@@ -277,7 +277,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1189,
+									"id": 1313,
 									"name": "for",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -295,7 +295,7 @@
 									},
 									"parameters": [
 										{
-											"id": 1190,
+											"id": 1314,
 											"name": "appId",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -318,7 +318,7 @@
 												"type": "array",
 												"elementType": {
 													"type": "reference",
-													"id": 1134,
+													"id": 1002,
 													"name": "Addon"
 												}
 											}
@@ -336,7 +336,7 @@
 							]
 						},
 						{
-							"id": 1213,
+							"id": 1337,
 							"name": "getAddon",
 							"kind": 2048,
 							"kindString": "Method",
@@ -345,7 +345,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1214,
+									"id": 1338,
 									"name": "getAddon",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -357,7 +357,7 @@
 									},
 									"parameters": [
 										{
-											"id": 1215,
+											"id": 1339,
 											"name": "appId",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -373,7 +373,7 @@
 											}
 										},
 										{
-											"id": 1216,
+											"id": 1340,
 											"name": "addonId",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -394,7 +394,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 1134,
+												"id": 1002,
 												"name": "Addon"
 											}
 										],
@@ -411,7 +411,7 @@
 							]
 						},
 						{
-							"id": 1195,
+							"id": 1319,
 							"name": "listCategories",
 							"kind": 2048,
 							"kindString": "Method",
@@ -420,7 +420,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1196,
+									"id": 1320,
 									"name": "listCategories",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -443,7 +443,7 @@
 												"type": "array",
 												"elementType": {
 													"type": "reference",
-													"id": 1162,
+													"id": 1030,
 													"name": "Category"
 												}
 											}
@@ -461,7 +461,7 @@
 							]
 						},
 						{
-							"id": 1197,
+							"id": 1321,
 							"name": "listProviders",
 							"kind": 2048,
 							"kindString": "Method",
@@ -470,7 +470,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1198,
+									"id": 1322,
 									"name": "listProviders",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -488,7 +488,7 @@
 									},
 									"parameters": [
 										{
-											"id": 1199,
+											"id": 1323,
 											"name": "categoryId",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -521,7 +521,7 @@
 												"type": "array",
 												"elementType": {
 													"type": "reference",
-													"id": 1152,
+													"id": 1020,
 													"name": "AddonProvider"
 												}
 											}
@@ -539,7 +539,7 @@
 							]
 						},
 						{
-							"id": 1209,
+							"id": 1333,
 							"name": "sso",
 							"kind": 2048,
 							"kindString": "Method",
@@ -548,7 +548,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1210,
+									"id": 1334,
 									"name": "sso",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -560,7 +560,7 @@
 									},
 									"parameters": [
 										{
-											"id": 1211,
+											"id": 1335,
 											"name": "appId",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -576,7 +576,7 @@
 											}
 										},
 										{
-											"id": 1212,
+											"id": 1336,
 											"name": "addonId",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -597,7 +597,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 1166,
+												"id": 1034,
 												"name": "AddonSso"
 											}
 										],
@@ -614,7 +614,7 @@
 							]
 						},
 						{
-							"id": 1200,
+							"id": 1324,
 							"name": "update",
 							"kind": 2048,
 							"kindString": "Method",
@@ -623,7 +623,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1201,
+									"id": 1325,
 									"name": "update",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -641,7 +641,7 @@
 									},
 									"parameters": [
 										{
-											"id": 1202,
+											"id": 1326,
 											"name": "appId",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -657,7 +657,7 @@
 											}
 										},
 										{
-											"id": 1203,
+											"id": 1327,
 											"name": "addonId",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -673,7 +673,7 @@
 											}
 										},
 										{
-											"id": 1204,
+											"id": 1328,
 											"name": "addon",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -685,7 +685,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1180,
+												"id": 1304,
 												"name": "UpdateParams"
 											}
 										}
@@ -695,7 +695,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 1143,
+												"id": 1011,
 												"name": "AddonUpgradeResponse"
 											}
 										],
@@ -717,28 +717,28 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								1185
+								1309
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1184
+								1308
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								1191,
-								1205,
-								1188,
-								1213,
-								1195,
-								1197,
-								1209,
-								1200
+								1315,
+								1329,
+								1312,
+								1337,
+								1319,
+								1321,
+								1333,
+								1324
 							]
 						}
 					],
@@ -756,7 +756,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						1183
+						1307
 					]
 				}
 			],
@@ -827,7 +827,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										}
@@ -867,7 +867,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
@@ -1048,7 +1048,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										}
@@ -1088,7 +1088,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
@@ -1823,7 +1823,7 @@
 			]
 		},
 		{
-			"id": 1244,
+			"id": 1354,
 			"name": "\"src/Autoscalers/index\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -1833,7 +1833,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/Autoscalers/index.ts",
 			"children": [
 				{
-					"id": 1245,
+					"id": 1355,
 					"name": "Autoscalers",
 					"kind": 128,
 					"kindString": "Class",
@@ -1845,7 +1845,7 @@
 					},
 					"children": [
 						{
-							"id": 1247,
+							"id": 1357,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -1857,7 +1857,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1248,
+									"id": 1358,
 									"name": "new Autoscalers",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -1869,7 +1869,7 @@
 									},
 									"parameters": [
 										{
-											"id": 1249,
+											"id": 1359,
 											"name": "client",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1881,14 +1881,14 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										}
 									],
 									"type": {
 										"type": "reference",
-										"id": 1245,
+										"id": 1355,
 										"name": "Autoscalers"
 									}
 								}
@@ -1902,7 +1902,7 @@
 							]
 						},
 						{
-							"id": 1246,
+							"id": 1356,
 							"name": "_client",
 							"kind": 1024,
 							"kindString": "Property",
@@ -1921,12 +1921,12 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
 						{
-							"id": 1253,
+							"id": 1363,
 							"name": "create",
 							"kind": 2048,
 							"kindString": "Method",
@@ -1935,7 +1935,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1254,
+									"id": 1364,
 									"name": "create",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -1953,7 +1953,7 @@
 									},
 									"parameters": [
 										{
-											"id": 1255,
+											"id": 1365,
 											"name": "appId",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1969,7 +1969,7 @@
 											}
 										},
 										{
-											"id": 1256,
+											"id": 1366,
 											"name": "autoscaler",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -1981,7 +1981,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1232,
+												"id": 1342,
 												"name": "CreateParams"
 											}
 										}
@@ -1991,7 +1991,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 1218,
+												"id": 1045,
 												"name": "Autoscaler"
 											}
 										],
@@ -2008,7 +2008,7 @@
 							]
 						},
 						{
-							"id": 1257,
+							"id": 1367,
 							"name": "destroy",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2017,7 +2017,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1258,
+									"id": 1368,
 									"name": "destroy",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2035,7 +2035,7 @@
 									},
 									"parameters": [
 										{
-											"id": 1259,
+											"id": 1369,
 											"name": "appId",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2051,7 +2051,7 @@
 											}
 										},
 										{
-											"id": 1260,
+											"id": 1370,
 											"name": "autoscalerId",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2088,7 +2088,7 @@
 							]
 						},
 						{
-							"id": 1250,
+							"id": 1360,
 							"name": "for",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2097,7 +2097,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1251,
+									"id": 1361,
 									"name": "for",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2115,7 +2115,7 @@
 									},
 									"parameters": [
 										{
-											"id": 1252,
+											"id": 1362,
 											"name": "appId",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2138,7 +2138,7 @@
 												"type": "array",
 												"elementType": {
 													"type": "reference",
-													"id": 1218,
+													"id": 1045,
 													"name": "Autoscaler"
 												}
 											}
@@ -2156,7 +2156,7 @@
 							]
 						},
 						{
-							"id": 1261,
+							"id": 1371,
 							"name": "show",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2165,7 +2165,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1262,
+									"id": 1372,
 									"name": "show",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2183,7 +2183,7 @@
 									},
 									"parameters": [
 										{
-											"id": 1263,
+											"id": 1373,
 											"name": "appId",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2199,7 +2199,7 @@
 											}
 										},
 										{
-											"id": 1264,
+											"id": 1374,
 											"name": "autoscalerId",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2220,7 +2220,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 1218,
+												"id": 1045,
 												"name": "Autoscaler"
 											}
 										],
@@ -2237,7 +2237,7 @@
 							]
 						},
 						{
-							"id": 1265,
+							"id": 1375,
 							"name": "update",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2246,7 +2246,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1266,
+									"id": 1376,
 									"name": "update",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2264,7 +2264,7 @@
 									},
 									"parameters": [
 										{
-											"id": 1267,
+											"id": 1377,
 											"name": "appId",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2280,7 +2280,7 @@
 											}
 										},
 										{
-											"id": 1268,
+											"id": 1378,
 											"name": "autoscalerId",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2296,7 +2296,7 @@
 											}
 										},
 										{
-											"id": 1269,
+											"id": 1379,
 											"name": "autoscaler",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2308,7 +2308,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1238,
+												"id": 1348,
 												"name": "UpdateParams"
 											}
 										}
@@ -2318,7 +2318,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 1218,
+												"id": 1045,
 												"name": "Autoscaler"
 											}
 										],
@@ -2340,25 +2340,25 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								1247
+								1357
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1246
+								1356
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								1253,
-								1257,
-								1250,
-								1261,
-								1265
+								1363,
+								1367,
+								1360,
+								1371,
+								1375
 							]
 						}
 					],
@@ -2376,7 +2376,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						1245
+						1355
 					]
 				}
 			],
@@ -2447,7 +2447,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										}
@@ -2487,7 +2487,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
@@ -2811,7 +2811,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										}
@@ -2851,7 +2851,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
@@ -3262,7 +3262,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										}
@@ -3302,7 +3302,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
@@ -3715,7 +3715,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										}
@@ -3755,7 +3755,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
@@ -4113,7 +4113,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										},
@@ -4187,7 +4187,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
@@ -6405,7 +6405,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										}
@@ -6445,7 +6445,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
@@ -6971,7 +6971,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										}
@@ -7011,7 +7011,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
@@ -7625,7 +7625,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										}
@@ -7665,7 +7665,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
@@ -8031,7 +8031,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										}
@@ -8071,7 +8071,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
@@ -8417,7 +8417,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										}
@@ -8457,7 +8457,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
@@ -8783,7 +8783,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										},
@@ -8839,7 +8839,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
@@ -9294,7 +9294,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										}
@@ -9334,7 +9334,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
@@ -9593,7 +9593,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										}
@@ -9633,7 +9633,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
@@ -9793,7 +9793,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										}
@@ -9833,7 +9833,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
@@ -10434,7 +10434,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										}
@@ -10474,7 +10474,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
@@ -10675,7 +10675,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										},
@@ -10731,7 +10731,7 @@
 								"types": [
 									{
 										"type": "reference",
-										"id": 1079,
+										"id": 1246,
 										"name": "Client"
 									},
 									{
@@ -11464,7 +11464,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										}
@@ -11504,7 +11504,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
@@ -12206,7 +12206,7 @@
 			]
 		},
 		{
-			"id": 911,
+			"id": 1132,
 			"name": "\"src/SCMRepoLinks/index\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -12216,7 +12216,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/SCMRepoLinks/index.ts",
 			"children": [
 				{
-					"id": 912,
+					"id": 1133,
 					"name": "SCMRepoLinks",
 					"kind": 128,
 					"kindString": "Class",
@@ -12228,7 +12228,7 @@
 					},
 					"children": [
 						{
-							"id": 914,
+							"id": 1135,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -12240,7 +12240,7 @@
 							},
 							"signatures": [
 								{
-									"id": 915,
+									"id": 1136,
 									"name": "new SCMRepoLinks",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -12252,7 +12252,7 @@
 									},
 									"parameters": [
 										{
-											"id": 916,
+											"id": 1137,
 											"name": "client",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -12264,14 +12264,14 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										}
 									],
 									"type": {
 										"type": "reference",
-										"id": 912,
+										"id": 1133,
 										"name": "SCMRepoLinks"
 									}
 								}
@@ -12279,13 +12279,13 @@
 							"sources": [
 								{
 									"fileName": "src/SCMRepoLinks/index.ts",
-									"line": 11,
+									"line": 17,
 									"character": 18
 								}
 							]
 						},
 						{
-							"id": 913,
+							"id": 1134,
 							"name": "_client",
 							"kind": 1024,
 							"kindString": "Property",
@@ -12298,18 +12298,18 @@
 							"sources": [
 								{
 									"fileName": "src/SCMRepoLinks/index.ts",
-									"line": 11,
+									"line": 17,
 									"character": 9
 								}
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
 						{
-							"id": 939,
+							"id": 1160,
 							"name": "branches",
 							"kind": 2048,
 							"kindString": "Method",
@@ -12318,7 +12318,7 @@
 							},
 							"signatures": [
 								{
-									"id": 940,
+									"id": 1161,
 									"name": "branches",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -12341,7 +12341,7 @@
 									},
 									"parameters": [
 										{
-											"id": 941,
+											"id": 1162,
 											"name": "appID",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -12361,8 +12361,12 @@
 										"type": "reference",
 										"typeArguments": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 824,
+													"name": "Branch"
+												}
 											}
 										],
 										"name": "Promise"
@@ -12372,13 +12376,13 @@
 							"sources": [
 								{
 									"fileName": "src/SCMRepoLinks/index.ts",
-									"line": 123,
+									"line": 129,
 									"character": 10
 								}
 							]
 						},
 						{
-							"id": 920,
+							"id": 1141,
 							"name": "create",
 							"kind": 2048,
 							"kindString": "Method",
@@ -12387,7 +12391,7 @@
 							},
 							"signatures": [
 								{
-									"id": 921,
+									"id": 1142,
 									"name": "create",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -12406,7 +12410,7 @@
 									},
 									"parameters": [
 										{
-											"id": 922,
+											"id": 1143,
 											"name": "appID",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -12422,7 +12426,7 @@
 											}
 										},
 										{
-											"id": 923,
+											"id": 1144,
 											"name": "opts",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -12434,7 +12438,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 893,
+												"id": 915,
 												"name": "CreateParams"
 											}
 										}
@@ -12455,13 +12459,13 @@
 							"sources": [
 								{
 									"fileName": "src/SCMRepoLinks/index.ts",
-									"line": 41,
+									"line": 47,
 									"character": 8
 								}
 							]
 						},
 						{
-							"id": 928,
+							"id": 1149,
 							"name": "destroy",
 							"kind": 2048,
 							"kindString": "Method",
@@ -12470,7 +12474,7 @@
 							},
 							"signatures": [
 								{
-									"id": 929,
+									"id": 1150,
 									"name": "destroy",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -12489,7 +12493,7 @@
 									},
 									"parameters": [
 										{
-											"id": 930,
+											"id": 1151,
 											"name": "appID",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -12520,13 +12524,13 @@
 							"sources": [
 								{
 									"fileName": "src/SCMRepoLinks/index.ts",
-									"line": 72,
+									"line": 78,
 									"character": 9
 								}
 							]
 						},
 						{
-							"id": 917,
+							"id": 1138,
 							"name": "find",
 							"kind": 2048,
 							"kindString": "Method",
@@ -12535,7 +12539,7 @@
 							},
 							"signatures": [
 								{
-									"id": 918,
+									"id": 1139,
 									"name": "find",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -12554,7 +12558,7 @@
 									},
 									"parameters": [
 										{
-											"id": 919,
+											"id": 1140,
 											"name": "appID",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -12586,13 +12590,13 @@
 							"sources": [
 								{
 									"fileName": "src/SCMRepoLinks/index.ts",
-									"line": 27,
+									"line": 33,
 									"character": 6
 								}
 							]
 						},
 						{
-							"id": 931,
+							"id": 1152,
 							"name": "manualDeploy",
 							"kind": 2048,
 							"kindString": "Method",
@@ -12601,7 +12605,7 @@
 							},
 							"signatures": [
 								{
-									"id": 932,
+									"id": 1153,
 									"name": "manualDeploy",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -12624,7 +12628,7 @@
 									},
 									"parameters": [
 										{
-											"id": 933,
+											"id": 1154,
 											"name": "appID",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -12640,7 +12644,7 @@
 											}
 										},
 										{
-											"id": 934,
+											"id": 1155,
 											"name": "branch",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -12660,8 +12664,9 @@
 										"type": "reference",
 										"typeArguments": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"id": 39,
+												"name": "Deployment"
 											}
 										],
 										"name": "Promise"
@@ -12671,13 +12676,13 @@
 							"sources": [
 								{
 									"fileName": "src/SCMRepoLinks/index.ts",
-									"line": 86,
+									"line": 92,
 									"character": 14
 								}
 							]
 						},
 						{
-							"id": 935,
+							"id": 1156,
 							"name": "manualReviewApp",
 							"kind": 2048,
 							"kindString": "Method",
@@ -12686,7 +12691,7 @@
 							},
 							"signatures": [
 								{
-									"id": 936,
+									"id": 1157,
 									"name": "manualReviewApp",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -12709,7 +12714,7 @@
 									},
 									"parameters": [
 										{
-											"id": 937,
+											"id": 1158,
 											"name": "appID",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -12725,7 +12730,7 @@
 											}
 										},
 										{
-											"id": 938,
+											"id": 1159,
 											"name": "pullRequestID",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -12745,8 +12750,9 @@
 										"type": "reference",
 										"typeArguments": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"id": 901,
+												"name": "ReviewApp"
 											}
 										],
 										"name": "Promise"
@@ -12756,13 +12762,13 @@
 							"sources": [
 								{
 									"fileName": "src/SCMRepoLinks/index.ts",
-									"line": 105,
+									"line": 111,
 									"character": 17
 								}
 							]
 						},
 						{
-							"id": 942,
+							"id": 1163,
 							"name": "pulls",
 							"kind": 2048,
 							"kindString": "Method",
@@ -12771,7 +12777,7 @@
 							},
 							"signatures": [
 								{
-									"id": 943,
+									"id": 1164,
 									"name": "pulls",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -12794,7 +12800,7 @@
 									},
 									"parameters": [
 										{
-											"id": 944,
+											"id": 1165,
 											"name": "appID",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -12814,8 +12820,12 @@
 										"type": "reference",
 										"typeArguments": [
 											{
-												"type": "intrinsic",
-												"name": "any"
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 886,
+													"name": "PullRequest"
+												}
 											}
 										],
 										"name": "Promise"
@@ -12825,13 +12835,82 @@
 							"sources": [
 								{
 									"fileName": "src/SCMRepoLinks/index.ts",
-									"line": 137,
+									"line": 143,
 									"character": 7
 								}
 							]
 						},
 						{
-							"id": 924,
+							"id": 1166,
+							"name": "reviewApps",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {
+								"isExported": true
+							},
+							"signatures": [
+								{
+									"id": 1167,
+									"name": "reviewApps",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {
+										"isExported": true
+									},
+									"comment": {
+										"shortText": "List the review apps of the supplied app.",
+										"returns": "Promise that when resolved returns an array of review apps.",
+										"tags": [
+											{
+												"tag": "todo",
+												"text": "Promise<ReviewApp[]>\n"
+											}
+										]
+									},
+									"parameters": [
+										{
+											"id": 1168,
+											"name": "appID",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {
+												"isExported": true
+											},
+											"comment": {
+												"text": "ID of the application"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 901,
+													"name": "ReviewApp"
+												}
+											}
+										],
+										"name": "Promise"
+									}
+								}
+							],
+							"sources": [
+								{
+									"fileName": "src/SCMRepoLinks/index.ts",
+									"line": 156,
+									"character": 12
+								}
+							]
+						},
+						{
+							"id": 1145,
 							"name": "update",
 							"kind": 2048,
 							"kindString": "Method",
@@ -12840,7 +12919,7 @@
 							},
 							"signatures": [
 								{
-									"id": 925,
+									"id": 1146,
 									"name": "update",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -12859,7 +12938,7 @@
 									},
 									"parameters": [
 										{
-											"id": 926,
+											"id": 1147,
 											"name": "appID",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -12875,7 +12954,7 @@
 											}
 										},
 										{
-											"id": 927,
+											"id": 1148,
 											"name": "opts",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -12887,7 +12966,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 903,
+												"id": 925,
 												"name": "UpdateParams"
 											}
 										}
@@ -12908,7 +12987,7 @@
 							"sources": [
 								{
 									"fileName": "src/SCMRepoLinks/index.ts",
-									"line": 57,
+									"line": 63,
 									"character": 8
 								}
 							]
@@ -12919,35 +12998,36 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								914
+								1135
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								913
+								1134
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								939,
-								920,
-								928,
-								917,
-								931,
-								935,
-								942,
-								924
+								1160,
+								1141,
+								1149,
+								1138,
+								1152,
+								1156,
+								1163,
+								1166,
+								1145
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "src/SCMRepoLinks/index.ts",
-							"line": 9,
+							"line": 15,
 							"character": 25
 						}
 					]
@@ -12958,7 +13038,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						912
+						1133
 					]
 				}
 			],
@@ -12971,7 +13051,7 @@
 			]
 		},
 		{
-			"id": 951,
+			"id": 1169,
 			"name": "\"src/Stats/index\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -12981,7 +13061,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/Stats/index.ts",
 			"children": [
 				{
-					"id": 952,
+					"id": 1170,
 					"name": "Stats",
 					"kind": 128,
 					"kindString": "Class",
@@ -12993,7 +13073,7 @@
 					},
 					"children": [
 						{
-							"id": 954,
+							"id": 1172,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -13005,7 +13085,7 @@
 							},
 							"signatures": [
 								{
-									"id": 955,
+									"id": 1173,
 									"name": "new Stats",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -13017,7 +13097,7 @@
 									},
 									"parameters": [
 										{
-											"id": 956,
+											"id": 1174,
 											"name": "client",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -13029,14 +13109,14 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										}
 									],
 									"type": {
 										"type": "reference",
-										"id": 952,
+										"id": 1170,
 										"name": "Stats"
 									}
 								}
@@ -13050,7 +13130,7 @@
 							]
 						},
 						{
-							"id": 953,
+							"id": 1171,
 							"name": "_client",
 							"kind": 1024,
 							"kindString": "Property",
@@ -13069,12 +13149,12 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
 						{
-							"id": 957,
+							"id": 1175,
 							"name": "referrals",
 							"kind": 2048,
 							"kindString": "Method",
@@ -13083,7 +13163,7 @@
 							},
 							"signatures": [
 								{
-									"id": 958,
+									"id": 1176,
 									"name": "referrals",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -13099,7 +13179,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 946,
+												"id": 1059,
 												"name": "ReferralsStats"
 											}
 										],
@@ -13121,21 +13201,21 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								954
+								1172
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								953
+								1171
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								957
+								1175
 							]
 						}
 					],
@@ -13153,7 +13233,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						952
+						1170
 					]
 				}
 			],
@@ -13166,7 +13246,7 @@
 			]
 		},
 		{
-			"id": 967,
+			"id": 1177,
 			"name": "\"src/Tokens/index\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -13176,7 +13256,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/Tokens/index.ts",
 			"children": [
 				{
-					"id": 968,
+					"id": 1178,
 					"name": "Tokens",
 					"kind": 128,
 					"kindString": "Class",
@@ -13188,7 +13268,7 @@
 					},
 					"children": [
 						{
-							"id": 970,
+							"id": 1180,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -13200,7 +13280,7 @@
 							},
 							"signatures": [
 								{
-									"id": 971,
+									"id": 1181,
 									"name": "new Tokens",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -13212,7 +13292,7 @@
 									},
 									"parameters": [
 										{
-											"id": 972,
+											"id": 1182,
 											"name": "client",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -13224,14 +13304,14 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										}
 									],
 									"type": {
 										"type": "reference",
-										"id": 968,
+										"id": 1178,
 										"name": "Tokens"
 									}
 								}
@@ -13245,7 +13325,7 @@
 							]
 						},
 						{
-							"id": 969,
+							"id": 1179,
 							"name": "_client",
 							"kind": 1024,
 							"kindString": "Property",
@@ -13264,12 +13344,12 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
 						{
-							"id": 973,
+							"id": 1183,
 							"name": "all",
 							"kind": 2048,
 							"kindString": "Method",
@@ -13278,7 +13358,7 @@
 							},
 							"signatures": [
 								{
-									"id": 974,
+									"id": 1184,
 									"name": "all",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -13296,7 +13376,7 @@
 												"type": "array",
 												"elementType": {
 													"type": "reference",
-													"id": 960,
+													"id": 934,
 													"name": "Token"
 												}
 											}
@@ -13314,7 +13394,7 @@
 							]
 						},
 						{
-							"id": 975,
+							"id": 1185,
 							"name": "create",
 							"kind": 2048,
 							"kindString": "Method",
@@ -13323,7 +13403,7 @@
 							},
 							"signatures": [
 								{
-									"id": 976,
+									"id": 1186,
 									"name": "create",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -13336,7 +13416,7 @@
 									},
 									"parameters": [
 										{
-											"id": 977,
+											"id": 1187,
 											"name": "name",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -13357,7 +13437,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 960,
+												"id": 934,
 												"name": "Token"
 											}
 										],
@@ -13374,7 +13454,7 @@
 							]
 						},
 						{
-							"id": 981,
+							"id": 1191,
 							"name": "destroy",
 							"kind": 2048,
 							"kindString": "Method",
@@ -13383,7 +13463,7 @@
 							},
 							"signatures": [
 								{
-									"id": 982,
+									"id": 1192,
 									"name": "destroy",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -13395,7 +13475,7 @@
 									},
 									"parameters": [
 										{
-											"id": 983,
+											"id": 1193,
 											"name": "id",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -13432,7 +13512,7 @@
 							]
 						},
 						{
-							"id": 984,
+							"id": 1194,
 							"name": "exchange",
 							"kind": 2048,
 							"kindString": "Method",
@@ -13441,7 +13521,7 @@
 							},
 							"signatures": [
 								{
-									"id": 985,
+									"id": 1195,
 									"name": "exchange",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -13454,7 +13534,7 @@
 									},
 									"parameters": [
 										{
-											"id": 986,
+											"id": 1196,
 											"name": "token",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -13491,7 +13571,7 @@
 							]
 						},
 						{
-							"id": 978,
+							"id": 1188,
 							"name": "renew",
 							"kind": 2048,
 							"kindString": "Method",
@@ -13500,7 +13580,7 @@
 							},
 							"signatures": [
 								{
-									"id": 979,
+									"id": 1189,
 									"name": "renew",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -13513,7 +13593,7 @@
 									},
 									"parameters": [
 										{
-											"id": 980,
+											"id": 1190,
 											"name": "id",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -13534,7 +13614,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 960,
+												"id": 934,
 												"name": "Token"
 											}
 										],
@@ -13556,25 +13636,25 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								970
+								1180
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								969
+								1179
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								973,
-								975,
-								981,
-								984,
-								978
+								1183,
+								1185,
+								1191,
+								1194,
+								1188
 							]
 						}
 					],
@@ -13592,7 +13672,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						968
+						1178
 					]
 				}
 			],
@@ -13605,7 +13685,7 @@
 			]
 		},
 		{
-			"id": 1003,
+			"id": 1197,
 			"name": "\"src/TwoFactorAuth/index\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -13615,7 +13695,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/TwoFactorAuth/index.ts",
 			"children": [
 				{
-					"id": 1004,
+					"id": 1198,
 					"name": "TwoFactorAuth",
 					"kind": 128,
 					"kindString": "Class",
@@ -13624,7 +13704,7 @@
 					},
 					"children": [
 						{
-							"id": 1006,
+							"id": 1200,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -13636,7 +13716,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1007,
+									"id": 1201,
 									"name": "new TwoFactorAuth",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -13648,7 +13728,7 @@
 									},
 									"parameters": [
 										{
-											"id": 1008,
+											"id": 1202,
 											"name": "client",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -13660,14 +13740,14 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										}
 									],
 									"type": {
 										"type": "reference",
-										"id": 1004,
+										"id": 1198,
 										"name": "TwoFactorAuth"
 									}
 								}
@@ -13681,7 +13761,7 @@
 							]
 						},
 						{
-							"id": 1005,
+							"id": 1199,
 							"name": "_client",
 							"kind": 1024,
 							"kindString": "Property",
@@ -13700,12 +13780,12 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
 						{
-							"id": 1017,
+							"id": 1211,
 							"name": "disable",
 							"kind": 2048,
 							"kindString": "Method",
@@ -13714,7 +13794,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1018,
+									"id": 1212,
 									"name": "disable",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -13730,7 +13810,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 988,
+												"id": 942,
 												"name": "TwoFactorAuthObject"
 											}
 										],
@@ -13747,7 +13827,7 @@
 							]
 						},
 						{
-							"id": 1011,
+							"id": 1205,
 							"name": "initiate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -13756,7 +13836,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1012,
+									"id": 1206,
 									"name": "initiate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -13769,7 +13849,7 @@
 									},
 									"parameters": [
 										{
-											"id": 1013,
+											"id": 1207,
 											"name": "provider",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -13791,7 +13871,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 992,
+												"id": 946,
 												"name": "TwoFactorAuthInitiateResponse"
 											}
 										],
@@ -13808,7 +13888,7 @@
 							]
 						},
 						{
-							"id": 1009,
+							"id": 1203,
 							"name": "status",
 							"kind": 2048,
 							"kindString": "Method",
@@ -13817,7 +13897,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1010,
+									"id": 1204,
 									"name": "status",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -13833,7 +13913,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 988,
+												"id": 942,
 												"name": "TwoFactorAuthObject"
 											}
 										],
@@ -13850,7 +13930,7 @@
 							]
 						},
 						{
-							"id": 1014,
+							"id": 1208,
 							"name": "validate",
 							"kind": 2048,
 							"kindString": "Method",
@@ -13859,7 +13939,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1015,
+									"id": 1209,
 									"name": "validate",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -13872,7 +13952,7 @@
 									},
 									"parameters": [
 										{
-											"id": 1016,
+											"id": 1210,
 											"name": "attempt",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -13893,7 +13973,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 997,
+												"id": 951,
 												"name": "TwoFactorAuthValidateResponse"
 											}
 										],
@@ -13915,24 +13995,24 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								1006
+								1200
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1005
+								1199
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								1017,
-								1011,
-								1009,
-								1014
+								1211,
+								1205,
+								1203,
+								1208
 							]
 						}
 					],
@@ -13950,7 +14030,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						1004
+						1198
 					]
 				}
 			],
@@ -13963,7 +14043,7 @@
 			]
 		},
 		{
-			"id": 1058,
+			"id": 1225,
 			"name": "\"src/Users/index\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -13973,7 +14053,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/Users/index.ts",
 			"children": [
 				{
-					"id": 1059,
+					"id": 1226,
 					"name": "Users",
 					"kind": 128,
 					"kindString": "Class",
@@ -13982,7 +14062,7 @@
 					},
 					"children": [
 						{
-							"id": 1061,
+							"id": 1228,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -13994,7 +14074,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1062,
+									"id": 1229,
 									"name": "new Users",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -14006,7 +14086,7 @@
 									},
 									"parameters": [
 										{
-											"id": 1063,
+											"id": 1230,
 											"name": "client",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -14018,14 +14098,14 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										}
 									],
 									"type": {
 										"type": "reference",
-										"id": 1059,
+										"id": 1226,
 										"name": "Users"
 									}
 								}
@@ -14039,7 +14119,7 @@
 							]
 						},
 						{
-							"id": 1060,
+							"id": 1227,
 							"name": "_client",
 							"kind": 1024,
 							"kindString": "Property",
@@ -14058,12 +14138,12 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						},
 						{
-							"id": 1071,
+							"id": 1238,
 							"name": "requestAccountDeletion",
 							"kind": 2048,
 							"kindString": "Method",
@@ -14072,7 +14152,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1072,
+									"id": 1239,
 									"name": "requestAccountDeletion",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -14087,7 +14167,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 1020,
+												"id": 958,
 												"name": "User"
 											}
 										],
@@ -14104,7 +14184,7 @@
 							]
 						},
 						{
-							"id": 1064,
+							"id": 1231,
 							"name": "self",
 							"kind": 2048,
 							"kindString": "Method",
@@ -14113,7 +14193,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1065,
+									"id": 1232,
 									"name": "self",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -14129,7 +14209,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 1020,
+												"id": 958,
 												"name": "User"
 											}
 										],
@@ -14146,7 +14226,7 @@
 							]
 						},
 						{
-							"id": 1069,
+							"id": 1236,
 							"name": "stopFreeTrial",
 							"kind": 2048,
 							"kindString": "Method",
@@ -14155,7 +14235,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1070,
+									"id": 1237,
 									"name": "stopFreeTrial",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -14186,7 +14266,7 @@
 							]
 						},
 						{
-							"id": 1066,
+							"id": 1233,
 							"name": "updateAccount",
 							"kind": 2048,
 							"kindString": "Method",
@@ -14195,7 +14275,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1067,
+									"id": 1234,
 									"name": "updateAccount",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -14208,7 +14288,7 @@
 									},
 									"parameters": [
 										{
-											"id": 1068,
+											"id": 1235,
 											"name": "attributes",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -14220,7 +14300,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1047,
+												"id": 1214,
 												"name": "UpdateParams"
 											}
 										}
@@ -14230,7 +14310,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 1020,
+												"id": 958,
 												"name": "User"
 											}
 										],
@@ -14252,24 +14332,24 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								1061
+								1228
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1060
+								1227
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								1071,
-								1064,
-								1069,
-								1066
+								1238,
+								1231,
+								1236,
+								1233
 							]
 						}
 					],
@@ -14287,7 +14367,7 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						1059
+						1226
 					]
 				}
 			],
@@ -14855,7 +14935,7 @@
 			]
 		},
 		{
-			"id": 1073,
+			"id": 1240,
 			"name": "\"src/index\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -14865,7 +14945,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/index.ts",
 			"children": [
 				{
-					"id": 1079,
+					"id": 1246,
 					"name": "Client",
 					"kind": 128,
 					"kindString": "Class",
@@ -14874,7 +14954,7 @@
 					},
 					"children": [
 						{
-							"id": 1085,
+							"id": 1252,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -14886,7 +14966,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1086,
+									"id": 1253,
 									"name": "new Client",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -14898,7 +14978,7 @@
 									},
 									"parameters": [
 										{
-											"id": 1087,
+											"id": 1254,
 											"name": "token",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -14914,7 +14994,7 @@
 											}
 										},
 										{
-											"id": 1088,
+											"id": 1255,
 											"name": "opts",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -14926,7 +15006,7 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1074,
+												"id": 1241,
 												"name": "ScalingoClientOptions"
 											},
 											"defaultValue": "{}"
@@ -14934,7 +15014,7 @@
 									],
 									"type": {
 										"type": "reference",
-										"id": 1079,
+										"id": 1246,
 										"name": "Client"
 									}
 								}
@@ -14948,7 +15028,7 @@
 							]
 						},
 						{
-							"id": 1090,
+							"id": 1257,
 							"name": "Addons",
 							"kind": 1024,
 							"kindString": "Property",
@@ -14964,13 +15044,13 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1183,
+								"id": 1307,
 								"name": "Addons"
 							},
 							"defaultValue": "new Addons(this)"
 						},
 						{
-							"id": 1091,
+							"id": 1258,
 							"name": "Alerts",
 							"kind": 1024,
 							"kindString": "Property",
@@ -14992,7 +15072,7 @@
 							"defaultValue": "new Alerts(this)"
 						},
 						{
-							"id": 1089,
+							"id": 1256,
 							"name": "Apps",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15014,7 +15094,7 @@
 							"defaultValue": "new Apps(this)"
 						},
 						{
-							"id": 1092,
+							"id": 1259,
 							"name": "Billing",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15036,7 +15116,7 @@
 							"defaultValue": "new Billing(this)"
 						},
 						{
-							"id": 1093,
+							"id": 1260,
 							"name": "Collaborators",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15058,7 +15138,7 @@
 							"defaultValue": "new Collaborators(this)"
 						},
 						{
-							"id": 1094,
+							"id": 1261,
 							"name": "Containers",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15080,7 +15160,7 @@
 							"defaultValue": "new Containers(this)"
 						},
 						{
-							"id": 1095,
+							"id": 1262,
 							"name": "Deployments",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15102,7 +15182,7 @@
 							"defaultValue": "new Deployments(this)"
 						},
 						{
-							"id": 1096,
+							"id": 1263,
 							"name": "Domains",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15124,7 +15204,7 @@
 							"defaultValue": "new Domains(this)"
 						},
 						{
-							"id": 1097,
+							"id": 1264,
 							"name": "Environment",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15146,7 +15226,7 @@
 							"defaultValue": "new Environment(this)"
 						},
 						{
-							"id": 1098,
+							"id": 1265,
 							"name": "Events",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15168,7 +15248,7 @@
 							"defaultValue": "new Events(this)"
 						},
 						{
-							"id": 1099,
+							"id": 1266,
 							"name": "Keys",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15190,7 +15270,7 @@
 							"defaultValue": "new Keys(this)"
 						},
 						{
-							"id": 1100,
+							"id": 1267,
 							"name": "Logs",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15212,7 +15292,7 @@
 							"defaultValue": "new Logs(this)"
 						},
 						{
-							"id": 1101,
+							"id": 1268,
 							"name": "Metrics",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15234,7 +15314,7 @@
 							"defaultValue": "new Metrics(this)"
 						},
 						{
-							"id": 1103,
+							"id": 1270,
 							"name": "NotificationPlatforms",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15256,7 +15336,7 @@
 							"defaultValue": "new NotificationPlatforms(this)"
 						},
 						{
-							"id": 1102,
+							"id": 1269,
 							"name": "Notifiers",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15278,7 +15358,7 @@
 							"defaultValue": "new Notifiers(this)"
 						},
 						{
-							"id": 1104,
+							"id": 1271,
 							"name": "Operations",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15300,7 +15380,7 @@
 							"defaultValue": "new Operations(this)"
 						},
 						{
-							"id": 1105,
+							"id": 1272,
 							"name": "SCMIntegrations",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15322,7 +15402,7 @@
 							"defaultValue": "new SCMIntegrations(this)"
 						},
 						{
-							"id": 1106,
+							"id": 1273,
 							"name": "SCMRepoLinks",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15338,13 +15418,13 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 912,
+								"id": 1133,
 								"name": "SCMRepoLinks"
 							},
 							"defaultValue": "new SCMRepoLinks(this)"
 						},
 						{
-							"id": 1107,
+							"id": 1274,
 							"name": "Stats",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15360,13 +15440,13 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 952,
+								"id": 1170,
 								"name": "Stats"
 							},
 							"defaultValue": "new Stats(this)"
 						},
 						{
-							"id": 1108,
+							"id": 1275,
 							"name": "Tokens",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15382,13 +15462,13 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 968,
+								"id": 1178,
 								"name": "Tokens"
 							},
 							"defaultValue": "new Tokens(this)"
 						},
 						{
-							"id": 1109,
+							"id": 1276,
 							"name": "TwoFactorAuth",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15404,13 +15484,13 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1004,
+								"id": 1198,
 								"name": "TwoFactorAuth"
 							},
 							"defaultValue": "new TwoFactorAuth(this)"
 						},
 						{
-							"id": 1110,
+							"id": 1277,
 							"name": "Users",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15426,13 +15506,13 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1059,
+								"id": 1226,
 								"name": "Users"
 							},
 							"defaultValue": "new Users(this)"
 						},
 						{
-							"id": 1081,
+							"id": 1248,
 							"name": "_apiUrl",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15455,7 +15535,7 @@
 							}
 						},
 						{
-							"id": 1082,
+							"id": 1249,
 							"name": "_authApiUrl",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15478,7 +15558,7 @@
 							}
 						},
 						{
-							"id": 1083,
+							"id": 1250,
 							"name": "_billingApiUrl",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15501,7 +15581,7 @@
 							}
 						},
 						{
-							"id": 1084,
+							"id": 1251,
 							"name": "_headers",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15534,7 +15614,7 @@
 							}
 						},
 						{
-							"id": 1080,
+							"id": 1247,
 							"name": "_token",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15557,7 +15637,7 @@
 							}
 						},
 						{
-							"id": 1111,
+							"id": 1278,
 							"name": "apiClient",
 							"kind": 2048,
 							"kindString": "Method",
@@ -15566,7 +15646,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1112,
+									"id": 1279,
 									"name": "apiClient",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -15592,7 +15672,7 @@
 							]
 						},
 						{
-							"id": 1113,
+							"id": 1280,
 							"name": "authApiClient",
 							"kind": 2048,
 							"kindString": "Method",
@@ -15601,7 +15681,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1114,
+									"id": 1281,
 									"name": "authApiClient",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -15627,7 +15707,7 @@
 							]
 						},
 						{
-							"id": 1115,
+							"id": 1282,
 							"name": "billingApiClient",
 							"kind": 2048,
 							"kindString": "Method",
@@ -15636,7 +15716,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1116,
+									"id": 1283,
 									"name": "billingApiClient",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -15662,7 +15742,7 @@
 							]
 						},
 						{
-							"id": 1117,
+							"id": 1284,
 							"name": "unauthenticatedClient",
 							"kind": 2048,
 							"kindString": "Method",
@@ -15671,7 +15751,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1118,
+									"id": 1285,
 									"name": "unauthenticatedClient",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -15702,50 +15782,50 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								1085
+								1252
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1090,
-								1091,
-								1089,
-								1092,
-								1093,
-								1094,
-								1095,
-								1096,
-								1097,
-								1098,
-								1099,
-								1100,
-								1101,
-								1103,
-								1102,
-								1104,
-								1105,
-								1106,
-								1107,
-								1108,
-								1109,
-								1110,
-								1081,
-								1082,
-								1083,
-								1084,
-								1080
+								1257,
+								1258,
+								1256,
+								1259,
+								1260,
+								1261,
+								1262,
+								1263,
+								1264,
+								1265,
+								1266,
+								1267,
+								1268,
+								1270,
+								1269,
+								1271,
+								1272,
+								1273,
+								1274,
+								1275,
+								1276,
+								1277,
+								1248,
+								1249,
+								1250,
+								1251,
+								1247
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								1111,
-								1113,
-								1115,
-								1117
+								1278,
+								1280,
+								1282,
+								1284
 							]
 						}
 					],
@@ -15758,7 +15838,7 @@
 					]
 				},
 				{
-					"id": 1119,
+					"id": 1286,
 					"name": "EndpointClient",
 					"kind": 128,
 					"kindString": "Class",
@@ -15767,7 +15847,7 @@
 					},
 					"children": [
 						{
-							"id": 1121,
+							"id": 1288,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
@@ -15779,7 +15859,7 @@
 							},
 							"signatures": [
 								{
-									"id": 1122,
+									"id": 1289,
 									"name": "new EndpointClient",
 									"kind": 16384,
 									"kindString": "Constructor signature",
@@ -15791,7 +15871,7 @@
 									},
 									"parameters": [
 										{
-											"id": 1123,
+											"id": 1290,
 											"name": "client",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -15803,14 +15883,14 @@
 											},
 											"type": {
 												"type": "reference",
-												"id": 1079,
+												"id": 1246,
 												"name": "Client"
 											}
 										}
 									],
 									"type": {
 										"type": "reference",
-										"id": 1119,
+										"id": 1286,
 										"name": "EndpointClient"
 									}
 								}
@@ -15824,7 +15904,7 @@
 							]
 						},
 						{
-							"id": 1120,
+							"id": 1287,
 							"name": "_client",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15843,7 +15923,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1079,
+								"id": 1246,
 								"name": "Client"
 							}
 						}
@@ -15853,14 +15933,14 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								1121
+								1288
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1120
+								1287
 							]
 						}
 					],
@@ -15873,7 +15953,7 @@
 					]
 				},
 				{
-					"id": 1074,
+					"id": 1241,
 					"name": "ScalingoClientOptions",
 					"kind": 256,
 					"kindString": "Interface",
@@ -15882,7 +15962,7 @@
 					},
 					"children": [
 						{
-							"id": 1075,
+							"id": 1242,
 							"name": "apiUrl",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15912,7 +15992,7 @@
 							}
 						},
 						{
-							"id": 1076,
+							"id": 1243,
 							"name": "authApiUrl",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15942,7 +16022,7 @@
 							}
 						},
 						{
-							"id": 1077,
+							"id": 1244,
 							"name": "billingApiUrl",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15972,7 +16052,7 @@
 							}
 						},
 						{
-							"id": 1078,
+							"id": 1245,
 							"name": "noUserAgent",
 							"kind": 1024,
 							"kindString": "Property",
@@ -16011,10 +16091,10 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1075,
-								1076,
-								1077,
-								1078
+								1242,
+								1243,
+								1244,
+								1245
 							]
 						}
 					],
@@ -16027,7 +16107,7 @@
 					]
 				},
 				{
-					"id": 1129,
+					"id": 1296,
 					"name": "clientFromToken",
 					"kind": 64,
 					"kindString": "Function",
@@ -16036,7 +16116,7 @@
 					},
 					"signatures": [
 						{
-							"id": 1130,
+							"id": 1297,
 							"name": "clientFromToken",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -16048,7 +16128,7 @@
 							},
 							"parameters": [
 								{
-									"id": 1131,
+									"id": 1298,
 									"name": "token",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -16064,7 +16144,7 @@
 									}
 								},
 								{
-									"id": 1132,
+									"id": 1299,
 									"name": "opts",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -16076,7 +16156,7 @@
 									},
 									"type": {
 										"type": "reference",
-										"id": 1074,
+										"id": 1241,
 										"name": "ScalingoClientOptions"
 									}
 								}
@@ -16086,7 +16166,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 1079,
+										"id": 1246,
 										"name": "Client"
 									}
 								],
@@ -16103,7 +16183,7 @@
 					]
 				},
 				{
-					"id": 1124,
+					"id": 1291,
 					"name": "defaultClientOptions",
 					"kind": 2097152,
 					"kindString": "Object literal",
@@ -16113,7 +16193,7 @@
 					},
 					"children": [
 						{
-							"id": 1125,
+							"id": 1292,
 							"name": "apiUrl",
 							"kind": 32,
 							"kindString": "Variable",
@@ -16134,7 +16214,7 @@
 							"defaultValue": "\"https://api.scalingo.com\""
 						},
 						{
-							"id": 1126,
+							"id": 1293,
 							"name": "authApiUrl",
 							"kind": 32,
 							"kindString": "Variable",
@@ -16155,7 +16235,7 @@
 							"defaultValue": "\"https://auth.scalingo.com\""
 						},
 						{
-							"id": 1127,
+							"id": 1294,
 							"name": "billingApiUrl",
 							"kind": 32,
 							"kindString": "Variable",
@@ -16176,7 +16256,7 @@
 							"defaultValue": "\"https://cashmachine.scalingo.com\""
 						},
 						{
-							"id": 1128,
+							"id": 1295,
 							"name": "noUserAgent",
 							"kind": 32,
 							"kindString": "Variable",
@@ -16202,10 +16282,10 @@
 							"title": "Variables",
 							"kind": 32,
 							"children": [
-								1125,
-								1126,
-								1127,
-								1128
+								1292,
+								1293,
+								1294,
+								1295
 							]
 						}
 					],
@@ -16227,29 +16307,29 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						1079,
-						1119
+						1246,
+						1286
 					]
 				},
 				{
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						1074
+						1241
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						1129
+						1296
 					]
 				},
 				{
 					"title": "Object literals",
 					"kind": 2097152,
 					"children": [
-						1124
+						1291
 					]
 				}
 			],
@@ -16567,7 +16647,7 @@
 			]
 		},
 		{
-			"id": 1270,
+			"id": 984,
 			"name": "\"src/models/auth/index\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -16577,7 +16657,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/models/auth/index.ts",
 			"children": [
 				{
-					"id": 1277,
+					"id": 991,
 					"name": "Branch",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -16587,27 +16667,27 @@
 					"target": 824
 				},
 				{
-					"id": 1280,
+					"id": 994,
 					"name": "DEFAULT_PROVIDER",
 					"kind": 16777216,
 					"kindString": "Reference",
 					"flags": {
 						"isExported": true
 					},
-					"target": 1001
+					"target": 955
 				},
 				{
-					"id": 1286,
+					"id": 1000,
 					"name": "GithubProfile",
 					"kind": 16777216,
 					"kindString": "Reference",
 					"flags": {
 						"isExported": true
 					},
-					"target": 1041
+					"target": 979
 				},
 				{
-					"id": 1271,
+					"id": 985,
 					"name": "Key",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -16617,7 +16697,7 @@
 					"target": 594
 				},
 				{
-					"id": 1276,
+					"id": 990,
 					"name": "Organization",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -16627,7 +16707,7 @@
 					"target": 818
 				},
 				{
-					"id": 1274,
+					"id": 988,
 					"name": "PullRequest",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -16637,7 +16717,7 @@
 					"target": 807
 				},
 				{
-					"id": 1275,
+					"id": 989,
 					"name": "Repository",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -16647,7 +16727,7 @@
 					"target": 812
 				},
 				{
-					"id": 1273,
+					"id": 987,
 					"name": "SCMIntegration",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -16657,7 +16737,7 @@
 					"target": 796
 				},
 				{
-					"id": 1272,
+					"id": 986,
 					"name": "SCMType",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -16667,74 +16747,74 @@
 					"target": 826
 				},
 				{
-					"id": 1281,
+					"id": 995,
 					"name": "SUPPORTED_PROVIDERS",
 					"kind": 16777216,
 					"kindString": "Reference",
 					"flags": {
 						"isExported": true
 					},
-					"target": 1002
+					"target": 956
 				},
 				{
-					"id": 1279,
+					"id": 993,
 					"name": "TOTP_PROVIDER",
 					"kind": 16777216,
 					"kindString": "Reference",
 					"flags": {
 						"isExported": true
 					},
-					"target": 1000
+					"target": 954
 				},
 				{
-					"id": 1278,
+					"id": 992,
 					"name": "Token",
 					"kind": 16777216,
 					"kindString": "Reference",
 					"flags": {
 						"isExported": true
 					},
-					"target": 960
+					"target": 934
 				},
 				{
-					"id": 1283,
+					"id": 997,
 					"name": "TwoFactorAuthInitiateResponse",
 					"kind": 16777216,
 					"kindString": "Reference",
 					"flags": {
 						"isExported": true
 					},
-					"target": 992
+					"target": 946
 				},
 				{
-					"id": 1282,
+					"id": 996,
 					"name": "TwoFactorAuthObject",
 					"kind": 16777216,
 					"kindString": "Reference",
 					"flags": {
 						"isExported": true
 					},
-					"target": 988
+					"target": 942
 				},
 				{
-					"id": 1284,
+					"id": 998,
 					"name": "TwoFactorAuthValidateResponse",
 					"kind": 16777216,
 					"kindString": "Reference",
 					"flags": {
 						"isExported": true
 					},
-					"target": 997
+					"target": 951
 				},
 				{
-					"id": 1285,
+					"id": 999,
 					"name": "User",
 					"kind": 16777216,
 					"kindString": "Reference",
 					"flags": {
 						"isExported": true
 					},
-					"target": 1020
+					"target": 958
 				}
 			],
 			"groups": [
@@ -16742,22 +16822,22 @@
 					"title": "References",
 					"kind": 16777216,
 					"children": [
-						1277,
-						1280,
-						1286,
-						1271,
-						1276,
-						1274,
-						1275,
-						1273,
-						1272,
-						1281,
-						1279,
-						1278,
-						1283,
-						1282,
-						1284,
-						1285
+						991,
+						994,
+						1000,
+						985,
+						990,
+						988,
+						989,
+						987,
+						986,
+						995,
+						993,
+						992,
+						997,
+						996,
+						998,
+						999
 					]
 				}
 			],
@@ -17846,7 +17926,7 @@
 			]
 		},
 		{
-			"id": 959,
+			"id": 933,
 			"name": "\"src/models/auth/tokens\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -17856,7 +17936,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/models/auth/tokens.ts",
 			"children": [
 				{
-					"id": 960,
+					"id": 934,
 					"name": "Token",
 					"kind": 256,
 					"kindString": "Interface",
@@ -17865,7 +17945,7 @@
 					},
 					"children": [
 						{
-							"id": 963,
+							"id": 937,
 							"name": "created_at",
 							"kind": 1024,
 							"kindString": "Property",
@@ -17888,7 +17968,7 @@
 							}
 						},
 						{
-							"id": 961,
+							"id": 935,
 							"name": "id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -17911,7 +17991,7 @@
 							}
 						},
 						{
-							"id": 965,
+							"id": 939,
 							"name": "issued_at",
 							"kind": 1024,
 							"kindString": "Property",
@@ -17934,7 +18014,7 @@
 							}
 						},
 						{
-							"id": 964,
+							"id": 938,
 							"name": "last_used_at",
 							"kind": 1024,
 							"kindString": "Property",
@@ -17967,7 +18047,7 @@
 							}
 						},
 						{
-							"id": 962,
+							"id": 936,
 							"name": "name",
 							"kind": 1024,
 							"kindString": "Property",
@@ -17990,7 +18070,7 @@
 							}
 						},
 						{
-							"id": 966,
+							"id": 940,
 							"name": "token",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18028,12 +18108,12 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								963,
-								961,
-								965,
-								964,
-								962,
-								966
+								937,
+								935,
+								939,
+								938,
+								936,
+								940
 							]
 						}
 					],
@@ -18051,7 +18131,7 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						960
+						934
 					]
 				}
 			],
@@ -18064,7 +18144,7 @@
 			]
 		},
 		{
-			"id": 987,
+			"id": 941,
 			"name": "\"src/models/auth/two_factor_auth\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -18074,7 +18154,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/models/auth/two_factor_auth.ts",
 			"children": [
 				{
-					"id": 992,
+					"id": 946,
 					"name": "TwoFactorAuthInitiateResponse",
 					"kind": 256,
 					"kindString": "Interface",
@@ -18083,7 +18163,7 @@
 					},
 					"children": [
 						{
-							"id": 994,
+							"id": 948,
 							"name": "enabled",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18103,7 +18183,7 @@
 							}
 						},
 						{
-							"id": 995,
+							"id": 949,
 							"name": "provider",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18123,7 +18203,7 @@
 							}
 						},
 						{
-							"id": 996,
+							"id": 950,
 							"name": "uri",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18143,7 +18223,7 @@
 							}
 						},
 						{
-							"id": 993,
+							"id": 947,
 							"name": "uuid",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18168,10 +18248,10 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								994,
-								995,
-								996,
-								993
+								948,
+								949,
+								950,
+								947
 							]
 						}
 					],
@@ -18184,7 +18264,7 @@
 					]
 				},
 				{
-					"id": 988,
+					"id": 942,
 					"name": "TwoFactorAuthObject",
 					"kind": 256,
 					"kindString": "Interface",
@@ -18193,7 +18273,7 @@
 					},
 					"children": [
 						{
-							"id": 990,
+							"id": 944,
 							"name": "enabled",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18213,7 +18293,7 @@
 							}
 						},
 						{
-							"id": 991,
+							"id": 945,
 							"name": "provider",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18243,7 +18323,7 @@
 							}
 						},
 						{
-							"id": 989,
+							"id": 943,
 							"name": "uuid",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18268,9 +18348,9 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								990,
-								991,
-								989
+								944,
+								945,
+								943
 							]
 						}
 					],
@@ -18283,7 +18363,7 @@
 					]
 				},
 				{
-					"id": 997,
+					"id": 951,
 					"name": "TwoFactorAuthValidateResponse",
 					"kind": 256,
 					"kindString": "Interface",
@@ -18292,7 +18372,7 @@
 					},
 					"children": [
 						{
-							"id": 998,
+							"id": 952,
 							"name": "codes",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18318,7 +18398,7 @@
 							}
 						},
 						{
-							"id": 999,
+							"id": 953,
 							"name": "user",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18337,7 +18417,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 988,
+								"id": 942,
 								"name": "TwoFactorAuthObject"
 							}
 						}
@@ -18347,8 +18427,8 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								998,
-								999
+								952,
+								953
 							]
 						}
 					],
@@ -18361,7 +18441,7 @@
 					]
 				},
 				{
-					"id": 1001,
+					"id": 955,
 					"name": "DEFAULT_PROVIDER",
 					"kind": 32,
 					"kindString": "Variable",
@@ -18383,7 +18463,7 @@
 					"defaultValue": "TOTP_PROVIDER"
 				},
 				{
-					"id": 1002,
+					"id": 956,
 					"name": "SUPPORTED_PROVIDERS",
 					"kind": 32,
 					"kindString": "Variable",
@@ -18408,7 +18488,7 @@
 					"defaultValue": "[TOTP_PROVIDER]"
 				},
 				{
-					"id": 1000,
+					"id": 954,
 					"name": "TOTP_PROVIDER",
 					"kind": 32,
 					"kindString": "Variable",
@@ -18435,18 +18515,18 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						992,
-						988,
-						997
+						946,
+						942,
+						951
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						1001,
-						1002,
-						1000
+						955,
+						956,
+						954
 					]
 				}
 			],
@@ -18459,7 +18539,7 @@
 			]
 		},
 		{
-			"id": 1019,
+			"id": 957,
 			"name": "\"src/models/auth/user\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -18469,7 +18549,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/models/auth/user.ts",
 			"children": [
 				{
-					"id": 1041,
+					"id": 979,
 					"name": "GithubProfile",
 					"kind": 256,
 					"kindString": "Interface",
@@ -18478,7 +18558,7 @@
 					},
 					"children": [
 						{
-							"id": 1044,
+							"id": 982,
 							"name": "avatar_url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18498,7 +18578,7 @@
 							}
 						},
 						{
-							"id": 1043,
+							"id": 981,
 							"name": "email",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18531,7 +18611,7 @@
 							}
 						},
 						{
-							"id": 1045,
+							"id": 983,
 							"name": "profile_url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18551,7 +18631,7 @@
 							}
 						},
 						{
-							"id": 1042,
+							"id": 980,
 							"name": "username",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18579,10 +18659,10 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1044,
-								1043,
-								1045,
-								1042
+								982,
+								981,
+								983,
+								980
 							]
 						}
 					],
@@ -18595,7 +18675,7 @@
 					]
 				},
 				{
-					"id": 1020,
+					"id": 958,
 					"name": "User",
 					"kind": 256,
 					"kindString": "Interface",
@@ -18604,7 +18684,7 @@
 					},
 					"children": [
 						{
-							"id": 1025,
+							"id": 963,
 							"name": "company",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18633,7 +18713,7 @@
 							}
 						},
 						{
-							"id": 1032,
+							"id": 970,
 							"name": "created_at",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18653,7 +18733,7 @@
 							}
 						},
 						{
-							"id": 1022,
+							"id": 960,
 							"name": "email",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18673,7 +18753,7 @@
 							}
 						},
 						{
-							"id": 1030,
+							"id": 968,
 							"name": "email_newsletter",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18693,7 +18773,7 @@
 							}
 						},
 						{
-							"id": 1035,
+							"id": 973,
 							"name": "flags",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18726,7 +18806,7 @@
 							}
 						},
 						{
-							"id": 1034,
+							"id": 972,
 							"name": "free_trial_end_time",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18746,7 +18826,7 @@
 							}
 						},
 						{
-							"id": 1033,
+							"id": 971,
 							"name": "free_trial_started_at",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18766,7 +18846,7 @@
 							}
 						},
 						{
-							"id": 1027,
+							"id": 965,
 							"name": "fullname",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18786,7 +18866,7 @@
 							}
 						},
 						{
-							"id": 1028,
+							"id": 966,
 							"name": "github",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18805,12 +18885,12 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1041,
+								"id": 979,
 								"name": "GithubProfile"
 							}
 						},
 						{
-							"id": 1021,
+							"id": 959,
 							"name": "id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18830,7 +18910,7 @@
 							}
 						},
 						{
-							"id": 1036,
+							"id": 974,
 							"name": "limits",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18869,7 +18949,7 @@
 							}
 						},
 						{
-							"id": 1026,
+							"id": 964,
 							"name": "location",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18898,7 +18978,7 @@
 							}
 						},
 						{
-							"id": 1038,
+							"id": 976,
 							"name": "referral_clicks",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18918,7 +18998,7 @@
 							}
 						},
 						{
-							"id": 1037,
+							"id": 975,
 							"name": "referral_url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18938,7 +19018,7 @@
 							}
 						},
 						{
-							"id": 1039,
+							"id": 977,
 							"name": "suspended_at",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18967,7 +19047,7 @@
 							}
 						},
 						{
-							"id": 1040,
+							"id": 978,
 							"name": "suspension_reason",
 							"kind": 1024,
 							"kindString": "Property",
@@ -18996,7 +19076,7 @@
 							}
 						},
 						{
-							"id": 1029,
+							"id": 967,
 							"name": "tos_accepted",
 							"kind": 1024,
 							"kindString": "Property",
@@ -19019,7 +19099,7 @@
 							}
 						},
 						{
-							"id": 1031,
+							"id": 969,
 							"name": "unconfirmed_email",
 							"kind": 1024,
 							"kindString": "Property",
@@ -19048,7 +19128,7 @@
 							}
 						},
 						{
-							"id": 1023,
+							"id": 961,
 							"name": "username",
 							"kind": 1024,
 							"kindString": "Property",
@@ -19068,7 +19148,7 @@
 							}
 						},
 						{
-							"id": 1024,
+							"id": 962,
 							"name": "uuid",
 							"kind": 1024,
 							"kindString": "Property",
@@ -19093,26 +19173,26 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1025,
-								1032,
-								1022,
-								1030,
-								1035,
-								1034,
-								1033,
-								1027,
-								1028,
-								1021,
-								1036,
-								1026,
-								1038,
-								1037,
-								1039,
-								1040,
-								1029,
-								1031,
-								1023,
-								1024
+								963,
+								970,
+								960,
+								968,
+								973,
+								972,
+								971,
+								965,
+								966,
+								959,
+								974,
+								964,
+								976,
+								975,
+								977,
+								978,
+								967,
+								969,
+								961,
+								962
 							]
 						}
 					],
@@ -19130,8 +19210,8 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						1041,
-						1020
+						979,
+						958
 					]
 				}
 			],
@@ -19144,7 +19224,7 @@
 			]
 		},
 		{
-			"id": 1287,
+			"id": 1380,
 			"name": "\"src/models/billing/index\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -19154,7 +19234,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/models/billing/index.ts",
 			"children": [
 				{
-					"id": 1288,
+					"id": 1381,
 					"name": "BillingProfile",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -19164,7 +19244,7 @@
 					"target": 291
 				},
 				{
-					"id": 1290,
+					"id": 1383,
 					"name": "PaypalPaymentMethod",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -19174,7 +19254,7 @@
 					"target": 318
 				},
 				{
-					"id": 1289,
+					"id": 1382,
 					"name": "StripePaymentMethod",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -19189,9 +19269,9 @@
 					"title": "References",
 					"kind": 16777216,
 					"children": [
-						1288,
-						1290,
-						1289
+						1381,
+						1383,
+						1382
 					]
 				}
 			],
@@ -20022,7 +20102,7 @@
 			]
 		},
 		{
-			"id": 1133,
+			"id": 1001,
 			"name": "\"src/models/regional/addons\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -20032,7 +20112,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/models/regional/addons.ts",
 			"children": [
 				{
-					"id": 1134,
+					"id": 1002,
 					"name": "Addon",
 					"kind": 256,
 					"kindString": "Interface",
@@ -20041,7 +20121,7 @@
 					},
 					"children": [
 						{
-							"id": 1141,
+							"id": 1009,
 							"name": "addon_provider",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20060,12 +20140,12 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1152,
+								"id": 1020,
 								"name": "AddonProvider"
 							}
 						},
 						{
-							"id": 1136,
+							"id": 1004,
 							"name": "app_id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20088,7 +20168,7 @@
 							}
 						},
 						{
-							"id": 1139,
+							"id": 1007,
 							"name": "deprovisioned_at",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20111,7 +20191,7 @@
 							}
 						},
 						{
-							"id": 1135,
+							"id": 1003,
 							"name": "id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20134,7 +20214,7 @@
 							}
 						},
 						{
-							"id": 1140,
+							"id": 1008,
 							"name": "plan",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20153,12 +20233,12 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1146,
+								"id": 1014,
 								"name": "Plan"
 							}
 						},
 						{
-							"id": 1138,
+							"id": 1006,
 							"name": "provisioned_at",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20181,7 +20261,7 @@
 							}
 						},
 						{
-							"id": 1137,
+							"id": 1005,
 							"name": "resource_id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20204,7 +20284,7 @@
 							}
 						},
 						{
-							"id": 1142,
+							"id": 1010,
 							"name": "status",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20245,14 +20325,14 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1141,
-								1136,
-								1139,
-								1135,
-								1140,
-								1138,
-								1137,
-								1142
+								1009,
+								1004,
+								1007,
+								1003,
+								1008,
+								1006,
+								1005,
+								1010
 							]
 						}
 					],
@@ -20265,7 +20345,7 @@
 					]
 				},
 				{
-					"id": 1152,
+					"id": 1020,
 					"name": "AddonProvider",
 					"kind": 256,
 					"kindString": "Interface",
@@ -20274,7 +20354,7 @@
 					},
 					"children": [
 						{
-							"id": 1158,
+							"id": 1026,
 							"name": "category",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20293,12 +20373,12 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1162,
+								"id": 1030,
 								"name": "Category"
 							}
 						},
 						{
-							"id": 1157,
+							"id": 1025,
 							"name": "description",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20321,7 +20401,7 @@
 							}
 						},
 						{
-							"id": 1153,
+							"id": 1021,
 							"name": "id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20344,7 +20424,7 @@
 							}
 						},
 						{
-							"id": 1155,
+							"id": 1023,
 							"name": "logo_url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20367,7 +20447,7 @@
 							}
 						},
 						{
-							"id": 1154,
+							"id": 1022,
 							"name": "name",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20390,7 +20470,7 @@
 							}
 						},
 						{
-							"id": 1161,
+							"id": 1029,
 							"name": "plans",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20411,13 +20491,13 @@
 								"type": "array",
 								"elementType": {
 									"type": "reference",
-									"id": 1146,
+									"id": 1014,
 									"name": "Plan"
 								}
 							}
 						},
 						{
-							"id": 1159,
+							"id": 1027,
 							"name": "provider_name",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20440,7 +20520,7 @@
 							}
 						},
 						{
-							"id": 1160,
+							"id": 1028,
 							"name": "provider_url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20463,7 +20543,7 @@
 							}
 						},
 						{
-							"id": 1156,
+							"id": 1024,
 							"name": "short_description",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20491,15 +20571,15 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1158,
-								1157,
-								1153,
-								1155,
-								1154,
-								1161,
-								1159,
-								1160,
-								1156
+								1026,
+								1025,
+								1021,
+								1023,
+								1022,
+								1029,
+								1027,
+								1028,
+								1024
 							]
 						}
 					],
@@ -20512,7 +20592,7 @@
 					]
 				},
 				{
-					"id": 1166,
+					"id": 1034,
 					"name": "AddonSso",
 					"kind": 256,
 					"kindString": "Interface",
@@ -20521,7 +20601,7 @@
 					},
 					"children": [
 						{
-							"id": 1171,
+							"id": 1039,
 							"name": "addon_provider",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20540,12 +20620,12 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1152,
+								"id": 1020,
 								"name": "AddonProvider"
 							}
 						},
 						{
-							"id": 1168,
+							"id": 1036,
 							"name": "appId",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20568,7 +20648,7 @@
 							}
 						},
 						{
-							"id": 1173,
+							"id": 1041,
 							"name": "deprovisioned_at",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20591,7 +20671,7 @@
 							}
 						},
 						{
-							"id": 1167,
+							"id": 1035,
 							"name": "id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20614,7 +20694,7 @@
 							}
 						},
 						{
-							"id": 1170,
+							"id": 1038,
 							"name": "plan",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20633,12 +20713,12 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1146,
+								"id": 1014,
 								"name": "Plan"
 							}
 						},
 						{
-							"id": 1172,
+							"id": 1040,
 							"name": "provisioned_at",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20661,7 +20741,7 @@
 							}
 						},
 						{
-							"id": 1169,
+							"id": 1037,
 							"name": "resourceId",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20684,7 +20764,7 @@
 							}
 						},
 						{
-							"id": 1175,
+							"id": 1043,
 							"name": "ssoUrl",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20707,7 +20787,7 @@
 							}
 						},
 						{
-							"id": 1174,
+							"id": 1042,
 							"name": "status",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20735,15 +20815,15 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1171,
-								1168,
-								1173,
-								1167,
-								1170,
-								1172,
-								1169,
-								1175,
-								1174
+								1039,
+								1036,
+								1041,
+								1035,
+								1038,
+								1040,
+								1037,
+								1043,
+								1042
 							]
 						}
 					],
@@ -20756,7 +20836,7 @@
 					]
 				},
 				{
-					"id": 1143,
+					"id": 1011,
 					"name": "AddonUpgradeResponse",
 					"kind": 256,
 					"kindString": "Interface",
@@ -20765,7 +20845,7 @@
 					},
 					"children": [
 						{
-							"id": 1145,
+							"id": 1013,
 							"name": "message",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20788,7 +20868,7 @@
 							}
 						},
 						{
-							"id": 1144,
+							"id": 1012,
 							"name": "vars",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20819,8 +20899,8 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1145,
-								1144
+								1013,
+								1012
 							]
 						}
 					],
@@ -20833,7 +20913,7 @@
 					]
 				},
 				{
-					"id": 1162,
+					"id": 1030,
 					"name": "Category",
 					"kind": 256,
 					"kindString": "Interface",
@@ -20842,7 +20922,7 @@
 					},
 					"children": [
 						{
-							"id": 1164,
+							"id": 1032,
 							"name": "description",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20865,7 +20945,7 @@
 							}
 						},
 						{
-							"id": 1163,
+							"id": 1031,
 							"name": "id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20888,7 +20968,7 @@
 							}
 						},
 						{
-							"id": 1165,
+							"id": 1033,
 							"name": "name",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20916,9 +20996,9 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1164,
-								1163,
-								1165
+								1032,
+								1031,
+								1033
 							]
 						}
 					],
@@ -20931,7 +21011,7 @@
 					]
 				},
 				{
-					"id": 1146,
+					"id": 1014,
 					"name": "Plan",
 					"kind": 256,
 					"kindString": "Interface",
@@ -20940,7 +21020,7 @@
 					},
 					"children": [
 						{
-							"id": 1151,
+							"id": 1019,
 							"name": "description",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20963,7 +21043,7 @@
 							}
 						},
 						{
-							"id": 1149,
+							"id": 1017,
 							"name": "display_name",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20986,7 +21066,7 @@
 							}
 						},
 						{
-							"id": 1147,
+							"id": 1015,
 							"name": "id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -21009,7 +21089,7 @@
 							}
 						},
 						{
-							"id": 1148,
+							"id": 1016,
 							"name": "name",
 							"kind": 1024,
 							"kindString": "Property",
@@ -21032,7 +21112,7 @@
 							}
 						},
 						{
-							"id": 1150,
+							"id": 1018,
 							"name": "price",
 							"kind": 1024,
 							"kindString": "Property",
@@ -21060,11 +21140,11 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1151,
-								1149,
-								1147,
-								1148,
-								1150
+								1019,
+								1017,
+								1015,
+								1016,
+								1018
 							]
 						}
 					],
@@ -21082,12 +21162,12 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						1134,
-						1152,
-						1166,
-						1143,
-						1162,
-						1146
+						1002,
+						1020,
+						1034,
+						1011,
+						1030,
+						1014
 					]
 				}
 			],
@@ -22287,7 +22367,7 @@
 			]
 		},
 		{
-			"id": 1217,
+			"id": 1044,
 			"name": "\"src/models/regional/autoscalers\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -22297,7 +22377,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/models/regional/autoscalers.ts",
 			"children": [
 				{
-					"id": 1218,
+					"id": 1045,
 					"name": "Autoscaler",
 					"kind": 256,
 					"kindString": "Interface",
@@ -22306,7 +22386,7 @@
 					},
 					"children": [
 						{
-							"id": 1230,
+							"id": 1057,
 							"name": "alert_id_scale_down",
 							"kind": 1024,
 							"kindString": "Property",
@@ -22329,7 +22409,7 @@
 							}
 						},
 						{
-							"id": 1229,
+							"id": 1056,
 							"name": "alert_id_scale_up",
 							"kind": 1024,
 							"kindString": "Property",
@@ -22352,7 +22432,7 @@
 							}
 						},
 						{
-							"id": 1223,
+							"id": 1050,
 							"name": "container_type",
 							"kind": 1024,
 							"kindString": "Property",
@@ -22375,7 +22455,7 @@
 							}
 						},
 						{
-							"id": 1220,
+							"id": 1047,
 							"name": "created_at",
 							"kind": 1024,
 							"kindString": "Property",
@@ -22398,7 +22478,7 @@
 							}
 						},
 						{
-							"id": 1228,
+							"id": 1055,
 							"name": "disabled",
 							"kind": 1024,
 							"kindString": "Property",
@@ -22421,7 +22501,7 @@
 							}
 						},
 						{
-							"id": 1219,
+							"id": 1046,
 							"name": "id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -22444,7 +22524,7 @@
 							}
 						},
 						{
-							"id": 1222,
+							"id": 1049,
 							"name": "last_scale",
 							"kind": 1024,
 							"kindString": "Property",
@@ -22467,7 +22547,7 @@
 							}
 						},
 						{
-							"id": 1225,
+							"id": 1052,
 							"name": "max_containers",
 							"kind": 1024,
 							"kindString": "Property",
@@ -22490,7 +22570,7 @@
 							}
 						},
 						{
-							"id": 1226,
+							"id": 1053,
 							"name": "metric",
 							"kind": 1024,
 							"kindString": "Property",
@@ -22523,7 +22603,7 @@
 							}
 						},
 						{
-							"id": 1224,
+							"id": 1051,
 							"name": "min_containers",
 							"kind": 1024,
 							"kindString": "Property",
@@ -22546,7 +22626,7 @@
 							}
 						},
 						{
-							"id": 1227,
+							"id": 1054,
 							"name": "target",
 							"kind": 1024,
 							"kindString": "Property",
@@ -22569,7 +22649,7 @@
 							}
 						},
 						{
-							"id": 1221,
+							"id": 1048,
 							"name": "updated_at",
 							"kind": 1024,
 							"kindString": "Property",
@@ -22597,18 +22677,18 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1230,
-								1229,
-								1223,
-								1220,
-								1228,
-								1219,
-								1222,
-								1225,
-								1226,
-								1224,
-								1227,
-								1221
+								1057,
+								1056,
+								1050,
+								1047,
+								1055,
+								1046,
+								1049,
+								1052,
+								1053,
+								1051,
+								1054,
+								1048
 							]
 						}
 					],
@@ -22626,7 +22706,7 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						1218
+						1045
 					]
 				}
 			],
@@ -25460,7 +25540,7 @@
 			]
 		},
 		{
-			"id": 1291,
+			"id": 1064,
 			"name": "\"src/models/regional/index\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -25470,7 +25550,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/models/regional/index.ts",
 			"children": [
 				{
-					"id": 1310,
+					"id": 1083,
 					"name": "ACCEPTED",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25480,47 +25560,47 @@
 					"target": 347
 				},
 				{
-					"id": 1292,
+					"id": 1065,
 					"name": "Addon",
 					"kind": 16777216,
 					"kindString": "Reference",
 					"flags": {
 						"isExported": true
 					},
-					"target": 1134
+					"target": 1002
 				},
 				{
-					"id": 1295,
+					"id": 1068,
 					"name": "AddonProvider",
 					"kind": 16777216,
 					"kindString": "Reference",
 					"flags": {
 						"isExported": true
 					},
-					"target": 1152
+					"target": 1020
 				},
 				{
-					"id": 1297,
+					"id": 1070,
 					"name": "AddonSso",
 					"kind": 16777216,
 					"kindString": "Reference",
 					"flags": {
 						"isExported": true
 					},
-					"target": 1166
+					"target": 1034
 				},
 				{
-					"id": 1293,
+					"id": 1066,
 					"name": "AddonUpgradeResponse",
 					"kind": 16777216,
 					"kindString": "Reference",
 					"flags": {
 						"isExported": true
 					},
-					"target": 1143
+					"target": 1011
 				},
 				{
-					"id": 1298,
+					"id": 1071,
 					"name": "Alert",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25530,7 +25610,7 @@
 					"target": 268
 				},
 				{
-					"id": 1308,
+					"id": 1081,
 					"name": "App",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25540,7 +25620,7 @@
 					"target": 187
 				},
 				{
-					"id": 1339,
+					"id": 1112,
 					"name": "AppEvents",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25550,7 +25630,7 @@
 					"target": 556
 				},
 				{
-					"id": 1309,
+					"id": 1082,
 					"name": "AppLinks",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25560,7 +25640,7 @@
 					"target": 207
 				},
 				{
-					"id": 1307,
+					"id": 1080,
 					"name": "AppStatus",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25570,7 +25650,7 @@
 					"target": 216
 				},
 				{
-					"id": 1342,
+					"id": 1115,
 					"name": "Archive",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25580,7 +25660,7 @@
 					"target": 646
 				},
 				{
-					"id": 1343,
+					"id": 1116,
 					"name": "ArchivesResult",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25590,27 +25670,27 @@
 					"target": 651
 				},
 				{
-					"id": 1299,
+					"id": 1072,
 					"name": "Autoscaler",
 					"kind": 16777216,
 					"kindString": "Reference",
 					"flags": {
 						"isExported": true
 					},
-					"target": 1218
+					"target": 1045
 				},
 				{
-					"id": 1296,
+					"id": 1069,
 					"name": "Category",
 					"kind": 16777216,
 					"kindString": "Reference",
 					"flags": {
 						"isExported": true
 					},
-					"target": 1162
+					"target": 1030
 				},
 				{
-					"id": 1313,
+					"id": 1086,
 					"name": "Collaborator",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25620,7 +25700,7 @@
 					"target": 336
 				},
 				{
-					"id": 1314,
+					"id": 1087,
 					"name": "CollaboratorInvitation",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25630,7 +25710,7 @@
 					"target": 341
 				},
 				{
-					"id": 1316,
+					"id": 1089,
 					"name": "Container",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25640,7 +25720,7 @@
 					"target": 407
 				},
 				{
-					"id": 1317,
+					"id": 1090,
 					"name": "ContainerSize",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25650,7 +25730,7 @@
 					"target": 411
 				},
 				{
-					"id": 1315,
+					"id": 1088,
 					"name": "ContainersOperation",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25660,7 +25740,7 @@
 					"target": 404
 				},
 				{
-					"id": 1318,
+					"id": 1091,
 					"name": "Deployment",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25670,7 +25750,7 @@
 					"target": 39
 				},
 				{
-					"id": 1320,
+					"id": 1093,
 					"name": "DeploymentLinks",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25680,7 +25760,7 @@
 					"target": 51
 				},
 				{
-					"id": 1319,
+					"id": 1092,
 					"name": "DeploymentPusher",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25690,7 +25770,7 @@
 					"target": 47
 				},
 				{
-					"id": 1333,
+					"id": 1106,
 					"name": "DeploymentStatus",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25700,7 +25780,7 @@
 					"target": 68
 				},
 				{
-					"id": 1322,
+					"id": 1095,
 					"name": "DeploymentsMeta",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25710,7 +25790,7 @@
 					"target": 56
 				},
 				{
-					"id": 1321,
+					"id": 1094,
 					"name": "DeploymentsResult",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25720,7 +25800,7 @@
 					"target": 53
 				},
 				{
-					"id": 1335,
+					"id": 1108,
 					"name": "Domain",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25730,7 +25810,7 @@
 					"target": 458
 				},
 				{
-					"id": 1347,
+					"id": 1120,
 					"name": "EMAIL",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25740,7 +25820,7 @@
 					"target": 773
 				},
 				{
-					"id": 1340,
+					"id": 1113,
 					"name": "Event",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25750,7 +25830,7 @@
 					"target": 559
 				},
 				{
-					"id": 1337,
+					"id": 1110,
 					"name": "EventCategory",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25760,7 +25840,7 @@
 					"target": 545
 				},
 				{
-					"id": 1338,
+					"id": 1111,
 					"name": "EventType",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25770,7 +25850,7 @@
 					"target": 550
 				},
 				{
-					"id": 1341,
+					"id": 1114,
 					"name": "EventUser",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25780,7 +25860,17 @@
 					"target": 567
 				},
 				{
-					"id": 1334,
+					"id": 1129,
+					"name": "FullPullRequest",
+					"kind": 16777216,
+					"kindString": "Reference",
+					"flags": {
+						"isExported": true
+					},
+					"target": 891
+				},
+				{
+					"id": 1107,
 					"name": "LetsEncryptStatus",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25790,7 +25880,7 @@
 					"target": 467
 				},
 				{
-					"id": 1345,
+					"id": 1118,
 					"name": "MetricType",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25800,7 +25890,7 @@
 					"target": 675
 				},
 				{
-					"id": 1344,
+					"id": 1117,
 					"name": "MetricTypes",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25810,7 +25900,7 @@
 					"target": 683
 				},
 				{
-					"id": 1351,
+					"id": 1124,
 					"name": "NotificationPlatform",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25820,7 +25910,7 @@
 					"target": 766
 				},
 				{
-					"id": 1352,
+					"id": 1125,
 					"name": "Notifier",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25830,7 +25920,7 @@
 					"target": 706
 				},
 				{
-					"id": 1311,
+					"id": 1084,
 					"name": "PENDING",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25840,17 +25930,17 @@
 					"target": 348
 				},
 				{
-					"id": 1294,
+					"id": 1067,
 					"name": "Plan",
 					"kind": 16777216,
 					"kindString": "Reference",
 					"flags": {
 						"isExported": true
 					},
-					"target": 1146
+					"target": 1014
 				},
 				{
-					"id": 1346,
+					"id": 1119,
 					"name": "Point",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25860,7 +25950,7 @@
 					"target": 680
 				},
 				{
-					"id": 1355,
+					"id": 1128,
 					"name": "PullRequest",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25870,7 +25960,7 @@
 					"target": 886
 				},
 				{
-					"id": 1348,
+					"id": 1121,
 					"name": "ROCKET_CHAT",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25880,17 +25970,27 @@
 					"target": 774
 				},
 				{
-					"id": 1356,
+					"id": 1131,
 					"name": "ReferralsStats",
 					"kind": 16777216,
 					"kindString": "Reference",
 					"flags": {
 						"isExported": true
 					},
-					"target": 946
+					"target": 1059
 				},
 				{
-					"id": 1354,
+					"id": 1130,
+					"name": "ReviewApp",
+					"kind": 16777216,
+					"kindString": "Reference",
+					"flags": {
+						"isExported": true
+					},
+					"target": 901
+				},
+				{
+					"id": 1127,
 					"name": "SCMRepoLink",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25900,17 +26000,17 @@
 					"target": 868
 				},
 				{
-					"id": 1353,
+					"id": 1126,
 					"name": "SCMType",
 					"kind": 16777216,
 					"kindString": "Reference",
 					"flags": {
 						"isExported": true
 					},
-					"target": 891
+					"target": 913
 				},
 				{
-					"id": 1349,
+					"id": 1122,
 					"name": "SLACK",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25920,7 +26020,7 @@
 					"target": 775
 				},
 				{
-					"id": 1331,
+					"id": 1104,
 					"name": "STATUS_ABORTED",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25930,7 +26030,7 @@
 					"target": 66
 				},
 				{
-					"id": 1306,
+					"id": 1079,
 					"name": "STATUS_BOOTING",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25940,7 +26040,7 @@
 					"target": 215
 				},
 				{
-					"id": 1324,
+					"id": 1097,
 					"name": "STATUS_BUILDING",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25950,7 +26050,7 @@
 					"target": 59
 				},
 				{
-					"id": 1330,
+					"id": 1103,
 					"name": "STATUS_BUILD_ERROR",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25960,7 +26060,7 @@
 					"target": 65
 				},
 				{
-					"id": 1303,
+					"id": 1076,
 					"name": "STATUS_CRASHED",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25970,7 +26070,7 @@
 					"target": 212
 				},
 				{
-					"id": 1328,
+					"id": 1101,
 					"name": "STATUS_CRASHED_ERROR",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25980,7 +26080,7 @@
 					"target": 63
 				},
 				{
-					"id": 1332,
+					"id": 1105,
 					"name": "STATUS_HOOK_ERROR",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -25990,7 +26090,7 @@
 					"target": 67
 				},
 				{
-					"id": 1300,
+					"id": 1073,
 					"name": "STATUS_NEW",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -26000,7 +26100,7 @@
 					"target": 209
 				},
 				{
-					"id": 1325,
+					"id": 1098,
 					"name": "STATUS_PUSHING",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -26010,7 +26110,7 @@
 					"target": 60
 				},
 				{
-					"id": 1323,
+					"id": 1096,
 					"name": "STATUS_QUEUED",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -26020,7 +26120,7 @@
 					"target": 58
 				},
 				{
-					"id": 1304,
+					"id": 1077,
 					"name": "STATUS_RESTARTING",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -26030,7 +26130,7 @@
 					"target": 213
 				},
 				{
-					"id": 1302,
+					"id": 1075,
 					"name": "STATUS_RUNNING",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -26040,7 +26140,7 @@
 					"target": 211
 				},
 				{
-					"id": 1305,
+					"id": 1078,
 					"name": "STATUS_SCALING",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -26050,7 +26150,7 @@
 					"target": 214
 				},
 				{
-					"id": 1326,
+					"id": 1099,
 					"name": "STATUS_STARTING",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -26060,7 +26160,7 @@
 					"target": 61
 				},
 				{
-					"id": 1301,
+					"id": 1074,
 					"name": "STATUS_STOPPED",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -26070,7 +26170,7 @@
 					"target": 210
 				},
 				{
-					"id": 1327,
+					"id": 1100,
 					"name": "STATUS_SUCCESS",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -26080,7 +26180,7 @@
 					"target": 62
 				},
 				{
-					"id": 1329,
+					"id": 1102,
 					"name": "STATUS_TIMEOUT_ERROR",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -26090,7 +26190,7 @@
 					"target": 64
 				},
 				{
-					"id": 1312,
+					"id": 1085,
 					"name": "USER_ACCOUNT_DELETED",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -26100,7 +26200,7 @@
 					"target": 349
 				},
 				{
-					"id": 1336,
+					"id": 1109,
 					"name": "Variable",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -26110,7 +26210,7 @@
 					"target": 504
 				},
 				{
-					"id": 1350,
+					"id": 1123,
 					"name": "WEBHOOK",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -26125,71 +26225,73 @@
 					"title": "References",
 					"kind": 16777216,
 					"children": [
-						1310,
-						1292,
-						1295,
-						1297,
-						1293,
-						1298,
-						1308,
-						1339,
-						1309,
-						1307,
-						1342,
-						1343,
-						1299,
-						1296,
-						1313,
-						1314,
-						1316,
-						1317,
-						1315,
-						1318,
-						1320,
-						1319,
-						1333,
-						1322,
-						1321,
-						1335,
-						1347,
-						1340,
-						1337,
-						1338,
-						1341,
-						1334,
-						1345,
-						1344,
-						1351,
-						1352,
-						1311,
-						1294,
-						1346,
-						1355,
-						1348,
-						1356,
-						1354,
-						1353,
-						1349,
-						1331,
-						1306,
-						1324,
-						1330,
-						1303,
-						1328,
-						1332,
-						1300,
-						1325,
-						1323,
-						1304,
-						1302,
-						1305,
-						1326,
-						1301,
-						1327,
-						1329,
-						1312,
-						1336,
-						1350
+						1083,
+						1065,
+						1068,
+						1070,
+						1066,
+						1071,
+						1081,
+						1112,
+						1082,
+						1080,
+						1115,
+						1116,
+						1072,
+						1069,
+						1086,
+						1087,
+						1089,
+						1090,
+						1088,
+						1091,
+						1093,
+						1092,
+						1106,
+						1095,
+						1094,
+						1108,
+						1120,
+						1113,
+						1110,
+						1111,
+						1114,
+						1129,
+						1107,
+						1118,
+						1117,
+						1124,
+						1125,
+						1084,
+						1067,
+						1119,
+						1128,
+						1121,
+						1131,
+						1130,
+						1127,
+						1126,
+						1122,
+						1104,
+						1079,
+						1097,
+						1103,
+						1076,
+						1101,
+						1105,
+						1073,
+						1098,
+						1096,
+						1077,
+						1075,
+						1078,
+						1099,
+						1074,
+						1100,
+						1102,
+						1085,
+						1109,
+						1123
 					]
 				}
 			],
@@ -27417,6 +27519,233 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/models/regional/scm_repo_links.ts",
 			"children": [
 				{
+					"id": 891,
+					"name": "FullPullRequest",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 898,
+							"name": "base_ref",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/scm_repo_links.ts",
+									"line": 88,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 896,
+							"name": "branch_name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/scm_repo_links.ts",
+									"line": 86,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 900,
+							"name": "closed_at",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/scm_repo_links.ts",
+									"line": 90,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 899,
+							"name": "created_at",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/scm_repo_links.ts",
+									"line": 89,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 892,
+							"name": "html_url",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "URL to the pull/merge request"
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/scm_repo_links.ts",
+									"line": 79,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 893,
+							"name": "number",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Number identifying the pull/merge request on the SCM tool"
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/scm_repo_links.ts",
+									"line": 81,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 897,
+							"name": "ref",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/scm_repo_links.ts",
+									"line": 87,
+									"character": 5
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 894,
+							"name": "title",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "Title of the pull/merge request"
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/scm_repo_links.ts",
+									"line": 83,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 895,
+							"name": "url",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"comment": {
+								"shortText": "API URL to the pull/merge request"
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/scm_repo_links.ts",
+									"line": 85,
+									"character": 5
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								898,
+								896,
+								900,
+								899,
+								892,
+								893,
+								897,
+								894,
+								895
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/models/regional/scm_repo_links.ts",
+							"line": 77,
+							"character": 32
+						}
+					]
+				},
+				{
 					"id": 886,
 					"name": "PullRequest",
 					"kind": 256,
@@ -27447,7 +27776,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/regional/scm_repo_links.ts",
-									"line": 66,
+									"line": 68,
 									"character": 10
 								}
 							],
@@ -27467,7 +27796,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/regional/scm_repo_links.ts",
-									"line": 63,
+									"line": 65,
 									"character": 4
 								}
 							],
@@ -27490,7 +27819,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/regional/scm_repo_links.ts",
-									"line": 69,
+									"line": 71,
 									"character": 8
 								}
 							],
@@ -27513,7 +27842,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/regional/scm_repo_links.ts",
-									"line": 72,
+									"line": 74,
 									"character": 7
 								}
 							],
@@ -27538,8 +27867,267 @@
 					"sources": [
 						{
 							"fileName": "src/models/regional/scm_repo_links.ts",
-							"line": 62,
+							"line": 64,
 							"character": 28
+						}
+					]
+				},
+				{
+					"id": 901,
+					"name": "ReviewApp",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {
+						"isExported": true
+					},
+					"children": [
+						{
+							"id": 904,
+							"name": "app_id",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/scm_repo_links.ts",
+									"line": 96,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 905,
+							"name": "app_name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/scm_repo_links.ts",
+									"line": 97,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 908,
+							"name": "created_at",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/scm_repo_links.ts",
+									"line": 100,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 902,
+							"name": "id",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/scm_repo_links.ts",
+									"line": 94,
+									"character": 4
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 912,
+							"name": "last_deployment",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/scm_repo_links.ts",
+									"line": 104,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 39,
+								"name": "Deployment"
+							}
+						},
+						{
+							"id": 910,
+							"name": "on_close_deletion_date",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/scm_repo_links.ts",
+									"line": 102,
+									"character": 24
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 906,
+							"name": "parent_app_id",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/scm_repo_links.ts",
+									"line": 98,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 907,
+							"name": "parent_app_name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/scm_repo_links.ts",
+									"line": 99,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 911,
+							"name": "pull_request",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/scm_repo_links.ts",
+									"line": 103,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 891,
+								"name": "FullPullRequest"
+							}
+						},
+						{
+							"id": 903,
+							"name": "repo_link_id",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/scm_repo_links.ts",
+									"line": 95,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 909,
+							"name": "stale_deletion_date",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isExported": true
+							},
+							"sources": [
+								{
+									"fileName": "src/models/regional/scm_repo_links.ts",
+									"line": 101,
+									"character": 21
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								904,
+								905,
+								908,
+								902,
+								912,
+								910,
+								906,
+								907,
+								911,
+								903,
+								909
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "src/models/regional/scm_repo_links.ts",
+							"line": 93,
+							"character": 26
 						}
 					]
 				},
@@ -27574,7 +28162,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/regional/scm_repo_links.ts",
-									"line": 13,
+									"line": 15,
 									"character": 8
 								}
 							],
@@ -27597,7 +28185,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/regional/scm_repo_links.ts",
-									"line": 40,
+									"line": 42,
 									"character": 21
 								}
 							],
@@ -27620,7 +28208,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/regional/scm_repo_links.ts",
-									"line": 28,
+									"line": 30,
 									"character": 8
 								}
 							],
@@ -27643,7 +28231,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/regional/scm_repo_links.ts",
-									"line": 34,
+									"line": 36,
 									"character": 12
 								}
 							],
@@ -27666,7 +28254,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/regional/scm_repo_links.ts",
-									"line": 46,
+									"line": 48,
 									"character": 25
 								}
 							],
@@ -27689,7 +28277,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/regional/scm_repo_links.ts",
-									"line": 52,
+									"line": 54,
 									"character": 22
 								}
 							],
@@ -27712,7 +28300,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/regional/scm_repo_links.ts",
-									"line": 43,
+									"line": 45,
 									"character": 28
 								}
 							],
@@ -27735,7 +28323,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/regional/scm_repo_links.ts",
-									"line": 49,
+									"line": 51,
 									"character": 30
 								}
 							],
@@ -27758,7 +28346,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/regional/scm_repo_links.ts",
-									"line": 55,
+									"line": 57,
 									"character": 27
 								}
 							],
@@ -27781,7 +28369,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/regional/scm_repo_links.ts",
-									"line": 10,
+									"line": 12,
 									"character": 4
 								}
 							],
@@ -27804,7 +28392,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/regional/scm_repo_links.ts",
-									"line": 58,
+									"line": 60,
 									"character": 21
 								}
 							],
@@ -27827,7 +28415,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/regional/scm_repo_links.ts",
-									"line": 19,
+									"line": 21,
 									"character": 8
 								}
 							],
@@ -27860,7 +28448,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/regional/scm_repo_links.ts",
-									"line": 22,
+									"line": 24,
 									"character": 7
 								}
 							],
@@ -27883,7 +28471,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/regional/scm_repo_links.ts",
-									"line": 25,
+									"line": 27,
 									"character": 6
 								}
 							],
@@ -27906,7 +28494,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/regional/scm_repo_links.ts",
-									"line": 16,
+									"line": 18,
 									"character": 22
 								}
 							],
@@ -27929,13 +28517,13 @@
 							"sources": [
 								{
 									"fileName": "src/models/regional/scm_repo_links.ts",
-									"line": 31,
+									"line": 33,
 									"character": 10
 								}
 							],
 							"type": {
 								"type": "reference",
-								"id": 891,
+								"id": 913,
 								"name": "SCMType"
 							}
 						},
@@ -27953,7 +28541,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/regional/scm_repo_links.ts",
-									"line": 37,
+									"line": 39,
 									"character": 12
 								}
 							],
@@ -27991,13 +28579,13 @@
 					"sources": [
 						{
 							"fileName": "src/models/regional/scm_repo_links.ts",
-							"line": 8,
+							"line": 10,
 							"character": 28
 						}
 					]
 				},
 				{
-					"id": 891,
+					"id": 913,
 					"name": "SCMType",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -28007,7 +28595,7 @@
 					"sources": [
 						{
 							"fileName": "src/models/regional/scm_repo_links.ts",
-							"line": 1,
+							"line": 3,
 							"character": 19
 						}
 					],
@@ -28039,7 +28627,9 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
+						891,
 						886,
+						901,
 						868
 					]
 				},
@@ -28047,7 +28637,7 @@
 					"title": "Type aliases",
 					"kind": 4194304,
 					"children": [
-						891
+						913
 					]
 				}
 			],
@@ -28060,7 +28650,7 @@
 			]
 		},
 		{
-			"id": 945,
+			"id": 1058,
 			"name": "\"src/models/regional/stats\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -28070,7 +28660,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/models/regional/stats.ts",
 			"children": [
 				{
-					"id": 946,
+					"id": 1059,
 					"name": "ReferralsStats",
 					"kind": 256,
 					"kindString": "Interface",
@@ -28079,7 +28669,7 @@
 					},
 					"children": [
 						{
-							"id": 949,
+							"id": 1062,
 							"name": "amount_earned",
 							"kind": 1024,
 							"kindString": "Property",
@@ -28102,7 +28692,7 @@
 							}
 						},
 						{
-							"id": 947,
+							"id": 1060,
 							"name": "clicks",
 							"kind": 1024,
 							"kindString": "Property",
@@ -28125,7 +28715,7 @@
 							}
 						},
 						{
-							"id": 948,
+							"id": 1061,
 							"name": "signups",
 							"kind": 1024,
 							"kindString": "Property",
@@ -28148,7 +28738,7 @@
 							}
 						},
 						{
-							"id": 950,
+							"id": 1063,
 							"name": "url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -28176,10 +28766,10 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								949,
-								947,
-								948,
-								950
+								1062,
+								1060,
+								1061,
+								1063
 							]
 						}
 					],
@@ -28197,7 +28787,7 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						946
+						1059
 					]
 				}
 			],
@@ -28345,7 +28935,7 @@
 			]
 		},
 		{
-			"id": 1046,
+			"id": 1213,
 			"name": "\"src/params/auth/user\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -28355,7 +28945,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/params/auth/user.ts",
 			"children": [
 				{
-					"id": 1047,
+					"id": 1214,
 					"name": "UpdateParams",
 					"kind": 256,
 					"kindString": "Interface",
@@ -28364,7 +28954,7 @@
 					},
 					"children": [
 						{
-							"id": 1050,
+							"id": 1217,
 							"name": "company",
 							"kind": 1024,
 							"kindString": "Property",
@@ -28394,7 +28984,7 @@
 							}
 						},
 						{
-							"id": 1057,
+							"id": 1224,
 							"name": "current_password",
 							"kind": 1024,
 							"kindString": "Property",
@@ -28424,7 +29014,7 @@
 							}
 						},
 						{
-							"id": 1048,
+							"id": 1215,
 							"name": "email",
 							"kind": 1024,
 							"kindString": "Property",
@@ -28454,7 +29044,7 @@
 							}
 						},
 						{
-							"id": 1054,
+							"id": 1221,
 							"name": "email_newsletter",
 							"kind": 1024,
 							"kindString": "Property",
@@ -28491,7 +29081,7 @@
 							}
 						},
 						{
-							"id": 1052,
+							"id": 1219,
 							"name": "fullname",
 							"kind": 1024,
 							"kindString": "Property",
@@ -28521,7 +29111,7 @@
 							}
 						},
 						{
-							"id": 1051,
+							"id": 1218,
 							"name": "location",
 							"kind": 1024,
 							"kindString": "Property",
@@ -28551,7 +29141,7 @@
 							}
 						},
 						{
-							"id": 1055,
+							"id": 1222,
 							"name": "password",
 							"kind": 1024,
 							"kindString": "Property",
@@ -28581,7 +29171,7 @@
 							}
 						},
 						{
-							"id": 1056,
+							"id": 1223,
 							"name": "password_confirmation",
 							"kind": 1024,
 							"kindString": "Property",
@@ -28611,7 +29201,7 @@
 							}
 						},
 						{
-							"id": 1053,
+							"id": 1220,
 							"name": "tos_accepted",
 							"kind": 1024,
 							"kindString": "Property",
@@ -28648,7 +29238,7 @@
 							}
 						},
 						{
-							"id": 1049,
+							"id": 1216,
 							"name": "username",
 							"kind": 1024,
 							"kindString": "Property",
@@ -28683,16 +29273,16 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1050,
-								1057,
-								1048,
-								1054,
-								1052,
-								1051,
-								1055,
-								1056,
-								1053,
-								1049
+								1217,
+								1224,
+								1215,
+								1221,
+								1219,
+								1218,
+								1222,
+								1223,
+								1220,
+								1216
 							]
 						}
 					],
@@ -28710,7 +29300,7 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						1047
+						1214
 					]
 				}
 			],
@@ -28723,7 +29313,7 @@
 			]
 		},
 		{
-			"id": 1176,
+			"id": 1300,
 			"name": "\"src/params/regional/addons\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -28733,7 +29323,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/params/regional/addons.ts",
 			"children": [
 				{
-					"id": 1177,
+					"id": 1301,
 					"name": "CreateParams",
 					"kind": 256,
 					"kindString": "Interface",
@@ -28742,7 +29332,7 @@
 					},
 					"children": [
 						{
-							"id": 1179,
+							"id": 1303,
 							"name": "addon_provider_id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -28765,7 +29355,7 @@
 							}
 						},
 						{
-							"id": 1178,
+							"id": 1302,
 							"name": "plan_id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -28793,8 +29383,8 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1179,
-								1178
+								1303,
+								1302
 							]
 						}
 					],
@@ -28807,7 +29397,7 @@
 					]
 				},
 				{
-					"id": 1180,
+					"id": 1304,
 					"name": "UpdateParams",
 					"kind": 256,
 					"kindString": "Interface",
@@ -28816,7 +29406,7 @@
 					},
 					"children": [
 						{
-							"id": 1181,
+							"id": 1305,
 							"name": "plan_id",
 							"kind": 1024,
 							"kindString": "Property",
@@ -28844,7 +29434,7 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1181
+								1305
 							]
 						}
 					],
@@ -28862,8 +29452,8 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						1177,
-						1180
+						1301,
+						1304
 					]
 				}
 			],
@@ -29285,7 +29875,7 @@
 			]
 		},
 		{
-			"id": 1231,
+			"id": 1341,
 			"name": "\"src/params/regional/autoscalers\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -29295,7 +29885,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/params/regional/autoscalers.ts",
 			"children": [
 				{
-					"id": 1232,
+					"id": 1342,
 					"name": "CreateParams",
 					"kind": 256,
 					"kindString": "Interface",
@@ -29312,7 +29902,7 @@
 					},
 					"children": [
 						{
-							"id": 1233,
+							"id": 1343,
 							"name": "container_type",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29335,7 +29925,7 @@
 							}
 						},
 						{
-							"id": 1235,
+							"id": 1345,
 							"name": "max_containers",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29358,7 +29948,7 @@
 							}
 						},
 						{
-							"id": 1236,
+							"id": 1346,
 							"name": "metric",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29391,7 +29981,7 @@
 							}
 						},
 						{
-							"id": 1234,
+							"id": 1344,
 							"name": "min_containers",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29414,7 +30004,7 @@
 							}
 						},
 						{
-							"id": 1237,
+							"id": 1347,
 							"name": "target",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29442,11 +30032,11 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1233,
-								1235,
-								1236,
-								1234,
-								1237
+								1343,
+								1345,
+								1346,
+								1344,
+								1347
 							]
 						}
 					],
@@ -29459,7 +30049,7 @@
 					]
 				},
 				{
-					"id": 1238,
+					"id": 1348,
 					"name": "UpdateParams",
 					"kind": 256,
 					"kindString": "Interface",
@@ -29476,7 +30066,7 @@
 					},
 					"children": [
 						{
-							"id": 1243,
+							"id": 1353,
 							"name": "disabled",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29513,7 +30103,7 @@
 							}
 						},
 						{
-							"id": 1240,
+							"id": 1350,
 							"name": "max_containers",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29546,7 +30136,7 @@
 							}
 						},
 						{
-							"id": 1241,
+							"id": 1351,
 							"name": "metric",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29580,7 +30170,7 @@
 							}
 						},
 						{
-							"id": 1239,
+							"id": 1349,
 							"name": "min_containers",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29613,7 +30203,7 @@
 							}
 						},
 						{
-							"id": 1242,
+							"id": 1352,
 							"name": "target",
 							"kind": 1024,
 							"kindString": "Property",
@@ -29651,11 +30241,11 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1243,
-								1240,
-								1241,
-								1239,
-								1242
+								1353,
+								1350,
+								1351,
+								1349,
+								1352
 							]
 						}
 					],
@@ -29673,8 +30263,8 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						1232,
-						1238
+						1342,
+						1348
 					]
 				}
 			],
@@ -31147,7 +31737,7 @@
 			]
 		},
 		{
-			"id": 892,
+			"id": 914,
 			"name": "\"src/params/regional/scm_repo_links\"",
 			"kind": 1,
 			"kindString": "Module",
@@ -31157,7 +31747,7 @@
 			"originalName": "/home/travis/build/Scalingo/scalingo.js/src/params/regional/scm_repo_links.ts",
 			"children": [
 				{
-					"id": 893,
+					"id": 915,
 					"name": "CreateParams",
 					"kind": 256,
 					"kindString": "Interface",
@@ -31174,7 +31764,7 @@
 					},
 					"children": [
 						{
-							"id": 896,
+							"id": 918,
 							"name": "auth_integration_uuid",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31204,7 +31794,7 @@
 							}
 						},
 						{
-							"id": 897,
+							"id": 919,
 							"name": "auto_deploy_enabled",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31238,7 +31828,7 @@
 							}
 						},
 						{
-							"id": 895,
+							"id": 917,
 							"name": "branch",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31268,7 +31858,7 @@
 							}
 						},
 						{
-							"id": 899,
+							"id": 921,
 							"name": "delete_on_close_enabled",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31302,7 +31892,7 @@
 							}
 						},
 						{
-							"id": 901,
+							"id": 923,
 							"name": "delete_stale_enabled",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31336,7 +31926,7 @@
 							}
 						},
 						{
-							"id": 898,
+							"id": 920,
 							"name": "deploy_review_apps_enabled",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31370,7 +31960,7 @@
 							}
 						},
 						{
-							"id": 900,
+							"id": 922,
 							"name": "hours_before_delete_on_close",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31400,7 +31990,7 @@
 							}
 						},
 						{
-							"id": 902,
+							"id": 924,
 							"name": "hours_before_delete_stale",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31430,7 +32020,7 @@
 							}
 						},
 						{
-							"id": 894,
+							"id": 916,
 							"name": "source",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31465,15 +32055,15 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								896,
-								897,
-								895,
-								899,
-								901,
-								898,
-								900,
-								902,
-								894
+								918,
+								919,
+								917,
+								921,
+								923,
+								920,
+								922,
+								924,
+								916
 							]
 						}
 					],
@@ -31486,7 +32076,7 @@
 					]
 				},
 				{
-					"id": 903,
+					"id": 925,
 					"name": "UpdateParams",
 					"kind": 256,
 					"kindString": "Interface",
@@ -31503,7 +32093,7 @@
 					},
 					"children": [
 						{
-							"id": 905,
+							"id": 927,
 							"name": "auto_deploy_enabled",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31537,7 +32127,7 @@
 							}
 						},
 						{
-							"id": 904,
+							"id": 926,
 							"name": "branch",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31567,7 +32157,7 @@
 							}
 						},
 						{
-							"id": 907,
+							"id": 929,
 							"name": "delete_on_close_enabled",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31601,7 +32191,7 @@
 							}
 						},
 						{
-							"id": 909,
+							"id": 931,
 							"name": "delete_stale_enabled",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31635,7 +32225,7 @@
 							}
 						},
 						{
-							"id": 906,
+							"id": 928,
 							"name": "deploy_review_apps_enabled",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31669,7 +32259,7 @@
 							}
 						},
 						{
-							"id": 908,
+							"id": 930,
 							"name": "hours_before_delete_on_close",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31699,7 +32289,7 @@
 							}
 						},
 						{
-							"id": 910,
+							"id": 932,
 							"name": "hours_before_delete_stale",
 							"kind": 1024,
 							"kindString": "Property",
@@ -31734,13 +32324,13 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								905,
-								904,
-								907,
-								909,
-								906,
-								908,
-								910
+								927,
+								926,
+								929,
+								931,
+								928,
+								930,
+								932
 							]
 						}
 					],
@@ -31758,8 +32348,8 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						893,
-						903
+						915,
+						925
 					]
 				}
 			],
@@ -31794,10 +32384,10 @@
 			"title": "Modules",
 			"kind": 1,
 			"children": [
-				1182,
+				1306,
 				281,
 				229,
-				1244,
+				1354,
 				320,
 				350,
 				420,
@@ -31815,51 +32405,51 @@
 				785,
 				370,
 				832,
-				911,
-				951,
-				967,
-				1003,
-				1058,
+				1132,
+				1169,
+				1177,
+				1197,
+				1225,
 				1,
-				1073,
+				1240,
 				28,
-				1270,
+				984,
 				593,
 				795,
-				959,
-				987,
-				1019,
-				1287,
+				933,
+				941,
+				957,
+				1380,
 				290,
-				1133,
+				1001,
 				267,
 				186,
-				1217,
+				1044,
 				335,
 				403,
 				38,
 				457,
 				503,
 				544,
-				1291,
+				1064,
 				645,
 				674,
 				765,
 				705,
 				867,
-				945,
+				1058,
 				827,
-				1046,
-				1176,
+				1213,
+				1300,
 				217,
-				1231,
+				1341,
 				468,
 				508,
 				571,
 				655,
 				684,
 				719,
-				892,
+				914,
 				22
 			]
 		}
