@@ -100,3 +100,14 @@ describe("SCMRepoLinks#pulls", () => {
     }
   );
 });
+
+describe("SCMRepoLinks#reviewApps", () => {
+  testGetter(
+    "https://api.scalingo.com/v1/apps/biniou/scm_repo_link/review_apps",
+    null,
+    "review_apps",
+    (client) => {
+      return new SCMRepoLinks(client).reviewApps("biniou");
+    }
+  );
+});

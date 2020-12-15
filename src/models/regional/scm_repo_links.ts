@@ -1,3 +1,5 @@
+import { Deployment } from "./deployments";
+
 export type SCMType =
   | "github"
   | "gitlab"
@@ -70,4 +72,34 @@ export interface PullRequest {
 
   /** Title of the pull/merge request */
   title: string;
+}
+
+export interface FullPullRequest {
+  /** URL to the pull/merge request */
+  html_url: string;
+  /** Number identifying the pull/merge request on the SCM tool */
+  number: number;
+  /** Title of the pull/merge request */
+  title: string;
+  /** API URL to the pull/merge request */
+  url: string;
+  branch_name: string;
+  ref: string;
+  base_ref: string;
+  created_at: string;
+  closed_at: string;
+}
+
+export interface ReviewApp {
+  id: string;
+  repo_link_id: string;
+  app_id: string;
+  app_name: string;
+  parent_app_id: string;
+  parent_app_name: string;
+  created_at: string;
+  stale_deletion_date: string;
+  on_close_deletion_date: string;
+  pull_request: FullPullRequest;
+  last_deployment: Deployment;
 }

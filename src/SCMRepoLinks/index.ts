@@ -1,7 +1,13 @@
 import { unpackData } from "../utils";
 import { Client } from "..";
-import { SCMRepoLink } from "../models/regional/scm_repo_links";
+import {
+  PullRequest,
+  ReviewApp,
+  SCMRepoLink,
+} from "../models/regional/scm_repo_links";
 import { CreateParams, UpdateParams } from "../params/regional/scm_repo_links";
+import { Branch } from "src/models/auth";
+import { Deployment } from "src/models/regional";
 
 /**
  * SCM repo links API Client
@@ -83,7 +89,7 @@ export class SCMRepoLinks {
    * @return Promise that when resolved returns the Deployment started.
    * @todo Promise<Deployment>
    */
-  manualDeploy(appID: string, branch: string): Promise<any> {
+  manualDeploy(appID: string, branch: string): Promise<Deployment> {
     return unpackData(
       this._client
         .apiClient()
@@ -102,7 +108,7 @@ export class SCMRepoLinks {
    * @return Promise that when resolved returns the App created.
    * @todo Promise<App>
    */
-  manualReviewApp(appID: string, pullRequestID: string): Promise<any> {
+  manualReviewApp(appID: string, pullRequestID: string): Promise<ReviewApp> {
     return unpackData(
       this._client
         .apiClient()
@@ -120,7 +126,7 @@ export class SCMRepoLinks {
    * @return Promise that when resolved returns an array of branches.
    * @todo Promise<Branch[]>
    */
-  branches(appID: string): Promise<any> {
+  branches(appID: string): Promise<Branch[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appID}/scm_repo_link/branches`),
       "branches"
@@ -134,10 +140,23 @@ export class SCMRepoLinks {
    * @return Promise that when resolved returns an array of pull requests.
    * @todo Promise<PullRequest[]>
    */
-  pulls(appID: string): Promise<any> {
+  pulls(appID: string): Promise<PullRequest[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appID}/scm_repo_link/pulls`),
       "pulls"
+    );
+  }
+
+  /**
+   * List the review apps of the supplied app.
+   * @param appID ID of the application
+   * @return Promise that when resolved returns an array of review apps.
+   * @todo Promise<ReviewApp[]>
+   */
+  reviewApps(appID: string): Promise<ReviewApp[]> {
+    return unpackData(
+      this._client.apiClient().get(`/apps/${appID}/scm_repo_link/review_apps`),
+      "review_apps"
     );
   }
 }
