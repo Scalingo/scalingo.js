@@ -1,3 +1,7 @@
+## 0.2.6
+
+* Bugfix: wrong import path
+
 ## 0.2.5
 
 * New: SCM Repo links : get review apps for a repo link. Also improved typings.
