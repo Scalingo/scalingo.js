@@ -1,3 +1,7 @@
+## 0.2.7
+
+* Bugfix: SCM repo link missing field in type
+
 ## 0.2.6
 
 * Bugfix: wrong import path

@@ -20,6 +20,9 @@ export interface SCMRepoLink {
   /** Description of the user that linked this repository */
   linker: Record<string, any>;
 
+  /** Root url of the provider */
+  url: string;
+
   /** Repository owner name */
   owner: string;
 
