@@ -1,3 +1,7 @@
+## 0.2.8
+
+* Bugfix: Forgot to add autoscalers entrypoint
+
 ## 0.2.7
 
 * Bugfix: SCM repo link missing field in type
