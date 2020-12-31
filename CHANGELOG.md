@@ -1,3 +1,7 @@
+## 0.2.9
+
+* Type: Regional/apps
+
 ## 0.2.8
 
 * Bugfix: Forgot to add autoscalers entrypoint

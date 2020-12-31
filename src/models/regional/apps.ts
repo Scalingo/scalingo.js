@@ -42,6 +42,8 @@ export interface App {
   created_at: string;
   /** last time the application has been updated */
   updated_at: string;
+  /** last time the application has been updated */
+  parent_app_name: string;
   /** URL to the GIT remote to access your application */
   git_url: string;
   /** information about the owner of the application */
@@ -61,9 +63,9 @@ export interface App {
   /** activation of the router logs in your app logs */
   router_logs: boolean;
   /** date of the last deployment attempt */
-  last_deployed_at: string;
+  last_deployed_at: string | null;
   /** user who attempted the last deployment */
-  last_deployed_by: string;
+  last_deployed_by: string | null;
   /** id of the last successful deployment */
   last_deployment_id: string;
   /** current status of the application */
