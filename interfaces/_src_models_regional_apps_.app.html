@@ -105,6 +105,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_regional_apps_.app.html#links" class="tsd-kind-icon">links</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_regional_apps_.app.html#name" class="tsd-kind-icon">name</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_regional_apps_.app.html#owner" class="tsd-kind-icon">owner</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_regional_apps_.app.html#parent_app_name" class="tsd-kind-icon">parent_<wbr>app_<wbr>name</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_regional_apps_.app.html#region" class="tsd-kind-icon">region</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_regional_apps_.app.html#router_logs" class="tsd-kind-icon">router_<wbr>logs</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_regional_apps_.app.html#status" class="tsd-kind-icon">status</a></li>
@@ -125,7 +126,7 @@
 					<div class="tsd-signature tsd-kind-icon">created_<wbr>at<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/8a66257/src/models/regional/apps.ts#L42">src/models/regional/apps.ts:42</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/ca0c345/src/models/regional/apps.ts#L42">src/models/regional/apps.ts:42</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -140,7 +141,7 @@
 					<div class="tsd-signature tsd-kind-icon">flags<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/8a66257/src/models/regional/apps.ts#L56">src/models/regional/apps.ts:56</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/ca0c345/src/models/regional/apps.ts#L58">src/models/regional/apps.ts:58</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -155,7 +156,7 @@
 					<div class="tsd-signature tsd-kind-icon">force_<wbr>https<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/8a66257/src/models/regional/apps.ts#L58">src/models/regional/apps.ts:58</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/ca0c345/src/models/regional/apps.ts#L60">src/models/regional/apps.ts:60</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -170,7 +171,7 @@
 					<div class="tsd-signature tsd-kind-icon">git_<wbr>url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/8a66257/src/models/regional/apps.ts#L46">src/models/regional/apps.ts:46</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/ca0c345/src/models/regional/apps.ts#L48">src/models/regional/apps.ts:48</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -185,7 +186,7 @@
 					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/8a66257/src/models/regional/apps.ts#L34">src/models/regional/apps.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/ca0c345/src/models/regional/apps.ts#L34">src/models/regional/apps.ts:34</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -197,10 +198,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="last_deployed_at" class="tsd-anchor"></a>
 					<h3>last_<wbr>deployed_<wbr>at</h3>
-					<div class="tsd-signature tsd-kind-icon">last_<wbr>deployed_<wbr>at<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<div class="tsd-signature tsd-kind-icon">last_<wbr>deployed_<wbr>at<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/8a66257/src/models/regional/apps.ts#L64">src/models/regional/apps.ts:64</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/ca0c345/src/models/regional/apps.ts#L66">src/models/regional/apps.ts:66</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -212,10 +213,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="last_deployed_by" class="tsd-anchor"></a>
 					<h3>last_<wbr>deployed_<wbr>by</h3>
-					<div class="tsd-signature tsd-kind-icon">last_<wbr>deployed_<wbr>by<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<div class="tsd-signature tsd-kind-icon">last_<wbr>deployed_<wbr>by<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/8a66257/src/models/regional/apps.ts#L66">src/models/regional/apps.ts:66</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/ca0c345/src/models/regional/apps.ts#L68">src/models/regional/apps.ts:68</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -230,7 +231,7 @@
 					<div class="tsd-signature tsd-kind-icon">last_<wbr>deployment_<wbr>id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/8a66257/src/models/regional/apps.ts#L68">src/models/regional/apps.ts:68</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/ca0c345/src/models/regional/apps.ts#L70">src/models/regional/apps.ts:70</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -245,7 +246,7 @@
 					<div class="tsd-signature tsd-kind-icon">limits<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/8a66257/src/models/regional/apps.ts#L54">src/models/regional/apps.ts:54</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/ca0c345/src/models/regional/apps.ts#L56">src/models/regional/apps.ts:56</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -260,7 +261,7 @@
 					<div class="tsd-signature tsd-kind-icon">links<span class="tsd-signature-symbol">:</span> <a href="_src_models_regional_apps_.applinks.html" class="tsd-signature-type">AppLinks</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/8a66257/src/models/regional/apps.ts#L52">src/models/regional/apps.ts:52</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/ca0c345/src/models/regional/apps.ts#L54">src/models/regional/apps.ts:54</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -275,7 +276,7 @@
 					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/8a66257/src/models/regional/apps.ts#L38">src/models/regional/apps.ts:38</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/ca0c345/src/models/regional/apps.ts#L38">src/models/regional/apps.ts:38</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -290,7 +291,7 @@
 					<div class="tsd-signature tsd-kind-icon">owner<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/8a66257/src/models/regional/apps.ts#L48">src/models/regional/apps.ts:48</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/ca0c345/src/models/regional/apps.ts#L50">src/models/regional/apps.ts:50</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -300,12 +301,27 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="parent_app_name" class="tsd-anchor"></a>
+					<h3>parent_<wbr>app_<wbr>name</h3>
+					<div class="tsd-signature tsd-kind-icon">parent_<wbr>app_<wbr>name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/ca0c345/src/models/regional/apps.ts#L46">src/models/regional/apps.ts:46</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>last time the application has been updated</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="region" class="tsd-anchor"></a>
 					<h3>region</h3>
 					<div class="tsd-signature tsd-kind-icon">region<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/8a66257/src/models/regional/apps.ts#L40">src/models/regional/apps.ts:40</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/ca0c345/src/models/regional/apps.ts#L40">src/models/regional/apps.ts:40</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -320,7 +336,7 @@
 					<div class="tsd-signature tsd-kind-icon">router_<wbr>logs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/8a66257/src/models/regional/apps.ts#L62">src/models/regional/apps.ts:62</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/ca0c345/src/models/regional/apps.ts#L64">src/models/regional/apps.ts:64</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -335,7 +351,7 @@
 					<div class="tsd-signature tsd-kind-icon">status<span class="tsd-signature-symbol">:</span> <a href="../modules/_src_models_regional_apps_.html#appstatus" class="tsd-signature-type">AppStatus</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/8a66257/src/models/regional/apps.ts#L70">src/models/regional/apps.ts:70</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/ca0c345/src/models/regional/apps.ts#L72">src/models/regional/apps.ts:72</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -350,7 +366,7 @@
 					<div class="tsd-signature tsd-kind-icon">sticky_<wbr>session<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/8a66257/src/models/regional/apps.ts#L60">src/models/regional/apps.ts:60</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/ca0c345/src/models/regional/apps.ts#L62">src/models/regional/apps.ts:62</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -365,7 +381,7 @@
 					<div class="tsd-signature tsd-kind-icon">updated_<wbr>at<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/8a66257/src/models/regional/apps.ts#L44">src/models/regional/apps.ts:44</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/ca0c345/src/models/regional/apps.ts#L44">src/models/regional/apps.ts:44</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -380,7 +396,7 @@
 					<div class="tsd-signature tsd-kind-icon">url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/8a66257/src/models/regional/apps.ts#L50">src/models/regional/apps.ts:50</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/ca0c345/src/models/regional/apps.ts#L52">src/models/regional/apps.ts:52</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -395,7 +411,7 @@
 					<div class="tsd-signature tsd-kind-icon">uuid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/8a66257/src/models/regional/apps.ts#L36">src/models/regional/apps.ts:36</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/ca0c345/src/models/regional/apps.ts#L36">src/models/regional/apps.ts:36</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -459,6 +475,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="_src_models_regional_apps_.app.html#owner" class="tsd-kind-icon">owner</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_src_models_regional_apps_.app.html#parent_app_name" class="tsd-kind-icon">parent_<wbr>app_<wbr>name</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="_src_models_regional_apps_.app.html#region" class="tsd-kind-icon">region</a>
