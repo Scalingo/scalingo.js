@@ -22,3 +22,14 @@ describe("Deployments#logs", () => {
     }
   );
 });
+
+describe("Deployments#purge", () => {
+  testGetter(
+    "https://api.scalingo.com/v1/apps/testApp/caches/deployment",
+    null,
+    null,
+    (client) => {
+      return new Deployments(client).purge("testApp");
+    }
+  );
+});
