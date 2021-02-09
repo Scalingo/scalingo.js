@@ -71,7 +71,7 @@ export default class Deployments {
    * @param appId ID of the app
    * @return No content
    */
-  purge(appId: string): Promise<void> {
+  purgeCache(appId: string): Promise<void> {
     return unpackData(
       this._client.apiClient().delete(`/apps/${appId}/caches/deployment`)
     );
