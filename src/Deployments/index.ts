@@ -64,4 +64,16 @@ export default class Deployments {
         .get(`/apps/${appId}/deployments/${deploymentId}/output`)
     );
   }
+
+  /**
+   * Purge the deployment cache
+   * @see https://developers.scalingo.com/deployments#manually-reset-the-deployment-cache
+   * @param appId ID of the app
+   * @return No content
+   */
+  purgeCache(appId: string): Promise<void> {
+    return unpackData(
+      this._client.apiClient().delete(`/apps/${appId}/caches/deployment`)
+    );
+  }
 }
