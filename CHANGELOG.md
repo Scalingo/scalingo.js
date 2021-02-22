@@ -2,6 +2,7 @@
 
 * More alerts endpoints
 * Deployments: purge cache endpoint
+* Internal: bump dependencies
 
 ## 0.2.9
 

@@ -7,7 +7,6 @@ module.exports = {
   extends: [
     "prettier",
     "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
     "plugin:prettier/recommended",
     "eslint:recommended",
   ],
@@ -20,6 +19,7 @@ module.exports = {
     "no-extra-semi": "off",
     "@typescript-eslint/no-use-before-define": "warn",
     "@typescript-eslint/no-empty-function": "warn",
+    "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
   },
   parser: "@typescript-eslint/parser", // Specifies the ESLint parser
   parserOptions: {
