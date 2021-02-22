@@ -1,6 +1,7 @@
 ## Unreleased
 
 * More alerts endpoints
+* Deployments: purge cache endpoint
 
 ## 0.2.9
 

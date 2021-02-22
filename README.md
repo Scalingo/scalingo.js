@@ -48,6 +48,18 @@ node examples/Addons/add_addon.js
 
 ## Development
 
+### Install
+
+```
+yarn install
+```
+
+### Run tests
+
+```
+yarn test
+```
+
 ### Release a new version
 
 ```bash

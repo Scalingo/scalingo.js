@@ -1,4 +1,4 @@
-import { testGetter } from "../utils/http";
+import { testDelete, testGetter } from "../utils/http";
 import Deployments from "../../src/Deployments";
 
 describe("Deployments#find", () => {
@@ -19,6 +19,15 @@ describe("Deployments#logs", () => {
     null,
     (client) => {
       return new Deployments(client).logs("testApp", "deploy1234");
+    }
+  );
+});
+
+describe("Deployments#purge", () => {
+  testDelete(
+    "https://api.scalingo.com/v1/apps/testApp/caches/deployment",
+    (client) => {
+      return new Deployments(client).purgeCache("testApp");
     }
   );
 });
