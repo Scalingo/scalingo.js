@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 0.3.0
+
 * More alerts endpoints
 * Deployments: purge cache endpoint
 * Internal: bump dependencies
