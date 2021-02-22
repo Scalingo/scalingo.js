@@ -16,9 +16,9 @@
     "test": "ts-mocha --require @babel/register --recursive --paths -p test/tsconfig.test.json test/*.js test/**/*.test.js"
   },
   "dependencies": {
-    "axios": "0.19.x",
+    "axios": "^0.21.1",
     "isomorphic-ws": "4.x",
-    "ws": "7.x"
+    "ws": "^7.4.3"
   },
   "devDependencies": {
     "@babel/cli": "7.x",
@@ -26,12 +26,12 @@
     "@babel/plugin-proposal-class-properties": "7.x",
     "@babel/preset-env": "^7.7.1",
     "@babel/register": "7.x",
-    "@types/node": "^13.7.0",
-    "@types/ws": "^7.2.1",
+    "@types/node": "^14.14.31",
+    "@types/ws": "^7.4.0",
     "@typescript-eslint/eslint-plugin": "^3.10.1",
     "@typescript-eslint/parser": "^3.10.1",
-    "axios-mock-adapter": "1.x",
-    "chai": "4.x",
+    "axios-mock-adapter": "^1.19.0",
+    "chai": "^4.3.0",
     "core-js": "^3.3.6",
     "esdoc": "1.x",
     "esdoc-ecmascript-proposal-plugin": "1.x",
@@ -40,7 +40,7 @@
     "eslint-config-prettier": "^ 6.11.0",
     "eslint-plugin-import": "2.x",
     "eslint-plugin-prettier": "^3.1.2",
-    "mocha": "^7.0.0",
+    "mocha": "^8.3.0",
     "prettier": "^2.1.1",
     "rollup": "^1.31.0",
     "rollup-plugin-babel": "^4.3.3",
@@ -50,11 +50,11 @@
     "rollup-plugin-sourcemaps": "^0.5.0",
     "rollup-plugin-typescript2": "^0.25.3",
     "rosie": "2.x",
-    "sinon": "7.x",
-    "ts-mocha": "^6.0.0",
+    "sinon": "^9.2.4",
+    "ts-mocha": "^8.0.0",
     "tsconfig-paths": "^3.9.0",
-    "typedoc": "^0.18.0",
-    "typescript": "^4.0.2"
+    "typedoc": "^0.20.27",
+    "typescript": "^4.1.5"
   },
   "publishConfig": {
     "access": "public"
