@@ -1,3 +1,7 @@
+## Unreleased
+
+* More alerts endpoints
+
 ## 0.2.9
 
 * Type: Regional/apps
