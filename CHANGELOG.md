@@ -1,5 +1,9 @@
 ## Unreleased
 
+## 0.3.1
+
+* An incorrect build was uploaded for 0.3.0. This one replaces it.
+
 ## 0.3.0
 
 * More alerts endpoints
