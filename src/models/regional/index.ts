@@ -2,6 +2,7 @@ export * from "./addons";
 export * from "./alerts";
 export * from "./autoscalers";
 export * from "./apps";
+export * from "./audit_logs";
 export * from "./collaborators";
 export * from "./containers";
 export * from "./deployments";
