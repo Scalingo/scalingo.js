@@ -13,6 +13,7 @@ export type LetsEncryptStatus =
   | "created"
   | "dns_required"
   | "error";
+export type SslStatus = "pending" | "success" | "error";
 
 /** @see https://developers.scalingo.com/domains */
 export interface Domain {
@@ -26,6 +27,8 @@ export interface Domain {
   tlskey: string;
   /** Show the current state of the Let's Encrypt certificate */
   letsencrypt_status: LetsEncryptStatus;
+  /** Show the current state of the SSL certificate */
+  ssl_status: SslStatus;
   /** Flag if SSL with a custom certificate is enabled */
   ssl: boolean;
   /** Once a certificate has been submitted, display the validity of it */
