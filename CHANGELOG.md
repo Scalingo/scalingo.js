@@ -1,5 +1,8 @@
 ## Unreleased
 
+* Types: add user preferences
+* Add support for audit logs
+
 ## 0.3.1
 
 * An incorrect build was uploaded for 0.3.0. This one replaces it.

@@ -29,6 +29,8 @@ export interface User {
 
   suspended_at: string | null;
   suspension_reason: string | null;
+
+  preferences: UserPreferences;
 }
 
 export interface GithubProfile {
@@ -39,4 +41,13 @@ export interface GithubProfile {
 
   avatar_url: string;
   profile_url: string;
+}
+
+export interface UserPreferences {
+  time_zone: string | null;
+  locale: string | null;
+  stream_logs: boolean;
+  prefers_old_dashboard: boolean;
+  sticky_search: boolean;
+  app_sort_key: string | null;
 }
