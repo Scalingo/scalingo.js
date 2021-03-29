@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 0.3.2
+
 * Types: add user preferences
 * Add support for audit logs
 
