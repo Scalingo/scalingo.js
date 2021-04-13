@@ -36,6 +36,17 @@ describe("Events#for", () => {
   );
 });
 
+describe("Events#find", () => {
+  testGetter(
+    "https://api.scalingo.com/v1/apps/tata/events/someevent",
+    null,
+    "event",
+    (client) => {
+      return new Events(client).find("tata", "someevent");
+    }
+  );
+});
+
 describe("Events#listEventTypes", () => {
   testGetter(
     "https://api.scalingo.com/v1/event_types",

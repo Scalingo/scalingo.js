@@ -1,6 +1,11 @@
 import { unpackData } from "../utils";
 import { Client } from "..";
-import { AppEvents, EventType, EventCategory } from "../models/regional/events";
+import {
+  AppEvents,
+  EventType,
+  EventCategory,
+  Event,
+} from "../models/regional/events";
 import { IndexParams } from "../params/regional/events";
 
 /**
@@ -38,6 +43,19 @@ export default class Events {
   for(appId: string, opts?: IndexParams): Promise<AppEvents> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/events`, { params: opts })
+    );
+  }
+
+  /**
+   * Return one event of an application
+   * @param appId Id of the current application
+   * @param id Id of the event
+   * @param opts Object that contains the index of the page and the number of elements per page
+   */
+  find(appId: string, id: string): Promise<Event> {
+    return unpackData(
+      this._client.apiClient().get(`/apps/${appId}/events/${id}`),
+      "event"
     );
   }
 

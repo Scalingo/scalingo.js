@@ -1,5 +1,8 @@
 ## Unreleased
 
+* Events: add `find` endpoint to get a given event
+* Domains: add ssl_status field
+
 ## 0.3.2
 
 * Types: add user preferences
