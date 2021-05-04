@@ -1,6 +1,4 @@
 {
   "out": "docs",
-  "json": "docs/index.json",
-  "target": "es6",
-  "mode": "modules"
+  "json": "docs/index.json"
 }
