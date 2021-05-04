@@ -1,5 +1,7 @@
 ## Unreleased
 
+* User preferences: add `logs_font_size` and `theme` fields
+
 ## 0.3.3
 
 * Events: add `find` endpoint to get a given event

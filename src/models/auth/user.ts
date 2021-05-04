@@ -50,4 +50,6 @@ export interface UserPreferences {
   prefers_old_dashboard: boolean;
   sticky_search: boolean;
   app_sort_key: string | null;
+  theme: string | null;
+  logs_font_size: string | null;
 }
