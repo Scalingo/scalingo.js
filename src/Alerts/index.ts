@@ -1,6 +1,6 @@
 import { unpackData } from "../utils";
 import { Client } from "..";
-import { Alert } from "../models/regional/alerts";
+import { Alert, AlertWithNotifiers } from "../models/regional/alerts";
 import { CreateParams, UpdateParams } from "../params/regional/alerts";
 
 /**
@@ -23,7 +23,7 @@ export default class Alerts {
    * @see https://developers.scalingo.com/alerts#list-alerts-of-an-app
    * @param appId ID of the app to get alerts list
    */
-  for(appId: string): Promise<Alert[]> {
+  for(appId: string): Promise<AlertWithNotifiers[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/alerts`),
       "alerts"

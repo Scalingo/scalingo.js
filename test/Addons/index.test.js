@@ -39,14 +39,27 @@ describe("Addons#listCategories", () => {
 });
 
 describe("Addons#listProviders", () => {
-  testGetter(
-    "https://api.scalingo.com/v1/addon_providers?category_id=1234",
-    { noAuth: true },
-    "addon_providers",
-    (client) => {
-      return new Addons(client).listProviders("1234");
-    }
-  );
+  describe("authenticated", () => {
+    testGetter(
+      "https://api.scalingo.com/v1/addon_providers",
+      null,
+      "addon_providers",
+      (client) => {
+        return new Addons(client).listProviders(null, true);
+      }
+    );
+  });
+
+  describe("unauthenticated", () => {
+    testGetter(
+      "https://api.scalingo.com/v1/addon_providers?category_id=1234",
+      { noAuth: true },
+      "addon_providers",
+      (client) => {
+        return new Addons(client).listProviders("1234");
+      }
+    );
+  });
 });
 
 describe("Addons#update", () => {

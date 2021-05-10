@@ -10,6 +10,10 @@ export interface Alert {
   limit: number;
   send_when_below: boolean;
   duration_before_trigger: number;
-  remind_every: string;
-  metadata: string;
+  remind_every?: number;
+  metadata: Record<string, unknown>;
 }
+
+export type AlertWithNotifiers = Alert & {
+  notifiers: string[];
+};
