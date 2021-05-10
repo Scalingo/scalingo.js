@@ -67,20 +67,19 @@ export default class Addons {
    * @see https://developers.scalingo.com/addon_providers#list-addon-providers
    * @param categoryId ID of the addon category
    */
-  listProviders(categoryId?: string): Promise<AddonProvider[]> {
-    if (categoryId) {
-      return unpackData(
-        this._client
-          .unauthenticatedClient()
-          .get(`/addon_providers?category_id=${categoryId}`),
-        "addon_providers"
-      );
-    } else {
-      return unpackData(
-        this._client.unauthenticatedClient().get(`/addon_providers`),
-        "addon_providers"
-      );
-    }
+  listProviders(
+    categoryId?: string,
+    authenticated = false
+  ): Promise<AddonProvider[]> {
+    const url = categoryId
+      ? `/addon_providers?category_id=${categoryId}`
+      : "/addon_providers";
+
+    const client = authenticated
+      ? this._client.apiClient()
+      : this._client.unauthenticatedClient();
+
+    return unpackData(client.get(url), "addon_providers");
   }
 
   /**

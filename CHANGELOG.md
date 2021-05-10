@@ -1,6 +1,7 @@
 ## Unreleased
 
 * Types: improve Alerts types
+* Addons: allow fetching addon providers with authentication
 
 ## 0.3.4
 
