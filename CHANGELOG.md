@@ -1,5 +1,7 @@
 ## Unreleased
 
+* Types: improve Alerts types
+
 ## 0.3.4
 
 * User preferences: add `logs_font_size` and `theme` fields
