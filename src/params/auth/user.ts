@@ -12,3 +12,9 @@ export interface UpdateParams {
   password_confirmation?: string;
   current_password?: string;
 }
+
+export interface DeletionParams {
+  token: string;
+  reason?: string | null;
+  details?: string | null;
+}

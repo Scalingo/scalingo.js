@@ -2,7 +2,7 @@ import { unpackData } from "../utils";
 import { Client } from "..";
 
 import { User } from "../models/auth/user";
-import { UpdateParams } from "../params/auth/user";
+import { DeletionParams, UpdateParams } from "../params/auth/user";
 
 export class Users {
   /** Scalingo API Client */
@@ -48,8 +48,22 @@ export class Users {
   /**
    * Request the account's deletion. Requires a subsequent validation done via email.
    */
-  requestAccountDeletion(): Promise<User> {
+  requestAccountDeletion(): Promise<void> {
     return unpackData(this._client.authApiClient().post("/users/delete"));
+  }
+
+  /**
+   * Confirm the account's deletion.
+   */
+  confirmAccountDeletion(
+    deletionId: string,
+    params: DeletionParams
+  ): Promise<void> {
+    return unpackData(
+      this._client
+        .authApiClient()
+        .post(`/users/delete/${deletionId}/confirm`, { deletion: params })
+    );
   }
 }
 

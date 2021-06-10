@@ -36,3 +36,29 @@ describe("Users#stopFreeTrial", () => {
     }
   );
 });
+
+describe("Users#requestAccountDeletion", () => {
+  testPost(
+    "https://auth.scalingo.com/v1/users/delete",
+    null,
+    null,
+    null,
+    (client) => {
+      return new Users(client).requestAccountDeletion();
+    }
+  );
+});
+
+describe("Users#confirmAccountDeletion", () => {
+  const deletion = { token: "token" };
+
+  testPost(
+    "https://auth.scalingo.com/v1/users/delete/some-id/confirm",
+    null,
+    { deletion },
+    null,
+    (client) => {
+      return new Users(client).confirmAccountDeletion("some-id", deletion);
+    }
+  );
+});
