@@ -95,6 +95,7 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="users.users-1.html#confirmaccountdeletion" class="tsd-kind-icon">confirm<wbr>Account<wbr>Deletion</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="users.users-1.html#requestaccountdeletion" class="tsd-kind-icon">request<wbr>Account<wbr>Deletion</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="users.users-1.html#self" class="tsd-kind-icon">self</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="users.users-1.html#stopfreetrial" class="tsd-kind-icon">stop<wbr>Free<wbr>Trial</a></li>
@@ -116,7 +117,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/698b72c/src/Users/index.ts#L9">src/Users/index.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/3f81e12/src/Users/index.ts#L9">src/Users/index.ts:9</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -146,7 +147,7 @@
 					<div class="tsd-signature tsd-kind-icon">_client<span class="tsd-signature-symbol">:</span> <a href="index.client.html" class="tsd-signature-type" data-tsd-kind="Class">Client</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/698b72c/src/Users/index.ts#L9">src/Users/index.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/3f81e12/src/Users/index.ts#L9">src/Users/index.ts:9</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -159,16 +160,47 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="requestaccountdeletion" class="tsd-anchor"></a>
-					<h3>request<wbr>Account<wbr>Deletion</h3>
+					<a name="confirmaccountdeletion" class="tsd-anchor"></a>
+					<h3>confirm<wbr>Account<wbr>Deletion</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">request<wbr>Account<wbr>Deletion<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/models_auth_user.user.html" class="tsd-signature-type" data-tsd-kind="Interface">User</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">confirm<wbr>Account<wbr>Deletion<span class="tsd-signature-symbol">(</span>deletionId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, params<span class="tsd-signature-symbol">: </span><a href="../interfaces/params_auth_user.deletionparams.html" class="tsd-signature-type" data-tsd-kind="Interface">DeletionParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/698b72c/src/Users/index.ts#L51">src/Users/index.ts:51</a></li>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/3f81e12/src/Users/index.ts#L58">src/Users/index.ts:58</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Confirm the account&#39;s deletion.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>deletionId: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>params: <a href="../interfaces/params_auth_user.deletionparams.html" class="tsd-signature-type" data-tsd-kind="Interface">DeletionParams</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="requestaccountdeletion" class="tsd-anchor"></a>
+					<h3>request<wbr>Account<wbr>Deletion</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">request<wbr>Account<wbr>Deletion<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/3f81e12/src/Users/index.ts#L51">src/Users/index.ts:51</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -176,7 +208,7 @@
 									<p>Request the account&#39;s deletion. Requires a subsequent validation done via email.</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/models_auth_user.user.html" class="tsd-signature-type" data-tsd-kind="Interface">User</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -190,7 +222,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/698b72c/src/Users/index.ts#L23">src/Users/index.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/3f81e12/src/Users/index.ts#L23">src/Users/index.ts:23</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -213,7 +245,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/698b72c/src/Users/index.ts#L42">src/Users/index.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/3f81e12/src/Users/index.ts#L42">src/Users/index.ts:42</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -235,7 +267,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/698b72c/src/Users/index.ts#L32">src/Users/index.ts:32</a></li>
+									<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/3f81e12/src/Users/index.ts#L32">src/Users/index.ts:32</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -285,6 +317,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="users.users-1.html#_client" class="tsd-kind-icon">_client</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="users.users-1.html#confirmaccountdeletion" class="tsd-kind-icon">confirm<wbr>Account<wbr>Deletion</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="users.users-1.html#requestaccountdeletion" class="tsd-kind-icon">request<wbr>Account<wbr>Deletion</a>
