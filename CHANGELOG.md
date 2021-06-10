@@ -1,5 +1,9 @@
 ## Unreleased
 
+## 0.3.6
+
+* Users: account deletion confirmation
+
 ## 0.3.5
 
 * Types: improve Alerts types
