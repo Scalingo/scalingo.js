@@ -24,6 +24,12 @@ export interface AddonUpgradeResponse {
   message: string;
 }
 
+export interface AddonResumeResponse {
+  addon: Addon;
+  /** Custom message from the addon provider */
+  message: string;
+}
+
 export interface Plan {
   /** Unique ID of the plan */
   id: string;

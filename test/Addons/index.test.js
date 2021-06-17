@@ -75,6 +75,18 @@ describe("Addons#update", () => {
   );
 });
 
+describe("Addons#resume", () => {
+  testPost(
+    "https://api.scalingo.com/v1/apps/toto/addons/some-addon/resume",
+    null,
+    null,
+    null,
+    (client) => {
+      return new Addons(client).resume("toto", "some-addon");
+    }
+  );
+});
+
 describe("Addons#destroy", () => {
   testDelete(
     "https://api.scalingo.com/v1/apps/toto/addons/54100930736f7563d5030000",
