@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>models/regional/alerts | scalingo</title>
+	<title>AddonResumeResponse | scalingo</title>
 	<meta name="description" content="Documentation for scalingo">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,46 +55,67 @@
 					<a href="../modules.html">scalingo</a>
 				</li>
 				<li>
-					<a href="models_regional_alerts.html">models/regional/alerts</a>
+					<a href="../modules/models_regional_addons.html">models/regional/addons</a>
+				</li>
+				<li>
+					<a href="models_regional_addons.addonresumeresponse.html">AddonResumeResponse</a>
 				</li>
 			</ul>
-			<h1>Module models/regional/alerts</h1>
+			<h1>Interface AddonResumeResponse</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">AddonResumeResponse</span>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Interfaces</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/models_regional_alerts.alert.html" class="tsd-kind-icon">Alert</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Type aliases</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="models_regional_alerts.html#alertwithnotifiers" class="tsd-kind-icon">Alert<wbr>With<wbr>Notifiers</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_regional_addons.addonresumeresponse.html#addon" class="tsd-kind-icon">addon</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_regional_addons.addonresumeresponse.html#message" class="tsd-kind-icon">message</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Type aliases</h2>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
-					<a name="alertwithnotifiers" class="tsd-anchor"></a>
-					<h3>Alert<wbr>With<wbr>Notifiers</h3>
-					<div class="tsd-signature tsd-kind-icon">Alert<wbr>With<wbr>Notifiers<span class="tsd-signature-symbol">:</span> <a href="../interfaces/models_regional_alerts.alert.html" class="tsd-signature-type" data-tsd-kind="Interface">Alert</a><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>notifiers<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span></div>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="addon" class="tsd-anchor"></a>
+					<h3>addon</h3>
+					<div class="tsd-signature tsd-kind-icon">addon<span class="tsd-signature-symbol">:</span> <a href="models_regional_addons.addon.html" class="tsd-signature-type" data-tsd-kind="Interface">Addon</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/3bfaa89/src/models/regional/alerts.ts#L17">src/models/regional/alerts.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/3bfaa89/src/models/regional/addons.ts#L28">src/models/regional/addons.ts:28</a></li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="message" class="tsd-anchor"></a>
+					<h3>message</h3>
+					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/3bfaa89/src/models/regional/addons.ts#L30">src/models/regional/addons.ts:30</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Custom message from the addon provider</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -105,17 +126,44 @@
 						<a href="../modules.html">Exports</a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="models_regional_alerts.html">models/regional/alerts</a>
+						<a href="../modules/models_regional_addons.html">models/regional/addons</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/models_regional_alerts.alert.html" class="tsd-kind-icon">Alert</a>
+						<a href="models_regional_addons.addon.html" class="tsd-kind-icon">Addon</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="models_regional_alerts.html#alertwithnotifiers" class="tsd-kind-icon">Alert<wbr>With<wbr>Notifiers</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="models_regional_addons.addonprovider.html" class="tsd-kind-icon">Addon<wbr>Provider</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-module">
+						<a href="models_regional_addons.addonresumeresponse.html" class="tsd-kind-icon">Addon<wbr>Resume<wbr>Response</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_regional_addons.addonresumeresponse.html#addon" class="tsd-kind-icon">addon</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_regional_addons.addonresumeresponse.html#message" class="tsd-kind-icon">message</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="models_regional_addons.addonsso.html" class="tsd-kind-icon">Addon<wbr>Sso</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="models_regional_addons.addonupgraderesponse.html" class="tsd-kind-icon">Addon<wbr>Upgrade<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="models_regional_addons.category.html" class="tsd-kind-icon">Category</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="models_regional_addons.plan.html" class="tsd-kind-icon">Plan</a>
 					</li>
 				</ul>
 			</nav>
@@ -133,6 +181,7 @@
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
