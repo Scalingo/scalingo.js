@@ -1,5 +1,7 @@
 ## Unreleased
 
+* Addons: resume endpoint
+
 ## 0.3.6
 
 * Users: account deletion confirmation

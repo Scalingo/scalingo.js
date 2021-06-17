@@ -7,6 +7,7 @@ import {
   AddonProvider,
   AddonSso,
   AddonUpgradeResponse,
+  AddonResumeResponse,
 } from "../models/regional/addons";
 import { CreateParams, UpdateParams } from "../params/regional/addons";
 
@@ -99,6 +100,17 @@ export default class Addons {
         .apiClient()
         .patch(`/apps/${appId}/addons/${addonId}`, { addon: addon }),
       "addon"
+    );
+  }
+
+  /**
+   * Resume an addon
+   * @param appId ID of the current application
+   * @param addonId ID of the current addon
+   */
+  resume(appId: string, addonId: string): Promise<AddonResumeResponse> {
+    return unpackData(
+      this._client.apiClient().post(`/apps/${appId}/addons/${addonId}/resume`)
     );
   }
 
