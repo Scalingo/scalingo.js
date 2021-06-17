@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 0.3.7
+
 * Addons: resume endpoint
 
 ## 0.3.6
