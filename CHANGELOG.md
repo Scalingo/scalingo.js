@@ -1,5 +1,9 @@
 ## Unreleased
 
+## 0.3.8
+
+* Domains: updated typings
+
 ## 0.3.7
 
 * Addons: resume endpoint
