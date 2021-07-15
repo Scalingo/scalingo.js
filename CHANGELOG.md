@@ -1,5 +1,9 @@
 ## Unreleased
 
+## 0.3.10
+
+* Typo
+
 ## 0.3.9
 
 * Deployments: create from archive
