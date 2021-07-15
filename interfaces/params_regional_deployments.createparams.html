@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>AddonResumeResponse | scalingo</title>
+	<title>CreateParams | scalingo</title>
 	<meta name="description" content="Documentation for scalingo">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,13 +55,13 @@
 					<a href="../modules.html">scalingo</a>
 				</li>
 				<li>
-					<a href="../modules/models_regional_addons.html">models/regional/addons</a>
+					<a href="../modules/params_regional_deployments.html">params/regional/deployments</a>
 				</li>
 				<li>
-					<a href="models_regional_addons.addonresumeresponse.html">AddonResumeResponse</a>
+					<a href="params_regional_deployments.createparams.html">CreateParams</a>
 				</li>
 			</ul>
-			<h1>Interface AddonResumeResponse</h1>
+			<h1>Interface CreateParams</h1>
 		</div>
 	</div>
 </header>
@@ -72,7 +72,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">AddonResumeResponse</span>
+						<span class="target">CreateParams</span>
 					</li>
 				</ul>
 			</section>
@@ -83,8 +83,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_regional_addons.addonresumeresponse.html#addon" class="tsd-kind-icon">addon</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_regional_addons.addonresumeresponse.html#message" class="tsd-kind-icon">message</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="params_regional_deployments.createparams.html#git_ref" class="tsd-kind-icon">git_<wbr>ref</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="params_regional_deployments.createparams.html#postdeploy_hook" class="tsd-kind-icon">postdeploy_<wbr>hook</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="params_regional_deployments.createparams.html#source_url" class="tsd-kind-icon">source_<wbr>url</a></li>
 							</ul>
 						</section>
 					</div>
@@ -93,27 +94,47 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="addon" class="tsd-anchor"></a>
-					<h3>addon</h3>
-					<div class="tsd-signature tsd-kind-icon">addon<span class="tsd-signature-symbol">:</span> <a href="models_regional_addons.addon.html" class="tsd-signature-type" data-tsd-kind="Interface">Addon</a></div>
+					<a name="git_ref" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> git_<wbr>ref</h3>
+					<div class="tsd-signature tsd-kind-icon">git_<wbr>ref<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/2967bc7/src/models/regional/addons.ts#L28">src/models/regional/addons.ts:28</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="message" class="tsd-anchor"></a>
-					<h3>message</h3>
-					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/2967bc7/src/models/regional/addons.ts#L30">src/models/regional/addons.ts:30</a></li>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/2967bc7/src/params/regional/deployments.ts#L5">src/params/regional/deployments.ts:5</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Custom message from the addon provider</p>
+							<p>String identifying the archive</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="postdeploy_hook" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> postdeploy_<wbr>hook</h3>
+					<div class="tsd-signature tsd-kind-icon">postdeploy_<wbr>hook<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/2967bc7/src/params/regional/deployments.ts#L7">src/params/regional/deployments.ts:7</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A command to be executed after the deployment and before the app starts</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="source_url" class="tsd-anchor"></a>
+					<h3>source_<wbr>url</h3>
+					<div class="tsd-signature tsd-kind-icon">source_<wbr>url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Scalingo/scalingo.js/blob/2967bc7/src/params/regional/deployments.ts#L3">src/params/regional/deployments.ts:3</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>URL of the archive to deploy</p>
 						</div>
 					</div>
 				</section>
@@ -126,45 +147,30 @@
 						<a href="../modules.html">Exports</a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="../modules/models_regional_addons.html">models/regional/addons</a>
+						<a href="../modules/params_regional_deployments.html">params/regional/deployments</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="models_regional_addons.addon.html" class="tsd-kind-icon">Addon</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="models_regional_addons.addonprovider.html" class="tsd-kind-icon">Addon<wbr>Provider</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="models_regional_addons.addonresumeresponse.html" class="tsd-kind-icon">Addon<wbr>Resume<wbr>Response</a>
+						<a href="params_regional_deployments.createparams.html" class="tsd-kind-icon">Create<wbr>Params</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="models_regional_addons.addonresumeresponse.html#addon" class="tsd-kind-icon">addon</a>
+								<a href="params_regional_deployments.createparams.html#git_ref" class="tsd-kind-icon">git_<wbr>ref</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="models_regional_addons.addonresumeresponse.html#message" class="tsd-kind-icon">message</a>
+								<a href="params_regional_deployments.createparams.html#postdeploy_hook" class="tsd-kind-icon">postdeploy_<wbr>hook</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="params_regional_deployments.createparams.html#source_url" class="tsd-kind-icon">source_<wbr>url</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="models_regional_addons.addonsso.html" class="tsd-kind-icon">Addon<wbr>Sso</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="models_regional_addons.addonupgraderesponse.html" class="tsd-kind-icon">Addon<wbr>Upgrade<wbr>Response</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="models_regional_addons.category.html" class="tsd-kind-icon">Category</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="models_regional_addons.plan.html" class="tsd-kind-icon">Plan</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
