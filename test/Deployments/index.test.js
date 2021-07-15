@@ -1,4 +1,4 @@
-import { testDelete, testGetter } from "../utils/http";
+import { testDelete, testGetter, testPost } from "../utils/http";
 import Deployments from "../../src/Deployments";
 
 describe("Deployments#find", () => {
@@ -8,6 +8,20 @@ describe("Deployments#find", () => {
     "deployment",
     (client) => {
       return new Deployments(client).find("testApp", "deploy1234");
+    }
+  );
+});
+
+describe("Deployments#create", () => {
+  testPost(
+    "https://api.scalingo.com/v1/apps/toto/deployments",
+    null,
+    { deployment: { source_url: "some-url" } },
+    "deployment",
+    (client) => {
+      return new Deployments(client).create("toto", {
+        source_url: "some-url",
+      });
     }
   );
 });

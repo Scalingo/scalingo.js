@@ -2,6 +2,7 @@ import { unpackData } from "../utils";
 import { Client } from "..";
 import { PaginationOpts } from "../meta";
 import { DeploymentsResult, Deployment } from "../models/regional/deployments";
+import { CreateParams } from "src/params/regional/deployments";
 
 /**
  * Deployment API Client
@@ -31,6 +32,22 @@ export default class Deployments {
       this._client
         .apiClient()
         .get(`/apps/${appId}/deployments`, { params: opts })
+    );
+  }
+
+  /**
+   * Create a deployment from an archive
+   * @see https://developers.scalingo.com/deployments#trigger-manually-a-deployment-from-an-archive
+   * @param appId ID of the app
+   * @param opts optional parameters
+   * @return List of deployments for this app
+   */
+  create(appId: string, deployment: CreateParams): Promise<Deployment> {
+    return unpackData(
+      this._client
+        .apiClient()
+        .post(`/apps/${appId}/deployments`, { deployment }),
+      "deployment"
     );
   }
 

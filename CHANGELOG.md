@@ -1,5 +1,9 @@
 ## Unreleased
 
+## 0.3.9
+
+* Deployments: create from archive
+
 ## 0.3.8
 
 * Domains: updated typings
