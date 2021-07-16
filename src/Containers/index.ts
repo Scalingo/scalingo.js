@@ -51,9 +51,14 @@ export default class Containers {
       "containers",
       { hasOperation: true }
     );
-    const operation = new Operation(this._client, result.operation);
-    await operation.refresh();
-    return { formation: result.data, operation: operation };
+
+    if (result.operation) {
+      const operation = new Operation(this._client, result.operation);
+      await operation.refresh();
+      return { formation: result.data, operation: operation };
+    } else {
+      return { formation: result.data };
+    }
   }
 
   /**

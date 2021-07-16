@@ -4,7 +4,7 @@ export interface ContainersOperation {
   /** Response of the API call */
   formation: Container[];
   /** Operation information */
-  operation: Operation;
+  operation?: Operation;
 }
 
 export interface Container {

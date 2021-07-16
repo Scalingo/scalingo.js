@@ -1,5 +1,9 @@
 ## Unreleased
 
+## 0.3.11
+
+* Containers: scaling can be a no-op (no operations return)
+
 ## 0.3.10
 
 * Typo
