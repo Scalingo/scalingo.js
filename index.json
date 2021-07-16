@@ -3643,7 +3643,7 @@
 							"sources": [
 								{
 									"fileName": "src/Containers/index.ts",
-									"line": 64,
+									"line": 69,
 									"character": 16
 								}
 							],
@@ -3752,7 +3752,7 @@
 							"sources": [
 								{
 									"fileName": "src/Containers/index.ts",
-									"line": 78,
+									"line": 83,
 									"character": 15
 								}
 							],
@@ -24709,7 +24709,9 @@
 							"name": "operation",
 							"kind": 1024,
 							"kindString": "Property",
-							"flags": {},
+							"flags": {
+								"isOptional": true
+							},
 							"comment": {
 								"shortText": "Operation information"
 							},
@@ -24721,9 +24723,18 @@
 								}
 							],
 							"type": {
-								"type": "reference",
-								"id": 510,
-								"name": "Operation"
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reference",
+										"id": 510,
+										"name": "Operation"
+									}
+								]
 							}
 						}
 					],
@@ -32809,7 +32820,9 @@
 							"name": "operation",
 							"kind": 1024,
 							"kindString": "Property",
-							"flags": {},
+							"flags": {
+								"isOptional": true
+							},
 							"comment": {
 								"shortText": "Operation information"
 							},
@@ -32821,9 +32834,18 @@
 								}
 							],
 							"type": {
-								"type": "reference",
-								"id": 510,
-								"name": "Operation"
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reference",
+										"id": 510,
+										"name": "Operation"
+									}
+								]
 							}
 						}
 					],
