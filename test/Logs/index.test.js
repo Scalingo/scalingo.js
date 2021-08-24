@@ -5,7 +5,7 @@ import { Client } from "../../src";
 import Apps from "../../src/Apps";
 import LogsListener from "../../src/Logs/listener";
 import sinon from "sinon";
-import { testGetter } from "../utils/http";
+import { testGetter, testParamsGetter } from "../utils/http";
 import Logs from "../../src/Logs";
 
 describe("Logs#for", () => {
@@ -102,6 +102,15 @@ describe("Logs#archive", () => {
     null,
     (client) => {
       return new Logs(client).archives("biniou");
+    }
+  );
+
+  testParamsGetter(
+    "https://api.scalingo.com/v1/apps/biniou/logs_archives",
+    { cursor: 2 },
+    null,
+    (client) => {
+      return new Logs(client).archives("biniou", 2);
     }
   );
 });
