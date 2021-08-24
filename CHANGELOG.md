@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 0.3.12
+
 * Log archives: support for pagination
 
 ## 0.3.11
