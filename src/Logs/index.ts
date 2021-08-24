@@ -53,11 +53,13 @@ export default class Logs {
    * @param id ID of the application
    * @return Promise that when resolved returns a list of logs archives for this application
    */
-  archives(id: string): Promise<ArchivesResult> {
-    // Pagination is not supported in the lib. We're waiting correct pagination metadata.
-    // See: https://github.com/Scalingo/api/issues/1438
+  archives(id: string, cursor?: string | number): Promise<ArchivesResult> {
+    const params: Record<string, unknown> = {};
+
+    if (cursor !== null && cursor !== undefined) params.cursor = cursor;
+
     return unpackData(
-      this._client.apiClient().get(`/apps/${id}/logs_archives`)
+      this._client.apiClient().get(`/apps/${id}/logs_archives`, { params })
     );
   }
 }

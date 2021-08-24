@@ -1,5 +1,7 @@
 ## Unreleased
 
+* Log archives: support for pagination
+
 ## 0.3.11
 
 * Containers: scaling can be a no-op (no operations return)
