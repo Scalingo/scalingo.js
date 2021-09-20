@@ -15454,14 +15454,14 @@
 					]
 				},
 				{
-					"id": 1477,
+					"id": 1478,
 					"name": "GithubProfile",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 1480,
+							"id": 1481,
 							"name": "avatar_url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15469,7 +15469,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 42,
+									"line": 43,
 									"character": 12
 								}
 							],
@@ -15479,7 +15479,7 @@
 							}
 						},
 						{
-							"id": 1479,
+							"id": 1480,
 							"name": "email",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15492,7 +15492,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 40,
+									"line": 41,
 									"character": 7
 								}
 							],
@@ -15511,7 +15511,7 @@
 							}
 						},
 						{
-							"id": 1481,
+							"id": 1482,
 							"name": "profile_url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15519,7 +15519,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 43,
+									"line": 44,
 									"character": 13
 								}
 							],
@@ -15529,7 +15529,7 @@
 							}
 						},
 						{
-							"id": 1478,
+							"id": 1479,
 							"name": "username",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15540,7 +15540,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 38,
+									"line": 39,
 									"character": 10
 								}
 							],
@@ -15555,17 +15555,17 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								1480,
-								1479,
 								1481,
-								1478
+								1480,
+								1482,
+								1479
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "src/models/auth/user.ts",
-							"line": 36,
+							"line": 37,
 							"character": 30
 						}
 					]
@@ -16888,7 +16888,25 @@
 							}
 						},
 						{
-							"id": 1467,
+							"id": 1466,
+							"name": "confirmed",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "src/models/auth/user.ts",
+									"line": 17,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 1468,
 							"name": "created_at",
 							"kind": 1024,
 							"kindString": "Property",
@@ -16896,7 +16914,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 18,
+									"line": 19,
 									"character": 12
 								}
 							],
@@ -16942,7 +16960,7 @@
 							}
 						},
 						{
-							"id": 1470,
+							"id": 1471,
 							"name": "flags",
 							"kind": 1024,
 							"kindString": "Property",
@@ -16953,7 +16971,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 24,
+									"line": 25,
 									"character": 7
 								}
 							],
@@ -16973,7 +16991,7 @@
 							}
 						},
 						{
-							"id": 1469,
+							"id": 1470,
 							"name": "free_trial_end_time",
 							"kind": 1024,
 							"kindString": "Property",
@@ -16981,7 +16999,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 21,
+									"line": 22,
 									"character": 21
 								}
 							],
@@ -16991,7 +17009,7 @@
 							}
 						},
 						{
-							"id": 1468,
+							"id": 1469,
 							"name": "free_trial_started_at",
 							"kind": 1024,
 							"kindString": "Property",
@@ -16999,7 +17017,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 20,
+									"line": 21,
 									"character": 23
 								}
 							],
@@ -17044,7 +17062,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 866,
+								"id": 867,
 								"name": "GithubProfile"
 							}
 						},
@@ -17067,7 +17085,7 @@
 							}
 						},
 						{
-							"id": 1471,
+							"id": 1472,
 							"name": "limits",
 							"kind": 1024,
 							"kindString": "Property",
@@ -17075,7 +17093,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 25,
+									"line": 26,
 									"character": 8
 								}
 							],
@@ -17131,7 +17149,7 @@
 							}
 						},
 						{
-							"id": 1476,
+							"id": 1477,
 							"name": "preferences",
 							"kind": 1024,
 							"kindString": "Property",
@@ -17139,18 +17157,18 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 33,
+									"line": 34,
 									"character": 13
 								}
 							],
 							"type": {
 								"type": "reference",
-								"id": 871,
+								"id": 872,
 								"name": "UserPreferences"
 							}
 						},
 						{
-							"id": 1473,
+							"id": 1474,
 							"name": "referral_clicks",
 							"kind": 1024,
 							"kindString": "Property",
@@ -17158,7 +17176,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 28,
+									"line": 29,
 									"character": 17
 								}
 							],
@@ -17168,7 +17186,7 @@
 							}
 						},
 						{
-							"id": 1472,
+							"id": 1473,
 							"name": "referral_url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -17176,7 +17194,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 27,
+									"line": 28,
 									"character": 14
 								}
 							],
@@ -17186,7 +17204,7 @@
 							}
 						},
 						{
-							"id": 1474,
+							"id": 1475,
 							"name": "suspended_at",
 							"kind": 1024,
 							"kindString": "Property",
@@ -17194,7 +17212,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 30,
+									"line": 31,
 									"character": 14
 								}
 							],
@@ -17213,7 +17231,7 @@
 							}
 						},
 						{
-							"id": 1475,
+							"id": 1476,
 							"name": "suspension_reason",
 							"kind": 1024,
 							"kindString": "Property",
@@ -17221,7 +17239,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 31,
+									"line": 32,
 									"character": 19
 								}
 							],
@@ -17261,7 +17279,7 @@
 							}
 						},
 						{
-							"id": 1466,
+							"id": 1467,
 							"name": "unconfirmed_email",
 							"kind": 1024,
 							"kindString": "Property",
@@ -17269,7 +17287,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 17,
+									"line": 18,
 									"character": 19
 								}
 							],
@@ -17330,24 +17348,25 @@
 							"kind": 1024,
 							"children": [
 								1460,
-								1467,
+								1466,
+								1468,
 								1457,
 								1465,
+								1471,
 								1470,
 								1469,
-								1468,
 								1462,
 								1463,
 								1456,
-								1471,
-								1461,
-								1476,
-								1473,
 								1472,
+								1461,
+								1477,
 								1474,
+								1473,
 								1475,
+								1476,
 								1464,
-								1466,
+								1467,
 								1458,
 								1459
 							]
@@ -17362,7 +17381,7 @@
 					]
 				},
 				{
-					"id": 1482,
+					"id": 1483,
 					"name": "UserPreferences",
 					"kind": 256,
 					"kindString": "Interface",
@@ -17396,7 +17415,7 @@
 							}
 						},
 						{
-							"id": 1484,
+							"id": 1485,
 							"name": "locale",
 							"kind": 1024,
 							"kindString": "Property",
@@ -17404,7 +17423,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 48,
+									"line": 49,
 									"character": 8
 								}
 							],
@@ -17450,24 +17469,6 @@
 							}
 						},
 						{
-							"id": 1486,
-							"name": "prefers_old_dashboard",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "src/models/auth/user.ts",
-									"line": 50,
-									"character": 23
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "boolean"
-							}
-						},
-						{
 							"id": 1487,
 							"name": "sticky_search",
 							"kind": 1024,
@@ -17486,7 +17487,7 @@
 							}
 						},
 						{
-							"id": 1485,
+							"id": 1486,
 							"name": "stream_logs",
 							"kind": 1024,
 							"kindString": "Property",
@@ -17494,7 +17495,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 49,
+									"line": 50,
 									"character": 13
 								}
 							],
@@ -17531,7 +17532,7 @@
 							}
 						},
 						{
-							"id": 1483,
+							"id": 1484,
 							"name": "time_zone",
 							"kind": 1024,
 							"kindString": "Property",
@@ -17539,7 +17540,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 47,
+									"line": 48,
 									"character": 11
 								}
 							],
@@ -17564,20 +17565,19 @@
 							"kind": 1024,
 							"children": [
 								1488,
-								1484,
-								1490,
-								1486,
-								1487,
 								1485,
+								1490,
+								1487,
+								1486,
 								1489,
-								1483
+								1484
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "src/models/auth/user.ts",
-							"line": 46,
+							"line": 47,
 							"character": 32
 						}
 					]
@@ -17693,7 +17693,7 @@
 					"kind": 256,
 					"children": [
 						1431,
-						1477,
+						1478,
 						1395,
 						1425,
 						1414,
@@ -17704,7 +17704,7 @@
 						1443,
 						1452,
 						1455,
-						1482
+						1483
 					]
 				},
 				{
@@ -19303,14 +19303,14 @@
 			"flags": {},
 			"children": [
 				{
-					"id": 866,
+					"id": 867,
 					"name": "GithubProfile",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 869,
+							"id": 870,
 							"name": "avatar_url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -19318,7 +19318,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 42,
+									"line": 43,
 									"character": 12
 								}
 							],
@@ -19328,7 +19328,7 @@
 							}
 						},
 						{
-							"id": 868,
+							"id": 869,
 							"name": "email",
 							"kind": 1024,
 							"kindString": "Property",
@@ -19341,7 +19341,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 40,
+									"line": 41,
 									"character": 7
 								}
 							],
@@ -19360,7 +19360,7 @@
 							}
 						},
 						{
-							"id": 870,
+							"id": 871,
 							"name": "profile_url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -19368,7 +19368,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 43,
+									"line": 44,
 									"character": 13
 								}
 							],
@@ -19378,7 +19378,7 @@
 							}
 						},
 						{
-							"id": 867,
+							"id": 868,
 							"name": "username",
 							"kind": 1024,
 							"kindString": "Property",
@@ -19389,7 +19389,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 38,
+									"line": 39,
 									"character": 10
 								}
 							],
@@ -19404,17 +19404,17 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								869,
-								868,
 								870,
-								867
+								869,
+								871,
+								868
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "src/models/auth/user.ts",
-							"line": 36,
+							"line": 37,
 							"character": 30
 						}
 					]
@@ -19454,7 +19454,25 @@
 							}
 						},
 						{
-							"id": 856,
+							"id": 855,
+							"name": "confirmed",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "src/models/auth/user.ts",
+									"line": 17,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 857,
 							"name": "created_at",
 							"kind": 1024,
 							"kindString": "Property",
@@ -19462,7 +19480,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 18,
+									"line": 19,
 									"character": 12
 								}
 							],
@@ -19508,7 +19526,7 @@
 							}
 						},
 						{
-							"id": 859,
+							"id": 860,
 							"name": "flags",
 							"kind": 1024,
 							"kindString": "Property",
@@ -19519,7 +19537,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 24,
+									"line": 25,
 									"character": 7
 								}
 							],
@@ -19539,7 +19557,7 @@
 							}
 						},
 						{
-							"id": 858,
+							"id": 859,
 							"name": "free_trial_end_time",
 							"kind": 1024,
 							"kindString": "Property",
@@ -19547,7 +19565,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 21,
+									"line": 22,
 									"character": 21
 								}
 							],
@@ -19557,7 +19575,7 @@
 							}
 						},
 						{
-							"id": 857,
+							"id": 858,
 							"name": "free_trial_started_at",
 							"kind": 1024,
 							"kindString": "Property",
@@ -19565,7 +19583,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 20,
+									"line": 21,
 									"character": 23
 								}
 							],
@@ -19610,7 +19628,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 866,
+								"id": 867,
 								"name": "GithubProfile"
 							}
 						},
@@ -19633,7 +19651,7 @@
 							}
 						},
 						{
-							"id": 860,
+							"id": 861,
 							"name": "limits",
 							"kind": 1024,
 							"kindString": "Property",
@@ -19641,7 +19659,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 25,
+									"line": 26,
 									"character": 8
 								}
 							],
@@ -19697,7 +19715,7 @@
 							}
 						},
 						{
-							"id": 865,
+							"id": 866,
 							"name": "preferences",
 							"kind": 1024,
 							"kindString": "Property",
@@ -19705,18 +19723,18 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 33,
+									"line": 34,
 									"character": 13
 								}
 							],
 							"type": {
 								"type": "reference",
-								"id": 871,
+								"id": 872,
 								"name": "UserPreferences"
 							}
 						},
 						{
-							"id": 862,
+							"id": 863,
 							"name": "referral_clicks",
 							"kind": 1024,
 							"kindString": "Property",
@@ -19724,7 +19742,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 28,
+									"line": 29,
 									"character": 17
 								}
 							],
@@ -19734,7 +19752,7 @@
 							}
 						},
 						{
-							"id": 861,
+							"id": 862,
 							"name": "referral_url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -19742,7 +19760,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 27,
+									"line": 28,
 									"character": 14
 								}
 							],
@@ -19752,7 +19770,7 @@
 							}
 						},
 						{
-							"id": 863,
+							"id": 864,
 							"name": "suspended_at",
 							"kind": 1024,
 							"kindString": "Property",
@@ -19760,7 +19778,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 30,
+									"line": 31,
 									"character": 14
 								}
 							],
@@ -19779,7 +19797,7 @@
 							}
 						},
 						{
-							"id": 864,
+							"id": 865,
 							"name": "suspension_reason",
 							"kind": 1024,
 							"kindString": "Property",
@@ -19787,7 +19805,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 31,
+									"line": 32,
 									"character": 19
 								}
 							],
@@ -19827,7 +19845,7 @@
 							}
 						},
 						{
-							"id": 855,
+							"id": 856,
 							"name": "unconfirmed_email",
 							"kind": 1024,
 							"kindString": "Property",
@@ -19835,7 +19853,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 17,
+									"line": 18,
 									"character": 19
 								}
 							],
@@ -19896,24 +19914,25 @@
 							"kind": 1024,
 							"children": [
 								849,
-								856,
+								855,
+								857,
 								846,
 								854,
+								860,
 								859,
 								858,
-								857,
 								851,
 								852,
 								845,
-								860,
-								850,
-								865,
-								862,
 								861,
+								850,
+								866,
 								863,
+								862,
 								864,
+								865,
 								853,
-								855,
+								856,
 								847,
 								848
 							]
@@ -19928,7 +19947,7 @@
 					]
 				},
 				{
-					"id": 871,
+					"id": 872,
 					"name": "UserPreferences",
 					"kind": 256,
 					"kindString": "Interface",
@@ -19962,7 +19981,7 @@
 							}
 						},
 						{
-							"id": 873,
+							"id": 874,
 							"name": "locale",
 							"kind": 1024,
 							"kindString": "Property",
@@ -19970,7 +19989,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 48,
+									"line": 49,
 									"character": 8
 								}
 							],
@@ -20016,24 +20035,6 @@
 							}
 						},
 						{
-							"id": 875,
-							"name": "prefers_old_dashboard",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "src/models/auth/user.ts",
-									"line": 50,
-									"character": 23
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "boolean"
-							}
-						},
-						{
 							"id": 876,
 							"name": "sticky_search",
 							"kind": 1024,
@@ -20052,7 +20053,7 @@
 							}
 						},
 						{
-							"id": 874,
+							"id": 875,
 							"name": "stream_logs",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20060,7 +20061,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 49,
+									"line": 50,
 									"character": 13
 								}
 							],
@@ -20097,7 +20098,7 @@
 							}
 						},
 						{
-							"id": 872,
+							"id": 873,
 							"name": "time_zone",
 							"kind": 1024,
 							"kindString": "Property",
@@ -20105,7 +20106,7 @@
 							"sources": [
 								{
 									"fileName": "src/models/auth/user.ts",
-									"line": 47,
+									"line": 48,
 									"character": 11
 								}
 							],
@@ -20130,20 +20131,19 @@
 							"kind": 1024,
 							"children": [
 								877,
-								873,
-								879,
-								875,
-								876,
 								874,
+								879,
+								876,
+								875,
 								878,
-								872
+								873
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "src/models/auth/user.ts",
-							"line": 46,
+							"line": 47,
 							"character": 32
 						}
 					]
@@ -20154,9 +20154,9 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						866,
+						867,
 						844,
-						871
+						872
 					]
 				}
 			],
