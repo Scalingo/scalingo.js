@@ -14,6 +14,7 @@ export interface User {
   tos_accepted: boolean;
   email_newsletter: boolean;
 
+  confirmed: boolean;
   unconfirmed_email: string | null;
   created_at: string;
 
@@ -47,7 +48,6 @@ export interface UserPreferences {
   time_zone: string | null;
   locale: string | null;
   stream_logs: boolean;
-  prefers_old_dashboard: boolean;
   sticky_search: boolean;
   app_sort_key: string | null;
   theme: string | null;

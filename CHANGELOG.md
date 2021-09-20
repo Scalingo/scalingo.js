@@ -1,5 +1,7 @@
 ## Unreleased
 
+* types: update user
+
 ## 0.3.12
 
 * Log archives: support for pagination
