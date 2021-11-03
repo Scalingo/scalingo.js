@@ -13,6 +13,10 @@ export interface Collaborator {
   id: string;
   /** Email of the collaborator to invite */
   email: string;
+  /** Unique User ID of the user who accepted the collaboration */
+  user_id: string;
+  /** ID of the application owning the collaborator */
+  app_id: string;
   /** Username of the person to invite */
   username: string;
   /** Status of the invitation */

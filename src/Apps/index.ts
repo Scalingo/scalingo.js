@@ -130,20 +130,20 @@ export default class Apps {
    * @see https://developers.scalingo.com/apps.html#transfer-ownership-of-an-application
    * @param appID ID of the application
    * @param currentName Current name of the application. Used as validation.
-   * @param ownerEmail Email address of the new owner.
+   * @param ownerID Email address of the new owner.
    * @return Promise that when resolved returns the App transferred.
    */
   transfer(
     appID: string,
     currentName: string,
-    ownerEmail: string
+    ownerID: string
   ): Promise<App> {
     return unpackData(
       this._client.apiClient().patch(
         `/apps/${appID}`,
         {
           app: {
-            owner: ownerEmail,
+            owner: ownerID,
           },
         },
         { params: { current_name: currentName } }
