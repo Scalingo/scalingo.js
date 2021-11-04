@@ -1,5 +1,6 @@
-## Unreleased
+## 0.4.0
 
+* App#transfer: based in the ID rather than the user email
 * types: update user
 
 ## 0.3.12
