@@ -133,11 +133,7 @@ export default class Apps {
    * @param ownerID Email address of the new owner.
    * @return Promise that when resolved returns the App transferred.
    */
-  transfer(
-    appID: string,
-    currentName: string,
-    ownerID: string
-  ): Promise<App> {
+  transfer(appID: string, currentName: string, ownerID: string): Promise<App> {
     return unpackData(
       this._client.apiClient().patch(
         `/apps/${appID}`,
