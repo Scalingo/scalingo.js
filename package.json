@@ -9,7 +9,7 @@
   "author": "Jonathan Hurter <john@scalingo.com>",
   "license": "MIT",
   "scripts": {
-    "build": "yarn eslint --quiet && tsc && rollup -c",
+    "build": "eslint --quiet && tsc && node bundle.js",
     "docs": "typedoc src",
     "lint": "tsc --noEmit && yarn eslint",
     "eslint": "eslint --ext .js,.ts ./src ./test",
@@ -33,6 +33,7 @@
     "axios-mock-adapter": "^1.20.0",
     "chai": "^4.3.4",
     "core-js": "^3.3.6",
+    "esbuild": "^0.14.6",
     "esdoc": "1.x",
     "esdoc-ecmascript-proposal-plugin": "1.x",
     "esdoc-standard-plugin": "1.x",
