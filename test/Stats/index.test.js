@@ -1,5 +1,5 @@
-import { testGetter } from "../utils/http";
 import Stats from "../../src/Stats";
+import { testGetter } from "../utils/http";
 
 describe("Stats#referrals", () => {
   testGetter(

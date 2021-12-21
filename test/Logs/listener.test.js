@@ -1,5 +1,6 @@
 import { expect } from "chai";
 import sinon from "sinon";
+
 import LogsListener from "../../src/Logs/listener";
 
 describe("_onMessage", () => {

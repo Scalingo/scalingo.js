@@ -1,10 +1,10 @@
-import { unpackData } from "../utils";
 import { Client } from "..";
 import { App } from "../models/regional/apps";
 import {
   Collaborator,
   CollaboratorInvitation,
 } from "../models/regional/collaborators";
+import { unpackData } from "../utils";
 
 /**
  * Collaborators API Client

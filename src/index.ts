@@ -1,8 +1,8 @@
 import axios, { AxiosInstance } from "axios";
 
-import Apps from "./Apps";
-import Alerts from "./Alerts";
 import Addons from "./Addons";
+import Alerts from "./Alerts";
+import Apps from "./Apps";
 import AuditLogs from "./AuditLogs";
 import Autoscalers from "./Autoscalers";
 import Billing from "./Billing";
@@ -15,8 +15,8 @@ import Events from "./Events";
 import Keys from "./Keys";
 import Logs from "./Logs";
 import Metrics from "./Metrics";
-import Notifiers from "./Notifiers";
 import NotificationPlatforms from "./NotificationPlatforms";
+import Notifiers from "./Notifiers";
 import Operations from "./Operations";
 import SCMIntegrations from "./SCMIntegrations";
 import SCMRepoLinks from "./SCMRepoLinks";

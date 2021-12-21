@@ -1,10 +1,10 @@
+import SCMIntegrations from "../../src/SCMIntegrations";
 import {
   testDelete,
   testGetter,
   testParamsGetter,
   testPost,
 } from "../utils/http";
-import SCMIntegrations from "../../src/SCMIntegrations";
 
 describe("SCMIntegrations#find", () => {
   testGetter(

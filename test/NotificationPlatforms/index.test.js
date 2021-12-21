@@ -1,5 +1,5 @@
-import { testGetter } from "../utils/http";
 import NotificationPlatforms from "../../src/NotificationPlatforms";
+import { testGetter } from "../utils/http";
 
 describe("NotificationPlatforms#list", () => {
   testGetter(

@@ -1,8 +1,8 @@
-import { unpackData } from "../utils";
 import { Client } from "..";
 import { PaginationOpts } from "../meta";
 import { DeploymentsResult, Deployment } from "../models/regional/deployments";
 import { CreateParams } from "../params/regional/deployments";
+import { unpackData } from "../utils";
 
 /**
  * Deployment API Client

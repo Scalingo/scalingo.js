@@ -1,9 +1,10 @@
-import { testGetter } from "../utils/http";
-import Metrics from "../../src/Metrics";
-import { Client } from "../../src";
-import MockAdapter from "axios-mock-adapter";
 import axios from "axios";
+import MockAdapter from "axios-mock-adapter";
 import { expect } from "chai";
+
+import { Client } from "../../src";
+import Metrics from "../../src/Metrics";
+import { testGetter } from "../utils/http";
 
 describe("Metrics#types", () => {
   testGetter(

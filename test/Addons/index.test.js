@@ -1,5 +1,5 @@
-import { testDelete, testGetter, testPost, testUpdate } from "../utils/http";
 import Addons from "../../src/Addons";
+import { testDelete, testGetter, testPost, testUpdate } from "../utils/http";
 
 describe("Addons#for", () => {
   testGetter(

@@ -1,8 +1,7 @@
-import { unpackData } from "../utils";
 import { Client } from "..";
-
 import { User } from "../models/auth/user";
 import { DeletionParams, UpdateParams } from "../params/auth/user";
+import { unpackData } from "../utils";
 
 export class Users {
   /** Scalingo API Client */

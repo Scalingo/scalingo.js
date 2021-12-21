@@ -1,6 +1,6 @@
-import { unpackData } from "../utils";
 import { Client } from "..";
 import { NotificationPlatform } from "../models/regional/notification_platforms";
+import { unpackData } from "../utils";
 
 /**
  * Notification Platforms API Client

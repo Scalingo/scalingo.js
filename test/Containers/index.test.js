@@ -1,7 +1,8 @@
-import { testGetter, testPost } from "../utils/http";
-import Containers from "../../src/Containers";
-import { Factory } from "rosie";
 import { expect } from "chai";
+import { Factory } from "rosie";
+
+import Containers from "../../src/Containers";
+import { testGetter, testPost } from "../utils/http";
 import "../factories";
 
 describe("Containers#for", () => {

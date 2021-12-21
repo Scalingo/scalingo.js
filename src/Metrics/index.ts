@@ -1,7 +1,7 @@
-import { unpackData } from "../utils";
 import { Client } from "..";
 import { MetricType, Point } from "../models/regional/metrics";
 import { QueryParams } from "../params/regional/metrics";
+import { unpackData } from "../utils";
 
 /**
  * Metrics API Client

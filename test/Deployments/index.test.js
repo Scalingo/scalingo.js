@@ -1,5 +1,5 @@
-import { testDelete, testGetter, testPost } from "../utils/http";
 import Deployments from "../../src/Deployments";
+import { testDelete, testGetter, testPost } from "../utils/http";
 
 describe("Deployments#find", () => {
   testGetter(

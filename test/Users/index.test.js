@@ -1,5 +1,5 @@
-import { testGetter, testPost, testPut } from "../utils/http";
 import Users from "../../src/Users";
+import { testGetter, testPost, testPut } from "../utils/http";
 
 describe("Users#self", () => {
   testGetter(

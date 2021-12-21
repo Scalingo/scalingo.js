@@ -2,10 +2,11 @@ import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 import { expect } from "chai";
 import sinon from "sinon";
-import Listener from "../../src/Deployments/listener";
-import { testDelete, testGetter, testPost, testUpdate } from "../utils/http";
+
 import { Client } from "../../src";
 import Apps from "../../src/Apps";
+import Listener from "../../src/Deployments/listener";
+import { testDelete, testGetter, testPost, testUpdate } from "../utils/http";
 
 describe("App#all", () => {
   testGetter("https://api.scalingo.com/v1/apps", null, "apps", (client) => {

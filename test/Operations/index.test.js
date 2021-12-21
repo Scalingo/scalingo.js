@@ -1,5 +1,5 @@
-import { testGetter } from "../utils/http";
 import Operations from "../../src/Operations";
+import { testGetter } from "../utils/http";
 
 describe("Operations#getOperation", () => {
   testGetter(

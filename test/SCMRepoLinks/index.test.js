@@ -1,5 +1,5 @@
-import { testDelete, testGetter, testPost, testUpdate } from "../utils/http";
 import SCMRepoLinks from "../../src/SCMRepoLinks";
+import { testDelete, testGetter, testPost, testUpdate } from "../utils/http";
 
 describe("SCMRepoLinks#find", () => {
   testGetter(

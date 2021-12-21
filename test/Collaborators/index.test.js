@@ -1,10 +1,10 @@
+import Collaborators from "../../src/Collaborators";
 import {
   testGetter,
   testDelete,
   testPost,
   testParamsGetter,
 } from "../utils/http";
-import Collaborators from "../../src/Collaborators";
 import "../factories";
 
 describe("Collaborators#for", () => {

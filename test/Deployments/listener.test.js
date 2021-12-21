@@ -1,6 +1,7 @@
-import Listener from "../../src/Deployments/listener";
-import sinon from "sinon";
 import { expect } from "chai";
+import sinon from "sinon";
+
+import Listener from "../../src/Deployments/listener";
 
 describe("Listener", () => {
   let stub;

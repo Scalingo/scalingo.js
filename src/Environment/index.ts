@@ -1,4 +1,3 @@
-import { unpackData } from "../utils";
 import { Client } from "..";
 import { Variable } from "../models/regional/environment";
 import {
@@ -6,6 +5,7 @@ import {
   UpdateParams,
   BulkUpdateParams,
 } from "../params/regional/environment";
+import { unpackData } from "../utils";
 
 /**
  * Environment API Client

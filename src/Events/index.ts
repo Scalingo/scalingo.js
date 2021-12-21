@@ -1,4 +1,3 @@
-import { unpackData } from "../utils";
 import { Client } from "..";
 import {
   AppEvents,
@@ -7,6 +6,7 @@ import {
   Event,
 } from "../models/regional/events";
 import { IndexParams } from "../params/regional/events";
+import { unpackData } from "../utils";
 
 /**
  * Events API Client

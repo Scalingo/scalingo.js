@@ -1,5 +1,5 @@
-import { APIError } from "../errors";
 import { Client } from "..";
+import { APIError } from "../errors";
 
 export class Operation {
   _client: Client | null;

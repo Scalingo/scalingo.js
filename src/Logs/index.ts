@@ -1,8 +1,8 @@
-import LogsListener from "../Logs/listener";
-import { unpackData } from "../utils";
 import { Client } from "..";
+import LogsListener from "../Logs/listener";
 import { ArchivesResult } from "../models/regional/logs";
 import { IndexParams } from "../params/regional/logs";
+import { unpackData } from "../utils";
 
 export default class Logs {
   /** Scalingo API Client */

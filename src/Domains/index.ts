@@ -1,7 +1,7 @@
-import { unpackData } from "../utils";
 import { Client } from "..";
 import { Domain } from "../models/regional/domains";
 import { CreateParams, UpdateParams } from "../params/regional/domains";
+import { unpackData } from "../utils";
 
 /**
  * Domains API Client

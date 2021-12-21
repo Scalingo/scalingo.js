@@ -1,5 +1,5 @@
-import { testGetter, testParamsGetter } from "../utils/http";
 import Events from "../../src/Events";
+import { testGetter, testParamsGetter } from "../utils/http";
 
 describe("Events#all", () => {
   testGetter("https://api.scalingo.com/v1/events", null, null, (client) => {

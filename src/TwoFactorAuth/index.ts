@@ -1,12 +1,11 @@
-import { unpackData } from "../utils";
 import { Client } from "..";
-
 import {
   TwoFactorAuthObject,
   DEFAULT_PROVIDER,
   TwoFactorAuthInitiateResponse,
   TwoFactorAuthValidateResponse,
 } from "../models/auth/two_factor_auth";
+import { unpackData } from "../utils";
 
 export class TwoFactorAuth {
   /** Scalingo API Client */

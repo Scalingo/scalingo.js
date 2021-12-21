@@ -1,5 +1,5 @@
-import { testGetter } from "../utils/http";
 import AuditLogs from "../../src/AuditLogs";
+import { testGetter } from "../utils/http";
 
 describe("AuditLogs#show", () => {
   testGetter(

@@ -1,5 +1,6 @@
-import { APIError } from "./errors";
 import { AxiosResponse } from "axios";
+
+import { APIError } from "./errors";
 
 /**
  * @ignore

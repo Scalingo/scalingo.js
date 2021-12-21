@@ -1,6 +1,6 @@
-import { unpackData } from "../utils";
 import { Client } from "..";
 import { ReferralsStats } from "../models/regional/stats";
+import { unpackData } from "../utils";
 
 /**
  * Stats API Client

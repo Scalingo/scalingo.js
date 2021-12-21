@@ -1,5 +1,5 @@
-import { testDelete, testGetter, testPost, testUpdate } from "../utils/http";
 import Tokens from "../../src/Tokens";
+import { testDelete, testGetter, testPost, testUpdate } from "../utils/http";
 
 describe("Tokens#list", () => {
   testGetter(

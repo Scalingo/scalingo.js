@@ -1,5 +1,5 @@
-import { testDelete, testGetter, testPost, testUpdate } from "../utils/http";
 import Notifiers from "../../src/Notifiers";
+import { testDelete, testGetter, testPost, testUpdate } from "../utils/http";
 
 describe("Notifiers#for", () => {
   testGetter(

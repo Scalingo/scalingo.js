@@ -1,5 +1,5 @@
-import { testGetter, testPost, testUpdate, testDelete } from "../utils/http";
 import Autoscalers from "../../src/Autoscalers";
+import { testGetter, testPost, testUpdate, testDelete } from "../utils/http";
 
 describe("Autoscalers#for", () => {
   testGetter(

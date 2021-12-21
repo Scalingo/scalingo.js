@@ -1,3 +1,4 @@
+import Environment from "../../src/Environment";
 import {
   testGetter,
   testPost,
@@ -5,7 +6,6 @@ import {
   testDelete,
   testPut,
 } from "../utils/http";
-import Environment from "../../src/Environment";
 
 describe("Environment#for", () => {
   testGetter(
