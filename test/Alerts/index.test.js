@@ -1,9 +1,9 @@
-import { testGetter, testPost, testUpdate, testDelete } from "../utils/http";
 import Alerts from "../../src/Alerts";
+import { testGetter, testPost, testUpdate, testDelete } from "../utils/http";
 
 describe("Alerts#for", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/tata/alerts",
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/alerts",
     null,
     "alerts",
     (client) => {
@@ -14,7 +14,7 @@ describe("Alerts#for", () => {
 
 describe("Alerts#create", () => {
   testPost(
-    "https://api.scalingo.com/v1/apps/tata/alerts",
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/alerts",
     null,
     { alert: { some: "params" } },
     "alert",
@@ -26,7 +26,7 @@ describe("Alerts#create", () => {
 
 describe("Alerts#destroy", () => {
   testDelete(
-    "https://api.scalingo.com/v1/apps/tata/alerts/541067ec736f7504a5110000",
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/alerts/541067ec736f7504a5110000",
     (client) => {
       return new Alerts(client).destroy("tata", "541067ec736f7504a5110000");
     }
@@ -35,7 +35,7 @@ describe("Alerts#destroy", () => {
 
 describe("Alerts#find", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/tata/alerts/541067ec736f7504a5110000",
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/alerts/541067ec736f7504a5110000",
     null,
     "alert",
     (client) => {
@@ -46,7 +46,7 @@ describe("Alerts#find", () => {
 
 describe("Alerts#update", () => {
   testUpdate(
-    "https://api.scalingo.com/v1/apps/tata/alerts/541067ec736f7504a5110000",
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/alerts/541067ec736f7504a5110000",
     { alert: { some: "params" } },
     "alert",
     (client) => {

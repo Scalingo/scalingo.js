@@ -1,5 +1,5 @@
-import { testDelete, testGetter, testPost } from "../utils/http";
 import TFA from "../../src/TwoFactorAuth";
+import { testDelete, testGetter, testPost } from "../utils/http";
 
 describe("TwoFactorAuth#status", () => {
   testGetter(

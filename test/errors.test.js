@@ -1,6 +1,7 @@
 import { expect } from "chai";
-import { unpackData } from "../src/utils";
+
 import { APIError } from "../src/errors";
+import { unpackData } from "../src/utils";
 
 describe("unpackData", () => {
   it("should reolve correcty if the request resolve", (done) => {

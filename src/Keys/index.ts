@@ -1,7 +1,6 @@
-import { unpackData } from "../utils";
 import { Client } from "..";
-
 import { Key } from "../models/auth/keys";
+import { unpackData } from "../utils";
 
 /**
  * Keys API Client

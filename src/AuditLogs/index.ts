@@ -1,6 +1,6 @@
-import { unpackData } from "../utils";
 import { Client } from "..";
 import { AuditLog } from "../models/regional/audit_logs";
+import { unpackData } from "../utils";
 
 export default class AuditLogs {
   /** Scalingo API Client */

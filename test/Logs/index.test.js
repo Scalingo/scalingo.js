@@ -1,12 +1,13 @@
-import { expect } from "chai";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
+import { expect } from "chai";
+import sinon from "sinon";
+
 import { Client } from "../../src";
 import Apps from "../../src/Apps";
-import LogsListener from "../../src/Logs/listener";
-import sinon from "sinon";
-import { testGetter, testParamsGetter } from "../utils/http";
 import Logs from "../../src/Logs";
+import LogsListener from "../../src/Logs/listener";
+import { testGetter, testParamsGetter } from "../utils/http";
 
 describe("Logs#for", () => {
   let logsURLMock;
@@ -97,7 +98,7 @@ describe("Logs#listenerFor", () => {
 
 describe("Logs#archive", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/biniou/logs_archives",
+    "https://api.osc-fr1.scalingo.com/v1/apps/biniou/logs_archives",
     null,
     null,
     (client) => {
@@ -106,7 +107,7 @@ describe("Logs#archive", () => {
   );
 
   testParamsGetter(
-    "https://api.scalingo.com/v1/apps/biniou/logs_archives",
+    "https://api.osc-fr1.scalingo.com/v1/apps/biniou/logs_archives",
     { cursor: 2 },
     null,
     (client) => {

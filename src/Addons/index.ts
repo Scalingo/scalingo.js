@@ -1,6 +1,4 @@
-import { unpackData } from "../utils";
 import { Client } from "..";
-
 import {
   Addon,
   Category,
@@ -10,6 +8,7 @@ import {
   AddonResumeResponse,
 } from "../models/regional/addons";
 import { CreateParams, UpdateParams } from "../params/regional/addons";
+import { unpackData } from "../utils";
 
 /**
  * Addons API Client

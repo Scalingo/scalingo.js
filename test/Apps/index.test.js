@@ -2,21 +2,32 @@ import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 import { expect } from "chai";
 import sinon from "sinon";
-import Listener from "../../src/Deployments/listener";
-import { testDelete, testGetter, testPost, testUpdate } from "../utils/http";
+
 import { Client } from "../../src";
 import Apps from "../../src/Apps";
+import Listener from "../../src/Deployments/listener";
+import { testDelete, testGetter, testPost, testUpdate } from "../utils/http";
 
 describe("App#all", () => {
-  testGetter("https://api.scalingo.com/v1/apps", null, "apps", (client) => {
-    return new Apps(client).all();
-  });
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/v1/apps",
+    null,
+    "apps",
+    (client) => {
+      return new Apps(client).all();
+    }
+  );
 });
 
 describe("App#find", () => {
-  testGetter("https://api.scalingo.com/v1/apps/toto", null, "app", (client) => {
-    return new Apps(client).find("toto");
-  });
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto",
+    null,
+    "app",
+    (client) => {
+      return new Apps(client).find("toto");
+    }
+  );
 });
 
 describe("App#deploymentListener", () => {
@@ -24,7 +35,7 @@ describe("App#deploymentListener", () => {
     const client = new Apps(new Client("test-token"));
     const mock = new MockAdapter(axios);
 
-    mock.onGet(`https://api.scalingo.com/v1/apps/testApp`).reply(200, {
+    mock.onGet(`https://api.osc-fr1.scalingo.com/v1/apps/testApp`).reply(200, {
       app: {
         links: {
           deployments_stream: "wss://test.dev/apps/testApp",
@@ -43,7 +54,7 @@ describe("App#deploymentListener", () => {
 describe("App#create", () => {
   describe("With a simple request", () => {
     testPost(
-      "https://api.scalingo.com/v1/apps",
+      "https://api.osc-fr1.scalingo.com/v1/apps",
       null,
       { app: { name: "testApp" } },
       "app",
@@ -55,7 +66,7 @@ describe("App#create", () => {
 
   describe("Using custom params", () => {
     testPost(
-      "https://api.scalingo.com/v1/apps",
+      "https://api.osc-fr1.scalingo.com/v1/apps",
       null,
       {
         app: {
@@ -81,7 +92,7 @@ describe("App#create", () => {
     const client = new Client("test-token");
     const mock = new MockAdapter(axios);
 
-    mock.onPost("https://api.scalingo.com/v1/apps").reply(200, {
+    mock.onPost("https://api.osc-fr1.scalingo.com/v1/apps").reply(200, {
       app: {
         name: "testApp",
       },
@@ -93,7 +104,7 @@ describe("App#create", () => {
 
 describe("App#logsURL", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/testApp/logs",
+    "https://api.osc-fr1.scalingo.com/v1/apps/testApp/logs",
     null,
     "logs_url",
     (client) => {
@@ -103,14 +114,14 @@ describe("App#logsURL", () => {
 });
 
 describe("App#destroy", () => {
-  testDelete("https://api.scalingo.com/v1/apps/app-id", (client) => {
+  testDelete("https://api.osc-fr1.scalingo.com/v1/apps/app-id", (client) => {
     return new Apps(client).destroy("app-id", "app-name");
   });
 });
 
 describe("App#rename", () => {
   testPost(
-    "https://api.scalingo.com/v1/apps/app-id/rename",
+    "https://api.osc-fr1.scalingo.com/v1/apps/app-id/rename",
     null,
     { current_name: "app-name", new_name: "app-new-name" },
     "app",
@@ -122,7 +133,7 @@ describe("App#rename", () => {
 
 describe("App#transfer", () => {
   testUpdate(
-    "https://api.scalingo.com/v1/apps/app-id",
+    "https://api.osc-fr1.scalingo.com/v1/apps/app-id",
     { app: { owner: "owner@example.com" } },
     "app",
     (client) => {
@@ -137,7 +148,7 @@ describe("App#transfer", () => {
 
 describe("App#update", () => {
   testUpdate(
-    "https://api.scalingo.com/v1/apps/app-id",
+    "https://api.osc-fr1.scalingo.com/v1/apps/app-id",
     { app: { force_https: true } },
     "app",
     (client) => {

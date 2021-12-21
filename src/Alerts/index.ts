@@ -1,7 +1,7 @@
-import { unpackData } from "../utils";
 import { Client } from "..";
 import { Alert, AlertWithNotifiers } from "../models/regional/alerts";
 import { CreateParams, UpdateParams } from "../params/regional/alerts";
+import { unpackData } from "../utils";
 
 /**
  * Alerts API Client

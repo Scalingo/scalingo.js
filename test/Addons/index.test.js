@@ -1,9 +1,9 @@
-import { testDelete, testGetter, testPost, testUpdate } from "../utils/http";
 import Addons from "../../src/Addons";
+import { testDelete, testGetter, testPost, testUpdate } from "../utils/http";
 
 describe("Addons#for", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/toto/addons",
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/addons",
     null,
     "addons",
     (client) => {
@@ -14,7 +14,7 @@ describe("Addons#for", () => {
 
 describe("Addons#create", () => {
   testPost(
-    "https://api.scalingo.com/v1/apps/toto/addons",
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/addons",
     null,
     { addon: { plan_id: "test-plan", addon_provider_id: "test-provider" } },
     "addon",
@@ -29,7 +29,7 @@ describe("Addons#create", () => {
 
 describe("Addons#listCategories", () => {
   testGetter(
-    "https://api.scalingo.com/v1/addon_categories",
+    "https://api.osc-fr1.scalingo.com/v1/addon_categories",
     { noAuth: true },
     "addon_categories",
     (client) => {
@@ -41,7 +41,7 @@ describe("Addons#listCategories", () => {
 describe("Addons#listProviders", () => {
   describe("authenticated", () => {
     testGetter(
-      "https://api.scalingo.com/v1/addon_providers",
+      "https://api.osc-fr1.scalingo.com/v1/addon_providers",
       null,
       "addon_providers",
       (client) => {
@@ -52,7 +52,7 @@ describe("Addons#listProviders", () => {
 
   describe("unauthenticated", () => {
     testGetter(
-      "https://api.scalingo.com/v1/addon_providers?category_id=1234",
+      "https://api.osc-fr1.scalingo.com/v1/addon_providers?category_id=1234",
       { noAuth: true },
       "addon_providers",
       (client) => {
@@ -64,7 +64,7 @@ describe("Addons#listProviders", () => {
 
 describe("Addons#update", () => {
   testUpdate(
-    "https://api.scalingo.com/v1/apps/toto/addons/54100930736f7563d5030000",
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/addons/54100930736f7563d5030000",
     { addon: { plan_id: "54100930736f7563d5030000" } },
     "addon",
     (client) => {
@@ -77,7 +77,7 @@ describe("Addons#update", () => {
 
 describe("Addons#resume", () => {
   testPost(
-    "https://api.scalingo.com/v1/apps/toto/addons/some-addon/resume",
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/addons/some-addon/resume",
     null,
     null,
     null,
@@ -89,7 +89,7 @@ describe("Addons#resume", () => {
 
 describe("Addons#destroy", () => {
   testDelete(
-    "https://api.scalingo.com/v1/apps/toto/addons/54100930736f7563d5030000",
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/addons/54100930736f7563d5030000",
     (client) => {
       return new Addons(client).destroy("toto", "54100930736f7563d5030000");
     }
@@ -98,7 +98,7 @@ describe("Addons#destroy", () => {
 
 describe("Addons#sso", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/toto/addons/titi/sso",
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/addons/titi/sso",
     null,
     "addon",
     (client) => {
@@ -109,7 +109,7 @@ describe("Addons#sso", () => {
 
 describe("Addons#getAddon", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/toto/addons/tata",
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/addons/tata",
     null,
     "addon",
     (client) => {

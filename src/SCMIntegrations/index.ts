@@ -1,4 +1,3 @@
-import { unpackData } from "../utils";
 import { Client } from "..";
 import { Key } from "../models/auth/keys";
 import {
@@ -8,8 +7,8 @@ import {
   Organization,
   Branch,
 } from "../models/auth/scm_integrations";
-
 import { CreateParams } from "../params/auth/scm_integrations";
+import { unpackData } from "../utils";
 
 /**
  * SCM Integrations API Client

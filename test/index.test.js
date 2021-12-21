@@ -1,6 +1,7 @@
-import { expect } from "chai";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
+import { expect } from "chai";
+
 import { clientFromToken, Client } from "../src/";
 
 describe("clientFromToken", () => {
@@ -21,7 +22,7 @@ describe("new Client", () => {
   it("should use correct defaults", () => {
     const client = new Client("test");
     expect(client._token).to.eq("test");
-    expect(client._apiUrl).to.eq("https://api.scalingo.com");
+    expect(client._apiUrl).to.eq("https://api.osc-fr1.scalingo.com");
     expect(client._authApiUrl).to.eq("https://auth.scalingo.com");
     expect(client._billingApiUrl).to.eq("https://cashmachine.scalingo.com");
   });

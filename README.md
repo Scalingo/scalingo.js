@@ -6,7 +6,7 @@ The Scalingo.js library provides convenient access to the Scalingo API. A
 documentation is [available
 online](https://scalingo.github.io/scalingo.js/)
 
-Note: 0.2.0 is a breaking change from previous versions.
+Note: 0.5.0 has a few internal changes (dependencies bumps, switch to esbuild) that may result in breakages.
 
 ## Usage
 

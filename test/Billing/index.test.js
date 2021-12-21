@@ -1,5 +1,5 @@
-import { testGetter, testPost, testPut } from "../utils/http";
 import Billing from "../../src/Billing";
+import { testGetter, testPost, testPut } from "../utils/http";
 
 describe("Billing#profile", () => {
   testGetter(

@@ -1,8 +1,8 @@
 import axios from "axios";
-import { unpackData } from "../utils";
-import { Client } from "..";
 
+import { Client } from "..";
 import { Token } from "../models/auth/tokens";
+import { unpackData } from "../utils";
 
 /**
  * Tokens API Client

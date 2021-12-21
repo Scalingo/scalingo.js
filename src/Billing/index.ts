@@ -1,6 +1,6 @@
-import { unpackData } from "../utils";
 import { Client } from "..";
 import { BillingProfile } from "../models/billing/profiles";
+import { unpackData } from "../utils";
 
 /**
  * Billing API Client

@@ -1,5 +1,5 @@
-import { testGetter, testPost, testDelete } from "../utils/http";
 import Keys from "../../src/Keys";
+import { testGetter, testPost, testDelete } from "../utils/http";
 
 describe("Keys#all", () => {
   testGetter("https://auth.scalingo.com/v1/keys", null, "keys", (client) => {

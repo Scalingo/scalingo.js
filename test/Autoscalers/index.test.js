@@ -1,9 +1,9 @@
-import { testGetter, testPost, testUpdate, testDelete } from "../utils/http";
 import Autoscalers from "../../src/Autoscalers";
+import { testGetter, testPost, testUpdate, testDelete } from "../utils/http";
 
 describe("Autoscalers#for", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/tata/autoscalers",
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/autoscalers",
     null,
     "autoscalers",
     (client) => {
@@ -14,7 +14,7 @@ describe("Autoscalers#for", () => {
 
 describe("Autoscalers#create", () => {
   testPost(
-    "https://api.scalingo.com/v1/apps/tata/autoscalers",
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/autoscalers",
     null,
     { autoscaler: { some: "params" } },
     "autoscaler",
@@ -26,7 +26,7 @@ describe("Autoscalers#create", () => {
 
 describe("Autoscalers#destroy", () => {
   testDelete(
-    "https://api.scalingo.com/v1/apps/tata/autoscalers/541067ec736f7504a5110000",
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/autoscalers/541067ec736f7504a5110000",
     (client) => {
       return new Autoscalers(client).destroy(
         "tata",
@@ -38,7 +38,7 @@ describe("Autoscalers#destroy", () => {
 
 describe("Autoscalers#show", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/tata/autoscalers/541067ec736f7504a5110000",
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/autoscalers/541067ec736f7504a5110000",
     null,
     "autoscaler",
     (client) => {
@@ -49,7 +49,7 @@ describe("Autoscalers#show", () => {
 
 describe("Autoscalers#update", () => {
   testUpdate(
-    "https://api.scalingo.com/v1/apps/tata/autoscalers/541067ec736f7504a5110000",
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/autoscalers/541067ec736f7504a5110000",
     { autoscaler: { some: "params" } },
     "autoscaler",
     (client) => {

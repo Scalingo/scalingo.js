@@ -1,4 +1,5 @@
 import WebSocket from "isomorphic-ws";
+
 import { Client } from "..";
 
 export class LogsListener {

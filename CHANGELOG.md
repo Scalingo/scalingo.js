@@ -1,3 +1,13 @@
+## Unreleased
+
+## 0.5.0
+
+* Bump dependencies versions (axios, ws)
+* Bump devDependencies (typescript, eslint, test utils)
+* Remove rollup in favor of esbuild
+* Update the default endpoint of the regional API
+* Change the script names/organisation
+
 ## 0.4.0
 
 * App#transfer: based in the ID rather than the user email

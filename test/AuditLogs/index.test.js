@@ -1,9 +1,9 @@
-import { testGetter } from "../utils/http";
 import AuditLogs from "../../src/AuditLogs";
+import { testGetter } from "../utils/http";
 
 describe("AuditLogs#show", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/tata/audit_logs/541067ec736f7504a5110000",
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/audit_logs/541067ec736f7504a5110000",
     null,
     null,
     (client) => {

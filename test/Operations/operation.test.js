@@ -1,7 +1,8 @@
 import "@babel/polyfill";
-import { expect } from "chai";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
+import { expect } from "chai";
+
 import { Client } from "../../src";
 import { APIError } from "../../src/errors";
 import { Operation } from "../../src/Operations/utils";
@@ -11,7 +12,7 @@ describe("Operations#OperationClass", () => {
     const client = new Client("test-token");
     const mock = new MockAdapter(axios);
     const locationUri =
-      "https://api.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000";
+      "https://api.osc-fr1.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000";
 
     const operationResponse = {
       operation: {
@@ -36,7 +37,7 @@ describe("Operations#OperationClass", () => {
     const client = new Client("test-token");
     const mock = new MockAdapter(axios);
     const locationUri =
-      "https://api.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000";
+      "https://api.osc-fr1.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000";
 
     mock.onGet(locationUri).reply(404, {
       error: "not found",
@@ -56,7 +57,7 @@ describe("Operations#OperationClass", () => {
     const client = new Client("test-token");
     const mock = new MockAdapter(axios);
     const locationUri =
-      "https://api.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000";
+      "https://api.osc-fr1.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000";
 
     const operationResponse = {
       operation: {

@@ -1,9 +1,9 @@
-import { testDelete, testGetter, testPost, testUpdate } from "../utils/http";
 import Notifiers from "../../src/Notifiers";
+import { testDelete, testGetter, testPost, testUpdate } from "../utils/http";
 
 describe("Notifiers#for", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/toto/notifiers",
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/notifiers",
     null,
     "notifiers",
     (client) => {
@@ -20,7 +20,7 @@ describe("Notifiers#create", () => {
     type_data: { webhook_url: "https://myapp.fr/webhook/scalingo" },
   };
   testPost(
-    "https://api.scalingo.com/v1/apps/toto/notifiers",
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/notifiers",
     null,
     {
       notifier: notifier,
@@ -34,7 +34,7 @@ describe("Notifiers#create", () => {
 
 describe("Notifiers#update", () => {
   testUpdate(
-    "https://api.scalingo.com/v1/apps/toto/notifiers/54100930736f7563d5030000",
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/notifiers/54100930736f7563d5030000",
     { notifier: { plan_id: "54100930736f7563d5030000" } },
     "notifier",
     (client) => {
@@ -47,7 +47,7 @@ describe("Notifiers#update", () => {
 
 describe("Notifiers#destroy", () => {
   testDelete(
-    "https://api.scalingo.com/v1/apps/toto/notifiers/54100930736f7563d5030000",
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/notifiers/54100930736f7563d5030000",
     (client) => {
       return new Notifiers(client).destroy("toto", "54100930736f7563d5030000");
     }
@@ -56,7 +56,7 @@ describe("Notifiers#destroy", () => {
 
 describe("Notifiers#test", () => {
   testPost(
-    "https://api.scalingo.com/v1/apps/toto/notifiers/titi/test",
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/notifiers/titi/test",
     null,
     null,
     null,
@@ -68,7 +68,7 @@ describe("Notifiers#test", () => {
 
 describe("Notifiers#get", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/toto/notifiers/tata",
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/notifiers/tata",
     null,
     "notifier",
     (client) => {

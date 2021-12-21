@@ -1,7 +1,7 @@
-import { unpackData } from "../utils";
 import { Client } from "..";
 import { Notifier } from "../models/regional/notifiers";
 import { CreateParams, UpdateParams } from "../params/regional/notifiers";
+import { unpackData } from "../utils";
 
 /**
  * Notifiers API Client

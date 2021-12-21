@@ -1,13 +1,13 @@
-import { unpackData } from "../utils";
 import { Client } from "..";
+import { Branch } from "../models/auth";
+import { Deployment } from "../models/regional";
 import {
   PullRequest,
   ReviewApp,
   SCMRepoLink,
 } from "../models/regional/scm_repo_links";
 import { CreateParams, UpdateParams } from "../params/regional/scm_repo_links";
-import { Branch } from "../models/auth";
-import { Deployment } from "../models/regional";
+import { unpackData } from "../utils";
 
 /**
  * SCM repo links API Client

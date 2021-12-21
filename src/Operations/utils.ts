@@ -1,5 +1,7 @@
-import { APIError } from "../errors";
+import { AxiosError } from "axios";
+
 import { Client } from "..";
+import { APIError } from "../errors";
 
 export class Operation {
   _client: Client | null;
@@ -106,8 +108,13 @@ export class Operation {
         } catch (error) {
           clearInterval(waitInterval);
 
-          if (error.response) {
-            reject(new APIError(error.response.status, error.response.data));
+          const axiosError = error as AxiosError;
+
+          if (axiosError.response) {
+            reject(
+              new APIError(axiosError.response.status, axiosError.response.data)
+            );
+
             return;
           }
 
