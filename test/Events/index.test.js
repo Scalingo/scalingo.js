@@ -2,12 +2,17 @@ import Events from "../../src/Events";
 import { testGetter, testParamsGetter } from "../utils/http";
 
 describe("Events#all", () => {
-  testGetter("https://api.scalingo.com/v1/events", null, null, (client) => {
-    return new Events(client).all({ page: 1, from: 2 });
-  });
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/v1/events",
+    null,
+    null,
+    (client) => {
+      return new Events(client).all({ page: 1, from: 2 });
+    }
+  );
 
   testParamsGetter(
-    "https://api.scalingo.com/v1/events",
+    "https://api.osc-fr1.scalingo.com/v1/events",
     { page: 1, per_page: 2, from: 1 },
     null,
     (client) => {
@@ -18,7 +23,7 @@ describe("Events#all", () => {
 
 describe("Events#for", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/tata/events",
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/events",
     null,
     null,
     (client) => {
@@ -27,7 +32,7 @@ describe("Events#for", () => {
   );
 
   testParamsGetter(
-    "https://api.scalingo.com/v1/apps/tata/events",
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/events",
     { page: 1, per_page: 2, from: 1 },
     null,
     (client) => {
@@ -38,7 +43,7 @@ describe("Events#for", () => {
 
 describe("Events#find", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/tata/events/someevent",
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/events/someevent",
     null,
     "event",
     (client) => {
@@ -49,7 +54,7 @@ describe("Events#find", () => {
 
 describe("Events#listEventTypes", () => {
   testGetter(
-    "https://api.scalingo.com/v1/event_types",
+    "https://api.osc-fr1.scalingo.com/v1/event_types",
     { noAuth: true },
     "event_types",
     (client) => {
@@ -60,7 +65,7 @@ describe("Events#listEventTypes", () => {
 
 describe("Events#listEventCategories", () => {
   testGetter(
-    "https://api.scalingo.com/v1/event_categories",
+    "https://api.osc-fr1.scalingo.com/v1/event_categories",
     { noAuth: true },
     "event_categories",
     (client) => {

@@ -98,7 +98,7 @@ describe("Logs#listenerFor", () => {
 
 describe("Logs#archive", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/biniou/logs_archives",
+    "https://api.osc-fr1.scalingo.com/v1/apps/biniou/logs_archives",
     null,
     null,
     (client) => {
@@ -107,7 +107,7 @@ describe("Logs#archive", () => {
   );
 
   testParamsGetter(
-    "https://api.scalingo.com/v1/apps/biniou/logs_archives",
+    "https://api.osc-fr1.scalingo.com/v1/apps/biniou/logs_archives",
     { cursor: 2 },
     null,
     (client) => {

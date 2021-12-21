@@ -9,7 +9,7 @@ import "../factories";
 
 describe("Collaborators#for", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/toto/collaborators",
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/collaborators",
     null,
     "collaborators",
     (client) => {
@@ -20,7 +20,7 @@ describe("Collaborators#for", () => {
 
 describe("Collaborators#destroy", () => {
   testDelete(
-    "https://api.scalingo.com/v1/apps/toto/collaborators/1234",
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/collaborators/1234",
     (client) => {
       return new Collaborators(client).destroy("toto", "1234");
     }
@@ -29,7 +29,7 @@ describe("Collaborators#destroy", () => {
 
 describe("Collaborators#invite", () => {
   testPost(
-    "https://api.scalingo.com/v1/apps/toto/collaborators",
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/collaborators",
     null,
     { collaborator: { email: "toto@titi.tata" } },
     "collaborator",
@@ -41,7 +41,7 @@ describe("Collaborators#invite", () => {
 
 describe("Collaborators#inviteAccept", () => {
   testParamsGetter(
-    "https://api.scalingo.com/v1/apps/collaboration",
+    "https://api.osc-fr1.scalingo.com/v1/apps/collaboration",
     { token: "toto-accept-token" },
     null,
     (client) => {

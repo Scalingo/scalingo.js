@@ -33,7 +33,7 @@ export interface ScalingoClientOptions {
 }
 
 export const defaultClientOptions: Required<ScalingoClientOptions> = {
-  apiUrl: "https://api.scalingo.com",
+  apiUrl: "https://api.osc-fr1.scalingo.com",
   authApiUrl: "https://auth.scalingo.com",
   billingApiUrl: "https://cashmachine.scalingo.com",
   noUserAgent: false,

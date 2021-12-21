@@ -3,7 +3,7 @@ import { testDelete, testGetter, testPost, testUpdate } from "../utils/http";
 
 describe("SCMRepoLinks#find", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/biniou/scm_repo_link",
+    "https://api.osc-fr1.scalingo.com/v1/apps/biniou/scm_repo_link",
     null,
     "scm_repo_link",
     (client) => {
@@ -23,7 +23,7 @@ describe("SCMRepoLinks#create", () => {
       hours_before_delete_on_close: 0,
     };
     testPost(
-      "https://api.scalingo.com/v1/apps/biniou/scm_repo_link",
+      "https://api.osc-fr1.scalingo.com/v1/apps/biniou/scm_repo_link",
       null,
       { scm_repo_link: opts },
       "scm_repo_link",
@@ -37,7 +37,7 @@ describe("SCMRepoLinks#create", () => {
 describe("SCMRepoLinks#update", () => {
   const opts = { branch: "prod", auto_deploy_enabled: true };
   testUpdate(
-    "https://api.scalingo.com/v1/apps/biniou/scm_repo_link",
+    "https://api.osc-fr1.scalingo.com/v1/apps/biniou/scm_repo_link",
     { scm_repo_link: opts },
     "scm_repo_link",
     (client) => {
@@ -48,7 +48,7 @@ describe("SCMRepoLinks#update", () => {
 
 describe("SCMRepoLinks#destroy", () => {
   testDelete(
-    "https://api.scalingo.com/v1/apps/biniou/scm_repo_link",
+    "https://api.osc-fr1.scalingo.com/v1/apps/biniou/scm_repo_link",
     (client) => {
       return new SCMRepoLinks(client).destroy("biniou");
     }
@@ -57,7 +57,7 @@ describe("SCMRepoLinks#destroy", () => {
 
 describe("SCMRepoLinks#manualDeploy", () => {
   testPost(
-    "https://api.scalingo.com/v1/apps/biniou/scm_repo_link/manual_deploy",
+    "https://api.osc-fr1.scalingo.com/v1/apps/biniou/scm_repo_link/manual_deploy",
     null,
     { branch: "master" },
     "deployment",
@@ -69,7 +69,7 @@ describe("SCMRepoLinks#manualDeploy", () => {
 
 describe("SCMRepoLinks#manualReviewApp", () => {
   testPost(
-    "https://api.scalingo.com/v1/apps/biniou/scm_repo_link/manual_review_app",
+    "https://api.osc-fr1.scalingo.com/v1/apps/biniou/scm_repo_link/manual_review_app",
     null,
     { pull_request_id: 42 },
     "review_app",
@@ -81,7 +81,7 @@ describe("SCMRepoLinks#manualReviewApp", () => {
 
 describe("SCMRepoLinks#branches", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/biniou/scm_repo_link/branches",
+    "https://api.osc-fr1.scalingo.com/v1/apps/biniou/scm_repo_link/branches",
     null,
     "branches",
     (client) => {
@@ -92,7 +92,7 @@ describe("SCMRepoLinks#branches", () => {
 
 describe("SCMRepoLinks#pulls", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/biniou/scm_repo_link/pulls",
+    "https://api.osc-fr1.scalingo.com/v1/apps/biniou/scm_repo_link/pulls",
     null,
     "pulls",
     (client) => {
@@ -103,7 +103,7 @@ describe("SCMRepoLinks#pulls", () => {
 
 describe("SCMRepoLinks#reviewApps", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/biniou/scm_repo_link/review_apps",
+    "https://api.osc-fr1.scalingo.com/v1/apps/biniou/scm_repo_link/review_apps",
     null,
     "review_apps",
     (client) => {

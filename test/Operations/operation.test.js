@@ -12,7 +12,7 @@ describe("Operations#OperationClass", () => {
     const client = new Client("test-token");
     const mock = new MockAdapter(axios);
     const locationUri =
-      "https://api.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000";
+      "https://api.osc-fr1.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000";
 
     const operationResponse = {
       operation: {
@@ -37,7 +37,7 @@ describe("Operations#OperationClass", () => {
     const client = new Client("test-token");
     const mock = new MockAdapter(axios);
     const locationUri =
-      "https://api.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000";
+      "https://api.osc-fr1.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000";
 
     mock.onGet(locationUri).reply(404, {
       error: "not found",
@@ -57,7 +57,7 @@ describe("Operations#OperationClass", () => {
     const client = new Client("test-token");
     const mock = new MockAdapter(axios);
     const locationUri =
-      "https://api.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000";
+      "https://api.osc-fr1.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000";
 
     const operationResponse = {
       operation: {

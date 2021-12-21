@@ -3,7 +3,7 @@ import { testDelete, testGetter, testPost } from "../utils/http";
 
 describe("Deployments#find", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/testApp/deployments/deploy1234",
+    "https://api.osc-fr1.scalingo.com/v1/apps/testApp/deployments/deploy1234",
     null,
     "deployment",
     (client) => {
@@ -14,7 +14,7 @@ describe("Deployments#find", () => {
 
 describe("Deployments#create", () => {
   testPost(
-    "https://api.scalingo.com/v1/apps/toto/deployments",
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/deployments",
     null,
     { deployment: { source_url: "some-url" } },
     "deployment",
@@ -28,7 +28,7 @@ describe("Deployments#create", () => {
 
 describe("Deployments#logs", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/testApp/deployments/deploy1234/output",
+    "https://api.osc-fr1.scalingo.com/v1/apps/testApp/deployments/deploy1234/output",
     null,
     null,
     (client) => {
@@ -39,7 +39,7 @@ describe("Deployments#logs", () => {
 
 describe("Deployments#purge", () => {
   testDelete(
-    "https://api.scalingo.com/v1/apps/testApp/caches/deployment",
+    "https://api.osc-fr1.scalingo.com/v1/apps/testApp/caches/deployment",
     (client) => {
       return new Deployments(client).purgeCache("testApp");
     }

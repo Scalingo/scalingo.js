@@ -3,7 +3,7 @@ import { testGetter } from "../utils/http";
 
 describe("Operations#getOperation", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/toto/operations/tata",
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/operations/tata",
     null,
     "operation",
     (client) => {

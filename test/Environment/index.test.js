@@ -9,7 +9,7 @@ import {
 
 describe("Environment#for", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/tata/variables",
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/variables",
     null,
     "variables",
     (client) => {
@@ -20,7 +20,7 @@ describe("Environment#for", () => {
 
 describe("Environment#create", () => {
   testPost(
-    "https://api.scalingo.com/v1/apps/tata/variables",
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/variables",
     null,
     { variable: { name: "tata", value: "$toto" } },
     "variable",
@@ -35,7 +35,7 @@ describe("Environment#create", () => {
 
 describe("Environment#bulkUpdate", () => {
   testPut(
-    "https://api.scalingo.com/v1/apps/tata/variables",
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/variables",
     {
       variables: [
         { name: "tata", value: "$toto" },
@@ -54,7 +54,7 @@ describe("Environment#bulkUpdate", () => {
 
 describe("Environment#update", () => {
   testUpdate(
-    "https://api.scalingo.com/v1/apps/tata/variables/54101384736f7563d5040000",
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/variables/54101384736f7563d5040000",
     { variable: { value: "$toto" } },
     "variable",
     (client) => {
@@ -69,7 +69,7 @@ describe("Environment#update", () => {
 
 describe("Environment#destroy", () => {
   testDelete(
-    "https://api.scalingo.com/v1/apps/tata/variables/54101384736f7563d5040000",
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/variables/54101384736f7563d5040000",
     (client) => {
       return new Environment(client).destroy(
         "tata",
@@ -80,10 +80,13 @@ describe("Environment#destroy", () => {
 });
 
 describe("Environment#bulkDestroy", () => {
-  testDelete("https://api.scalingo.com/v1/apps/tata/variables", (client) => {
-    return new Environment(client).bulkDestroy("tata", [
-      "54101384736f7563d5040000",
-      "54101384736f7563d5040001",
-    ]);
-  });
+  testDelete(
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/variables",
+    (client) => {
+      return new Environment(client).bulkDestroy("tata", [
+        "54101384736f7563d5040000",
+        "54101384736f7563d5040001",
+      ]);
+    }
+  );
 });

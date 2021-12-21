@@ -8,7 +8,7 @@ import { testGetter } from "../utils/http";
 
 describe("Metrics#types", () => {
   testGetter(
-    "https://api.scalingo.com/v1/features/metrics",
+    "https://api.osc-fr1.scalingo.com/v1/features/metrics",
     null,
     "metrics",
     (client) => {
@@ -20,7 +20,7 @@ describe("Metrics#types", () => {
 describe("Metrics#get", () => {
   describe("with a simple request", () => {
     testGetter(
-      "https://api.scalingo.com/v1/apps/toto/stats/router",
+      "https://api.osc-fr1.scalingo.com/v1/apps/toto/stats/router",
       null,
       null,
       (client) => {
@@ -31,7 +31,7 @@ describe("Metrics#get", () => {
 
   describe("When requesting container metrics", () => {
     testGetter(
-      "https://api.scalingo.com/v1/apps/toto/stats/cpu/web/1",
+      "https://api.osc-fr1.scalingo.com/v1/apps/toto/stats/cpu/web/1",
       null,
       null,
       (client) => {
@@ -48,7 +48,7 @@ describe("Metrics#get", () => {
       const client = new Client("toto");
       const mock = new MockAdapter(axios);
       mock
-        .onGet("https://api.scalingo.com/v1/apps/toto/stats/cpu/web", {
+        .onGet("https://api.osc-fr1.scalingo.com/v1/apps/toto/stats/cpu/web", {
           params: { since: 32 },
         })
         .reply(200, {
@@ -66,7 +66,7 @@ describe("Metrics#get", () => {
       const client = new Client("toto");
       const mock = new MockAdapter(axios);
       mock
-        .onGet("https://api.scalingo.com/v1/apps/toto/stats/requests", {
+        .onGet("https://api.osc-fr1.scalingo.com/v1/apps/toto/stats/requests", {
           params: { statistics_type: "p95" },
         })
         .reply(200, {

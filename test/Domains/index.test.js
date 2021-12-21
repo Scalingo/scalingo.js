@@ -3,7 +3,7 @@ import { testGetter, testPost, testUpdate, testDelete } from "../utils/http";
 
 describe("Domains#for", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/tata/domains",
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/domains",
     null,
     "domains",
     (client) => {
@@ -14,7 +14,7 @@ describe("Domains#for", () => {
 
 describe("Domains#create", () => {
   testPost(
-    "https://api.scalingo.com/v1/apps/tata/domains",
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/domains",
     null,
     { domain: { name: "nice.one.dude", tlscert: null, tlskey: null } },
     "domain",
@@ -30,7 +30,7 @@ describe("Domains#create", () => {
 
 describe("Domains#destroy", () => {
   testDelete(
-    "https://api.scalingo.com/v1/apps/tata/domains/541067ec736f7504a5110000",
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/domains/541067ec736f7504a5110000",
     (client) => {
       return new Domains(client).destroy("tata", "541067ec736f7504a5110000");
     }
@@ -39,7 +39,7 @@ describe("Domains#destroy", () => {
 
 describe("Domains#show", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/tata/domains/541067ec736f7504a5110000",
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/domains/541067ec736f7504a5110000",
     null,
     "domain",
     (client) => {
@@ -50,7 +50,7 @@ describe("Domains#show", () => {
 
 describe("Domains#update", () => {
   testUpdate(
-    "https://api.scalingo.com/v1/apps/tata/domains/541067ec736f7504a5110000",
+    "https://api.osc-fr1.scalingo.com/v1/apps/tata/domains/541067ec736f7504a5110000",
     { domain: { tlscert: null, tlskey: null, canonical: false } },
     "domain",
     (client) => {

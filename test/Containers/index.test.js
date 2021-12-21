@@ -7,7 +7,7 @@ import "../factories";
 
 describe("Containers#for", () => {
   testGetter(
-    "https://api.scalingo.com/v1/apps/toto/containers",
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/containers",
     null,
     "containers",
     (client) => {
@@ -19,10 +19,10 @@ describe("Containers#for", () => {
 describe("Containers#scale", () => {
   const postOpts = {
     location:
-      "https://api.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000",
+      "https://api.osc-fr1.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000",
   };
   testPost(
-    "https://api.scalingo.com/v1/apps/toto/scale",
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/scale",
     postOpts,
     { containers: [{ name: "web", amount: 2, size: "M" }] },
     "containers",
@@ -51,7 +51,7 @@ describe("Containers#scale", () => {
 
 describe("Container#availableSizes", () => {
   testGetter(
-    "https://api.scalingo.com/v1/features/container_sizes",
+    "https://api.osc-fr1.scalingo.com/v1/features/container_sizes",
     null,
     "container_sizes",
     (client) => {
@@ -64,10 +64,10 @@ describe("Container#restart", () => {
   const postOpts = {
     emptyResponseBody: true,
     location:
-      "https://api.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000",
+      "https://api.osc-fr1.scalingo.com/v1/apps/toto/operations/54100930736f7563d5030000",
   };
   testPost(
-    "https://api.scalingo.com/v1/apps/toto/restart",
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/restart",
     postOpts,
     { scope: ["web"] },
     "scope",
