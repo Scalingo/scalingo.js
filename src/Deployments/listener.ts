@@ -42,7 +42,7 @@ export interface MessageHandlers {
 
 export interface LifecycleHandlers {
   beforeOpen: (() => void)[];
-  onOpen: ((e?: WebSocket.OpenEvent) => void)[];
+  onOpen: ((e?: WebSocket.Event) => void)[];
   beforeClose: (() => void)[];
   onClose: ((e?: WebSocket.CloseEvent) => void)[];
 }
@@ -177,7 +177,7 @@ export default class Listener {
    * Setup a handler that will be called when the connection is opened.
    * @param handler handler to call
    */
-  onOpen(handler: (e?: WebSocket.OpenEvent) => void): void {
+  onOpen(handler: (e?: WebSocket.Event) => void): void {
     this.lifecycleHandlers.onOpen.push(handler);
   }
 
