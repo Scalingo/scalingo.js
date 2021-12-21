@@ -16,7 +16,7 @@
     "test": "ts-mocha --require @babel/register --recursive --paths -p test/tsconfig.test.json test/*.js test/**/*.test.js"
   },
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.24.0",
     "isomorphic-ws": "4.x",
     "ws": "^8.4.0"
   },
@@ -30,7 +30,7 @@
     "@types/ws": "^8.2.2",
     "@typescript-eslint/eslint-plugin": "^5.8.0",
     "@typescript-eslint/parser": "^5.8.0",
-    "axios-mock-adapter": "^1.19.0",
+    "axios-mock-adapter": "^1.20.0",
     "chai": "^4.3.0",
     "core-js": "^3.3.6",
     "esdoc": "1.x",
