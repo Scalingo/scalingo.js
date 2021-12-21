@@ -5,7 +5,7 @@ const opts = {
   entryPoints: ["src/index.ts"],
   bundle: true,
   sourcemap: true,
-  logLevel: "debug",
+  logLevel: "info",
 };
 
 const cjsOpts = {

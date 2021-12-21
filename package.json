@@ -9,10 +9,11 @@
   "author": "Jonathan Hurter <john@scalingo.com>",
   "license": "MIT",
   "scripts": {
-    "build": "eslint --quiet && tsc && node bundle.js",
-    "docs": "typedoc src",
-    "lint": "tsc --noEmit && yarn eslint",
-    "eslint": "eslint --ext .js,.ts ./src ./test",
+    "build": "yarn run lint:js --quiet && tsc && node bundle.js",
+    "docs": "typedoc src/index.ts",
+    "lint": "yarn run lint:ts && yarn run lint:js",
+    "lint:js": "eslint --ext .js,.ts ./src ./test",
+    "lint:ts": "tsc --noEmit",
     "test": "ts-mocha --require @babel/register --recursive --paths -p test/tsconfig.test.json test/*.js test/**/*.test.js"
   },
   "dependencies": {
