@@ -1,6 +1,5 @@
 import axios, { AxiosInstance } from "axios";
 
-import { version } from "../package.json";
 import Addons from "./Addons";
 import Alerts from "./Alerts";
 import Apps from "./Apps";
@@ -76,7 +75,7 @@ export class Client {
     this._headers = {};
 
     if (opts && !opts.noUserAgent) {
-      this._headers["User-Agent"] = `Scalingo Javascript Client ${version}`;
+      this._headers["User-Agent"] = `Scalingo Javascript Client`;
     }
   }
 

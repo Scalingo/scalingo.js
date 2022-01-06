@@ -1,6 +1,10 @@
 ## Unreleased
 
-## 0.5.1
+## 0.5.2
+
+* Fix broken build to the user agent. No longer contains the version for now.
+
+## 0.5.1 (broken)
 
 * New endpoint: cron tasks
 * User Agent now contains client version

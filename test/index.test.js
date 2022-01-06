@@ -2,7 +2,6 @@ import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 import { expect } from "chai";
 
-import { version } from "../package.json";
 import { clientFromToken, Client } from "../src/";
 
 describe("clientFromToken", () => {
@@ -45,7 +44,7 @@ describe("apiClient", () => {
     const client = new Client("totothetoken").apiClient();
     expect(client.defaults.headers).to.contains({
       Authorization: "Bearer totothetoken",
-      "User-Agent": `Scalingo Javascript Client ${version}`,
+      "User-Agent": `Scalingo Javascript Client`,
     });
   });
 
@@ -64,7 +63,7 @@ describe("billingApiClient", () => {
     const client = new Client("totothetoken").billingApiClient();
     expect(client.defaults.headers).to.contains({
       Authorization: "Bearer totothetoken",
-      "User-Agent": `Scalingo Javascript Client ${version}`,
+      "User-Agent": `Scalingo Javascript Client`,
     });
   });
 
