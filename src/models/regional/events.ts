@@ -44,6 +44,7 @@ export interface Event {
   /** Type of the event */
   type: string;
   /** Object that depend on the event type : https://developers.scalingo.com/events#events */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   type_data: Record<string, any>;
 }
 

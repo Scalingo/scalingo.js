@@ -1,5 +1,7 @@
 ## Unreleased
 
+* Slight change in typings
+
 ## 0.5.0
 
 * Bump dependencies versions (axios, ws)

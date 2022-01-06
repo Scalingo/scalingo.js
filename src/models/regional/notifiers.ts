@@ -22,5 +22,6 @@ export interface Notifier {
   /** List of events accepted by this notifier */
   selected_event_ids: string[];
   /** Notitication platform dependant additional data */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   type_data: Record<string, any>;
 }

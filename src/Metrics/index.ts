@@ -47,7 +47,7 @@ export default class Metrics {
       last,
     } = opts;
 
-    const params: Record<string, any> = {};
+    const params: Record<string, string | number | boolean> = {};
 
     let url = `/apps/${appId}/stats/${metric}`;
 
