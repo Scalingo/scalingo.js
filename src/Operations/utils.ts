@@ -10,7 +10,7 @@ export class Operation {
   _finished_at?: string | null;
   _status?: string | null;
   _type?: string | null;
-  _error?: any;
+  _error?: unknown;
   _url?: string | null;
 
   /**
@@ -45,7 +45,7 @@ export class Operation {
     return this._finished_at;
   }
 
-  get error(): any {
+  get error(): unknown {
     return this._error;
   }
 

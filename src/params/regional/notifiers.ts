@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface CreateParams {
   /** Notification platform used by this notifer */
   platform_id: string;
