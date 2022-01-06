@@ -1,5 +1,6 @@
 import axios, { AxiosInstance } from "axios";
 
+import { version } from "../package.json";
 import Addons from "./Addons";
 import Alerts from "./Alerts";
 import Apps from "./Apps";
@@ -8,6 +9,7 @@ import Autoscalers from "./Autoscalers";
 import Billing from "./Billing";
 import Collaborators from "./Collaborators";
 import Containers from "./Containers";
+import CronTasks from "./CronTasks";
 import Deployments from "./Deployments";
 import Domains from "./Domains";
 import Environment from "./Environment";
@@ -74,7 +76,7 @@ export class Client {
     this._headers = {};
 
     if (opts && !opts.noUserAgent) {
-      this._headers["User-Agent"] = "Scalingo Javascript Client";
+      this._headers["User-Agent"] = `Scalingo Javascript Client ${version}`;
     }
   }
 
@@ -86,6 +88,7 @@ export class Client {
   Billing = new Billing(this);
   Collaborators = new Collaborators(this);
   Containers = new Containers(this);
+  CronTasks = new CronTasks(this);
   Deployments = new Deployments(this);
   Domains = new Domains(this);
   Environment = new Environment(this);

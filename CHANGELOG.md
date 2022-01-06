@@ -1,5 +1,7 @@
 ## Unreleased
 
+* New endpoint: cron tasks
+* User Agent now contains client version
 * Slight change in typings
 
 ## 0.5.0
