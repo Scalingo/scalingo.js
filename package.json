@@ -24,7 +24,6 @@
   "devDependencies": {
     "@babel/cli": "7.x",
     "@babel/core": "7.x",
-    "@babel/polyfill": "7.x",
     "@babel/preset-env": "7.x",
     "@babel/register": "7.x",
     "@types/node": "17.x",
