@@ -650,6 +650,8 @@
 								"name": "any"
 							}
 						],
+						"qualifiedName": "Record",
+						"package": "typescript",
 						"name": "Record"
 					}
 				},
@@ -700,6 +702,8 @@
 							},
 							"type": {
 								"type": "reference",
+								"qualifiedName": "AxiosInstance",
+								"package": "axios",
 								"name": "AxiosInstance"
 							}
 						}
@@ -731,6 +735,8 @@
 							},
 							"type": {
 								"type": "reference",
+								"qualifiedName": "AxiosInstance",
+								"package": "axios",
 								"name": "AxiosInstance"
 							}
 						}
@@ -762,6 +768,8 @@
 							},
 							"type": {
 								"type": "reference",
+								"qualifiedName": "AxiosInstance",
+								"package": "axios",
 								"name": "AxiosInstance"
 							}
 						}
@@ -793,6 +801,8 @@
 							},
 							"type": {
 								"type": "reference",
+								"qualifiedName": "AxiosInstance",
+								"package": "axios",
 								"name": "AxiosInstance"
 							}
 						}
@@ -1077,7 +1087,9 @@
 			"name": "defaultClientOptions",
 			"kind": 32,
 			"kindString": "Variable",
-			"flags": {},
+			"flags": {
+				"isConst": true
+			},
 			"sources": [
 				{
 					"fileName": "index.ts",
@@ -1094,6 +1106,8 @@
 						"name": "ScalingoClientOptions"
 					}
 				],
+				"qualifiedName": "Required",
+				"package": "typescript",
 				"name": "Required"
 			},
 			"defaultValue": "..."
@@ -1161,6 +1175,8 @@
 								"name": "Client"
 							}
 						],
+						"qualifiedName": "Promise",
+						"package": "typescript",
 						"name": "Promise"
 					}
 				}
