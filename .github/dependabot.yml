@@ -6,5 +6,6 @@ updates:
       - dependency-type: "all"
     schedule:
       interval: "monthly"
+    open-pull-requests-limit: 10
     reviewers:
       - "ksol"
