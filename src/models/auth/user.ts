@@ -14,6 +14,8 @@ export interface User {
   tos_accepted: boolean;
   email_newsletter: boolean;
 
+  profile_valid: boolean;
+
   confirmed: boolean;
   unconfirmed_email: string | null;
   created_at: string;
