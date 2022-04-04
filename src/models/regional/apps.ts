@@ -28,6 +28,13 @@ export type AppStatus =
   | typeof STATUS_SCALING
   | typeof STATUS_BOOTING;
 
+export interface AppOwner {
+  id: string;
+  username: string;
+  email: string;
+  flags: Record<string, boolean>;
+}
+
 /** @see https://developers.scalingo.com/apps */
 export interface App {
   /** unique ID */
@@ -47,7 +54,7 @@ export interface App {
   /** URL to the GIT remote to access your application */
   git_url: string;
   /** information about the owner of the application */
-  owner: Record<string, any>;
+  owner: AppOwner;
   /** platform allocated URL to access to your app */
   url: string;
   /** object of related link like deployments_stream */

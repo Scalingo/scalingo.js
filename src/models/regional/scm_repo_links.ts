@@ -7,6 +7,13 @@ export type SCMType =
   | "gitlab-self-hosted";
 
 /** @see https://developers.scalingo.com/scm_repo_link */
+export interface SCMRepoLinker {
+  id: string;
+  username: string;
+  email: string;
+}
+
+/** @see https://developers.scalingo.com/scm_repo_link */
 export interface SCMRepoLink {
   /** Unique ID */
   id: string;
@@ -18,7 +25,7 @@ export interface SCMRepoLink {
   scm_integration_uuid: string;
 
   /** Description of the user that linked this repository */
-  linker: Record<string, any>;
+  linker: SCMRepoLinker;
 
   /** Root url of the provider */
   url: string;

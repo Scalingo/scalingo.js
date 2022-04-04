@@ -1,3 +1,5 @@
+import { User } from "./user";
+
 /**
  * Can take one of the following values:
  * - **github** is a GitHub.com integration
@@ -32,7 +34,7 @@ export interface SCMIntegration {
   /** User profile URL provided by the SCM platform */
   profile_url: string;
   /** Owner of the SCM integration */
-  owner: Record<string, any>;
+  owner: User;
 }
 
 /** @see https://developers.scalingo.com/scm_integrations# */

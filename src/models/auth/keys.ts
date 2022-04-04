@@ -1,3 +1,5 @@
+import { User } from "./user";
+
 /** @see https://developers.scalingo.com/keys */
 export interface Key {
   /** Unique key ID */
@@ -11,5 +13,5 @@ export interface Key {
   /** Creation date of the SSH Key */
   created_at: string;
   /** Owner of the SSH key */
-  owner: Record<string, any>;
+  owner: User;
 }

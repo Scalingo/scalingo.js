@@ -54,7 +54,7 @@ export class Client {
   _billingApiUrl: string;
 
   /** Global HTTP headers */
-  _headers: Record<string, any>;
+  _headers: Record<string, string | number | boolean>;
 
   /**
    * Create a new Client for the Scalingo API.
