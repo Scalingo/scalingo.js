@@ -1,23 +1,21 @@
 module.exports = {
   env: {
-    es6: true,
-    mocha: true,
+    browser: true,
     node: true,
+    es2017: true,
+    mocha: true,
   },
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    sourceType: "module",
+  },
+  plugins: ["@typescript-eslint", "import"],
   extends: [
-    "prettier",
+    "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "eslint:recommended",
   ],
-  plugins: ["import"],
-  globals: {
-    Atomics: "readonly",
-    SharedArrayBuffer: "readonly",
-  },
   rules: {
-    "no-debugger": process.env.NODE_ENV === "development" ? "off" : "error",
-    "no-extra-semi": "off",
     "import/default": ["error"],
     "import/first": ["error"],
     "import/order": [
@@ -36,22 +34,12 @@ module.exports = {
           "object",
           "type",
         ],
-        pathGroups: [
-          {
-            pattern: "@/**",
-            group: "internal",
-          },
-        ],
         "newlines-between": "always",
       },
     ],
     "@typescript-eslint/no-use-before-define": "warn",
     "@typescript-eslint/no-empty-function": "warn",
     "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
-  },
-  parser: "@typescript-eslint/parser", // Specifies the ESLint parser
-  parserOptions: {
-    ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
-    sourceType: "module", // Allows for the use of imports
+    "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
   },
 };
