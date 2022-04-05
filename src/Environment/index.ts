@@ -101,11 +101,12 @@ export default class Environment {
    * @param appId ID of the app
    * @param variablesArray An array of variables id
    */
-  bulkDestroy(appId: string, variablesArray: string[]): Promise<void> {
+  bulkDestroy(appId: string, variablesArray: string[]): Promise<string[]> {
     return unpackData(
       this._client.apiClient().delete(`/apps/${appId}/variables`, {
         data: { variable_ids: variablesArray },
-      })
+      }),
+      "variable_ids"
     );
   }
 }
