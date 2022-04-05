@@ -1,5 +1,9 @@
 ## Unreleased
 
+* feature: list processes, run and stop one-off containers
+* Improved type definitions
+* Bump dependencies (dev and runtime)
+
 ## 0.5.2
 
 * Fix broken build to the user agent. No longer contains the version for now.

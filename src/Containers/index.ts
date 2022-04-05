@@ -3,8 +3,10 @@ import {
   Container,
   ContainersOperation,
   ContainerSize,
+  ContainerProcess,
 } from "../models/regional/containers";
 import Operation from "../Operations/utils";
+import { RunParams, RunResponse } from "../params/regional/containers";
 import { unpackData } from "../utils";
 /**
  * Containers API Client
@@ -30,6 +32,45 @@ export default class Containers {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/containers`),
       "containers"
+    );
+  }
+
+  /**
+   * List the current processes of the application
+   * @see https://developers.scalingo.com/apps#get-containers-list
+   * @param appId ID of the app to get the containers from
+   */
+  processes(appId: string): Promise<ContainerProcess[]> {
+    return unpackData(
+      this._client.apiClient().get(`/apps/${appId}/ps`),
+      "containers"
+    );
+  }
+
+  /**
+   * Run a command in a one-off process
+   * @see https://developers.scalingo.com/apps#run-a-one-off-container
+   * @param appId ID of the app to get the containers from
+   * @param opts Command and options for the one-off
+   */
+  run(appId: string, opts: RunParams): Promise<RunResponse> {
+    return unpackData(
+      this._client.apiClient().post(`/apps/${appId}/run`, opts),
+      "container"
+    );
+  }
+
+  /**
+   * Stop a running one-off
+   * @see https://developers.scalingo.com/apps#stop-a-container
+   * @param appId ID of the parent app
+   * @param containerId ID of the one-off container to stop
+   */
+  stop(appId: string, containerId: string): Promise<void> {
+    return unpackData(
+      this._client
+        .apiClient()
+        .post(`/apps/${appId}/containers/${containerId}/stop`)
     );
   }
 
@@ -63,7 +104,7 @@ export default class Containers {
 
   /**
    * List the every sizes of the containers
-   * @see https://developers.scalingo.com/container-sizes#list-the-container-sizes-available
+   * @see https://developers.scalingo.com/container_sizes#list-the-container-sizes-available
    * @return attributes of each container
    */
   availableSizes(): Promise<ContainerSize[]> {
