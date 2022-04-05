@@ -646,8 +646,21 @@
 								"name": "string"
 							},
 							{
-								"type": "intrinsic",
-								"name": "any"
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									},
+									{
+										"type": "intrinsic",
+										"name": "number"
+									},
+									{
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								]
 							}
 						],
 						"qualifiedName": "Record",
