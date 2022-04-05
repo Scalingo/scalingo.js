@@ -1,4 +1,5 @@
 import { Operation } from "../../Operations/utils";
+import { PricingGrid } from "../../params/regional/pricing";
 
 export interface ContainersOperation {
   /** Response of the API call */
@@ -33,4 +34,13 @@ export interface ContainerSize {
   memory: number;
   /** Human representation of the CPU priority */
   human_cpu: string;
+  /** The PID limit */
+  pids_limit: number;
+  /** The swap limit */
+  swap: number;
+  /** A SKU identifying the container size */
+  sku: string;
+  /** The pricing grid for this container size */
+  pricings: PricingGrid;
+}
 }
