@@ -90,6 +90,7 @@ describe("Addons#resume", () => {
 describe("Addons#destroy", () => {
   testDelete(
     "https://api.osc-fr1.scalingo.com/v1/apps/toto/addons/54100930736f7563d5030000",
+    null,
     (client) => {
       return new Addons(client).destroy("toto", "54100930736f7563d5030000");
     }

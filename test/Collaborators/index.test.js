@@ -21,6 +21,7 @@ describe("Collaborators#for", () => {
 describe("Collaborators#destroy", () => {
   testDelete(
     "https://api.osc-fr1.scalingo.com/v1/apps/toto/collaborators/1234",
+    null,
     (client) => {
       return new Collaborators(client).destroy("toto", "1234");
     }

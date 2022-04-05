@@ -96,12 +96,17 @@ export function testPost(url, opts, body, prefix, build) {
   });
 }
 
-export function testDelete(url, build) {
+export function testDelete(url, prefix, build) {
   it("calls the API and return the data when there is no errors", async () => {
     const client = new Client("test-token");
     const mock = new MockAdapter(axios);
-    mock.onDelete(url).reply(204);
-    await build(client);
+    let response = { test: "value" };
+    if (prefix !== null) {
+      response = { [prefix]: response };
+    }
+    mock.onDelete(url).reply(204, response);
+    const result = await build(client);
+    expect(result).to.deep.eq({ test: "value" });
     expect(mock.history.delete[0].headers.Authorization).to.eq(
       "Bearer test-token"
     );

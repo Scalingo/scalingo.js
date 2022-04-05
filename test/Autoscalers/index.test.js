@@ -27,6 +27,7 @@ describe("Autoscalers#create", () => {
 describe("Autoscalers#destroy", () => {
   testDelete(
     "https://api.osc-fr1.scalingo.com/v1/apps/tata/autoscalers/541067ec736f7504a5110000",
+    null,
     (client) => {
       return new Autoscalers(client).destroy(
         "tata",

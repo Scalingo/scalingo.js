@@ -48,6 +48,7 @@ describe("SCMIntegrations#create", () => {
 describe("SCMIntegrations#destroy", () => {
   testDelete(
     "https://auth.scalingo.com/v1/scm_integrations/integration-id",
+    null,
     (client) => {
       return new SCMIntegrations(client).destroy("integration-id");
     }
