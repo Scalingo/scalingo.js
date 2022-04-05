@@ -16,6 +16,44 @@ describe("Containers#for", () => {
   );
 });
 
+describe("Containers#processes", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/ps",
+    null,
+    "containers",
+    (client) => {
+      return new Containers(client).processes("toto");
+    }
+  );
+});
+
+describe("Containers#run", () => {
+  testPost(
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/run",
+    null,
+    { command: "echo test", size: "M" },
+    "container",
+    (client) => {
+      return new Containers(client).run("toto", {
+        command: "echo test",
+        size: "M",
+      });
+    }
+  );
+});
+
+describe("Containers#stop", () => {
+  testPost(
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/containers/one-off-ish/stop",
+    null,
+    null,
+    null,
+    (client) => {
+      return new Containers(client).stop("toto", "one-off-ish");
+    }
+  );
+});
+
 describe("Containers#scale", () => {
   const postOpts = {
     location:

@@ -1,4 +1,5 @@
 import { Operation } from "../../Operations/utils";
+import { PricingGrid } from "../../params/regional/pricing";
 
 export interface ContainersOperation {
   /** Response of the API call */
@@ -33,4 +34,33 @@ export interface ContainerSize {
   memory: number;
   /** Human representation of the CPU priority */
   human_cpu: string;
+  /** The PID limit */
+  pids_limit: number;
+  /** The swap limit */
+  swap: number;
+  /** A SKU identifying the container size */
+  sku: string;
+  /** The pricing grid for this container size */
+  pricings: PricingGrid;
+}
+
+export interface ContainerProcess {
+  /** Unique universal identifier */
+  id: string;
+  /** Process type, as defined in the Procfile */
+  type: string;
+  /** index of the container for this type */
+  type_index: number;
+  /** type+index of the container for this type */
+  label: number;
+  /** Creation date of this container */
+  created_at: string;
+  /** Deletion date of this container */
+  deleted_at: null;
+  /** State of this container */
+  state: string;
+  /** The command ran by this container */
+  command: string;
+  /** The container size */
+  container_size: ContainerSize;
 }
