@@ -15,10 +15,10 @@ export type LetsEncryptStatus =
   | "error";
 export type SslStatus = "pending" | "success" | "error";
 
-export type AcmeDNSError = {
+export interface AcmeDNSError {
   dns_provider: string;
   variables: string[] | null;
-};
+}
 
 /** @see https://developers.scalingo.com/domains */
 export interface Domain {
