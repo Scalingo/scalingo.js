@@ -38,7 +38,7 @@ describe("Tokens#renew", () => {
 });
 
 describe("Tokens#destroy", () => {
-  testDelete("https://auth.scalingo.com/v1/tokens/some-id", (client) => {
+  testDelete("https://auth.scalingo.com/v1/tokens/some-id", null, (client) => {
     return new Tokens(client).destroy("some-id");
   });
 });

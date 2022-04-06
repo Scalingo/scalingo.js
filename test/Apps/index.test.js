@@ -114,9 +114,13 @@ describe("App#logsURL", () => {
 });
 
 describe("App#destroy", () => {
-  testDelete("https://api.osc-fr1.scalingo.com/v1/apps/app-id", (client) => {
-    return new Apps(client).destroy("app-id", "app-name");
-  });
+  testDelete(
+    "https://api.osc-fr1.scalingo.com/v1/apps/app-id",
+    null,
+    (client) => {
+      return new Apps(client).destroy("app-id", "app-name");
+    }
+  );
 });
 
 describe("App#rename", () => {

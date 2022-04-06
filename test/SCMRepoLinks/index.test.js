@@ -49,6 +49,7 @@ describe("SCMRepoLinks#update", () => {
 describe("SCMRepoLinks#destroy", () => {
   testDelete(
     "https://api.osc-fr1.scalingo.com/v1/apps/biniou/scm_repo_link",
+    null,
     (client) => {
       return new SCMRepoLinks(client).destroy("biniou");
     }

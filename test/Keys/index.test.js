@@ -36,7 +36,11 @@ describe("Keys#create", () => {
 });
 
 describe("Keys#destroy", () => {
-  testDelete("https://auth.scalingo.com/v1/keys/some-key-id", (client) => {
-    return new Keys(client).destroy("some-key-id");
-  });
+  testDelete(
+    "https://auth.scalingo.com/v1/keys/some-key-id",
+    null,
+    (client) => {
+      return new Keys(client).destroy("some-key-id");
+    }
+  );
 });

@@ -48,6 +48,7 @@ describe("Notifiers#update", () => {
 describe("Notifiers#destroy", () => {
   testDelete(
     "https://api.osc-fr1.scalingo.com/v1/apps/toto/notifiers/54100930736f7563d5030000",
+    null,
     (client) => {
       return new Notifiers(client).destroy("toto", "54100930736f7563d5030000");
     }

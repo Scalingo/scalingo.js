@@ -27,6 +27,7 @@ describe("Alerts#create", () => {
 describe("Alerts#destroy", () => {
   testDelete(
     "https://api.osc-fr1.scalingo.com/v1/apps/tata/alerts/541067ec736f7504a5110000",
+    null,
     (client) => {
       return new Alerts(client).destroy("tata", "541067ec736f7504a5110000");
     }

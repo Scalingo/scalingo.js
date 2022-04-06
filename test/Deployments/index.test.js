@@ -40,6 +40,7 @@ describe("Deployments#logs", () => {
 describe("Deployments#purge", () => {
   testDelete(
     "https://api.osc-fr1.scalingo.com/v1/apps/testApp/caches/deployment",
+    null,
     (client) => {
       return new Deployments(client).purgeCache("testApp");
     }
