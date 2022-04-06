@@ -19,6 +19,7 @@ import Metrics from "./Metrics";
 import NotificationPlatforms from "./NotificationPlatforms";
 import Notifiers from "./Notifiers";
 import Operations from "./Operations";
+import Regions from "./Regions";
 import SCMIntegrations from "./SCMIntegrations";
 import SCMRepoLinks from "./SCMRepoLinks";
 import Stats from "./Stats";
@@ -98,6 +99,7 @@ export class Client {
   Notifiers = new Notifiers(this);
   NotificationPlatforms = new NotificationPlatforms(this);
   Operations = new Operations(this);
+  Regions = new Regions(this);
   SCMIntegrations = new SCMIntegrations(this);
   SCMRepoLinks = new SCMRepoLinks(this);
   Stats = new Stats(this);
