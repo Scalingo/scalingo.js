@@ -5,6 +5,7 @@
 * feature: list processes, run and stop one-off containers
 * Improved type definitions
 * Bump dependencies (dev and runtime)
+* drop support for node 12.x, add 18.x to test matrix
 
 ## 0.5.2
 
