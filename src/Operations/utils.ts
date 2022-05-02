@@ -108,7 +108,8 @@ export class Operation {
         } catch (error) {
           clearInterval(waitInterval);
 
-          const axiosError = error as AxiosError;
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const axiosError = error as AxiosError<any>;
 
           if (axiosError.response) {
             reject(
