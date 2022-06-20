@@ -8,6 +8,7 @@ import Autoscalers from "./Autoscalers";
 import Billing from "./Billing";
 import Collaborators from "./Collaborators";
 import Containers from "./Containers";
+import Contracts from "./Contracts";
 import CronTasks from "./CronTasks";
 import Deployments from "./Deployments";
 import Domains from "./Domains";
@@ -88,6 +89,7 @@ export class Client {
   Billing = new Billing(this);
   Collaborators = new Collaborators(this);
   Containers = new Containers(this);
+  Contracts = new Contracts(this);
   CronTasks = new CronTasks(this);
   Deployments = new Deployments(this);
   Domains = new Domains(this);
