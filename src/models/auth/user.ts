@@ -34,6 +34,9 @@ export interface User {
   suspension_reason: string | null;
 
   preferences: UserPreferences;
+
+  contracts: Record<string, boolean>;
+  new_contracts: Record<string, boolean>;
 }
 
 export interface GithubProfile {

@@ -1,6 +1,8 @@
 ## Unreleased
 
-* nothing yet
+## 0.6.1
+
+* feature: support for contracts and agreements
 
 ## 0.6.0
 
