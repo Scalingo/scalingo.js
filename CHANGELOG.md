@@ -1,7 +1,11 @@
 ## Unreleased
 
+* nothing yet
+
+## 0.6.0
+
 * feature: support for regions endpoint
-* breaking change: `Environment.bulkDestroy` returns an array of ids instead of an object (with an array of  ids)
+* breaking change: `Environment.bulkDestroy` returns an array of ids instead of an object (with an array of ids)
 * feature: list processes, run and stop one-off containers
 * Improved type definitions
 * Bump dependencies (dev and runtime)
