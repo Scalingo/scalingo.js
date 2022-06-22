@@ -1,9 +1,9 @@
 export interface DataAccessConsent {
-  /** Unique ID, starts with "au-" */
+  /** Unique ID */
   id: string;
-  /** ID of the application */
+  /** User ID of the person who grants the access */
   user_id: string;
-  /** Username of the person who grants the access */
+  /** ID of the application */
   app_id: string;
   /** Creation date of the dataAccessConsent */
   created_at: string;
