@@ -7,7 +7,7 @@
 	"originalName": "",
 	"children": [
 		{
-			"id": 61,
+			"id": 62,
 			"name": "default",
 			"kind": 16777216,
 			"kindString": "Reference",
@@ -30,7 +30,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 70,
+							"line": 71,
 							"character": 2
 						}
 					],
@@ -93,7 +93,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 85,
+							"line": 86,
 							"character": 2
 						}
 					],
@@ -112,7 +112,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 86,
+							"line": 87,
 							"character": 2
 						}
 					],
@@ -131,7 +131,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 84,
+							"line": 85,
 							"character": 2
 						}
 					],
@@ -150,7 +150,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 88,
+							"line": 89,
 							"character": 2
 						}
 					],
@@ -169,7 +169,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 87,
+							"line": 88,
 							"character": 2
 						}
 					],
@@ -188,7 +188,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 89,
+							"line": 90,
 							"character": 2
 						}
 					],
@@ -207,7 +207,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 90,
+							"line": 91,
 							"character": 2
 						}
 					],
@@ -226,7 +226,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 91,
+							"line": 92,
 							"character": 2
 						}
 					],
@@ -245,7 +245,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 92,
+							"line": 93,
 							"character": 2
 						}
 					],
@@ -264,25 +264,6 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 93,
-							"character": 2
-						}
-					],
-					"type": {
-						"type": "reference",
-						"name": "default"
-					},
-					"defaultValue": "..."
-				},
-				{
-					"id": 31,
-					"name": "Deployments",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "index.ts",
 							"line": 94,
 							"character": 2
 						}
@@ -294,8 +275,8 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 32,
-					"name": "Domains",
+					"id": 31,
+					"name": "DataAccessConsents",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
@@ -313,8 +294,8 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 33,
-					"name": "Environment",
+					"id": 32,
+					"name": "Deployments",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
@@ -332,8 +313,8 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 34,
-					"name": "Events",
+					"id": 33,
+					"name": "Domains",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
@@ -351,8 +332,8 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 35,
-					"name": "Keys",
+					"id": 34,
+					"name": "Environment",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
@@ -370,8 +351,8 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 36,
-					"name": "Logs",
+					"id": 35,
+					"name": "Events",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
@@ -389,8 +370,8 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 37,
-					"name": "Metrics",
+					"id": 36,
+					"name": "Keys",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
@@ -408,27 +389,8 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 39,
-					"name": "NotificationPlatforms",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "index.ts",
-							"line": 102,
-							"character": 2
-						}
-					],
-					"type": {
-						"type": "reference",
-						"name": "default"
-					},
-					"defaultValue": "..."
-				},
-				{
-					"id": 38,
-					"name": "Notifiers",
+					"id": 37,
+					"name": "Logs",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
@@ -446,8 +408,46 @@
 					"defaultValue": "..."
 				},
 				{
+					"id": 38,
+					"name": "Metrics",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 102,
+							"character": 2
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "default"
+					},
+					"defaultValue": "..."
+				},
+				{
 					"id": 40,
-					"name": "Operations",
+					"name": "NotificationPlatforms",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 104,
+							"character": 2
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "default"
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 39,
+					"name": "Notifiers",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
@@ -466,26 +466,7 @@
 				},
 				{
 					"id": 41,
-					"name": "Regions",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "index.ts",
-							"line": 104,
-							"character": 2
-						}
-					],
-					"type": {
-						"type": "reference",
-						"name": "default"
-					},
-					"defaultValue": "..."
-				},
-				{
-					"id": 42,
-					"name": "SCMIntegrations",
+					"name": "Operations",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
@@ -503,8 +484,8 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 43,
-					"name": "SCMRepoLinks",
+					"id": 42,
+					"name": "Regions",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
@@ -517,13 +498,13 @@
 					],
 					"type": {
 						"type": "reference",
-						"name": "SCMRepoLinks"
+						"name": "default"
 					},
 					"defaultValue": "..."
 				},
 				{
-					"id": 44,
-					"name": "Stats",
+					"id": 43,
+					"name": "SCMIntegrations",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
@@ -536,13 +517,13 @@
 					],
 					"type": {
 						"type": "reference",
-						"name": "Stats"
+						"name": "default"
 					},
 					"defaultValue": "..."
 				},
 				{
-					"id": 45,
-					"name": "Tokens",
+					"id": 44,
+					"name": "SCMRepoLinks",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
@@ -555,13 +536,13 @@
 					],
 					"type": {
 						"type": "reference",
-						"name": "Tokens"
+						"name": "SCMRepoLinks"
 					},
 					"defaultValue": "..."
 				},
 				{
-					"id": 46,
-					"name": "TwoFactorAuth",
+					"id": 45,
+					"name": "Stats",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
@@ -574,13 +555,13 @@
 					],
 					"type": {
 						"type": "reference",
-						"name": "TwoFactorAuth"
+						"name": "Stats"
 					},
 					"defaultValue": "..."
 				},
 				{
-					"id": 47,
-					"name": "Users",
+					"id": 46,
+					"name": "Tokens",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
@@ -588,6 +569,44 @@
 						{
 							"fileName": "index.ts",
 							"line": 110,
+							"character": 2
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Tokens"
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 47,
+					"name": "TwoFactorAuth",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 111,
+							"character": 2
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "TwoFactorAuth"
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 48,
+					"name": "Users",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 112,
 							"character": 2
 						}
 					],
@@ -609,7 +628,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 50,
+							"line": 51,
 							"character": 2
 						}
 					],
@@ -630,7 +649,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 53,
+							"line": 54,
 							"character": 2
 						}
 					],
@@ -651,7 +670,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 56,
+							"line": 57,
 							"character": 2
 						}
 					],
@@ -672,7 +691,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 59,
+							"line": 60,
 							"character": 2
 						}
 					],
@@ -718,7 +737,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 47,
+							"line": 48,
 							"character": 2
 						}
 					],
@@ -728,7 +747,7 @@
 					}
 				},
 				{
-					"id": 48,
+					"id": 49,
 					"name": "apiClient",
 					"kind": 2048,
 					"kindString": "Method",
@@ -736,13 +755,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 116,
+							"line": 118,
 							"character": 2
 						}
 					],
 					"signatures": [
 						{
-							"id": 49,
+							"id": 50,
 							"name": "apiClient",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -761,7 +780,7 @@
 					]
 				},
 				{
-					"id": 50,
+					"id": 51,
 					"name": "authApiClient",
 					"kind": 2048,
 					"kindString": "Method",
@@ -769,13 +788,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 129,
+							"line": 131,
 							"character": 2
 						}
 					],
 					"signatures": [
 						{
-							"id": 51,
+							"id": 52,
 							"name": "authApiClient",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -794,7 +813,7 @@
 					]
 				},
 				{
-					"id": 52,
+					"id": 53,
 					"name": "billingApiClient",
 					"kind": 2048,
 					"kindString": "Method",
@@ -802,13 +821,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 142,
+							"line": 144,
 							"character": 2
 						}
 					],
 					"signatures": [
 						{
-							"id": 53,
+							"id": 54,
 							"name": "billingApiClient",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -827,7 +846,7 @@
 					]
 				},
 				{
-					"id": 54,
+					"id": 55,
 					"name": "unauthenticatedClient",
 					"kind": 2048,
 					"kindString": "Method",
@@ -835,13 +854,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 155,
+							"line": 157,
 							"character": 2
 						}
 					],
 					"signatures": [
 						{
-							"id": 55,
+							"id": 56,
 							"name": "unauthenticatedClient",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -889,9 +908,9 @@
 						35,
 						36,
 						37,
-						39,
 						38,
 						40,
+						39,
 						41,
 						42,
 						43,
@@ -899,6 +918,7 @@
 						45,
 						46,
 						47,
+						48,
 						17,
 						18,
 						19,
@@ -910,30 +930,30 @@
 					"title": "Methods",
 					"kind": 2048,
 					"children": [
-						48,
-						50,
-						52,
-						54
+						49,
+						51,
+						53,
+						55
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 45,
+					"line": 46,
 					"character": 13
 				}
 			]
 		},
 		{
-			"id": 56,
+			"id": 57,
 			"name": "EndpointClient",
 			"kind": 128,
 			"kindString": "Class",
 			"flags": {},
 			"children": [
 				{
-					"id": 57,
+					"id": 58,
 					"name": "constructor",
 					"kind": 512,
 					"kindString": "Constructor",
@@ -941,13 +961,13 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 171,
+							"line": 173,
 							"character": 2
 						}
 					],
 					"signatures": [
 						{
-							"id": 58,
+							"id": 59,
 							"name": "new EndpointClient",
 							"kind": 16384,
 							"kindString": "Constructor signature",
@@ -957,7 +977,7 @@
 							},
 							"parameters": [
 								{
-									"id": 59,
+									"id": 60,
 									"name": "client",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -974,14 +994,14 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 56,
+								"id": 57,
 								"name": "EndpointClient"
 							}
 						}
 					]
 				},
 				{
-					"id": 60,
+					"id": 61,
 					"name": "_client",
 					"kind": 1024,
 					"kindString": "Property",
@@ -992,7 +1012,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 165,
+							"line": 167,
 							"character": 2
 						}
 					],
@@ -1008,21 +1028,21 @@
 					"title": "Constructors",
 					"kind": 512,
 					"children": [
-						57
+						58
 					]
 				},
 				{
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						60
+						61
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 163,
+					"line": 165,
 					"character": 13
 				}
 			]
@@ -1045,7 +1065,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 32,
+							"line": 33,
 							"character": 2
 						}
 					],
@@ -1065,7 +1085,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 33,
+							"line": 34,
 							"character": 2
 						}
 					],
@@ -1085,7 +1105,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 34,
+							"line": 35,
 							"character": 2
 						}
 					],
@@ -1105,7 +1125,7 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 35,
+							"line": 36,
 							"character": 2
 						}
 					],
@@ -1130,7 +1150,7 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 31,
+					"line": 32,
 					"character": 17
 				}
 			]
@@ -1146,7 +1166,7 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 38,
+					"line": 39,
 					"character": 13
 				}
 			],
@@ -1174,7 +1194,7 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 188,
+					"line": 190,
 					"character": 22
 				}
 			],
@@ -1241,7 +1261,7 @@
 			"title": "References",
 			"kind": 16777216,
 			"children": [
-				61
+				62
 			]
 		},
 		{
@@ -1249,7 +1269,7 @@
 			"kind": 128,
 			"children": [
 				11,
-				56
+				57
 			]
 		},
 		{
