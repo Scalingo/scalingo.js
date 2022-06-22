@@ -1,3 +1,7 @@
+## 0.6.2
+
+* feature: support for data access consents
+
 ## Unreleased
 
 ## 0.6.1
