@@ -10,7 +10,7 @@ Note: 0.5.0 has a few internal changes (dependencies bumps, switch to esbuild) t
 
 ## Usage
 
-The package needs to be configured with your a token which are available in your Scalingo [dashboard](https://my.scalingo.com/profile).
+The package needs to be configured with your token which is available in your Scalingo [dashboard](https://my.scalingo.com/profile).
 
 ```js
 const scalingo = require('scalingo')
