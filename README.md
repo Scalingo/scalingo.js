@@ -68,3 +68,5 @@ npm version patch
 git push --tags
 git push origin master
 ```
+
+Then create a new release on the scalingo.js Github repository.
