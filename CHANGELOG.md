@@ -1,4 +1,6 @@
-## Unreleased
+## 0.6.3 (unreleased)
+
+* chore: bump dependencies
 
 ## 0.6.2
 
