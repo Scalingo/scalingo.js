@@ -9,9 +9,17 @@
 		{
 			"id": 62,
 			"name": "default",
-			"kind": 16777216,
+			"kind": 8388608,
 			"kindString": "Reference",
 			"flags": {},
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 178,
+					"character": 0,
+					"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L178"
+				}
+			],
 			"target": 11
 		},
 		{
@@ -31,7 +39,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 71,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L71"
 						}
 					],
 					"signatures": [
@@ -42,7 +51,12 @@
 							"kindString": "Constructor signature",
 							"flags": {},
 							"comment": {
-								"shortText": "Create a new Client for the Scalingo API."
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Create a new Client for the Scalingo API."
+									}
+								]
 							},
 							"parameters": [
 								{
@@ -52,7 +66,12 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"shortText": "Bearer Token for the current user."
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Bearer Token for the current user."
+											}
+										]
 									},
 									"type": {
 										"type": "intrinsic",
@@ -66,7 +85,12 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"shortText": "Optional configuration"
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Optional configuration"
+											}
+										]
 									},
 									"type": {
 										"type": "reference",
@@ -94,7 +118,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 86,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L86"
 						}
 					],
 					"type": {
@@ -113,7 +138,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 87,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L87"
 						}
 					],
 					"type": {
@@ -132,7 +158,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 85,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L85"
 						}
 					],
 					"type": {
@@ -151,7 +178,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 89,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L89"
 						}
 					],
 					"type": {
@@ -170,7 +198,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 88,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L88"
 						}
 					],
 					"type": {
@@ -189,7 +218,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 90,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L90"
 						}
 					],
 					"type": {
@@ -208,7 +238,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 91,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L91"
 						}
 					],
 					"type": {
@@ -227,7 +258,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 92,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L92"
 						}
 					],
 					"type": {
@@ -246,7 +278,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 93,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L93"
 						}
 					],
 					"type": {
@@ -265,7 +298,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 94,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L94"
 						}
 					],
 					"type": {
@@ -284,7 +318,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 95,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L95"
 						}
 					],
 					"type": {
@@ -303,7 +338,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 96,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L96"
 						}
 					],
 					"type": {
@@ -322,7 +358,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 97,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L97"
 						}
 					],
 					"type": {
@@ -341,7 +378,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 98,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L98"
 						}
 					],
 					"type": {
@@ -360,7 +398,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 99,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L99"
 						}
 					],
 					"type": {
@@ -379,7 +418,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 100,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L100"
 						}
 					],
 					"type": {
@@ -398,7 +438,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 101,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L101"
 						}
 					],
 					"type": {
@@ -417,7 +458,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 102,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L102"
 						}
 					],
 					"type": {
@@ -436,7 +478,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 104,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L104"
 						}
 					],
 					"type": {
@@ -455,7 +498,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 103,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L103"
 						}
 					],
 					"type": {
@@ -474,7 +518,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 105,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L105"
 						}
 					],
 					"type": {
@@ -493,7 +538,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 106,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L106"
 						}
 					],
 					"type": {
@@ -512,7 +558,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 107,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L107"
 						}
 					],
 					"type": {
@@ -531,7 +578,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 108,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L108"
 						}
 					],
 					"type": {
@@ -550,7 +598,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 109,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L109"
 						}
 					],
 					"type": {
@@ -569,7 +618,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 110,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L110"
 						}
 					],
 					"type": {
@@ -588,7 +638,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 111,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L111"
 						}
 					],
 					"type": {
@@ -607,7 +658,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 112,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L112"
 						}
 					],
 					"type": {
@@ -623,13 +675,19 @@
 					"kindString": "Property",
 					"flags": {},
 					"comment": {
-						"shortText": "URL to the main Scalingo API."
+						"summary": [
+							{
+								"kind": "text",
+								"text": "URL to the main Scalingo API."
+							}
+						]
 					},
 					"sources": [
 						{
 							"fileName": "index.ts",
 							"line": 51,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L51"
 						}
 					],
 					"type": {
@@ -644,13 +702,19 @@
 					"kindString": "Property",
 					"flags": {},
 					"comment": {
-						"shortText": "URL to the Scalingo Authentication API."
+						"summary": [
+							{
+								"kind": "text",
+								"text": "URL to the Scalingo Authentication API."
+							}
+						]
 					},
 					"sources": [
 						{
 							"fileName": "index.ts",
 							"line": 54,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L54"
 						}
 					],
 					"type": {
@@ -665,13 +729,19 @@
 					"kindString": "Property",
 					"flags": {},
 					"comment": {
-						"shortText": "URL to the Scalingo Billing API."
+						"summary": [
+							{
+								"kind": "text",
+								"text": "URL to the Scalingo Billing API."
+							}
+						]
 					},
 					"sources": [
 						{
 							"fileName": "index.ts",
 							"line": 57,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L57"
 						}
 					],
 					"type": {
@@ -686,13 +756,19 @@
 					"kindString": "Property",
 					"flags": {},
 					"comment": {
-						"shortText": "Global HTTP headers"
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Global HTTP headers"
+							}
+						]
 					},
 					"sources": [
 						{
 							"fileName": "index.ts",
 							"line": 60,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L60"
 						}
 					],
 					"type": {
@@ -720,9 +796,9 @@
 								]
 							}
 						],
+						"name": "Record",
 						"qualifiedName": "Record",
-						"package": "typescript",
-						"name": "Record"
+						"package": "typescript"
 					}
 				},
 				{
@@ -732,13 +808,19 @@
 					"kindString": "Property",
 					"flags": {},
 					"comment": {
-						"shortText": "Bearer Token for the current user."
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Bearer Token for the current user."
+							}
+						]
 					},
 					"sources": [
 						{
 							"fileName": "index.ts",
 							"line": 48,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L48"
 						}
 					],
 					"type": {
@@ -756,7 +838,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 118,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L118"
 						}
 					],
 					"signatures": [
@@ -767,14 +850,29 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"shortText": "Create an axios instance configured for the Scalingo API",
-								"returns": "Axios client for the Scalingo API\n"
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Create an axios instance configured for the Scalingo API"
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@returns",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Axios client for the Scalingo API"
+											}
+										]
+									}
+								]
 							},
 							"type": {
 								"type": "reference",
+								"name": "AxiosInstance",
 								"qualifiedName": "AxiosInstance",
-								"package": "axios",
-								"name": "AxiosInstance"
+								"package": "axios"
 							}
 						}
 					]
@@ -789,7 +887,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 131,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L131"
 						}
 					],
 					"signatures": [
@@ -800,14 +899,29 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"shortText": "Create an axios instance configured for the Scalingo Authentication API",
-								"returns": "Axios client for the Scalingo Authentication API\n"
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Create an axios instance configured for the Scalingo Authentication API"
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@returns",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Axios client for the Scalingo Authentication API"
+											}
+										]
+									}
+								]
 							},
 							"type": {
 								"type": "reference",
+								"name": "AxiosInstance",
 								"qualifiedName": "AxiosInstance",
-								"package": "axios",
-								"name": "AxiosInstance"
+								"package": "axios"
 							}
 						}
 					]
@@ -822,7 +936,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 144,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L144"
 						}
 					],
 					"signatures": [
@@ -833,14 +948,29 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"shortText": "Create an axios instance configured for the Scalingo Billing API",
-								"returns": "Axios client for the Scalingo Billing API\n"
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Create an axios instance configured for the Scalingo Billing API"
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@returns",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Axios client for the Scalingo Billing API"
+											}
+										]
+									}
+								]
 							},
 							"type": {
 								"type": "reference",
+								"name": "AxiosInstance",
 								"qualifiedName": "AxiosInstance",
-								"package": "axios",
-								"name": "AxiosInstance"
+								"package": "axios"
 							}
 						}
 					]
@@ -855,7 +985,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 157,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L157"
 						}
 					],
 					"signatures": [
@@ -866,14 +997,29 @@
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"shortText": "Create a vanilla axios instance for the Scalingo API",
-								"returns": "Axios instance for the Scalingo Billing API, unauthenticated\n"
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Create a vanilla axios instance for the Scalingo API"
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@returns",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Axios instance for the Scalingo Billing API, unauthenticated"
+											}
+										]
+									}
+								]
 							},
 							"type": {
 								"type": "reference",
+								"name": "AxiosInstance",
 								"qualifiedName": "AxiosInstance",
-								"package": "axios",
-								"name": "AxiosInstance"
+								"package": "axios"
 							}
 						}
 					]
@@ -882,14 +1028,12 @@
 			"groups": [
 				{
 					"title": "Constructors",
-					"kind": 512,
 					"children": [
 						12
 					]
 				},
 				{
 					"title": "Properties",
-					"kind": 1024,
 					"children": [
 						22,
 						23,
@@ -928,7 +1072,6 @@
 				},
 				{
 					"title": "Methods",
-					"kind": 2048,
 					"children": [
 						49,
 						51,
@@ -941,7 +1084,8 @@
 				{
 					"fileName": "index.ts",
 					"line": 46,
-					"character": 13
+					"character": 13,
+					"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L46"
 				}
 			]
 		},
@@ -962,7 +1106,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 173,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L173"
 						}
 					],
 					"signatures": [
@@ -973,7 +1118,12 @@
 							"kindString": "Constructor signature",
 							"flags": {},
 							"comment": {
-								"shortText": "Create a new \"thematic\" client"
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Create a new \"thematic\" client"
+									}
+								]
 							},
 							"parameters": [
 								{
@@ -983,7 +1133,12 @@
 									"kindString": "Parameter",
 									"flags": {},
 									"comment": {
-										"shortText": "Scalingo API Client\n"
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Scalingo API Client"
+											}
+										]
 									},
 									"type": {
 										"type": "reference",
@@ -1007,13 +1162,19 @@
 					"kindString": "Property",
 					"flags": {},
 					"comment": {
-						"shortText": "Scalingo API Client"
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Scalingo API Client"
+							}
+						]
 					},
 					"sources": [
 						{
 							"fileName": "index.ts",
 							"line": 167,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L167"
 						}
 					],
 					"type": {
@@ -1026,14 +1187,12 @@
 			"groups": [
 				{
 					"title": "Constructors",
-					"kind": 512,
 					"children": [
 						58
 					]
 				},
 				{
 					"title": "Properties",
-					"kind": 1024,
 					"children": [
 						61
 					]
@@ -1043,7 +1202,8 @@
 				{
 					"fileName": "index.ts",
 					"line": 165,
-					"character": 13
+					"character": 13,
+					"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L165"
 				}
 			]
 		},
@@ -1066,7 +1226,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 33,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L33"
 						}
 					],
 					"type": {
@@ -1086,7 +1247,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 34,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L34"
 						}
 					],
 					"type": {
@@ -1106,7 +1268,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 35,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L35"
 						}
 					],
 					"type": {
@@ -1126,7 +1289,8 @@
 						{
 							"fileName": "index.ts",
 							"line": 36,
-							"character": 2
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L36"
 						}
 					],
 					"type": {
@@ -1138,7 +1302,6 @@
 			"groups": [
 				{
 					"title": "Properties",
-					"kind": 1024,
 					"children": [
 						6,
 						7,
@@ -1151,7 +1314,8 @@
 				{
 					"fileName": "index.ts",
 					"line": 32,
-					"character": 17
+					"character": 17,
+					"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L32"
 				}
 			]
 		},
@@ -1167,7 +1331,8 @@
 				{
 					"fileName": "index.ts",
 					"line": 39,
-					"character": 13
+					"character": 13,
+					"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L39"
 				}
 			],
 			"type": {
@@ -1179,9 +1344,9 @@
 						"name": "ScalingoClientOptions"
 					}
 				],
+				"name": "Required",
 				"qualifiedName": "Required",
-				"package": "typescript",
-				"name": "Required"
+				"package": "typescript"
 			},
 			"defaultValue": "..."
 		},
@@ -1195,7 +1360,8 @@
 				{
 					"fileName": "index.ts",
 					"line": 190,
-					"character": 22
+					"character": 22,
+					"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L190"
 				}
 			],
 			"signatures": [
@@ -1206,7 +1372,12 @@
 					"kindString": "Call signature",
 					"flags": {},
 					"comment": {
-						"shortText": "Return a client from a user token.\nIt exchange the token and then return a new client."
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Return a client from a user token.\nIt exchange the token and then return a new client."
+							}
+						]
 					},
 					"parameters": [
 						{
@@ -1216,7 +1387,12 @@
 							"kindString": "Parameter",
 							"flags": {},
 							"comment": {
-								"shortText": "Bearer Token for the current user."
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Bearer Token for the current user."
+									}
+								]
 							},
 							"type": {
 								"type": "intrinsic",
@@ -1230,7 +1406,12 @@
 							"kindString": "Parameter",
 							"flags": {},
 							"comment": {
-								"shortText": "Optional configuration"
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Optional configuration"
+									}
+								]
 							},
 							"type": {
 								"type": "reference",
@@ -1248,9 +1429,9 @@
 								"name": "Client"
 							}
 						],
+						"name": "Promise",
 						"qualifiedName": "Promise",
-						"package": "typescript",
-						"name": "Promise"
+						"package": "typescript"
 					}
 				}
 			]
@@ -1259,14 +1440,12 @@
 	"groups": [
 		{
 			"title": "References",
-			"kind": 16777216,
 			"children": [
 				62
 			]
 		},
 		{
 			"title": "Classes",
-			"kind": 128,
 			"children": [
 				11,
 				57
@@ -1274,21 +1453,18 @@
 		},
 		{
 			"title": "Interfaces",
-			"kind": 256,
 			"children": [
 				5
 			]
 		},
 		{
 			"title": "Variables",
-			"kind": 32,
 			"children": [
 				10
 			]
 		},
 		{
 			"title": "Functions",
-			"kind": 64,
 			"children": [
 				1
 			]
@@ -1298,7 +1474,8 @@
 		{
 			"fileName": "index.ts",
 			"line": 1,
-			"character": 0
+			"character": 0,
+			"url": "https://github.com/Scalingo/scalingo.js/blob/a1fe424/src/index.ts#L1"
 		}
 	]
 }
