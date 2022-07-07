@@ -15,6 +15,7 @@ export interface Addon {
   addon_provider: AddonProvider;
   /** Current status of the addon */
   status: "running" | "provisioning" | "suspended";
+  hds_resource: boolean;
 }
 
 export interface AddonUpgradeResponse {
@@ -41,6 +42,7 @@ export interface Plan {
   price: number;
   /** Description of the plan */
   description: string;
+  hds_available: boolean;
 }
 
 export interface AddonProvider {
@@ -62,6 +64,7 @@ export interface AddonProvider {
   provider_url: string;
   /** Embedded array of plans for this addon */
   plans: Plan[];
+  hds_available: boolean;
 }
 
 export interface Category {
