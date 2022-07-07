@@ -1,6 +1,7 @@
 ## 0.6.3 (unreleased)
 
 * chore: bump dependencies
+* feature: support HDS endpoints and fields
 
 ## 0.6.2
 
