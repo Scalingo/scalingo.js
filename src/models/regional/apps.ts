@@ -81,6 +81,7 @@ export interface App {
   status: AppStatus;
   /** HDS Contact, only on HDS app */
   hds_contact: HDSContact;
+  hds_resource: boolean;
 }
 
 export interface AppLinks {
