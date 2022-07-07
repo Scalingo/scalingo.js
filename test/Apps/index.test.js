@@ -100,6 +100,27 @@ describe("App#create", () => {
     await new Apps(client).create("testApp", { dry_run: true });
     expect(mock.history.post[0].headers["X-Dry-Run"]).to.eq("true");
   });
+
+  describe("HDS app", async () => {
+    const client = new Client("test-token");
+    const mock = new MockAdapter(axios);
+
+    mock.onPost("https://api.osc-fr1.scalingo.com/v1/apps").reply(200, {
+      app: {
+        name: "testApp",
+        hds_resource: true,
+        hds_contact: {
+          name: "Médecin",
+          phoneNumber: "0600000000",
+          addressLine1: "23 rue du bois",
+          addressCountry: "France",
+        },
+      },
+    });
+    await new Apps(client).create("testApp");
+    expect(mock.history.post[0].app.hds_resource).to.eq("true");
+    expect(mock.history.post[0].app.hds_contact.name).to.eq("Médecin");
+  });
 });
 
 describe("App#logsURL", () => {

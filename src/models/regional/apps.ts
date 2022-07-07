@@ -1,3 +1,5 @@
+import { HDSContact } from "./hds_contact";
+
 /** Application is new, no code is running */
 export const STATUS_NEW = "new";
 
@@ -77,6 +79,8 @@ export interface App {
   last_deployment_id: string;
   /** current status of the application */
   status: AppStatus;
+  /** HDS Contact, only on HDS app */
+  hds_contact: HDSContact;
 }
 
 export interface AppLinks {
