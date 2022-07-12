@@ -46,23 +46,15 @@ export default class Apps {
    * @return Promise that when resolved returns the App created.
    */
   create(payload: CreateParams): Promise<App> {
-    const body: CreateParams = {
-      name: payload.name,
-    };
+    const { dry_run } = payload;
+    delete payload.dry_run;
 
     const headers: Record<string, string> = {};
 
-    if (payload) {
-      body.git_source = payload.git_source;
-      body.parent_id = payload.parent_id;
-      body.stack_id = payload.stack_id;
+    if (dry_run) headers["X-Dry-Run"] = "true";
 
-      if (payload.dry_run) {
-        headers["X-Dry-Run"] = "true";
-      }
-    }
     return unpackData(
-      this._client.apiClient().post("/apps", { app: body }, { headers }),
+      this._client.apiClient().post("/apps", { app: payload }, { headers }),
       "app"
     );
   }
