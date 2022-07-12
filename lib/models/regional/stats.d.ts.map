@@ -1,1 +1,0 @@
-{"version":3,"file":"stats.d.ts","sourceRoot":"","sources":["../../../src/models/regional/stats.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,cAAc;IAC7B,oDAAoD;IACpD,MAAM,EAAE,MAAM,CAAC;IACf,wDAAwD;IACxD,OAAO,EAAE,MAAM,CAAC;IAChB,oDAAoD;IACpD,aAAa,EAAE,MAAM,CAAC;IACtB,2BAA2B;IAC3B,GAAG,EAAE,MAAM,CAAC;CACb"}
