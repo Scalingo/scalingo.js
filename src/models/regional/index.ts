@@ -11,6 +11,7 @@ export * from "./deployments";
 export * from "./domains";
 export * from "./environment";
 export * from "./events";
+export * from "./hds_contact";
 export * from "./logs";
 export * from "./metrics";
 export * from "./notification_platforms";

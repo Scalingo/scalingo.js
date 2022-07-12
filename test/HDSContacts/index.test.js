@@ -1,7 +1,7 @@
 import HDSContacts from "../../src/HDSContacts";
 import { testPut } from "../utils/http";
 
-describe("HDSContacts#updateHDSContact", () => {
+describe("HDSContacts#update", () => {
   testPut(
     "https://api.osc-fr1.scalingo.com/v1/apps/test/hds_contact",
     {
@@ -14,7 +14,7 @@ describe("HDSContacts#updateHDSContact", () => {
     },
     "hds_contact",
     (client) => {
-      return new HDSContacts(client).updateHDSContact("test", {
+      return new HDSContacts(client).update("test", {
         name: "Médecin",
         phoneNumber: "0600000000",
         addressLine1: "23 rue du bois",
