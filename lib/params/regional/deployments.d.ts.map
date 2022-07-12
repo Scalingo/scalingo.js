@@ -1,0 +1,1 @@
+{"version":3,"file":"deployments.d.ts","sourceRoot":"","sources":["../../../src/params/regional/deployments.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,YAAY;IAC3B,mCAAmC;IACnC,UAAU,EAAE,MAAM,CAAC;IACnB,qCAAqC;IACrC,OAAO,CAAC,EAAE,MAAM,CAAC;IACjB,8EAA8E;IAC9E,eAAe,CAAC,EAAE,MAAM,CAAC;CAC1B"}

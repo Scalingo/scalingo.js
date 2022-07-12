@@ -1,0 +1,1 @@
+{"version":3,"file":"audit_logs.d.ts","sourceRoot":"","sources":["../../../src/models/regional/audit_logs.ts"],"names":[],"mappings":"AAAA,sDAAsD;AACtD,MAAM,WAAW,QAAQ;IACvB,IAAI,EAAE,MAAM,CAAC;IACb,OAAO,EAAE,MAAM,CAAC;IAChB,IAAI,EAAE,MAAM,CAAC;CACd"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"environment.d.ts","sourceRoot":"","sources":["../../../src/params/regional/environment.ts"],"names":[],"mappings":"AAAA,2FAA2F;AAC3F,MAAM,WAAW,YAAY;IAC3B,qCAAqC;IACrC,IAAI,EAAE,MAAM,CAAC;IACb,4BAA4B;IAC5B,KAAK,EAAE,MAAM,CAAC;CACf;AAED,oBAAY,YAAY,GAAG,MAAM,CAAC;AAElC,oBAAY,gBAAgB,GAAG,YAAY,EAAE,CAAC"}

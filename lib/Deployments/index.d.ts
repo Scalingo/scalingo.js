@@ -1,0 +1,56 @@
+import { Client } from "..";
+import { PaginationOpts } from "../meta";
+import { DeploymentsResult, Deployment } from "../models/regional/deployments";
+import { CreateParams } from "../params/regional/deployments";
+/**
+ * Deployment API Client
+ */
+export default class Deployments {
+    /** Scalingo API Client */
+    _client: Client;
+    /**
+     * Create a new "thematic" client
+     * @param client Scalingo API Client
+     */
+    constructor(client: Client);
+    /**
+     * List all deployments for an app
+     * @see https://developers.scalingo.com/deployments#list-the-deployments-of-an-app
+     * @param appId ID of the app
+     * @param opts optional parameters
+     * @return List of deployments for this app
+     */
+    for(appId: string, opts: PaginationOpts): Promise<DeploymentsResult>;
+    /**
+     * Create a deployment from an archive
+     * @see https://developers.scalingo.com/deployments#trigger-manually-a-deployment-from-an-archive
+     * @param appId ID of the app
+     * @param opts optional parameters
+     * @return List of deployments for this app
+     */
+    create(appId: string, deployment: CreateParams): Promise<Deployment>;
+    /**
+     * Get a deployment of an app
+     * @see https://developers.scalingo.com/deployments#get-a-particular-deployment
+     * @param appId ID of the app
+     * @param deploymentId ID of the deployment
+     * @return {Promise<Deployment>} Details of the deployment
+     */
+    find(appId: string, deploymentId: string): Promise<Deployment>;
+    /**
+     * Get the logs of a deployment
+     * @see https://developers.scalingo.com/deployments#get-the-output-of-the-deployment
+     * @param appId ID of the app
+     * @param deploymentId ID of the deployment
+     * @return Logs of the deployment
+     */
+    logs(appId: string, deploymentId: string): Promise<string>;
+    /**
+     * Purge the deployment cache
+     * @see https://developers.scalingo.com/deployments#manually-reset-the-deployment-cache
+     * @param appId ID of the app
+     * @return No content
+     */
+    purgeCache(appId: string): Promise<void>;
+}
+//# sourceMappingURL=index.d.ts.map
