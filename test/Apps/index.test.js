@@ -88,7 +88,7 @@ describe("App#create", () => {
     );
   });
 
-  describe("Using the dry_run param", async () => {
+  it("can dry_run the creation via a param", async () => {
     const client = new Client("test-token");
     const mock = new MockAdapter(axios);
 
@@ -97,11 +97,11 @@ describe("App#create", () => {
         name: "testApp",
       },
     });
-    await new Apps(client).create("testApp", { dry_run: true });
+    await new Apps(client).create({ name: "testApp", dry_run: true });
     expect(mock.history.post[0].headers["X-Dry-Run"]).to.eq("true");
   });
 
-  describe("HDS app", async () => {
+  it("can create HDS app", async () => {
     const client = new Client("test-token");
     const mock = new MockAdapter(axios);
 
@@ -117,9 +117,17 @@ describe("App#create", () => {
         },
       },
     });
-    await new Apps(client).create("testApp");
-    expect(mock.history.post[0].app.hds_resource).to.eq("true");
-    expect(mock.history.post[0].app.hds_contact.name).to.eq("Médecin");
+
+    await new Apps(client).create({
+      name: "testApp",
+      hds_resource: true,
+      hds_contact: { name: "Médecin" },
+    });
+
+    const data = JSON.parse(mock.history.post[0].data);
+
+    expect(data.app.hds_resource).to.eq(true);
+    expect(data.app.hds_contact.name).to.eq("Médecin");
   });
 });
 
