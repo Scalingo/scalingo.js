@@ -7,7 +7,7 @@
 	"originalName": "",
 	"children": [
 		{
-			"id": 62,
+			"id": 63,
 			"name": "default",
 			"kind": 8388608,
 			"kindString": "Reference",
@@ -15,9 +15,9 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 178,
+					"line": 180,
 					"character": 0,
-					"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L178"
+					"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L180"
 				}
 			],
 			"target": 11
@@ -38,9 +38,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 71,
+							"line": 72,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L71"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L72"
 						}
 					],
 					"signatures": [
@@ -117,9 +117,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 86,
+							"line": 87,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L86"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L87"
 						}
 					],
 					"type": {
@@ -137,9 +137,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 87,
+							"line": 88,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L87"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L88"
 						}
 					],
 					"type": {
@@ -157,9 +157,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 85,
+							"line": 86,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L85"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L86"
 						}
 					],
 					"type": {
@@ -177,9 +177,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 89,
+							"line": 90,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L89"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L90"
 						}
 					],
 					"type": {
@@ -197,9 +197,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 88,
+							"line": 89,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L88"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L89"
 						}
 					],
 					"type": {
@@ -217,9 +217,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 90,
+							"line": 91,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L90"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L91"
 						}
 					],
 					"type": {
@@ -237,9 +237,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 91,
+							"line": 92,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L91"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L92"
 						}
 					],
 					"type": {
@@ -257,9 +257,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 92,
+							"line": 93,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L92"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L93"
 						}
 					],
 					"type": {
@@ -277,9 +277,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 93,
+							"line": 94,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L93"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L94"
 						}
 					],
 					"type": {
@@ -297,9 +297,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 94,
+							"line": 95,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L94"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L95"
 						}
 					],
 					"type": {
@@ -317,9 +317,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 95,
+							"line": 96,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L95"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L96"
 						}
 					],
 					"type": {
@@ -337,9 +337,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 96,
+							"line": 97,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L96"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L97"
 						}
 					],
 					"type": {
@@ -357,9 +357,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 97,
+							"line": 98,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L97"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L98"
 						}
 					],
 					"type": {
@@ -377,9 +377,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 98,
+							"line": 99,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L98"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L99"
 						}
 					],
 					"type": {
@@ -397,9 +397,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 99,
+							"line": 100,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L99"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L100"
 						}
 					],
 					"type": {
@@ -410,16 +410,16 @@
 				},
 				{
 					"id": 36,
-					"name": "Keys",
+					"name": "HDSContacts",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 100,
+							"line": 101,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L100"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L101"
 						}
 					],
 					"type": {
@@ -430,16 +430,16 @@
 				},
 				{
 					"id": 37,
-					"name": "Logs",
+					"name": "Keys",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 101,
+							"line": 102,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L101"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L102"
 						}
 					],
 					"type": {
@@ -450,36 +450,16 @@
 				},
 				{
 					"id": 38,
-					"name": "Metrics",
+					"name": "Logs",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 102,
+							"line": 103,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L102"
-						}
-					],
-					"type": {
-						"type": "reference",
-						"name": "default"
-					},
-					"defaultValue": "..."
-				},
-				{
-					"id": 40,
-					"name": "NotificationPlatforms",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "index.ts",
-							"line": 104,
-							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L104"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L103"
 						}
 					],
 					"type": {
@@ -490,16 +470,16 @@
 				},
 				{
 					"id": 39,
-					"name": "Notifiers",
+					"name": "Metrics",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 103,
+							"line": 104,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L103"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L104"
 						}
 					],
 					"type": {
@@ -510,7 +490,27 @@
 				},
 				{
 					"id": 41,
-					"name": "Operations",
+					"name": "NotificationPlatforms",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 106,
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L106"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "default"
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 40,
+					"name": "Notifiers",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
@@ -519,7 +519,7 @@
 							"fileName": "index.ts",
 							"line": 105,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L105"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L105"
 						}
 					],
 					"type": {
@@ -530,16 +530,16 @@
 				},
 				{
 					"id": 42,
-					"name": "Regions",
+					"name": "Operations",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 106,
+							"line": 107,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L106"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L107"
 						}
 					],
 					"type": {
@@ -550,16 +550,16 @@
 				},
 				{
 					"id": 43,
-					"name": "SCMIntegrations",
+					"name": "Regions",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 107,
+							"line": 108,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L107"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L108"
 						}
 					],
 					"type": {
@@ -570,6 +570,26 @@
 				},
 				{
 					"id": 44,
+					"name": "SCMIntegrations",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 109,
+							"character": 2,
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L109"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "default"
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 45,
 					"name": "SCMRepoLinks",
 					"kind": 1024,
 					"kindString": "Property",
@@ -577,9 +597,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 108,
+							"line": 110,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L108"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L110"
 						}
 					],
 					"type": {
@@ -589,7 +609,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 45,
+					"id": 46,
 					"name": "Stats",
 					"kind": 1024,
 					"kindString": "Property",
@@ -597,9 +617,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 109,
+							"line": 111,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L109"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L111"
 						}
 					],
 					"type": {
@@ -609,7 +629,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 46,
+					"id": 47,
 					"name": "Tokens",
 					"kind": 1024,
 					"kindString": "Property",
@@ -617,9 +637,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 110,
+							"line": 112,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L110"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L112"
 						}
 					],
 					"type": {
@@ -629,7 +649,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 47,
+					"id": 48,
 					"name": "TwoFactorAuth",
 					"kind": 1024,
 					"kindString": "Property",
@@ -637,9 +657,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 111,
+							"line": 113,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L111"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L113"
 						}
 					],
 					"type": {
@@ -649,7 +669,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 48,
+					"id": 49,
 					"name": "Users",
 					"kind": 1024,
 					"kindString": "Property",
@@ -657,9 +677,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 112,
+							"line": 114,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L112"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L114"
 						}
 					],
 					"type": {
@@ -685,9 +705,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 51,
+							"line": 52,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L51"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L52"
 						}
 					],
 					"type": {
@@ -712,9 +732,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 54,
+							"line": 55,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L54"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L55"
 						}
 					],
 					"type": {
@@ -739,9 +759,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 57,
+							"line": 58,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L57"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L58"
 						}
 					],
 					"type": {
@@ -766,9 +786,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 60,
+							"line": 61,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L60"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L61"
 						}
 					],
 					"type": {
@@ -818,9 +838,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 48,
+							"line": 49,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L48"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L49"
 						}
 					],
 					"type": {
@@ -829,7 +849,7 @@
 					}
 				},
 				{
-					"id": 49,
+					"id": 50,
 					"name": "apiClient",
 					"kind": 2048,
 					"kindString": "Method",
@@ -837,14 +857,14 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 118,
+							"line": 120,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L118"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L120"
 						}
 					],
 					"signatures": [
 						{
-							"id": 50,
+							"id": 51,
 							"name": "apiClient",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -878,7 +898,7 @@
 					]
 				},
 				{
-					"id": 51,
+					"id": 52,
 					"name": "authApiClient",
 					"kind": 2048,
 					"kindString": "Method",
@@ -886,14 +906,14 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 131,
+							"line": 133,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L131"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L133"
 						}
 					],
 					"signatures": [
 						{
-							"id": 52,
+							"id": 53,
 							"name": "authApiClient",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -927,7 +947,7 @@
 					]
 				},
 				{
-					"id": 53,
+					"id": 54,
 					"name": "billingApiClient",
 					"kind": 2048,
 					"kindString": "Method",
@@ -935,14 +955,14 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 144,
+							"line": 146,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L144"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L146"
 						}
 					],
 					"signatures": [
 						{
-							"id": 54,
+							"id": 55,
 							"name": "billingApiClient",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -976,7 +996,7 @@
 					]
 				},
 				{
-					"id": 55,
+					"id": 56,
 					"name": "unauthenticatedClient",
 					"kind": 2048,
 					"kindString": "Method",
@@ -984,14 +1004,14 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 157,
+							"line": 159,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L157"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L159"
 						}
 					],
 					"signatures": [
 						{
-							"id": 56,
+							"id": 57,
 							"name": "unauthenticatedClient",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1053,9 +1073,9 @@
 						36,
 						37,
 						38,
-						40,
 						39,
 						41,
+						40,
 						42,
 						43,
 						44,
@@ -1063,6 +1083,7 @@
 						46,
 						47,
 						48,
+						49,
 						17,
 						18,
 						19,
@@ -1073,31 +1094,31 @@
 				{
 					"title": "Methods",
 					"children": [
-						49,
-						51,
-						53,
-						55
+						50,
+						52,
+						54,
+						56
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 46,
+					"line": 47,
 					"character": 13,
-					"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L46"
+					"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L47"
 				}
 			]
 		},
 		{
-			"id": 57,
+			"id": 58,
 			"name": "EndpointClient",
 			"kind": 128,
 			"kindString": "Class",
 			"flags": {},
 			"children": [
 				{
-					"id": 58,
+					"id": 59,
 					"name": "constructor",
 					"kind": 512,
 					"kindString": "Constructor",
@@ -1105,14 +1126,14 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 173,
+							"line": 175,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L173"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L175"
 						}
 					],
 					"signatures": [
 						{
-							"id": 59,
+							"id": 60,
 							"name": "new EndpointClient",
 							"kind": 16384,
 							"kindString": "Constructor signature",
@@ -1127,7 +1148,7 @@
 							},
 							"parameters": [
 								{
-									"id": 60,
+									"id": 61,
 									"name": "client",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1149,14 +1170,14 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 57,
+								"id": 58,
 								"name": "EndpointClient"
 							}
 						}
 					]
 				},
 				{
-					"id": 61,
+					"id": 62,
 					"name": "_client",
 					"kind": 1024,
 					"kindString": "Property",
@@ -1172,9 +1193,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 167,
+							"line": 169,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L167"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L169"
 						}
 					],
 					"type": {
@@ -1188,22 +1209,22 @@
 				{
 					"title": "Constructors",
 					"children": [
-						58
+						59
 					]
 				},
 				{
 					"title": "Properties",
 					"children": [
-						61
+						62
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 165,
+					"line": 167,
 					"character": 13,
-					"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L165"
+					"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L167"
 				}
 			]
 		},
@@ -1225,9 +1246,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 33,
+							"line": 34,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L33"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L34"
 						}
 					],
 					"type": {
@@ -1246,9 +1267,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 34,
+							"line": 35,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L34"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L35"
 						}
 					],
 					"type": {
@@ -1267,9 +1288,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 35,
+							"line": 36,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L35"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L36"
 						}
 					],
 					"type": {
@@ -1288,9 +1309,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 36,
+							"line": 37,
 							"character": 2,
-							"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L36"
+							"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L37"
 						}
 					],
 					"type": {
@@ -1313,9 +1334,9 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 32,
+					"line": 33,
 					"character": 17,
-					"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L32"
+					"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L33"
 				}
 			]
 		},
@@ -1330,9 +1351,9 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 39,
+					"line": 40,
 					"character": 13,
-					"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L39"
+					"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L40"
 				}
 			],
 			"type": {
@@ -1359,9 +1380,9 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 190,
+					"line": 192,
 					"character": 22,
-					"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L190"
+					"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L192"
 				}
 			],
 			"signatures": [
@@ -1441,14 +1462,14 @@
 		{
 			"title": "References",
 			"children": [
-				62
+				63
 			]
 		},
 		{
 			"title": "Classes",
 			"children": [
 				11,
-				57
+				58
 			]
 		},
 		{
@@ -1475,7 +1496,7 @@
 			"fileName": "index.ts",
 			"line": 1,
 			"character": 0,
-			"url": "https://github.com/Scalingo/scalingo.js/blob/d4103f6/src/index.ts#L1"
+			"url": "https://github.com/Scalingo/scalingo.js/blob/4e4af23/src/index.ts#L1"
 		}
 	]
 }
