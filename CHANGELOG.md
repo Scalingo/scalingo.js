@@ -1,4 +1,8 @@
-## 0.6.3 (unreleased)
+## 0.6.4 (unreleased)
+
+* nothing yet
+
+## 0.6.3
 
 * chore: bump dependencies
 * feature: support HDS endpoints and fields
