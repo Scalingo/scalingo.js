@@ -71,7 +71,7 @@ export default class Events {
   }
 
   /**
-   * Return a list of event catgories
+   * Return a list of event categories
    * @see https://developers.scalingo.com/event_categories#list-the-event-categories
    */
   listEventCategories(): Promise<EventCategory[]> {
