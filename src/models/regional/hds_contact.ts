@@ -10,4 +10,6 @@ export interface HDSContact {
   address_zip: string;
   address_country: string;
   notes: string;
+  updated_at: string;
+  up_to_date: boolean;
 }
