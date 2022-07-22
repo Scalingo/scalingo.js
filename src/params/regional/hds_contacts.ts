@@ -1,12 +1,5 @@
-export interface UpdateParams {
-  name: string;
-  email: string;
-  phoneNumber: string;
-  company: string;
-  addressLine1: string;
-  addressLine2: string;
-  addressCity: string;
-  addressZip: string;
-  addressCountry: string;
-  notes: string;
-}
+import { HDSContact } from "src/models/regional";
+
+export type UpdateParams = Partial<
+  Omit<HDSContact, "id" | "updated_at" | "up_to_date">
+>;
