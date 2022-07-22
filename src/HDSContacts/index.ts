@@ -31,4 +31,20 @@ export default class HDSContacts {
       "hds_contact"
     );
   }
+  
+  /**
+   * Touch HDS Contact
+   * @see https://developers.scalingo.com/hds_contacts
+   * @param appId
+   */
+  touch(appId: string): Promise<HDSContact> {
+    return unpackData(
+      this._client.apiClient().put(`/apps/${appId}/hds_contact`, {
+        hds_contact: {
+          touch: true,
+        },
+      }),
+      "hds_contact"
+    );
+  }
 }
