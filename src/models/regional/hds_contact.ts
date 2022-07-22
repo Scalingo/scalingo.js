@@ -1,5 +1,8 @@
+export type OrgType = "company" | "non-profit" | "administration";
+
 export interface HDSContact {
   id: string;
+  org_type: OrgType;
   name: string;
   email: string;
   phone_number: string;

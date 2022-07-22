@@ -23,7 +23,7 @@ export default class HDSContacts {
    * @see https://developers.scalingo.com/hds_contacts
    * @param appId
    */
-  update(appId: string, params: UpdateParams): Promise<HDSContact> {
+  update(appId: string, params?: UpdateParams): Promise<HDSContact> {
     return unpackData(
       this._client.apiClient().put(`/apps/${appId}/hds_contact`, {
         hds_contact: params,
