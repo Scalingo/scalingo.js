@@ -1,6 +1,10 @@
-## 0.6.4 (unreleased)
+## 0.6.5 (unreleased)
 
-* nothing yet
+* chore: bump dependencies
+
+## 0.6.4
+
+* improv: update HDS Contact signature/model
 
 ## 0.6.3
 

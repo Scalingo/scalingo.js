@@ -62,6 +62,8 @@ yarn test
 
 ### Release a new version
 
+Don't forget to update the CHANGELOG.md file.
+
 ```bash
 # If it's a patch (see https://docs.npmjs.com/cli/version.html)
 npm version patch
