@@ -1,6 +1,7 @@
-## 0.6.5 (unreleased)
+## 0.7.0 (unreleased)
 
 * chore: bump dependencies
+* feat(data consent): update modelisation and signature calls (preview endpoint)
 
 ## 0.6.4
 
