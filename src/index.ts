@@ -10,7 +10,7 @@ import Collaborators from "./Collaborators";
 import Containers from "./Containers";
 import Contracts from "./Contracts";
 import CronTasks from "./CronTasks";
-import DataAccessConsents from "./DataAccessConsents";
+import DataAccessConsent from "./DataAccessConsent";
 import Deployments from "./Deployments";
 import Domains from "./Domains";
 import Environment from "./Environment";
@@ -93,7 +93,7 @@ export class Client {
   Containers = new Containers(this);
   Contracts = new Contracts(this);
   CronTasks = new CronTasks(this);
-  DataAccessConsents = new DataAccessConsents(this);
+  DataAccessConsent = new DataAccessConsent(this);
   Deployments = new Deployments(this);
   Domains = new Domains(this);
   Environment = new Environment(this);

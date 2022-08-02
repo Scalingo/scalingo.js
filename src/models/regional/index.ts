@@ -6,7 +6,7 @@ export * from "./autoscalers";
 export * from "./collaborators";
 export * from "./containers";
 export * from "./cron_tasks";
-export * from "./data_access_consents";
+export * from "./data_access_consent";
 export * from "./deployments";
 export * from "./domains";
 export * from "./environment";
