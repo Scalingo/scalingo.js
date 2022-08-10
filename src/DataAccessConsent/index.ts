@@ -37,7 +37,7 @@ export default class DataAccessConsent {
   }
 
   /**
-   * Create a DataAccessConsent
+   * Update a DataAccessConsent
    * @see https://developers.scalingo.com/data_access_consent#create-a-new-dataaccessconsent
    * @param appId ID of the app we're interested in
    */
@@ -47,6 +47,17 @@ export default class DataAccessConsent {
         data_access_consent: params,
       }),
       "data_access_consent"
+    );
+  }
+
+  /**
+   * Delete a DataAccessConsent
+   * @see https://developers.scalingo.com/data_access_consent#create-a-new-dataaccessconsent
+   * @param appId ID of the app we're interested in
+   */
+  destroy(appId: string): Promise<void> {
+    return unpackData(
+      this._client.apiClient().delete(`/apps/${appId}/data_access_consent`)
     );
   }
 }

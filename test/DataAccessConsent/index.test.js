@@ -1,5 +1,5 @@
 import DataAccessConsent from "../../src/DataAccessConsent";
-import { testPost, testUpdate } from "../utils/http";
+import { testPost, testUpdate, testDelete } from "../utils/http";
 
 describe("DataAccessConsent#create", () => {
   testPost(
@@ -34,6 +34,16 @@ describe("DataAccessConsent#update", () => {
       return new DataAccessConsent(client).update("test", {
         containers_until: "2022-07-10T00:00:00.000+00:00",
       });
+    }
+  );
+});
+
+describe("DataAccessConsent#destroy", () => {
+  testDelete(
+    "https://api.osc-fr1.scalingo.com/v1/apps/test/data_access_consent",
+    null,
+    (client) => {
+      return new DataAccessConsent(client).destroy("test");
     }
   );
 });
