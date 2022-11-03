@@ -1,61 +1,47 @@
 import Contracts from "../../src/Contracts";
 import { testGetter, testPost } from "../utils/http";
 
-describe("Contracts#all", () => {
+describe("Contracts#list", () => {
   testGetter(
     "https://auth.scalingo.com/v1/contracts",
     null,
     "contracts",
     (client) => {
-      return new Contracts(client).all();
+      return new Contracts(client).list();
     }
   );
 });
 
-describe("Contracts#allAgreements", () => {
+describe("Contracts#history", () => {
   testGetter(
-    "https://auth.scalingo.com/v1/contract_agreements",
+    "https://auth.scalingo.com/v1/contracts/history",
     null,
-    "contract_agreements",
+    "contracts",
     (client) => {
-      return new Contracts(client).allAgreements();
+      return new Contracts(client).history();
     }
   );
 });
 
-describe("Contracts#show", () => {
+describe("Contracts#find", () => {
   testGetter(
     "https://auth.scalingo.com/v1/contracts/contract-id",
     null,
     "contract",
     (client) => {
-      return new Contracts(client).show("contract-id");
+      return new Contracts(client).find("contract-id");
     }
   );
 });
 
-describe("Contracts#showAgreement", () => {
-  testGetter(
-    "https://auth.scalingo.com/v1/contract_agreements/contract-id",
-    null,
-    "contract_agreement",
-    (client) => {
-      return new Contracts(client).showAgreement("contract-id");
-    }
-  );
-});
-
-describe("Contracts#createAgreement", () => {
+describe("Contracts#accept", () => {
   testPost(
-    "https://auth.scalingo.com/v1/contract_agreements",
+    "https://auth.scalingo.com/v1/contracts/contract-id/accept",
     null,
-    { contract_agreement: { contract_id: "my-id", locale: "es" } },
-    "contract_agreement",
+    { locale: "es" },
+    "contract",
     (client) => {
-      return new Contracts(client).createAgreement({
-        contract_id: "my-id",
-        locale: "es",
-      });
+      return new Contracts(client).accept("contract-id", "es");
     }
   );
 });

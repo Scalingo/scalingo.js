@@ -1,4 +1,9 @@
-## 0.7.0 (unreleased)
+## unreleased
+
+* chore: bump dependencies
+* feat/breaking: contracts API has been changed. It is expected to be stable now.
+
+## 0.7.0
 
 * chore: bump dependencies
 * feat(data consent): update modelisation and signature calls (preview endpoint)
