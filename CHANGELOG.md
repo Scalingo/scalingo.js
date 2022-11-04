@@ -1,5 +1,7 @@
 ## unreleased
 
+## 0.8.0
+
 * chore: bump dependencies
 * feat/breaking: contracts API has been changed. It is expected to be stable now.
 
