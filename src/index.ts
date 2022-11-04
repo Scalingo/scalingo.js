@@ -25,6 +25,7 @@ import Operations from "./Operations";
 import Regions from "./Regions";
 import SCMIntegrations from "./SCMIntegrations";
 import SCMRepoLinks from "./SCMRepoLinks";
+import Stacks from "./Stacks";
 import Stats from "./Stats";
 import Tokens from "./Tokens";
 import TwoFactorAuth from "./TwoFactorAuth";
@@ -108,6 +109,7 @@ export class Client {
   Regions = new Regions(this);
   SCMIntegrations = new SCMIntegrations(this);
   SCMRepoLinks = new SCMRepoLinks(this);
+  Stacks = new Stacks(this);
   Stats = new Stats(this);
   Tokens = new Tokens(this);
   TwoFactorAuth = new TwoFactorAuth(this);
