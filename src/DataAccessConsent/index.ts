@@ -52,6 +52,7 @@ export default class DataAccessConsent {
 
   /**
    * Delete a DataAccessConsent
+   * @preview
    * @see https://developers.scalingo.com/data_access_consent#create-a-new-dataaccessconsent
    * @param appId ID of the app we're interested in
    */

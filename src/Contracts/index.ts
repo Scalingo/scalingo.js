@@ -1,7 +1,14 @@
 import { Client } from "..";
-import { Contract, ContractAgreement } from "../models/auth/contracts";
-import { CreateAgreementParams } from "../params/auth/contracts";
+import { Contract } from "../models/auth/contracts";
 import { unpackData } from "../utils";
+
+export function requiredForPlatform(contract: Contract): boolean {
+  return contract.required_for.includes("platform");
+}
+
+export function requiredForHDS(contract: Contract): boolean {
+  return contract.required_for.includes("hds");
+}
 
 /**
  * Contract and Agreements API Client
@@ -18,53 +25,43 @@ export default class Contracts {
     this._client = client;
   }
 
-  /**
-   * Get all existing contracts
-   */
-  all(): Promise<Contract[]> {
+  list(): Promise<Contract[]> {
     return unpackData(
-      this._client.authApiClient().get("/contracts"),
+      this._client
+        .authApiClient()
+        .get("/contracts", { headers: { Accept: "application/json" } }),
       "contracts"
     );
   }
 
-  /**
-   * Get all existing contract agreements
-   */
-  allAgreements(): Promise<ContractAgreement[]> {
+  history(): Promise<Contract[]> {
     return unpackData(
-      this._client.authApiClient().get("/contract_agreements"),
-      "contract_agreements"
+      this._client
+        .authApiClient()
+        .get("/contracts/history", { headers: { Accept: "application/json" } }),
+      "contracts"
     );
   }
 
-  /**
-   * Show a given contract
-   */
-  show(id: string): Promise<Contract> {
+  find(id: string): Promise<Contract> {
     return unpackData(
-      this._client.authApiClient().get(`/contracts/${id}`),
+      this._client
+        .authApiClient()
+        .get(`/contracts/${id}`, { headers: { Accept: "application/json" } }),
       "contract"
     );
   }
 
-  /**
-   * Show a given contract agreement
-   */
-  showAgreement(id: string): Promise<ContractAgreement> {
-    return unpackData(
-      this._client.authApiClient().get(`/contract_agreements/${id}`),
-      "contract_agreement"
-    );
-  }
-
-  /** Create an agreement for the given contract */
-  createAgreement(params: CreateAgreementParams): Promise<ContractAgreement> {
+  accept(id: string, locale: string): Promise<Contract> {
     return unpackData(
       this._client
         .authApiClient()
-        .post(`/contract_agreements`, { contract_agreement: params }),
-      "contract_agreement"
+        .post(
+          `/contracts/${id}/accept`,
+          { locale },
+          { headers: { Accept: "application/json" } }
+        ),
+      "contract"
     );
   }
 }
