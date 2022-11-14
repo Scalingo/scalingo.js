@@ -14,6 +14,7 @@ export interface BillingProfile {
   payment_method?: string;
   stripe_payment_method?: StripePaymentMethod;
   paypal_payment_method?: PaypalPaymentMethod;
+  flags: string[];
 }
 
 export interface StripePaymentMethod {
