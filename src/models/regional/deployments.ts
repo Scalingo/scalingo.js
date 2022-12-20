@@ -16,6 +16,8 @@ export interface Deployment {
   pusher: DeploymentPusher;
   /** hypermedia links about the deployment */
   links: DeploymentLinks;
+  /** size of the deployment image (in bytes) */
+  image_size: Number;
 }
 
 /** @see https://developers.scalingo.com/deployments */
