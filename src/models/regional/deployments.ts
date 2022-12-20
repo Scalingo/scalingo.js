@@ -17,7 +17,7 @@ export interface Deployment {
   /** hypermedia links about the deployment */
   links: DeploymentLinks;
   /** size of the deployment image (in bytes) */
-  image_size: Number;
+  image_size: number;
 }
 
 /** @see https://developers.scalingo.com/deployments */
