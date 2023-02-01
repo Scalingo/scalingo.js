@@ -17,7 +17,7 @@
     "test": "ts-mocha --require @babel/register --recursive --paths -p test/tsconfig.test.json test/*.js test/**/*.test.js"
   },
   "dependencies": {
-    "axios": "^0.27.2",
+    "axios": "^1.3.0",
     "isomorphic-ws": "^5.0.0",
     "ws": "^8.5.0"
   },
