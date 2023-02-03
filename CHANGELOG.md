@@ -1,5 +1,7 @@
 ## Unreleased
 
+* chore: bump esbuild from 0.15.6 to 0.17.5. Might be changes in the output
+* chore: bump axios from 0.x to 1.3.x. Might be breaking in some cases
 * chore: bump dependencies
 
 ## 0.8.1
