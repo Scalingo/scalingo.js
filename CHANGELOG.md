@@ -1,3 +1,7 @@
+## Unreleased
+
+* chore: bump dependencies
+
 ## 0.8.1
 
 * feat: stacks API
