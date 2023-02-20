@@ -18,6 +18,8 @@ export interface Deployment {
   links: DeploymentLinks;
   /** size of the deployment image (in bytes) */
   image_size: number;
+  /** base image used */
+  stack_base_image: string;
 }
 
 /** @see https://developers.scalingo.com/deployments */
