@@ -10,6 +10,7 @@ export interface BillingProfile {
   address_state?: string;
   address_country: string;
   vat_number?: string;
+  invoice_additional_info?: string;
   company?: string;
   payment_method?: string;
   stripe_payment_method?: StripePaymentMethod;

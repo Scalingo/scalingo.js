@@ -4,6 +4,7 @@
 * chore: bump axios from 0.x to 1.3.x. Might be breaking in some cases
 * chore: bump dependencies
 * feat(stacks): deployments have stack base image property
+* feat(accounting): add in billing profile a field for a custom text on invoices
 
 ## 0.8.1
 
