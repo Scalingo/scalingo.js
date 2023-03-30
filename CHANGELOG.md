@@ -5,6 +5,7 @@
 * chore: bump dependencies
 * feat(stacks): deployments have stack base image property
 * feat(accounting): add in billing profile a field for a custom text on invoices
+* feat(review-app): scm repo links have a fork allowed property
 
 ## 0.8.1
 
