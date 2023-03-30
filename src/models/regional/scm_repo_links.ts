@@ -67,7 +67,7 @@ export interface SCMRepoLink {
   hours_before_delete_stale: number;
 
   /** Review app: Allow automatic creation of review apps from forks */
-  automatic_creation_from_forks_allowed: boolean
+  automatic_creation_from_forks_allowed: boolean;
 
   /** Date of the last deployment triggered by this link */
   last_auto_deploy_at: string;
