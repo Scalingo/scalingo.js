@@ -47,6 +47,10 @@ export interface PullRequest {
   title: string;
   /** URL to the pull/merge request */
   html_url: string;
+  /** Name of the source repo */
+  source_repo_name: string;
+  /** URL to the source repo */
+  source_repo_html_url: string;
 }
 
 /** @see https://developers.scalingo.com/scm_integrations# */
