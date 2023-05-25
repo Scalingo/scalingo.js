@@ -1,5 +1,7 @@
 ## Unreleased
 
+* chore: bump dependencies
+
 ## 0.8.2
 
 * chore: bump esbuild from 0.15.6 to 0.17.5. Might be changes in the output
