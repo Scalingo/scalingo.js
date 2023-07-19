@@ -23,7 +23,7 @@ export default class CronTasks {
    */
   for(appId: string): Promise<CronDefinition> {
     return unpackData(
-      this._client.apiClient().get(`/apps/${appId}/cron_tasks`)
+      this._client.apiClient().get(`/apps/${appId}/cron_tasks`),
     );
   }
 }

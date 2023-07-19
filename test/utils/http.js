@@ -20,7 +20,7 @@ export function testGetter(url, opts, prefix, build) {
       expect(mock.history.get[0].headers.Authorization).to.be.undefined;
     } else {
       expect(mock.history.get[0].headers.Authorization).to.eq(
-        "Bearer test-token"
+        "Bearer test-token",
       );
     }
   });
@@ -72,7 +72,7 @@ export function testPost(url, opts, body, prefix, build) {
       expect(result).to.deep.eq(resultValue);
     }
     expect(mock.history.post[0].headers.Authorization).to.eq(
-      "Bearer test-token"
+      "Bearer test-token",
     );
     if (body) {
       expect(JSON.parse(mock.history.post[0].data)).to.deep.eq(body);
@@ -108,7 +108,7 @@ export function testDelete(url, prefix, build) {
     const result = await build(client);
     expect(result).to.deep.eq({ test: "value" });
     expect(mock.history.delete[0].headers.Authorization).to.eq(
-      "Bearer test-token"
+      "Bearer test-token",
     );
   });
 
@@ -139,7 +139,7 @@ export function testUpdate(url, body, prefix, build) {
     const result = await build(client);
     expect(result).to.deep.eq({ data: "value" });
     expect(mock.history.patch[0].headers.Authorization).to.eq(
-      "Bearer test-token"
+      "Bearer test-token",
     );
 
     const parsedBody = mock.history.patch[0].data
@@ -176,7 +176,7 @@ export function testPut(url, body, prefix, build) {
     const result = await build(client);
     expect(result).to.deep.eq({ data: "value" });
     expect(mock.history.put[0].headers.Authorization).to.eq(
-      "Bearer test-token"
+      "Bearer test-token",
     );
     expect(JSON.parse(mock.history.put[0].data)).to.deep.eq(body);
   });

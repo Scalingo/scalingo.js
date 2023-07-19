@@ -33,7 +33,7 @@ export default class Addons {
   for(appId: string): Promise<Addon[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/addons`),
-      "addons"
+      "addons",
     );
   }
 
@@ -47,7 +47,7 @@ export default class Addons {
       this._client.apiClient().post(`/apps/${appId}/addons`, {
         addon: payload,
       }),
-      "addon"
+      "addon",
     );
   }
 
@@ -58,7 +58,7 @@ export default class Addons {
   listCategories(): Promise<Category[]> {
     return unpackData(
       this._client.unauthenticatedClient().get("/addon_categories"),
-      "addon_categories"
+      "addon_categories",
     );
   }
 
@@ -69,7 +69,7 @@ export default class Addons {
    */
   listProviders(
     categoryId?: string,
-    authenticated = false
+    authenticated = false,
   ): Promise<AddonProvider[]> {
     const url = categoryId
       ? `/addon_providers?category_id=${categoryId}`
@@ -92,13 +92,13 @@ export default class Addons {
   update(
     appId: string,
     addonId: string,
-    addon: UpdateParams
+    addon: UpdateParams,
   ): Promise<AddonUpgradeResponse> {
     return unpackData(
       this._client
         .apiClient()
         .patch(`/apps/${appId}/addons/${addonId}`, { addon: addon }),
-      "addon"
+      "addon",
     );
   }
 
@@ -109,7 +109,7 @@ export default class Addons {
    */
   resume(appId: string, addonId: string): Promise<AddonResumeResponse> {
     return unpackData(
-      this._client.apiClient().post(`/apps/${appId}/addons/${addonId}/resume`)
+      this._client.apiClient().post(`/apps/${appId}/addons/${addonId}/resume`),
     );
   }
 
@@ -121,7 +121,7 @@ export default class Addons {
    */
   destroy(appId: string, addonId: string): Promise<void> {
     return unpackData(
-      this._client.apiClient().delete(`/apps/${appId}/addons/${addonId}`)
+      this._client.apiClient().delete(`/apps/${appId}/addons/${addonId}`),
     );
   }
 
@@ -133,7 +133,7 @@ export default class Addons {
   sso(appId: string, addonId: string): Promise<AddonSso> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/addons/${addonId}/sso`),
-      "addon"
+      "addon",
     );
   }
 
@@ -145,7 +145,7 @@ export default class Addons {
   getAddon(appId: string, addonId: string): Promise<Addon> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/addons/${addonId}`),
-      "addon"
+      "addon",
     );
   }
 }

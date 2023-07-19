@@ -136,7 +136,7 @@ export default class Listener {
         data: {
           token: this.client._token,
         },
-      })
+      }),
     );
   }
 

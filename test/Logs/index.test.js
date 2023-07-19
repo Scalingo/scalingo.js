@@ -91,7 +91,7 @@ describe("Logs#listenerFor", () => {
     const result = await client.Logs.listenerFor("testApp");
 
     expect(result._url).to.eq(
-      "wss://logs.scalingo.com/apps?token=1234&stream=true"
+      "wss://logs.scalingo.com/apps?token=1234&stream=true",
     );
   });
 });
@@ -103,7 +103,7 @@ describe("Logs#archive", () => {
     null,
     (client) => {
       return new Logs(client).archives("biniou");
-    }
+    },
   );
 
   testParamsGetter(
@@ -112,6 +112,6 @@ describe("Logs#archive", () => {
     null,
     (client) => {
       return new Logs(client).archives("biniou", 2);
-    }
+    },
   );
 });

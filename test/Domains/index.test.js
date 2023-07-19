@@ -8,7 +8,7 @@ describe("Domains#for", () => {
     "domains",
     (client) => {
       return new Domains(client).for("tata");
-    }
+    },
   );
 });
 
@@ -24,7 +24,7 @@ describe("Domains#create", () => {
         tlscert: null,
         tlskey: null,
       });
-    }
+    },
   );
 });
 
@@ -34,7 +34,7 @@ describe("Domains#destroy", () => {
     null,
     (client) => {
       return new Domains(client).destroy("tata", "541067ec736f7504a5110000");
-    }
+    },
   );
 });
 
@@ -45,7 +45,7 @@ describe("Domains#show", () => {
     "domain",
     (client) => {
       return new Domains(client).show("tata", "541067ec736f7504a5110000");
-    }
+    },
   );
 });
 
@@ -60,6 +60,6 @@ describe("Domains#update", () => {
         tlskey: null,
         canonical: false,
       });
-    }
+    },
   );
 });

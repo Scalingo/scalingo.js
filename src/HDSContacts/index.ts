@@ -28,7 +28,7 @@ export default class HDSContacts {
       this._client.apiClient().put(`/apps/${appId}/hds_contact`, {
         hds_contact: params,
       }),
-      "hds_contact"
+      "hds_contact",
     );
   }
 }

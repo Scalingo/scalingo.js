@@ -14,7 +14,7 @@ describe("Keys#show", () => {
     "key",
     (client) => {
       return new Keys(client).show("some-key-id");
-    }
+    },
   );
 });
 
@@ -31,7 +31,7 @@ describe("Keys#create", () => {
     "key",
     (client) => {
       return new Keys(client).create("Key name", "Key content");
-    }
+    },
   );
 });
 
@@ -41,6 +41,6 @@ describe("Keys#destroy", () => {
     null,
     (client) => {
       return new Keys(client).destroy("some-key-id");
-    }
+    },
   );
 });

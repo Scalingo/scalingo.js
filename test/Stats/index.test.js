@@ -8,6 +8,6 @@ describe("Stats#referrals", () => {
     "referral_stats",
     (client) => {
       return new Stats(client).referrals();
-    }
+    },
   );
 });

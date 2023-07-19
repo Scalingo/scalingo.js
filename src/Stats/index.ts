@@ -24,7 +24,7 @@ export class Stats {
   referrals(): Promise<ReferralsStats> {
     return unpackData(
       this._client.apiClient().get("/account/referrals/stats"),
-      "referral_stats"
+      "referral_stats",
     );
   }
 }

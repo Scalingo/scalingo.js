@@ -8,7 +8,7 @@ describe("Tokens#list", () => {
     "tokens",
     (client) => {
       return new Tokens(client).all();
-    }
+    },
   );
 });
 
@@ -22,7 +22,7 @@ describe("Tokens#create", () => {
     "token",
     (client) => {
       return new Tokens(client).create("some-token");
-    }
+    },
   );
 });
 
@@ -33,7 +33,7 @@ describe("Tokens#renew", () => {
     "token",
     (client) => {
       return new Tokens(client).renew("some-id");
-    }
+    },
   );
 });
 

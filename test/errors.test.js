@@ -9,7 +9,7 @@ describe("unpackData", () => {
       new Promise((resolve) => {
         resolve({ data: { test: "value" } });
       }),
-      "test"
+      "test",
     ).then((data) => {
       expect(data).to.eq("value");
       done();
@@ -21,7 +21,7 @@ describe("unpackData", () => {
       new Promise((resolve, reject) => {
         reject({ response: { status: 200, data: { error: "value" } } });
       }),
-      "test"
+      "test",
     ).catch((error) => {
       expect(error).to.be.an.instanceOf(APIError);
       done();
@@ -33,7 +33,7 @@ describe("unpackData", () => {
       new Promise((resolve, reject) => {
         reject(new Error("Toto"));
       }),
-      "test"
+      "test",
     ).catch((error) => {
       expect(error).to.not.be.an.instanceOf(APIError);
       expect(error).to.be.an.instanceOf(Error);

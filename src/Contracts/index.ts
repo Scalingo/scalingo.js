@@ -30,7 +30,7 @@ export default class Contracts {
       this._client
         .authApiClient()
         .get("/contracts", { headers: { Accept: "application/json" } }),
-      "contracts"
+      "contracts",
     );
   }
 
@@ -39,7 +39,7 @@ export default class Contracts {
       this._client
         .authApiClient()
         .get("/contracts/history", { headers: { Accept: "application/json" } }),
-      "contracts"
+      "contracts",
     );
   }
 
@@ -48,7 +48,7 @@ export default class Contracts {
       this._client
         .authApiClient()
         .get(`/contracts/${id}`, { headers: { Accept: "application/json" } }),
-      "contract"
+      "contract",
     );
   }
 
@@ -59,9 +59,9 @@ export default class Contracts {
         .post(
           `/contracts/${id}/accept`,
           { locale },
-          { headers: { Accept: "application/json" } }
+          { headers: { Accept: "application/json" } },
         ),
-      "contract"
+      "contract",
     );
   }
 }

@@ -12,7 +12,7 @@ describe("Containers#for", () => {
     "containers",
     (client) => {
       return new Containers(client).for("toto");
-    }
+    },
   );
 });
 
@@ -23,7 +23,7 @@ describe("Containers#processes", () => {
     "containers",
     (client) => {
       return new Containers(client).processes("toto");
-    }
+    },
   );
 });
 
@@ -38,7 +38,7 @@ describe("Containers#run", () => {
         command: "echo test",
         size: "M",
       });
-    }
+    },
   );
 });
 
@@ -50,7 +50,7 @@ describe("Containers#stop", () => {
     null,
     (client) => {
       return new Containers(client).stop("toto", "one-off-ish");
-    }
+    },
   );
 });
 
@@ -83,7 +83,7 @@ describe("Containers#scale", () => {
           })
           .catch(reject);
       });
-    }
+    },
   );
 });
 
@@ -94,7 +94,7 @@ describe("Container#availableSizes", () => {
     "container_sizes",
     (client) => {
       return new Containers(client).availableSizes();
-    }
+    },
   );
 });
 
@@ -124,6 +124,6 @@ describe("Container#restart", () => {
           })
           .catch(reject);
       });
-    }
+    },
   );
 });

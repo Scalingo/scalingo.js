@@ -31,7 +31,7 @@ export default class Deployments {
     return unpackData(
       this._client
         .apiClient()
-        .get(`/apps/${appId}/deployments`, { params: opts })
+        .get(`/apps/${appId}/deployments`, { params: opts }),
     );
   }
 
@@ -47,7 +47,7 @@ export default class Deployments {
       this._client
         .apiClient()
         .post(`/apps/${appId}/deployments`, { deployment }),
-      "deployment"
+      "deployment",
     );
   }
 
@@ -63,7 +63,7 @@ export default class Deployments {
       this._client
         .apiClient()
         .get(`/apps/${appId}/deployments/${deploymentId}`),
-      "deployment"
+      "deployment",
     );
   }
 
@@ -78,7 +78,7 @@ export default class Deployments {
     return unpackData(
       this._client
         .apiClient()
-        .get(`/apps/${appId}/deployments/${deploymentId}/output`)
+        .get(`/apps/${appId}/deployments/${deploymentId}/output`),
     );
   }
 
@@ -90,7 +90,7 @@ export default class Deployments {
    */
   purgeCache(appId: string): Promise<void> {
     return unpackData(
-      this._client.apiClient().delete(`/apps/${appId}/caches/deployment`)
+      this._client.apiClient().delete(`/apps/${appId}/caches/deployment`),
     );
   }
 }

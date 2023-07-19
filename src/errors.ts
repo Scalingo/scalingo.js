@@ -30,7 +30,7 @@ export class APIError extends Error {
       // Working around that issue by inheriting.
 
       this.stack = new GenericError(
-        this._status.toString() + this._data.toString()
+        this._status.toString() + this._data.toString(),
       ).stack;
     }
 

@@ -8,6 +8,6 @@ describe("AuditLogs#show", () => {
     null,
     (client) => {
       return new AuditLogs(client).show("tata", "541067ec736f7504a5110000");
-    }
+    },
   );
 });

@@ -30,7 +30,7 @@ export default class Events {
    */
   all(opts?: IndexParams): Promise<AppEvents> {
     return unpackData(
-      this._client.apiClient().get("/events", { params: opts })
+      this._client.apiClient().get("/events", { params: opts }),
     );
   }
 
@@ -42,7 +42,7 @@ export default class Events {
    */
   for(appId: string, opts?: IndexParams): Promise<AppEvents> {
     return unpackData(
-      this._client.apiClient().get(`/apps/${appId}/events`, { params: opts })
+      this._client.apiClient().get(`/apps/${appId}/events`, { params: opts }),
     );
   }
 
@@ -55,7 +55,7 @@ export default class Events {
   find(appId: string, id: string): Promise<Event> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/events/${id}`),
-      "event"
+      "event",
     );
   }
 
@@ -66,7 +66,7 @@ export default class Events {
   listEventTypes(): Promise<EventType[]> {
     return unpackData(
       this._client.unauthenticatedClient().get("event_types"),
-      "event_types"
+      "event_types",
     );
   }
 
@@ -77,7 +77,7 @@ export default class Events {
   listEventCategories(): Promise<EventCategory[]> {
     return unpackData(
       this._client.unauthenticatedClient().get("event_categories"),
-      "event_categories"
+      "event_categories",
     );
   }
 }

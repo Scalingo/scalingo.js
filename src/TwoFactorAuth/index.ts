@@ -33,7 +33,7 @@ export class TwoFactorAuth {
    * @return Promise resolving with the current user two factor status
    */
   initiate(
-    provider = DEFAULT_PROVIDER
+    provider = DEFAULT_PROVIDER,
   ): Promise<TwoFactorAuthInitiateResponse> {
     const data = {
       tfa: { provider: provider || DEFAULT_PROVIDER },
@@ -41,7 +41,7 @@ export class TwoFactorAuth {
 
     return unpackData(
       this._client.authApiClient().post("/client/tfa", data),
-      "tfa"
+      "tfa",
     );
   }
 
@@ -57,7 +57,7 @@ export class TwoFactorAuth {
 
     return unpackData(
       this._client.authApiClient().post("/client/tfa/validate", data),
-      "tfa"
+      "tfa",
     );
   }
 

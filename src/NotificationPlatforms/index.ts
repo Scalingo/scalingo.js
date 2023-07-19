@@ -24,7 +24,7 @@ export default class NotificationPlatforms {
   list(): Promise<NotificationPlatform> {
     return unpackData(
       this._client.unauthenticatedClient().get("/notification_platforms"),
-      "notification_platforms"
+      "notification_platforms",
     );
   }
 }

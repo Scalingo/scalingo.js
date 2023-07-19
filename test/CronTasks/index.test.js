@@ -8,6 +8,6 @@ describe("CronTasks#for", () => {
     null,
     (client) => {
       return new CronTasks(client).for("toto");
-    }
+    },
   );
 });

@@ -35,7 +35,7 @@ export class Tokens {
   create(name: string): Promise<Token> {
     return unpackData(
       this._client.authApiClient().post("/tokens", { name }),
-      "token"
+      "token",
     );
   }
 
@@ -47,7 +47,7 @@ export class Tokens {
   renew(id: string): Promise<Token> {
     return unpackData(
       this._client.authApiClient().patch(`/tokens/${id}/renew`),
-      "token"
+      "token",
     );
   }
 
@@ -73,7 +73,7 @@ export class Tokens {
           username: "",
           password: token,
         },
-      }
+      },
     );
     return unpackData(request, "token");
   }

@@ -24,7 +24,7 @@ export default class Billing {
   profile(): Promise<BillingProfile> {
     return unpackData(
       this._client.billingApiClient().get("/profile"),
-      "profile"
+      "profile",
     );
   }
 
@@ -36,7 +36,7 @@ export default class Billing {
   createProfile(profile: Omit<BillingProfile, "id">): Promise<BillingProfile> {
     return unpackData(
       this._client.billingApiClient().post("/profiles", { profile }),
-      "profile"
+      "profile",
     );
   }
 
@@ -47,11 +47,11 @@ export default class Billing {
    */
   updateProfile(
     id: string,
-    profile: Omit<BillingProfile, "id">
+    profile: Omit<BillingProfile, "id">,
   ): Promise<BillingProfile> {
     return unpackData(
       this._client.billingApiClient().put(`/profiles/${id}`, { profile }),
-      "profile"
+      "profile",
     );
   }
 }

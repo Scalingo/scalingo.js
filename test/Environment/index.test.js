@@ -14,7 +14,7 @@ describe("Environment#for", () => {
     "variables",
     (client) => {
       return new Environment(client).for("tata");
-    }
+    },
   );
 });
 
@@ -29,7 +29,7 @@ describe("Environment#create", () => {
         name: "tata",
         value: "$toto",
       });
-    }
+    },
   );
 });
 
@@ -48,7 +48,7 @@ describe("Environment#bulkUpdate", () => {
         { name: "tata", value: "$toto" },
         { name: "tutu", value: "$tete" },
       ]);
-    }
+    },
   );
 });
 
@@ -61,9 +61,9 @@ describe("Environment#update", () => {
       return new Environment(client).update(
         "tata",
         "54101384736f7563d5040000",
-        "$toto"
+        "$toto",
       );
-    }
+    },
   );
 });
 
@@ -74,9 +74,9 @@ describe("Environment#destroy", () => {
     (client) => {
       return new Environment(client).destroy(
         "tata",
-        "54101384736f7563d5040000"
+        "54101384736f7563d5040000",
       );
-    }
+    },
   );
 });
 
@@ -89,6 +89,6 @@ describe("Environment#bulkDestroy", () => {
         "54101384736f7563d5040000",
         "54101384736f7563d5040001",
       ]);
-    }
+    },
   );
 });

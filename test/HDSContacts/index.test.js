@@ -20,6 +20,6 @@ describe("HDSContacts#update", () => {
         addressLine1: "23 rue du bois",
         addressCountry: "France",
       });
-    }
+    },
   );
 });

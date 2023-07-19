@@ -8,7 +8,7 @@ describe("Addons#for", () => {
     "addons",
     (client) => {
       return new Addons(client).for("toto");
-    }
+    },
   );
 });
 
@@ -23,7 +23,7 @@ describe("Addons#create", () => {
         plan_id: "test-plan",
         addon_provider_id: "test-provider",
       });
-    }
+    },
   );
 });
 
@@ -34,7 +34,7 @@ describe("Addons#listCategories", () => {
     "addon_categories",
     (client) => {
       return new Addons(client).listCategories();
-    }
+    },
   );
 });
 
@@ -46,7 +46,7 @@ describe("Addons#listProviders", () => {
       "addon_providers",
       (client) => {
         return new Addons(client).listProviders(null, true);
-      }
+      },
     );
   });
 
@@ -57,7 +57,7 @@ describe("Addons#listProviders", () => {
       "addon_providers",
       (client) => {
         return new Addons(client).listProviders("1234");
-      }
+      },
     );
   });
 });
@@ -71,7 +71,7 @@ describe("Addons#update", () => {
       return new Addons(client).update("toto", "54100930736f7563d5030000", {
         plan_id: "54100930736f7563d5030000",
       });
-    }
+    },
   );
 });
 
@@ -83,7 +83,7 @@ describe("Addons#resume", () => {
     null,
     (client) => {
       return new Addons(client).resume("toto", "some-addon");
-    }
+    },
   );
 });
 
@@ -93,7 +93,7 @@ describe("Addons#destroy", () => {
     null,
     (client) => {
       return new Addons(client).destroy("toto", "54100930736f7563d5030000");
-    }
+    },
   );
 });
 
@@ -104,7 +104,7 @@ describe("Addons#sso", () => {
     "addon",
     (client) => {
       return new Addons(client).sso("toto", "titi");
-    }
+    },
   );
 });
 
@@ -115,6 +115,6 @@ describe("Addons#getAddon", () => {
     "addon",
     (client) => {
       return new Addons(client).getAddon("toto", "tata");
-    }
+    },
   );
 });

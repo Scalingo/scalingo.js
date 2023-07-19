@@ -13,7 +13,7 @@ describe("SCMIntegrations#find", () => {
     "scm_integration",
     (client) => {
       return new SCMIntegrations(client).find("toto");
-    }
+    },
   );
 });
 
@@ -24,7 +24,7 @@ describe("SCMIntegrations#all", () => {
     "scm_integrations",
     (client) => {
       return new SCMIntegrations(client).all();
-    }
+    },
   );
 });
 
@@ -41,7 +41,7 @@ describe("SCMIntegrations#create", () => {
     "scm_integration",
     (client) => {
       return new SCMIntegrations(client).create(opts);
-    }
+    },
   );
 });
 
@@ -51,7 +51,7 @@ describe("SCMIntegrations#destroy", () => {
     null,
     (client) => {
       return new SCMIntegrations(client).destroy("integration-id");
-    }
+    },
   );
 });
 
@@ -63,7 +63,7 @@ describe("SCMIntegrations#importSSHKeys", () => {
     "keys",
     (client) => {
       return new SCMIntegrations(client).importSSHKeys("integration-id");
-    }
+    },
   );
 });
 
@@ -74,7 +74,7 @@ describe("SCMIntegrations#searchPullRequests", () => {
     "pull_requests",
     (client) => {
       return new SCMIntegrations(client).searchPullRequests("biniou", "toto");
-    }
+    },
   );
 });
 
@@ -85,7 +85,7 @@ describe("SCMIntegrations#searchRepositories", () => {
     "repositories",
     (client) => {
       return new SCMIntegrations(client).searchRepositories("biniou", "toto");
-    }
+    },
   );
 });
 
@@ -96,7 +96,7 @@ describe("SCMIntegrations#organizations", () => {
     "organizations",
     (client) => {
       return new SCMIntegrations(client).organizations("biniou");
-    }
+    },
   );
 });
 
@@ -107,6 +107,6 @@ describe("SCMIntegrations#branchesForRepo", () => {
     "branches",
     (client) => {
       return new SCMIntegrations(client).branchesForRepo("biniou", "myrepo");
-    }
+    },
   );
 });

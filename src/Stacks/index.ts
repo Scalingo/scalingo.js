@@ -24,7 +24,7 @@ export class Stacks {
   list(): Promise<Stack[]> {
     return unpackData(
       this._client.apiClient().get("/features/stacks"),
-      "stacks"
+      "stacks",
     );
   }
 }

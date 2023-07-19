@@ -8,7 +8,7 @@ describe("Contracts#list", () => {
     "contracts",
     (client) => {
       return new Contracts(client).list();
-    }
+    },
   );
 });
 
@@ -19,7 +19,7 @@ describe("Contracts#history", () => {
     "contracts",
     (client) => {
       return new Contracts(client).history();
-    }
+    },
   );
 });
 
@@ -30,7 +30,7 @@ describe("Contracts#find", () => {
     "contract",
     (client) => {
       return new Contracts(client).find("contract-id");
-    }
+    },
   );
 });
 
@@ -42,6 +42,6 @@ describe("Contracts#accept", () => {
     "contract",
     (client) => {
       return new Contracts(client).accept("contract-id", "es");
-    }
+    },
   );
 });

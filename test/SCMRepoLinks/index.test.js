@@ -8,7 +8,7 @@ describe("SCMRepoLinks#find", () => {
     "scm_repo_link",
     (client) => {
       return new SCMRepoLinks(client).find("biniou");
-    }
+    },
   );
 });
 
@@ -29,7 +29,7 @@ describe("SCMRepoLinks#create", () => {
       "scm_repo_link",
       (client) => {
         return new SCMRepoLinks(client).create("biniou", opts);
-      }
+      },
     );
   });
 });
@@ -42,7 +42,7 @@ describe("SCMRepoLinks#update", () => {
     "scm_repo_link",
     (client) => {
       return new SCMRepoLinks(client).update("biniou", opts);
-    }
+    },
   );
 });
 
@@ -52,7 +52,7 @@ describe("SCMRepoLinks#destroy", () => {
     null,
     (client) => {
       return new SCMRepoLinks(client).destroy("biniou");
-    }
+    },
   );
 });
 
@@ -64,7 +64,7 @@ describe("SCMRepoLinks#manualDeploy", () => {
     "deployment",
     (client) => {
       return new SCMRepoLinks(client).manualDeploy("biniou", "master");
-    }
+    },
   );
 });
 
@@ -76,7 +76,7 @@ describe("SCMRepoLinks#manualReviewApp", () => {
     "review_app",
     (client) => {
       return new SCMRepoLinks(client).manualReviewApp("biniou", 42);
-    }
+    },
   );
 });
 
@@ -87,7 +87,7 @@ describe("SCMRepoLinks#branches", () => {
     "branches",
     (client) => {
       return new SCMRepoLinks(client).branches("biniou");
-    }
+    },
   );
 });
 
@@ -98,7 +98,7 @@ describe("SCMRepoLinks#pulls", () => {
     "pulls",
     (client) => {
       return new SCMRepoLinks(client).pulls("biniou");
-    }
+    },
   );
 });
 
@@ -109,6 +109,6 @@ describe("SCMRepoLinks#reviewApps", () => {
     "review_apps",
     (client) => {
       return new SCMRepoLinks(client).reviewApps("biniou");
-    }
+    },
   );
 });

@@ -29,7 +29,7 @@ export default class Collaborators {
   for(appId: string): Promise<Collaborator[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/collaborators`),
-      "collaborators"
+      "collaborators",
     );
   }
 
@@ -43,7 +43,7 @@ export default class Collaborators {
     return unpackData(
       this._client
         .apiClient()
-        .delete(`/apps/${appId}/collaborators/${collaboratorId}`)
+        .delete(`/apps/${appId}/collaborators/${collaboratorId}`),
     );
   }
 
@@ -58,7 +58,7 @@ export default class Collaborators {
       this._client.apiClient().post(`/apps/${appId}/collaborators`, {
         collaborator: { email: email },
       }),
-      "collaborator"
+      "collaborator",
     );
   }
 
@@ -71,7 +71,7 @@ export default class Collaborators {
     return unpackData(
       this._client
         .apiClient()
-        .get("/apps/collaboration", { params: { token: token } })
+        .get("/apps/collaboration", { params: { token: token } }),
     );
   }
 }

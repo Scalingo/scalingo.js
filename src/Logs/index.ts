@@ -59,7 +59,7 @@ export default class Logs {
     if (cursor !== null && cursor !== undefined) params.cursor = cursor;
 
     return unpackData(
-      this._client.apiClient().get(`/apps/${id}/logs_archives`, { params })
+      this._client.apiClient().get(`/apps/${id}/logs_archives`, { params }),
     );
   }
 }
