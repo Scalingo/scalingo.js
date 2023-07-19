@@ -3,9 +3,32 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     allow:
-      - dependency-type: "production"
+      - dependency-type: "direct"
     schedule:
       interval: "monthly"
     open-pull-requests-limit: 10
+    groups:
+      linter-packages:
+        patterns:
+          - "@typescript-eslint/*"
+          - "eslint*"
+          - "prettier*"
+      build-packages:
+        patterns:
+          - "@babel/*"
+          - "@types/*"
+          - "core-js"
+          - "esbuild"
+          - "typescript"
+      dev-test-packages:
+        patterns:
+          - "axios-mock-adapter"
+          - "chai"
+          - "mocha"
+          - "rosie"
+          - "sinon"
+          - "ts-mocha"
+          - "tsconfig-paths"
+          - "typedoc"
     reviewers:
       - "ksol"
