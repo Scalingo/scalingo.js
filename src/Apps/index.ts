@@ -55,7 +55,7 @@ export default class Apps {
 
     return unpackData(
       this._client.apiClient().post("/apps", { app: payload }, { headers }),
-      "app"
+      "app",
     );
   }
 
@@ -79,7 +79,7 @@ export default class Apps {
   logsURL(id: string): Promise<string> {
     return unpackData(
       this._client.apiClient().get(`/apps/${id}/logs`),
-      "logs_url"
+      "logs_url",
     );
   }
 
@@ -94,7 +94,7 @@ export default class Apps {
     return unpackData(
       this._client
         .apiClient()
-        .delete(`/apps/${appID}`, { params: { current_name: currentName } })
+        .delete(`/apps/${appID}`, { params: { current_name: currentName } }),
     );
   }
 
@@ -112,7 +112,7 @@ export default class Apps {
         current_name: currentName,
         new_name: newName,
       }),
-      "app"
+      "app",
     );
   }
 
@@ -133,9 +133,9 @@ export default class Apps {
             owner: ownerID,
           },
         },
-        { params: { current_name: currentName } }
+        { params: { current_name: currentName } },
       ),
-      "app"
+      "app",
     );
   }
 
@@ -150,7 +150,7 @@ export default class Apps {
   update(appID: string, appSettings: UpdateParams): Promise<App> {
     return unpackData(
       this._client.apiClient().patch(`/apps/${appID}`, { app: appSettings }),
-      "app"
+      "app",
     );
   }
 }

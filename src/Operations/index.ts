@@ -26,7 +26,7 @@ export default class Operations {
   operation(appId: string, operationId: string): Promise<Operation> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/operations/${operationId}`),
-      "operation"
+      "operation",
     );
   }
 }

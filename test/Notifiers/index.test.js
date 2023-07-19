@@ -8,7 +8,7 @@ describe("Notifiers#for", () => {
     "notifiers",
     (client) => {
       return new Notifiers(client).for("toto");
-    }
+    },
   );
 });
 
@@ -28,7 +28,7 @@ describe("Notifiers#create", () => {
     "notifier",
     (client) => {
       return new Notifiers(client).create("toto", notifier);
-    }
+    },
   );
 });
 
@@ -41,7 +41,7 @@ describe("Notifiers#update", () => {
       return new Notifiers(client).update("toto", "54100930736f7563d5030000", {
         plan_id: "54100930736f7563d5030000",
       });
-    }
+    },
   );
 });
 
@@ -51,7 +51,7 @@ describe("Notifiers#destroy", () => {
     null,
     (client) => {
       return new Notifiers(client).destroy("toto", "54100930736f7563d5030000");
-    }
+    },
   );
 });
 
@@ -63,7 +63,7 @@ describe("Notifiers#test", () => {
     null,
     (client) => {
       return new Notifiers(client).test("toto", "titi");
-    }
+    },
   );
 });
 
@@ -74,6 +74,6 @@ describe("Notifiers#get", () => {
     "notifier",
     (client) => {
       return new Notifiers(client).get("toto", "tata");
-    }
+    },
   );
 });

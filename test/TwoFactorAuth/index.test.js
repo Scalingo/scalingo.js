@@ -8,7 +8,7 @@ describe("TwoFactorAuth#status", () => {
     "tfa",
     (client) => {
       return new TFA(client).status();
-    }
+    },
   );
 });
 
@@ -22,7 +22,7 @@ describe("TwoFactorAuth#initiate", () => {
     "tfa",
     (client) => {
       return new TFA(client).initiate();
-    }
+    },
   );
 });
 
@@ -36,7 +36,7 @@ describe("TwoFactorAuth#initiate with other provider", () => {
     "tfa",
     (client) => {
       return new TFA(client).initiate("otherProvider");
-    }
+    },
   );
 });
 
@@ -50,7 +50,7 @@ describe("TwoFactorAuth#validate", () => {
     "tfa",
     (client) => {
       return new TFA(client).validate(5223);
-    }
+    },
   );
 });
 

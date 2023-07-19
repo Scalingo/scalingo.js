@@ -26,7 +26,7 @@ export default class Autoscalers {
   for(appId: string): Promise<Autoscaler[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/autoscalers`),
-      "autoscalers"
+      "autoscalers",
     );
   }
 
@@ -41,7 +41,7 @@ export default class Autoscalers {
       this._client
         .apiClient()
         .post(`/apps/${appId}/autoscalers`, { autoscaler: autoscaler }),
-      "autoscaler"
+      "autoscaler",
     );
   }
 
@@ -55,7 +55,7 @@ export default class Autoscalers {
     return unpackData(
       this._client
         .apiClient()
-        .delete(`/apps/${appId}/autoscalers/${autoscalerId}`)
+        .delete(`/apps/${appId}/autoscalers/${autoscalerId}`),
     );
   }
 
@@ -70,7 +70,7 @@ export default class Autoscalers {
       this._client
         .apiClient()
         .get(`/apps/${appId}/autoscalers/${autoscalerId}`),
-      "autoscaler"
+      "autoscaler",
     );
   }
 
@@ -84,7 +84,7 @@ export default class Autoscalers {
   update(
     appId: string,
     autoscalerId: string,
-    autoscaler: UpdateParams
+    autoscaler: UpdateParams,
   ): Promise<Autoscaler> {
     return unpackData(
       this._client
@@ -92,7 +92,7 @@ export default class Autoscalers {
         .patch(`/apps/${appId}/autoscalers/${autoscalerId}`, {
           autoscaler: autoscaler,
         }),
-      "autoscaler"
+      "autoscaler",
     );
   }
 }

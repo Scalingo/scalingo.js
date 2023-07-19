@@ -113,7 +113,10 @@ export class Operation {
 
           if (axiosError.response) {
             reject(
-              new APIError(axiosError.response.status, axiosError.response.data)
+              new APIError(
+                axiosError.response.status,
+                axiosError.response.data,
+              ),
             );
 
             return;

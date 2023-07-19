@@ -193,7 +193,7 @@ export default Client;
  */
 export async function clientFromToken(
   token: string,
-  opts: ScalingoClientOptions
+  opts: ScalingoClientOptions,
 ): Promise<Client> {
   const client = new Client("", opts);
   const bearerToken = (await client.Tokens.exchange(token)) as string;

@@ -32,7 +32,7 @@ export default class DataAccessConsent {
       this._client.apiClient().post(`/apps/${appId}/data_access_consent`, {
         data_access_consent: params,
       }),
-      "data_access_consent"
+      "data_access_consent",
     );
   }
 
@@ -46,7 +46,7 @@ export default class DataAccessConsent {
       this._client.apiClient().patch(`/apps/${appId}/data_access_consent`, {
         data_access_consent: params,
       }),
-      "data_access_consent"
+      "data_access_consent",
     );
   }
 
@@ -58,7 +58,7 @@ export default class DataAccessConsent {
    */
   destroy(appId: string): Promise<void> {
     return unpackData(
-      this._client.apiClient().delete(`/apps/${appId}/data_access_consent`)
+      this._client.apiClient().delete(`/apps/${appId}/data_access_consent`),
     );
   }
 }

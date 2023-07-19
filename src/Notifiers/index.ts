@@ -26,7 +26,7 @@ export default class Notifiers {
   for(appId: string): Promise<Notifier[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/notifiers`),
-      "notifiers"
+      "notifiers",
     );
   }
 
@@ -41,7 +41,7 @@ export default class Notifiers {
       this._client.apiClient().post(`/apps/${appId}/notifiers`, {
         notifier: notifier,
       }),
-      "notifier"
+      "notifier",
     );
   }
 
@@ -55,13 +55,13 @@ export default class Notifiers {
   update(
     appId: string,
     notifierId: string,
-    notifier: UpdateParams
+    notifier: UpdateParams,
   ): Promise<Notifier> {
     return unpackData(
       this._client.apiClient().patch(`/apps/${appId}/notifiers/${notifierId}`, {
         notifier: notifier,
       }),
-      "notifier"
+      "notifier",
     );
   }
 
@@ -73,7 +73,7 @@ export default class Notifiers {
    */
   destroy(appId: string, notifierId: string): Promise<void> {
     return unpackData(
-      this._client.apiClient().delete(`/apps/${appId}/notifiers/${notifierId}`)
+      this._client.apiClient().delete(`/apps/${appId}/notifiers/${notifierId}`),
     );
   }
 
@@ -87,7 +87,7 @@ export default class Notifiers {
     return unpackData(
       this._client
         .apiClient()
-        .post(`/apps/${appId}/notifiers/${notifierId}/test`)
+        .post(`/apps/${appId}/notifiers/${notifierId}/test`),
     );
   }
 
@@ -99,7 +99,7 @@ export default class Notifiers {
   get(appId: string, notifierId: string): Promise<Notifier> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/notifiers/${notifierId}`),
-      "notifier"
+      "notifier",
     );
   }
 }

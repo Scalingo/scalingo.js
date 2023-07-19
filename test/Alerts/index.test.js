@@ -8,7 +8,7 @@ describe("Alerts#for", () => {
     "alerts",
     (client) => {
       return new Alerts(client).for("tata");
-    }
+    },
   );
 });
 
@@ -20,7 +20,7 @@ describe("Alerts#create", () => {
     "alert",
     (client) => {
       return new Alerts(client).create("tata", { some: "params" });
-    }
+    },
   );
 });
 
@@ -30,7 +30,7 @@ describe("Alerts#destroy", () => {
     null,
     (client) => {
       return new Alerts(client).destroy("tata", "541067ec736f7504a5110000");
-    }
+    },
   );
 });
 
@@ -41,7 +41,7 @@ describe("Alerts#find", () => {
     "alert",
     (client) => {
       return new Alerts(client).find("tata", "541067ec736f7504a5110000");
-    }
+    },
   );
 });
 
@@ -54,6 +54,6 @@ describe("Alerts#update", () => {
       return new Alerts(client).update("tata", "541067ec736f7504a5110000", {
         some: "params",
       });
-    }
+    },
   );
 });

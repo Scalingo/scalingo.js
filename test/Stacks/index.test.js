@@ -8,6 +8,6 @@ describe("Stacks#list", () => {
     "stacks",
     (client) => {
       return new Stacks(client).list();
-    }
+    },
   );
 });

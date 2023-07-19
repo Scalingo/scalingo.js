@@ -26,7 +26,7 @@ export default class Metrics {
   types(): Promise<MetricType[]> {
     return unpackData(
       this._client.apiClient().get("/features/metrics"),
-      "metrics"
+      "metrics",
     );
   }
 

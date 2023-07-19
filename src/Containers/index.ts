@@ -31,7 +31,7 @@ export default class Containers {
   for(appId: string): Promise<Container[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/containers`),
-      "containers"
+      "containers",
     );
   }
 
@@ -43,7 +43,7 @@ export default class Containers {
   processes(appId: string): Promise<ContainerProcess[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/ps`),
-      "containers"
+      "containers",
     );
   }
 
@@ -56,7 +56,7 @@ export default class Containers {
   run(appId: string, opts: RunParams): Promise<RunResponse> {
     return unpackData(
       this._client.apiClient().post(`/apps/${appId}/run`, opts),
-      "container"
+      "container",
     );
   }
 
@@ -70,7 +70,7 @@ export default class Containers {
     return unpackData(
       this._client
         .apiClient()
-        .post(`/apps/${appId}/containers/${containerId}/stop`)
+        .post(`/apps/${appId}/containers/${containerId}/stop`),
     );
   }
 
@@ -83,14 +83,14 @@ export default class Containers {
    */
   async scale(
     appId: string,
-    formation: Container[]
+    formation: Container[],
   ): Promise<ContainersOperation> {
     const result = await unpackData(
       this._client
         .apiClient()
         .post(`/apps/${appId}/scale`, { containers: formation }),
       "containers",
-      { hasOperation: true }
+      { hasOperation: true },
     );
 
     if (result.operation) {
@@ -110,7 +110,7 @@ export default class Containers {
   availableSizes(): Promise<ContainerSize[]> {
     return unpackData(
       this._client.apiClient().get("/features/container_sizes"),
-      "container_sizes"
+      "container_sizes",
     );
   }
 
@@ -125,7 +125,7 @@ export default class Containers {
     const result = await unpackData(
       this._client.apiClient().post(`/apps/${appId}/restart`, { scope: scope }),
       undefined,
-      { hasOperation: true }
+      { hasOperation: true },
     );
     const operation = new Operation(this._client, result.operation);
     await operation.refresh();

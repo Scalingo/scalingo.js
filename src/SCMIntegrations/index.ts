@@ -34,7 +34,7 @@ export default class SCMIntegrations {
   find(integrationID: string): Promise<SCMIntegration> {
     return unpackData(
       this._client.authApiClient().get(`/scm_integrations/${integrationID}`),
-      "scm_integration"
+      "scm_integration",
     );
   }
 
@@ -46,7 +46,7 @@ export default class SCMIntegrations {
   all(): Promise<SCMIntegration[]> {
     return unpackData(
       this._client.authApiClient().get("/scm_integrations"),
-      "scm_integrations"
+      "scm_integrations",
     );
   }
 
@@ -62,7 +62,7 @@ export default class SCMIntegrations {
       this._client
         .authApiClient()
         .post("/scm_integrations", { scm_integration: opts }),
-      "scm_integration"
+      "scm_integration",
     );
   }
 
@@ -74,7 +74,7 @@ export default class SCMIntegrations {
    */
   destroy(integrationID: string): Promise<void> {
     return unpackData(
-      this._client.authApiClient().delete(`/scm_integrations/${integrationID}`)
+      this._client.authApiClient().delete(`/scm_integrations/${integrationID}`),
     );
   }
 
@@ -89,7 +89,7 @@ export default class SCMIntegrations {
       this._client
         .authApiClient()
         .post(`/scm_integrations/${integrationID}/import_keys`),
-      "keys"
+      "keys",
     );
   }
 
@@ -102,7 +102,7 @@ export default class SCMIntegrations {
    */
   searchPullRequests(
     integrationID: string,
-    query: string
+    query: string,
   ): Promise<PullRequest[]> {
     return unpackData(
       this._client
@@ -110,7 +110,7 @@ export default class SCMIntegrations {
         .get(`/scm_integrations/${integrationID}/search_pull_requests`, {
           params: { query },
         }),
-      "pull_requests"
+      "pull_requests",
     );
   }
 
@@ -123,7 +123,7 @@ export default class SCMIntegrations {
    */
   searchRepositories(
     integrationID: string,
-    query: string
+    query: string,
   ): Promise<Repository[]> {
     return unpackData(
       this._client
@@ -131,7 +131,7 @@ export default class SCMIntegrations {
         .get(`/scm_integrations/${integrationID}/search_repos`, {
           params: { query },
         }),
-      "repositories"
+      "repositories",
     );
   }
 
@@ -146,7 +146,7 @@ export default class SCMIntegrations {
       this._client
         .authApiClient()
         .get(`/scm_integrations/${integrationID}/orgs`),
-      "organizations"
+      "organizations",
     );
   }
 
@@ -164,7 +164,7 @@ export default class SCMIntegrations {
         .get(`/scm_integrations/${integrationID}/branches`, {
           params: { repo_name },
         }),
-      "branches"
+      "branches",
     );
   }
 }

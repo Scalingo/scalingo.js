@@ -15,7 +15,7 @@ describe("App#all", () => {
     "apps",
     (client) => {
       return new Apps(client).all();
-    }
+    },
   );
 });
 
@@ -26,7 +26,7 @@ describe("App#find", () => {
     "app",
     (client) => {
       return new Apps(client).find("toto");
-    }
+    },
   );
 });
 
@@ -60,7 +60,7 @@ describe("App#create", () => {
       "app",
       (client) => {
         return new Apps(client).create({ name: "testApp" });
-      }
+      },
     );
   });
 
@@ -84,7 +84,7 @@ describe("App#create", () => {
           stack_id: "abcdef",
           parent_id: "abcdef1234",
         });
-      }
+      },
     );
   });
 
@@ -138,7 +138,7 @@ describe("App#logsURL", () => {
     "logs_url",
     (client) => {
       return new Apps(client).logsURL("testApp");
-    }
+    },
   );
 });
 
@@ -148,7 +148,7 @@ describe("App#destroy", () => {
     null,
     (client) => {
       return new Apps(client).destroy("app-id", "app-name");
-    }
+    },
   );
 });
 
@@ -160,7 +160,7 @@ describe("App#rename", () => {
     "app",
     (client) => {
       return new Apps(client).rename("app-id", "app-name", "app-new-name");
-    }
+    },
   );
 });
 
@@ -173,9 +173,9 @@ describe("App#transfer", () => {
       return new Apps(client).transfer(
         "app-id",
         "app-name",
-        "owner@example.com"
+        "owner@example.com",
       );
-    }
+    },
   );
 });
 
@@ -186,6 +186,6 @@ describe("App#update", () => {
     "app",
     (client) => {
       return new Apps(client).update("app-id", { force_https: true });
-    }
+    },
   );
 });

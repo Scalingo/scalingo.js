@@ -8,7 +8,7 @@ describe("Events#all", () => {
     null,
     (client) => {
       return new Events(client).all({ page: 1, from: 2 });
-    }
+    },
   );
 
   testParamsGetter(
@@ -17,7 +17,7 @@ describe("Events#all", () => {
     null,
     (client) => {
       return new Events(client).all({ page: 1, per_page: 2, from: 1 });
-    }
+    },
   );
 });
 
@@ -28,7 +28,7 @@ describe("Events#for", () => {
     null,
     (client) => {
       return new Events(client).for("tata", { page: 1, from: 2 });
-    }
+    },
   );
 
   testParamsGetter(
@@ -37,7 +37,7 @@ describe("Events#for", () => {
     null,
     (client) => {
       return new Events(client).for("tata", { page: 1, per_page: 2, from: 1 });
-    }
+    },
   );
 });
 
@@ -48,7 +48,7 @@ describe("Events#find", () => {
     "event",
     (client) => {
       return new Events(client).find("tata", "someevent");
-    }
+    },
   );
 });
 
@@ -59,7 +59,7 @@ describe("Events#listEventTypes", () => {
     "event_types",
     (client) => {
       return new Events(client).listEventTypes();
-    }
+    },
   );
 });
 
@@ -70,6 +70,6 @@ describe("Events#listEventCategories", () => {
     "event_categories",
     (client) => {
       return new Events(client).listEventCategories();
-    }
+    },
   );
 });

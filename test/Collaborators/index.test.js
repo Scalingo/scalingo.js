@@ -14,7 +14,7 @@ describe("Collaborators#for", () => {
     "collaborators",
     (client) => {
       return new Collaborators(client).for("toto");
-    }
+    },
   );
 });
 
@@ -24,7 +24,7 @@ describe("Collaborators#destroy", () => {
     null,
     (client) => {
       return new Collaborators(client).destroy("toto", "1234");
-    }
+    },
   );
 });
 
@@ -36,7 +36,7 @@ describe("Collaborators#invite", () => {
     "collaborator",
     (client) => {
       return new Collaborators(client).invite("toto", "toto@titi.tata");
-    }
+    },
   );
 });
 
@@ -47,6 +47,6 @@ describe("Collaborators#inviteAccept", () => {
     null,
     (client) => {
       return new Collaborators(client).inviteAccept("toto-accept-token");
-    }
+    },
   );
 });

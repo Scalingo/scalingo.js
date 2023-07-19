@@ -8,7 +8,7 @@ describe("Deployments#find", () => {
     "deployment",
     (client) => {
       return new Deployments(client).find("testApp", "deploy1234");
-    }
+    },
   );
 });
 
@@ -22,7 +22,7 @@ describe("Deployments#create", () => {
       return new Deployments(client).create("toto", {
         source_url: "some-url",
       });
-    }
+    },
   );
 });
 
@@ -33,7 +33,7 @@ describe("Deployments#logs", () => {
     null,
     (client) => {
       return new Deployments(client).logs("testApp", "deploy1234");
-    }
+    },
   );
 });
 
@@ -43,6 +43,6 @@ describe("Deployments#purge", () => {
     null,
     (client) => {
       return new Deployments(client).purgeCache("testApp");
-    }
+    },
   );
 });

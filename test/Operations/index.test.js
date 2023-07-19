@@ -8,6 +8,6 @@ describe("Operations#getOperation", () => {
     "operation",
     (client) => {
       return new Operations(client).operation("toto", "tata");
-    }
+    },
   );
 });

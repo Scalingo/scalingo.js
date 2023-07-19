@@ -17,7 +17,7 @@ describe("DataAccessConsent#create", () => {
         containers_until: "2022-07-06T00:00:00.000+00:00",
         databases_until: "2022-07-08T00:00:00.000+00:00",
       });
-    }
+    },
   );
 });
 
@@ -34,7 +34,7 @@ describe("DataAccessConsent#update", () => {
       return new DataAccessConsent(client).update("test", {
         containers_until: "2022-07-10T00:00:00.000+00:00",
       });
-    }
+    },
   );
 });
 
@@ -44,6 +44,6 @@ describe("DataAccessConsent#destroy", () => {
     null,
     (client) => {
       return new DataAccessConsent(client).destroy("test");
-    }
+    },
   );
 });

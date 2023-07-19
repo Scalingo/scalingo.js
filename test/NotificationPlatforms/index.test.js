@@ -8,6 +8,6 @@ describe("NotificationPlatforms#list", () => {
     "notification_platforms",
     (client) => {
       return new NotificationPlatforms(client).list();
-    }
+    },
   );
 });

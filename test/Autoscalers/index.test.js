@@ -8,7 +8,7 @@ describe("Autoscalers#for", () => {
     "autoscalers",
     (client) => {
       return new Autoscalers(client).for("tata");
-    }
+    },
   );
 });
 
@@ -20,7 +20,7 @@ describe("Autoscalers#create", () => {
     "autoscaler",
     (client) => {
       return new Autoscalers(client).create("tata", { some: "params" });
-    }
+    },
   );
 });
 
@@ -31,9 +31,9 @@ describe("Autoscalers#destroy", () => {
     (client) => {
       return new Autoscalers(client).destroy(
         "tata",
-        "541067ec736f7504a5110000"
+        "541067ec736f7504a5110000",
       );
-    }
+    },
   );
 });
 
@@ -44,7 +44,7 @@ describe("Autoscalers#show", () => {
     "autoscaler",
     (client) => {
       return new Autoscalers(client).show("tata", "541067ec736f7504a5110000");
-    }
+    },
   );
 });
 
@@ -57,8 +57,8 @@ describe("Autoscalers#update", () => {
       return new Autoscalers(client).update(
         "tata",
         "541067ec736f7504a5110000",
-        { some: "params" }
+        { some: "params" },
       );
-    }
+    },
   );
 });

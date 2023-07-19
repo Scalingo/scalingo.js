@@ -28,7 +28,7 @@ describe("Listener", () => {
       listener.performAuth();
       expect(ws.send.called).to.be.true;
       expect(ws.send.getCall(0).args[0]).to.eq(
-        `{"type":"auth","data":{"token":"testToken"}}`
+        `{"type":"auth","data":{"token":"testToken"}}`,
       );
     });
   });

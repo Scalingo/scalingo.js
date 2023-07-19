@@ -33,7 +33,7 @@ export class SCMRepoLinks {
   find(appID: string): Promise<SCMRepoLink> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appID}/scm_repo_link`),
-      "scm_repo_link"
+      "scm_repo_link",
     );
   }
 
@@ -49,7 +49,7 @@ export class SCMRepoLinks {
       this._client
         .apiClient()
         .post(`/apps/${appID}/scm_repo_link`, { scm_repo_link: opts }),
-      "scm_repo_link"
+      "scm_repo_link",
     );
   }
 
@@ -65,7 +65,7 @@ export class SCMRepoLinks {
       this._client
         .apiClient()
         .patch(`/apps/${appID}/scm_repo_link`, { scm_repo_link: opts }),
-      "scm_repo_link"
+      "scm_repo_link",
     );
   }
 
@@ -77,7 +77,7 @@ export class SCMRepoLinks {
    */
   destroy(appID: string): Promise<void> {
     return unpackData(
-      this._client.apiClient().delete(`/apps/${appID}/scm_repo_link`)
+      this._client.apiClient().delete(`/apps/${appID}/scm_repo_link`),
     );
   }
 
@@ -96,7 +96,7 @@ export class SCMRepoLinks {
         .post(`/apps/${appID}/scm_repo_link/manual_deploy`, {
           branch,
         }),
-      "deployment"
+      "deployment",
     );
   }
 
@@ -115,7 +115,7 @@ export class SCMRepoLinks {
         .post(`/apps/${appID}/scm_repo_link/manual_review_app`, {
           pull_request_id: pullRequestID,
         }),
-      "review_app"
+      "review_app",
     );
   }
 
@@ -129,7 +129,7 @@ export class SCMRepoLinks {
   branches(appID: string): Promise<Branch[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appID}/scm_repo_link/branches`),
-      "branches"
+      "branches",
     );
   }
 
@@ -143,7 +143,7 @@ export class SCMRepoLinks {
   pulls(appID: string): Promise<PullRequest[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appID}/scm_repo_link/pulls`),
-      "pulls"
+      "pulls",
     );
   }
 
@@ -156,7 +156,7 @@ export class SCMRepoLinks {
   reviewApps(appID: string): Promise<ReviewApp[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appID}/scm_repo_link/review_apps`),
-      "review_apps"
+      "review_apps",
     );
   }
 }

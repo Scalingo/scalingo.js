@@ -8,7 +8,7 @@ describe("Users#self", () => {
     "user",
     (client) => {
       return new Users(client).self();
-    }
+    },
   );
 });
 
@@ -21,7 +21,7 @@ describe("Users#updateAccount", () => {
       return new Users(client).updateAccount({
         company: "New company",
       });
-    }
+    },
   );
 });
 
@@ -33,7 +33,7 @@ describe("Users#stopFreeTrial", () => {
     null,
     (client) => {
       return new Users(client).stopFreeTrial();
-    }
+    },
   );
 });
 
@@ -45,7 +45,7 @@ describe("Users#requestAccountDeletion", () => {
     null,
     (client) => {
       return new Users(client).requestAccountDeletion();
-    }
+    },
   );
 });
 
@@ -59,6 +59,6 @@ describe("Users#confirmAccountDeletion", () => {
     null,
     (client) => {
       return new Users(client).confirmAccountDeletion("some-id", deletion);
-    }
+    },
   );
 });

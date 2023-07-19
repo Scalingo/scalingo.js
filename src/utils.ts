@@ -14,7 +14,7 @@ export interface UnpackOpts {
 export function unpackData(
   axiosRequest: Promise<AxiosResponse>,
   prefix?: string,
-  opts?: UnpackOpts
+  opts?: UnpackOpts,
 ): Promise<any> {
   return new Promise((resolve, reject) => {
     axiosRequest

@@ -23,7 +23,7 @@ export default class AuditLogs {
    */
   async show(appId: string, id: string): Promise<AuditLog[]> {
     return unpackData(
-      this._client.apiClient().get(`/apps/${appId}/audit_logs/${id}`)
+      this._client.apiClient().get(`/apps/${appId}/audit_logs/${id}`),
     );
   }
 }

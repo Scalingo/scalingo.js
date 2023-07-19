@@ -13,7 +13,7 @@ describe("Metrics#types", () => {
     "metrics",
     (client) => {
       return new Metrics(client).types();
-    }
+    },
   );
 });
 
@@ -25,7 +25,7 @@ describe("Metrics#get", () => {
       null,
       (client) => {
         return new Metrics(client).get("toto", "router");
-      }
+      },
     );
   });
 
@@ -39,7 +39,7 @@ describe("Metrics#get", () => {
           containerIndex: 1,
           containerType: "web",
         });
-      }
+      },
     );
   });
 

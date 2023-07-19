@@ -26,7 +26,7 @@ export default class Alerts {
   for(appId: string): Promise<AlertWithNotifiers[]> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/alerts`),
-      "alerts"
+      "alerts",
     );
   }
 
@@ -39,7 +39,7 @@ export default class Alerts {
   find(appId: string, alertId: string): Promise<Alert> {
     return unpackData(
       this._client.apiClient().get(`/apps/${appId}/alerts/${alertId}`),
-      "alert"
+      "alert",
     );
   }
 
@@ -54,7 +54,7 @@ export default class Alerts {
 
     return unpackData(
       this._client.apiClient().post(`/apps/${appId}/alerts`, data),
-      "alert"
+      "alert",
     );
   }
 
@@ -68,13 +68,13 @@ export default class Alerts {
   update(
     appId: string,
     alertId: string,
-    opts: UpdateParams = {}
+    opts: UpdateParams = {},
   ): Promise<Alert> {
     const data = { alert: opts };
 
     return unpackData(
       this._client.apiClient().patch(`/apps/${appId}/alerts/${alertId}`, data),
-      "alert"
+      "alert",
     );
   }
 
@@ -86,7 +86,7 @@ export default class Alerts {
    */
   destroy(appId: string, alertId: string): Promise<void> {
     return unpackData(
-      this._client.apiClient().delete(`/apps/${appId}/alerts/${alertId}`)
+      this._client.apiClient().delete(`/apps/${appId}/alerts/${alertId}`),
     );
   }
 }

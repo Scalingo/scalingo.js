@@ -31,7 +31,7 @@ export class Users {
   updateAccount(attributes: UpdateParams): Promise<User> {
     return unpackData(
       this._client.authApiClient().put("/users/account", { user: attributes }),
-      "user"
+      "user",
     );
   }
 
@@ -40,7 +40,7 @@ export class Users {
    */
   stopFreeTrial(): Promise<void> {
     return unpackData(
-      this._client.authApiClient().post("/users/stop_free_trial")
+      this._client.authApiClient().post("/users/stop_free_trial"),
     );
   }
 
@@ -56,12 +56,12 @@ export class Users {
    */
   confirmAccountDeletion(
     deletionId: string,
-    params: DeletionParams
+    params: DeletionParams,
   ): Promise<void> {
     return unpackData(
       this._client
         .authApiClient()
-        .post(`/users/delete/${deletionId}/confirm`, { deletion: params })
+        .post(`/users/delete/${deletionId}/confirm`, { deletion: params }),
     );
   }
 }

@@ -8,7 +8,7 @@ describe("Billing#profile", () => {
     "profile",
     (client) => {
       return new Billing(client).profile();
-    }
+    },
   );
 });
 
@@ -22,7 +22,7 @@ describe("Billing#createProfile", () => {
     "profile",
     (client) => {
       return new Billing(client).createProfile(payload);
-    }
+    },
   );
 });
 
@@ -35,6 +35,6 @@ describe("Billing#updateProfile", () => {
     "profile",
     (client) => {
       return new Billing(client).updateProfile("test-id", payload);
-    }
+    },
   );
 });

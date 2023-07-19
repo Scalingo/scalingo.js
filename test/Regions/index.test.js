@@ -8,6 +8,6 @@ describe("Regions#all", () => {
     "regions",
     (client) => {
       return new Regions(client).all();
-    }
+    },
   );
 });
