@@ -1,6 +1,7 @@
 ## Unreleased
 
 * chore: bump dependencies
+* versions: dropping node 14, no longer maintained. Adds 20.x to test matrix
 
 ## 0.8.2
 
