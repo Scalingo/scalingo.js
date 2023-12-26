@@ -3,6 +3,7 @@
 * chore: bump dependencies
 * chore: linter violations following update
 * versions: dropping node 14, no longer maintained. Adds 20.x to test matrix
+* tooling: switch from yarn to npm
 
 ## 0.8.2
 
