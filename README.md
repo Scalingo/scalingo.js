@@ -51,13 +51,13 @@ node examples/Addons/add_addon.js
 ### Install
 
 ```
-yarn install
+npm install
 ```
 
 ### Run tests
 
 ```
-yarn test
+npm run test
 ```
 
 ### Release a new version

@@ -9,9 +9,9 @@
   "author": "Scalingo <ufs@scalingo.com>",
   "license": "MIT",
   "scripts": {
-    "build": "yarn run lint:js --quiet && tsc && node bundle.js",
+    "build": "npm run lint:js -- --quiet && tsc --listEmittedFiles && node bundle.js",
     "docs": "typedoc src/index.ts",
-    "lint": "yarn run lint:ts && yarn run lint:js",
+    "lint": "npm run lint:ts && npm run lint:js",
     "lint:js": "eslint --ext .js,.ts ./src ./test",
     "lint:ts": "tsc --noEmit",
     "test": "ts-mocha --require @babel/register --recursive --paths -p test/tsconfig.test.json test/*.js test/**/*.test.js"
