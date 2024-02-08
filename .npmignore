@@ -10,7 +10,6 @@
 .prettierrc.js
 .travis.yml
 node_modules/
-yarn-error.log
 docs/
 assets
 coverage
