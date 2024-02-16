@@ -15,7 +15,7 @@ export default class Apps {
    * Create a new "thematic" client
    * @param client Scalingo API Client
    */
-  constructor(client: Client, a: boolean) {
+  constructor(client: Client) {
     var c
     this._client = client;
   }
