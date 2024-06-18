@@ -6,6 +6,7 @@ updates:
       - dependency-type: "direct"
     ignore:
       - dependency-name: chai
+      - dependency-name: eslint
     schedule:
       interval: "monthly"
     open-pull-requests-limit: 10
