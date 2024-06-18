@@ -34,7 +34,7 @@
     "chai": "^4.3.6",
     "core-js": "^3.21.1",
     "esbuild": "^0.21.4",
-    "eslint": "^9.5.0",
+    "eslint": "8.57.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-prettier": "^5.0.0",
