@@ -4,6 +4,7 @@
 * chore: linter violations following update
 * versions: dropping node 14 and 16, no longer maintained. Adds 20.x and 22.x to test matrix
 * tooling: switch from yarn to npm
+* feat(apps): add the private_network_ids field to the model
 
 ## 0.8.2
 
