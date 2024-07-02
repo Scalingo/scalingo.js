@@ -82,6 +82,8 @@ export interface App {
   /** HDS Contact, only on HDS app */
   hds_contact: HDSContact;
   hds_resource: boolean;
+  /** IDs of the private networks associated with the app */
+  private_networks_ids: string[];
 }
 
 export interface AppLinks {
