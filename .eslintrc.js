@@ -42,4 +42,13 @@ module.exports = {
     "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
     "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
   },
+  overrides: [
+    {
+      files: ["test/**/*"],
+      rules: {
+        "@typescript-eslint/no-unused-expressions": "off",
+        "@typescript-eslint/no-require-imports": "off",
+      },
+    },
+  ],
 };
