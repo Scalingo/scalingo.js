@@ -34,4 +34,5 @@ updates:
           - "tsconfig-paths"
           - "typedoc"
     reviewers:
+      - "aurelien-reeves-scalingo"
       - "ksol"
