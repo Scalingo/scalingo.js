@@ -1,5 +1,5 @@
-import { Operation } from "./utils";
 import { Client } from "..";
+import { Operation } from "./utils";
 import { unpackData } from "../utils";
 
 /**
