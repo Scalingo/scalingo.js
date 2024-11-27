@@ -3,8 +3,15 @@ import { App } from "../models/regional/apps";
 import {
   Collaborator,
   CollaboratorInvitation,
+  ExtendedCollaborator,
 } from "../models/regional/collaborators";
 import { unpackData } from "../utils";
+
+export type IndexQuery = NonNullable<unknown>;
+
+export interface IndexResponse {
+  collaborators: ExtendedCollaborator[];
+}
 
 /**
  * Collaborators API Client
@@ -72,6 +79,15 @@ export default class Collaborators {
       this._client
         .apiClient()
         .get("/apps/collaboration", { params: { token: token } }),
+    );
+  }
+
+  /**
+   * list all request owner collaborators
+   */
+  all(params: IndexQuery): Promise<IndexResponse> {
+    return unpackData(
+      this._client.apiClient().get("/collaborators", { params }),
     );
   }
 }
