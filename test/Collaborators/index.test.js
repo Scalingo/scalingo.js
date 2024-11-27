@@ -50,3 +50,14 @@ describe("Collaborators#inviteAccept", () => {
     },
   );
 });
+
+describe("Collaborators#all", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/v1/collaborators",
+    {},
+    null,
+    (client) => {
+      return new Collaborators(client).all();
+    },
+  );
+});
