@@ -21,6 +21,8 @@ export interface Collaborator {
   username: string;
   /** Status of the invitation */
   status: string;
+  /** Name of the application owning the collaborator */
+  app_name?: string;
 }
 
 export interface CollaboratorInvitation {
@@ -34,13 +36,4 @@ export interface CollaboratorInvitation {
   status: string;
   /** Link of for the invitation */
   invitation_link: string;
-}
-
-export interface ExtendedCollaborator extends Collaborator {
-  /** Name of the application owning the collaborator */
-  app_name: string;
-  /** Username of the collaborator */
-  user_username: string;
-  /** Email of the collaborator */
-  user_email: string;
 }

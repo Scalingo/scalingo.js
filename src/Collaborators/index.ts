@@ -3,14 +3,13 @@ import { App } from "../models/regional/apps";
 import {
   Collaborator,
   CollaboratorInvitation,
-  ExtendedCollaborator,
 } from "../models/regional/collaborators";
 import { unpackData } from "../utils";
 
 export type IndexQuery = NonNullable<unknown>;
 
 export interface IndexResponse {
-  collaborators: ExtendedCollaborator[];
+  collaborators: Collaborator[];
 }
 
 /**
