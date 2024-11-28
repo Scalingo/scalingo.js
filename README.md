@@ -77,19 +77,19 @@ Then create a new release on the scalingo.js Github repository.
 
 #### Using yarn link
 
-In the scalingo.js repo, do
+In the `scalingo.js` repo, do
 
 ```bash
 yarn link
 ```
 
-In the project that needs scalingo.js, do
+In the project that needs `scalingo.js`, do
 
 ```bash
 yarn link scalingo
 ```
 
-On any change you make to scalingo.js that you need to use in your project, don't forget to run
+On any change you make to `scalingo.js` that you need to use in your project, don't forget to run
 
 ```bash
 yarn build
