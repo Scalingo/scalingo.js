@@ -1,10 +1,11 @@
-## Unreleased
+## 0.9.0
 
 * chore: bump dependencies
 * chore: linter violations following update
 * versions: dropping node 14 and 16, no longer maintained. Adds 20.x and 22.x to test matrix
 * tooling: switch from yarn to npm
-* feat(apps): add the `private_networks_ids` field to the model
+* feat: add the `private_networks_ids` field to the model
+* feat: added collaborators.all endpoint
 
 ## 0.8.2
 
