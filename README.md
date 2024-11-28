@@ -104,7 +104,7 @@ ex:
 From :
 
 ```javascript
-import axios from "scalingo/node_modules/axios";
+import axios, { AxiosInstance } from "axios";
 ```
 
 To:
