@@ -72,3 +72,45 @@ git push origin master
 ```
 
 Then create a new release on the scalingo.js Github repository.
+
+### Import it locally into another project
+
+#### Using yarn link
+
+In the scalingo.js repo, do
+
+```bash
+yarn link
+```
+
+In the project that needs scalingo.js, do
+
+```bash
+yarn link scalingo
+```
+
+On any change you make to scalingo.js that you need to use in your project, don't forget to run
+
+```bash
+yarn build
+```
+
+To update your local package build
+
+⚠ Sometimes you may have import conflict like on the dashboard, you will need to temporarily replace some import to use the package locally.
+
+ex:
+
+From :
+
+```javascript
+import axios from "scalingo/node_modules/axios";
+```
+
+To:
+
+```javascript
+import axios, { AxiosInstance } from "scalingo/node_modules/axios";
+```
+
+Do not push this!
