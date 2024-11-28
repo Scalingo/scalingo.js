@@ -4,9 +4,8 @@
 * chore: linter violations following update
 * versions: dropping node 14 and 16, no longer maintained. Adds 20.x and 22.x to test matrix
 * tooling: switch from yarn to npm
-* added aurelien-reeves-scalingo as a reviewer for Dependabot updates.
-* feat(apps): add the `private_networks_ids` field to the model
-* feat(iam): added collaborators.all endpoint
+* feat: add the `private_networks_ids` field to the model
+* feat: added collaborators.all endpoint
 
 ## 0.8.2
 
