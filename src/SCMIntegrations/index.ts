@@ -139,14 +139,21 @@ export default class SCMIntegrations {
    * Get list of organizations attached to an SCM integration account.
    * @see https://developers.scalingo.com/scm_integrations#
    * @param integrationID ID of the integration
+   * @param page Page number
+   * @param per_page Number of organizations per page
    * @return Promise that when resolved returns the list of organizations.
    */
-  organizations(integrationID: string): Promise<Organization[]> {
+  organizations(
+    integrationID: string,
+    page: number = 1,
+    per_page: number = 20,
+  ): Promise<{ organizations: Organization[]; more: boolean }> {
     return unpackData(
       this._client
         .authApiClient()
-        .get(`/scm_integrations/${integrationID}/orgs`),
-      "organizations",
+        .get(`/scm_integrations/${integrationID}/orgs`, {
+          params: { page, per_page },
+        }),
     );
   }
 
