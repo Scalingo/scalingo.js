@@ -6,6 +6,7 @@ import {
   Repository,
   Organization,
   Branch,
+  OrganizationsMeta,
 } from "../models/auth/scm_integrations";
 import { CreateParams } from "../params/auth/scm_integrations";
 import { unpackData } from "../utils";
@@ -147,7 +148,7 @@ export default class SCMIntegrations {
     integrationID: string,
     page: number = 1,
     per_page: number = 20,
-  ): Promise<{ organizations: Organization[]; more: boolean }> {
+  ): Promise<{ organizations: Organization[]; meta: OrganizationsMeta }> {
     return unpackData(
       this._client
         .authApiClient()
