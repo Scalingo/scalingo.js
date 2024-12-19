@@ -33,7 +33,7 @@
     "axios-mock-adapter": "^2.0.0",
     "chai": "^4.3.6",
     "core-js": "^3.21.1",
-    "esbuild": "^0.23.0",
+    "esbuild": "^0.24.0",
     "eslint": "8.57.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.25.3",
