@@ -93,7 +93,7 @@ describe("SCMIntegrations#organizations", () => {
   testGetter(
     "https://auth.scalingo.com/v1/scm_integrations/biniou/orgs",
     null,
-    "organizations",
+    null,
     (client) => {
       return new SCMIntegrations(client).organizations("biniou");
     },
