@@ -1,3 +1,8 @@
+## 0.10.0
+
+* chore: bump dependencies
+* feat(scm_organizations): add pagination support
+
 ## 0.9.0
 
 * chore: bump dependencies
