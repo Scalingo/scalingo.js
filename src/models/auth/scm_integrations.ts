@@ -1,3 +1,5 @@
+import { PaginationMeta } from "src/meta";
+
 import { User } from "./user";
 
 /**
@@ -79,6 +81,10 @@ export interface Organization {
   login: string;
   /** URL to the SCM API for the organization */
   url: string;
+}
+
+export interface OrganizationsMeta {
+  pagination: PaginationMeta;
 }
 
 /** @see https://developers.scalingo.com/scm_repo_link */
