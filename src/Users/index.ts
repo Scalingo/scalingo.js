@@ -64,6 +64,16 @@ export class Users {
         .post(`/users/delete/${deletionId}/confirm`, { deletion: params }),
     );
   }
+
+  /**
+   * List all known roles.
+   */
+  roles(): Promise<string[]> {
+    return unpackData(
+      this._client.authApiClient().get("/users/roles"),
+      "roles",
+    );
+  }
 }
 
 export default Users;

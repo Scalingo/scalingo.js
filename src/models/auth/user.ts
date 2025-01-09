@@ -6,6 +6,7 @@ export interface User {
   company: string | null;
   location: string | null;
   fullname: string;
+  role: string | null;
 
   /** Github profile of the user */
   github: GithubProfile;

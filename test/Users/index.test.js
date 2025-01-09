@@ -62,3 +62,14 @@ describe("Users#confirmAccountDeletion", () => {
     },
   );
 });
+
+describe("Users#roles", () => {
+  testGetter(
+    "https://auth.scalingo.com/v1/users/roles",
+    null,
+    "roles",
+    (client) => {
+      return new Users(client).roles();
+    },
+  );
+});
