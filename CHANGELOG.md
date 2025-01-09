@@ -1,3 +1,8 @@
+## 0.11.0
+
+* feat: add the `role` field in `User` model
+* feat: add the users.roles endpoint
+
 ## 0.10.0
 
 * chore: bump dependencies
