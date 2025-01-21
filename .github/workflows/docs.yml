@@ -27,6 +27,9 @@ concurrency:
 
 jobs:
   docs:
+    environment:
+      name: github-pages
+
     runs-on: ubuntu-latest
 
     steps:
