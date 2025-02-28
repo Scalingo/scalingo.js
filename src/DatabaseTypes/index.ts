@@ -33,7 +33,7 @@ export default class DatabaseTypes {
    */
   listDatabaseTypes(): Promise<DatabaseType[]> {
     return unpackData(
-      this._client.apiClient().get(`/v1/database_types`),
+      this._client.apiClient().get(`/database_types`),
       "database_types",
     );
   }
@@ -44,7 +44,7 @@ export default class DatabaseTypes {
    */
   getDatabaseType(databaseTypeId: string): Promise<DatabaseType> {
     return unpackData(
-      this._client.apiClient().get(`/v1/database_types/${databaseTypeId}`),
+      this._client.apiClient().get(`/database_types/${databaseTypeId}`),
       "database_type",
     );
   }
@@ -59,7 +59,7 @@ export default class DatabaseTypes {
     return unpackData(
       this._client
         .apiClient()
-        .get(`/v1/database_types/${databaseTypeId}/versions`),
+        .get(`/database_types/${databaseTypeId}/versions`),
       "database_type_versions",
     );
   }
@@ -70,7 +70,7 @@ export default class DatabaseTypes {
    */
   getDatabaseTypeVersion(versionId: string): Promise<DatabaseTypeVersion> {
     return unpackData(
-      this._client.apiClient().get(`/v1/database_type_versions/${versionId}`),
+      this._client.apiClient().get(`/database_type_versions/${versionId}`),
       "database_type_version",
     );
   }
