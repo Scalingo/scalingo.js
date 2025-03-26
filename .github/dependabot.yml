@@ -9,6 +9,8 @@ updates:
       - dependency-name: eslint
     schedule:
       interval: "monthly"
+      time: "06:00"
+      timezone: "Europe/Paris"
     open-pull-requests-limit: 10
     groups:
       linter-packages:
@@ -34,4 +36,5 @@ updates:
           - "tsconfig-paths"
           - "typedoc"
     reviewers:
-      - "aurelien-reeves-scalingo"
+      - "samiFakhfakhScalingo"
+      - "baptmaury"
