@@ -56,6 +56,6 @@ describe("TwoFactorAuth#validate", () => {
 
 describe("TwoFactorAuth#disable", () => {
   testDelete("https://auth.scalingo.com/v1/client/tfa", null, (client) => {
-    return new TFA(client).disable();
+    return new TFA(client).disable(5223);
   });
 });
