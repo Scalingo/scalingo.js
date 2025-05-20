@@ -69,8 +69,7 @@ export class TwoFactorAuth {
   disable(attempt: number): Promise<TwoFactorAuthObject> {
     const data = { tfa: { attempt } };
     return unpackData(
-      this._client.authApiClient().delete("/client/tfa", { data }),
-      "tfa",
+      this._client.authApiClient().delete("/client/tfa", { data })
     );
   }
 }
