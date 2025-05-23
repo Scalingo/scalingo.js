@@ -34,7 +34,5 @@ updates:
           - "sinon"
           - "ts-mocha"
           - "tsconfig-paths"
-          - "typedoc"
-    reviewers:
-      - "samiFakhfakhScalingo"
-      - "baptmaury"
+          - "typedoc":
+      
