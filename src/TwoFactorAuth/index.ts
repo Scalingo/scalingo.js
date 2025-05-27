@@ -1,4 +1,5 @@
 import { Client } from "..";
+import { APIError } from "../errors";
 import {
   TwoFactorAuthObject,
   DEFAULT_PROVIDER,
@@ -69,7 +70,7 @@ export class TwoFactorAuth {
   disable(attempt: number): Promise<TwoFactorAuthObject> {
     const data = { tfa: { attempt } };
     return unpackData(
-      this._client.authApiClient().delete("/client/tfa", { data })
+      this._client.authApiClient().delete("/client/tfa", { data }),
     );
   }
 }
