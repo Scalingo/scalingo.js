@@ -63,10 +63,14 @@ export class TwoFactorAuth {
 
   /**
    * Disable the two-factor auth for this user. Will raise an error if not enabled.
+   * @param attempt the "pin number" given by the authenticator
    * @return Promise resolving with the current user two factor status
    */
-  disable(): Promise<TwoFactorAuthObject> {
-    return unpackData(this._client.authApiClient().delete("/client/tfa"));
+  disable(attempt: number): Promise<TwoFactorAuthObject> {
+    const data = { tfa: { attempt } };
+    return unpackData(
+      this._client.authApiClient().delete("/client/tfa", { data }),
+    );
   }
 }
 
