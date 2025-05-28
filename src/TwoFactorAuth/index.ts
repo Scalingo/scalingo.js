@@ -1,5 +1,4 @@
 import { Client } from "..";
-import { APIError } from "../errors";
 import {
   TwoFactorAuthObject,
   DEFAULT_PROVIDER,
