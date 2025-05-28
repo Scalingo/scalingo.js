@@ -1,3 +1,7 @@
+## 0.12.0
+
+* feat: include `attempt` to `TwoFactorAuth` delete api call
+
 ## 0.11.0
 
 * feat: add the `role` field in `User` model
