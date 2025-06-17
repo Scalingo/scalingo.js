@@ -38,4 +38,6 @@ export interface CollaboratorInvitation {
   status: string;
   /** Link of for the invitation */
   invitation_link: string;
+  /** Collaborator with limited access */
+  is_limited?: boolean;
 }
