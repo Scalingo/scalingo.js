@@ -23,6 +23,8 @@ export interface Collaborator {
   status: string;
   /** Name of the application owning the collaborator */
   app_name?: string;
+  /** Collaborator have limited access */
+  is_limited?: boolean;
 }
 
 export interface CollaboratorInvitation {
