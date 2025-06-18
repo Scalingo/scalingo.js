@@ -1,3 +1,7 @@
+## 0.13.0
+
+* feat: add `is_limited` to `Collaborator` interface
+
 ## 0.12.0
 
 * feat: include `attempt` to `TwoFactorAuth` delete api call
