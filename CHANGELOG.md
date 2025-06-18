@@ -1,6 +1,10 @@
-## 0.13.0
+## 0.13.1
 
 * feat: add `is_limited` to `Collaborator` interface
+
+## 0.13.0
+
+* chore: bump dependencies
 
 ## 0.12.0
 
