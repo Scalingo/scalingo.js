@@ -89,4 +89,15 @@ export default class Collaborators {
       this._client.apiClient().get("/collaborators", { params }),
     );
   }
+
+  /**
+   * List update a collaborator of an application
+   * @see https://developers.scalingo.com/collaborators#update-a-collaborator
+   * @param appId ID of the app to get collaborators list}
+   */
+  update(appId: string, collaboratorId: string, collaborator: Collaborator): Promise<Collaborator> {
+    return unpackData(
+      this._client.apiClient().patch(`/apps/${appId}/collaborators/${collaboratorId}`, { collaborator: collaborator })
+    );
+  }
 }

@@ -61,3 +61,14 @@ describe("Collaborators#all", () => {
     },
   );
 });
+
+describe("Collaborators#update", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/collaborators/1234",
+    {collaborator: { is_limited: true }},
+    null,
+    (client) => {
+      return new Collaborators(client).update("toto", "1234", { is_limited: true });
+    },
+  );
+});
