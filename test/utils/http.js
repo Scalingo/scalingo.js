@@ -198,6 +198,38 @@ export function testPut(url, body, prefix, build) {
   });
 }
 
+export function testPatch(url, body, prefix, build) {
+  it("calls the API and return the data when there is no errors", async () => {
+    const client = new Client("test-token");
+    const mock = new MockAdapter(axios);
+    mock.onPatch(url).reply(200, {
+      [prefix]: { data: "value" },
+    });
+    const result = await build(client);
+    expect(result).to.deep.eq({ data: "value" });
+    expect(mock.history.patch[0].headers.Authorization).to.eq(
+      "Bearer test-token",
+    );
+    expect(JSON.parse(mock.history.patch[0].data)).to.deep.eq(body);
+  });
+
+  it("returns an error when the API fails", async () => {
+    const client = new Client("test-token");
+    const mock = new MockAdapter(axios);
+    mock.onPost(url).reply(404, {
+      error: "not found",
+    });
+    try {
+      await build(client);
+    } catch (error) {
+      expect(error).to.be.an.instanceOf(APIError);
+      expect(error.status).to.eq(404);
+      return;
+    }
+    expect.fail("The method did not throw");
+  });
+}
+
 export function testParamsGetter(url, opts, prefix, build) {
   describe("ParamsGetter", () => {
     it("calls the API and return the data when there is no errors", async () => {

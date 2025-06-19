@@ -3,6 +3,7 @@ import {
   testGetter,
   testDelete,
   testPost,
+  testPatch,
   testParamsGetter,
 } from "../utils/http";
 import "../factories";
@@ -63,10 +64,10 @@ describe("Collaborators#all", () => {
 });
 
 describe("Collaborators#update", () => {
-  testGetter(
+  testPatch(
     "https://api.osc-fr1.scalingo.com/v1/apps/toto/collaborators/1234",
     { collaborator: { is_limited: true } },
-    null,
+    "collaborator",
     (client) => {
       return new Collaborators(client).update("toto", "1234", {
         is_limited: true,

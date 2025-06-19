@@ -98,7 +98,7 @@ export default class Collaborators {
   update(
     appId: string,
     collaboratorId: string,
-    collaborator: Collaborator,
+    collaborator: Partial<Collaborator>,
   ): Promise<Collaborator> {
     return unpackData(
       this._client
@@ -106,6 +106,7 @@ export default class Collaborators {
         .patch(`/apps/${appId}/collaborators/${collaboratorId}`, {
           collaborator: collaborator,
         }),
+      "collaborator",
     );
   }
 }
