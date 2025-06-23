@@ -1,10 +1,5 @@
-import axios from "axios";
-import MockAdapter from "axios-mock-adapter";
-import { expect } from "chai";
-
-import { Client } from "../../src";
 import Projects from "../../src/Projects";
-import { testDelete, testGetter, testPost, testUpdate } from "../utils/http";
+import { testGetter, testPost, testUpdate } from "../utils/http";
 
 describe("Projects#all", () => {
   testGetter(
