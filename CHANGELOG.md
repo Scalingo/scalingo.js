@@ -1,3 +1,7 @@
+## 0.13.2
+
+* feat: support for `Project` model
+
 ## 0.13.1
 
 * feat: add `is_limited` to `Collaborator` interface
