@@ -32,10 +32,18 @@ describe("Projects#create", () => {
   testPost(
     "https://api.osc-fr1.scalingo.com/v1/projects",
     null,
-    { project: { name: "test-project", default: false } },
+    {
+      project: {
+        name: "test-project",
+        default: false,
+      },
+    },
     "project",
     (client) => {
-      return new Projects(client).create({ name: "test-project", default: false });
+      return new Projects(client).create({
+        name: "test-project",
+        default: false,
+      });
     },
   );
 });
@@ -43,10 +51,18 @@ describe("Projects#create", () => {
 describe("Projects#update", () => {
   testUpdate(
     "https://api.osc-fr1.scalingo.com/v1/projects/project-id",
-    { project: { name: "new-name", default: true } },
+    {
+      project: {
+        name: "new-name",
+        default: true,
+      },
+    },
     "project",
     (client) => {
-      return new Projects(client).update("project-id", { name: "new-name", default: true });
+      return new Projects(client).update("project-id", {
+        name: "new-name",
+        default: true,
+      });
     },
   );
 });

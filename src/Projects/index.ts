@@ -1,7 +1,10 @@
 import { Client } from "..";
-import { unpackData } from "../utils";
 import { Project } from "../models/regional/projects";
-import { CreateProjectParams, UpdateProjectParams } from "../params/regional/projects";
+import {
+  CreateProjectParams,
+  UpdateProjectParams,
+} from "../params/regional/projects";
+import { unpackData } from "../utils";
 
 /**
  * Projects API Client
@@ -32,7 +35,10 @@ export default class Projects {
    * @return Promise that when resolved returns a Project.
    */
   find(id: string): Promise<Project> {
-    return unpackData(this._client.apiClient().get(`/projects/${id}`), "project");
+    return unpackData(
+      this._client.apiClient().get(`/projects/${id}`),
+      "project",
+    );
   }
 
   /**
@@ -43,7 +49,7 @@ export default class Projects {
   create(payload: CreateProjectParams): Promise<Project> {
     return unpackData(
       this._client.apiClient().post("/projects", { project: payload }),
-      "project"
+      "project",
     );
   }
 
@@ -56,7 +62,7 @@ export default class Projects {
   update(id: string, payload: UpdateProjectParams): Promise<Project> {
     return unpackData(
       this._client.apiClient().patch(`/projects/${id}`, { project: payload }),
-      "project"
+      "project",
     );
   }
 
@@ -66,8 +72,6 @@ export default class Projects {
    * @return Promise that resolves when the project is deleted.
    */
   destroy(id: string): Promise<void> {
-    return unpackData(
-      this._client.apiClient().delete(`/projects/${id}`)
-    );
+    return unpackData(this._client.apiClient().delete(`/projects/${id}`));
   }
 }

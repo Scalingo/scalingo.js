@@ -2,7 +2,7 @@ export interface ProjectOwner {
   id: string;
   username: string;
   email: string;
-  flags: Record<string, boolean>; 
+  flags: Record<string, boolean>;
 }
 
 export interface Project {
