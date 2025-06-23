@@ -66,13 +66,3 @@ describe("Projects#update", () => {
     },
   );
 });
-
-describe("Projects#destroy", () => {
-  testDelete(
-    "https://api.osc-fr1.scalingo.com/v1/projects/project-id",
-    null,
-    (client) => {
-      return new Projects(client).destroy("project-id");
-    },
-  );
-});

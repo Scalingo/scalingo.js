@@ -65,13 +65,4 @@ export default class Projects {
       "project",
     );
   }
-
-  /**
-   * Destroy the given project.
-   * @param id ID or UUID of the project
-   * @return Promise that resolves when the project is deleted.
-   */
-  destroy(id: string): Promise<void> {
-    return unpackData(this._client.apiClient().delete(`/projects/${id}`));
-  }
 }
