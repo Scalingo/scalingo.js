@@ -8,8 +8,6 @@ export interface ProjectOwner {
 export interface Project {
   /** unique ID */
   id: string;
-  /** unique ID (different format) */
-  uuid: string;
   /** name of the project */
   name: string;
   /** is this the default project? */

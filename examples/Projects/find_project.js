@@ -3,7 +3,7 @@ const scalingo = require('../../dist/scalingo.js')
 scalingo
   .clientFromToken(process.env.SCALINGO_TOKEN)
   .then((client) => {
-    return client.Projects.find('project-uuid')
+    return client.Projects.find('project-id')
   })
   .then((project) => {
     console.log(project)
