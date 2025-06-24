@@ -1,8 +1,8 @@
 import { Client } from "..";
 import { Project } from "../models/regional/projects";
 import {
-  CreateProjectParams,
-  UpdateProjectParams,
+  CreateParams,
+  UpdateParams,
 } from "../params/regional/projects";
 import { unpackData } from "../utils";
 
@@ -46,7 +46,7 @@ export default class Projects {
    * @param payload Project creation parameters
    * @return Promise that when resolved returns the created Project.
    */
-  create(payload: CreateProjectParams): Promise<Project> {
+  create(payload: CreateParams): Promise<Project> {
     return unpackData(
       this._client.apiClient().post("/projects", { project: payload }),
       "project",
@@ -59,7 +59,7 @@ export default class Projects {
    * @param payload Project update parameters
    * @return Promise that when resolved returns the updated Project.
    */
-  update(id: string, payload: UpdateProjectParams): Promise<Project> {
+  update(id: string, payload: UpdateParams): Promise<Project> {
     return unpackData(
       this._client.apiClient().patch(`/projects/${id}`, { project: payload }),
       "project",
