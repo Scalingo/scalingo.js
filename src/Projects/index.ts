@@ -1,9 +1,6 @@
 import { Client } from "..";
 import { Project } from "../models/regional/projects";
-import {
-  CreateParams,
-  UpdateParams,
-} from "../params/regional/projects";
+import { CreateParams, UpdateParams } from "../params/regional/projects";
 import { unpackData } from "../utils";
 
 /**
