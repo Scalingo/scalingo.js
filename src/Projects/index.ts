@@ -31,7 +31,7 @@ export default class Projects {
 
   /**
    * Fetch a specific project
-   * @param id ID or UUID of the project
+   * @param id ID of the project
    * @return Promise that when resolved returns a Project.
    */
   find(id: string): Promise<Project> {
@@ -55,7 +55,7 @@ export default class Projects {
 
   /**
    * Update a project
-   * @param id ID or UUID of the project
+   * @param id ID of the project
    * @param payload Project update parameters
    * @return Promise that when resolved returns the updated Project.
    */
