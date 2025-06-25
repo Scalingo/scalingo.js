@@ -20,6 +20,7 @@ export default class Projects {
 
   /**
    * Get all projects for the current user
+   * @see https://developers.scalingo.com/projects#list-your-projects
    * @return Promise that when resolved returns a Project array.
    */
   all(): Promise<Project[]> {
@@ -28,6 +29,7 @@ export default class Projects {
 
   /**
    * Fetch a specific project
+   * @see https://developers.scalingo.com/projects#get-a-precise-project
    * @param id ID of the project
    * @return Promise that when resolved returns a Project.
    */
@@ -40,6 +42,7 @@ export default class Projects {
 
   /**
    * Create a new project
+   * @see https://developers.scalingo.com/projects#create-a-project
    * @param payload Project creation parameters
    * @return Promise that when resolved returns the created Project.
    */
@@ -52,6 +55,7 @@ export default class Projects {
 
   /**
    * Update a project
+   * @see https://developers.scalingo.com/projects#update-a-project
    * @param id ID of the project
    * @param payload Project update parameters
    * @return Promise that when resolved returns the updated Project.

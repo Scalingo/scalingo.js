@@ -37,6 +37,11 @@ export interface AppOwner {
   flags: Record<string, boolean>;
 }
 
+export interface AppProject {
+  id: string;
+  name: string;
+}
+
 /** @see https://developers.scalingo.com/apps */
 export interface App {
   /** unique ID */
@@ -57,6 +62,8 @@ export interface App {
   git_url: string;
   /** information about the owner of the application */
   owner: AppOwner;
+  /** information about the project parent of the app */
+  project: AppProject;
   /** platform allocated URL to access to your app */
   url: string;
   /** object of related link like deployments_stream */
