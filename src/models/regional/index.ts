@@ -16,6 +16,7 @@ export * from "./logs";
 export * from "./metrics";
 export * from "./notification_platforms";
 export * from "./notifiers";
+export * from "./projects";
 export * from "./scm_repo_links";
 export * from "./stacks";
 export * from "./stats";
