@@ -18,4 +18,6 @@ export interface Project {
   updated_at: string;
   /** information about the owner of the project */
   owner: ProjectOwner;
+  /** Project-specific flags */
+  flags: Record<string, boolean>;
 }

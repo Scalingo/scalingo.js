@@ -1,3 +1,6 @@
+## 0.13.3
+* feat: add `flags` to `Project` interface
+
 ## 0.13.2
 
 * feat: support for `Project` model
