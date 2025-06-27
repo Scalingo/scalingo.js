@@ -2,6 +2,7 @@
 
 * feat: support for `Project` model
 * feat: add `AppProject` to `App` interface
+* feat: add collaborators.update endpoint
 
 ## 0.13.1
 
