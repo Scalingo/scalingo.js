@@ -1,4 +1,4 @@
-## 0.13.2
+## 0.14.0
 
 * feat: support for `Project` model
 * feat: add `AppProject` to `App` interface
