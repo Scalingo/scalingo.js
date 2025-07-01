@@ -1,3 +1,6 @@
+## 0.14.2
+* feat: add `project_id` to `App` update params
+
 ## 0.14.1
 * feat: add `flags` to `Project` interface
 
