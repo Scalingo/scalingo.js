@@ -33,10 +33,13 @@ describe("Collaborators#invite", () => {
   testPost(
     "https://api.osc-fr1.scalingo.com/v1/apps/toto/collaborators",
     null,
-    { collaborator: { email: "toto@titi.tata" } },
+    { collaborator: { email: "toto@titi.tata", is_limited: false } },
     "collaborator",
     (client) => {
-      return new Collaborators(client).invite("toto", "toto@titi.tata");
+      return new Collaborators(client).invite("toto", {
+        email: "toto@titi.tata",
+        is_limited: false,
+      });
     },
   );
 });
