@@ -1,7 +1,12 @@
-## 0.13.2
+## 0.14.1
+* feat: add `flags` to `Project` interface
+
+## 0.14.0
 
 * feat: support for `Project` model
 * feat: add `AppProject` to `App` interface
+* feat: add projects endpoints
+* feat: add collaborators.update endpoint
 
 ## 0.13.1
 

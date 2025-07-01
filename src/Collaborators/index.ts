@@ -59,10 +59,15 @@ export default class Collaborators {
    * @param appId Id of the application
    * @param email Email of the collaborator to invite
    */
-  invite(appId: string, email: string): Promise<CollaboratorInvitation> {
+  invite(
+    appId: string,
+    payload: Collaborator,
+  ): Promise<CollaboratorInvitation> {
     return unpackData(
       this._client.apiClient().post(`/apps/${appId}/collaborators`, {
-        collaborator: { email: email },
+        collaborator: {
+          ...payload,
+        },
       }),
       "collaborator",
     );
