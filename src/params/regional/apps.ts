@@ -22,4 +22,6 @@ export interface UpdateParams {
   router_logs?: boolean;
   /** New stack ID */
   stack_id?: string;
+  /** New parent project ID */
+  project_id?: string;
 }
