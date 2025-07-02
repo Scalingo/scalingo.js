@@ -140,8 +140,8 @@ export default class Apps {
   }
 
   /**
-   * Update application settings: force HTTPS, sticky session, stack or router
-   * logs.
+   * Update application settings: force HTTPS, sticky session, stack, parent project
+   * or router logs.
    * @see https://developers.scalingo.com/apps#update-application-settings
    * @param {String} appID ID of the application
    * @param {AppUpdateOpts} appSettings - Settings to modify
