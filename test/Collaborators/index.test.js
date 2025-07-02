@@ -44,6 +44,18 @@ describe("Collaborators#invite", () => {
   );
 });
 
+describe("Collaborators#invite using an email address only", () => {
+  testPost(
+    "https://api.osc-fr1.scalingo.com/v1/apps/toto/collaborators",
+    null,
+    { collaborator: { email: "toto@titi.tata" } },
+    "collaborator",
+    (client) => {
+      return new Collaborators(client).invite("toto", "toto@titi.tata");
+    },
+  );
+});
+
 describe("Collaborators#inviteAccept", () => {
   testParamsGetter(
     "https://api.osc-fr1.scalingo.com/v1/apps/collaboration",
