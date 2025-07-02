@@ -61,8 +61,11 @@ export default class Collaborators {
    */
   invite(
     appId: string,
-    payload: Collaborator,
+    payload: Collaborator | string,
   ): Promise<CollaboratorInvitation> {
+    if (typeof payload === "string") {
+      payload = { email: payload } as Collaborator;
+    }
     return unpackData(
       this._client.apiClient().post(`/apps/${appId}/collaborators`, {
         collaborator: {
