@@ -1,3 +1,7 @@
+## 0.14.3
+* feat: add `project_id` and `project_name` to `Event` interface
+* chore: bump dependencies
+
 ## 0.14.2
 * feat: add `project_id` to `App` update params
 
