@@ -2,17 +2,26 @@ version: 2
 updates:
   - package-ecosystem: "npm"
     directory: "/"
+    versioning-strategy: auto
     allow:
       - dependency-type: "direct"
     ignore:
       - dependency-name: chai
       - dependency-name: eslint
-    schedule:
-      interval: "monthly"
-      time: "06:00"
-      timezone: "Europe/Paris"
-    open-pull-requests-limit: 10
     groups:
+      production-minor:
+        dependency-type: production
+        update-types:
+          - minor
+      production-patch:
+        dependency-type: production
+        update-types:
+          - patch
+      development:
+        dependency-type: development
+        update-types:
+          - minor
+          - patch
       linter-packages:
         patterns:
           - "@typescript-eslint/*"
@@ -25,14 +34,8 @@ updates:
           - "core-js"
           - "esbuild"
           - "typescript"
-      dev-test-packages:
-        patterns:
-          - "axios-mock-adapter"
-          - "chai"
-          - "mocha"
-          - "rosie"
-          - "sinon"
-          - "ts-mocha"
-          - "tsconfig-paths"
-          - "typedoc":
-      
+    schedule:
+      interval: "monthly"
+      time: "06:00"
+      timezone: "Europe/Paris"
+    open-pull-requests-limit: 10
