@@ -10,6 +10,8 @@ export interface CreateParams {
   dry_run?: boolean;
   /** URL to the future GitHub repository if your need to deploy from there without going through the git push workflow */
   git_source?: string;
+  /** Project ID */
+  project_id?: string;
 }
 
 /** @see https://developers.scalingo.com/apps#update-application-settings */
