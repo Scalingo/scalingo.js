@@ -72,17 +72,12 @@ export default class Addons {
     authenticated = false,
     dedicated = false,
   ): Promise<AddonProvider[]> {
-    let url = "/addon_providers";
-    const params = new URLSearchParams();
+    const params = new URLSearchParams({
+      ...(categoryId && { category_id: categoryId }),
+      ...(dedicated && { dedicated: "true" })
+    }).toString();
 
-    if (categoryId) {
-      params.set("category_id", categoryId);
-    }
-    if (dedicated) {
-      params.set("dedicated", "true");
-    }
-
-    url += `?${params.toString()}`;
+    const url = params ? `/addon_providers?${params}` : `/addon_providers`;
 
     const client = authenticated
       ? this._client.apiClient()
