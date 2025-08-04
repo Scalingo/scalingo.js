@@ -74,7 +74,7 @@ export default class Addons {
   ): Promise<AddonProvider[]> {
     const params = new URLSearchParams({
       ...(categoryId && { category_id: categoryId }),
-      ...(dedicated && { dedicated: "true" })
+      ...(dedicated && { dedicated: "true" }),
     }).toString();
 
     const url = params ? `/addon_providers?${params}` : `/addon_providers`;
