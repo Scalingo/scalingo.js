@@ -70,10 +70,19 @@ export default class Addons {
   listProviders(
     categoryId?: string,
     authenticated = false,
+    dedicated = false,
   ): Promise<AddonProvider[]> {
-    const url = categoryId
-      ? `/addon_providers?category_id=${categoryId}`
-      : "/addon_providers";
+    let url = "/addon_providers";
+    const params = new URLSearchParams();
+
+    if (categoryId) {
+      params.set("category_id", categoryId);
+    }
+    if (dedicated) {
+      params.set("dedicated", "true");
+    }
+
+    url += `?${params.toString()}`;
 
     const client = authenticated
       ? this._client.apiClient()
