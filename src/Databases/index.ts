@@ -1,5 +1,5 @@
 import { Client } from "..";
-import { Database } from "../models/regional/databases";
+import { Database, DashboardDatabase } from "../models/regional/databases";
 import { unpackData } from "../utils";
 
 /**
@@ -19,12 +19,12 @@ export default class Databases {
    * @return Promise that when resolved returns a Database array.
    */
 
-  all(opts?: { dashboard?: boolean }): Promise<Database[] | DashboardDatabase[]> {
+  all(opts?: {
+    dashboard?: boolean;
+  }): Promise<Database[] | DashboardDatabase[]> {
     return unpackData(
-      this._client
-        .apiClient()
-        .get("/databases", { params: opts }),
-      "apps"
+      this._client.apiClient().get("/databases", { params: opts }),
+      "apps",
     );
   }
 }

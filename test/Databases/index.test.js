@@ -20,5 +20,5 @@ describe("Databases#all (classic)", () => {
     (client) => {
       return new Databases(client).all();
     },
-);
+  );
 });
