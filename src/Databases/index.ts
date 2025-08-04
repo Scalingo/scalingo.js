@@ -19,6 +19,8 @@ export default class Databases {
    * @return Promise that when resolved returns a Database array.
    */
 
+  all(opts: { dashboard: true }): Promise<DashboardDatabase[]>;
+  all(opts?: { dashboard?: false }): Promise<Database[]>;
   all(opts?: {
     dashboard?: boolean;
   }): Promise<Database[] | DashboardDatabase[]> {
