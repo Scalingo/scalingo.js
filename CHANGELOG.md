@@ -1,11 +1,19 @@
+## 0.14.5
+
+* feat: support for `Database` interface
+* feat: add index endpoint for databases
+
 ## 0.14.4
+
 * feat: add `project_id` to `App` create params
 
 ## 0.14.3
+
 * feat: add `project_id` and `project_name` to `Event` interface
 * chore: bump dependencies
 
 ## 0.14.2
+
 * feat: add `project_id` to `App` update params
 
 ## 0.14.1

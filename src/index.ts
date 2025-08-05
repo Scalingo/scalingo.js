@@ -11,6 +11,7 @@ import Containers from "./Containers";
 import Contracts from "./Contracts";
 import CronTasks from "./CronTasks";
 import DataAccessConsent from "./DataAccessConsent";
+import Databases from "./Databases";
 import Deployments from "./Deployments";
 import Domains from "./Domains";
 import Environment from "./Environment";
@@ -96,6 +97,7 @@ export class Client {
   Contracts = new Contracts(this);
   CronTasks = new CronTasks(this);
   DataAccessConsent = new DataAccessConsent(this);
+  Databases = new Databases(this);
   Deployments = new Deployments(this);
   Domains = new Domains(this);
   Environment = new Environment(this);
