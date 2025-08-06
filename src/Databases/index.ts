@@ -1,5 +1,9 @@
 import { Client } from "..";
-import { Database, DashboardDatabase, CreateParams } from "../models/regional/databases";
+import {
+  Database,
+  DashboardDatabase,
+  CreateParams,
+} from "../models/regional/databases";
 import { unpackData } from "../utils";
 
 /**
