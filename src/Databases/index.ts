@@ -48,7 +48,7 @@ export default class Databases {
     project_id?: string;
   }): Promise<Database[] | DashboardDatabase[]> {
     return unpackData(
-      this._client.apiClient().post("/databases", { params: opts }),
+      this._client.apiClient().post("/databases", { opts }),
       "apps",
     );
   }
