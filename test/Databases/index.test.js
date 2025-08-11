@@ -1,5 +1,5 @@
 import Databases from "../../src/Databases";
-import { testGetter } from "../utils/http";
+import { testGetter, testPost } from "../utils/http";
 
 describe("Databases#all (dashboard)", () => {
   testGetter(
@@ -19,6 +19,28 @@ describe("Databases#all (classic)", () => {
     "apps",
     (client) => {
       return new Databases(client).all();
+    },
+  );
+});
+
+describe("Databases#create", () => {
+  testPost(
+    "https://api.osc-fr1.scalingo.com/v1/databases",
+    null,
+    {
+      database: {
+        addon_provider_id: "provider-id",
+        plan_id: "plan-id",
+        database_name: "db-name",
+      },
+    },
+    "apps",
+    (client) => {
+      return new Databases(client).create({
+        addon_provider_id: "provider-id",
+        plan_id: "plan-id",
+        database_name: "db-name",
+      });
     },
   );
 });
