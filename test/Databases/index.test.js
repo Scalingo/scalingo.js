@@ -31,15 +31,15 @@ describe("Databases#create", () => {
       database: {
         addon_provider_id: "provider-id",
         plan_id: "plan-id",
-        database_name: "db-name"
-      }
+        database_name: "db-name",
+      },
     },
     "apps",
     (client) => {
       return new Databases(client).create({
         addon_provider_id: "provider-id",
         plan_id: "plan-id",
-        database_name: "db-name"
+        database_name: "db-name",
       });
     },
   );
