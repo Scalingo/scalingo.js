@@ -60,6 +60,17 @@ describe("Addons#listProviders", () => {
       },
     );
   });
+
+  describe("dedicated", () => {
+    testGetter(
+      "https://api.osc-fr1.scalingo.com/v1/addon_providers?dedicated=true",
+      null,
+      "addon_providers",
+      (client) => {
+        return new Addons(client).listProviders(null, true, true);
+      },
+    );
+  });
 });
 
 describe("Addons#update", () => {

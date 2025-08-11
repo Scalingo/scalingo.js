@@ -1,5 +1,9 @@
 import { Client } from "..";
-import { Database, DashboardDatabase } from "../models/regional/databases";
+import {
+  Database,
+  DashboardDatabase,
+  CreateParams,
+} from "../models/regional/databases";
 import { unpackData } from "../utils";
 
 /**
@@ -26,6 +30,24 @@ export default class Databases {
   }): Promise<Database[] | DashboardDatabase[]> {
     return unpackData(
       this._client.apiClient().get("/databases", { params: opts }),
+      "apps",
+    );
+  }
+
+  /**
+   * Create a new database
+   * @param addon_provider_id ID of the addon provider
+   * @param plan_id ID of the plan
+   * @param database_name Name of the database
+   *
+   * @return Promise that when resolved returns the new database.
+   */
+
+  create(
+    createParams: CreateParams,
+  ): Promise<Database[] | DashboardDatabase[]> {
+    return unpackData(
+      this._client.apiClient().post("/databases", { database: createParams }),
       "apps",
     );
   }
