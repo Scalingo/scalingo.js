@@ -1,7 +1,7 @@
 ## 0.14.5
 
 * feat: support for `Database` interface
-* feat: add index endpoint for databases
+* feat: add index and create endpoints for databases
 
 ## 0.14.4
 
