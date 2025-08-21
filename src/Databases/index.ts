@@ -26,11 +26,11 @@ export default class Databases {
   all(opts: { dashboard: true }): Promise<DashboardDatabase[]>;
   all(opts?: { dashboard?: false }): Promise<Database[]>;
   all(opts?: {
-    dashboard?: boolean;
+    dashboard?       : boolean;
   }): Promise<Database[] | DashboardDatabase[]> {
     return unpackData(
-      this._client.apiClient().get("/databases", { params: opts }),
-      "apps",
+          this._client.apiClient().get("/databases", { params: opts }),
+          "apps",
     );
   }
 
