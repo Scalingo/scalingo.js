@@ -13,14 +13,9 @@ describe("Databases#all (dashboard)", () => {
 });
 
 describe("Databases#all (classic)", () => {
-  testGetter(
-    "https://api.osc-fr1.scalingo.com/v1/databases",
-    {},
-    "apps",
-    (client) => {
-      return new Databases(client).all();
-    },
-  );
+  testGetter("https://api.osc-fr1.scalingo.com/v1/databases", {}, (client) => {
+    return new Databases(client).all();
+  });
 });
 
 describe("Databases#create", () => {
