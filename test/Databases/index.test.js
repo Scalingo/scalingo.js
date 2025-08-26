@@ -5,7 +5,6 @@ describe("Databases#all (dashboard)", () => {
   testGetter(
     "https://api.osc-fr1.scalingo.com/v1/databases",
     { params: { dashboard: true } },
-    "apps",
     (client) => {
       return new Databases(client).all({ dashboard: true });
     },

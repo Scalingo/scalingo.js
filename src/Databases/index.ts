@@ -23,17 +23,12 @@ export default class Databases {
    * @return Promise that when resolved returns a Database array.
    */
 
-  all(opts: { dashboard: true }): Promise<DashboardDatabase[]>;
-  all(opts?: { dashboard?: false }): Promise<Database[]>;
   all(opts?: {
     dashboard?: boolean;
   }): Promise<Database[] | DashboardDatabase[]> {
-    const response = this._client
-      .apiClient()
-      .get("/databases", { params: opts });
-    const key = opts?.dashboard ? "apps" : undefined;
-
-    return unpackData(response, key);
+    return unpackData(
+      this._client.apiClient().get("/databases", { params: opts }),
+    );
   }
 
   /**
