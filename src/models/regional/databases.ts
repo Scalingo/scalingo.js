@@ -11,6 +11,16 @@ export interface DatabaseProject {
 }
 
 export interface DashboardDatabase {
+  app: DatabaseAppDashboard;
+  addon: DatabaseAddon;
+}
+
+export interface Database {
+  app: DatabaseApp;
+  addon: DatabaseAddon;
+}
+
+export interface DatabaseAppDashboard {
   id: string;
   uuid: string;
   name: string;
@@ -25,12 +35,6 @@ export interface DashboardDatabase {
   addon_updated_at?: string;
   dedicated_database?: boolean;
 }
-
-export interface Database {
-  app: DatabaseApp;
-  addon: DatabaseAddon;
-}
-
 export interface DatabaseApp {
   id: string;
   uuid: string;
