@@ -11,21 +11,7 @@ export interface DatabaseProject {
 }
 
 export interface DashboardDatabase {
-  app: {
-    id: string;
-    uuid: string;
-    name: string;
-    parent_app_id?: string;
-    region: string;
-    status: string;
-    created_at: string;
-    last_deployed_at?: string;
-    hds_resource?: boolean;
-    project: DatabaseProject;
-    owner: DatabaseOwner;
-    addon_updated_at?: string;
-    dedicated_database?: boolean;
-  };
+  app: DatabaseAppDashboard;
   addon: DatabaseAddon;
 }
 
@@ -34,6 +20,21 @@ export interface Database {
   addon: DatabaseAddon;
 }
 
+export interface DatabaseAppDashboard {
+  id: string;
+  uuid: string;
+  name: string;
+  parent_app_id?: string;
+  region: string;
+  status: string;
+  created_at: string;
+  last_deployed_at?: string;
+  hds_resource?: boolean;
+  project: DatabaseProject;
+  owner: DatabaseOwner;
+  addon_updated_at?: string;
+  dedicated_database?: boolean;
+}
 export interface DatabaseApp {
   id: string;
   uuid: string;
