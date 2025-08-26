@@ -36,7 +36,7 @@ export default class Databases {
     }
 
     return unpackData(
-      this._client.apiClient().get("/databases", { params: opts })
+      this._client.apiClient().get("/databases", { params: opts }),
     );
   }
 
