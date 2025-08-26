@@ -28,16 +28,12 @@ export default class Databases {
   all(opts?: {
     dashboard?: boolean;
   }): Promise<Database[] | DashboardDatabase[]> {
-    if (opts?.dashboard) {
-      return unpackData(
-        this._client.apiClient().get("/databases", { params: opts }),
-        "apps",
-      );
-    }
+    const response = this._client
+      .apiClient()
+      .get("/databases", { params: opts });
+    const key = opts?.dashboard ? "apps" : undefined;
 
-    return unpackData(
-      this._client.apiClient().get("/databases", { params: opts }),
-    );
+    return unpackData(response, key);
   }
 
   /**
