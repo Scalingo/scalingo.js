@@ -1,3 +1,8 @@
+## 0.14.6
+
+* feat: update `Database` interface to match the new API index
+* chore: bump dependencies
+
 ## 0.14.5
 
 * feat: support for `Database` interface
