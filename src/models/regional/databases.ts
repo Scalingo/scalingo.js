@@ -34,6 +34,7 @@ export interface DatabaseAppDashboard {
   owner: DatabaseOwner;
   addon_updated_at?: string;
   dedicated_database?: boolean;
+  addon?: DatabaseAddon;
 }
 export interface DatabaseApp {
   id: string;
