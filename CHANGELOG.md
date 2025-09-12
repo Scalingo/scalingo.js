@@ -1,3 +1,7 @@
+## 0.14.7
+
+* feat: add addon to `DatabaseAppDashboard` 
+
 ## 0.14.6
 
 * feat: update `Database` interface to match the new API index
