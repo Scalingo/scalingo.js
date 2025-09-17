@@ -109,3 +109,31 @@ export interface CreateParams {
   /** ID of the project (optional) */
   project_id?: string;
 }
+
+export type FirewallRuleType = "custom_range" | "managed_range";
+
+export interface FirewallRule {
+  id: string;
+  type: FirewallRuleType;
+  label?: string;
+  cidr?: string;
+  range_id?: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface CreateFirewallRuleParams {
+  type: FirewallRuleType;
+  label?: string;
+  cidr?: string;
+  range_id?: string;
+}
+
+export interface UpdateFirewallRuleParams {
+  label: string;
+}
+
+export interface ManagedRange {
+  id: string;
+  name: string;
+}
