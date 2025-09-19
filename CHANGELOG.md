@@ -1,6 +1,10 @@
+## 0.14.8
+
+* fix: rename `database_name` into `name` in `Database` `CreateParams`
+
 ## 0.14.7
 
-* feat: add addon to `DatabaseAppDashboard` 
+* feat: add addon to `DatabaseAppDashboard`
 
 ## 0.14.6
 
