@@ -35,7 +35,7 @@ export default class Databases {
    * Create a new database
    * @param addon_provider_id ID of the addon provider
    * @param plan_id ID of the plan
-   * @param database_name Name of the database
+   * @param name Name of the database
    *
    * @return Promise that when resolved returns the new database.
    */

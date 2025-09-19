@@ -31,7 +31,7 @@ describe("Databases#create", () => {
       database: {
         addon_provider_id: "provider-id",
         plan_id: "plan-id",
-        database_name: "db-name",
+        name: "db-name",
       },
     },
     "apps",
@@ -39,7 +39,7 @@ describe("Databases#create", () => {
       return new Databases(client).create({
         addon_provider_id: "provider-id",
         plan_id: "plan-id",
-        database_name: "db-name",
+        name: "db-name",
       });
     },
   );

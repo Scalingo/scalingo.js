@@ -105,7 +105,7 @@ export interface CreateParams {
   /** ID of the plan */
   plan_id: string;
   /** Name of the database */
-  database_name: string;
+  name: string;
   /** ID of the project (optional) */
   project_id?: string;
 }
