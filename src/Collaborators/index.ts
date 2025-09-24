@@ -1,17 +1,15 @@
 import { Client } from "..";
 import { App } from "../models/regional/apps";
-import { Collaborator } from "../models/regional/collaborators";
+import {
+  Collaborator,
+  CollaboratorInvitePayload,
+} from "../models/regional/collaborators";
 import { unpackData } from "../utils";
 
 export type IndexQuery = NonNullable<unknown>;
 
 export interface IndexResponse {
   collaborators: Collaborator[];
-}
-
-export interface CollaboratorInvitePayload {
-  email: string;
-  is_limited?: boolean;
 }
 
 /**

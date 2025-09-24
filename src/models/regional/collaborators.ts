@@ -30,3 +30,8 @@ export interface Collaborator {
   /** Two Factor Authentication status of the collaborator */
   tfa_status?: boolean;
 }
+
+export interface CollaboratorInvitePayload {
+  email: string;
+  is_limited?: boolean;
+}
