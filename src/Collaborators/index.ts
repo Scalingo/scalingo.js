@@ -1,15 +1,17 @@
 import { Client } from "..";
 import { App } from "../models/regional/apps";
-import {
-  Collaborator,
-  CollaboratorInvitation,
-} from "../models/regional/collaborators";
+import { Collaborator } from "../models/regional/collaborators";
 import { unpackData } from "../utils";
 
 export type IndexQuery = NonNullable<unknown>;
 
 export interface IndexResponse {
   collaborators: Collaborator[];
+}
+
+export interface CollaboratorInvitePayload {
+  email: string;
+  is_limited?: boolean;
 }
 
 /**
@@ -57,14 +59,14 @@ export default class Collaborators {
    * Invite collaborators to an application
    * @see https://developers.scalingo.com/collaborators#invite-collaborator-to-work-on-an-app
    * @param appId Id of the application
-   * @param email Email of the collaborator to invite
+   * @param payload (string | CollaboratorInvitation) Email of the limited collaborator or CollaboratorInvitation
    */
   invite(
     appId: string,
-    payload: Collaborator | string,
-  ): Promise<CollaboratorInvitation> {
+    payload: CollaboratorInvitePayload | string,
+  ): Promise<Collaborator> {
     if (typeof payload === "string") {
-      payload = { email: payload } as Collaborator;
+      payload = { email: payload } as CollaboratorInvitePayload;
     }
     return unpackData(
       this._client.apiClient().post(`/apps/${appId}/collaborators`, {

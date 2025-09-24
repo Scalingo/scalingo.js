@@ -11,33 +11,22 @@ export default {
 export interface Collaborator {
   /** Id of the collaborator */
   id: string;
-  /** Email of the collaborator to invite */
+  /** Email of the collaborator - required in the invite payload */
   email: string;
   /** Unique User ID of the user who accepted the collaboration */
   user_id: string;
   /** ID of the application owning the collaborator */
   app_id: string;
-  /** Username of the person to invite */
+  /** Username of the collaborator */
   username: string;
   /** Status of the invitation */
   status: string;
   /** Name of the application owning the collaborator */
   app_name?: string;
-  /** Collaborator with limited access */
+  /** Collaborator with limited access - true if the collaborator has limited access, false otherwise */
   is_limited?: boolean;
-}
-
-export interface CollaboratorInvitation {
-  /** Id of the collaborator */
-  id: string;
-  /** Email of the collaborator to invite */
-  email: string;
-  /** Username of the person to invite */
-  username: string;
-  /** Status of the invitation */
-  status: string;
-  /** Link of for the invitation */
-  invitation_link: string;
-  /** Collaborator with limited access */
-  is_limited?: boolean;
+  /** Link for the invitation */
+  invitation_link?: string;
+  /** Two Factor Authentication status of the collaborator */
+  tfa_status?: boolean;
 }
