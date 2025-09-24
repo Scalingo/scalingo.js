@@ -57,7 +57,7 @@ export default class Collaborators {
    * Invite collaborators to an application
    * @see https://developers.scalingo.com/collaborators#invite-collaborator-to-work-on-an-app
    * @param appId Id of the application
-   * @param payload (string | CollaboratorInvitation) Email of the limited collaborator or CollaboratorInvitation
+   * @param payload (string | CollaboratorInvitePayload) Email of the limited collaborator or CollaboratorInvitePayload
    */
   invite(
     appId: string,
