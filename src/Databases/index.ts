@@ -33,9 +33,8 @@ export default class Databases {
 
   /**
    * Create a new database
-   * @param addon_provider_id ID of the addon provider
-   * @param plan_id ID of the plan
-   * @param name Name of the database
+   * @param createParams Database creation options. Supports both the legacy
+   * (`addon_provider_id`/`plan_id`) and new (`technology`/`plan`) keys.
    *
    * @return Promise that when resolved returns the new database.
    */
@@ -43,8 +42,26 @@ export default class Databases {
   create(
     createParams: CreateParams,
   ): Promise<Database[] | DashboardDatabase[]> {
+    const {
+      addon_provider_id,
+      plan_id,
+      technology,
+      plan,
+      ...rest
+    } = createParams;
+
+    const databasePayload = {
+      ...rest,
+      ...(technology ?? addon_provider_id
+        ? { technology: technology ?? addon_provider_id }
+        : {}),
+      ...(plan ?? plan_id ? { plan: plan ?? plan_id } : {}),
+    };
+
     return unpackData(
-      this._client.apiClient().post("/databases", { database: createParams }),
+      this._client
+        .apiClient()
+        .post("/databases", { database: databasePayload }),
       "apps",
     );
   }
