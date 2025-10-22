@@ -13,6 +13,7 @@ export interface DatabaseProject {
 export interface DashboardDatabase {
   app: DatabaseAppDashboard;
   addon: DatabaseAddon;
+  database: DatabaseObject;
 }
 
 export interface Database {
@@ -82,6 +83,14 @@ export interface DatabaseAddon {
   deprovisioned_at?: string;
   status: string;
   hds_resource?: boolean;
+}
+
+export interface DatabaseObject {
+  id: string;
+  name: string;
+  project_id: string;
+  technology: string;
+  plan: string;
 }
 
 export interface DatabaseAddonProvider {
