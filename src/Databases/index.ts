@@ -42,20 +42,15 @@ export default class Databases {
   create(
     createParams: CreateParams,
   ): Promise<Database[] | DashboardDatabase[]> {
-    const {
-      addon_provider_id,
-      plan_id,
-      technology,
-      plan,
-      ...rest
-    } = createParams;
+    const { addon_provider_id, plan_id, technology, plan, ...rest } =
+      createParams;
 
     const databasePayload = {
       ...rest,
-      ...(technology ?? addon_provider_id
+      ...((technology ?? addon_provider_id)
         ? { technology: technology ?? addon_provider_id }
         : {}),
-      ...(plan ?? plan_id ? { plan: plan ?? plan_id } : {}),
+      ...((plan ?? plan_id) ? { plan: plan ?? plan_id } : {}),
     };
 
     return unpackData(
