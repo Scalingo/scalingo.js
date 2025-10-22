@@ -19,6 +19,7 @@ export interface DashboardDatabase {
 export interface Database {
   app: DatabaseApp;
   addon: DatabaseAddon;
+  database: DatabaseObject;
 }
 
 export interface DatabaseAppDashboard {
