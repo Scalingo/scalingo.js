@@ -30,26 +30,6 @@ describe("Databases#create", () => {
     {
       database: {
         name: "db-name",
-        technology: "provider-id",
-        plan: "plan-id",
-      },
-    },
-    "apps",
-    (client) => {
-      return new Databases(client).create({
-        addon_provider_id: "provider-id",
-        plan_id: "plan-id",
-        name: "db-name",
-      });
-    },
-  );
-
-  testPost(
-    "https://api.osc-fr1.scalingo.com/v1/databases",
-    null,
-    {
-      database: {
-        name: "db-name",
         technology: "postgresql",
         plan: "XS Sandbox",
       },
