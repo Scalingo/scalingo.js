@@ -13,11 +13,13 @@ export interface DatabaseProject {
 export interface DashboardDatabase {
   app: DatabaseAppDashboard;
   addon: DatabaseAddon;
+  database: DatabaseObject;
 }
 
 export interface Database {
   app: DatabaseApp;
   addon: DatabaseAddon;
+  database: DatabaseObject;
 }
 
 export interface DatabaseAppDashboard {
@@ -35,6 +37,7 @@ export interface DatabaseAppDashboard {
   addon_updated_at?: string;
   dedicated_database?: boolean;
   addon?: DatabaseAddon;
+  database?: DatabaseObject;
 }
 export interface DatabaseApp {
   id: string;
@@ -84,6 +87,14 @@ export interface DatabaseAddon {
   hds_resource?: boolean;
 }
 
+export interface DatabaseObject {
+  id: string;
+  name: string;
+  project_id: string;
+  technology: string;
+  plan: string;
+}
+
 export interface DatabaseAddonProvider {
   id: string;
   name: string;
@@ -100,10 +111,11 @@ export interface DatabaseAddonPlan {
 }
 
 export interface CreateParams {
-  /** ID of the addon provider */
-  addon_provider_id: string;
-  /** ID of the plan */
-  plan_id: string;
+  /**
+  /** Technology ID or slug of the addon provider */
+  technology?: string;
+  /** Plan ID or name */
+  plan?: string;
   /** Name of the database */
   name: string;
   /** ID of the project (optional) */
