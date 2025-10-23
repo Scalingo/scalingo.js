@@ -31,7 +31,7 @@ describe("Databases#create", () => {
       database: {
         name: "db-name",
         technology: "postgresql",
-        plan: "XS Sandbox",
+        plan: "sandbox",
       },
     },
     "apps",
