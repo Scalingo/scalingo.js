@@ -38,7 +38,7 @@ describe("Databases#create", () => {
     (client) => {
       return new Databases(client).create({
         technology: "postgresql",
-        plan: "XS Sandbox",
+        plan: "sandbox",
         name: "db-name",
       });
     },
