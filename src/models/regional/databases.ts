@@ -112,15 +112,6 @@ export interface DatabaseAddonPlan {
 
 export interface CreateParams {
   /**
-   * ID of the addon provider
-   * @deprecated Use `technology` instead.
-   */
-  addon_provider_id?: string;
-  /**
-   * ID of the plan
-   * @deprecated Use `plan` instead.
-   */
-  plan_id?: string;
   /** Technology slug of the addon provider */
   technology?: string;
   /** Plan slug or display name */

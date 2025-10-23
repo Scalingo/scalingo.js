@@ -33,9 +33,9 @@ export default class Databases {
 
   /**
    * Create a new database
-   * @param createParams Database creation options. Supports both the legacy
-   * (`addon_provider_id`/`plan_id`) and new (`technology`/`plan`) keys.
-   *
+   * @param technology ID of the addon provider
+   * @param plan ID of the plan
+   * @param name Name of the database
    * @return Promise that when resolved returns the new database.
    */
 
