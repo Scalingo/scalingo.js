@@ -29,17 +29,17 @@ describe("Databases#create", () => {
     null,
     {
       database: {
-        addon_provider_id: "provider-id",
-        plan_id: "plan-id",
-        database_name: "db-name",
+        name: "db-name",
+        technology: "postgresql",
+        plan: "sandbox",
       },
     },
     "apps",
     (client) => {
       return new Databases(client).create({
-        addon_provider_id: "provider-id",
-        plan_id: "plan-id",
-        database_name: "db-name",
+        technology: "postgresql",
+        plan: "sandbox",
+        name: "db-name",
       });
     },
   );

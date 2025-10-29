@@ -1,3 +1,16 @@
+## 0.15.0
+
+* feat: Enhance `Collaborator` interfaces (https://github.com/Scalingo/scalingo.js/pull/487)
+  Note (breaking change): `CollaboratorInvitation` has been removed in the process.
+
+## 0.14.8
+
+* fix: rename `database_name` into `name` in `Database` `CreateParams`
+
+## 0.14.7
+
+* feat: add addon to `DatabaseAppDashboard`
+
 ## 0.14.6
 
 * feat: update `Database` interface to match the new API index

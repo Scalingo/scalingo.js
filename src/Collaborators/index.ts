@@ -2,7 +2,7 @@ import { Client } from "..";
 import { App } from "../models/regional/apps";
 import {
   Collaborator,
-  CollaboratorInvitation,
+  CollaboratorInvitePayload,
 } from "../models/regional/collaborators";
 import { unpackData } from "../utils";
 
@@ -57,14 +57,14 @@ export default class Collaborators {
    * Invite collaborators to an application
    * @see https://developers.scalingo.com/collaborators#invite-collaborator-to-work-on-an-app
    * @param appId Id of the application
-   * @param email Email of the collaborator to invite
+   * @param payload (string | CollaboratorInvitePayload) Email of the limited collaborator or CollaboratorInvitePayload
    */
   invite(
     appId: string,
-    payload: Collaborator | string,
-  ): Promise<CollaboratorInvitation> {
+    payload: CollaboratorInvitePayload | string,
+  ): Promise<Collaborator> {
     if (typeof payload === "string") {
-      payload = { email: payload } as Collaborator;
+      payload = { email: payload } as CollaboratorInvitePayload;
     }
     return unpackData(
       this._client.apiClient().post(`/apps/${appId}/collaborators`, {
