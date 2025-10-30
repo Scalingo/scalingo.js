@@ -66,4 +66,14 @@ export default class Projects {
       "project",
     );
   }
+
+  /**
+   * Delete a project
+   * @see https://developers.scalingo.com/projects#delete-a-project
+   * @param id ID of the project
+   * @return Promise that when resolved indicates the project has been deleted.
+   */
+  delete(id: string): Promise<void> {
+    return this._client.apiClient().delete(`/projects/${id}`);
+  }
 }
