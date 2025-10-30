@@ -1,3 +1,12 @@
+## 0.15.2
+
+* feat: add project deletion
+
+## 0.15.1
+
+* feat: support new technology/plan params for database
+* chore: bump dependencies
+
 ## 0.15.0
 
 * feat: Enhance `Collaborator` interfaces (https://github.com/Scalingo/scalingo.js/pull/487)
