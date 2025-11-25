@@ -153,4 +153,18 @@ export default class Apps {
       "app",
     );
   }
+
+  /**
+   * Get the private network domain names for the application.
+   * @param appID ID of the application
+   * @returns Promise that resolves with the private network domain names.
+   */
+  private_network_domain_names(appID: string): Promise<string[]> {
+    return unpackData(
+      this._client
+        .apiClient()
+        .get(`/apps/${appID}/private_network_domain_names`),
+      "domain_names",
+    );
+  }
 }
