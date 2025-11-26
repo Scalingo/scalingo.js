@@ -1,3 +1,5 @@
+import { PaginationOpts } from "src/meta";
+
 import { Client } from "..";
 import Listener from "../Deployments/listener";
 import { App } from "../models/regional/apps";
@@ -157,13 +159,17 @@ export default class Apps {
   /**
    * Get the private network domain names for the application.
    * @param appID ID of the application
+   * @param opts Pagination options
    * @returns Promise that resolves with the private network domain names.
    */
-  private_network_domain_names(appID: string): Promise<string[]> {
+  private_network_domain_names(
+    appID: string,
+    opts?: PaginationOpts,
+  ): Promise<string[]> {
     return unpackData(
       this._client
         .apiClient()
-        .get(`/apps/${appID}/private_network_domain_names`),
+        .get(`/apps/${appID}/private_network_domain_names`, { params: opts }),
       "domain_names",
     );
   }
