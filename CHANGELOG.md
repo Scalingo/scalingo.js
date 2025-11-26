@@ -1,3 +1,8 @@
+## 0.15.3
+
+* feat: add app get `private_network_domain_names` endpoint
+* chore: bump dependencies
+
 ## 0.15.2
 
 * feat: add project deletion
