@@ -189,3 +189,26 @@ describe("App#update", () => {
     },
   );
 });
+
+describe("App#private_network_domain_names", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/v1/apps/app-id/private_network_domain_names",
+    null,
+    "domain_names",
+    (client) => {
+      return new Apps(client).private_network_domain_names("app-id");
+    },
+  );
+
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/v1/apps/app-id/private_network_domain_names",
+    { page: 2, per_page: 50 },
+    "domain_names",
+    (client) => {
+      return new Apps(client).private_network_domain_names("app-id", {
+        page: 2,
+        per_page: 50,
+      });
+    },
+  );
+});
