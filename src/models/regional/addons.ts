@@ -43,6 +43,7 @@ export interface Plan {
   /** Description of the plan */
   description: string;
   hds_available: boolean;
+  trial_available: boolean;
 }
 
 export interface AddonProvider {
