@@ -1,3 +1,7 @@
+## 0.15.4
+
+* feat: add `trial_available` to `AddonPlan` interface
+
 ## 0.15.3
 
 * feat: add app get `private_network_domain_names` endpoint
