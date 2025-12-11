@@ -16,6 +16,8 @@ export interface Addon {
   /** Current status of the addon */
   status: "running" | "provisioning" | "suspended";
   hds_resource: boolean;
+  /** Last time the addon has been updated */
+  updated_at: string;
 }
 
 export interface AddonUpgradeResponse {
