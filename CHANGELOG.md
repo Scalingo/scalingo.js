@@ -1,3 +1,9 @@
+## 0.15.4
+
+* feat: add `updated_at` to `Addon` interface
+* feat: add `last_event` to `App` interface
+* chore: bump dependencies
+
 ## 0.15.3
 
 * feat: add app get `private_network_domain_names` endpoint
