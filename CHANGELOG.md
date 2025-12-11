@@ -1,3 +1,7 @@
+## 0.15.5
+
+* feat: add `to_be_discontinued` to `AddonPlan` interface
+
 ## 0.15.3
 
 * feat: add app get `private_network_domain_names` endpoint
