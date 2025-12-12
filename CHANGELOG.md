@@ -1,5 +1,6 @@
 ## 0.15.5
 
+* feat: add `to_be_discontinued` to `AddonPlan` interface
 * feat: add `trial_available` to `AddonPlan` interface
 
 ## 0.15.4

@@ -45,6 +45,7 @@ export interface Plan {
   /** Description of the plan */
   description: string;
   hds_available: boolean;
+  to_be_discontinued: boolean;
   trial_available: boolean;
 }
 
