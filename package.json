@@ -1,6 +1,6 @@
 {
   "name": "scalingo",
-  "version": "0.15.3",
+  "version": "0.15.4",
   "description": "Wrapper for the Scalingo API",
   "main": "dist/scalingo.js",
   "module": "lib/index.js",
@@ -34,7 +34,7 @@
     "axios-mock-adapter": "^2.0.0",
     "chai": "^4.3.6",
     "core-js": "^3.21.1",
-    "esbuild": "^0.25.0",
+    "esbuild": "^0.27.1",
     "eslint": "8.57.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-import": "^2.25.3",

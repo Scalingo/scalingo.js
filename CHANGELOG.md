@@ -1,6 +1,13 @@
 ## 0.15.5
 
 * feat: add `to_be_discontinued` to `AddonPlan` interface
+* feat: add `trial_available` to `AddonPlan` interface
+
+## 0.15.4
+
+* feat: add `updated_at` to `Addon` interface
+* feat: add `last_event` to `App` interface
+* chore: bump dependencies
 
 ## 0.15.3
 

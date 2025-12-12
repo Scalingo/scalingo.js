@@ -91,6 +91,8 @@ export interface App {
   hds_resource: boolean;
   /** IDs of the private networks associated with the app */
   private_networks_ids: string[];
+  /** Last event that happened on the app */
+  last_event: Event;
 }
 
 export interface AppLinks {
