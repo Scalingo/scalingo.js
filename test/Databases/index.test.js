@@ -23,6 +23,17 @@ describe("Databases#all (classic)", () => {
   );
 });
 
+describe("Databases#show", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/v1/databases/db-id",
+    {},
+    "database",
+    (client) => {
+      return new Databases(client).show("db-id");
+    },
+  );
+});
+
 describe("Databases#create", () => {
   testPost(
     "https://api.osc-fr1.scalingo.com/v1/databases",

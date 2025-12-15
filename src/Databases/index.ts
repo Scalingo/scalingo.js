@@ -32,6 +32,18 @@ export default class Databases {
   }
 
   /**
+   * Get details for a specific database
+   * @param id ID of the database
+   * @return Promise that when resolved returns the requested database.
+   */
+  show(id: string): Promise<Database> {
+    return unpackData(
+      this._client.apiClient().get(`/databases/${id}`),
+      "database",
+    );
+  }
+
+  /**
    * Create a new database
    * @param technology ID or slug of the technology (addon provider)
    * @param plan ID or name of the plan
