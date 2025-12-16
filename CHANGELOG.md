@@ -1,11 +1,8 @@
-## 0.15.6
-
-* feat: add show endpoint for databases
-
 ## 0.15.5
 
 * feat: add `to_be_discontinued` to `AddonPlan` interface
 * feat: add `trial_available` to `AddonPlan` interface
+* feat: add show endpoint for databases
 
 ## 0.15.4
 
