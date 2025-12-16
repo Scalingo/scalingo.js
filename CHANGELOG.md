@@ -1,3 +1,7 @@
+## 0.15.6
+
+* feat: add show endpoint for databases
+
 ## 0.15.5
 
 * feat: add `to_be_discontinued` to `AddonPlan` interface
