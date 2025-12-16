@@ -27,7 +27,7 @@ describe("Databases#show", () => {
   testGetter(
     "https://api.osc-fr1.scalingo.com/v1/databases/db-id",
     {},
-    "database",
+    null,
     (client) => {
       return new Databases(client).show("db-id");
     },

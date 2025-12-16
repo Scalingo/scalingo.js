@@ -36,11 +36,8 @@ export default class Databases {
    * @param id ID of the database
    * @return Promise that when resolved returns the requested database.
    */
-  show(id: string): Promise<Database> {
-    return unpackData(
-      this._client.apiClient().get(`/databases/${id}`),
-      "database",
-    );
+  show(id: string): Promise<DashboardDatabase> {
+    return unpackData(this._client.apiClient().get(`/databases/${id}`));
   }
 
   /**
