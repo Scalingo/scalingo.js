@@ -1,3 +1,7 @@
+## To be released
+
+* feat: add `properties` to `Plan` interface
+
 ## 0.15.6
 
 * feat: extend show endpoint for databases

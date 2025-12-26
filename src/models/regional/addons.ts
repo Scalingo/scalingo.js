@@ -47,6 +47,7 @@ export interface Plan {
   hds_available: boolean;
   to_be_discontinued: boolean;
   trial_available: boolean;
+  properties?: Record<string, number | string | boolean>;
 }
 
 export interface AddonProvider {
