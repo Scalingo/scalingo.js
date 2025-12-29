@@ -1,4 +1,4 @@
-## To be released
+## 0.16
 
 * feat: add `properties` to `Plan` interface
 
