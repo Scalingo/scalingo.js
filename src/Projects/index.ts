@@ -2,6 +2,7 @@ import { Client } from "..";
 import { Project } from "../models/regional/projects";
 import { CreateParams, UpdateParams } from "../params/regional/projects";
 import { unpackData } from "../utils";
+import TransferInvitations from "./TransferInvitations";
 
 /**
  * Projects API Client
@@ -75,5 +76,14 @@ export default class Projects {
    */
   delete(id: string): Promise<void> {
     return this._client.apiClient().delete(`/projects/${id}`);
+  }
+
+  /**
+   * Get the transfer invitations client for a project
+   * @param projectId ID of the project
+   * @return TransferInvitations client for the project
+   */
+  transferInvitations(projectId: string): TransferInvitations {
+    return new TransferInvitations(this._client, projectId);
   }
 }
