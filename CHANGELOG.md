@@ -1,3 +1,7 @@
+## 0.16.1
+
+* feat: add `databases` to `Databases` index
+
 ## 0.16
 
 * feat: add `properties` to `Plan` interface
