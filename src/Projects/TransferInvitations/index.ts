@@ -90,7 +90,10 @@ export default class TransferInvitations {
    * @param payload Transfer invitation update parameters
    * @return Promise that when resolved returns the updated ProjectTransferInvitation.
    */
-  update(id: string, payload: UpdateParams): Promise<ProjectTransferInvitation> {
+  update(
+    id: string,
+    payload: UpdateParams,
+  ): Promise<ProjectTransferInvitation> {
     return unpackData(
       this._client
         .apiClient()

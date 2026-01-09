@@ -96,9 +96,7 @@ describe("TransferInvitations#accept", () => {
     {},
     "transfer_invitation",
     (client) => {
-      return new TransferInvitations(client, projectId).accept(
-        "invitation-id",
-      );
+      return new TransferInvitations(client, projectId).accept("invitation-id");
     },
   );
 });
