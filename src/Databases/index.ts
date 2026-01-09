@@ -28,6 +28,7 @@ export default class Databases {
   }): Promise<Database[] | DashboardDatabase[]> {
     return unpackData(
       this._client.apiClient().get("/databases", { params: opts }),
+      "databases",
     );
   }
 
