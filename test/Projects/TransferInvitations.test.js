@@ -93,7 +93,7 @@ describe("TransferInvitations#accept", () => {
   testPost(
     `https://api.osc-fr1.scalingo.com/v1/projects/${projectId}/transfer_invitations/invitation-id/accept`,
     null,
-    {},
+    null,
     "transfer_invitation",
     (client) => {
       return new TransferInvitations(client, projectId).accept("invitation-id");
@@ -105,7 +105,7 @@ describe("TransferInvitations#decline", () => {
   testPost(
     `https://api.osc-fr1.scalingo.com/v1/projects/${projectId}/transfer_invitations/invitation-id/decline`,
     null,
-    {},
+    null,
     "transfer_invitation",
     (client) => {
       return new TransferInvitations(client, projectId).decline(
