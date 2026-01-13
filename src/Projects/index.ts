@@ -1,5 +1,5 @@
 import { Client } from "..";
-import { Project } from "../models/regional/projects";
+import { EligibleNewOwner, Project } from "../models/regional/projects";
 import { CreateParams, UpdateParams } from "../params/regional/projects";
 import { unpackData } from "../utils";
 import TransferInvitations from "./TransferInvitations";
@@ -76,6 +76,19 @@ export default class Projects {
    */
   delete(id: string): Promise<void> {
     return this._client.apiClient().delete(`/projects/${id}`);
+  }
+
+  /**
+   * Get eligible new owners for a project
+   * @see https://developers.scalingo.com/projects#list-eligible-new-owners
+   * @param id ID of the project
+   * @return Promise that when resolved returns an array of eligible new owners.
+   */
+  eligibleNewOwners(id: string): Promise<EligibleNewOwner[]> {
+    return unpackData(
+      this._client.apiClient().get(`/projects/${id}/eligible_new_owners`),
+      "eligible_new_owners",
+    );
   }
 
   /**
