@@ -20,6 +20,8 @@ export interface ProjectTransferInvitation {
   inviter_user_id: string;
   /** ID of the user who is invited */
   invited_user_id: string;
+  /** Username of the user who is invited */
+  invited_user_name: string;
   /** Status of the invitation */
   status: ProjectTransferInvitationStatus;
   /** Reason for the current status (optional) */
