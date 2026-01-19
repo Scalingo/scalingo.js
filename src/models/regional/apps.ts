@@ -35,6 +35,7 @@ export interface AppOwner {
   username: string;
   email: string;
   flags: Record<string, boolean>;
+  free_trial_ends_at: string | null;
 }
 
 export interface AppProject {
