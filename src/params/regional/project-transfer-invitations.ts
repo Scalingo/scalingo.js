@@ -9,14 +9,6 @@ export interface CreateParams {
 }
 
 /**
- * Parameters for updating a project transfer invitation
- */
-export interface UpdateParams {
-  /** New status for the invitation */
-  status: ProjectTransferInvitationStatus;
-}
-
-/**
  * Parameters for listing project transfer invitations
  */
 export interface ListParams {

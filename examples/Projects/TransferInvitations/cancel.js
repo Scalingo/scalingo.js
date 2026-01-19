@@ -11,12 +11,10 @@ if (!projectId || !invitationId) {
 scalingo
   .clientFromToken(process.env.SCALINGO_TOKEN)
   .then((client) => {
-    return client.Projects.transferInvitations(projectId).update(invitationId, {
-      status: 'canceled',
-    })
+    return client.Projects.transferInvitations(projectId).cancel(invitationId)
   })
   .then((invitation) => {
-    console.log('Updated transfer invitation:')
+    console.log('Canceled transfer invitation:')
     console.log(invitation)
   })
   .catch((err) => {

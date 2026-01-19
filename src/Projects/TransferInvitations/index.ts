@@ -3,7 +3,6 @@ import { ProjectTransferInvitation } from "../../models/regional/project-transfe
 import {
   CreateParams,
   ListParams,
-  UpdateParams,
 } from "../../params/regional/project-transfer-invitations";
 import { unpackData } from "../../utils";
 
@@ -84,22 +83,18 @@ export default class TransferInvitations {
   }
 
   /**
-   * Update a transfer invitation
-   * @see https://developers.scalingo.com/projects#update-a-project-transfer-invitation
+   * Cancel a transfer invitation
+   * @see https://developers.scalingo.com/projects#cancel-a-project-transfer-invitation
    * @param id ID of the transfer invitation
-   * @param payload Transfer invitation update parameters
-   * @return Promise that when resolved returns the updated ProjectTransferInvitation.
+   * @return Promise that when resolved returns the cancelled ProjectTransferInvitation.
    */
-  update(
-    id: string,
-    payload: UpdateParams,
-  ): Promise<ProjectTransferInvitation> {
+  cancel(id: string): Promise<ProjectTransferInvitation> {
     return unpackData(
       this._client
         .apiClient()
-        .patch(`/projects/${this._projectId}/transfer_invitations/${id}`, {
-          transfer_invitation: payload,
-        }),
+        .post(
+          `/projects/${this._projectId}/transfer_invitations/${id}/cancel`,
+        ),
       "transfer_invitation",
     );
   }

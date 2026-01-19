@@ -69,21 +69,15 @@ describe("TransferInvitations#create", () => {
   );
 });
 
-describe("TransferInvitations#update", () => {
-  testUpdate(
-    `https://api.osc-fr1.scalingo.com/v1/projects/${projectId}/transfer_invitations/invitation-id`,
-    {
-      transfer_invitation: {
-        status: "canceled",
-      },
-    },
+describe("TransferInvitations#cancel", () => {
+  testPost(
+    `https://api.osc-fr1.scalingo.com/v1/projects/${projectId}/transfer_invitations/invitation-id/cancel`,
+    null,
+    null,
     "transfer_invitation",
     (client) => {
-      return new TransferInvitations(client, projectId).update(
+      return new TransferInvitations(client, projectId).cancel(
         "invitation-id",
-        {
-          status: "canceled",
-        },
       );
     },
   );
