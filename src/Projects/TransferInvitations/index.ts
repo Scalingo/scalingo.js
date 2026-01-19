@@ -27,7 +27,7 @@ export default class TransferInvitations {
 
   /**
    * List all transfer invitations for the project
-   * @see https://developers.scalingo.com/projects#list-project-transfer-invitations
+   * @see https://developers.scalingo.com/projects#list-all-your-project-transfer-invitations
    * @param params List parameters (optional)
    * @return Promise that when resolved returns a ProjectTransferInvitation array.
    */
@@ -84,7 +84,7 @@ export default class TransferInvitations {
 
   /**
    * Cancel a transfer invitation
-   * @see https://developers.scalingo.com/projects#cancel-a-project-transfer-invitation
+   * @see https://developers.scalingo.com/projects#cancel-a-project-transfer-invitation-owner-of-project
    * @param id ID of the transfer invitation
    * @return Promise that when resolved returns the cancelled ProjectTransferInvitation.
    */
@@ -101,7 +101,7 @@ export default class TransferInvitations {
 
   /**
    * Accept a transfer invitation
-   * @see https://developers.scalingo.com/projects#accept-a-project-transfer-invitation
+   * @see https://developers.scalingo.com/projects#accept-a-project-transfer-invitation-member-of-project
    * @param id ID of the transfer invitation
    * @return Promise that when resolved returns the accepted ProjectTransferInvitation.
    */
@@ -116,7 +116,7 @@ export default class TransferInvitations {
 
   /**
    * Decline a transfer invitation
-   * @see https://developers.scalingo.com/projects#decline-a-project-transfer-invitation
+   * @see https://developers.scalingo.com/projects#decline-a-project-transfer-invitation-member-of-project
    * @param id ID of the transfer invitation
    * @return Promise that when resolved returns the declined ProjectTransferInvitation.
    */
