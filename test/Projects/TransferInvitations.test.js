@@ -1,5 +1,5 @@
 import TransferInvitations from "../../src/Projects/TransferInvitations/index";
-import { testGetter, testPost, testUpdate } from "../utils/http";
+import { testGetter, testPost } from "../utils/http";
 
 const projectId = "project-123";
 
@@ -76,9 +76,7 @@ describe("TransferInvitations#cancel", () => {
     null,
     "transfer_invitation",
     (client) => {
-      return new TransferInvitations(client, projectId).cancel(
-        "invitation-id",
-      );
+      return new TransferInvitations(client, projectId).cancel("invitation-id");
     },
   );
 });

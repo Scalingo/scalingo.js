@@ -92,9 +92,7 @@ export default class TransferInvitations {
     return unpackData(
       this._client
         .apiClient()
-        .post(
-          `/projects/${this._projectId}/transfer_invitations/${id}/cancel`,
-        ),
+        .post(`/projects/${this._projectId}/transfer_invitations/${id}/cancel`),
       "transfer_invitation",
     );
   }
