@@ -32,20 +32,10 @@ export default class TransferInvitations {
    * @return Promise that when resolved returns a ProjectTransferInvitation array.
    */
   all(params?: ListParams): Promise<ProjectTransferInvitation[]> {
-    const queryParams: Record<string, string> = {};
-    if (params?.status) {
-      queryParams.status = params.status;
-    }
-
-    const queryString =
-      Object.keys(queryParams).length > 0
-        ? `?${new URLSearchParams(queryParams).toString()}`
-        : "";
-
     return unpackData(
       this._client
         .apiClient()
-        .get(`/projects/${this._projectId}/transfer_invitations${queryString}`),
+        .get(`/projects/${this._projectId}/transfer_invitations`, { params }),
       "transfer_invitations",
     );
   }
@@ -92,7 +82,10 @@ export default class TransferInvitations {
     return unpackData(
       this._client
         .apiClient()
-        .post(`/projects/${this._projectId}/transfer_invitations/${id}/cancel`),
+        .post(
+          `/projects/${this._projectId}/transfer_invitations/${id}/cancel`,
+          {},
+        ),
       "transfer_invitation",
     );
   }
@@ -107,7 +100,10 @@ export default class TransferInvitations {
     return unpackData(
       this._client
         .apiClient()
-        .post(`/projects/${this._projectId}/transfer_invitations/${id}/accept`),
+        .post(
+          `/projects/${this._projectId}/transfer_invitations/${id}/accept`,
+          {},
+        ),
       "transfer_invitation",
     );
   }
@@ -124,6 +120,7 @@ export default class TransferInvitations {
         .apiClient()
         .post(
           `/projects/${this._projectId}/transfer_invitations/${id}/decline`,
+          {},
         ),
       "transfer_invitation",
     );
