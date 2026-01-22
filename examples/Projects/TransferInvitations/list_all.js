@@ -1,19 +1,11 @@
 const scalingo = require('../../../dist/scalingo.js')
 
-const projectId = process.env.PROJECT_ID
-
-if (!projectId) {
-  console.error('PROJECT_ID environment variable is required')
-  process.exit(1)
-}
-
 scalingo
   .clientFromToken(process.env.SCALINGO_TOKEN)
   .then((client) => {
-    return client.Projects.transferInvitations(projectId).all()
+    return client.Projects.transferInvitations('project-id').all()
   })
   .then((invitations) => {
-    console.log('All transfer invitations:')
     console.log(invitations)
   })
   .catch((err) => {
