@@ -1,3 +1,8 @@
+## 0.17.0
+
+* feat: add `ProjectTransferInvitation` interface
+* feat: add project transfer invitations endpoints (index, show, create, accept, decline, cancel)
+
 ## 0.16.1
 
 * feat: add `databases` to `Databases` index

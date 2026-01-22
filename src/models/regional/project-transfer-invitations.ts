@@ -24,9 +24,9 @@ export interface ProjectTransferInvitation {
   invited_user_name: string;
   /** Status of the invitation */
   status: ProjectTransferInvitationStatus;
-  /** Reason for the current status (optional) */
+  /** Reason provided if transfer failed (optional) */
   status_reason?: string;
-  /** When the invitation expires */
+  /** When the invitation expires (3 days after creation) */
   expires_at: string;
   /** When the invitation was created */
   created_at: string;
