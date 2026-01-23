@@ -61,3 +61,14 @@ describe("Projects#update", () => {
     },
   );
 });
+
+describe("Projects#eligibleNewOwners", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/v1/projects/project-id/eligible_new_owners",
+    null,
+    "eligible_new_owners",
+    (client) => {
+      return new Projects(client).eligibleNewOwners("project-id");
+    },
+  );
+});
