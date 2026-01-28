@@ -1,8 +1,10 @@
 import { Client } from "..";
+import TransferInvitations from "./TransferInvitations";
+import { AppEvents } from "../models/regional/events";
 import { EligibleNewOwner, Project } from "../models/regional/projects";
+import { IndexParams } from "../params/regional/events";
 import { CreateParams, UpdateParams } from "../params/regional/projects";
 import { unpackData } from "../utils";
-import TransferInvitations from "./TransferInvitations";
 
 /**
  * Projects API Client
@@ -88,6 +90,17 @@ export default class Projects {
     return unpackData(
       this._client.apiClient().get(`/projects/${id}/eligible_new_owners`),
       "eligible_new_owners",
+    );
+  }
+
+  /**
+   * Return all events of a project
+   * @param id ID of the project
+   * @param opts Object that contains the index of the page and the number of elements per page
+   */
+  events(id: string, opts?: IndexParams): Promise<AppEvents> {
+    return unpackData(
+      this._client.apiClient().get(`/projects/${id}/events`, { params: opts }),
     );
   }
 
