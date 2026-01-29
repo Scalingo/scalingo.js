@@ -1,5 +1,10 @@
 import Projects from "../../src/Projects";
-import { testGetter, testPost, testUpdate } from "../utils/http";
+import {
+  testGetter,
+  testParamsGetter,
+  testPost,
+  testUpdate,
+} from "../utils/http";
 
 describe("Projects#all", () => {
   testGetter(
@@ -69,6 +74,30 @@ describe("Projects#eligibleNewOwners", () => {
     "eligible_new_owners",
     (client) => {
       return new Projects(client).eligibleNewOwners("project-id");
+    },
+  );
+});
+
+describe("Projects#events", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/v1/projects/project-id/events",
+    null,
+    null,
+    (client) => {
+      return new Projects(client).events("project-id", { page: 1, from: 2 });
+    },
+  );
+
+  testParamsGetter(
+    "https://api.osc-fr1.scalingo.com/v1/projects/project-id/events",
+    { page: 1, per_page: 2, from: 1 },
+    null,
+    (client) => {
+      return new Projects(client).events("project-id", {
+        page: 1,
+        per_page: 2,
+        from: 1,
+      });
     },
   );
 });
