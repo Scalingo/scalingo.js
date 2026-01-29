@@ -2,6 +2,7 @@
 
 * feat: add `ProjectTransferInvitation` interface
 * feat: add project transfer invitations endpoints (index, show, create, accept, decline, cancel)
+* feat: add `in_free_trial` to `AppOwner` interface
 
 ## 0.16.1
 
