@@ -30,6 +30,8 @@ export interface AppEvents {
   meta: PaginationMeta;
 }
 
+export type ProjectEvents = AppEvents;
+
 export interface Event {
   /** Id of the event */
   id: string;
