@@ -25,7 +25,4 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - name: Publish via trusted publishing
-      env:
-        NODE_AUTH_TOKEN: ""
-        NPM_TOKEN: ""
       run: npm publish --provenance
