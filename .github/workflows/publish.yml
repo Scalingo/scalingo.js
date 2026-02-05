@@ -25,4 +25,7 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - name: Publish via trusted publishing
-      run: npm publish --provenance
+      run: |
+        unset NODE_AUTH_TOKEN
+        unset NPM_TOKEN
+        npm publish --provenance
