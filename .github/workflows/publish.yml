@@ -24,4 +24,21 @@ jobs:
         registry-url: 'https://registry.npmjs.org'
         cache: 'npm'
     - run: npm ci
+    - name: Auth env check
+      run: |
+        if [ -n "${NODE_AUTH_TOKEN:-}" ]; then
+          echo "NODE_AUTH_TOKEN is set"
+        else
+          echo "NODE_AUTH_TOKEN is not set"
+        fi
+        if [ -n "${NPM_TOKEN:-}" ]; then
+          echo "NPM_TOKEN is set"
+        else
+          echo "NPM_TOKEN is not set"
+        fi
+        if [ -n "${NPM_CONFIG_USERCONFIG:-}" ]; then
+          echo "NPM_CONFIG_USERCONFIG is set"
+        else
+          echo "NPM_CONFIG_USERCONFIG is not set"
+        fi
     - run: npm publish 
