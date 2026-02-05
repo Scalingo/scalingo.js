@@ -16,16 +16,50 @@ jobs:
       id-token: write
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Using Node.js 20 (LTS)
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20.x'
-        registry-url: 'https://registry.npmjs.org'
-        cache: 'npm'
-    - run: npm ci
-    - name: Publish via trusted publishing
-      run: |
-        unset NODE_AUTH_TOKEN
-        unset NPM_TOKEN
-        npm publish --provenance
+      - uses: actions/checkout@v4
+
+      - name: Using Node.js 20 (LTS)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
+
+      - name: Ensure npm supports trusted publishing
+        run: |
+          npm i -g npm@11.5.1
+          node -v
+          npm -v
+          npm config get registry
+          npm config get userconfig
+
+      - run: npm ci
+
+      - name: Debug npm auth sources (redacted)
+        shell: bash
+        run: |
+          echo "registry=$(npm config get registry)"
+          echo "userconfig=$(npm config get userconfig)"
+          echo "--- repo .npmrc"
+          if [ -f .npmrc ]; then
+            cat .npmrc
+          else
+            echo "no repo .npmrc"
+          fi
+          echo "--- user ~/.npmrc (redacted)"
+          if [ -f "$HOME/.npmrc" ]; then
+            sed -E 's/(_authToken=).+/\1***REDACTED***/' "$HOME/.npmrc"
+          else
+            echo "no ~/.npmrc"
+          fi
+          echo "--- effective config (auth/registry/userconfig)"
+          npm config list -l | grep -iE 'auth|token|registry|userconfig' || true
+          echo "--- env (auth-related)"
+          env | grep -iE 'NODE_AUTH_TOKEN|NPM_TOKEN|NPM_CONFIG|npm_config' || true
+
+      - name: Publish via trusted publishing (OIDC only)
+        shell: bash
+        run: |
+          # If org/repo secrets set these, they can force token auth (even if empty)
+          unset NODE_AUTH_TOKEN NPM_TOKEN npm_config_userconfig
+          npm publish --provenance
