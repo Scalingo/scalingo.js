@@ -41,4 +41,9 @@ jobs:
         else
           echo "NPM_CONFIG_USERCONFIG is not set"
         fi
+        echo "NPM_CONFIG_USERCONFIG path: ${NPM_CONFIG_USERCONFIG:-<empty>}"
+        if [ -n "${NPM_CONFIG_USERCONFIG:-}" ] && [ -f "${NPM_CONFIG_USERCONFIG}" ]; then
+          echo "NPM_CONFIG_USERCONFIG auth lines (redacted):"
+          rg -n "(_authToken|_auth)" "${NPM_CONFIG_USERCONFIG}" | sed -E 's/=.*/=<redacted>/'
+        fi
     - run: npm publish 
