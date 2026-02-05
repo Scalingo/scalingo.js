@@ -1,3 +1,7 @@
+## 0.17.1
+
+* improv: Enable trusted npm publishing
+
 ## 0.17.0
 
 * feat: add `ProjectTransferInvitation` interface
