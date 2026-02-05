@@ -1,4 +1,4 @@
-## 0.17.1
+## 0.17.2
 
 * improv: Enable trusted npm publishing
 
