@@ -23,12 +23,14 @@ export interface EventType {
   description: string;
 }
 
-export interface AppEvents {
+export interface PaginatedEvents {
   /** List of events */
   events: Event[];
   /** Meta information */
   meta: PaginationMeta;
 }
+
+export type AppEvents = PaginatedEvents;
 
 export interface Event {
   /** Id of the event */

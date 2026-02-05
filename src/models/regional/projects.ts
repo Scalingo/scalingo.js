@@ -5,6 +5,11 @@ export interface ProjectOwner {
   flags: Record<string, boolean>;
 }
 
+export interface EligibleNewOwner {
+  user_id: string;
+  user_name: string;
+}
+
 export interface Project {
   /** unique ID */
   id: string;

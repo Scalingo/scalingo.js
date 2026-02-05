@@ -1,5 +1,8 @@
 import { Client } from "..";
-import { Project } from "../models/regional/projects";
+import TransferInvitations from "./TransferInvitations";
+import { PaginatedEvents } from "../models/regional/events";
+import { EligibleNewOwner, Project } from "../models/regional/projects";
+import { IndexParams } from "../params/regional/events";
 import { CreateParams, UpdateParams } from "../params/regional/projects";
 import { unpackData } from "../utils";
 
@@ -75,5 +78,38 @@ export default class Projects {
    */
   delete(id: string): Promise<void> {
     return this._client.apiClient().delete(`/projects/${id}`);
+  }
+
+  /**
+   * Get eligible new owners for a project
+   * @see https://developers.scalingo.com/projects#list-eligible-new-owners
+   * @param id ID of the project
+   * @return Promise that when resolved returns an array of eligible new owners.
+   */
+  eligibleNewOwners(id: string): Promise<EligibleNewOwner[]> {
+    return unpackData(
+      this._client.apiClient().get(`/projects/${id}/eligible_new_owners`),
+      "eligible_new_owners",
+    );
+  }
+
+  /**
+   * Return all events of a project
+   * @param id ID of the project
+   * @param opts Object that contains the index of the page and the number of elements per page
+   */
+  events(id: string, opts?: IndexParams): Promise<PaginatedEvents> {
+    return unpackData(
+      this._client.apiClient().get(`/projects/${id}/events`, { params: opts }),
+    );
+  }
+
+  /**
+   * Get the transfer invitations client for a project
+   * @param projectId ID of the project
+   * @return TransferInvitations client for the project
+   */
+  transferInvitations(projectId: string): TransferInvitations {
+    return new TransferInvitations(this._client, projectId);
   }
 }
