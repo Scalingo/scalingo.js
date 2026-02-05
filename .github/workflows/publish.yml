@@ -46,4 +46,9 @@ jobs:
           echo "NPM_CONFIG_USERCONFIG auth lines (redacted):"
           rg -n "(_authToken|_auth)" "${NPM_CONFIG_USERCONFIG}" | sed -E 's/=.*/=<redacted>/'
         fi
+    - name: Clear npm token env for trusted publishing
+      run: |
+        unset NODE_AUTH_TOKEN
+        unset NPM_TOKEN
+        unset NPM_CONFIG_USERCONFIG
     - run: npm publish 
