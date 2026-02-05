@@ -51,4 +51,4 @@ jobs:
         NODE_AUTH_TOKEN: ""
         NPM_TOKEN: ""
         NPM_CONFIG_USERCONFIG: ""
-      run: npm publish 
+      run: npm publish --provenance
