@@ -2,6 +2,7 @@ import { Client } from "..";
 import {
   Database,
   DashboardDatabase,
+  ApiDatabase,
   CreateParams,
 } from "../models/regional/databases";
 import { unpackData } from "../utils";
@@ -39,6 +40,18 @@ export default class Databases {
    */
   show(id: string): Promise<DashboardDatabase> {
     return unpackData(this._client.apiClient().get(`/databases/${id}`));
+  }
+
+  /**
+   * Get detailed information for a specific database from the dbaas API
+   * @param addonId ID of the database addon (e.g., 'ad-xxxx-xxxx-xxxx')
+   * @return Promise that when resolved returns detailed database information.
+   */
+  apiShow(addonId: string): Promise<ApiDatabase> {
+    return unpackData(
+      this._client.apiClient().get(`/databases/${addonId}`),
+      "database",
+    );
   }
 
   /**
