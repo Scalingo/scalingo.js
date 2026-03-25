@@ -34,6 +34,17 @@ describe("Databases#show", () => {
   );
 });
 
+describe("Databases#apiShow", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012",
+    {},
+    "database",
+    (client) => {
+      return new Databases(client).apiShow("ad-1234-5678-9012");
+    },
+  );
+});
+
 describe("Databases#create", () => {
   testPost(
     "https://api.osc-fr1.scalingo.com/v1/databases",
