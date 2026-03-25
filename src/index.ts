@@ -168,6 +168,19 @@ export class Client {
       headers: this._headers,
     });
   }
+
+  /**
+   * Create an axios instance configured for the Scalingo DBaaS API
+   * @return Axios client for the Scalingo DBaaS API (uses /api/ prefix)
+   */
+  dbaasApiClient(): AxiosInstance {
+    return axios.create({
+      baseURL: `${this._apiUrl}/api/`,
+      headers: Object.assign({}, this._headers, {
+        Authorization: `Bearer ${this._token}`,
+      }),
+    });
+  }
 }
 
 export class EndpointClient {

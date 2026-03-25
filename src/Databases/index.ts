@@ -49,7 +49,7 @@ export default class Databases {
    */
   apiShow(addonId: string): Promise<ApiDatabase> {
     return unpackData(
-      this._client.apiClient().get(`/databases/${addonId}`),
+      this._client.dbaasApiClient().get(`/databases/${addonId}`),
       "database",
     );
   }

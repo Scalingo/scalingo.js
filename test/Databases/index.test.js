@@ -36,7 +36,7 @@ describe("Databases#show", () => {
 
 describe("Databases#apiShow", () => {
   testGetter(
-    "https://api.osc-fr1.scalingo.com/v1/databases/ad-1234-5678-9012",
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012",
     {},
     "database",
     (client) => {
