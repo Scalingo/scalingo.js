@@ -1,3 +1,7 @@
+## 0.17.12
+
+* feat: add `apiShow()` method for dbaas databases endpoint (`GET /api/databases/{addonId}`)
+
 ## 0.17.11
 
 * improv: Enable trusted npm publishing
