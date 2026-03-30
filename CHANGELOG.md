@@ -1,3 +1,7 @@
+## 0.17.13
+
+* feat: add DatabaseFeature interface and update features type in ApiDatabase
+
 ## 0.17.12
 
 * feat: add `apiShow()` method for dbaas databases endpoint (`GET /api/databases/{addonId}`)

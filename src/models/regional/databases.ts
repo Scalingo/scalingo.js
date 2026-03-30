@@ -122,6 +122,14 @@ export interface CreateParams {
   project_id?: string;
 }
 
+/** Database feature */
+export interface DatabaseFeature {
+  /** Feature name (e.g., 'force-ssl', 'publicly-available') */
+  name: string;
+  /** Feature status (e.g., 'ACTIVATED', 'DISABLED') */
+  status: string;
+}
+
 /** PostgreSQL specific configuration */
 export interface PostgreSQLConfig {
   /** Whether TimescaleDB extension is enabled */
@@ -143,7 +151,7 @@ export interface DatabaseInstance {
   /** Instance private IP */
   private_ip: string;
   /** Instance features */
-  features: string[];
+  features?: string[];
 }
 
 /** Database maintenance window configuration */
@@ -169,7 +177,7 @@ export interface ApiDatabase {
   /** Whether encryption at rest is enabled */
   encryption_at_rest: boolean;
   /** Database features */
-  features: string[];
+  features: DatabaseFeature[];
   /** Database plan */
   plan: string;
   /** Database status */
