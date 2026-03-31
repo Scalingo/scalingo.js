@@ -164,6 +164,50 @@ export interface MaintenanceWindow {
   duration_in_hour: number;
 }
 
+/** Database type information */
+export interface DatabaseType {
+  /** Database type ID */
+  id: string;
+  /** Database type name (e.g., 'postgresql', 'mysql', 'mongodb') */
+  name: string;
+  /** Logo URL for the database type */
+  logo_url: string;
+  /** Short description */
+  short_description: string;
+  /** Full description */
+  description: string;
+  /** Creation timestamp */
+  created_at: string;
+  /** Last update timestamp */
+  updated_at: string;
+}
+
+/** Database type version information */
+export interface DatabaseTypeVersion {
+  /** Version ID */
+  id: string;
+  /** Creation timestamp */
+  created_at: string;
+  /** Last update timestamp */
+  updated_at: string;
+  /** Major version number */
+  major: number;
+  /** Minor version number */
+  minor: number;
+  /** Patch version number */
+  patch: number;
+  /** Build number */
+  build: number;
+  /** Database type ID this version belongs to */
+  database_type_id: string;
+  /** Enabled features (e.g., 'tls') */
+  features: string[];
+  /** Next available upgrade version ID */
+  next_upgrade: string | null;
+  /** Allowed plugins for this version */
+  allowed_plugins: string[] | null;
+}
+
 /** Detailed database information from dbaas API */
 export interface ApiDatabase {
   /** Database ID */
