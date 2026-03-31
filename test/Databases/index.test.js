@@ -45,6 +45,41 @@ describe("Databases#apiShow", () => {
   );
 });
 
+describe("Databases#listDatabaseTypes", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/api/database_types",
+    {},
+    "database_types",
+    (client) => {
+      return new Databases(client).listDatabaseTypes();
+    },
+  );
+});
+
+describe("Databases#showDatabaseType", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/api/database_types/5eea3324d6f2bd5a55e2aa9d",
+    {},
+    "database_type",
+    (client) => {
+      return new Databases(client).showDatabaseType("5eea3324d6f2bd5a55e2aa9d");
+    },
+  );
+});
+
+describe("Databases#showDatabaseTypeVersion", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/api/database_type_versions/69aea6e66e8b2491afad1f8c",
+    {},
+    "database_type_version",
+    (client) => {
+      return new Databases(client).showDatabaseTypeVersion(
+        "69aea6e66e8b2491afad1f8c",
+      );
+    },
+  );
+});
+
 describe("Databases#create", () => {
   testPost(
     "https://api.osc-fr1.scalingo.com/v1/databases",

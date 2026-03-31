@@ -1,3 +1,9 @@
+## 0.17.14
+
+* feat: add `listDatabaseTypes()` method (`GET /api/database_types`)
+* feat: add `showDatabaseType()` method (`GET /api/database_types/:id`)
+* feat: add `showDatabaseTypeVersion()` method (`GET /api/database_type_versions/:id`)
+
 ## 0.17.13
 
 * feat: add DatabaseFeature interface and update features type in ApiDatabase

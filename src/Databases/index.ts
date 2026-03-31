@@ -4,6 +4,8 @@ import {
   DashboardDatabase,
   ApiDatabase,
   CreateParams,
+  DatabaseType,
+  DatabaseTypeVersion,
 } from "../models/regional/databases";
 import { unpackData } from "../utils";
 
@@ -51,6 +53,41 @@ export default class Databases {
     return unpackData(
       this._client.dbaasApiClient().get(`/databases/${addonId}`),
       "database",
+    );
+  }
+
+  /**
+   * Get all database types from the dbaas API
+   * @return Promise that when resolved returns an array of database types.
+   */
+  listDatabaseTypes(): Promise<DatabaseType[]> {
+    return unpackData(
+      this._client.dbaasApiClient().get("/database_types"),
+      "database_types",
+    );
+  }
+
+  /**
+   * Get information for a specific database type from the dbaas API
+   * @param id ID of the database type
+   * @return Promise that when resolved returns database type information.
+   */
+  showDatabaseType(id: string): Promise<DatabaseType> {
+    return unpackData(
+      this._client.dbaasApiClient().get(`/database_types/${id}`),
+      "database_type",
+    );
+  }
+
+  /**
+   * Get information for a specific database type version from the dbaas API
+   * @param id ID of the database type version
+   * @return Promise that when resolved returns database type version information.
+   */
+  showDatabaseTypeVersion(id: string): Promise<DatabaseTypeVersion> {
+    return unpackData(
+      this._client.dbaasApiClient().get(`/database_type_versions/${id}`),
+      "database_type_version",
     );
   }
 
