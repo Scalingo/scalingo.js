@@ -1,4 +1,5 @@
 import { Client } from "..";
+import Maintenances from "./Maintenances";
 import {
   Database,
   DashboardDatabase,
@@ -106,5 +107,14 @@ export default class Databases {
       this._client.apiClient().post("/databases", { database: createParams }),
       "apps",
     );
+  }
+
+  /**
+   * Get the maintenances client for a database
+   * @param databaseId ID of the database addon (e.g., 'ad-xxxx-xxxx-xxxx')
+   * @return Maintenances client for the database
+   */
+  maintenances(databaseId: string): Maintenances {
+    return new Maintenances(this._client, databaseId);
   }
 }
