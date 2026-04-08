@@ -14,6 +14,7 @@ export * from "./environment";
 export * from "./events";
 export * from "./hds_contact";
 export * from "./logs";
+export * from "./maintenances";
 export * from "./metrics";
 export * from "./notification_platforms";
 export * from "./notifiers";
