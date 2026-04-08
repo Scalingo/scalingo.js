@@ -1,3 +1,10 @@
+## 0.17.15
+
+* chore(deps-dev): bump the development group with 7 updates by @dependabot[bot] in https://github.com/Scalingo/scalingo.js/pull/532
+* chore(deps): bump picomatch from 2.3.1 to 2.3.2 by @dependabot[bot] in https://github.com/Scalingo/scalingo.js/pull/534
+* chore(deps): bump the production-minor group across 1 directory with 2 updates by @dependabot[bot] in https://github.com/Scalingo/scalingo.js/pull/531
+* feat: Add database maintenances by @aurelien-reeves-scalingo in https://github.com/Scalingo/scalingo.js/pull/536
+
 ## 0.17.14
 
 * feat: add `listDatabaseTypes()` method (`GET /api/database_types`)
