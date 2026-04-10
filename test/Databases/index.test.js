@@ -1,5 +1,5 @@
 import Databases from "../../src/Databases";
-import { testGetter, testPost } from "../utils/http";
+import { testGetter, testPost, testUpdate } from "../utils/http";
 
 describe("Databases#all (dashboard)", () => {
   testGetter(
@@ -41,6 +41,33 @@ describe("Databases#apiShow", () => {
     "database",
     (client) => {
       return new Databases(client).apiShow("ad-1234-5678-9012");
+    },
+  );
+});
+
+describe("Databases#apiUpdate", () => {
+  testUpdate(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012",
+    {
+      database: {
+        periodic_backups_enabled: true,
+        periodic_backups_scheduled_at: [3],
+        maintenance_window: {
+          weekday_utc: 1,
+          starting_hour_utc: 4,
+        },
+      },
+    },
+    "database",
+    (client) => {
+      return new Databases(client).apiUpdate("ad-1234-5678-9012", {
+        periodic_backups_enabled: true,
+        periodic_backups_scheduled_at: [3],
+        maintenance_window: {
+          weekday_utc: 1,
+          starting_hour_utc: 4,
+        },
+      });
     },
   );
 });

@@ -122,6 +122,21 @@ export interface CreateParams {
   project_id?: string;
 }
 
+/** Parameters accepted when updating a database via the dbaas API */
+export interface DatabaseUpdateParams {
+  /** Whether periodic backups are enabled */
+  periodic_backups_enabled?: boolean;
+  /** Scheduled hours for periodic backups */
+  periodic_backups_scheduled_at?: number[];
+  /** Maintenance window configuration */
+  maintenance_window?: {
+    /** Day of the week in UTC (0-6, where 0 is Sunday) */
+    weekday_utc: number;
+    /** Starting hour in UTC (0-23) */
+    starting_hour_utc: number;
+  };
+}
+
 /** Database feature */
 export interface DatabaseFeature {
   /** Feature name (e.g., 'force-ssl', 'publicly-available') */

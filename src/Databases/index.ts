@@ -4,6 +4,7 @@ import {
   DashboardDatabase,
   ApiDatabase,
   CreateParams,
+  DatabaseUpdateParams,
   DatabaseType,
   DatabaseTypeVersion,
 } from "../models/regional/databases";
@@ -52,6 +53,24 @@ export default class Databases {
   apiShow(addonId: string): Promise<ApiDatabase> {
     return unpackData(
       this._client.dbaasApiClient().get(`/databases/${addonId}`),
+      "database",
+    );
+  }
+
+  /**
+   * Update a database configuration via the dbaas API
+   * @param addonId ID of the database addon (e.g., 'ad-xxxx-xxxx-xxxx')
+   * @param params Database update parameters
+   * @return Promise that when resolved returns the updated database.
+   */
+  apiUpdate(
+    addonId: string,
+    params: DatabaseUpdateParams,
+  ): Promise<ApiDatabase> {
+    return unpackData(
+      this._client
+        .dbaasApiClient()
+        .patch(`/databases/${addonId}`, { database: params }),
       "database",
     );
   }
