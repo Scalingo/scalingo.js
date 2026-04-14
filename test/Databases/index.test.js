@@ -72,6 +72,98 @@ describe("Databases#apiUpdate", () => {
   );
 });
 
+describe("Databases#apiPlan", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/plan",
+    {},
+    "plan",
+    (client) => {
+      return new Databases(client).apiPlan("ad-1234-5678-9012");
+    },
+  );
+});
+
+describe("Databases#apiMetrics", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/metrics",
+    {},
+    null,
+    (client) => {
+      return new Databases(client).apiMetrics("ad-1234-5678-9012");
+    },
+  );
+});
+
+describe("Databases#apiMetricsType", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/metrics/cpu",
+    { params: { since: 3 } },
+    null,
+    (client) => {
+      return new Databases(client).apiMetricsType("ad-1234-5678-9012", "cpu", {
+        since: 3,
+      });
+    },
+  );
+});
+
+describe("Databases#apiHealth", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/health",
+    {},
+    null,
+    (client) => {
+      return new Databases(client).apiHealth("ad-1234-5678-9012");
+    },
+  );
+});
+
+describe("Databases#apiInstancesStatus", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/instances_status",
+    {},
+    null,
+    (client) => {
+      return new Databases(client).apiInstancesStatus("ad-1234-5678-9012");
+    },
+  );
+});
+
+describe("Databases#apiLag", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/lag",
+    {},
+    null,
+    (client) => {
+      return new Databases(client).apiLag("ad-1234-5678-9012");
+    },
+  );
+});
+
+describe("Databases#apiLogs", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/logs",
+    {},
+    "url",
+    (client) => {
+      return new Databases(client).apiLogs("ad-1234-5678-9012");
+    },
+  );
+});
+
+describe("Databases#apiLogsArchives", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/logs_archives",
+    { params: { cursor: 2 } },
+    null,
+    (client) => {
+      return new Databases(client).apiLogsArchives("ad-1234-5678-9012", {
+        cursor: 2,
+      });
+    },
+  );
+});
+
 describe("Databases#listDatabaseTypes", () => {
   testGetter(
     "https://api.osc-fr1.scalingo.com/api/database_types",
