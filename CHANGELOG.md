@@ -1,3 +1,7 @@
+## to be released
+
+* feat: Add database Ca Certificate download URL by @aurelien-reeves-scalingo in https://github.com/Scalingo/scalingo.js/pull/541
+
 ## 0.17.15
 
 * chore(deps-dev): bump the development group with 7 updates by @dependabot[bot] in https://github.com/Scalingo/scalingo.js/pull/532
