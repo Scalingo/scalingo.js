@@ -117,4 +117,12 @@ export default class Databases {
   maintenances(databaseId: string): Maintenances {
     return new Maintenances(this._client, databaseId);
   }
+
+  /**
+   * Get the URL for downloading the CA Certificate
+   * @returns string: the URL to download the CA Certificate from
+   */
+  caCertificateDownloadURL(): string {
+    return this._client.dbaasApiClient().getUri({ url: "/ca_certificate" });
+  }
 }
