@@ -199,6 +199,47 @@ describe("Databases#showDatabaseTypeVersion", () => {
   );
 });
 
+describe("Databases#apiPing", () => {
+  testPost(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/ping",
+    null,
+    {},
+    null,
+    (client) => {
+      return new Databases(client).apiPing("ad-1234-5678-9012");
+    },
+  );
+});
+
+describe("Databases#apiUpgrade", () => {
+  testPost(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/upgrade",
+    null,
+    {},
+    null,
+    (client) => {
+      return new Databases(client).apiUpgrade("ad-1234-5678-9012");
+    },
+  );
+});
+
+describe("Databases#apiAction", () => {
+  testPost(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/action",
+    null,
+    {
+      action_name: "force-ssl",
+      params: { enable: true },
+    },
+    null,
+    (client) => {
+      return new Databases(client).apiAction("ad-1234-5678-9012", "force-ssl", {
+        enable: true,
+      });
+    },
+  );
+});
+
 describe("Databases#create", () => {
   testPost(
     "https://api.osc-fr1.scalingo.com/v1/databases",

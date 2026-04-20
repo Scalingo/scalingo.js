@@ -225,6 +225,48 @@ export default class Databases {
   }
 
   /**
+   * Ping a database via the dbaas API
+   * @param addonId ID of the database addon
+   * @return Promise that resolves when the ping succeeds.
+   */
+  apiPing(addonId: string): Promise<Record<string, unknown>> {
+    return unpackData(
+      this._client.dbaasApiClient().post(`/databases/${addonId}/ping`, {}),
+    );
+  }
+
+  /**
+   * Upgrade a database to the next version via the dbaas API
+   * @param addonId ID of the database addon
+   * @return Promise that when resolved returns upgrade information including operation_id.
+   */
+  apiUpgrade(addonId: string): Promise<Record<string, unknown>> {
+    return unpackData(
+      this._client.dbaasApiClient().post(`/databases/${addonId}/upgrade`, {}),
+    );
+  }
+
+  /**
+   * Run a database action via the dbaas API
+   * @param addonId ID of the database addon
+   * @param actionName Name of the action to perform
+   * @param actionParams Optional parameters for the action
+   * @return Promise that when resolved returns the action result.
+   */
+  apiAction(
+    addonId: string,
+    actionName: string,
+    actionParams?: Record<string, unknown>,
+  ): Promise<Record<string, unknown>> {
+    return unpackData(
+      this._client.dbaasApiClient().post(`/databases/${addonId}/action`, {
+        action_name: actionName,
+        params: actionParams || {},
+      }),
+    );
+  }
+
+  /**
    * Create a new database
    * @param technology ID or slug of the technology (addon provider)
    * @param plan ID or name of the plan

@@ -1,3 +1,7 @@
+## 0.17.17
+
+*feat: add apiPing, apiUpgrade, and apiAction methods to Databases class with corresponding tests
+
 ## 0.17.16
 
 * feat: add apiUpdate method to update database configuration via dbaas API
