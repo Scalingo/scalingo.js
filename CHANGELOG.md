@@ -1,3 +1,8 @@
+## 0.17.16
+
+* feat: add apiUpdate method to update database configuration via dbaas API
+* feat: add API methods for database plan, metrics, health, instances status, lag, logs, and logs archives
+
 ## 0.17.15
 
 * chore(deps-dev): bump the development group with 7 updates by @dependabot[bot] in https://github.com/Scalingo/scalingo.js/pull/532
