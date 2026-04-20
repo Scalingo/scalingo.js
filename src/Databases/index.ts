@@ -5,6 +5,11 @@ import {
   DashboardDatabase,
   ApiDatabase,
   CreateParams,
+  DatabaseUpdateParams,
+  DatabasePlan,
+  DatabaseMetrics,
+  DatabaseInstanceStatus,
+  LogsArchivesResult,
   DatabaseType,
   DatabaseTypeVersion,
 } from "../models/regional/databases";
@@ -54,6 +59,133 @@ export default class Databases {
     return unpackData(
       this._client.dbaasApiClient().get(`/databases/${addonId}`),
       "database",
+    );
+  }
+
+  /**
+   * Update a database configuration via the dbaas API
+   * @param addonId ID of the database addon (e.g., 'ad-xxxx-xxxx-xxxx')
+   * @param params Database update parameters
+   * @return Promise that when resolved returns the updated database.
+   */
+  apiUpdate(
+    addonId: string,
+    params: DatabaseUpdateParams,
+  ): Promise<ApiDatabase> {
+    return unpackData(
+      this._client
+        .dbaasApiClient()
+        .patch(`/databases/${addonId}`, { database: params }),
+      "database",
+    );
+  }
+
+  /**
+   * Get the plan information for a specific database from the dbaas API
+   * @param addonId ID of the database addon
+   * @return Promise that when resolved returns the database plan.
+   */
+  apiPlan(addonId: string): Promise<DatabasePlan> {
+    return unpackData(
+      this._client.dbaasApiClient().get(`/databases/${addonId}/plan`),
+      "plan",
+    );
+  }
+
+  /**
+   * Get current metrics for a specific database from the dbaas API
+   * @param addonId ID of the database addon
+   * @return Promise that when resolved returns database metrics.
+   */
+  apiMetrics(addonId: string): Promise<DatabaseMetrics> {
+    return unpackData(
+      this._client.dbaasApiClient().get(`/databases/${addonId}/metrics`),
+    );
+  }
+
+  /**
+   * Get time-series metrics for a specific database from the dbaas API
+   * @param addonId ID of the database addon
+   * @param type Metric type (e.g., 'cpu', 'memory', 'swap', 'disk', 'diskio')
+   * @param opts Optional parameters
+   * @param opts.since Number of hours to look back (default: 3)
+   * @param opts.last Whether to return only the last value
+   * @return Promise that when resolved returns the metric data points.
+   */
+  apiMetricsType(
+    addonId: string,
+    type: string,
+    opts?: { since?: number; last?: boolean },
+  ): Promise<unknown> {
+    return unpackData(
+      this._client
+        .dbaasApiClient()
+        .get(`/databases/${addonId}/metrics/${type}`, { params: opts }),
+    );
+  }
+
+  /**
+   * Get health status for a specific database from the dbaas API
+   * @param addonId ID of the database addon
+   * @return Promise that when resolved returns database health information.
+   */
+  apiHealth(addonId: string): Promise<Record<string, unknown>> {
+    return unpackData(
+      this._client.dbaasApiClient().get(`/databases/${addonId}/health`),
+    );
+  }
+
+  /**
+   * Get instances status for a specific database from the dbaas API
+   * @param addonId ID of the database addon
+   * @return Promise that when resolved returns instances status.
+   */
+  apiInstancesStatus(addonId: string): Promise<DatabaseInstanceStatus[]> {
+    return unpackData(
+      this._client
+        .dbaasApiClient()
+        .get(`/databases/${addonId}/instances_status`),
+    );
+  }
+
+  /**
+   * Get replication lag for a specific database from the dbaas API
+   * @param addonId ID of the database addon
+   * @return Promise that when resolved returns lag information.
+   */
+  apiLag(addonId: string): Promise<Record<string, unknown>> {
+    return unpackData(
+      this._client.dbaasApiClient().get(`/databases/${addonId}/lag`),
+    );
+  }
+
+  /**
+   * Get a signed URL for accessing database logs from the dbaas API
+   * @param addonId ID of the database addon
+   * @return Promise that when resolved returns an object with the signed URL.
+   */
+  apiLogs(addonId: string): Promise<string> {
+    return unpackData(
+      this._client.dbaasApiClient().get(`/databases/${addonId}/logs`),
+      "url",
+    );
+  }
+
+  /**
+   * Get logs archives for a specific database from the dbaas API
+   * @param addonId ID of the database addon
+   * @param opts Optional parameters
+   * @param opts.cursor Pagination cursor
+   * @return Promise that when resolved returns logs archives.
+   */
+  apiLogsArchives(
+    addonId: string,
+    opts?: { cursor?: number | string },
+  ): Promise<LogsArchivesResult> {
+    return unpackData(
+      this._client
+        .dbaasApiClient()
+        .get(`/databases/${addonId}/logs_archives`, { params: opts }),
     );
   }
 
