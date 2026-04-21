@@ -1,3 +1,5 @@
+import { Archive } from "./logs";
+
 export interface DatabaseOwner {
   id: string;
   email: string;
@@ -120,6 +122,21 @@ export interface CreateParams {
   name: string;
   /** ID of the project (optional) */
   project_id?: string;
+}
+
+/** Parameters accepted when updating a database via the dbaas API */
+export interface DatabaseUpdateParams {
+  /** Whether periodic backups are enabled */
+  periodic_backups_enabled?: boolean;
+  /** Scheduled hours for periodic backups */
+  periodic_backups_scheduled_at?: number[];
+  /** Maintenance window configuration */
+  maintenance_window?: {
+    /** Day of the week in UTC (0-6, where 0 is Sunday) */
+    weekday_utc: number;
+    /** Starting hour in UTC (0-23) */
+    starting_hour_utc: number;
+  };
 }
 
 /** Database feature */
@@ -258,4 +275,84 @@ export interface ApiDatabase {
   maintenance_window: MaintenanceWindow;
   /** PostgreSQL specific configuration (only present for PostgreSQL databases) */
   postgresql_config?: PostgreSQLConfig;
+}
+
+/** Database plan information */
+export interface DatabasePlan {
+  /** Plan ID */
+  id: string;
+  /** Plan name */
+  name: string;
+  /** Whether backups are supported */
+  backup: boolean;
+  /** Disk size in MB */
+  disk: number;
+  /** Memory size in MB */
+  memory: number;
+  /** Number of manual backups allowed */
+  manual_backups_count?: number;
+  /** Number of daily scheduled backups */
+  daily_scheduled_backups?: number;
+  /** Number of weekly scheduled backups */
+  weekly_scheduled_backups?: number;
+  /** Number of monthly scheduled backups */
+  monthly_scheduled_backups?: number;
+  /** Number of PITR backup days */
+  pitr_backup_days?: number;
+}
+
+/** Database memory metrics */
+export interface DatabaseMemoryMetrics {
+  /** Total RAM bytes used */
+  memory?: number;
+  /** Highest memory usage recorded */
+  memory_max?: number;
+  /** Max memory allocated */
+  memory_limit?: number;
+  /** Total SWAP bytes used */
+  swap?: number;
+  /** Highest swap usage recorded */
+  swap_max?: number;
+  /** Max SWAP allocated */
+  swap_limit?: number;
+}
+
+/** Database metrics from db-core */
+export interface DatabaseMetrics {
+  /** CPU usage percentage */
+  cpu_usage?: number;
+  /** Memory metrics */
+  memory?: DatabaseMemoryMetrics;
+  /** Database size in bytes */
+  database_size?: number;
+  /** Real disk size in bytes */
+  real_disk_size?: number;
+  /** Database statistics */
+  database_stats?: Record<string, unknown>;
+  /** Per-instance metrics */
+  instances_metrics?: unknown[];
+}
+
+/** Database instance status */
+export interface DatabaseInstanceStatus {
+  /** Instance ID */
+  id: string;
+  /** Instance type (e.g., 'db-node', 'gateway') */
+  type: string;
+  /** Instance status (e.g., 'running') */
+  status: string;
+  /** Instance role (e.g., 'master', 'follower') */
+  role?: string;
+  /** DBMS-level status */
+  dbms_status?: string;
+}
+
+/** Logs archives result */
+export interface LogsArchivesResult {
+  /** Archive entries */
+  archives: Archive[];
+  /** Next cursor for pagination */
+  next_cursor: string;
+  /** Whether more results are available */
+  has_more: boolean;
 }
