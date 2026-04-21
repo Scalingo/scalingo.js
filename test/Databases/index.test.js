@@ -1,3 +1,8 @@
+import axios from "axios";
+import MockAdapter from "axios-mock-adapter";
+import { expect } from "chai";
+
+import { Client } from "../../src";
 import Databases from "../../src/Databases";
 import { testGetter, testPost, testUpdate } from "../utils/http";
 
@@ -260,4 +265,36 @@ describe("Databases#create", () => {
       });
     },
   );
+});
+
+describe("Databases#caCertificateDownloadURL", () => {
+  it("returns the DBaaS CA certificate URL for the default API base", () => {
+    const client = new Client("test-token");
+
+    const result = new Databases(client).caCertificateDownloadURL();
+
+    expect(result).to.eq("https://api.osc-fr1.scalingo.com/api/ca_certificate");
+  });
+
+  it("uses the configured API base URL", () => {
+    const client = new Client("test-token", {
+      apiUrl: "https://custom-api.example.com",
+    });
+
+    const result = new Databases(client).caCertificateDownloadURL();
+
+    expect(result).to.eq("https://custom-api.example.com/api/ca_certificate");
+  });
+
+  it("does not perform an HTTP request", () => {
+    const client = new Client("test-token");
+    const mock = new MockAdapter(axios);
+
+    const result = new Databases(client).caCertificateDownloadURL();
+
+    expect(result).to.eq("https://api.osc-fr1.scalingo.com/api/ca_certificate");
+    expect(mock.history.get).to.have.length(0);
+
+    mock.restore();
+  });
 });

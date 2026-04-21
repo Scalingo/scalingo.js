@@ -1,3 +1,7 @@
+## to be released
+
+* feat: Add database Ca Certificate download URL by @aurelien-reeves-scalingo in https://github.com/Scalingo/scalingo.js/pull/541
+
 ## 0.17.17
 
 *feat: add apiPing, apiUpgrade, and apiAction methods to Databases class with corresponding tests
