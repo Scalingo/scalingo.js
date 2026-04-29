@@ -4,6 +4,7 @@ import { expect } from "chai";
 
 import { Client } from "../../src";
 import Databases from "../../src/Databases";
+import Backups from "../../src/Databases/Backups";
 import { testGetter, testPost, testUpdate } from "../utils/http";
 
 describe("Databases#all (dashboard)", () => {
@@ -265,6 +266,18 @@ describe("Databases#create", () => {
       });
     },
   );
+});
+
+describe("Databases#backups", () => {
+  it("returns a Backups client for the given database", () => {
+    const client = new Client("test-token");
+
+    const result = new Databases(client).backups("ad-1234-5678-9012");
+
+    expect(result).to.be.instanceOf(Backups);
+    expect(result._client).to.eq(client);
+    expect(result._databaseId).to.eq("ad-1234-5678-9012");
+  });
 });
 
 describe("Databases#caCertificateDownloadURL", () => {
