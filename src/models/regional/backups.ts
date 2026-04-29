@@ -1,3 +1,11 @@
+export type BackupStatus =
+  | "scheduled"
+  | "running"
+  | "done"
+  | "error"
+  | "cancelling"
+  | "cancelled";
+
 /** Database backup */
 export interface Backup {
   /** Backup ID */
@@ -7,13 +15,7 @@ export interface Backup {
   /** Backup creation method */
   method: "periodic" | "manual";
   /** Current backup status */
-  status:
-    | "scheduled"
-    | "running"
-    | "done"
-    | "error"
-    | "cancelling"
-    | "cancelled";
+  status: BackupStatus;
   /** Backup name */
   name: string;
   /** Backup size in bytes */
