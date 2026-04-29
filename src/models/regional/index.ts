@@ -3,6 +3,7 @@ export * from "./alerts";
 export * from "./apps";
 export * from "./audit_logs";
 export * from "./autoscalers";
+export * from "./backups";
 export * from "./collaborators";
 export * from "./containers";
 export * from "./cron_tasks";

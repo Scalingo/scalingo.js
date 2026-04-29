@@ -1,4 +1,5 @@
 import { Client } from "..";
+import Backups from "./Backups";
 import Maintenances from "./Maintenances";
 import {
   Database,
@@ -290,6 +291,15 @@ export default class Databases {
    */
   maintenances(databaseId: string): Maintenances {
     return new Maintenances(this._client, databaseId);
+  }
+
+  /**
+   * Get the backups client for a database
+   * @param databaseId ID of the database addon (e.g., 'ad-xxxx-xxxx-xxxx')
+   * @return Backups client for the database
+   */
+  backups(databaseId: string): Backups {
+    return new Backups(this._client, databaseId);
   }
 
   /**
