@@ -1,5 +1,7 @@
 ## to be released
 
+* feat: add `Backups` all() & create(), `Database` backups() and `Backup` model
+
 ## 0.18.0
 
 * feat: Add database Ca Certificate download URL by @aurelien-reeves-scalingo in https://github.com/Scalingo/scalingo.js/pull/541
