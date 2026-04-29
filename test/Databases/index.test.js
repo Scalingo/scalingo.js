@@ -269,7 +269,7 @@ describe("Databases#create", () => {
 });
 
 describe("Databases#backups", () => {
-  it("returns a Backups client for the given database" , () => {
+  it("returns a Backups client for the given database", () => {
     const client = new Client("test-token");
 
     const result = new Databases(client).backups("ad-1234-5678-9012");
