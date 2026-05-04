@@ -1,5 +1,9 @@
 ## to be released
 
+## 0.18.2
+
+* feat: add `apiOperationShow()` method to fetch a single database operation by ID
+
 ## 0.18.1
 
 * feat: add `Backups` all() & create(), `Database` backups() and `Backup` model
