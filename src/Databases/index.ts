@@ -13,6 +13,8 @@ import {
   LogsArchivesResult,
   DatabaseType,
   DatabaseTypeVersion,
+  FirewallRule,
+  FirewallManagedRange,
   DbOperation,
 } from "../models/regional/databases";
 import { unpackData } from "../utils";
@@ -280,6 +282,40 @@ export default class Databases {
         action_name: actionName,
         params: actionParams || {},
       }),
+    );
+  }
+
+  apiFirewallRules(addonId: string): Promise<FirewallRule[]> {
+    return unpackData(
+      this._client.dbaasApiClient().get(`/databases/${addonId}/firewall_rules`),
+      "rules",
+    );
+  }
+
+  apiCreateFirewallRule(
+    addonId: string,
+    params: { type: string; cidr?: string; label?: string; range_id?: string },
+  ): Promise<FirewallRule> {
+    return unpackData(
+      this._client
+        .dbaasApiClient()
+        .post(`/databases/${addonId}/firewall_rules`, { firewall_rule: params }),
+      "rule",
+    );
+  }
+
+  apiDeleteFirewallRule(addonId: string, ruleId: string): Promise<void> {
+    return unpackData(
+      this._client
+        .dbaasApiClient()
+        .delete(`/databases/${addonId}/firewall_rules/${ruleId}`),
+    );
+  }
+
+  apiManagedFirewallRanges(): Promise<FirewallManagedRange[]> {
+    return unpackData(
+      this._client.dbaasApiClient().get("/firewall/managed_ranges"),
+      "ranges",
     );
   }
 

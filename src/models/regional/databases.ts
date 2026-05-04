@@ -225,6 +225,21 @@ export interface DatabaseTypeVersion {
   allowed_plugins: string[] | null;
 }
 
+export interface FirewallRule {
+  id: string;
+  type: string;
+  cidr?: string;
+  range_id?: string;
+  label?: string;
+  created_at?: string;
+  updated_at?: string;
+}
+
+export interface FirewallManagedRange {
+  id: string;
+  name: string;
+}
+
 /** Detailed database information from dbaas API */
 export interface ApiDatabase {
   /** Database ID */
