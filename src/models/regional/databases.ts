@@ -356,3 +356,23 @@ export interface LogsArchivesResult {
   /** Whether more results are available */
   has_more: boolean;
 }
+
+/** Database operation status */
+export type DbOperationStatus =
+  | "pending"
+  | "running"
+  | "finished"
+  | "error"
+  | "user-error"
+  | "cancelling"
+  | "cancelled";
+
+/** Database operation */
+export interface DbOperation {
+  id: string;
+  type: string;
+  status: DbOperationStatus;
+  created_at: string;
+  finished_at: string | null;
+  error: string | null;
+}

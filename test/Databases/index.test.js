@@ -228,6 +228,20 @@ describe("Databases#apiUpgrade", () => {
   );
 });
 
+describe("Databases#apiOperationShow", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/operations/op-123",
+    {},
+    "operation",
+    (client) => {
+      return new Databases(client).apiOperationShow(
+        "ad-1234-5678-9012",
+        "op-123",
+      );
+    },
+  );
+});
+
 describe("Databases#apiAction", () => {
   testPost(
     "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/action",
