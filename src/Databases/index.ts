@@ -15,6 +15,7 @@ import {
   DatabaseTypeVersion,
   FirewallRule,
   FirewallManagedRange,
+  FirewallRuleCreateParams,
   DbOperation,
 } from "../models/regional/databases";
 import { unpackData } from "../utils";
@@ -294,12 +295,14 @@ export default class Databases {
 
   apiCreateFirewallRule(
     addonId: string,
-    params: { type: string; cidr?: string; label?: string; range_id?: string },
+    params: FirewallRuleCreateParams,
   ): Promise<FirewallRule> {
     return unpackData(
       this._client
         .dbaasApiClient()
-        .post(`/databases/${addonId}/firewall_rules`, { firewall_rule: params }),
+        .post(`/databases/${addonId}/firewall_rules`, {
+          firewall_rule: params,
+        }),
       "rule",
     );
   }

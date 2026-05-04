@@ -240,6 +240,13 @@ export interface FirewallManagedRange {
   name: string;
 }
 
+export interface FirewallRuleCreateParams {
+  type: string;
+  cidr?: string;
+  range_id?: string;
+  label?: string;
+}
+
 /** Detailed database information from dbaas API */
 export interface ApiDatabase {
   /** Database ID */
