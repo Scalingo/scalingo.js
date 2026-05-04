@@ -13,6 +13,7 @@ import {
   LogsArchivesResult,
   DatabaseType,
   DatabaseTypeVersion,
+  DbOperation,
 } from "../models/regional/databases";
 import { unpackData } from "../utils";
 
@@ -244,6 +245,21 @@ export default class Databases {
   apiUpgrade(addonId: string): Promise<Record<string, unknown>> {
     return unpackData(
       this._client.dbaasApiClient().post(`/databases/${addonId}/upgrade`, {}),
+    );
+  }
+
+  /**
+   * Get the status of a database operation via the dbaas API
+   * @param addonId ID of the database addon (e.g., 'ad-xxxx-xxxx-xxxx')
+   * @param operationId ID of the operation
+   * @return Promise that when resolved returns the operation details.
+   */
+  apiOperationShow(addonId: string, operationId: string): Promise<DbOperation> {
+    return unpackData(
+      this._client
+        .dbaasApiClient()
+        .get(`/databases/${addonId}/operations/${operationId}`),
+      "operation",
     );
   }
 
