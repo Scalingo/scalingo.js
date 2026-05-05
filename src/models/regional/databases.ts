@@ -248,8 +248,6 @@ export interface FirewallRuleCreateParams {
 }
 
 export interface FirewallRuleUpdateParams {
-  cidr?: string;
-  range_id?: string;
   label?: string;
 }
 
