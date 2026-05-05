@@ -309,7 +309,6 @@ describe("Databases#apiDeleteFirewallRule", () => {
 describe("Databases#apiUpdateFirewallRule", () => {
   testPatch(
     "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/firewall_rules/rule-123",
-    null,
     { firewall_rule: { label: "new label" } },
     "rule",
     (client) => {
