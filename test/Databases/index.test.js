@@ -5,7 +5,13 @@ import { expect } from "chai";
 import { Client } from "../../src";
 import Databases from "../../src/Databases";
 import Backups from "../../src/Databases/Backups";
-import { testDelete, testGetter, testPost, testUpdate } from "../utils/http";
+import {
+  testDelete,
+  testGetter,
+  testPatch,
+  testPost,
+  testUpdate,
+} from "../utils/http";
 
 describe("Databases#all (dashboard)", () => {
   testGetter(
@@ -295,6 +301,24 @@ describe("Databases#apiDeleteFirewallRule", () => {
       return new Databases(client).apiDeleteFirewallRule(
         "ad-1234-5678-9012",
         "rule-123",
+      );
+    },
+  );
+});
+
+describe("Databases#apiUpdateFirewallRule", () => {
+  testPatch(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/firewall_rules/rule-123",
+    null,
+    { firewall_rule: { label: "new label" } },
+    "rule",
+    (client) => {
+      return new Databases(client).apiUpdateFirewallRule(
+        "ad-1234-5678-9012",
+        "rule-123",
+        {
+          label: "new label",
+        },
       );
     },
   );

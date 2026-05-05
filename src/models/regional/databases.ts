@@ -247,6 +247,12 @@ export interface FirewallRuleCreateParams {
   label?: string;
 }
 
+export interface FirewallRuleUpdateParams {
+  cidr?: string;
+  range_id?: string;
+  label?: string;
+}
+
 /** Detailed database information from dbaas API */
 export interface ApiDatabase {
   /** Database ID */
