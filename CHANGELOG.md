@@ -1,5 +1,7 @@
 ## to be released
 
+## 0.18.3
+
 * feat: add `apiInstanceMetrics()` method to fetch per-instance time-series metrics
 
 ## 0.18.2
