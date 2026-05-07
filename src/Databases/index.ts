@@ -10,7 +10,6 @@ import {
   DatabasePlan,
   DatabaseMetrics,
   DatabaseInstanceStatus,
-  DatabaseOperation,
   DatabasePitrRestoreResponse,
   LogsArchivesResult,
   DatabaseType,
