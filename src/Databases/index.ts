@@ -10,6 +10,8 @@ import {
   DatabasePlan,
   DatabaseMetrics,
   DatabaseInstanceStatus,
+  DatabaseOperation,
+  DatabasePitrRestoreResponse,
   LogsArchivesResult,
   DatabaseType,
   DatabaseTypeVersion,
@@ -285,6 +287,23 @@ export default class Databases {
         .dbaasApiClient()
         .get(`/databases/${addonId}/operations/${operationId}`),
       "operation",
+    );
+  }
+
+  /**
+   * Restore a database to a point in time via the dbaas API
+   * @param addonId ID of the database addon
+   * @param restoreTime Point-in-time restore target
+   * @return Promise that when resolved returns the restore operation payload.
+   */
+  apiPitrRestore(
+    addonId: string,
+    restoreTime: string,
+  ): Promise<DatabasePitrRestoreResponse> {
+    return unpackData(
+      this._client.dbaasApiClient().post(`/databases/${addonId}/pitr/restore`, {
+        restore_time: restoreTime,
+      }),
     );
   }
 

@@ -181,6 +181,29 @@ export interface MaintenanceWindow {
   duration_in_hour: number;
 }
 
+/** Database operation returned by the dbaas API */
+export interface DatabaseOperation {
+  /** Operation ID */
+  id: string;
+  /** Operation type */
+  type: string;
+  /** Operation status */
+  status: string;
+  /** Linked database ID */
+  database_id?: string;
+  /** Creation timestamp */
+  created_at: string;
+  /** Completion timestamp */
+  finished_at: string | null;
+  /** Error message */
+  error: string | null;
+}
+
+/** Response payload for PITR restore */
+export interface DatabasePitrRestoreResponse {
+  operation: DatabaseOperation;
+}
+
 /** Database type information */
 export interface DatabaseType {
   /** Database type ID */
