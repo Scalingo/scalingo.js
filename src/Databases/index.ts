@@ -127,6 +127,31 @@ export default class Databases {
   }
 
   /**
+   * Get time-series metrics for a specific database instance from the dbaas API
+   * @param addonId ID of the database addon
+   * @param instanceId ID of the database instance
+   * @param type Metric type (e.g., 'cpu', 'memory', 'swap', 'disk', 'diskio')
+   * @param opts Optional parameters
+   * @param opts.since Number of hours to look back (default: 3)
+   * @param opts.last Whether to return only the last value
+   * @return Promise that when resolved returns the metric data points.
+   */
+  apiInstanceMetrics(
+    addonId: string,
+    instanceId: string,
+    type: string,
+    opts?: { since?: number; last?: boolean },
+  ): Promise<unknown> {
+    return unpackData(
+      this._client
+        .dbaasApiClient()
+        .get(`/databases/${addonId}/instances/${instanceId}/metrics/${type}`, {
+          params: opts,
+        }),
+    );
+  }
+
+  /**
    * Get health status for a specific database from the dbaas API
    * @param addonId ID of the database addon
    * @return Promise that when resolved returns database health information.
