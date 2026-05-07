@@ -1,5 +1,7 @@
 ## to be released
 
+* feat: add `apiPitrRestore()` method to trigger a PITR for addon
+
 ## 0.18.3
 
 * feat: add `apiInstanceMetrics()` method to fetch per-instance time-series metrics
