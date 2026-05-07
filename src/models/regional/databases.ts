@@ -181,6 +181,11 @@ export interface MaintenanceWindow {
   duration_in_hour: number;
 }
 
+/** Response payload for PITR restore */
+export interface DatabasePitrRestoreResponse {
+  operation: DbOperation;
+}
+
 /** Database type information */
 export interface DatabaseType {
   /** Database type ID */
