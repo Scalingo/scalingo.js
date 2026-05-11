@@ -1,5 +1,5 @@
 import { Client } from "../..";
-import { Backup } from "../../models/regional/backups";
+import { Backup, BackupRestoration } from "../../models/regional/backups";
 import { unpackData } from "../../utils";
 
 /**
@@ -44,6 +44,48 @@ export default class Backups {
         .dbaasApiClient()
         .post(`/databases/${this._databaseId}/backups`, {}),
       "database_backup",
+    );
+  }
+
+  /**
+   * Retrieve a specific backup for the database
+   * @param backupId Backup ID
+   * @return Promise that when resolved returns the backup.
+   */
+  show(backupId: string): Promise<Backup> {
+    return unpackData(
+      this._client
+        .dbaasApiClient()
+        .get(`/databases/${this._databaseId}/backups/${backupId}`),
+      "database_backup",
+    );
+  }
+
+  /**
+   * Get a download URL for a specific backup
+   * @param backupId Backup ID
+   * @return Promise that when resolved returns the download URL.
+   */
+  archiveUrl(backupId: string): Promise<string> {
+    return unpackData(
+      this._client
+        .dbaasApiClient()
+        .get(`/databases/${this._databaseId}/backups/${backupId}/archive`),
+      "download_url",
+    );
+  }
+
+  /**
+   * Restore a specific backup
+   * @param backupId Backup ID
+   * @return Promise that when resolved returns the backup restoration object.
+   */
+  restore(backupId: string): Promise<BackupRestoration> {
+    return unpackData(
+      this._client
+        .dbaasApiClient()
+        .post(`/databases/${this._databaseId}/backups/${backupId}/restore`, {}),
+      "backup_restoration",
     );
   }
 }

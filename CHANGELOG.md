@@ -1,5 +1,7 @@
 ## to be released
 
+* feat: extend `Databases.backups()` client with `show()`, `archiveUrl()`, and `restore()`
+
 ## 0.18.3
 
 * feat: add `apiInstanceMetrics()` method to fetch per-instance time-series metrics
