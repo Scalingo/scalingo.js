@@ -2,6 +2,10 @@
 
 * feat: add DBaaS firewall rules support in `Databases` client
 
+## 0.18.3
+
+* feat: add `apiInstanceMetrics()` method to fetch per-instance time-series metrics
+
 ## 0.18.2
 
 * feat: add `apiOperationShow()` method to fetch a single database operation by ID
