@@ -402,3 +402,24 @@ export interface DbOperation {
   finished_at: string | null;
   error: string | null;
 }
+
+/** Database user */
+export interface DatabaseUser {
+  name: string;
+  read_only: boolean;
+  password?: string;
+  protected: boolean;
+  dbms_attributes?: {
+    password_encryption: string;
+    anonymizer_enabled?: boolean;
+  };
+}
+
+/** Params for creating a database user */
+export interface DatabaseUserCreateParams {
+  database_id: string;
+  name: string;
+  read_only?: boolean;
+  password?: string;
+  password_confirmation?: string;
+}
