@@ -1,5 +1,7 @@
 ## to be released
 
+* feat: add DBaaS firewall rules support in `Databases` client
+
 ## 0.18.3
 
 * feat: add `apiInstanceMetrics()` method to fetch per-instance time-series metrics
