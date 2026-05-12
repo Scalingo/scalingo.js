@@ -95,6 +95,19 @@ export default class Databases {
   }
 
   /**
+   * Get plan details by plan name from the dbaas API
+   * @param planId Plan name (e.g., redis-starter-512)
+   * @param type Database type name (e.g., redis)
+   * @return Promise that when resolved returns the plan.
+   */
+  apiShowPlan(planId: string, type: string): Promise<DatabasePlan> {
+    return unpackData(
+      this._client.dbaasApiClient().get(`/plans/${planId}`, { params: { type } }),
+      "plan",
+    );
+  }
+
+  /**
    * Get current metrics for a specific database from the dbaas API
    * @param addonId ID of the database addon
    * @return Promise that when resolved returns database metrics.
