@@ -1,6 +1,7 @@
 ## to be released
 
 * feat(databases): add `apiShowPlan(planId, type)` to fetch plan details from `GET /api/plans/:id`
+* feat: add DBaaS firewall rules support in `Databases` client
 
 ## 0.18.3
 
