@@ -356,6 +356,60 @@ describe("Databases#create", () => {
   );
 });
 
+describe("Databases#apiDatabaseUsers", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/users",
+    {},
+    "database-users",
+    (client) => {
+      return new Databases(client).apiDatabaseUsers("ad-1234-5678-9012");
+    },
+  );
+});
+
+describe("Databases#apiDatabaseUserCreate", () => {
+  testPost(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/users",
+    {},
+    { database_user: { name: "new_user", read_only: false } },
+    "database_user",
+    (client) => {
+      return new Databases(client).apiDatabaseUserCreate("ad-1234-5678-9012", {
+        name: "new_user",
+        read_only: false,
+      });
+    },
+  );
+});
+
+describe("Databases#apiDatabaseUserDelete", () => {
+  testDelete(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/users/custom_user",
+    null,
+    (client) => {
+      return new Databases(client).apiDatabaseUserDelete(
+        "ad-1234-5678-9012",
+        "custom_user",
+      );
+    },
+  );
+});
+
+describe("Databases#apiDatabaseUserResetPassword", () => {
+  testPost(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/users/custom_user/reset_password",
+    {},
+    null,
+    "database_user",
+    (client) => {
+      return new Databases(client).apiDatabaseUserResetPassword(
+        "ad-1234-5678-9012",
+        "custom_user",
+      );
+    },
+  );
+});
+
 describe("Databases#backups", () => {
   it("returns a Backups client for the given database", () => {
     const client = new Client("test-token");
