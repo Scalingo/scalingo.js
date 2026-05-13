@@ -1,6 +1,7 @@
 ## to be released
 
 * feat: add DBaaS firewall rules support in `Databases` client
+* feat: add database users methods (`apiDatabaseUsers`, `apiDatabaseUserCreate`, `apiDatabaseUserDelete`, `apiDatabaseUserResetPassword`)
 
 ## 0.18.3
 
