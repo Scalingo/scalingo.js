@@ -1,5 +1,7 @@
 ## to be released
 
+* feat: add `apiPitrRestore()` method to trigger a PITR for addon
+
 ## 0.18.4
 
 * feat: extend `Databases.backups()` client with `show()`, `archiveUrl()`, and `restore()`
