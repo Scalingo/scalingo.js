@@ -5,7 +5,13 @@ import { expect } from "chai";
 import { Client } from "../../src";
 import Databases from "../../src/Databases";
 import Backups from "../../src/Databases/Backups";
-import { testGetter, testPost, testUpdate } from "../utils/http";
+import {
+  testDelete,
+  testGetter,
+  testPatch,
+  testPost,
+  testUpdate,
+} from "../utils/http";
 
 describe("Databases#all (dashboard)", () => {
   testGetter(
@@ -256,6 +262,74 @@ describe("Databases#apiAction", () => {
       return new Databases(client).apiAction("ad-1234-5678-9012", "force-ssl", {
         enable: true,
       });
+    },
+  );
+});
+
+describe("Databases#apiFirewallRules", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/firewall_rules",
+    {},
+    "rules",
+    (client) => {
+      return new Databases(client).apiFirewallRules("ad-1234-5678-9012");
+    },
+  );
+});
+
+describe("Databases#apiCreateFirewallRule", () => {
+  testPost(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/firewall_rules",
+    null,
+    { firewall_rule: { type: "managed_range", range_id: "eu", label: "eu" } },
+    "rule",
+    (client) => {
+      return new Databases(client).apiCreateFirewallRule("ad-1234-5678-9012", {
+        type: "managed_range",
+        range_id: "eu",
+        label: "eu",
+      });
+    },
+  );
+});
+
+describe("Databases#apiDeleteFirewallRule", () => {
+  testDelete(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/firewall_rules/rule-123",
+    null,
+    (client) => {
+      return new Databases(client).apiDeleteFirewallRule(
+        "ad-1234-5678-9012",
+        "rule-123",
+      );
+    },
+  );
+});
+
+describe("Databases#apiUpdateFirewallRule", () => {
+  testPatch(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/firewall_rules/rule-123",
+    { firewall_rule: { label: "new label" } },
+    "rule",
+    (client) => {
+      return new Databases(client).apiUpdateFirewallRule(
+        "ad-1234-5678-9012",
+        "rule-123",
+        {
+          label: "new label",
+        },
+      );
+    },
+  );
+});
+
+describe("Databases#apiManagedFirewallRanges", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/api/firewall/managed_ranges",
+    {},
+    "ranges",
+    (client) => {
+      return new Databases(client).apiManagedFirewallRanges();
     },
   );
 });

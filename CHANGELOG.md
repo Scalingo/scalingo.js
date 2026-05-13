@@ -1,6 +1,7 @@
 ## to be released
 
 * feat: extend `Databases.backups()` client with `show()`, `archiveUrl()`, and `restore()`
+* feat: add DBaaS firewall rules support in `Databases` client
 
 ## 0.18.3
 
