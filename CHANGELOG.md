@@ -1,6 +1,9 @@
 ## to be released
 
 * feat(databases): add `apiShowPlan(planId, type)` to fetch plan details from `GET /api/plans/:id`
+
+## 0.18.5
+
 * feat: add `apiPitrRestore()` method to trigger a PITR for addon
 
 ## 0.18.4
