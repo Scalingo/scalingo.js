@@ -230,6 +230,32 @@ export interface DatabaseTypeVersion {
   allowed_plugins: string[] | null;
 }
 
+export interface FirewallRule {
+  id: string;
+  type: string;
+  cidr?: string;
+  range_id?: string;
+  label?: string;
+  created_at?: string;
+  updated_at?: string;
+}
+
+export interface FirewallManagedRange {
+  id: string;
+  name: string;
+}
+
+export interface FirewallRuleCreateParams {
+  type: string;
+  cidr?: string;
+  range_id?: string;
+  label?: string;
+}
+
+export interface FirewallRuleUpdateParams {
+  label?: string;
+}
+
 /** Detailed database information from dbaas API */
 export interface ApiDatabase {
   /** Database ID */
@@ -380,4 +406,25 @@ export interface DbOperation {
   created_at: string;
   finished_at: string | null;
   error: string | null;
+}
+
+/** Database user */
+export interface DatabaseUser {
+  name: string;
+  read_only: boolean;
+  password?: string;
+  protected: boolean;
+  dbms_attributes?: {
+    password_encryption: string;
+    anonymizer_enabled?: boolean;
+  };
+}
+
+/** Params for creating a database user */
+export interface DatabaseUserCreateParams {
+  database_id: string;
+  name: string;
+  read_only?: boolean;
+  password?: string;
+  password_confirmation?: string;
 }

@@ -27,3 +27,20 @@ export interface Backup {
   /** Hidden backups are generally filtered by the API */
   hidden?: boolean;
 }
+
+export type BackupRestorationStatus =
+  | "scheduled"
+  | "running"
+  | "done"
+  | "error";
+
+export interface BackupRestoration {
+  id: string;
+  created_at: string;
+  started_at: string | null;
+  ended_at: string | null;
+  method: "backup" | "remote";
+  status: BackupRestorationStatus;
+  database_id: string;
+  source_backup_id: string;
+}

@@ -14,7 +14,13 @@ import {
   LogsArchivesResult,
   DatabaseType,
   DatabaseTypeVersion,
+  FirewallRule,
+  FirewallManagedRange,
+  FirewallRuleCreateParams,
+  FirewallRuleUpdateParams,
   DbOperation,
+  DatabaseUser,
+  DatabaseUserCreateParams,
 } from "../models/regional/databases";
 import { unpackData } from "../utils";
 
@@ -326,6 +332,57 @@ export default class Databases {
     );
   }
 
+  apiFirewallRules(addonId: string): Promise<FirewallRule[]> {
+    return unpackData(
+      this._client.dbaasApiClient().get(`/databases/${addonId}/firewall_rules`),
+      "rules",
+    );
+  }
+
+  apiCreateFirewallRule(
+    addonId: string,
+    params: FirewallRuleCreateParams,
+  ): Promise<FirewallRule> {
+    return unpackData(
+      this._client
+        .dbaasApiClient()
+        .post(`/databases/${addonId}/firewall_rules`, {
+          firewall_rule: params,
+        }),
+      "rule",
+    );
+  }
+
+  apiDeleteFirewallRule(addonId: string, ruleId: string): Promise<void> {
+    return unpackData(
+      this._client
+        .dbaasApiClient()
+        .delete(`/databases/${addonId}/firewall_rules/${ruleId}`),
+    );
+  }
+
+  apiUpdateFirewallRule(
+    addonId: string,
+    ruleId: string,
+    params: FirewallRuleUpdateParams,
+  ): Promise<FirewallRule> {
+    return unpackData(
+      this._client
+        .dbaasApiClient()
+        .patch(`/databases/${addonId}/firewall_rules/${ruleId}`, {
+          firewall_rule: params,
+        }),
+      "rule",
+    );
+  }
+
+  apiManagedFirewallRanges(): Promise<FirewallManagedRange[]> {
+    return unpackData(
+      this._client.dbaasApiClient().get("/firewall/managed_ranges"),
+      "ranges",
+    );
+  }
+
   /**
    * Create a new database
    * @param technology ID or slug of the technology (addon provider)
@@ -359,6 +416,68 @@ export default class Databases {
    */
   backups(databaseId: string): Backups {
     return new Backups(this._client, databaseId);
+  }
+
+  /**
+   * List all users of a database
+   * @param addonId ID of the database addon
+   * @return Promise that when resolved returns the list of database users.
+   */
+  apiDatabaseUsers(addonId: string): Promise<DatabaseUser[]> {
+    return unpackData(
+      this._client.dbaasApiClient().get(`/databases/${addonId}/users`),
+      "database-users",
+    );
+  }
+
+  /**
+   * Create a new database user
+   * @param addonId ID of the database addon
+   * @param params User creation parameters
+   * @return Promise that when resolved returns the created user.
+   */
+  apiDatabaseUserCreate(
+    addonId: string,
+    params: DatabaseUserCreateParams,
+  ): Promise<DatabaseUser> {
+    return unpackData(
+      this._client
+        .dbaasApiClient()
+        .post(`/databases/${addonId}/users`, { database_user: params }),
+      "database_user",
+    );
+  }
+
+  /**
+   * Delete a database user
+   * @param addonId ID of the database addon
+   * @param username Name of the user to delete
+   * @return Promise that resolves when the user is deleted.
+   */
+  apiDatabaseUserDelete(addonId: string, username: string): Promise<void> {
+    return unpackData(
+      this._client
+        .dbaasApiClient()
+        .delete(`/databases/${addonId}/users/${username}`),
+    );
+  }
+
+  /**
+   * Reset the password of a database user
+   * @param addonId ID of the database addon
+   * @param username Name of the user
+   * @return Promise that when resolved returns the user with new password.
+   */
+  apiDatabaseUserResetPassword(
+    addonId: string,
+    username: string,
+  ): Promise<DatabaseUser> {
+    return unpackData(
+      this._client
+        .dbaasApiClient()
+        .post(`/databases/${addonId}/users/${username}/reset_password`),
+      "database_user",
+    );
   }
 
   /**
