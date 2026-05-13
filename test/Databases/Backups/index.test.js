@@ -53,9 +53,9 @@ describe("Backups#archiveUrl", () => {
 describe("Backups#restore", () => {
   testPost(
     "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/backups/backup-123/restore",
-    null,
     {},
-    "backup_restoration",
+    {},
+    undefined,
     (client) => {
       return new Databases(client)
         .backups("ad-1234-5678-9012")

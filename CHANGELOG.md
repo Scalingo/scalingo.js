@@ -1,5 +1,8 @@
 ## to be released
 
+## 0.18.6
+* fix: make `Databases.backups().restore()` parse raw API payload (no `backup_restoration` wrapper) to match `database-api-service` restore response
+
 ## 0.18.5
 
 * feat: add `apiPitrRestore()` method to trigger a PITR for addon
