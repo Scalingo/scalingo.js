@@ -95,6 +95,17 @@ describe("Databases#apiPlan", () => {
   );
 });
 
+describe("Databases#apiShowPlan", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/api/plans/redis-starter-512",
+    { params: { type: "redis" } },
+    "plan",
+    (client) => {
+      return new Databases(client).apiShowPlan("redis-starter-512", "redis");
+    },
+  );
+});
+
 describe("Databases#apiMetrics", () => {
   testGetter(
     "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/metrics",

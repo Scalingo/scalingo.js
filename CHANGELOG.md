@@ -2,6 +2,7 @@
 
 ## 0.18.6
 * fix: make `Databases.backups().restore()` parse raw API payload (no `backup_restoration` wrapper) to match `database-api-service` restore response
+* feat(databases): add `apiShowPlan(planId, type)` to fetch plan details from `GET /api/plans/:id`
 
 ## 0.18.5
 
