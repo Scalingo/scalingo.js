@@ -102,7 +102,9 @@ export default class Databases {
    */
   apiShowPlan(planId: string, type: string): Promise<DatabasePlan> {
     return unpackData(
-      this._client.dbaasApiClient().get(`/plans/${planId}`, { params: { type } }),
+      this._client
+        .dbaasApiClient()
+        .get(`/plans/${planId}`, { params: { type } }),
       "plan",
     );
   }
