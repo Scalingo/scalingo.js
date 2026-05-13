@@ -1,5 +1,7 @@
 ## to be released
 
+* feat(databases): add `apiShowPlan(planId, type)` to fetch plan details from `GET /api/plans/:id`
+
 ## 0.18.3
 
 * feat: add `apiInstanceMetrics()` method to fetch per-instance time-series metrics
