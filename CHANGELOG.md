@@ -1,5 +1,7 @@
 ## to be released
 
+## 0.18.5
+
 * feat: add `apiPitrRestore()` method to trigger a PITR for addon
 
 ## 0.18.4
