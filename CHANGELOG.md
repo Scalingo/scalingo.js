@@ -1,7 +1,13 @@
 ## to be released
 
 * feat(databases): add `apiShowPlan(planId, type)` to fetch plan details from `GET /api/plans/:id`
+* feat: add `apiPitrRestore()` method to trigger a PITR for addon
+
+## 0.18.4
+
+* feat: extend `Databases.backups()` client with `show()`, `archiveUrl()`, and `restore()`
 * feat: add DBaaS firewall rules support in `Databases` client
+* feat: add database users methods (`apiDatabaseUsers`, `apiDatabaseUserCreate`, `apiDatabaseUserDelete`, `apiDatabaseUserResetPassword`)
 
 ## 0.18.3
 
