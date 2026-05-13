@@ -85,7 +85,6 @@ export default class Backups {
       this._client
         .dbaasApiClient()
         .post(`/databases/${this._databaseId}/backups/${backupId}/restore`, {}),
-      "backup_restoration",
     );
   }
 }
