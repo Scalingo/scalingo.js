@@ -421,6 +421,34 @@ describe("Databases#apiDatabaseUserResetPassword", () => {
   );
 });
 
+describe("Databases#apiDatabaseFeatureEnable", () => {
+  testPost(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/features",
+    {},
+    { feature: { name: "force-ssl" } },
+    null,
+    (client) => {
+      return new Databases(client).apiDatabaseFeatureEnable(
+        "ad-1234-5678-9012",
+        "force-ssl",
+      );
+    },
+  );
+});
+
+describe("Databases#apiDatabaseFeatureDisable", () => {
+  testDelete(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/features",
+    null,
+    (client) => {
+      return new Databases(client).apiDatabaseFeatureDisable(
+        "ad-1234-5678-9012",
+        "force-ssl",
+      );
+    },
+  );
+});
+
 describe("Databases#backups", () => {
   it("returns a Backups client for the given database", () => {
     const client = new Client("test-token");
