@@ -507,11 +507,9 @@ export default class Databases {
     featureName: string,
   ): Promise<DatabaseFeature> {
     return unpackData(
-      this._client
-        .dbaasApiClient()
-        .post(`/databases/${addonId}/features`, {
-          feature: { name: featureName },
-        }),
+      this._client.dbaasApiClient().post(`/databases/${addonId}/features`, {
+        feature: { name: featureName },
+      }),
     );
   }
 
@@ -526,11 +524,9 @@ export default class Databases {
     featureName: string,
   ): Promise<{ message: string }> {
     return unpackData(
-      this._client
-        .dbaasApiClient()
-        .delete(`/databases/${addonId}/features`, {
-          params: { feature: featureName },
-        }),
+      this._client.dbaasApiClient().delete(`/databases/${addonId}/features`, {
+        params: { feature: featureName },
+      }),
     );
   }
 
