@@ -1,6 +1,7 @@
 import { Client } from "..";
 import Backups from "./Backups";
 import Maintenances from "./Maintenances";
+import { BackupRestoration } from "../models/regional/backups";
 import {
   Database,
   DashboardDatabase,
@@ -22,7 +23,6 @@ import {
   DatabaseUser,
   DatabaseUserCreateParams,
 } from "../models/regional/databases";
-import { BackupRestoration } from "../models/regional/backups";
 import { unpackData } from "../utils";
 
 /**
