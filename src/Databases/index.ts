@@ -22,6 +22,7 @@ import {
   DatabaseUser,
   DatabaseUserCreateParams,
 } from "../models/regional/databases";
+import { BackupRestoration } from "../models/regional/backups";
 import { unpackData } from "../utils";
 
 /**
@@ -205,6 +206,38 @@ export default class Databases {
   apiLag(addonId: string): Promise<Record<string, unknown>> {
     return unpackData(
       this._client.dbaasApiClient().get(`/databases/${addonId}/lag`),
+    );
+  }
+
+  /**
+   * Get a specific backup restoration for a database from the dbaas API
+   * @param addonId ID of the database addon
+   * @param restorationId ID of the backup restoration
+   * @return Promise that when resolved returns the backup restoration.
+   */
+  apiBackupRestorationShow(
+    addonId: string,
+    restorationId: string,
+  ): Promise<BackupRestoration> {
+    return unpackData(
+      this._client
+        .dbaasApiClient()
+        .get(`/databases/${addonId}/backup_restorations/${restorationId}`),
+      "backup_restoration",
+    );
+  }
+
+  /**
+   * List backup restorations for a database from the dbaas API
+   * @param addonId ID of the database addon
+   * @return Promise that when resolved returns backup restorations.
+   */
+  apiBackupRestorations(addonId: string): Promise<BackupRestoration[]> {
+    return unpackData(
+      this._client
+        .dbaasApiClient()
+        .get(`/databases/${addonId}/backup_restorations`),
+      "backup_restorations",
     );
   }
 

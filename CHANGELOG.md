@@ -1,4 +1,5 @@
 ## to be released
+* feat(databases): add backup restorations routes (index and show)
 
 ## 0.18.6
 * fix: make `Databases.backups().restore()` parse raw API payload (no `backup_restoration` wrapper) to match `database-api-service` restore response
