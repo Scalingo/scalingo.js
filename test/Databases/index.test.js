@@ -177,17 +177,6 @@ describe("Databases#apiBackupRestorationShow", () => {
   );
 });
 
-describe("Databases#apiBackupRestorations", () => {
-  testGetter(
-    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/backup_restorations",
-    {},
-    "backup_restorations",
-    (client) => {
-      return new Databases(client).apiBackupRestorations("ad-1234-5678-9012");
-    },
-  );
-});
-
 describe("Databases#apiLogs", () => {
   testGetter(
     "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/logs",

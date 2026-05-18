@@ -228,20 +228,6 @@ export default class Databases {
   }
 
   /**
-   * List backup restorations for a database from the dbaas API
-   * @param addonId ID of the database addon
-   * @return Promise that when resolved returns backup restorations.
-   */
-  apiBackupRestorations(addonId: string): Promise<BackupRestoration[]> {
-    return unpackData(
-      this._client
-        .dbaasApiClient()
-        .get(`/databases/${addonId}/backup_restorations`),
-      "backup_restorations",
-    );
-  }
-
-  /**
    * Get a signed URL for accessing database logs from the dbaas API
    * @param addonId ID of the database addon
    * @return Promise that when resolved returns an object with the signed URL.
