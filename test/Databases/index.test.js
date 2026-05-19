@@ -369,6 +369,9 @@ describe("Databases#create", () => {
 
 describe("Databases#resourceCreate", () => {
   it("calls the database resource endpoint with basic auth when configured", async () => {
+    const expectedAuthorization = `Basic ${Buffer.from(
+      "addon-user:addon-password",
+    ).toString("base64")}`;
     const client = new Client("test-token", {
       basicAuth: {
         username: "addon-user",
@@ -401,7 +404,7 @@ describe("Databases#resourceCreate", () => {
       message: "Database creation has started",
     });
     expect(mock.history.post[0].headers.Authorization).to.eq(
-      "Basic YWRkb24tdXNlcjphZGRvbi1wYXNzd29yZA==",
+      expectedAuthorization,
     );
     expect(JSON.parse(mock.history.post[0].data)).to.deep.eq({
       plan: "redis-starter-512",
