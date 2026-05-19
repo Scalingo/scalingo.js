@@ -502,15 +502,17 @@ export default class Databases {
     params: DatabaseResourceUsageParams,
   ): Promise<DatabaseResourceUsage> {
     return unpackData(
-      this._client.basicAuthDbaasApiClient().get(`/resources/${databaseId}/usage`, {
-        params: {
-          from:
-            params.from instanceof Date
-              ? params.from.toISOString()
-              : params.from,
-          to: params.to instanceof Date ? params.to.toISOString() : params.to,
-        },
-      }),
+      this._client
+        .basicAuthDbaasApiClient()
+        .get(`/resources/${databaseId}/usage`, {
+          params: {
+            from:
+              params.from instanceof Date
+                ? params.from.toISOString()
+                : params.from,
+            to: params.to instanceof Date ? params.to.toISOString() : params.to,
+          },
+        }),
     );
   }
 
