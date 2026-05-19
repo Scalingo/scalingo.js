@@ -1,5 +1,9 @@
 ## to be released
 
+## 0.18.8
+
+* feat(databases): add backup restoration show route
+
 ## 0.18.7
 
 * feat: add database feature methods (`apiDatabaseFeatureEnable`, `apiDatabaseFeatureDisable`)

@@ -163,6 +163,20 @@ describe("Databases#apiLag", () => {
   );
 });
 
+describe("Databases#apiBackupRestorationShow", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/backup_restorations/br-123",
+    {},
+    "backup_restoration",
+    (client) => {
+      return new Databases(client).apiBackupRestorationShow(
+        "ad-1234-5678-9012",
+        "br-123",
+      );
+    },
+  );
+});
+
 describe("Databases#apiLogs", () => {
   testGetter(
     "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/logs",
