@@ -369,9 +369,6 @@ describe("Databases#create", () => {
 
 describe("Databases#resourceCreate", () => {
   it("calls the database resource endpoint with basic auth when configured", async () => {
-    const expectedAuthorization = `Basic ${Buffer.from(
-      "addon-user:addon-password",
-    ).toString("base64")}`;
     const client = new Client("test-token", {
       basicAuth: {
         username: "addon-user",
@@ -403,8 +400,13 @@ describe("Databases#resourceCreate", () => {
       id: "db-123",
       message: "Database creation has started",
     });
-    expect(mock.history.post[0].headers.Authorization).to.eq(
-      expectedAuthorization,
+    expect(mock.history.post[0].auth).to.deep.eq({
+      username: "addon-user",
+      password: "addon-password",
+    });
+    expect(mock.history.post[0].headers.Authorization).to.be.undefined;
+    expect(mock.history.post[0].headers["User-Agent"]).to.eq(
+      "Scalingo Javascript Client",
     );
     expect(JSON.parse(mock.history.post[0].data)).to.deep.eq({
       plan: "redis-starter-512",
