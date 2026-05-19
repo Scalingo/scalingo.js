@@ -1,5 +1,7 @@
 ## to be released
 
+## 0.18.7
+
 * feat: add database feature methods (`apiDatabaseFeatureEnable`, `apiDatabaseFeatureDisable`)
 
 ## 0.18.6
