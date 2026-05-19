@@ -431,7 +431,7 @@ export default class Databases {
     params: DatabaseResourceCreateParams,
   ): Promise<DatabaseResourceCreateResponse> {
     return unpackData(
-      this._client.legacyDbaasApiClient().post("/resources", params),
+      this._client.basicAuthDbaasApiClient().post("/resources", params),
     );
   }
 
@@ -447,7 +447,7 @@ export default class Databases {
   ): Promise<DatabaseResourceMessageResponse> {
     return unpackData(
       this._client
-        .legacyDbaasApiClient()
+        .basicAuthDbaasApiClient()
         .patch(`/resources/${databaseId}`, params),
     );
   }
@@ -459,7 +459,7 @@ export default class Databases {
    */
   resourceDelete(databaseId: string): Promise<void> {
     return unpackData(
-      this._client.legacyDbaasApiClient().delete(`/resources/${databaseId}`),
+      this._client.basicAuthDbaasApiClient().delete(`/resources/${databaseId}`),
     );
   }
 
@@ -473,7 +473,7 @@ export default class Databases {
   ): Promise<DatabaseResourceMessageResponse> {
     return unpackData(
       this._client
-        .legacyDbaasApiClient()
+        .basicAuthDbaasApiClient()
         .post(`/resources/${databaseId}/suspend`, {}),
     );
   }
@@ -486,7 +486,7 @@ export default class Databases {
   resourceResume(databaseId: string): Promise<DatabaseResourceMessageResponse> {
     return unpackData(
       this._client
-        .legacyDbaasApiClient()
+        .basicAuthDbaasApiClient()
         .post(`/resources/${databaseId}/resume`, {}),
     );
   }
@@ -502,17 +502,15 @@ export default class Databases {
     params: DatabaseResourceUsageParams,
   ): Promise<DatabaseResourceUsage> {
     return unpackData(
-      this._client
-        .legacyDbaasApiClient()
-        .get(`/resources/${databaseId}/usage`, {
-          params: {
-            from:
-              params.from instanceof Date
-                ? params.from.toISOString()
-                : params.from,
-            to: params.to instanceof Date ? params.to.toISOString() : params.to,
-          },
-        }),
+      this._client.basicAuthDbaasApiClient().get(`/resources/${databaseId}/usage`, {
+        params: {
+          from:
+            params.from instanceof Date
+              ? params.from.toISOString()
+              : params.from,
+          to: params.to instanceof Date ? params.to.toISOString() : params.to,
+        },
+      }),
     );
   }
 

@@ -370,7 +370,7 @@ describe("Databases#create", () => {
 describe("Databases#resourceCreate", () => {
   it("calls the database resource endpoint with basic auth when configured", async () => {
     const client = new Client("test-token", {
-      legacyDbaasApiAuth: {
+      basicAuth: {
         username: "addon-user",
         password: "addon-password",
       },

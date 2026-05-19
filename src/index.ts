@@ -42,18 +42,16 @@ export interface ScalingoClientOptions {
   apiUrl?: string;
   authApiUrl?: string;
   billingApiUrl?: string;
-  legacyDbaasApiAuth?: BasicAuthCredentials;
+  basicAuth?: BasicAuthCredentials;
   noUserAgent?: boolean;
 }
 
-export const defaultClientOptions: Required<
-  Omit<ScalingoClientOptions, "legacyDbaasApiAuth">
-> = {
+export const defaultClientOptions = {
   apiUrl: "https://api.osc-fr1.scalingo.com",
   authApiUrl: "https://auth.scalingo.com",
   billingApiUrl: "https://cashmachine.scalingo.com",
   noUserAgent: false,
-};
+} satisfies ScalingoClientOptions;
 
 export class Client {
   /** Bearer Token for the current user. */
@@ -68,8 +66,8 @@ export class Client {
   /** URL to the Scalingo Billing API. */
   _billingApiUrl: string;
 
-  /** Optional HTTP Basic auth for legacy DBaaS endpoints under /scalingo/. */
-  _legacyDbaasApiAuth?: BasicAuthCredentials;
+  /** Optional HTTP Basic auth for endpoints under /scalingo/. */
+  _basicAuth?: BasicAuthCredentials;
 
   /** Global HTTP headers */
   _headers: Record<string, string | number | boolean>;
@@ -84,13 +82,13 @@ export class Client {
    * @param opts.noUserAgent=false] - Do not set the user agent
    */
   constructor(token: string, opts: ScalingoClientOptions = {}) {
-    const { apiUrl, authApiUrl, billingApiUrl, legacyDbaasApiAuth } = opts;
+    const { apiUrl, authApiUrl, billingApiUrl, basicAuth } = opts;
 
     this._token = token;
     this._apiUrl = apiUrl || defaultClientOptions.apiUrl;
     this._authApiUrl = authApiUrl || defaultClientOptions.authApiUrl;
     this._billingApiUrl = billingApiUrl || defaultClientOptions.billingApiUrl;
-    this._legacyDbaasApiAuth = legacyDbaasApiAuth;
+    this._basicAuth = basicAuth;
     this._headers = {};
 
     if (opts && !opts.noUserAgent) {
@@ -195,13 +193,13 @@ export class Client {
   }
 
   /**
-   * Create an axios instance configured for legacy DBaaS endpoints under /scalingo/
-   * @return Axios client for the legacy DBaaS API.
+   * Create an axios instance configured with HTTP Basic auth for endpoints under /scalingo/
+   * @return Axios client for the Basic-authenticated API.
    */
-  legacyDbaasApiClient(): AxiosInstance {
+  basicAuthDbaasApiClient(): AxiosInstance {
     return axios.create({
       baseURL: `${this._apiUrl}/scalingo/`,
-      auth: this._legacyDbaasApiAuth,
+      auth: this._basicAuth,
       headers: Object.assign({}, this._headers),
     });
   }
