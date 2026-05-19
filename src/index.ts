@@ -33,14 +33,22 @@ import Tokens from "./Tokens";
 import TwoFactorAuth from "./TwoFactorAuth";
 import Users from "./Users";
 
+export interface BasicAuthCredentials {
+  username: string;
+  password: string;
+}
+
 export interface ScalingoClientOptions {
   apiUrl?: string;
   authApiUrl?: string;
   billingApiUrl?: string;
+  legacyDbaasApiAuth?: BasicAuthCredentials;
   noUserAgent?: boolean;
 }
 
-export const defaultClientOptions: Required<ScalingoClientOptions> = {
+export const defaultClientOptions: Required<
+  Omit<ScalingoClientOptions, "legacyDbaasApiAuth">
+> = {
   apiUrl: "https://api.osc-fr1.scalingo.com",
   authApiUrl: "https://auth.scalingo.com",
   billingApiUrl: "https://cashmachine.scalingo.com",
@@ -60,6 +68,9 @@ export class Client {
   /** URL to the Scalingo Billing API. */
   _billingApiUrl: string;
 
+  /** Optional HTTP Basic auth for legacy DBaaS endpoints under /scalingo/. */
+  _legacyDbaasApiAuth?: BasicAuthCredentials;
+
   /** Global HTTP headers */
   _headers: Record<string, string | number | boolean>;
 
@@ -73,12 +84,13 @@ export class Client {
    * @param opts.noUserAgent=false] - Do not set the user agent
    */
   constructor(token: string, opts: ScalingoClientOptions = {}) {
-    const { apiUrl, authApiUrl, billingApiUrl } = opts;
+    const { apiUrl, authApiUrl, billingApiUrl, legacyDbaasApiAuth } = opts;
 
     this._token = token;
     this._apiUrl = apiUrl || defaultClientOptions.apiUrl;
     this._authApiUrl = authApiUrl || defaultClientOptions.authApiUrl;
     this._billingApiUrl = billingApiUrl || defaultClientOptions.billingApiUrl;
+    this._legacyDbaasApiAuth = legacyDbaasApiAuth;
     this._headers = {};
 
     if (opts && !opts.noUserAgent) {
@@ -179,6 +191,18 @@ export class Client {
       headers: Object.assign({}, this._headers, {
         Authorization: `Bearer ${this._token}`,
       }),
+    });
+  }
+
+  /**
+   * Create an axios instance configured for legacy DBaaS endpoints under /scalingo/
+   * @return Axios client for the legacy DBaaS API.
+   */
+  legacyDbaasApiClient(): AxiosInstance {
+    return axios.create({
+      baseURL: `${this._apiUrl}/scalingo/`,
+      auth: this._legacyDbaasApiAuth,
+      headers: Object.assign({}, this._headers),
     });
   }
 }

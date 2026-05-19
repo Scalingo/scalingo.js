@@ -367,6 +367,181 @@ describe("Databases#create", () => {
   );
 });
 
+describe("Databases#resourceCreate", () => {
+  it("calls the database resource endpoint with basic auth when configured", async () => {
+    const client = new Client("test-token", {
+      legacyDbaasApiAuth: {
+        username: "addon-user",
+        password: "addon-password",
+      },
+    });
+    const mock = new MockAdapter(axios);
+
+    mock
+      .onPost("https://api.osc-fr1.scalingo.com/scalingo/resources")
+      .reply(202, {
+        id: "db-123",
+        message: "Database creation has started",
+      });
+
+    const result = await new Databases(client).resourceCreate({
+      plan: "redis-starter-512",
+      app_id: "app-1@scalingo",
+      uuid: "ad-123",
+      shard_id: "shard-1",
+      options: {
+        type: "redis",
+        version: "7",
+        initial_volume_size: 1024,
+      },
+    });
+
+    expect(result).to.deep.eq({
+      id: "db-123",
+      message: "Database creation has started",
+    });
+    expect(mock.history.post[0].headers.Authorization).to.eq(
+      "Basic YWRkb24tdXNlcjphZGRvbi1wYXNzd29yZA==",
+    );
+    expect(JSON.parse(mock.history.post[0].data)).to.deep.eq({
+      plan: "redis-starter-512",
+      app_id: "app-1@scalingo",
+      uuid: "ad-123",
+      shard_id: "shard-1",
+      options: {
+        type: "redis",
+        version: "7",
+        initial_volume_size: 1024,
+      },
+    });
+
+    mock.restore();
+  });
+});
+
+describe("Databases#resourceUpdate", () => {
+  it("patches the database resource plan", async () => {
+    const client = new Client("test-token");
+    const mock = new MockAdapter(axios);
+
+    mock
+      .onPatch("https://api.osc-fr1.scalingo.com/scalingo/resources/res-123")
+      .reply(202, {
+        message: "Database plan is being changed",
+      });
+
+    const result = await new Databases(client).resourceUpdate("res-123", {
+      plan: "redis-business-1024",
+    });
+
+    expect(result).to.deep.eq({ message: "Database plan is being changed" });
+    expect(mock.history.patch[0].headers.Authorization).to.be.undefined;
+    expect(JSON.parse(mock.history.patch[0].data)).to.deep.eq({
+      plan: "redis-business-1024",
+    });
+
+    mock.restore();
+  });
+});
+
+describe("Databases#resourceDelete", () => {
+  it("deletes the database resource", async () => {
+    const client = new Client("test-token");
+    const mock = new MockAdapter(axios);
+
+    mock
+      .onDelete("https://api.osc-fr1.scalingo.com/scalingo/resources/res-123")
+      .reply(204);
+
+    const result = await new Databases(client).resourceDelete("res-123");
+
+    expect(result).to.be.undefined;
+    expect(mock.history.delete[0].headers.Authorization).to.be.undefined;
+
+    mock.restore();
+  });
+});
+
+describe("Databases#resourceSuspend", () => {
+  it("posts a suspend request for the database resource", async () => {
+    const client = new Client("test-token");
+    const mock = new MockAdapter(axios);
+
+    mock
+      .onPost(
+        "https://api.osc-fr1.scalingo.com/scalingo/resources/res-123/suspend",
+      )
+      .reply(200, {
+        message: "Database has been suspended",
+      });
+
+    const result = await new Databases(client).resourceSuspend("res-123");
+
+    expect(result).to.deep.eq({ message: "Database has been suspended" });
+    expect(mock.history.post[0].headers.Authorization).to.be.undefined;
+    expect(JSON.parse(mock.history.post[0].data)).to.deep.eq({});
+
+    mock.restore();
+  });
+});
+
+describe("Databases#resourceResume", () => {
+  it("posts a resume request for the database resource", async () => {
+    const client = new Client("test-token");
+    const mock = new MockAdapter(axios);
+
+    mock
+      .onPost(
+        "https://api.osc-fr1.scalingo.com/scalingo/resources/res-123/resume",
+      )
+      .reply(200, {
+        message: "Your redis database has been restored",
+      });
+
+    const result = await new Databases(client).resourceResume("res-123");
+
+    expect(result).to.deep.eq({
+      message: "Your redis database has been restored",
+    });
+    expect(mock.history.post[0].headers.Authorization).to.be.undefined;
+    expect(JSON.parse(mock.history.post[0].data)).to.deep.eq({});
+
+    mock.restore();
+  });
+});
+
+describe("Databases#resourceUsage", () => {
+  it("gets usage for the database resource and serializes dates", async () => {
+    const client = new Client("test-token");
+    const mock = new MockAdapter(axios);
+    const from = new Date("2026-05-01T00:00:00.000Z");
+    const to = new Date("2026-05-02T00:00:00.000Z");
+
+    mock
+      .onGet(
+        "https://api.osc-fr1.scalingo.com/scalingo/resources/res-123/usage",
+      )
+      .reply((config) => {
+        expect(config.params).to.deep.eq({
+          from: from.toISOString(),
+          to: to.toISOString(),
+        });
+
+        return [200, { disk_used: { "instance-1": 10.5 } }];
+      });
+
+    const result = await new Databases(client).resourceUsage("res-123", {
+      from,
+      to,
+    });
+
+    expect(result).to.deep.eq({ disk_used: { "instance-1": 10.5 } });
+    expect(mock.history.get[0].headers.Authorization).to.be.undefined;
+
+    mock.restore();
+  });
+});
+
 describe("Databases#apiDatabaseUsers", () => {
   testGetter(
     "https://api.osc-fr1.scalingo.com/api/databases/ad-1234-5678-9012/users",

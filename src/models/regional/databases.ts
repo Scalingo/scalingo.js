@@ -124,6 +124,64 @@ export interface CreateParams {
   project_id?: string;
 }
 
+/** Allowed legacy resource creation options */
+export interface DatabaseResourceCreateOptions {
+  /** Database flags */
+  flags?: string[];
+  /** Database type name */
+  type?: string;
+  /** Database version */
+  version?: string;
+  /** Initial volume size */
+  initial_volume_size?: number | string;
+  /** Whether the related app/database is HDS */
+  hds_resource?: boolean | string;
+}
+
+/** Parameters accepted by the legacy DBaaS resource creation endpoint */
+export interface DatabaseResourceCreateParams {
+  /** Plan name */
+  plan: string;
+  /** App identifier */
+  app_id: string;
+  /** Resource UUID */
+  uuid: string;
+  /** Optional shard identifier */
+  shard_id?: string;
+  /** Legacy DBaaS creation options */
+  options?: DatabaseResourceCreateOptions;
+}
+
+/** Parameters accepted by the legacy DBaaS resource update endpoint */
+export interface DatabaseResourceUpdateParams {
+  /** Target plan name */
+  plan: string;
+}
+
+/** Time window for legacy DBaaS usage endpoint */
+export interface DatabaseResourceUsageParams {
+  /** Start of the usage window */
+  from: string | Date;
+  /** End of the usage window */
+  to: string | Date;
+}
+
+/** Response returned when creating a legacy DBaaS resource */
+export interface DatabaseResourceCreateResponse {
+  id: string;
+  message: string;
+}
+
+/** Generic message response for legacy DBaaS resource actions */
+export interface DatabaseResourceMessageResponse {
+  message: string;
+}
+
+/** Disk usage per database instance for a legacy DBaaS resource */
+export interface DatabaseResourceUsage {
+  disk_used: Record<string, number>;
+}
+
 /** Parameters accepted when updating a database via the dbaas API */
 export interface DatabaseUpdateParams {
   /** Whether periodic backups are enabled */

@@ -6,6 +6,12 @@ import {
   DashboardDatabase,
   ApiDatabase,
   CreateParams,
+  DatabaseResourceCreateParams,
+  DatabaseResourceCreateResponse,
+  DatabaseResourceMessageResponse,
+  DatabaseResourceUpdateParams,
+  DatabaseResourceUsage,
+  DatabaseResourceUsageParams,
   DatabaseUpdateParams,
   DatabasePlan,
   DatabaseMetrics,
@@ -413,6 +419,100 @@ export default class Databases {
     return unpackData(
       this._client.apiClient().post("/databases", { database: createParams }),
       "apps",
+    );
+  }
+
+  /**
+   * Create a database resource through the /scalingo/resources endpoint
+   * @param params Database resource creation parameters
+   * @return Promise that when resolved returns the created resource id and message.
+   */
+  resourceCreate(
+    params: DatabaseResourceCreateParams,
+  ): Promise<DatabaseResourceCreateResponse> {
+    return unpackData(
+      this._client.legacyDbaasApiClient().post("/resources", params),
+    );
+  }
+
+  /**
+   * Update a database resource plan through the /scalingo/resources endpoint
+   * @param databaseId Resource identifier
+   * @param params Resource update parameters
+   * @return Promise that when resolved returns the backend message.
+   */
+  resourceUpdate(
+    databaseId: string,
+    params: DatabaseResourceUpdateParams,
+  ): Promise<DatabaseResourceMessageResponse> {
+    return unpackData(
+      this._client
+        .legacyDbaasApiClient()
+        .patch(`/resources/${databaseId}`, params),
+    );
+  }
+
+  /**
+   * Delete a database resource through the /scalingo/resources endpoint
+   * @param databaseId Resource identifier
+   * @return Promise that resolves when the deletion request is accepted.
+   */
+  resourceDelete(databaseId: string): Promise<void> {
+    return unpackData(
+      this._client.legacyDbaasApiClient().delete(`/resources/${databaseId}`),
+    );
+  }
+
+  /**
+   * Suspend a database resource through the /scalingo/resources endpoint
+   * @param databaseId Resource identifier
+   * @return Promise that when resolved returns the backend message.
+   */
+  resourceSuspend(
+    databaseId: string,
+  ): Promise<DatabaseResourceMessageResponse> {
+    return unpackData(
+      this._client
+        .legacyDbaasApiClient()
+        .post(`/resources/${databaseId}/suspend`, {}),
+    );
+  }
+
+  /**
+   * Resume a database resource through the /scalingo/resources endpoint
+   * @param databaseId Resource identifier
+   * @return Promise that when resolved returns the backend message.
+   */
+  resourceResume(databaseId: string): Promise<DatabaseResourceMessageResponse> {
+    return unpackData(
+      this._client
+        .legacyDbaasApiClient()
+        .post(`/resources/${databaseId}/resume`, {}),
+    );
+  }
+
+  /**
+   * Get disk usage for a database resource through the /scalingo/resources endpoint
+   * @param databaseId Resource identifier
+   * @param params Time window for the usage request
+   * @return Promise that when resolved returns disk usage per instance.
+   */
+  resourceUsage(
+    databaseId: string,
+    params: DatabaseResourceUsageParams,
+  ): Promise<DatabaseResourceUsage> {
+    return unpackData(
+      this._client
+        .legacyDbaasApiClient()
+        .get(`/resources/${databaseId}/usage`, {
+          params: {
+            from:
+              params.from instanceof Date
+                ? params.from.toISOString()
+                : params.from,
+            to: params.to instanceof Date ? params.to.toISOString() : params.to,
+          },
+        }),
     );
   }
 
