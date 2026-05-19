@@ -22,6 +22,7 @@ import {
   DbOperation,
   DatabaseUser,
   DatabaseUserCreateParams,
+  DatabaseFeature,
 } from "../models/regional/databases";
 import { unpackData } from "../utils";
 
@@ -511,6 +512,40 @@ export default class Databases {
         .dbaasApiClient()
         .post(`/databases/${addonId}/users/${username}/reset_password`),
       "database_user",
+    );
+  }
+
+  /**
+   * Enable a feature on a database
+   * @param addonId ID of the database addon
+   * @param featureName Name of the feature to enable (e.g., 'force-ssl')
+   * @return Promise that when resolved returns the enabled feature.
+   */
+  apiDatabaseFeatureEnable(
+    addonId: string,
+    featureName: string,
+  ): Promise<DatabaseFeature> {
+    return unpackData(
+      this._client.dbaasApiClient().post(`/databases/${addonId}/features`, {
+        feature: { name: featureName },
+      }),
+    );
+  }
+
+  /**
+   * Disable a feature on a database
+   * @param addonId ID of the database addon
+   * @param featureName Name of the feature to disable (e.g., 'force-ssl')
+   * @return Promise that when resolved returns a message.
+   */
+  apiDatabaseFeatureDisable(
+    addonId: string,
+    featureName: string,
+  ): Promise<{ message: string }> {
+    return unpackData(
+      this._client.dbaasApiClient().delete(`/databases/${addonId}/features`, {
+        params: { feature: featureName },
+      }),
     );
   }
 
