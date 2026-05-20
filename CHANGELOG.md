@@ -1,5 +1,7 @@
 ## to be released
 
+* feat(container-sizes): Add appId to container `availableSizes` (PR #562)
+
 ## 0.18.8
 
 * feat(databases): add backup restoration show route
