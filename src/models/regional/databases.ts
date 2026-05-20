@@ -197,18 +197,28 @@ export interface DatabaseUpdateParams {
   };
 }
 
+export type DatabaseFeatureStatus =
+  | "PENDING"
+  | "ACTIVATED"
+  | "FAILED"
+  | "PENDING_TO_ACTIVATE"
+  | "PENDING_TO_REMOVE"
+  | string;
+
 /** Database feature */
 export interface DatabaseFeature {
   /** Feature name (e.g., 'force-ssl', 'publicly-available') */
   name: string;
   /** Feature status (e.g., 'ACTIVATED', 'DISABLED') */
-  status: string;
+  status: DatabaseFeatureStatus;
+  /** Optional backend message */
+  message?: string;
 }
 
 /** PostgreSQL specific configuration */
 export interface PostgreSQLConfig {
   /** Whether TimescaleDB extension is enabled */
-  timescaledb_enabled: boolean;
+  timescaledb_enabled?: boolean;
 }
 
 /** Database instance information */
@@ -226,7 +236,7 @@ export interface DatabaseInstance {
   /** Instance private IP */
   private_ip: string;
   /** Instance features */
-  features?: string[];
+  features?: DatabaseFeature[] | string[];
 }
 
 /** Database maintenance window configuration */
@@ -355,15 +365,15 @@ export interface ApiDatabase {
   /** Whether periodic backups are enabled */
   periodic_backups_enabled: boolean;
   /** Scheduled hours for periodic backups */
-  periodic_backups_scheduled_at: number[];
+  periodic_backups_scheduled_at: number[] | null;
   /** Timestamp of first PITR backup */
   first_pitr_backup: string | null;
   /** Database flags */
   flags: string[];
   /** Maintenance window configuration */
-  maintenance_window: MaintenanceWindow;
+  maintenance_window?: MaintenanceWindow;
   /** PostgreSQL specific configuration (only present for PostgreSQL databases) */
-  postgresql_config?: PostgreSQLConfig;
+  postgresql_config?: PostgreSQLConfig | Record<string, unknown>;
 }
 
 /** Database plan information */
@@ -388,6 +398,26 @@ export interface DatabasePlan {
   monthly_scheduled_backups?: number;
   /** Number of PITR backup days */
   pitr_backup_days?: number;
+  /** Minimum required version */
+  minimum_version?: string | null;
+  /** Number of Elasticsearch master/data nodes */
+  es_master_data_nodes?: number;
+  /** Number of MongoDB data nodes */
+  mongo_data_node?: number;
+  /** Number of MongoDB arbiter nodes */
+  mongo_arbiter_node?: number;
+  /** Number of MongoDB backup nodes */
+  mongo_backup_node?: number;
+  /** Number of MySQL nodes */
+  mysql_nodes?: number;
+  /** Number of PostgreSQL nodes */
+  postgresql_nodes?: number;
+  /** Number of Redis nodes */
+  redis_nodes?: number;
+  /** Number of Sentinel nodes */
+  sentinel_nodes?: number;
+  /** Number of gateway nodes */
+  gateway_nodes?: number;
 }
 
 /** Database memory metrics */
