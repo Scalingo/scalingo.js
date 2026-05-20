@@ -218,7 +218,7 @@ export interface DatabaseFeature {
 /** PostgreSQL specific configuration */
 export interface PostgreSQLConfig {
   /** Whether TimescaleDB extension is enabled */
-  timescaledb_enabled?: boolean;
+  timescaledb_enabled: boolean;
 }
 
 /** Database instance information */
@@ -365,7 +365,7 @@ export interface ApiDatabase {
   /** Whether periodic backups are enabled */
   periodic_backups_enabled: boolean;
   /** Scheduled hours for periodic backups */
-  periodic_backups_scheduled_at: number[] | null;
+  periodic_backups_scheduled_at: number[];
   /** Timestamp of first PITR backup */
   first_pitr_backup: string | null;
   /** Database flags */
