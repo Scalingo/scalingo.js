@@ -362,7 +362,7 @@ export default class Databases {
     return unpackData(
       this._client.dbaasApiClient().post(`/databases/${addonId}/action`, {
         action_name: actionName,
-        params: actionParams ?? {},
+        params: actionParams ?? "",
       }),
     );
   }
