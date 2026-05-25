@@ -1,5 +1,9 @@
 ## to be released
 
+## 0.18.9
+
+* feat(databases): fix action empty params
+
 ## 0.18.8
 
 * feat(databases): add backup restoration show route
