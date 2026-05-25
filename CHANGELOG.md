@@ -1,5 +1,10 @@
 ## to be released
 
+## 0.18.9
+
+* feat(databases): add `download_token` and `download_token_date` fields to `Backup` type for tokenized backup downloads
+* feat(databases): fix action empty params
+
 ## 0.18.8
 
 * feat(databases): add backup restoration show route

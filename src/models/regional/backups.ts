@@ -26,6 +26,10 @@ export interface Backup {
   created_at: string;
   /** Hidden backups are generally filtered by the API */
   hidden?: boolean;
+  /** Temporary download token (128 hex chars, 5-minute expiry) */
+  download_token?: string;
+  /** When the download token was generated (ISO8601) */
+  download_token_date?: string;
 }
 
 export type BackupRestorationStatus =
