@@ -351,18 +351,18 @@ export default class Databases {
    * Run a database action via the dbaas API
    * @param addonId ID of the database addon
    * @param actionName Name of the action to perform
-   * @param actionParams Optional parameters for the action
+   * @param actionParams Optional parameters for the action (can be an object, string, or other JSON value)
    * @return Promise that when resolved returns the action result.
    */
   apiAction(
     addonId: string,
     actionName: string,
-    actionParams?: Record<string, unknown>,
+    actionParams?: unknown,
   ): Promise<Record<string, unknown>> {
     return unpackData(
       this._client.dbaasApiClient().post(`/databases/${addonId}/action`, {
         action_name: actionName,
-        params: actionParams || {},
+        params: actionParams ?? {},
       }),
     );
   }
