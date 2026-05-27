@@ -2,7 +2,7 @@ import { expect } from "chai";
 import { Factory } from "rosie";
 
 import Containers from "../../src/Containers";
-import { testGetter, testPost } from "../utils/http";
+import { testGetter, testParamsGetter, testPost } from "../utils/http";
 import "../factories";
 
 describe("Containers#for", () => {
@@ -94,6 +94,15 @@ describe("Container#availableSizes", () => {
     "container_sizes",
     (client) => {
       return new Containers(client).availableSizes();
+    },
+  );
+
+  testParamsGetter(
+    "https://api.osc-fr1.scalingo.com/v1/features/container_sizes",
+    { app_id: "app-id" },
+    "container_sizes",
+    (client) => {
+      return new Containers(client).availableSizes("app-id");
     },
   );
 });

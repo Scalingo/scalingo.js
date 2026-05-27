@@ -105,11 +105,15 @@ export default class Containers {
   /**
    * List the every sizes of the containers
    * @see https://developers.scalingo.com/container_sizes#list-the-container-sizes-available
+   * @param appId? If provided, will return all container sizes available for the given app
    * @return attributes of each container
    */
-  availableSizes(): Promise<ContainerSize[]> {
+  availableSizes(appId?: string): Promise<ContainerSize[]> {
     return unpackData(
-      this._client.apiClient().get("/features/container_sizes"),
+      this._client
+        .apiClient()
+        .get("/features/container_sizes", { params: { app_id: appId } }),
+
       "container_sizes",
     );
   }
