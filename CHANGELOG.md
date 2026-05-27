@@ -1,5 +1,7 @@
 ## to be released
 
+## 0.19.0
+
 * feat(container-sizes): Add appId to container `availableSizes` (PR #562)
 
 ## 0.18.9
