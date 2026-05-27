@@ -4,4 +4,4 @@
 package-lock.json @TheoPouletSouchard  @baptmaury
 
 # Github Actions
-.github/workflows/* @baptmaury
+.github/workflows/* @TheoPouletSouchard @baptmaury
