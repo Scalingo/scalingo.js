@@ -1,7 +1,7 @@
 # CODEOWNERS - Automatic assignment for files modified by Dependabot
 
 # JS (npm)
-package-lock.json @baptmaury
+package-lock.json @TheoPouletSouchard  @baptmaury
 
 # Github Actions
 .github/workflows/* @baptmaury
