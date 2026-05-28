@@ -1,5 +1,6 @@
 dependencies = []
 description = "Scalingo javascript package"
+flags = ["lib"]
 languages = ["javascript"]
 owner = "team-ufs@scalingo.com"
 team = "UFS"
