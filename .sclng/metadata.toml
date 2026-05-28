@@ -1,0 +1,8 @@
+dependencies = []
+description = "Scalingo javascript package"
+flags = ["lib"]
+languages = ["javascript"]
+owner = "team-ufs@scalingo.com"
+team = "UFS"
+version = "1.0.2"
+tier = 1
