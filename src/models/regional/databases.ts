@@ -398,10 +398,35 @@ export type DbOperationStatus =
   | "cancelling"
   | "cancelled";
 
+/** Statuses that indicate a database operation has reached its final state */
+export const DB_OPERATION_FINISHED_STATUSES: DbOperationStatus[] = [
+  "finished",
+  "error",
+  "user-error",
+  "cancelled",
+];
+
+/** Database operation type */
+export type DbOperationType = "pitr_restore" | "upgrade" | string;
+
+/** Operation types that should display a banner to the user */
+export const DB_OPERATION_TYPES_WITH_BANNER: DbOperationType[] = [
+  "pitr_restore",
+  "upgrade",
+];
+
+/** Kind of banner associated to a database operation */
+export type DbOperationBannerKind =
+  | "success"
+  | "error"
+  | "user-error"
+  | "warning"
+  | "info";
+
 /** Database operation */
 export interface DbOperation {
   id: string;
-  type: string;
+  type: DbOperationType;
   status: DbOperationStatus;
   created_at: string;
   finished_at: string | null;
