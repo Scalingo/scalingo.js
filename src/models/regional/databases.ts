@@ -139,12 +139,28 @@ export interface DatabaseUpdateParams {
   };
 }
 
+/** Known database feature names */
+export type DbFeatureName =
+  | "force-ssl"
+  | "publicly-available"
+  | "redis-rdb"
+  | "redis-aof"
+  | "redis-cache";
+
+/** Database feature status */
+export type FeatureStatus =
+  | "PENDING"
+  | "ACTIVATED"
+  | "FAILED"
+  | "PENDING_TO_ACTIVATE"
+  | "PENDING_TO_REMOVE";
+
 /** Database feature */
 export interface DatabaseFeature {
   /** Feature name (e.g., 'force-ssl', 'publicly-available') */
-  name: string;
-  /** Feature status (e.g., 'ACTIVATED', 'DISABLED') */
-  status: string;
+  name: DbFeatureName | string;
+  /** Feature status */
+  status: FeatureStatus | string;
 }
 
 /** PostgreSQL specific configuration */
@@ -330,6 +346,8 @@ export interface DatabasePlan {
   monthly_scheduled_backups?: number;
   /** Number of PITR backup days */
   pitr_backup_days?: number;
+  /** Number of gateway nodes */
+  gateway_nodes?: number;
 }
 
 /** Database memory metrics */
@@ -427,4 +445,20 @@ export interface DatabaseUserCreateParams {
   read_only?: boolean;
   password?: string;
   password_confirmation?: string;
+}
+
+/**
+ * Check whether a database feature has a given status.
+ * @param db The database object (ApiDatabase)
+ * @param name The feature name to look up
+ * @param status The expected status
+ */
+export function dbFeatureIs(
+  db: Pick<ApiDatabase, "features">,
+  name: DbFeatureName | string,
+  status: FeatureStatus | string,
+): boolean {
+  const feature = db.features.find((f) => f.name === name);
+  if (!feature) return false;
+  return feature.status === status;
 }
