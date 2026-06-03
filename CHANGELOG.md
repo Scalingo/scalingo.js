@@ -1,5 +1,9 @@
 ## to be released
 
+## 0.19.1
+
+* feat(misc): Add operations type and dbFeatureIs() to databases.ts
+
 ## 0.19.0
 
 * feat(container-sizes): Add appId to container `availableSizes` (PR #562)
