@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "target": "es2017",
     "module":"es2015",
     "lib": ["es2017", "dom"],
@@ -9,7 +9,6 @@
     "declaration": true,
     "declarationDir": "lib",
     "declarationMap": true,
-    "rootDir": "./src",
     "outDir": "lib",
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
@@ -17,9 +16,7 @@
     "typeRoots": [
       "node_modules/@types"
     ],
-    "paths": {
-      "src/*": ["./src/*"]
-    },
+    "baseUrl": ".",
   },
   "include": [
     "src"
