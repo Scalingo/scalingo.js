@@ -1,5 +1,9 @@
 ## to be released
 
+## 0.19.2
+
+* feat(databases): Add post-provisioning configuration on databases dr
+
 ## 0.19.1
 
 * feat(misc): Add operations type and dbFeatureIs() to databases.ts
