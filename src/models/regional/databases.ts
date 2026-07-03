@@ -112,8 +112,14 @@ export interface DatabaseAddonPlan {
   hds_available: boolean;
 }
 
+export interface DatabasePostProvisioningConfigurationParams {
+  /** Allow access from Scalingo applications in the current database region */
+  regional_network_access?: boolean;
+  /** Application IDs that should receive the database connection environment variable */
+  app_ids?: string[];
+}
+
 export interface CreateParams {
-  /**
   /** Technology ID or slug of the addon provider */
   technology?: string;
   /** Plan ID or name */
@@ -122,6 +128,10 @@ export interface CreateParams {
   name: string;
   /** ID of the project (optional) */
   project_id?: string;
+  /** HDS mode for the dedicated database */
+  hds_resource?: boolean;
+  /** Optional post-provisioning actions (regional access + env var injection targets) */
+  post_provisioning_configuration?: DatabasePostProvisioningConfigurationParams;
 }
 
 /** Parameters accepted when updating a database via the dbaas API */
