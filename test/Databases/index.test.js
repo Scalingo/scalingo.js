@@ -379,6 +379,34 @@ describe("Databases#create", () => {
       });
     },
   );
+
+  testPost(
+    "https://api.osc-fr1.scalingo.com/v1/databases",
+    null,
+    {
+      database: {
+        name: "db-name",
+        technology: "postgresql",
+        plan: "sandbox",
+        post_provisioning_configuration: {
+          regional_network_access: true,
+          app_ids: ["app-1", "app-2"],
+        },
+      },
+    },
+    "apps",
+    (client) => {
+      return new Databases(client).create({
+        technology: "postgresql",
+        plan: "sandbox",
+        name: "db-name",
+        post_provisioning_configuration: {
+          regional_network_access: true,
+          app_ids: ["app-1", "app-2"],
+        },
+      });
+    },
+  );
 });
 
 describe("Databases#apiDatabaseUsers", () => {
