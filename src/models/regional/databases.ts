@@ -445,11 +445,7 @@ export const DB_OPERATION_TYPES_WITH_BANNER: DbOperationType[] = [
 
 /** Kind of banner associated to a database operation */
 export type DbOperationBannerKind =
-  | "success"
-  | "error"
-  | "user-error"
-  | "warning"
-  | "info";
+  "success" | "error" | "user-error" | "warning" | "info";
 
 /** Database operation */
 export interface DbOperation {
