@@ -8,11 +8,7 @@
  * - **error**: There was an error while creating the certificate
  */
 export type LetsEncryptStatus =
-  | "pending_dns"
-  | "new"
-  | "created"
-  | "dns_required"
-  | "error";
+  "pending_dns" | "new" | "created" | "dns_required" | "error";
 export type SslStatus = "pending" | "success" | "error";
 
 export interface AcmeDNSError {

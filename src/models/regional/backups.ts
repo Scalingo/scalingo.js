@@ -1,10 +1,5 @@
 export type BackupStatus =
-  | "scheduled"
-  | "running"
-  | "done"
-  | "error"
-  | "cancelling"
-  | "cancelled";
+  "scheduled" | "running" | "done" | "error" | "cancelling" | "cancelled";
 
 /** Database backup */
 export interface Backup {
@@ -29,10 +24,7 @@ export interface Backup {
 }
 
 export type BackupRestorationStatus =
-  | "scheduled"
-  | "running"
-  | "done"
-  | "error";
+  "scheduled" | "running" | "done" | "error";
 
 export interface BackupRestoration {
   id: string;

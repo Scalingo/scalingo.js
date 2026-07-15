@@ -2,11 +2,7 @@
  * Project Transfer Invitation status values
  */
 export type ProjectTransferInvitationStatus =
-  | "pending"
-  | "accepted"
-  | "declined"
-  | "canceled"
-  | "failed";
+  "pending" | "accepted" | "declined" | "canceled" | "failed";
 
 /**
  * Project Transfer Invitation model
