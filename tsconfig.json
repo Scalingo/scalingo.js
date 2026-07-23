@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
+    "ignoreDeprecations": "6.0",
     "moduleResolution": "node",
     "target": "es2017",
     "module":"es2015",
     "lib": ["es2017", "dom"],
     "strict": true,
     "sourceMap": true,
+    "rootDir": "src",
     "declaration": true,
     "declarationDir": "lib",
     "declarationMap": true,
