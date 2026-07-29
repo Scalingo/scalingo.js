@@ -10,7 +10,10 @@ import { User } from "./user";
  * - **gitlab-self-hosted** is a GitLab self-hosted instance
  */
 export type SCMType =
-  "github" | "gitlab" | "github-enterprise" | "gitlab-self-hosted";
+  | "github"
+  | "gitlab"
+  | "github-enterprise"
+  | "gitlab-self-hosted";
 
 /** @see https://developers.scalingo.com/scm_integrations */
 export interface SCMIntegration {
@@ -67,7 +70,7 @@ export interface Repository {
 }
 
 /** @see https://developers.scalingo.com/scm_integrations# */
-export interface Organization {
+export interface SCMOrganization {
   /** Unique key ID */
   id: number;
   /** URL of the avatar of the organization */
@@ -80,7 +83,7 @@ export interface Organization {
   url: string;
 }
 
-export interface OrganizationsMeta {
+export interface SCMOrganizationsMeta {
   pagination: PaginationMeta;
 }
 
