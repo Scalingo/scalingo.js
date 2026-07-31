@@ -8,4 +8,6 @@ export interface Organization {
   slug: string;
   /** Creation date of the organization */
   created_at: string;
+  /** Organization-specific flags */
+  flags: Record<string, boolean>;
 }
