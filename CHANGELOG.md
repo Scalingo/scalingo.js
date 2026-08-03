@@ -1,6 +1,16 @@
-## to be released
+## 0.20.0
 
-* fix(scm-integrations)!: rename exported `Organization`/`OrganizationsMeta` types to `SCMOrganization`/`SCMOrganizationsMeta` to avoid a naming collision with the upcoming Scalingo Organizations feature (BREAKING CHANGE for consumers importing these types)
+* feat(organizations): add `Organizations` API client with `all()` method to list organizations the current user is a member of
+* fix(scm-integrations)!: rename exported `Organization`/`OrganizationsMeta` types to `SCMOrganization`/`SCMOrganizationsMeta` to avoid a naming collision with the new Organizations feature (BREAKING CHANGE)
+
+### Migration guide
+
+If you were importing `Organization` or `OrganizationsMeta` types from the SCM integrations module, update your imports:
+
+```diff
+- import { Organization, OrganizationsMeta } from "scalingo/SCMIntegrations";
++ import { SCMOrganization, SCMOrganizationsMeta } from "scalingo/SCMIntegrations";
+```
 
 ## 0.19.2
 
