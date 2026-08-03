@@ -1,5 +1,7 @@
 ## to be released
 
+* fix(scm-integrations)!: rename exported `Organization`/`OrganizationsMeta` types to `SCMOrganization`/`SCMOrganizationsMeta` to avoid a naming collision with the upcoming Scalingo Organizations feature (BREAKING CHANGE for consumers importing these types)
+
 ## 0.19.2
 
 * feat(databases): Add post-provisioning configuration on databases dr

@@ -67,7 +67,7 @@ export interface Repository {
 }
 
 /** @see https://developers.scalingo.com/scm_integrations# */
-export interface Organization {
+export interface SCMOrganization {
   /** Unique key ID */
   id: number;
   /** URL of the avatar of the organization */
@@ -80,7 +80,7 @@ export interface Organization {
   url: string;
 }
 
-export interface OrganizationsMeta {
+export interface SCMOrganizationsMeta {
   pagination: PaginationMeta;
 }
 
