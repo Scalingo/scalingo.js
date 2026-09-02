@@ -1,6 +1,6 @@
 import { Client } from "..";
 import { Organization } from "../models/auth/organizations";
-import { CreateParams } from "../params/auth/organizations";
+import { CreateParams, UpdateParams } from "../params/auth/organizations";
 import { unpackData } from "../utils";
 
 /**
@@ -39,6 +39,21 @@ export default class Organizations {
       this._client
         .authApiClient()
         .post("/organizations", { organization: payload }),
+      "organization",
+    );
+  }
+
+  /**
+   * Update an organization
+   * @param id ID of the organization
+   * @param payload Organization update parameters
+   * @return Promise that when resolved returns the updated organization.
+   */
+  update(id: string, payload: UpdateParams): Promise<Organization> {
+    return unpackData(
+      this._client
+        .apiClient()
+        .patch(`/organizations/${id}`, { project: payload }),
       "organization",
     );
   }
