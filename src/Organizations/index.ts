@@ -52,7 +52,7 @@ export default class Organizations {
   update(id: string, payload: UpdateParams): Promise<Organization> {
     return unpackData(
       this._client
-        .apiClient()
+        .authApiClient()
         .patch(`/organizations/${id}`, { project: payload }),
       "organization",
     );
