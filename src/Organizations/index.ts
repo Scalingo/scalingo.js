@@ -1,5 +1,6 @@
 import { Client } from "..";
 import { Organization } from "../models/auth/organizations";
+import { CreateParams } from "../params/auth/organizations";
 import { unpackData } from "../utils";
 
 /**
@@ -25,6 +26,20 @@ export default class Organizations {
     return unpackData(
       this._client.authApiClient().get("/organizations"),
       "organizations",
+    );
+  }
+
+  /**
+   * Create a new organization
+   * @param payload Organization creation parameters
+   * @return Promise that when resolved returns the created organization.
+   */
+  create(payload: CreateParams): Promise<Organization> {
+    return unpackData(
+      this._client
+        .authApiClient()
+        .post("/organizations", { organization: payload }),
+      "organization",
     );
   }
 }

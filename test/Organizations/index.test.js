@@ -1,5 +1,5 @@
 import Organizations from "../../src/Organizations";
-import { testGetter } from "../utils/http";
+import { testGetter, testPost } from "../utils/http";
 
 describe("Organizations#all", () => {
   testGetter(
@@ -8,6 +8,18 @@ describe("Organizations#all", () => {
     "organizations",
     (client) => {
       return new Organizations(client).all();
+    },
+  );
+});
+
+describe("Organizations#create", () => {
+  testPost(
+    "https://auth.scalingo.com/v1/organizations",
+    null,
+    { organization: { name: "my-org" } },
+    "organization",
+    (client) => {
+      return new Organizations(client).create({ name: "my-org" });
     },
   );
 });
