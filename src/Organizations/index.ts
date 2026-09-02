@@ -53,7 +53,7 @@ export default class Organizations {
     return unpackData(
       this._client
         .authApiClient()
-        .patch(`/organizations/${id}`, { project: payload }),
+        .patch(`/organizations/${id}`, { organization: payload }),
       "organization",
     );
   }
