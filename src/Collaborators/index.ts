@@ -4,10 +4,9 @@ import {
   Collaborator,
   CollaboratorInvitePayload,
 } from "../models/regional/collaborators";
-import { OrganizationScopedParams } from "../params/regional/organization";
 import { unpackData } from "../utils";
 
-export type IndexQuery = Record<string, unknown> & OrganizationScopedParams;
+export type IndexQuery = NonNullable<unknown>;
 
 export interface IndexResponse {
   collaborators: Collaborator[];
