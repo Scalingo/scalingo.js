@@ -1,3 +1,8 @@
+## 0.21.0
+
+* feat(organizations): add `create()` method to create a new organization for the current user.
+* feat(organizations): add `update()` method to rename an organization.
+
 ## 0.20.0
 
 * feat(organizations): add `Organizations` API client with `all()` method to list organizations the current user is a member of
