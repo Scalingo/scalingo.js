@@ -17,6 +17,15 @@ describe("Projects#all", () => {
   );
 });
 
+describe("Projects#all with organization scope", () => {
+  testParamsGetter(
+    "https://api.osc-fr1.scalingo.com/v1/projects",
+    { organization_id: "org-123" },
+    "projects",
+    (client) => new Projects(client).all({ organization_id: "org-123" }),
+  );
+});
+
 describe("Projects#find", () => {
   testGetter(
     "https://api.osc-fr1.scalingo.com/v1/projects/project-id",

@@ -24,6 +24,7 @@ import {
   DatabaseUserCreateParams,
   DatabaseFeature,
 } from "../models/regional/databases";
+import { OrganizationScopedParams } from "../params/regional/organization";
 import { unpackData } from "../utils";
 
 /**
@@ -43,9 +44,9 @@ export default class Databases {
    * @return Promise that when resolved returns a Database array.
    */
 
-  all(opts?: {
-    dashboard?: boolean;
-  }): Promise<Database[] | DashboardDatabase[]> {
+  all(
+    opts?: { dashboard?: boolean } & OrganizationScopedParams,
+  ): Promise<Database[] | DashboardDatabase[]> {
     return unpackData(
       this._client.apiClient().get("/databases", { params: opts }),
       "databases",

@@ -4,9 +4,10 @@ import {
   Collaborator,
   CollaboratorInvitePayload,
 } from "../models/regional/collaborators";
+import { OrganizationScopedParams } from "../params/regional/organization";
 import { unpackData } from "../utils";
 
-export type IndexQuery = NonNullable<unknown>;
+export type IndexQuery = Record<string, unknown> & OrganizationScopedParams;
 
 export interface IndexResponse {
   collaborators: Collaborator[];
@@ -92,7 +93,7 @@ export default class Collaborators {
   /**
    * list all request owner collaborators
    */
-  all(params: IndexQuery): Promise<IndexResponse> {
+  all(params: IndexQuery = {}): Promise<IndexResponse> {
     return unpackData(
       this._client.apiClient().get("/collaborators", { params }),
     );
