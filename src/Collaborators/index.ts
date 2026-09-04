@@ -92,6 +92,8 @@ export default class Collaborators {
 
   /**
    * list all request owner collaborators
+   * @param params Optional query parameters
+   * @param params.organization_id ID of the organization to scope the results to
    */
   all(params: IndexQuery = {}): Promise<IndexResponse> {
     return unpackData(

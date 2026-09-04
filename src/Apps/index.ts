@@ -35,6 +35,8 @@ export default class Apps {
   /**
    * Get all your applications and the one your are collaborator for
    * @see https://developers.scalingo.com/apps#list-your-applications
+   * @param opts Optional query parameters
+   * @param opts.organization_id ID of the organization to scope the results to
    * @return Promise that when resolved returns an App array. See: https://developers.scalingo.com/apps#application-attributes
    */
   all(opts?: OrganizationScopedParams): Promise<App[]> {

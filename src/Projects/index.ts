@@ -25,6 +25,8 @@ export default class Projects {
   /**
    * Get all projects for the current user
    * @see https://developers.scalingo.com/projects#list-your-projects
+   * @param opts Optional query parameters
+   * @param opts.organization_id ID of the organization to scope the results to
    * @return Promise that when resolved returns a Project array.
    */
   all(opts?: OrganizationScopedParams): Promise<Project[]> {
