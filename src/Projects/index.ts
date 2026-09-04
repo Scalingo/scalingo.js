@@ -3,6 +3,7 @@ import TransferInvitations from "./TransferInvitations";
 import { PaginatedEvents } from "../models/regional/events";
 import { EligibleNewOwner, Project } from "../models/regional/projects";
 import { IndexParams } from "../params/regional/events";
+import { OrganizationScopedParams } from "../params/regional/organization";
 import { CreateParams, UpdateParams } from "../params/regional/projects";
 import { unpackData } from "../utils";
 
@@ -24,10 +25,15 @@ export default class Projects {
   /**
    * Get all projects for the current user
    * @see https://developers.scalingo.com/projects#list-your-projects
+   * @param opts Optional query parameters
+   * @param opts.organization_id ID of the organization to scope the results to
    * @return Promise that when resolved returns a Project array.
    */
-  all(): Promise<Project[]> {
-    return unpackData(this._client.apiClient().get("/projects"), "projects");
+  all(opts?: OrganizationScopedParams): Promise<Project[]> {
+    return unpackData(
+      this._client.apiClient().get("/projects", { params: opts }),
+      "projects",
+    );
   }
 
   /**

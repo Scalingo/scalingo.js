@@ -4,6 +4,7 @@ import { Client } from "..";
 import Listener from "../Deployments/listener";
 import { App } from "../models/regional/apps";
 import { CreateParams, UpdateParams } from "../params/regional/apps";
+import { OrganizationScopedParams } from "../params/regional/organization";
 import { unpackData } from "../utils";
 
 /**
@@ -34,10 +35,15 @@ export default class Apps {
   /**
    * Get all your applications and the one your are collaborator for
    * @see https://developers.scalingo.com/apps#list-your-applications
+   * @param opts Optional query parameters
+   * @param opts.organization_id ID of the organization to scope the results to
    * @return Promise that when resolved returns an App array. See: https://developers.scalingo.com/apps#application-attributes
    */
-  all(): Promise<App[]> {
-    return unpackData(this._client.apiClient().get("/apps"), "apps");
+  all(opts?: OrganizationScopedParams): Promise<App[]> {
+    return unpackData(
+      this._client.apiClient().get("/apps", { params: opts }),
+      "apps",
+    );
   }
 
   /**

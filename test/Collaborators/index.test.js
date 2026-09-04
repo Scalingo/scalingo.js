@@ -78,6 +78,15 @@ describe("Collaborators#all", () => {
   );
 });
 
+describe("Collaborators#all with organization scope", () => {
+  testParamsGetter(
+    "https://api.osc-fr1.scalingo.com/v1/collaborators",
+    { organization_id: "org-123" },
+    null,
+    (client) => new Collaborators(client).all({ organization_id: "org-123" }),
+  );
+});
+
 describe("Collaborators#update", () => {
   testPatch(
     "https://api.osc-fr1.scalingo.com/v1/apps/toto/collaborators/1234",
