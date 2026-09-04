@@ -7,9 +7,7 @@ import {
 import { OrganizationScopedParams } from "../params/regional/organization";
 import { unpackData } from "../utils";
 
-export interface IndexQuery extends OrganizationScopedParams {
-  [key: string]: unknown;
-}
+export type IndexQuery = OrganizationScopedParams & Record<string, unknown>;
 
 export interface IndexResponse {
   collaborators: Collaborator[];
