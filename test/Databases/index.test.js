@@ -9,6 +9,7 @@ import {
   testDelete,
   testGetter,
   testPatch,
+  testParamsGetter,
   testPost,
   testUpdate,
 } from "../utils/http";
@@ -32,6 +33,19 @@ describe("Databases#all (classic)", () => {
     (client) => {
       return new Databases(client).all();
     },
+  );
+});
+
+describe("Databases#all with organization scope", () => {
+  testParamsGetter(
+    "https://api.osc-fr1.scalingo.com/v1/databases",
+    { dashboard: true, organization_id: "org-123" },
+    "databases",
+    (client) =>
+      new Databases(client).all({
+        dashboard: true,
+        organization_id: "org-123",
+      }),
   );
 });
 
