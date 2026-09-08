@@ -6,7 +6,13 @@ import sinon from "sinon";
 import { Client } from "../../src";
 import Apps from "../../src/Apps";
 import Listener from "../../src/Deployments/listener";
-import { testDelete, testGetter, testPost, testUpdate } from "../utils/http";
+import {
+  testDelete,
+  testGetter,
+  testParamsGetter,
+  testPost,
+  testUpdate,
+} from "../utils/http";
 
 describe("App#all", () => {
   testGetter(
@@ -16,6 +22,15 @@ describe("App#all", () => {
     (client) => {
       return new Apps(client).all();
     },
+  );
+});
+
+describe("Apps#all with organization scope", () => {
+  testParamsGetter(
+    "https://api.osc-fr1.scalingo.com/v1/apps",
+    { organization_id: "org-123" },
+    "apps",
+    (client) => new Apps(client).all({ organization_id: "org-123" }),
   );
 });
 

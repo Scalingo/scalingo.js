@@ -1,3 +1,11 @@
+## 0.22.0
+
+* feat(organizations): add `can()` method to check whether the current user is authorized to perform an action.
+
+## 0.21.1
+
+* feat(organizations): add optional `organization_id` query parameters to apps, projects, collaborators, and databases list methods.
+
 ## 0.21.0
 
 * feat(organizations): add `create()` method to create a new organization for the current user.
