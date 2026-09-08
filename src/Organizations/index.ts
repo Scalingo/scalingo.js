@@ -57,4 +57,19 @@ export default class Organizations {
       "organization",
     );
   }
+
+  /**
+   * Check whether the current user is authorized to perform an action on an organization
+   * @param id ID of the organization
+   * @param scope Scope to check authorization on, eg: "read:organization"
+   * @return Promise that when resolved returns whether the action is authorized.
+   */
+  can(id: string, scope: string): Promise<boolean> {
+    return unpackData(
+      this._client
+        .authApiClient()
+        .get(`/organizations/${id}/can`, { params: { scope } }),
+      "can",
+    );
+  }
 }
