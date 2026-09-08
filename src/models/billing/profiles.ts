@@ -1,6 +1,9 @@
+export type BillingProfileType = "individual" | "business";
+
 export interface BillingProfile {
   id: string;
   name: string;
+  first_name?: string;
   email?: string;
   credit?: string;
   address_line1: string;
@@ -10,6 +13,8 @@ export interface BillingProfile {
   address_state?: string;
   address_country: string;
   vat_number?: string;
+  siren?: string;
+  profile_type?: BillingProfileType;
   invoice_additional_info?: string;
   company?: string;
   payment_method?: string;

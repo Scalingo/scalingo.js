@@ -1,5 +1,10 @@
 import Organizations from "../../src/Organizations";
-import { testGetter, testPost } from "../utils/http";
+import {
+  testGetter,
+  testParamsGetter,
+  testPost,
+  testUpdate,
+} from "../utils/http";
 
 describe("Organizations#all", () => {
   testGetter(
@@ -20,6 +25,28 @@ describe("Organizations#create", () => {
     "organization",
     (client) => {
       return new Organizations(client).create({ name: "my-org" });
+    },
+  );
+});
+
+describe("Organizations#update", () => {
+  testUpdate(
+    "https://auth.scalingo.com/v1/organizations/org-id",
+    { organization: { name: "my-org" } },
+    "organization",
+    (client) => {
+      return new Organizations(client).update("org-id", { name: "my-org" });
+    },
+  );
+});
+
+describe("Organizations#can", () => {
+  testParamsGetter(
+    "https://auth.scalingo.com/v1/organizations/org-id/can",
+    { scope: "read:organization" },
+    "can",
+    (client) => {
+      return new Organizations(client).can("org-id", "read:organization");
     },
   );
 });
