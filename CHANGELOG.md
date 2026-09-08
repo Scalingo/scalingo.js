@@ -1,3 +1,7 @@
+## 0.22.1
+
+* feat(e-invoicing): add `first_name` `siren` and `profile_type` fields to `BillingProfile`
+
 ## 0.22.0
 
 * feat(organizations): add `can()` method to check whether the current user is authorized to perform an action.
