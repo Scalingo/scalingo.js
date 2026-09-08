@@ -25,4 +25,6 @@ export interface Project {
   owner: ProjectOwner;
   /** Project-specific flags */
   flags: Record<string, boolean>;
+  /** ID of the organization owning the project, null for personal projects */
+  organization_id: string | null;
 }

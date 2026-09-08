@@ -10,6 +10,8 @@ export interface DatabaseOwner {
 export interface DatabaseProject {
   name?: string;
   id?: string;
+  /** ID of the organization owning the project, null for personal projects */
+  organization_id?: string | null;
 }
 
 export interface DashboardDatabase {
@@ -93,6 +95,8 @@ export interface DatabaseObject {
   id: string;
   name: string;
   project_id: string;
+  /** ID of the organization owning the project, null for personal projects */
+  organization_id: string | null;
   technology: string;
   plan: string;
 }

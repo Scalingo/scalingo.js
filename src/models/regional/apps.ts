@@ -41,6 +41,8 @@ export interface AppOwner {
 export interface AppProject {
   id: string;
   name: string;
+  /** ID of the organization owning the project, null for personal projects */
+  organization_id: string | null;
 }
 
 /** @see https://developers.scalingo.com/apps */
