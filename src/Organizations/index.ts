@@ -1,6 +1,13 @@
 import { Client } from "..";
-import { Organization } from "../models/auth/organizations";
-import { CreateParams, UpdateParams } from "../params/auth/organizations";
+import {
+  Organization,
+  PaginatedOrganizationEvents,
+} from "../models/auth/organizations";
+import {
+  CreateParams,
+  EventsParams,
+  UpdateParams,
+} from "../params/auth/organizations";
 import { unpackData } from "../utils";
 
 /**
@@ -70,6 +77,23 @@ export default class Organizations {
         .authApiClient()
         .get(`/organizations/${id}/can`, { params: { scope } }),
       "can",
+    );
+  }
+
+  /**
+   * Return the timeline events of an organization
+   * @param id ID of the organization
+   * @param opts Object that contains the pagination information
+   * @return Promise that when resolved returns the paginated events of the organization.
+   */
+  events(
+    id: string,
+    opts?: EventsParams,
+  ): Promise<PaginatedOrganizationEvents> {
+    return unpackData(
+      this._client
+        .authApiClient()
+        .get(`/organizations/${id}/events`, { params: opts }),
     );
   }
 }
