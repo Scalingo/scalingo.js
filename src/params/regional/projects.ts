@@ -3,6 +3,8 @@ export interface CreateParams {
   name: string;
   /** Project by default ? */
   default?: boolean;
+  /** ID of the organization owning the project, omit for personal projects */
+  organization_id?: string | null;
 }
 
 export interface UpdateParams {
@@ -10,4 +12,6 @@ export interface UpdateParams {
   name?: string;
   /** Project by default ? */
   default?: boolean;
+  /** ID of the organization owning the project, null to dissociate it */
+  organization_id?: string | null;
 }
