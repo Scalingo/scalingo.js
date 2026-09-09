@@ -50,3 +50,17 @@ describe("Organizations#can", () => {
     },
   );
 });
+
+describe("Organizations#events", () => {
+  testParamsGetter(
+    "https://auth.scalingo.com/v1/organizations/org-id/events",
+    { page: 1, per_page: 20 },
+    null,
+    (client) => {
+      return new Organizations(client).events("org-id", {
+        page: 1,
+        per_page: 20,
+      });
+    },
+  );
+});
