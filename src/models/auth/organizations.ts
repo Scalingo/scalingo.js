@@ -1,4 +1,4 @@
-import { PaginationMeta } from "../../meta";
+import { PaginationMeta } from "src/meta";
 
 /** @see https://developers.scalingo.com/organizations */
 export interface Organization {
