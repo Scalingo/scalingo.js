@@ -1,6 +1,10 @@
 ## Unreleased
 
+## 0.22.1
+
 * feat(organizations): Add organization IDs to resources (PR #611)
+* feat(e-invoicing): add `first_name` `siren` and `profile_type` fields to `BillingProfile`
+* feat(organizations): Add organization events endpoint (PR #614)
 
 ## 0.22.0
 
