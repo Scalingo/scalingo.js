@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 0.22.2
+
 * feat(organizations) Add organization_id to project create/update payloads (PR #618)
 
 ## 0.22.1
