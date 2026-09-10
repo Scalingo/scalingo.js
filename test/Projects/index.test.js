@@ -57,6 +57,28 @@ describe("Projects#create", () => {
   );
 });
 
+describe("Projects#create with an organization", () => {
+  testPost(
+    "https://api.osc-fr1.scalingo.com/v1/projects",
+    null,
+    {
+      project: {
+        name: "test-project",
+        default: false,
+        organization_id: "org-123",
+      },
+    },
+    "project",
+    (client) => {
+      return new Projects(client).create({
+        name: "test-project",
+        default: false,
+        organization_id: "org-123",
+      });
+    },
+  );
+});
+
 describe("Projects#update", () => {
   testUpdate(
     "https://api.osc-fr1.scalingo.com/v1/projects/project-id",
