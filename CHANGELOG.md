@@ -1,6 +1,5 @@
 ## Unreleased
 
-* feat(organizations): Enrich organization events types.
 * feat(organizations): Add organization IDs to resources (PR #611)
 
 ## 0.22.0
