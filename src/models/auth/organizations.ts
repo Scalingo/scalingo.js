@@ -32,6 +32,19 @@ export interface OrganizationEventTarget {
   type: string;
 }
 
+/** A single audited change value */
+export type OrganizationEventChangeValue =
+  string | number | boolean | null | OrganizationEventActor;
+
+/** A `{ from, to }` diff, as returned for `*.update` events. */
+export interface OrganizationEventChangeDiff {
+  from: OrganizationEventChangeValue;
+  to: OrganizationEventChangeValue;
+}
+
+export type OrganizationEventChange =
+  OrganizationEventChangeValue | OrganizationEventChangeDiff;
+
 /** A single organization timeline event */
 export interface OrganizationEvent {
   /** Id of the event */
@@ -43,7 +56,7 @@ export interface OrganizationEvent {
   /** Resource impacted by the event */
   target: OrganizationEventTarget;
   /** Changes applied by the event, keyed by attribute name */
-  changes: Record<string, unknown>;
+  changes: Record<string, OrganizationEventChange>;
   /** Date of the event's creation */
   created_at: string;
 }
