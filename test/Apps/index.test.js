@@ -205,6 +205,53 @@ describe("App#update", () => {
   );
 });
 
+describe("App#firewall_rules", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/v1/apps/app-id/firewall_rules",
+    null,
+    "firewall_rules",
+    (client) => {
+      return new Apps(client).app_firewall_rules("app-id");
+    },
+  );
+});
+
+describe("App#create_app_firewall_rule", () => {
+  testPost(
+    "https://api.osc-fr1.scalingo.com/v1/apps/app-id/firewall_rules",
+    null,
+    { firewall_rule: { cidr: "192.0.2.0/24", label: "office" } },
+    "firewall_rule",
+    (client) => {
+      return new Apps(client).create_app_firewall_rule("app-id", {
+        cidr: "192.0.2.0/24",
+        label: "office",
+      });
+    },
+  );
+});
+
+describe("App#firewall_rule", () => {
+  testGetter(
+    "https://api.osc-fr1.scalingo.com/v1/apps/app-id/firewall_rules/rule-id",
+    null,
+    "firewall_rule",
+    (client) => {
+      return new Apps(client).app_firewall_rule("app-id", "rule-id");
+    },
+  );
+});
+
+describe("App#delete_app_firewall_rule", () => {
+  testDelete(
+    "https://api.osc-fr1.scalingo.com/v1/apps/app-id/firewall_rules/rule-id",
+    null,
+    (client) => {
+      return new Apps(client).delete_app_firewall_rule("app-id", "rule-id");
+    },
+  );
+});
+
 describe("App#private_network_domain_names", () => {
   testGetter(
     "https://api.osc-fr1.scalingo.com/v1/apps/app-id/private_network_domain_names",

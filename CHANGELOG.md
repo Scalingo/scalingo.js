@@ -1,5 +1,7 @@
 ## Unreleased
 
+* feat(app_firewall_rules) Add support for application firewall rules
+
 ## 0.22.3
 
 * feat(organizations): Enrich Organization events types (#620)

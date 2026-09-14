@@ -2,8 +2,12 @@ import { PaginationOpts } from "src/meta";
 
 import { Client } from "..";
 import Listener from "../Deployments/listener";
-import { App } from "../models/regional/apps";
-import { CreateParams, UpdateParams } from "../params/regional/apps";
+import { App, AppFirewallRule } from "../models/regional/apps";
+import {
+  CreateParams,
+  AppFirewallRuleParams,
+  UpdateParams,
+} from "../params/regional/apps";
 import { OrganizationScopedParams } from "../params/regional/organization";
 import { unpackData } from "../utils";
 
@@ -159,6 +163,40 @@ export default class Apps {
     return unpackData(
       this._client.apiClient().patch(`/apps/${appID}`, { app: appSettings }),
       "app",
+    );
+  }
+
+  app_firewall_rules(appID: string): Promise<AppFirewallRule[]> {
+    return unpackData(
+      this._client.apiClient().get(`/apps/${appID}/firewall_rules`),
+      "firewall_rules",
+    );
+  }
+
+  app_firewall_rule(appID: string, ruleID: string): Promise<AppFirewallRule> {
+    return unpackData(
+      this._client.apiClient().get(`/apps/${appID}/firewall_rules/${ruleID}`),
+      "firewall_rule",
+    );
+  }
+
+  create_app_firewall_rule(
+    appID: string,
+    params: AppFirewallRuleParams,
+  ): Promise<AppFirewallRule> {
+    return unpackData(
+      this._client.apiClient().post(`/apps/${appID}/firewall_rules`, {
+        firewall_rule: params,
+      }),
+      "firewall_rule",
+    );
+  }
+
+  delete_app_firewall_rule(appID: string, ruleID: string): Promise<void> {
+    return unpackData(
+      this._client
+        .apiClient()
+        .delete(`/apps/${appID}/firewall_rules/${ruleID}`),
     );
   }
 
