@@ -1,5 +1,9 @@
 ## Unreleased
 
+## 0.22.3
+
+* feat(organizations): Enrich Organization events types (#620)
+
 ## 0.22.2
 
 * feat(organizations) Add organization_id to project create/update payloads (PR #618)
