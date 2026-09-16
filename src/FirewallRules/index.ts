@@ -1,6 +1,6 @@
 import { Client } from "..";
-import { AppFirewallRule } from "../models/regional/app-firewall-rules";
-import { CreateParams } from "../params/regional/app-firewall-rules";
+import { AppFirewallRule } from "../models/regional/app_firewall_rules";
+import { CreateParams } from "../params/regional/app_firewall_rules";
 import { unpackData } from "../utils";
 
 /**

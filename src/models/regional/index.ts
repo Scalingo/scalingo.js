@@ -1,6 +1,6 @@
 export * from "./addons";
 export * from "./alerts";
-export * from "./app-firewall-rules";
+export * from "./app_firewall_rules";
 export * from "./apps";
 export * from "./audit_logs";
 export * from "./autoscalers";
