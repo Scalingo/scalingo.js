@@ -1,6 +1,6 @@
 ## Unreleased
 
-* feat(app_firewall_rules) Add support for application firewall rules
+* feat(app-firewall-rules) Add support for application firewall rules
 
 ## 0.22.3
 

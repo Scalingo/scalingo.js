@@ -27,10 +27,3 @@ export interface UpdateParams {
   /** New parent project ID */
   project_id?: string;
 }
-
-export interface AppFirewallRuleParams {
-  /** IPv4 CIDR to allow */
-  cidr: string;
-  /** Optional label describing the rule */
-  label?: string;
-}

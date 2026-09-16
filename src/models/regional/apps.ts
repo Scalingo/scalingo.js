@@ -45,13 +45,6 @@ export interface AppProject {
   organization_id: string | null;
 }
 
-export interface AppFirewallRule {
-  id: string;
-  app_id: string;
-  cidr: string;
-  label: string;
-}
-
 /** @see https://developers.scalingo.com/apps */
 export interface App {
   /** unique ID */
