@@ -16,6 +16,7 @@ import Deployments from "./Deployments";
 import Domains from "./Domains";
 import Environment from "./Environment";
 import Events from "./Events";
+import FirewallRules from "./FirewallRules";
 import HDSContacts from "./HDSContacts";
 import Keys from "./Keys";
 import Logs from "./Logs";
@@ -103,6 +104,7 @@ export class Client {
   Domains = new Domains(this);
   Environment = new Environment(this);
   Events = new Events(this);
+  FirewallRules = new FirewallRules(this);
   HDSContacts = new HDSContacts(this);
   Keys = new Keys(this);
   Logs = new Logs(this);
