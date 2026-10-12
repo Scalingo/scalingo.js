@@ -1,5 +1,7 @@
 ## Unreleased
 
+* feat(organizations): add `destroy()` method to delete an organization
+
 ## 0.23.0
 
 * feat(app-firewall-rules) Add support for application firewall rules
