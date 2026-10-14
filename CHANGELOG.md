@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 0.23.1
+
 * feat(organizations): add `destroy()` method to delete an organization
 
 ## 0.23.0
