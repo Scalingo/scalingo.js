@@ -1,5 +1,7 @@
 ## Unreleased
 
+* feat(organizations): add `members()` method to list the members of an organization
+
 ## 0.23.0
 
 * feat(app-firewall-rules) Add support for application firewall rules
