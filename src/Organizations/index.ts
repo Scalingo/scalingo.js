@@ -67,6 +67,16 @@ export default class Organizations {
   }
 
   /**
+   * Delete an organization
+   * @param id ID of the organization
+   */
+  destroy(id: string): Promise<void> {
+    return unpackData(
+      this._client.authApiClient().delete(`/organizations/${id}`),
+    );
+  }
+
+  /**
    * Check whether the current user is authorized to perform an action on an organization
    * @param id ID of the organization
    * @param scope Scope to check authorization on, eg: "read:organization"

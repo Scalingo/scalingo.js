@@ -1,5 +1,6 @@
 import Organizations from "../../src/Organizations";
 import {
+  testDelete,
   testGetter,
   testParamsGetter,
   testPost,
@@ -36,6 +37,16 @@ describe("Organizations#update", () => {
     "organization",
     (client) => {
       return new Organizations(client).update("org-id", { name: "my-org" });
+    },
+  );
+});
+
+describe("Organizations#destroy", () => {
+  testDelete(
+    "https://auth.scalingo.com/v1/organizations/org-id",
+    null,
+    (client) => {
+      return new Organizations(client).destroy("org-id");
     },
   );
 });
