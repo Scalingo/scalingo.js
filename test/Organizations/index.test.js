@@ -75,3 +75,14 @@ describe("Organizations#events", () => {
     },
   );
 });
+
+describe("Organizations#members", () => {
+  testGetter(
+    "https://auth.scalingo.com/v1/organizations/org-id/members",
+    null,
+    "members",
+    (client) => {
+      return new Organizations(client).members("org-id");
+    },
+  );
+});

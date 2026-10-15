@@ -14,6 +14,47 @@ export interface Organization {
   flags: Record<string, boolean>;
 }
 
+/** Role of a member within an organization */
+export type OrganizationMemberRole = "admin" | "member";
+
+/** User associated to an organization member */
+export interface OrganizationMemberUser {
+  /** Unique id (uuid) of the user */
+  id: string;
+  /** Username of the user */
+  username: string;
+  /** Email of the user */
+  email: string;
+  /** Whether the user has two-factor authentication enabled */
+  otp_activated: boolean;
+  /** Date of the last activity of the user */
+  last_seen_at: string;
+}
+
+/** User who invited an organization member */
+export interface OrganizationMemberInviter {
+  /** Unique id (uuid) of the user */
+  id: string;
+  /** Username of the user */
+  username: string;
+  /** Email of the user */
+  email: string;
+}
+
+/** Member of an organization */
+export interface OrganizationMember {
+  /** Unique member ID (uuid) */
+  id: string;
+  /** Role of the member in the organization */
+  role: OrganizationMemberRole;
+  /** Date the member joined the organization */
+  created_at: string;
+  /** User associated to the member */
+  user: OrganizationMemberUser;
+  /** User who invited the member */
+  invited_by: OrganizationMemberInviter;
+}
+
 /** Actor of an organization event */
 export interface OrganizationEventActor {
   /** Unique id (uuid) of the actor */

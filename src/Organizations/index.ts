@@ -1,6 +1,7 @@
 import { Client } from "..";
 import {
   Organization,
+  OrganizationMember,
   PaginatedOrganizationEvents,
 } from "../models/auth/organizations";
 import {
@@ -87,6 +88,18 @@ export default class Organizations {
         .authApiClient()
         .get(`/organizations/${id}/can`, { params: { scope } }),
       "can",
+    );
+  }
+
+  /**
+   * List the members of an organization. Only organization admins are allowed to do so.
+   * @param id ID of the organization
+   * @return Promise that when resolved returns the members of the organization.
+   */
+  members(id: string): Promise<OrganizationMember[]> {
+    return unpackData(
+      this._client.authApiClient().get(`/organizations/${id}/members`),
+      "members",
     );
   }
 

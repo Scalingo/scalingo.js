@@ -1,5 +1,6 @@
 ## Unreleased
 
+* feat(organizations): add `members()` method to list the members of an organization
 * feat(organizations): add `destroy()` method to delete an organization
 
 ## 0.23.0
