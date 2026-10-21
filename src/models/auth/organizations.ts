@@ -55,6 +55,26 @@ export interface OrganizationMember {
   invited_by: OrganizationMemberInviter;
 }
 
+/** Invitation to join an organization */
+export interface OrganizationInvitation {
+  /** Unique invitation ID (uuid) */
+  id: string;
+  /** Email address the invitation was sent to */
+  invited_email: string;
+  /** Email of the user who sent the invitation */
+  inviter_email: string;
+  /** Username of the user who sent the invitation */
+  inviter_username: string;
+  /** Link the invitee has to follow to accept the invitation */
+  invitation_link: string;
+  /** Date the invitation was sent */
+  created_at: string;
+  /** Date after which the invitation can no longer be accepted */
+  expiration_date: string;
+  /** Whether the invitation has expired */
+  expired: boolean;
+}
+
 /** Actor of an organization event */
 export interface OrganizationEventActor {
   /** Unique id (uuid) of the actor */

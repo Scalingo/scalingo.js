@@ -86,3 +86,27 @@ describe("Organizations#members", () => {
     },
   );
 });
+
+describe("Organizations#invitations", () => {
+  testGetter(
+    "https://auth.scalingo.com/v1/organizations/org-id/invitations",
+    null,
+    "invitations",
+    (client) => {
+      return new Organizations(client).invitations("org-id");
+    },
+  );
+});
+
+describe("Organizations#destroyInvitation", () => {
+  testDelete(
+    "https://auth.scalingo.com/v1/organizations/org-id/invitations/invitation-id",
+    null,
+    (client) => {
+      return new Organizations(client).destroyInvitation(
+        "org-id",
+        "invitation-id",
+      );
+    },
+  );
+});
