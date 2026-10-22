@@ -1,6 +1,7 @@
 import { Client } from "..";
 import {
   Organization,
+  OrganizationInvitation,
   OrganizationMember,
   PaginatedOrganizationEvents,
 } from "../models/auth/organizations";
@@ -100,6 +101,33 @@ export default class Organizations {
     return unpackData(
       this._client.authApiClient().get(`/organizations/${id}/members`),
       "members",
+    );
+  }
+
+  /**
+   * List the pending invitations of an organization, expired ones included.
+   * Only organization admins are allowed to do so.
+   * @param id ID of the organization
+   * @return Promise that when resolved returns the invitations of the organization.
+   */
+  invitations(id: string): Promise<OrganizationInvitation[]> {
+    return unpackData(
+      this._client.authApiClient().get(`/organizations/${id}/invitations`),
+      "invitations",
+    );
+  }
+
+  /**
+   * Cancel a pending invitation, or delete an expired one.
+   * Only organization admins are allowed to do so.
+   * @param id ID of the organization
+   * @param invitationId ID of the invitation
+   */
+  destroyInvitation(id: string, invitationId: string): Promise<void> {
+    return unpackData(
+      this._client
+        .authApiClient()
+        .delete(`/organizations/${id}/invitations/${invitationId}`),
     );
   }
 
