@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 0.23.2
+
 * feat(organizations): add `invitations()` method to list the invitations of an organization
 * feat(organizations): add `destroyInvitation()` method to cancel or delete an invitation
 
