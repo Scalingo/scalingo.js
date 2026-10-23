@@ -98,6 +98,20 @@ describe("Organizations#invitations", () => {
   );
 });
 
+describe("Organizations#createInvitation", () => {
+  testPost(
+    "https://auth.scalingo.com/v1/organizations/org-id/invitations",
+    null,
+    { invitation: { email: "john@example.com" } },
+    "invitation",
+    (client) => {
+      return new Organizations(client).createInvitation("org-id", {
+        email: "john@example.com",
+      });
+    },
+  );
+});
+
 describe("Organizations#destroyInvitation", () => {
   testDelete(
     "https://auth.scalingo.com/v1/organizations/org-id/invitations/invitation-id",

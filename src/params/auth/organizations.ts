@@ -8,6 +8,11 @@ export interface UpdateParams {
   name?: string;
 }
 
+export interface CreateInvitationParams {
+  /** Email address of the person to invite */
+  email: string;
+}
+
 export interface EventsParams {
   /** Page number */
   page?: number;
