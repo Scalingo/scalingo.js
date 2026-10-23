@@ -1,5 +1,7 @@
 ## Unreleased
 
+* feat(organizations): add `createInvitation()` method to invite a person to join an organization
+
 ## 0.23.2
 
 * feat(organizations): add `invitations()` method to list the invitations of an organization
