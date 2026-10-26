@@ -1,5 +1,6 @@
 ## Unreleased
 
+* feat(organizations): add `createInvitation()` method to invite a person to join an organization
 * feat(organizations): add `show()` method to get an organization by ID or slug
 
 ## 0.23.2

@@ -6,6 +6,7 @@ import {
   PaginatedOrganizationEvents,
 } from "../models/auth/organizations";
 import {
+  CreateInvitationParams,
   CreateParams,
   EventsParams,
   UpdateParams,
@@ -126,6 +127,25 @@ export default class Organizations {
     return unpackData(
       this._client.authApiClient().get(`/organizations/${id}/invitations`),
       "invitations",
+    );
+  }
+
+  /**
+   * Invite a person to join an organization.
+   * Only organization admins are allowed to do so.
+   * @param id ID of the organization
+   * @param payload Invitation creation parameters
+   * @return Promise that when resolved returns the created invitation.
+   */
+  createInvitation(
+    id: string,
+    payload: CreateInvitationParams,
+  ): Promise<OrganizationInvitation> {
+    return unpackData(
+      this._client
+        .authApiClient()
+        .post(`/organizations/${id}/invitations`, { invitation: payload }),
+      "invitation",
     );
   }
 
