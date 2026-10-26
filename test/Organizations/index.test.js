@@ -18,6 +18,17 @@ describe("Organizations#all", () => {
   );
 });
 
+describe("Organizations#show", () => {
+  testGetter(
+    "https://auth.scalingo.com/v1/organizations/org-reference",
+    null,
+    "organization",
+    (client) => {
+      return new Organizations(client).show("org-reference");
+    },
+  );
+});
+
 describe("Organizations#create", () => {
   testPost(
     "https://auth.scalingo.com/v1/organizations",

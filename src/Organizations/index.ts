@@ -39,6 +39,18 @@ export default class Organizations {
   }
 
   /**
+   * Get an organization
+   * @param reference ID, current slug or previous slug of the organization
+   * @return Promise that when resolved returns the organization.
+   */
+  show(reference: string): Promise<Organization> {
+    return unpackData(
+      this._client.authApiClient().get(`/organizations/${reference}`),
+      "organization",
+    );
+  }
+
+  /**
    * Create a new organization
    * @param payload Organization creation parameters
    * @return Promise that when resolved returns the created organization.
