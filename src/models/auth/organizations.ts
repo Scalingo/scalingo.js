@@ -12,6 +12,8 @@ export interface Organization {
   created_at: string;
   /** Organization-specific flags */
   flags: Record<string, boolean>;
+  /** Organization-specific limits */
+  limits: Record<string, number>;
 }
 
 /** Role of a member within an organization */
