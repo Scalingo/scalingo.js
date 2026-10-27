@@ -13,6 +13,11 @@ export interface CreateInvitationParams {
   email: string;
 }
 
+export interface BulkCreateInvitationsParams {
+  /** Email addresses of the people to invite */
+  emails: string[];
+}
+
 export interface EventsParams {
   /** Page number */
   page?: number;
