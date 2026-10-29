@@ -123,6 +123,20 @@ describe("Organizations#createInvitation", () => {
   );
 });
 
+describe("Organizations#bulkCreateInvitations", () => {
+  testPost(
+    "https://auth.scalingo.com/v1/organizations/org-id/invitations/bulk",
+    null,
+    { invitation: { emails: ["john@example.com", "jane@example.com"] } },
+    "invitations",
+    (client) => {
+      return new Organizations(client).bulkCreateInvitations("org-id", {
+        emails: ["john@example.com", "jane@example.com"],
+      });
+    },
+  );
+});
+
 describe("Organizations#destroyInvitation", () => {
   testDelete(
     "https://auth.scalingo.com/v1/organizations/org-id/invitations/invitation-id",

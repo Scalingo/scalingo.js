@@ -1,5 +1,8 @@
 ## Unreleased
 
+* feat(organizations): add `bulkCreateInvitations()` method to invite several people to join an organization at once
+* feat(organizations): add `limits` to the `Organization` model
+
 ## 0.23.3
 
 * feat(organizations): add `createInvitation()` method to invite a person to join an organization

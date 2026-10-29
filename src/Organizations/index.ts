@@ -6,6 +6,7 @@ import {
   PaginatedOrganizationEvents,
 } from "../models/auth/organizations";
 import {
+  BulkCreateInvitationsParams,
   CreateInvitationParams,
   CreateParams,
   EventsParams,
@@ -146,6 +147,27 @@ export default class Organizations {
         .authApiClient()
         .post(`/organizations/${id}/invitations`, { invitation: payload }),
       "invitation",
+    );
+  }
+
+  /**
+   * Invite several people to join an organization at once.
+   * Only organization admins are allowed to do so.
+   * If some invitations cannot be created, the request fails with a 422 whose
+   * payload contains the created `invitations` and the `errors` indexed by email.
+   * @param id ID of the organization
+   * @param payload Invitations creation parameters
+   * @return Promise that when resolved returns the created invitations.
+   */
+  bulkCreateInvitations(
+    id: string,
+    payload: BulkCreateInvitationsParams,
+  ): Promise<OrganizationInvitation[]> {
+    return unpackData(
+      this._client
+        .authApiClient()
+        .post(`/organizations/${id}/invitations/bulk`, { invitation: payload }),
+      "invitations",
     );
   }
 
