@@ -131,3 +131,31 @@ export interface PaginatedOrganizationEvents {
   /** Meta information */
   meta: PaginationMeta;
 }
+
+/** Pagination information returned by the authentication API */
+export interface OrganizationPaginationMeta {
+  /** Pagination details */
+  pagination: PaginationMeta;
+}
+
+/** Paginated list of organization members */
+export interface PaginatedOrganizationMembers {
+  /** Members of the requested page */
+  members: OrganizationMember[];
+  /** Meta information */
+  meta: OrganizationPaginationMeta;
+}
+
+/** Meta information of a paginated list of organization invitations */
+export interface OrganizationInvitationsMeta extends OrganizationPaginationMeta {
+  /** Number of non-expired invitations across all pages */
+  pending_count: number;
+}
+
+/** Paginated list of organization invitations */
+export interface PaginatedOrganizationInvitations {
+  /** Invitations of the requested page */
+  invitations: OrganizationInvitation[];
+  /** Meta information */
+  meta: OrganizationInvitationsMeta;
+}
