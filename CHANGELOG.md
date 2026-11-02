@@ -1,5 +1,8 @@
 ## Unreleased
 
+* feat(organizations)!: `members()` is now paginated: it accepts pagination options and returns `{ members, meta }` instead of an array (BREAKING CHANGE)
+* feat(organizations)!: `invitations()` is now paginated: it accepts pagination options and returns `{ invitations, meta }` instead of an array, `meta.pending_count` being the number of non-expired invitations (BREAKING CHANGE)
+
 ## 0.23.4
 
 * feat(organizations): add `bulkCreateInvitations()` method to invite several people to join an organization at once
