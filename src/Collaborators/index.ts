@@ -2,6 +2,8 @@ import { Client } from "..";
 import { App } from "../models/regional/apps";
 import {
   Collaborator,
+  CollaboratorAddMemberPayload,
+  CollaboratorCandidate,
   CollaboratorInvitePayload,
 } from "../models/regional/collaborators";
 import { OrganizationScopedParams } from "../params/regional/organization";
@@ -67,6 +69,39 @@ export default class Collaborators {
     if (typeof payload === "string") {
       payload = { email: payload } as CollaboratorInvitePayload;
     }
+    return unpackData(
+      this._client.apiClient().post(`/apps/${appId}/collaborators`, {
+        collaborator: {
+          ...payload,
+        },
+      }),
+      "collaborator",
+    );
+  }
+
+  /**
+   * List the members of the organization of an application who can be added as
+   * collaborators. Only available for applications of an organization.
+   * @param appId ID of the application
+   */
+  candidates(appId: string): Promise<CollaboratorCandidate[]> {
+    return unpackData(
+      this._client.apiClient().get(`/apps/${appId}/collaborators/candidates`),
+      "candidates",
+    );
+  }
+
+  /**
+   * Directly add a member of the organization as a collaborator of an
+   * application, without invitation. Only available for applications of an
+   * organization.
+   * @param appId ID of the application
+   * @param payload Unique User ID of the member, and the optional role
+   */
+  addMember(
+    appId: string,
+    payload: CollaboratorAddMemberPayload,
+  ): Promise<Collaborator> {
     return unpackData(
       this._client.apiClient().post(`/apps/${appId}/collaborators`, {
         collaborator: {

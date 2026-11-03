@@ -1,5 +1,8 @@
 ## Unreleased
 
+* feat(collaborators): add `candidates()` method to list the organization members who can be added as collaborators of an application of an organization
+* feat(collaborators): add `addMember()` method to directly add an organization member, by `user_id`, as a collaborator of an application of an organization
+
 ## 0.23.4
 
 * feat(organizations): add `bulkCreateInvitations()` method to invite several people to join an organization at once
