@@ -80,30 +80,33 @@ export default class Collaborators {
   }
 
   /**
-   * List the members of the organization of an application who can be added as
-   * collaborators. Only available for applications of an organization.
-   * @param appId ID of the application
+   * List the members of the organization of a resource (application or
+   * database) who can be added as collaborators. Only available for resources of
+   * an organization.
+   * @param resourceId ID of the application or database
    */
-  candidates(appId: string): Promise<CollaboratorCandidate[]> {
+  candidates(resourceId: string): Promise<CollaboratorCandidate[]> {
     return unpackData(
-      this._client.apiClient().get(`/apps/${appId}/collaborators/candidates`),
+      this._client
+        .apiClient()
+        .get(`/apps/${resourceId}/collaborators/candidates`),
       "candidates",
     );
   }
 
   /**
-   * Directly add a member of the organization as a collaborator of an
-   * application, without invitation. Only available for applications of an
-   * organization.
-   * @param appId ID of the application
+   * Directly add a member of the organization as a collaborator of a resource
+   * (application or database), without invitation. Only available for
+   * resources of an organization.
+   * @param resourceId ID of the application or database
    * @param payload Unique User ID of the member, and the optional role
    */
   addMember(
-    appId: string,
+    resourceId: string,
     payload: CollaboratorAddMemberPayload,
   ): Promise<Collaborator> {
     return unpackData(
-      this._client.apiClient().post(`/apps/${appId}/collaborators`, {
+      this._client.apiClient().post(`/apps/${resourceId}/collaborators`, {
         collaborator: {
           ...payload,
         },
