@@ -91,9 +91,21 @@ describe("Organizations#members", () => {
   testGetter(
     "https://auth.scalingo.com/v1/organizations/org-id/members",
     null,
-    "members",
+    null,
     (client) => {
       return new Organizations(client).members("org-id");
+    },
+  );
+
+  testParamsGetter(
+    "https://auth.scalingo.com/v1/organizations/org-id/members",
+    { page: 2, per_page: 20 },
+    null,
+    (client) => {
+      return new Organizations(client).members("org-id", {
+        page: 2,
+        per_page: 20,
+      });
     },
   );
 });
@@ -102,9 +114,21 @@ describe("Organizations#invitations", () => {
   testGetter(
     "https://auth.scalingo.com/v1/organizations/org-id/invitations",
     null,
-    "invitations",
+    null,
     (client) => {
       return new Organizations(client).invitations("org-id");
+    },
+  );
+
+  testParamsGetter(
+    "https://auth.scalingo.com/v1/organizations/org-id/invitations",
+    { page: 2, per_page: 20 },
+    null,
+    (client) => {
+      return new Organizations(client).invitations("org-id", {
+        page: 2,
+        per_page: 20,
+      });
     },
   );
 });

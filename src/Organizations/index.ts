@@ -1,9 +1,11 @@
 import { Client } from "..";
+import { PaginationOpts } from "../meta";
 import {
   Organization,
   OrganizationInvitation,
-  OrganizationMember,
   PaginatedOrganizationEvents,
+  PaginatedOrganizationInvitations,
+  PaginatedOrganizationMembers,
 } from "../models/auth/organizations";
 import {
   BulkCreateInvitationsParams,
@@ -107,27 +109,39 @@ export default class Organizations {
   }
 
   /**
-   * List the members of an organization. Only organization admins are allowed to do so.
+   * List the members of an organization
+   * Only organization admins are allowed to do so.
    * @param id ID of the organization
-   * @return Promise that when resolved returns the members of the organization.
+   * @param opts Object that contains the pagination information
+   * @return Promise that when resolved returns the paginated members of the organization.
    */
-  members(id: string): Promise<OrganizationMember[]> {
+  members(
+    id: string,
+    opts?: PaginationOpts,
+  ): Promise<PaginatedOrganizationMembers> {
     return unpackData(
-      this._client.authApiClient().get(`/organizations/${id}/members`),
-      "members",
+      this._client
+        .authApiClient()
+        .get(`/organizations/${id}/members`, { params: opts }),
     );
   }
 
   /**
-   * List the pending invitations of an organization, expired ones included.
-   * Only organization admins are allowed to do so.
+   * List the pending invitations of an organization, expired ones included,
+   * most recent first. Only organization admins are allowed to do so.
    * @param id ID of the organization
-   * @return Promise that when resolved returns the invitations of the organization.
+   * @param opts Object that contains the pagination information
+   * @return Promise that when resolved returns the paginated invitations of the organization,
+   * along with the number of non-expired invitations (`meta.pending_count`).
    */
-  invitations(id: string): Promise<OrganizationInvitation[]> {
+  invitations(
+    id: string,
+    opts?: PaginationOpts,
+  ): Promise<PaginatedOrganizationInvitations> {
     return unpackData(
-      this._client.authApiClient().get(`/organizations/${id}/invitations`),
-      "invitations",
+      this._client
+        .authApiClient()
+        .get(`/organizations/${id}/invitations`, { params: opts }),
     );
   }
 
