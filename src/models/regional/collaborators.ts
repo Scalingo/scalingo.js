@@ -35,3 +35,21 @@ export interface CollaboratorInvitePayload {
   email: string;
   is_limited?: boolean;
 }
+
+/** Member of the organization of a resource, who can be added as a collaborator */
+export interface CollaboratorCandidate {
+  /** Unique User ID of the member, to use as `user_id` when adding the collaborator */
+  id: string;
+  /** Username of the member */
+  username: string;
+  /** Email of the member */
+  email: string;
+}
+
+/** Payload to directly add a member of the organization of a resource as a collaborator */
+export interface CollaboratorAddMemberPayload {
+  /** Unique User ID of the organization member */
+  user_id: string;
+  /** Limited collaborator, not supported by databases DR */
+  is_limited?: boolean;
+}

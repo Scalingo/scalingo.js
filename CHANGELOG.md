@@ -1,5 +1,8 @@
 ## Unreleased
 
+* feat(collaborators): add `candidates()` method to list the organization members who can be added as collaborators of an application or database of an organization
+* feat(collaborators): add `addMember()` method to directly add an organization member, by `user_id`, as a collaborator of an application or database of an organization
+
 ## 0.24.0
 
 * feat(organizations)!: `members()` is now paginated: it accepts pagination options and returns `{ members, meta }` instead of an array (BREAKING CHANGE)
