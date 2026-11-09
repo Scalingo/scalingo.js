@@ -1,5 +1,7 @@
 ## Unreleased
 
+* feat(organizations): add `destroyMember()` method to remove a member from an organization
+
 ## 0.24.0
 
 * feat(organizations)!: `members()` is now paginated: it accepts pagination options and returns `{ members, meta }` instead of an array (BREAKING CHANGE)
