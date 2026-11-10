@@ -128,7 +128,9 @@ export default class Organizations {
 
   /**
    * Remove a member from an organization.
-   * Only organization admins are allowed to remove a member with the member role.
+   * An organization admin can remove a member with the member role, and a
+   * member can remove their own membership. A membership with the admin role
+   * cannot be removed.
    * @param id ID of the organization
    * @param memberId ID of the membership, as returned by `members()`
    */
