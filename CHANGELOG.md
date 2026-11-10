@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 0.24.1
+
 * feat(collaborators): add `candidates()` method to list the organization members who can be added as collaborators of an application or database of an organization
 * feat(collaborators): add `addMember()` method to directly add an organization member, by `user_id`, as a collaborator of an application or database of an organization
 
