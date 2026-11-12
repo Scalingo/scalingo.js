@@ -1,3 +1,9 @@
+import axios from "axios";
+import MockAdapter from "axios-mock-adapter";
+import { expect } from "chai";
+
+import { Client } from "../../src";
+import { APIError } from "../../src/errors";
 import Organizations from "../../src/Organizations";
 import {
   testDelete,
@@ -108,6 +114,49 @@ describe("Organizations#members", () => {
       });
     },
   );
+});
+
+describe("Organizations#destroyMember", () => {
+  const url =
+    "https://auth.scalingo.com/v1/organizations/org-id/members/membership-id";
+
+  it("removes the membership and resolves without a body on a 204", async () => {
+    const client = new Client("test-token");
+    const mock = new MockAdapter(axios);
+    mock.onDelete(url).reply(204);
+
+    const result = await new Organizations(client).destroyMember(
+      "org-id",
+      "membership-id",
+    );
+
+    expect(result).to.satisfy((value) => value === undefined || value === "");
+    expect(mock.history.delete).to.have.length(1);
+    expect(mock.history.delete[0].headers.Authorization).to.eq(
+      "Bearer test-token",
+    );
+    expect(mock.history.delete[0].data).to.be.undefined;
+  });
+
+  it("keeps the detail of a business refusal", async () => {
+    const client = new Client("test-token");
+    const mock = new MockAdapter(axios);
+    mock
+      .onDelete(url)
+      .reply(422, { error: "Cannot remove a member who owns projects" });
+
+    try {
+      await new Organizations(client).destroyMember("org-id", "membership-id");
+    } catch (error) {
+      expect(error).to.be.an.instanceOf(APIError);
+      expect(error.status).to.eq(422);
+      expect(error.data).to.deep.eq({
+        error: "Cannot remove a member who owns projects",
+      });
+      return;
+    }
+    expect.fail("The method did not throw");
+  });
 });
 
 describe("Organizations#invitations", () => {

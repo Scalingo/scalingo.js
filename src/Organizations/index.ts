@@ -127,6 +127,22 @@ export default class Organizations {
   }
 
   /**
+   * Remove a member from an organization.
+   * An organization admin can remove a member with the member role, and a
+   * member can remove their own membership. A membership with the admin role
+   * cannot be removed.
+   * @param id ID of the organization
+   * @param memberId ID of the membership, as returned by `members()`
+   */
+  destroyMember(id: string, memberId: string): Promise<void> {
+    return unpackData(
+      this._client
+        .authApiClient()
+        .delete(`/organizations/${id}/members/${memberId}`),
+    );
+  }
+
+  /**
    * List the pending invitations of an organization, expired ones included,
    * most recent first. Only organization admins are allowed to do so.
    * @param id ID of the organization
