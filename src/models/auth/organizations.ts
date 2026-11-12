@@ -14,10 +14,30 @@ export interface Organization {
   flags: Record<string, boolean>;
   /** Organization-specific limits */
   limits: Record<string, number>;
+  /**
+   * Role of the current user in the organization.
+   * Only returned by the list endpoint (`all()`).
+   */
+  role?: OrganizationMemberRole;
+  /**
+   * Active administrators of the organization.
+   * Only returned by the list endpoint (`all()`).
+   */
+  admins?: OrganizationAdmin[];
 }
 
 /** Role of a member within an organization */
 export type OrganizationMemberRole = "admin" | "member";
+
+/** Administrator of an organization, as returned by the list endpoint */
+export interface OrganizationAdmin {
+  /** Unique id (uuid) of the user */
+  id: string;
+  /** Username of the user */
+  username: string;
+  /** Email of the user */
+  email: string;
+}
 
 /** User associated to an organization member */
 export interface OrganizationMemberUser {

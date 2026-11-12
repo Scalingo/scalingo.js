@@ -22,6 +22,45 @@ describe("Organizations#all", () => {
       return new Organizations(client).all();
     },
   );
+
+  it("returns the role and the admins of each organization", async () => {
+    const client = new Client("test-token");
+    const mock = new MockAdapter(axios);
+    const organizations = [
+      {
+        id: "org-1",
+        name: "First org",
+        slug: "first-org",
+        created_at: "2024-05-15T12:34:56.000Z",
+        flags: {},
+        limits: {},
+        role: "admin",
+        admins: [
+          { id: "us-1", username: "alice", email: "alice@example.com" },
+          { id: "us-2", username: "bob", email: "bob@example.com" },
+        ],
+      },
+      {
+        id: "org-2",
+        name: "Second org",
+        slug: "second-org",
+        created_at: "2024-05-16T12:34:56.000Z",
+        flags: {},
+        limits: {},
+        role: "member",
+        admins: [{ id: "us-3", username: "carol", email: "carol@example.com" }],
+      },
+    ];
+    mock
+      .onGet("https://auth.scalingo.com/v1/organizations")
+      .reply(200, { organizations });
+
+    const result = await new Organizations(client).all();
+
+    expect(result).to.deep.eq(organizations);
+    expect(mock.history.get).to.have.length(1);
+    expect(mock.history.get[0].params).to.be.undefined;
+  });
 });
 
 describe("Organizations#show", () => {

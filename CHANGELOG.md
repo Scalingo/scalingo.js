@@ -1,5 +1,7 @@
 ## Unreleased
 
+* feat(organizations): add `role` and `admins` (active administrators `{id, username, email}`) to the organizations returned by `all()`
+
 ## 0.24.2
 
 * feat(organizations): add `destroyMember()` method to remove a member from an organization

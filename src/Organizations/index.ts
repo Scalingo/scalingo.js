@@ -32,7 +32,8 @@ export default class Organizations {
   }
 
   /**
-   * List all organizations the current user is a member of
+   * List all organizations the current user is a member of, along with the
+   * role of the current user and the active administrators of each organization
    * @return A list of organizations
    */
   all(): Promise<Organization[]> {
