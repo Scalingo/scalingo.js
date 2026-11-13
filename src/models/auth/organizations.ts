@@ -21,7 +21,8 @@ export interface Organization {
   role?: OrganizationMemberRole;
   /**
    * Active administrators of the organization.
-   * Only returned by the list endpoint (`all()`).
+   * Only returned by the list endpoint (`all()`) when explicitly
+   * requested with `with_admins: true`.
    */
   admins?: OrganizationAdmin[];
 }
@@ -29,7 +30,7 @@ export interface Organization {
 /** Role of a member within an organization */
 export type OrganizationMemberRole = "admin" | "member";
 
-/** Administrator of an organization, as returned by the list endpoint */
+/** Administrator of an organization, as returned by the list endpoint with `with_admins: true` */
 export interface OrganizationAdmin {
   /** Unique id (uuid) of the user */
   id: string;

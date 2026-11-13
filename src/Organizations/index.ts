@@ -12,6 +12,7 @@ import {
   CreateInvitationParams,
   CreateParams,
   EventsParams,
+  IndexParams,
   UpdateParams,
 } from "../params/auth/organizations";
 import { unpackData } from "../utils";
@@ -33,12 +34,14 @@ export default class Organizations {
 
   /**
    * List all organizations the current user is a member of, along with the
-   * role of the current user and the active administrators of each organization
+   * role of the current user. With `with_admins: true`, each organization
+   * also includes its active administrators.
+   * @param opts Optional listing options
    * @return A list of organizations
    */
-  all(): Promise<Organization[]> {
+  all(opts?: IndexParams): Promise<Organization[]> {
     return unpackData(
-      this._client.authApiClient().get("/organizations"),
+      this._client.authApiClient().get("/organizations", { params: opts }),
       "organizations",
     );
   }

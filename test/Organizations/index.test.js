@@ -23,7 +23,38 @@ describe("Organizations#all", () => {
     },
   );
 
-  it("returns the role and the admins of each organization", async () => {
+  testParamsGetter(
+    "https://auth.scalingo.com/v1/organizations",
+    { with_admins: true },
+    "organizations",
+    (client) => {
+      return new Organizations(client).all({ with_admins: true });
+    },
+  );
+
+  testParamsGetter(
+    "https://auth.scalingo.com/v1/organizations",
+    { with_admins: false },
+    "organizations",
+    (client) => {
+      return new Organizations(client).all({ with_admins: false });
+    },
+  );
+
+  it("does not send any query parameter without options", async () => {
+    const client = new Client("test-token");
+    const mock = new MockAdapter(axios);
+    mock
+      .onGet("https://auth.scalingo.com/v1/organizations")
+      .reply(200, { organizations: [] });
+
+    await new Organizations(client).all();
+
+    expect(mock.history.get).to.have.length(1);
+    expect(mock.history.get[0].params).to.be.undefined;
+  });
+
+  it("returns the role and the admins of each organization when requested", async () => {
     const client = new Client("test-token");
     const mock = new MockAdapter(axios);
     const organizations = [
@@ -52,14 +83,15 @@ describe("Organizations#all", () => {
       },
     ];
     mock
-      .onGet("https://auth.scalingo.com/v1/organizations")
+      .onGet("https://auth.scalingo.com/v1/organizations", {
+        params: { with_admins: true },
+      })
       .reply(200, { organizations });
 
-    const result = await new Organizations(client).all();
+    const result = await new Organizations(client).all({ with_admins: true });
 
     expect(result).to.deep.eq(organizations);
     expect(mock.history.get).to.have.length(1);
-    expect(mock.history.get[0].params).to.be.undefined;
   });
 });
 
