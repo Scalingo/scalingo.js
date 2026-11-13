@@ -66,7 +66,7 @@ describe("Organizations#all", () => {
         flags: {},
         limits: {},
         role: "admin",
-        membership_id: "mem-1",
+        member_id: "mem-1",
         admins: [
           { id: "us-1", username: "alice", email: "alice@example.com" },
           { id: "us-2", username: "bob", email: "bob@example.com" },
@@ -80,7 +80,7 @@ describe("Organizations#all", () => {
         flags: {},
         limits: {},
         role: "member",
-        membership_id: "mem-2",
+        member_id: "mem-2",
         admins: [{ id: "us-3", username: "carol", email: "carol@example.com" }],
       },
     ];

@@ -20,11 +20,10 @@ export interface Organization {
    */
   role?: OrganizationMemberRole;
   /**
-   * ID of the requester's own active membership in the organization.
-   * Only returned by the list endpoint (`all()`). This is the ID expected
-   * by `destroyMember()`.
+   * ID of the current user's member record in this organization.
+   * Returned by `all()`; expected by `destroyMember()`.
    */
-  membership_id?: string;
+  member_id?: string;
   /**
    * Active administrators of the organization.
    * Only returned by the list endpoint (`all()`) when explicitly
