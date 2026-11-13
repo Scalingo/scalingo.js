@@ -3,6 +3,11 @@ export interface CreateParams {
   name: string;
 }
 
+export interface IndexParams {
+  /** Whether to include the active administrators of each organization */
+  with_admins?: boolean;
+}
+
 export interface UpdateParams {
   /** Name of the organization */
   name?: string;
