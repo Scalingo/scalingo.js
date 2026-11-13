@@ -1,6 +1,7 @@
 ## Unreleased
 
 * feat(organizations): add `role` to the organizations returned by `all()`, and `admins` (active administrators `{id, username, email}`) when requested with `all({ with_admins: true })`
+* feat(organizations): add `membership_id`, the ID of the requester's own active membership, to the organizations returned by `all()`
 
 ## 0.24.2
 
