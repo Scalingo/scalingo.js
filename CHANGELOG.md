@@ -1,5 +1,8 @@
 ## Unreleased
 
+* feat(billing): `profile()` and `createProfile()` accept an `organization_id` option to read or create the billing profile of an organization
+* feat(billing): add `organization_id` to the `BillingProfile` model
+
 ## 0.24.3 
 
 * feat(organizations): add `role` to the organizations returned by `all()`, and `admins` (active administrators `{id, username, email}`) when requested with `all({ with_admins: true })`
