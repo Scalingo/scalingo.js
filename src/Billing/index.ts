@@ -1,5 +1,6 @@
 import { Client } from "..";
 import { BillingProfile } from "../models/billing/profiles";
+import { OrganizationScopedParams } from "../params/regional/organization";
 import { unpackData } from "../utils";
 
 /**
@@ -18,24 +19,29 @@ export default class Billing {
   }
 
   /**
-   * Return the billing profile of current user
+   * Return the billing profile of current user, or of an organization
    * @see https://developers.scalingo.com/billing#billing-profile
+   * @param opts.organization_id ID of the organization owning the billing profile
    */
-  profile(): Promise<BillingProfile> {
+  profile(opts?: OrganizationScopedParams): Promise<BillingProfile> {
     return unpackData(
-      this._client.billingApiClient().get("/profile"),
+      this._client.billingApiClient().get("/profile", { params: opts }),
       "profile",
     );
   }
 
   /**
-   * Create the billing profile of current user. Returns an error if already existing
+   * Create the billing profile of current user, or of an organization. Returns an error if already existing
    * @see https://developers.scalingo.com/billing#billing-profile
    * @param profile The billing profile to create
+   * @param opts.organization_id ID of the organization owning the billing profile
    */
-  createProfile(profile: Omit<BillingProfile, "id">): Promise<BillingProfile> {
+  createProfile(
+    profile: Omit<BillingProfile, "id">,
+    opts?: OrganizationScopedParams,
+  ): Promise<BillingProfile> {
     return unpackData(
-      this._client.billingApiClient().post("/profiles", { profile }),
+      this._client.billingApiClient().post("/profiles", { ...opts, profile }),
       "profile",
     );
   }

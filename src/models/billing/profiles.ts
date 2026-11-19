@@ -18,6 +18,7 @@ export interface BillingProfile {
   invoice_additional_info?: string;
   company?: string;
   payment_method?: string;
+  organization_id?: string | null;
   stripe_payment_method?: StripePaymentMethod;
   paypal_payment_method?: PaypalPaymentMethod;
   flags: string[];
