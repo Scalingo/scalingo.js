@@ -41,7 +41,7 @@ export default class Billing {
     opts?: OrganizationScopedParams,
   ): Promise<BillingProfile> {
     return unpackData(
-      this._client.billingApiClient().post("/profiles", { ...opts, profile }),
+      this._client.billingApiClient().post("/profiles", { profile, ...opts }),
       "profile",
     );
   }
