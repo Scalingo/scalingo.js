@@ -1,5 +1,6 @@
 ## Unreleased
 
+* feat(databases): add `myhoard_enabled` to the `DatabaseApi` model
 * feat(billing): `profile()` and `createProfile()` accept an `organization_id` option to read or create the billing profile of an organization
 * feat(billing): add `organization_id` to the `BillingProfile` model
 
