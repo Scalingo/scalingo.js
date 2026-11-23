@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 0.24.5
+
 * fix: make myhoard_enabled an optional field - #655
 
 ## 0.24.4
