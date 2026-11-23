@@ -1,5 +1,7 @@
 ## Unreleased
 
+* fix: make myhoard_enabled an optional field - #655
+
 ## 0.24.4
 
 * feat(databases): add `myhoard_enabled` to the `ApiDatabase` model
