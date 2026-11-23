@@ -336,6 +336,8 @@ export interface ApiDatabase {
   maintenance_window: MaintenanceWindow;
   /** PostgreSQL specific configuration (only present for PostgreSQL databases) */
   postgresql_config?: PostgreSQLConfig;
+  /** Activation status of the myhoard PITR agent **/
+  myhoard_enabled: boolean | null;
 }
 
 /** Database plan information */
